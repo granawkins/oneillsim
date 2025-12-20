@@ -23,15 +23,9 @@
         <p style="margin: 0;">Central Sun Line Enabled</p>
         <div class="controls-hint">WASD: Move | SPACE: Jump</div>
         <div class="controls-hint">MOUSE: Look | ESC: Unlock Mouse</div>
-        <div class="controls-hint" style="color:#ff6666; margin-top:5px;">Gravity is inverted (Camera Flipped).</div>
-        <div id="light-control">
-            <label for="light-slider">Light</label>
-            <input type="range" id="light-slider" min="0" max="2" step="0.1" value="1">
-        </div>
-        <div id="torus-control">
-            <label for="torus-toggle">Show Inner Torus</label>
-            <input type="checkbox" id="torus-toggle" checked>
-        </div>
+        <label class="toggle"><input type="checkbox" id="lighting-toggle"> Show Lighting</label>
+        <label class="toggle"><input type="checkbox" id="torus-toggle"> Show Inner Torus</label>
+        <label class="toggle">Light <input type="range" id="light-slider" min="0" max="2" step="0.1" value="1"></label>
     </div>
     <div id="crosshair"></div>
 

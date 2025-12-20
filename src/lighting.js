@@ -47,6 +47,12 @@ export function toggleSunRing() {
     }
 }
 
+export function setLightingEnabled(enabled) {
+    if (sunRingMesh) {
+        sunRingMesh.visible = enabled;
+    }
+}
+
 export function getSunRingMesh() {
     return sunRingMesh;
 }

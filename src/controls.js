@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { toggleSunRing } from './lighting.js';
 
 const moveState = {
     forward: false,
@@ -46,8 +45,13 @@ export function setupControls(cam, anchor, scn, habitat) {
         document.body.requestPointerLock();
     });
 
+    const crosshair = document.getElementById('crosshair');
     document.addEventListener('pointerlockchange', () => {
-        overlay.style.display = document.pointerLockElement === document.body ? 'none' : 'flex';
+        const locked = document.pointerLockElement === document.body;
+        overlay.querySelector('span').textContent = locked ? 'Escape to Exit' : 'Click to Enter';
+        overlay.style.alignItems = locked ? 'flex-start' : 'center';
+        overlay.style.paddingTop = locked ? '5vh' : '0';
+        crosshair.style.display = locked ? 'block' : 'none';
     });
 
     const onKey = (val) => (e) => {
@@ -62,9 +66,6 @@ export function setupControls(cam, anchor, scn, habitat) {
     document.addEventListener('keyup', onKey(false));
 
     document.addEventListener('keydown', (e) => {
-        if (e.code === 'KeyL') {
-            toggleSunRing();
-        }
         if (e.code === 'Tab') {
             e.preventDefault();
             toggleGodMode();

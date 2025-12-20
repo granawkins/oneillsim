@@ -1,5 +1,5 @@
 import { initScene, scene, camera, renderer, habitatGroup, cameraAnchor } from './scene.js';
-import { createSunRing, createAmbientLight, setLightIntensity } from './lighting.js';
+import { createSunRing, createAmbientLight, setLightingEnabled, setLightIntensity } from './lighting.js';
 import { createCylinder } from './cylinder.js';
 import { createStars, updateStars } from './stars.js';
 import { createWorldFeatures } from './features.js';
@@ -26,6 +26,11 @@ function init() {
     ui.addEventListener('mouseup', (e) => e.stopPropagation());
     ui.addEventListener('click', (e) => e.stopPropagation());
 
+    const lightingToggle = document.getElementById('lighting-toggle');
+    lightingToggle.addEventListener('change', (e) => {
+        setLightingEnabled(e.target.checked);
+    });
+
     const lightSlider = document.getElementById('light-slider');
     lightSlider.addEventListener('input', (e) => {
         setLightIntensity(parseFloat(e.target.value));
@@ -35,6 +40,10 @@ function init() {
     torusToggle.addEventListener('change', (e) => {
         setInnerTorusVisible(e.target.checked);
     });
+
+    // Initialize both toggles as false
+    setLightingEnabled(false);
+    setInnerTorusVisible(false);
 
     animate();
 }

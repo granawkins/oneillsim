@@ -29,6 +29,7 @@ body {
     transform: translate(-50%, -50%);
     pointer-events: none;
     opacity: 0.5;
+    display: none;
 }
 
 .controls-hint {
@@ -50,8 +51,7 @@ canvas {
     background: transparent;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 33vh;
+    align-items: center;
     color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     z-index: 20;
@@ -60,33 +60,10 @@ canvas {
     letter-spacing: 0.1em;
 }
 
-#light-control {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.85rem;
-    color: #aaa;
-}
-
-#light-slider {
-    width: 80px;
-    cursor: pointer;
-    accent-color: #ffd700;
-}
-
-#torus-control {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.toggle {
+    display: block;
     margin-top: 8px;
     font-size: 0.85rem;
     color: #aaa;
-}
-
-#torus-toggle {
     cursor: pointer;
-    accent-color: #888899;
 }
