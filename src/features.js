@@ -1,15 +1,43 @@
 import * as THREE from 'three';
+import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 import { CYLINDER_LENGTH } from './cylinder.js';
 
 const SURFACE_RADIUS = 649.8;
+
+let treeModel = null;
+
+export function loadTreeModel() {
+    return new Promise((resolve) => {
+        const mtlLoader = new MTLLoader();
+        mtlLoader.setPath('/assets/ultimate-nature/');
+        mtlLoader.load('CommonTree_1.mtl', (materials) => {
+            materials.preload();
+            const objLoader = new OBJLoader();
+            objLoader.setMaterials(materials);
+            objLoader.setPath('/assets/ultimate-nature/');
+            objLoader.load('CommonTree_1.obj', (obj) => {
+                // Make all materials matte (not shiny)
+                obj.traverse((child) => {
+                    if (child.isMesh && child.material) {
+                        child.material.roughness = 1.0;
+                        child.material.metalness = 0.0;
+                    }
+                });
+                treeModel = obj;
+                resolve(obj);
+            });
+        });
+    });
+}
 
 export function createRiver(habitatGroup) {
     const riverGeo = new THREE.CylinderGeometry(SURFACE_RADIUS - 0.3, SURFACE_RADIUS - 0.3, 15, 64, 1, true);
     const riverMat = new THREE.MeshStandardMaterial({
         color: 0x2a6099,
         side: THREE.BackSide,
-        metalness: 0.4,
-        roughness: 0.3
+        metalness: 0.1,
+        roughness: 0.7
     });
     const river = new THREE.Mesh(riverGeo, riverMat);
     river.rotation.x = Math.PI / 2;
@@ -45,12 +73,13 @@ export function createTown(habitatGroup, center, count) {
 }
 
 export function createForest(habitatGroup, count) {
+    if (!treeModel) {
+        console.warn('Tree model not loaded yet');
+        return;
+    }
+
     const radius = 649.5;
     const length = CYLINDER_LENGTH - 10;
-    const trunkGeo = new THREE.CylinderGeometry(0.4, 0.5, 8);
-    const leavesGeo = new THREE.SphereGeometry(4, 8, 8);
-    const leafMat = new THREE.MeshStandardMaterial({ color: 0x2d5a27 });
-    const trunkMat = new THREE.MeshStandardMaterial({ color: 0x4a3520 });
 
     for (let i = 0; i < count; i++) {
         const theta = Math.random() * Math.PI * 2;
@@ -58,17 +87,17 @@ export function createForest(habitatGroup, count) {
         const edgeBias = 1 - Math.pow(Math.random(), 2);
         const z = Math.sign(Math.random() - 0.5) * edgeBias * (length / 2);
 
-        const group = new THREE.Group();
-        const trunk = new THREE.Mesh(trunkGeo, trunkMat);
-        const leaves = new THREE.Mesh(leavesGeo, leafMat);
-        trunk.position.y = 4;
-        leaves.position.y = 10;
-        group.add(trunk, leaves);
+        const tree = treeModel.clone();
+        // Random scale variation (base 4x size)
+        const scale = 3.2 + Math.random() * 1.6;
+        tree.scale.set(scale, scale, scale);
 
-        group.position.set(radius * Math.cos(theta), radius * Math.sin(theta), z);
-        group.lookAt(0, 0, z);
-        group.rotateX(Math.PI / 2);
-        habitatGroup.add(group);
+        tree.position.set(radius * Math.cos(theta), radius * Math.sin(theta), z);
+        tree.lookAt(0, 0, z);
+        tree.rotateX(Math.PI / 2);
+        // Random spin around tree's up axis for variety
+        tree.rotateY(Math.random() * Math.PI * 2);
+        habitatGroup.add(tree);
     }
 }
 

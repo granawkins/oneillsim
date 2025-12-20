@@ -3,8 +3,8 @@ import * as THREE from 'three';
 let sunRingMesh = null;
 let pointLights = [];
 let ambientLight = null;
-const BASE_POINT_INTENSITY = 150;
-const BASE_AMBIENT_INTENSITY = 6;
+const BASE_POINT_INTENSITY = 20;
+const BASE_AMBIENT_INTENSITY = 25;
 
 export function createSunRing(habitatGroup) {
     const ringRadius = 650 - 65; // 65m above ground surface (toward center)

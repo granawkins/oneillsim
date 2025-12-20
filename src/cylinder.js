@@ -17,7 +17,7 @@ export function createCylinder(habitatGroup) {
 
     // Ground layer
     const groundGeo = new THREE.CylinderGeometry(CYLINDER_RADIUS - 0.2, CYLINDER_RADIUS - 0.2, CYLINDER_LENGTH, 64, 1, true);
-    const groundMat = new THREE.MeshStandardMaterial({ color: 0x2d4a28, side: THREE.BackSide, roughness: 0.9 });
+    const groundMat = new THREE.MeshStandardMaterial({ color: 0x1a3318, side: THREE.BackSide, roughness: 1.0 });
     const ground = new THREE.Mesh(groundGeo, groundMat);
     ground.rotation.x = Math.PI / 2;
     habitatGroup.add(ground);

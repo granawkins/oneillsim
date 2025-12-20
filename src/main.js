@@ -2,19 +2,20 @@ import { initScene, scene, camera, renderer, habitatGroup, cameraAnchor } from '
 import { createSunRing, createAmbientLight, setLightingEnabled, setLightIntensity } from './lighting.js';
 import { createCylinder } from './cylinder.js';
 import { createStars, updateStars } from './stars.js';
-import { createWorldFeatures } from './features.js';
+import { createWorldFeatures, loadTreeModel } from './features.js';
 import { setupControls, updateMovement, isPointerLocked } from './controls/index.js';
 import { createTorus, setInnerTorusVisible } from './torus.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps
 
-function init() {
+async function init() {
     const sceneObjects = initScene();
 
     createSunRing(sceneObjects.habitatGroup);
     createAmbientLight(sceneObjects.scene);
     createCylinder(sceneObjects.habitatGroup);
     createStars(sceneObjects.scene);
+    await loadTreeModel();
     createWorldFeatures(sceneObjects.habitatGroup);
     createTorus(sceneObjects.habitatGroup);
 

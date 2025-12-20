@@ -8,7 +8,8 @@
     <script type="importmap">
     {
         "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
         }
     }
     </script>
@@ -25,7 +26,8 @@
         <div class="controls-hint">MOUSE: Look | ESC: Unlock Mouse</div>
         <label class="toggle"><input type="checkbox" id="lighting-toggle"> Show Lighting</label>
         <label class="toggle"><input type="checkbox" id="torus-toggle"> Show Inner Torus</label>
-        <label class="toggle">Light <input type="range" id="light-slider" min="0" max="2" step="0.1" value="1"></label>
+        <label class="toggle">Light <input type="range" id="light-slider" min="0" max="6" step="0.1" value="1"></label>
+        <div class="credits">3D Assets by <a href="https://quaternius.com/packs/ultimatenature.html" target="_blank">Quaternius</a></div>
     </div>
     <div id="crosshair"></div>
 
