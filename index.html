@@ -62,7 +62,7 @@
 
     <script>
         let scene, camera, renderer, habitatGroup, stars;
-        let rotationSpeed = 0.002;
+        let rotationSpeed = Math.PI / 1800; // 1 RPM at 60fps
         
         // Movement State
         const moveState = {
@@ -79,10 +79,11 @@
         let cameraAnchor = new THREE.Group();
         let yaw = 0;
         let pitch = 0;
+        let sunRingMesh = null;
 
         function init() {
             scene = new THREE.Scene();
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 5000);
             
             renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
@@ -94,10 +95,10 @@
 
             habitatGroup.add(cameraAnchor);
             cameraAnchor.add(camera);
-            cameraAnchor.position.set(0, 95, 200);
+            cameraAnchor.position.set(0, 620, 0);
 
-            // 1. CREATE CENTRAL LIGHT BAR (SUN LINE)
-            createSunLine();
+            // Create ring light above the river
+            createSunRing();
 
             const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
             scene.add(ambientLight);
@@ -110,19 +111,27 @@
             animate();
         }
 
-        function createSunLine() {
-            const length = 1200;
-            const sunLineGeo = new THREE.CylinderGeometry(2, 2, length, 16);
-            const sunLineMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
-            const sunLineMesh = new THREE.Mesh(sunLineGeo, sunLineMat);
-            sunLineMesh.rotation.x = Math.PI / 2;
-            habitatGroup.add(sunLineMesh);
+        function createSunRing() {
+            const ringRadius = 650 - 65; // 65m above ground surface (toward center)
+            const ringZ = 20; // above the river
 
-            // Add point lights along the bar to simulate the line source
-            const lightCount = 6;
-            for(let i = 0; i < lightCount; i++) {
-                const pLight = new THREE.PointLight(0xfff0dd, 1.5, 600);
-                pLight.position.z = (i / (lightCount-1) - 0.5) * length;
+            // Visible ring geometry
+            const ringGeo = new THREE.TorusGeometry(ringRadius, 3, 8, 64);
+            const ringMat = new THREE.MeshBasicMaterial({ color: 0xffffee });
+            sunRingMesh = new THREE.Mesh(ringGeo, ringMat);
+            sunRingMesh.position.z = ringZ;
+            habitatGroup.add(sunRingMesh);
+
+            // Add point lights around the ring
+            const lightCount = 12;
+            for (let i = 0; i < lightCount; i++) {
+                const angle = (i / lightCount) * Math.PI * 2;
+                const pLight = new THREE.PointLight(0xfff8e0, 0.6, 400);
+                pLight.position.set(
+                    ringRadius * Math.cos(angle),
+                    ringRadius * Math.sin(angle),
+                    ringZ
+                );
                 habitatGroup.add(pLight);
             }
         }
@@ -150,6 +159,12 @@
             document.addEventListener('keydown', onKey(true));
             document.addEventListener('keyup', onKey(false));
 
+            document.addEventListener('keydown', (e) => {
+                if (e.code === 'KeyL' && sunRingMesh) {
+                    sunRingMesh.visible = !sunRingMesh.visible;
+                }
+            });
+
             document.addEventListener('mousemove', (e) => {
                 if (document.pointerLockElement === document.body) {
                     yaw -= e.movementX * mouseSensitivity;
@@ -167,8 +182,8 @@
         }
 
         function createCylinder() {
-            const radius = 100;
-            const length = 1200;
+            const radius = 650;
+            const length = 130;
             
             const geometry = new THREE.CylinderGeometry(radius, radius, length, 64, 1, true);
             const material = new THREE.MeshStandardMaterial({ 
@@ -181,7 +196,7 @@
             habitatGroup.add(hull);
 
             const groundGeo = new THREE.CylinderGeometry(radius - 0.2, radius - 0.2, length, 64, 1, true);
-            const groundMat = new THREE.MeshStandardMaterial({ color: 0x1e3511, side: THREE.BackSide });
+            const groundMat = new THREE.MeshStandardMaterial({ color: 0x2d4a28, side: THREE.BackSide, roughness: 0.9 });
             const ground = new THREE.Mesh(groundGeo, groundMat);
             ground.rotation.x = Math.PI/2;
             habitatGroup.add(ground);
@@ -201,89 +216,71 @@
         }
 
         function createWorldFeatures() {
-            const radius = 99.8;
-            const length = 1100;
+            const radius = 649.8;
 
-            const riverGeo = new THREE.PlaneGeometry(8, length);
-            const riverMat = new THREE.MeshStandardMaterial({ color: 0x1e56a0, side: THREE.DoubleSide, metalness: 0.5, roughness: 0.2 });
+            // River as a band around the circumference
+            const riverGeo = new THREE.CylinderGeometry(radius - 0.3, radius - 0.3, 15, 64, 1, true);
+            const riverMat = new THREE.MeshStandardMaterial({ color: 0x2a6099, side: THREE.BackSide, metalness: 0.4, roughness: 0.3 });
             const river = new THREE.Mesh(riverGeo, riverMat);
-            river.rotation.x = Math.PI/2;
-            river.position.set(0, -radius + 0.5, 0); 
+            river.rotation.x = Math.PI / 2;
+            river.position.z = 20;
             habitatGroup.add(river);
 
-            // MOUNTAIN RANGE FIX
-            const mountainCount = 15;
-            // Peaks should point to center: we rotate them properly now
-            const mtnGeo = new THREE.ConeGeometry(35, 70, 4);
-            const mtnMat = new THREE.MeshStandardMaterial({ color: 0x4a4a4a, roughness: 0.9 });
-            
-            for (let i = 0; i < mountainCount; i++) {
-                const mtn = new THREE.Mesh(mtnGeo, mtnMat);
-                const angle = Math.PI + (Math.random() - 0.5) * 0.6;
-                const z = (i / mountainCount - 0.5) * length;
-                
-                mtn.position.set(radius * Math.cos(angle), radius * Math.sin(angle), z);
-                
-                // Point top toward center: Cone naturally points along Y axis. 
-                // We make it look at the center (0,0,z).
-                mtn.lookAt(0, 0, z);
-                // After lookAt, the tip points along Z. We need to rotate it back so tip is local Up.
-                mtn.rotateX(Math.PI / 2); 
-                
-                mtn.scale.x = 1.2 + Math.random();
-                habitatGroup.add(mtn);
-            }
-
-            createTown(new THREE.Vector3(50, -85, 200), 40); 
-            createTown(new THREE.Vector3(-60, -80, -250), 30); 
-            createForest(800);
+            createTown(new THREE.Vector3(400, -500, 0), 40);
+            createTown(new THREE.Vector3(-450, -470, -15), 30);
+            createForest(1000);
         }
 
         function createTown(center, count) {
-            const radius = 99.5;
-            const houseBaseGeo = new THREE.BoxGeometry(2, 2, 2);
-            const houseRoofGeo = new THREE.ConeGeometry(1.8, 1.5, 4);
-            
+            const radius = 649.5;
+            const houseBaseGeo = new THREE.BoxGeometry(8, 6, 8);
+            const houseRoofGeo = new THREE.ConeGeometry(7, 4, 4);
+
             for (let i = 0; i < count; i++) {
                 const offsetTheta = (Math.random() - 0.5) * 0.4;
-                const offsetZ = (Math.random() - 0.5) * 50;
+                const offsetZ = (Math.random() - 0.5) * 60;
                 const baseAngle = Math.atan2(center.y, center.x);
                 const theta = baseAngle + offsetTheta;
                 const z = center.z + offsetZ;
 
                 const group = new THREE.Group();
-                const base = new THREE.Mesh(houseBaseGeo, new THREE.MeshStandardMaterial({ color: 0xeeeeee }));
-                const roof = new THREE.Mesh(houseRoofGeo, new THREE.MeshStandardMaterial({ color: 0x882222 }));
-                roof.position.y = 1.75;
+                const base = new THREE.Mesh(houseBaseGeo, new THREE.MeshStandardMaterial({ color: 0xd4c4a8 }));
+                const roof = new THREE.Mesh(houseRoofGeo, new THREE.MeshStandardMaterial({ color: 0x8b4513 }));
+                base.position.y = 3;
+                roof.position.y = 8;
                 group.add(base, roof);
 
                 group.position.set(radius * Math.cos(theta), radius * Math.sin(theta), z);
                 group.lookAt(0, 0, z);
-                group.rotateX(-Math.PI / 2);
+                group.rotateX(Math.PI / 2);
                 habitatGroup.add(group);
             }
         }
 
         function createForest(count) {
-            const radius = 99.5;
-            const length = 1000;
-            const trunkGeo = new THREE.CylinderGeometry(0.2, 0.2, 2);
-            const leavesGeo = new THREE.SphereGeometry(1.5, 8, 8);
-            const leafMat = new THREE.MeshStandardMaterial({ color: 0x1a3d16 });
-            const trunkMat = new THREE.MeshStandardMaterial({ color: 0x2b1d0e });
+            const radius = 649.5;
+            const length = 120;
+            const trunkGeo = new THREE.CylinderGeometry(0.4, 0.5, 8);
+            const leavesGeo = new THREE.SphereGeometry(4, 8, 8);
+            const leafMat = new THREE.MeshStandardMaterial({ color: 0x2d5a27 });
+            const trunkMat = new THREE.MeshStandardMaterial({ color: 0x4a3520 });
 
             for (let i = 0; i < count; i++) {
                 const theta = Math.random() * Math.PI * 2;
-                const z = (Math.random() - 0.5) * length;
+                // Bias z toward edges (endcaps): invert squared random so trees cluster at high |z|
+                const edgeBias = 1 - Math.pow(Math.random(), 2);
+                const z = Math.sign(Math.random() - 0.5) * edgeBias * (length / 2);
+
                 const group = new THREE.Group();
                 const trunk = new THREE.Mesh(trunkGeo, trunkMat);
                 const leaves = new THREE.Mesh(leavesGeo, leafMat);
-                leaves.position.y = 1.5;
+                trunk.position.y = 4;
+                leaves.position.y = 10;
                 group.add(trunk, leaves);
 
                 group.position.set(radius * Math.cos(theta), radius * Math.sin(theta), z);
                 group.lookAt(0, 0, z);
-                group.rotateX(-Math.PI / 2);
+                group.rotateX(Math.PI / 2);
                 habitatGroup.add(group);
             }
         }
@@ -313,16 +310,16 @@
             }
 
             const distFromCenter = Math.sqrt(cameraAnchor.position.x**2 + cameraAnchor.position.y**2);
-            if (distFromCenter > 98) {
-                const ratio = 98 / distFromCenter;
+            if (distFromCenter > 648) {
+                const ratio = 648 / distFromCenter;
                 cameraAnchor.position.x *= ratio;
                 cameraAnchor.position.y *= ratio;
             } else if (distFromCenter < 3) { // Slightly larger deadzone for the sun bar
                 cameraAnchor.position.x = 3.1;
             }
             
-            if (Math.abs(cameraAnchor.position.z) > 550) {
-                cameraAnchor.position.z = Math.sign(cameraAnchor.position.z) * 550;
+            if (Math.abs(cameraAnchor.position.z) > 60) {
+                cameraAnchor.position.z = Math.sign(cameraAnchor.position.z) * 60;
             }
         }
 
