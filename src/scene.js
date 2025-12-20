@@ -21,7 +21,8 @@ export function initScene() {
     cameraAnchor = new THREE.Group();
     habitatGroup.add(cameraAnchor);
     cameraAnchor.add(camera);
-    cameraAnchor.position.set(0, 620, 0);
+    // Position at ground level (649.8) minus 2m camera height = 647.8
+    cameraAnchor.position.set(0, 647.8, 0);
 
     window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;

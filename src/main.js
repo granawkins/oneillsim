@@ -16,7 +16,7 @@ function init() {
     createStars(sceneObjects.scene);
     createWorldFeatures(sceneObjects.habitatGroup);
 
-    setupControls(sceneObjects.camera, sceneObjects.cameraAnchor);
+    setupControls(sceneObjects.camera, sceneObjects.cameraAnchor, sceneObjects.scene, sceneObjects.habitatGroup);
 
     animate();
 }
