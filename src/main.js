@@ -3,7 +3,7 @@ import { createSunRing, createAmbientLight, setLightingEnabled, setLightIntensit
 import { createCylinder } from './cylinder.js';
 import { createStars, updateStars } from './stars.js';
 import { createWorldFeatures } from './features.js';
-import { setupControls, updateMovement, isPointerLocked } from './controls.js';
+import { setupControls, updateMovement, isPointerLocked } from './controls/index.js';
 import { createTorus, setInnerTorusVisible } from './torus.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps

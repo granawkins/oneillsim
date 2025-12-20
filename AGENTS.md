@@ -10,13 +10,16 @@ A first-person 3D simulation of a Stanford Torus space habitat built with Three.
 - Click to enter (pointer lock)
 - WASD: Walk forward/back/strafe left/right (always on ground)
 - Mouse: Look around (up/down and turn left/right)
-- Tab: Toggle god mode (free flying, detached from rotating habitat)
+- Space: Jump (human mode only)
+- Scroll: Zoom in/out, transitions between view modes
+- Tab: Cycle through view modes (human → planner → god)
 - L: Toggle sun ring visibility
 - ESC: Release mouse
 
 **View Modes:**
-- *Human view* (default): Walk on the ring surface, camera 2m above ground, movement constrained to surface. Looking up/down doesn't affect movement direction.
-- *God view* (Tab): Free flying in world space, 5x speed, camera detached from rotating habitat so you can watch it spin. No movement constraints.
+- *Human view* (default): Walk on the ring surface, camera 2m above ground, movement constrained to surface. Looking up/down doesn't affect movement direction. Space to jump.
+- *Planner view* (scroll out): Birds-eye view 10-200m above ground, move along the ring with WASD. Scroll to zoom in/out.
+- *God view* (Tab or scroll out from planner): Free flying in world space, 5x speed, camera detached from rotating habitat so you can watch it spin. No movement constraints.
 
 **Environment:**
 - Rotating cylindrical habitat (1 RPM)
@@ -69,7 +72,16 @@ ES modules with no build step. Three.js loaded via import map from CDN.
 src/
 ├── main.js       # Entry point, init and animation loop
 ├── scene.js      # Three.js scene, camera, renderer setup
-├── controls.js   # Keyboard/mouse input handling
+├── controls/     # Camera and input handling
+│   ├── index.js      # Main exports, setupControls
+│   ├── constants.js  # Movement speeds, physics, dimensions
+│   ├── state.js      # Shared state (mode, camera refs, input)
+│   ├── input.js      # Keyboard, mouse, wheel event handlers
+│   ├── transitions.js # Mode switching logic
+│   └── modes/
+│       ├── human.js   # First-person walking on surface
+│       ├── planner.js # Birds-eye view above ground
+│       └── god.js     # Free-flying detached camera
 ├── lighting.js   # Sun ring and ambient light
 ├── cylinder.js   # The habitat hull and ground
 ├── torus.js      # Steel torus structure (outer ring visible in space)
@@ -86,7 +98,14 @@ src/
 | `index.html` | HTML shell, import map, UI elements |
 | `src/main.js` | Entry point, calls init functions, runs animation loop |
 | `src/scene.js` | Creates scene, camera, renderer, habitatGroup, cameraAnchor |
-| `src/controls.js` | Pointer lock, surface walking, mouse look, god mode toggle |
+| `src/controls/index.js` | Main controls exports, setupControls orchestration |
+| `src/controls/constants.js` | Movement speeds, physics constants, dimensions |
+| `src/controls/state.js` | Shared state: mode, camera refs, input state |
+| `src/controls/input.js` | Keyboard, mouse, wheel, pointer lock handlers |
+| `src/controls/transitions.js` | Mode cycling and switching logic |
+| `src/controls/modes/human.js` | First-person walking with jump physics |
+| `src/controls/modes/planner.js` | Birds-eye view, scroll zoom, ring movement |
+| `src/controls/modes/god.js` | Free-flying camera detached from habitat |
 | `src/lighting.js` | Sun ring torus with 12 point lights, ambient light |
 | `src/cylinder.js` | Cylinder geometry for hull and ground layer |
 | `src/torus.js` | Steel torus structure with toggleable inner/outer halves |
