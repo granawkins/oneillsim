@@ -15,15 +15,19 @@
 </head>
 <body>
     <div id="overlay">
-        <h1>Click to Enter Station</h1>
+        <span>Click to Enter</span>
     </div>
 
     <div id="ui">
         <h2 style="margin: 0 0 5px 0;">Stanford Torus</h2>
         <p style="margin: 0;">Central Sun Line Enabled</p>
-        <div class="controls-hint">WASD: Move | SPACE/SHIFT: Up/Down</div>
+        <div class="controls-hint">WASD: Move | SPACE: Jump</div>
         <div class="controls-hint">MOUSE: Look | ESC: Unlock Mouse</div>
         <div class="controls-hint" style="color:#ff6666; margin-top:5px;">Gravity is inverted (Camera Flipped).</div>
+        <div id="light-control">
+            <label for="light-slider">Light</label>
+            <input type="range" id="light-slider" min="0" max="2" step="0.1" value="1">
+        </div>
     </div>
     <div id="crosshair"></div>
 

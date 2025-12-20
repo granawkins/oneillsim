@@ -13,9 +13,9 @@ body {
     background: rgba(0, 0, 0, 0.7);
     padding: 15px;
     border-radius: 8px;
-    pointer-events: none;
+    pointer-events: auto;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 10;
+    z-index: 100;
 }
 
 #crosshair {
@@ -47,11 +47,32 @@ canvas {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: transparent;
     display: flex;
     justify-content: center;
-    align-items: center;
-    color: white;
+    align-items: flex-start;
+    padding-top: 33vh;
+    color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     z-index: 20;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+#light-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+#light-slider {
+    width: 80px;
+    cursor: pointer;
+    accent-color: #ffd700;
 }

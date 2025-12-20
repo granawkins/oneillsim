@@ -13,8 +13,15 @@ const MOUSE_SENSITIVITY = 0.002;
 const GROUND_RADIUS = 649.8;
 const CAMERA_HEIGHT = 2;
 const PLAYER_RADIUS = GROUND_RADIUS - CAMERA_HEIGHT;
+const JUMP_VELOCITY = 0.4;
+const GRAVITY = 0.015;
 
-let yaw = 0;
+// Jump state
+let radialVelocity = 0;
+let currentRadius = PLAYER_RADIUS;
+let isGrounded = true;
+
+let yaw = -Math.PI / 2;  // Start facing 90 degrees right
 let pitch = 0;
 let camera = null;
 let cameraAnchor = null;
@@ -61,6 +68,11 @@ export function setupControls(cam, anchor, scn, habitat) {
         if (e.code === 'Tab') {
             e.preventDefault();
             toggleGodMode();
+        }
+        if (e.code === 'Space' && isGrounded && !godMode) {
+            e.preventDefault();
+            radialVelocity = -JUMP_VELOCITY;
+            isGrounded = false;
         }
     });
 
@@ -179,9 +191,21 @@ export function updateMovement() {
             cameraAnchor.position.add(direction);
         }
 
-        // Constrain to fixed radius
+        // Apply jump physics
+        if (!isGrounded) {
+            radialVelocity += GRAVITY;
+            currentRadius += radialVelocity;
+
+            if (currentRadius >= PLAYER_RADIUS) {
+                currentRadius = PLAYER_RADIUS;
+                radialVelocity = 0;
+                isGrounded = true;
+            }
+        }
+
+        // Constrain to current radius (ground or mid-jump)
         const distFromCenter = Math.sqrt(cameraAnchor.position.x ** 2 + cameraAnchor.position.y ** 2);
-        const ratio = PLAYER_RADIUS / distFromCenter;
+        const ratio = currentRadius / distFromCenter;
         cameraAnchor.position.x *= ratio;
         cameraAnchor.position.y *= ratio;
 

@@ -23,6 +23,10 @@ export function initScene() {
     cameraAnchor.add(camera);
     // Position at ground level (649.8) minus 2m camera height = 647.8
     cameraAnchor.position.set(0, 647.8, 0);
+    // Set initial rotation to match surface orientation (feet toward center)
+    cameraAnchor.rotation.z = Math.PI;
+    // Set initial camera look direction (90 degrees right)
+    camera.quaternion.setFromEuler(new THREE.Euler(0, -Math.PI / 2, 0, 'YXZ'));
 
     window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;

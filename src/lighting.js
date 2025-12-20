@@ -1,6 +1,10 @@
 import * as THREE from 'three';
 
 let sunRingMesh = null;
+let pointLights = [];
+let ambientLight = null;
+const BASE_POINT_INTENSITY = 150;
+const BASE_AMBIENT_INTENSITY = 6;
 
 export function createSunRing(habitatGroup) {
     const ringRadius = 650 - 65; // 65m above ground surface (toward center)
@@ -15,22 +19,24 @@ export function createSunRing(habitatGroup) {
 
     // Add point lights around the ring
     const lightCount = 12;
+    pointLights = [];
     for (let i = 0; i < lightCount; i++) {
         const angle = (i / lightCount) * Math.PI * 2;
-        const pLight = new THREE.PointLight(0xfff8e0, 50, 500, 1);
+        const pLight = new THREE.PointLight(0xfff8e0, BASE_POINT_INTENSITY, 500, 1);
         pLight.position.set(
             ringRadius * Math.cos(angle),
             ringRadius * Math.sin(angle),
             ringZ
         );
         habitatGroup.add(pLight);
+        pointLights.push(pLight);
     }
 
     return sunRingMesh;
 }
 
 export function createAmbientLight(scene) {
-    const ambientLight = new THREE.AmbientLight(0x404040, 2);
+    ambientLight = new THREE.AmbientLight(0x404040, BASE_AMBIENT_INTENSITY);
     scene.add(ambientLight);
     return ambientLight;
 }
@@ -43,4 +49,13 @@ export function toggleSunRing() {
 
 export function getSunRingMesh() {
     return sunRingMesh;
+}
+
+export function setLightIntensity(multiplier) {
+    pointLights.forEach(light => {
+        light.intensity = BASE_POINT_INTENSITY * multiplier;
+    });
+    if (ambientLight) {
+        ambientLight.intensity = BASE_AMBIENT_INTENSITY * multiplier;
+    }
 }

@@ -1,5 +1,5 @@
 import { initScene, scene, camera, renderer, habitatGroup, cameraAnchor } from './scene.js';
-import { createSunRing, createAmbientLight } from './lighting.js';
+import { createSunRing, createAmbientLight, setLightIntensity } from './lighting.js';
 import { createCylinder } from './cylinder.js';
 import { createStars, updateStars } from './stars.js';
 import { createWorldFeatures } from './features.js';
@@ -17,6 +17,17 @@ function init() {
     createWorldFeatures(sceneObjects.habitatGroup);
 
     setupControls(sceneObjects.camera, sceneObjects.cameraAnchor, sceneObjects.scene, sceneObjects.habitatGroup);
+
+    // Prevent info panel from triggering three.js pointer lock
+    const ui = document.getElementById('ui');
+    ui.addEventListener('mousedown', (e) => e.stopPropagation());
+    ui.addEventListener('mouseup', (e) => e.stopPropagation());
+    ui.addEventListener('click', (e) => e.stopPropagation());
+
+    const lightSlider = document.getElementById('light-slider');
+    lightSlider.addEventListener('input', (e) => {
+        setLightIntensity(parseFloat(e.target.value));
+    });
 
     animate();
 }
