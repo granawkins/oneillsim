@@ -4,6 +4,7 @@ import { createCylinder } from './cylinder.js';
 import { createStars, updateStars } from './stars.js';
 import { createWorldFeatures } from './features.js';
 import { setupControls, updateMovement, isPointerLocked } from './controls.js';
+import { createTorus, setInnerTorusVisible } from './torus.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps
 
@@ -15,6 +16,7 @@ function init() {
     createCylinder(sceneObjects.habitatGroup);
     createStars(sceneObjects.scene);
     createWorldFeatures(sceneObjects.habitatGroup);
+    createTorus(sceneObjects.habitatGroup);
 
     setupControls(sceneObjects.camera, sceneObjects.cameraAnchor, sceneObjects.scene, sceneObjects.habitatGroup);
 
@@ -27,6 +29,11 @@ function init() {
     const lightSlider = document.getElementById('light-slider');
     lightSlider.addEventListener('input', (e) => {
         setLightIntensity(parseFloat(e.target.value));
+    });
+
+    const torusToggle = document.getElementById('torus-toggle');
+    torusToggle.addEventListener('change', (e) => {
+        setInnerTorusVisible(e.target.checked);
     });
 
     animate();
