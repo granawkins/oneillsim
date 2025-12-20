@@ -24,6 +24,7 @@ import {
 import { setupHumanMode } from './modes/human.js';
 import { setupPlannerMode } from './modes/planner.js';
 import { setupGodMode } from './modes/god.js';
+import { setEditorVisible } from '../editor/index.js';
 
 // Easing function: ease-in-out cubic
 function easeInOutCubic(t) {
@@ -69,6 +70,9 @@ export function switchToMode(newMode) {
 
     // Setup the new mode
     setupMode(newMode);
+
+    // Update editor visibility
+    setEditorVisible(newMode === CameraMode.PLANNER);
 }
 
 function setupMode(mode) {
@@ -204,6 +208,9 @@ function finishTransition() {
         // Finalize planner mode setup
         setCurrentMode(CameraMode.PLANNER);
         setupPlannerMode();
+
+        // Show editor in planner mode
+        setEditorVisible(true);
     }
 
     endTransition();

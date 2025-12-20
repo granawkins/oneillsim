@@ -31,20 +31,7 @@ export function loadTreeModel() {
     });
 }
 
-export function createRiver(habitatGroup) {
-    const riverGeo = new THREE.CylinderGeometry(SURFACE_RADIUS - 0.3, SURFACE_RADIUS - 0.3, 15, 64, 1, true);
-    const riverMat = new THREE.MeshStandardMaterial({
-        color: 0x2a6099,
-        side: THREE.BackSide,
-        metalness: 0.1,
-        roughness: 0.7
-    });
-    const river = new THREE.Mesh(riverGeo, riverMat);
-    river.rotation.x = Math.PI / 2;
-    river.position.z = 20;
-    habitatGroup.add(river);
-    return river;
-}
+// River removed - now handled by texture system
 
 export function createTown(habitatGroup, center, count) {
     const radius = 649.5;
@@ -102,7 +89,7 @@ export function createForest(habitatGroup, count) {
 }
 
 export function createWorldFeatures(habitatGroup) {
-    createRiver(habitatGroup);
+    // River and ground textures now handled by editor system
     createTown(habitatGroup, new THREE.Vector3(400, -500, 0), 40);
     createTown(habitatGroup, new THREE.Vector3(-450, -470, -15), 30);
     createForest(habitatGroup, 1000);

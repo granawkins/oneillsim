@@ -24,6 +24,19 @@ import {
     transitionState
 } from './state.js';
 import { cycleMode, switchToMode, startGodTransition, startPlannerTransition } from './transitions.js';
+import {
+    onMouseMove as editorMouseMove,
+    onClick as editorClick,
+    onDelete as editorDelete,
+    onArrowLeft,
+    onArrowRight,
+    onRotate,
+    onScaleUp,
+    onScaleDown,
+    onToggleGrid,
+    setEditorVisible,
+    saveWorld
+} from '../editor/index.js';
 
 export function setupInput() {
     const overlay = document.getElementById('overlay');
@@ -57,11 +70,52 @@ export function setupInput() {
         if (e.code === 'Tab') {
             e.preventDefault();
             cycleMode();
+            // Update editor visibility based on new mode
+            setEditorVisible(getCurrentMode() === CameraMode.PLANNER);
         }
         if (e.code === 'Space' && getCurrentMode() === CameraMode.HUMAN && humanState.isGrounded) {
             e.preventDefault();
             humanState.radialVelocity = -JUMP_VELOCITY;
             humanState.isGrounded = false;
+        }
+
+        // Editor controls (planner mode only)
+        if (getCurrentMode() === CameraMode.PLANNER && document.pointerLockElement === document.body) {
+            switch (e.code) {
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    onArrowLeft();
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    onArrowRight();
+                    break;
+                case 'KeyR':
+                    onRotate();
+                    break;
+                case 'KeyG':
+                    onToggleGrid();
+                    break;
+                case 'Equal': // + key
+                case 'NumpadAdd':
+                    onScaleUp();
+                    break;
+                case 'Minus':
+                case 'NumpadSubtract':
+                    onScaleDown();
+                    break;
+                case 'Delete':
+                case 'Backspace':
+                    e.preventDefault();
+                    editorDelete();
+                    break;
+            }
+        }
+
+        // Save world (Ctrl+S in planner mode)
+        if (e.code === 'KeyS' && e.ctrlKey && getCurrentMode() === CameraMode.PLANNER) {
+            e.preventDefault();
+            saveWorld();
         }
     });
 
@@ -73,6 +127,20 @@ export function setupInput() {
             const newPitch = pitch - e.movementY * MOUSE_SENSITIVITY;
             setPitch(Math.max(-Math.PI / 2, Math.min(Math.PI / 2, newPitch)));
             camera.quaternion.setFromEuler(new THREE.Euler(pitch, yaw, 0, 'YXZ'));
+
+            // Update editor preview in planner mode
+            if (getCurrentMode() === CameraMode.PLANNER) {
+                editorMouseMove(e);
+            }
+        }
+    });
+
+    // Click for editor placement
+    document.addEventListener('mousedown', (e) => {
+        if (document.pointerLockElement === document.body &&
+            getCurrentMode() === CameraMode.PLANNER &&
+            e.button === 0) {
+            editorClick(e);
         }
     });
 
@@ -82,8 +150,19 @@ export function setupInput() {
         if (transitionState.active) return;  // Don't zoom during transitions
         e.preventDefault();
 
-        const zoomingOut = e.deltaY > 0;
         const currentMode = getCurrentMode();
+
+        // Horizontal scroll changes asset selection in planner mode
+        if (currentMode === CameraMode.PLANNER && Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+            if (e.deltaX > 0) {
+                onArrowRight();
+            } else if (e.deltaX < 0) {
+                onArrowLeft();
+            }
+            return;
+        }
+
+        const zoomingOut = e.deltaY > 0;
 
         // Determine facing direction for theta movement
         // yaw = -PI/2 is forward, yaw = PI/2 is backward

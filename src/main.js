@@ -1,10 +1,12 @@
 import { initScene, scene, camera, renderer, habitatGroup, cameraAnchor } from './scene.js';
 import { createSunRing, createAmbientLight, setLightIntensity } from './lighting.js';
-import { createCylinder } from './cylinder.js';
+import { createCylinder, getGroundMesh } from './cylinder.js';
 import { createStars, updateStars } from './stars.js';
 import { createWorldFeatures, loadTreeModel } from './features.js';
 import { setupControls, updateMovement, isPointerLocked } from './controls/index.js';
 import { createTorus, setInnerTorusVisible } from './torus.js';
+import { initEditor, updateEditor } from './editor/index.js';
+import { CameraMode, getCurrentMode } from './controls/state.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps
 
@@ -20,6 +22,9 @@ async function init() {
     createTorus(sceneObjects.habitatGroup);
 
     setupControls(sceneObjects.camera, sceneObjects.cameraAnchor, sceneObjects.scene, sceneObjects.habitatGroup);
+
+    // Initialize editor
+    await initEditor(sceneObjects.camera, sceneObjects.habitatGroup, getGroundMesh());
 
     // Prevent info panel from triggering three.js pointer lock
     const ui = document.getElementById('ui');
@@ -52,6 +57,11 @@ function animate() {
 
     if (isPointerLocked()) {
         updateMovement();
+
+        // Update editor preview in planner mode
+        if (getCurrentMode() === CameraMode.PLANNER) {
+            updateEditor();
+        }
     }
 
     renderer.render(scene, camera);

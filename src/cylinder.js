@@ -2,25 +2,30 @@ import * as THREE from 'three';
 
 export const CYLINDER_RADIUS = 650;
 export const CYLINDER_LENGTH = 130;
+export const GROUND_RADIUS = 649.8;
+
+// Store reference to ground for raycasting
+let groundMesh = null;
 
 export function createCylinder(habitatGroup) {
-    // Hull
-    const geometry = new THREE.CylinderGeometry(CYLINDER_RADIUS, CYLINDER_RADIUS, CYLINDER_LENGTH, 64, 1, true);
-    const material = new THREE.MeshStandardMaterial({
-        color: 0x0a0a0a,
-        side: THREE.BackSide,
+    // Ground layer - the visible grass surface and raycasting target
+    // Very high segment count for full coverage and reliable raycasting
+    const groundGeo = new THREE.CylinderGeometry(GROUND_RADIUS, GROUND_RADIUS, CYLINDER_LENGTH, 512, 64, true);
+    const groundMat = new THREE.MeshStandardMaterial({
+        color: 0x1a3318, // Default grass green
+        side: THREE.DoubleSide,
         roughness: 1.0
     });
-    const hull = new THREE.Mesh(geometry, material);
-    hull.rotation.x = Math.PI / 2;
-    habitatGroup.add(hull);
-
-    // Ground layer
-    const groundGeo = new THREE.CylinderGeometry(CYLINDER_RADIUS - 0.2, CYLINDER_RADIUS - 0.2, CYLINDER_LENGTH, 64, 1, true);
-    const groundMat = new THREE.MeshStandardMaterial({ color: 0x1a3318, side: THREE.BackSide, roughness: 1.0 });
     const ground = new THREE.Mesh(groundGeo, groundMat);
     ground.rotation.x = Math.PI / 2;
+    ground.name = 'ground';
     habitatGroup.add(ground);
 
-    return { hull, ground };
+    groundMesh = ground;
+
+    return { ground };
+}
+
+export function getGroundMesh() {
+    return groundMesh;
 }

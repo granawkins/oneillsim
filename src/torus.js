@@ -108,15 +108,17 @@ export function createTorus(habitatGroup) {
     });
 
     // Outer half (below ground) - always visible
-    // φ from -π/2 to π/2: the half where y > R (facing away from ring center)
+    // φ from -π/2 to π/2: the half where cos(φ) > 0 (facing away from Z axis)
     const outerGeo = createHalfTorusGeometry(RING_RADIUS, TUBE_RADIUS, 96, 24, -Math.PI / 2, Math.PI / 2);
     outerTorusMesh = new THREE.Mesh(outerGeo, steelMaterial);
     habitatGroup.add(outerTorusMesh);
 
-    // Inner half (above ground) - toggleable
-    // φ from π/2 to 3π/2: the half where y < R (facing toward ring center)
+    // Inner half (above ground) - toggleable, hidden by default
+    // φ from π/2 to 3π/2: the half where cos(φ) < 0 (facing toward Z axis)
+    // This part ranges from radius 587 to 652, so it's "above" ground level
     const innerGeo = createHalfTorusGeometry(RING_RADIUS, TUBE_RADIUS, 96, 24, Math.PI / 2, 3 * Math.PI / 2);
     innerTorusMesh = new THREE.Mesh(innerGeo, steelMaterial.clone());
+    innerTorusMesh.visible = false;  // Hidden by default
     habitatGroup.add(innerTorusMesh);
 
     return { innerTorusMesh, outerTorusMesh };
