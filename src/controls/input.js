@@ -4,7 +4,9 @@ import {
     JUMP_VELOCITY,
     PLANNER_MIN_HEIGHT,
     PLANNER_MAX_HEIGHT,
-    PLANNER_ZOOM_SPEED
+    PLANNER_ZOOM_HEIGHT_SPEED,
+    PLANNER_ZOOM_THETA_SPEED,
+    GROUND_RADIUS
 } from './constants.js';
 import {
     CameraMode,
@@ -14,11 +16,14 @@ import {
     setYaw,
     setPitch,
     camera,
+    cameraAnchor,
     moveState,
     humanState,
-    plannerState
+    plannerState,
+    godState,
+    transitionState
 } from './state.js';
-import { cycleMode, switchToMode } from './transitions.js';
+import { cycleMode, switchToMode, startGodTransition, startPlannerTransition } from './transitions.js';
 
 export function setupInput() {
     const overlay = document.getElementById('overlay');
@@ -74,10 +79,16 @@ export function setupInput() {
     // Scroll wheel for zoom and mode transitions
     document.addEventListener('wheel', (e) => {
         if (document.pointerLockElement !== document.body) return;
+        if (transitionState.active) return;  // Don't zoom during transitions
         e.preventDefault();
 
         const zoomingOut = e.deltaY > 0;
         const currentMode = getCurrentMode();
+
+        // Determine facing direction for theta movement
+        // yaw = -PI/2 is forward, yaw = PI/2 is backward
+        const facingForward = Math.sin(yaw) <= 0;
+        const thetaSign = facingForward ? 1 : -1;
 
         if (currentMode === CameraMode.HUMAN) {
             // Zoom out from human → planner
@@ -86,23 +97,41 @@ export function setupInput() {
                 switchToMode(CameraMode.PLANNER);
             }
         } else if (currentMode === CameraMode.PLANNER) {
-            plannerState.height += zoomingOut ? PLANNER_ZOOM_SPEED : -PLANNER_ZOOM_SPEED;
+            // Zoom changes height AND moves along theta (up+back or down+forward)
+            if (zoomingOut) {
+                plannerState.height += PLANNER_ZOOM_HEIGHT_SPEED;
+                plannerState.theta -= PLANNER_ZOOM_THETA_SPEED * thetaSign;  // backward
+            } else {
+                plannerState.height -= PLANNER_ZOOM_HEIGHT_SPEED;
+                plannerState.theta += PLANNER_ZOOM_THETA_SPEED * thetaSign;  // forward
+            }
+
+            // Update cameraAnchor position immediately so transitions capture correct position
+            const radius = GROUND_RADIUS - plannerState.height;
+            cameraAnchor.position.x = radius * Math.cos(plannerState.theta);
+            cameraAnchor.position.y = radius * Math.sin(plannerState.theta);
+            cameraAnchor.position.z = plannerState.z;
+            cameraAnchor.rotation.set(0, 0, plannerState.theta - Math.PI / 2 + Math.PI);
 
             // Zoom in past min → human
             if (plannerState.height < PLANNER_MIN_HEIGHT) {
                 plannerState.height = PLANNER_MIN_HEIGHT;
                 switchToMode(CameraMode.HUMAN);
             }
-            // Zoom out past max → god
+            // Zoom out past max → god (with ease-in)
             else if (plannerState.height > PLANNER_MAX_HEIGHT) {
                 plannerState.height = PLANNER_MAX_HEIGHT;
-                switchToMode(CameraMode.GOD);
+                // Update position with clamped height before transitioning
+                const clampedRadius = GROUND_RADIUS - PLANNER_MAX_HEIGHT;
+                cameraAnchor.position.x = clampedRadius * Math.cos(plannerState.theta);
+                cameraAnchor.position.y = clampedRadius * Math.sin(plannerState.theta);
+                godState.entryDirection = -thetaSign;  // continuing backward
+                startGodTransition();
             }
         } else if (currentMode === CameraMode.GOD) {
-            // Zoom in from god → planner
+            // Zoom in from god → planner (animated transition)
             if (!zoomingOut) {
-                plannerState.height = PLANNER_MAX_HEIGHT;
-                switchToMode(CameraMode.PLANNER);
+                startPlannerTransition();
             }
         }
     }, { passive: false });

@@ -4,10 +4,11 @@ import {
     setRefs,
     cameraAnchor,
     camera,
-    transitioning,
+    transitionState,
     plannerState
 } from './state.js';
 import { setupInput, isPointerLocked } from './input.js';
+import { updateTransition } from './transitions.js';
 import { updateHumanMode } from './modes/human.js';
 import { updatePlannerMode } from './modes/planner.js';
 import { updateGodMode } from './modes/god.js';
@@ -26,9 +27,9 @@ export function setupControls(cam, anchor, scn, habitat) {
 export function updateMovement() {
     if (!cameraAnchor || !camera) return;
 
-    // Handle smooth transition (for future use)
-    if (transitioning) {
-        // Transition logic will go here
+    // Handle animated transitions (god → planner)
+    if (transitionState.active) {
+        updateTransition();
         return;
     }
 

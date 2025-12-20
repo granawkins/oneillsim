@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import {
-    MOVE_SPEED,
+    HUMAN_MOVE_SPEED,
     PLAYER_RADIUS,
     GRAVITY,
     Z_LIMIT
@@ -55,7 +55,7 @@ export function updateHumanMode() {
     if (moveState.left) direction.sub(right);
 
     if (direction.length() > 0) {
-        direction.normalize().multiplyScalar(MOVE_SPEED);
+        direction.normalize().multiplyScalar(HUMAN_MOVE_SPEED);
         direction.applyQuaternion(cameraAnchor.quaternion);
         cameraAnchor.position.add(direction);
     }
