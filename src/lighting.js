@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 
-let sunRingMesh = null;
 let pointLights = [];
 let ambientLight = null;
 const BASE_POINT_INTENSITY = 20;
@@ -10,14 +9,7 @@ export function createSunRing(habitatGroup) {
     const ringRadius = 650 - 65; // 65m above ground surface (toward center)
     const ringZ = 20; // above the river
 
-    // Visible ring geometry
-    const ringGeo = new THREE.TorusGeometry(ringRadius, 3, 8, 64);
-    const ringMat = new THREE.MeshBasicMaterial({ color: 0xffffee });
-    sunRingMesh = new THREE.Mesh(ringGeo, ringMat);
-    sunRingMesh.position.z = ringZ;
-    habitatGroup.add(sunRingMesh);
-
-    // Add point lights around the ring
+    // Add point lights around the ring (no visible geometry)
     const lightCount = 12;
     pointLights = [];
     for (let i = 0; i < lightCount; i++) {
@@ -31,30 +23,12 @@ export function createSunRing(habitatGroup) {
         habitatGroup.add(pLight);
         pointLights.push(pLight);
     }
-
-    return sunRingMesh;
 }
 
 export function createAmbientLight(scene) {
     ambientLight = new THREE.AmbientLight(0x404040, BASE_AMBIENT_INTENSITY);
     scene.add(ambientLight);
     return ambientLight;
-}
-
-export function toggleSunRing() {
-    if (sunRingMesh) {
-        sunRingMesh.visible = !sunRingMesh.visible;
-    }
-}
-
-export function setLightingEnabled(enabled) {
-    if (sunRingMesh) {
-        sunRingMesh.visible = enabled;
-    }
-}
-
-export function getSunRingMesh() {
-    return sunRingMesh;
 }
 
 export function setLightIntensity(multiplier) {
