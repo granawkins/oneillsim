@@ -13,6 +13,7 @@ A first-person 3D simulation of a Stanford Torus space habitat built with Three.
 - Space: Jump (human mode only)
 - Scroll: Zoom in/out, transitions between view modes
 - Tab: Cycle through view modes (human → planner → god)
+- E: Toggle editor mode (shows editor overlay in planner mode)
 - L: Toggle sun ring visibility
 - ESC: Release mouse
 

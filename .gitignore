@@ -1,0 +1,3 @@
+assets/*
+!assets/info.txt
+node_modules/*

@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { editorState, exportWorldState, importWorldState } from './state.js';
 import { CATALOG } from './catalog.js';
 import { preloadAssets } from './loader.js';
-import { initRaycaster, updateMousePosition, getSurfacePosition, setHabitatGroup } from './raycaster.js';
+import { initRaycaster, updateMousePosition, getSurfacePosition, setHabitatGroup, setPointerLockMode } from './raycaster.js';
 import { initPlacement, placeAsset, removeAsset, findAssetAtPosition, loadPlacedAssets } from './placement.js';
 import { createSelectorUI, showSelector, selectNext, selectPrevious, getSelectedItem } from './ui.js';
 import { initTextures, createGridOverlay, toggleGrid, setGridVisible, paintTexture, loadTextureGrid } from './textures.js';
@@ -175,11 +175,40 @@ function updateCellHighlight() {
 
 // Show/hide editor based on mode
 export function setEditorVisible(visible) {
-    showSelector(visible);
+    const showEditor = visible && editorState.enabled;
+    showSelector(showEditor);
     if (cellHighlight) {
-        cellHighlight.visible = visible;
+        cellHighlight.visible = showEditor;
     }
-    setGridVisible(visible && editorState.gridVisible);
+    setGridVisible(showEditor && editorState.gridVisible);
+
+    // Update pointer lock mode when visibility changes
+    // When editor is visible, use free cursor mode
+    setPointerLockMode(!showEditor);
+
+    // Update overlay text based on editor state
+    const overlay = document.getElementById('overlay');
+    if (overlay) {
+        const span = overlay.querySelector('span');
+        if (showEditor) {
+            span.textContent = 'Editor Mode - ESC to exit';
+            overlay.style.alignItems = 'flex-start';
+            overlay.style.paddingTop = '5vh';
+        }
+    }
+}
+
+// Toggle editor enabled state
+export function toggleEditorEnabled() {
+    editorState.enabled = !editorState.enabled;
+    // When editor is enabled, use free cursor mode (not pointer lock)
+    setPointerLockMode(!editorState.enabled);
+    return editorState.enabled;
+}
+
+// Check if editor is enabled
+export function isEditorEnabled() {
+    return editorState.enabled;
 }
 
 // Save world state

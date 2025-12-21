@@ -1,7 +1,7 @@
 // Editor state management
 
 export const editorState = {
-    enabled: true,
+    enabled: false,  // Toggle with 'E' key
     selectedIndex: 0,        // Index in the catalog
     placedAssets: [],        // Array of { id, type, theta, z, scale, rotation }
     textureGrid: {},         // Map of "theta,z" -> textureId
@@ -10,7 +10,13 @@ export const editorState = {
     assetScale: 4.0,         // Default scale for new assets
     assetRotation: 0,        // Rotation for next placed asset
     gridVisible: false,      // Show texture grid overlay
-    nextAssetId: 1           // Auto-increment ID for placed assets
+    nextAssetId: 1,          // Auto-increment ID for placed assets
+    // Editor input state (for free cursor mode)
+    isDragging: false,       // True when click-dragging to pan camera
+    dragStartX: 0,           // Mouse X when drag started
+    dragStartY: 0,           // Mouse Y when drag started
+    lastMouseX: 0,           // Last mouse X position
+    lastMouseY: 0            // Last mouse Y position
 };
 
 // Generate unique asset ID

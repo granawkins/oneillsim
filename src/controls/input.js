@@ -35,31 +35,53 @@ import {
     onScaleDown,
     onToggleGrid,
     setEditorVisible,
-    saveWorld
+    toggleEditorEnabled,
+    isEditorEnabled,
+    saveWorld,
+    editorState
 } from '../editor/index.js';
+
+// Check if we're in editor input mode (free cursor, no pointer lock)
+function isEditorInputMode() {
+    return getCurrentMode() === CameraMode.PLANNER && isEditorEnabled();
+}
 
 export function setupInput() {
     const overlay = document.getElementById('overlay');
     overlay.addEventListener('click', () => {
-        document.body.requestPointerLock();
+        // Don't request pointer lock in editor mode
+        if (!isEditorInputMode()) {
+            document.body.requestPointerLock();
+        }
     });
 
     const crosshair = document.getElementById('crosshair');
     document.addEventListener('pointerlockchange', () => {
         const locked = document.pointerLockElement === document.body;
-        overlay.querySelector('span').textContent = locked ? 'Escape to Exit' : 'Click to Enter';
-        overlay.style.alignItems = locked ? 'flex-start' : 'center';
-        overlay.style.paddingTop = locked ? '5vh' : '0';
-        crosshair.style.display = locked ? 'block' : 'none';
+        // In editor mode, show different UI state
+        if (isEditorInputMode()) {
+            overlay.querySelector('span').textContent = 'Editor Mode - ESC to exit';
+            overlay.style.alignItems = 'flex-start';
+            overlay.style.paddingTop = '5vh';
+            crosshair.style.display = 'none';  // No crosshair in editor mode
+        } else {
+            overlay.querySelector('span').textContent = locked ? 'Escape to Exit' : 'Click to Enter';
+            overlay.style.alignItems = locked ? 'flex-start' : 'center';
+            overlay.style.paddingTop = locked ? '5vh' : '0';
+            crosshair.style.display = locked ? 'block' : 'none';
+        }
     });
 
-    // WASD movement
+    // WASD movement - works regardless of pointer lock
     const onKey = (val) => (e) => {
-        switch (e.code) {
-            case 'KeyW': moveState.forward = val; break;
-            case 'KeyS': moveState.backward = val; break;
-            case 'KeyA': moveState.left = val; break;
-            case 'KeyD': moveState.right = val; break;
+        // In editor mode, check if we should handle WASD
+        if (isEditorInputMode() || document.pointerLockElement === document.body) {
+            switch (e.code) {
+                case 'KeyW': moveState.forward = val; break;
+                case 'KeyS': if (!e.ctrlKey) moveState.backward = val; break;
+                case 'KeyA': moveState.left = val; break;
+                case 'KeyD': moveState.right = val; break;
+            }
         }
     };
     document.addEventListener('keydown', onKey(true));
@@ -79,8 +101,24 @@ export function setupInput() {
             humanState.isGrounded = false;
         }
 
-        // Editor controls (planner mode only)
-        if (getCurrentMode() === CameraMode.PLANNER && document.pointerLockElement === document.body) {
+        // Toggle editor mode with E
+        if (e.code === 'KeyE') {
+            const wasEnabled = isEditorEnabled();
+            toggleEditorEnabled();
+            setEditorVisible(getCurrentMode() === CameraMode.PLANNER);
+
+            // When entering editor mode in planner view, exit pointer lock for free cursor
+            if (!wasEnabled && isEditorEnabled() && getCurrentMode() === CameraMode.PLANNER) {
+                if (document.pointerLockElement === document.body) {
+                    document.exitPointerLock();
+                }
+                // Update overlay text
+                overlay.querySelector('span').textContent = 'Editor Mode - ESC to exit';
+            }
+        }
+
+        // Editor controls (planner mode only, when editor is enabled)
+        if (isEditorInputMode()) {
             switch (e.code) {
                 case 'ArrowLeft':
                     e.preventDefault();
@@ -112,8 +150,8 @@ export function setupInput() {
             }
         }
 
-        // Save world (Ctrl+S in planner mode)
-        if (e.code === 'KeyS' && e.ctrlKey && getCurrentMode() === CameraMode.PLANNER) {
+        // Save world (Ctrl+S in planner mode with editor enabled)
+        if (e.code === 'KeyS' && e.ctrlKey && isEditorInputMode()) {
             e.preventDefault();
             saveWorld();
         }
@@ -121,39 +159,85 @@ export function setupInput() {
 
     // Mouse movement for look control
     document.addEventListener('mousemove', (e) => {
-        if (document.pointerLockElement === document.body) {
-            // First-person look for all modes
+        if (isEditorInputMode()) {
+            // Editor mode: free cursor, right-click drag to pan camera
+            if (editorState.isDragging) {
+                // Drag to pan camera - use delta from last position
+                const deltaX = e.clientX - editorState.lastMouseX;
+                const deltaY = e.clientY - editorState.lastMouseY;
+
+                setYaw(yaw - deltaX * MOUSE_SENSITIVITY);
+                const newPitch = pitch - deltaY * MOUSE_SENSITIVITY;
+                setPitch(Math.max(-Math.PI / 2, Math.min(Math.PI / 2, newPitch)));
+                camera.quaternion.setFromEuler(new THREE.Euler(pitch, yaw, 0, 'YXZ'));
+            }
+
+            // Track last mouse position for drag delta calculation
+            editorState.lastMouseX = e.clientX;
+            editorState.lastMouseY = e.clientY;
+
+            // Always update editor preview for placement highlight
+            editorMouseMove(e);
+        } else if (document.pointerLockElement === document.body) {
+            // Normal pointer lock mode
             setYaw(yaw - e.movementX * MOUSE_SENSITIVITY);
             const newPitch = pitch - e.movementY * MOUSE_SENSITIVITY;
             setPitch(Math.max(-Math.PI / 2, Math.min(Math.PI / 2, newPitch)));
             camera.quaternion.setFromEuler(new THREE.Euler(pitch, yaw, 0, 'YXZ'));
 
-            // Update editor preview in planner mode
-            if (getCurrentMode() === CameraMode.PLANNER) {
+            // Update editor preview in planner mode when editor is enabled
+            if (getCurrentMode() === CameraMode.PLANNER && isEditorEnabled()) {
                 editorMouseMove(e);
             }
         }
     });
 
-    // Click for editor placement
+    // Mouse down for editor mode
     document.addEventListener('mousedown', (e) => {
-        if (document.pointerLockElement === document.body &&
+        if (isEditorInputMode()) {
+            if (e.button === 0) {
+                // Left click - place asset
+                editorClick(e);
+            } else if (e.button === 2) {
+                // Right click - start camera drag
+                editorState.lastMouseX = e.clientX;
+                editorState.lastMouseY = e.clientY;
+                editorState.isDragging = true;
+            }
+        } else if (document.pointerLockElement === document.body &&
             getCurrentMode() === CameraMode.PLANNER &&
+            isEditorEnabled() &&
             e.button === 0) {
             editorClick(e);
         }
     });
 
+    // Mouse up for editor mode
+    document.addEventListener('mouseup', (e) => {
+        if (isEditorInputMode() && e.button === 2) {
+            // Right click released - stop camera drag
+            editorState.isDragging = false;
+        }
+    });
+
+    // Prevent context menu in editor mode
+    document.addEventListener('contextmenu', (e) => {
+        if (isEditorInputMode()) {
+            e.preventDefault();
+        }
+    });
+
     // Scroll wheel for zoom and mode transitions
     document.addEventListener('wheel', (e) => {
-        if (document.pointerLockElement !== document.body) return;
+        // Allow scroll in editor mode or when pointer locked
+        if (!isEditorInputMode() && document.pointerLockElement !== document.body) return;
         if (transitionState.active) return;  // Don't zoom during transitions
         e.preventDefault();
 
         const currentMode = getCurrentMode();
 
-        // Horizontal scroll changes asset selection in planner mode
-        if (currentMode === CameraMode.PLANNER && Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        // Horizontal scroll changes asset selection in planner mode when editor is enabled
+        if (currentMode === CameraMode.PLANNER && isEditorEnabled() && Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
             if (e.deltaX > 0) {
                 onArrowRight();
             } else if (e.deltaX < 0) {

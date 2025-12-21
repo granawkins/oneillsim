@@ -5,7 +5,7 @@ import { createStars, updateStars } from './stars.js';
 import { createWorldFeatures, loadTreeModel } from './features.js';
 import { setupControls, updateMovement, isPointerLocked } from './controls/index.js';
 import { createTorus, setInnerTorusVisible } from './torus.js';
-import { initEditor, updateEditor } from './editor/index.js';
+import { initEditor, updateEditor, isEditorEnabled } from './editor/index.js';
 import { CameraMode, getCurrentMode } from './controls/state.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps
@@ -55,7 +55,9 @@ function animate() {
     habitatGroup.rotation.z += ROTATION_SPEED;
     updateStars();
 
-    if (isPointerLocked()) {
+    // Update movement when pointer locked OR in editor mode (planner + editor enabled)
+    const inEditorMode = getCurrentMode() === CameraMode.PLANNER && isEditorEnabled();
+    if (isPointerLocked() || inEditorMode) {
         updateMovement();
 
         // Update editor preview in planner mode

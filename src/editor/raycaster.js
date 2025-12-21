@@ -2,9 +2,11 @@
 import * as THREE from 'three';
 
 const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
 
 let groundMesh = null;
 let camera = null;
+let usePointerLock = true;  // If true, raycast from center; if false, from mouse position
 
 // Initialize with ground mesh reference
 export function initRaycaster(ground, cam) {
@@ -12,13 +14,21 @@ export function initRaycaster(ground, cam) {
     camera = cam;
 }
 
-// Update mouse position - not needed in pointer lock mode
+// Set whether to use pointer lock mode (center) or free cursor mode
+export function setPointerLockMode(pointerLocked) {
+    usePointerLock = pointerLocked;
+}
+
+// Update mouse position for free cursor mode
 export function updateMousePosition(event) {
-    // In pointer lock mode, we always use center of screen
+    if (event && !usePointerLock) {
+        // Convert to normalized device coordinates (-1 to +1)
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    }
 }
 
 // Get ground intersection point in world coordinates
-// In pointer lock mode, the crosshair is at center (0, 0)
 export function getGroundIntersection() {
     if (!groundMesh || !camera) {
         return null;
@@ -28,15 +38,17 @@ export function getGroundIntersection() {
     camera.updateMatrixWorld(true);
     groundMesh.updateMatrixWorld(true);
 
-    // Get camera world position and direction
-    const origin = new THREE.Vector3();
-    const direction = new THREE.Vector3();
-
-    camera.getWorldPosition(origin);
-    camera.getWorldDirection(direction);
-
-    // Set ray directly from camera position and direction
-    raycaster.set(origin, direction);
+    if (usePointerLock) {
+        // Pointer lock mode: raycast from camera center (0, 0)
+        const origin = new THREE.Vector3();
+        const direction = new THREE.Vector3();
+        camera.getWorldPosition(origin);
+        camera.getWorldDirection(direction);
+        raycaster.set(origin, direction);
+    } else {
+        // Free cursor mode: raycast from mouse position
+        raycaster.setFromCamera(mouse, camera);
+    }
 
     const intersects = raycaster.intersectObject(groundMesh, false);
 
