@@ -84,6 +84,39 @@ The world state is stored in `world.json` and loaded on startup. The dev server 
 - Loaded from OBJ/MTL files in `/assets/ultimate-buildings/` and `/assets/ultimate-nature/`
 - Not tied to the texture grid
 
+## World Initialization Rules
+
+The initial world layout follows these rules:
+
+**Six Sections:**
+- The ring is divided into 6 equal sections (68 columns each, 408 / 6 = 68)
+- Sections alternate between grass (0) and farm (1)
+- Pattern around the ring: grass → farm → grass → farm → grass → farm
+
+**Section Boundaries:**
+| Section | Columns   | θ Range      | Texture |
+|---------|-----------|--------------|---------|
+| 1       | 0-67      | 0° - 60°     | grass   |
+| 2       | 68-135    | 60° - 120°   | farm    |
+| 3       | 136-203   | 120° - 180°  | grass   |
+| 4       | 204-271   | 180° - 240°  | farm    |
+| 5       | 272-339   | 240° - 300°  | grass   |
+| 6       | 340-407   | 300° - 360°  | farm    |
+
+**Path Along One Edge:**
+- Row 0 (z = -60m, the negative-z edge of the cylinder) is entirely path (2)
+- This creates a continuous walkway around the entire ring at one edge
+- Rows 1-12 follow the grass/farm alternating pattern
+
+**Visual Summary:**
+```
+Row 0:  [path path path path path path]  ← entire ring circumference
+Row 1:  [grass|farm|grass|farm|grass|farm]
+Row 2:  [grass|farm|grass|farm|grass|farm]
+...
+Row 12: [grass|farm|grass|farm|grass|farm]
+```
+
 ## Codebase Structure
 
 ES modules with no build step. Three.js loaded via import map from CDN.

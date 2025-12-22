@@ -240,10 +240,20 @@ async function updateGhostPreview(forceRecreate = false) {
         // Make semi-transparent
         asset.traverse((child) => {
             if (child.isMesh && child.material) {
-                child.material = child.material.clone();
-                child.material.transparent = true;
-                child.material.opacity = 0.5;
-                child.material.depthWrite = false;
+                if (Array.isArray(child.material)) {
+                    child.material = child.material.map(m => {
+                        const cloned = m.clone();
+                        cloned.transparent = true;
+                        cloned.opacity = 0.5;
+                        cloned.depthWrite = false;
+                        return cloned;
+                    });
+                } else {
+                    child.material = child.material.clone();
+                    child.material.transparent = true;
+                    child.material.opacity = 0.5;
+                    child.material.depthWrite = false;
+                }
             }
         });
 
