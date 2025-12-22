@@ -2,7 +2,6 @@ import { initScene, scene, camera, renderer, habitatGroup, cameraAnchor } from '
 import { createSunRing, createAmbientLight, setLightIntensity } from './lighting.js';
 import { createCylinder, getGroundMesh } from './cylinder.js';
 import { createStars, updateStars } from './stars.js';
-import { createWorldFeatures } from './features.js';
 import { setupControls, updateMovement, isPointerLocked } from './controls/index.js';
 import { createTorus, setInnerTorusVisible } from './torus.js';
 import { initEditor, updateEditor, isEditorEnabled, loadWorld } from './editor/index.js';
@@ -17,7 +16,6 @@ async function init() {
     createAmbientLight(sceneObjects.scene);
     createCylinder(sceneObjects.habitatGroup);
     createStars(sceneObjects.scene);
-    createWorldFeatures(sceneObjects.habitatGroup);
     createTorus(sceneObjects.habitatGroup);
 
     setupControls(sceneObjects.camera, sceneObjects.cameraAnchor, sceneObjects.scene, sceneObjects.habitatGroup);
