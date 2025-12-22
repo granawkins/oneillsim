@@ -1,78 +1,116 @@
-// Editor UI - asset/texture selector bar
+// Editor UI - category buttons and item selector
 import { editorState } from './state.js';
-import { CATALOG } from './catalog.js';
+import { CATEGORIES } from './catalog.js';
 
-let selectorBar = null;
+let selectorContainer = null;
+let categoryBar = null;
+let itemsRow = null;
 let itemsContainer = null;
+
+// Currently open category (null if closed)
+let openCategory = null;
+// Selected index within the current category
+let selectedItemIndex = 0;
 
 // Create the selector bar HTML
 export function createSelectorUI() {
-    // Create container
-    selectorBar = document.createElement('div');
-    selectorBar.id = 'editor-selector';
-    selectorBar.innerHTML = `
-        <div class="selector-arrow selector-left">&lt;</div>
-        <div class="selector-items"></div>
-        <div class="selector-arrow selector-right">&gt;</div>
+    // Create main container
+    selectorContainer = document.createElement('div');
+    selectorContainer.id = 'editor-selector';
+    selectorContainer.innerHTML = `
+        <div class="items-row" style="display: none;">
+            <div class="selector-arrow selector-left">&lt;</div>
+            <div class="selector-items"></div>
+            <div class="selector-arrow selector-right">&gt;</div>
+        </div>
+        <div class="category-bar">
+            <button class="category-btn" data-category="textures">Ground Texture</button>
+            <button class="category-btn" data-category="buildings">Buildings</button>
+            <button class="category-btn" data-category="plants">Plants</button>
+        </div>
     `;
-    document.body.appendChild(selectorBar);
+    document.body.appendChild(selectorContainer);
 
-    itemsContainer = selectorBar.querySelector('.selector-items');
+    itemsRow = selectorContainer.querySelector('.items-row');
+    itemsContainer = selectorContainer.querySelector('.selector-items');
+    categoryBar = selectorContainer.querySelector('.category-bar');
 
-    // Populate items
-    renderItems();
+    // Category button handlers
+    categoryBar.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const category = btn.dataset.category;
+            toggleCategory(category);
+        });
+    });
 
     // Arrow click handlers
-    selectorBar.querySelector('.selector-left').addEventListener('click', (e) => {
+    selectorContainer.querySelector('.selector-left').addEventListener('click', (e) => {
         e.stopPropagation();
         selectPrevious();
     });
-    selectorBar.querySelector('.selector-right').addEventListener('click', (e) => {
+    selectorContainer.querySelector('.selector-right').addEventListener('click', (e) => {
         e.stopPropagation();
         selectNext();
     });
 
     // Prevent pointer lock when clicking selector
-    selectorBar.addEventListener('mousedown', (e) => e.stopPropagation());
-    selectorBar.addEventListener('click', (e) => e.stopPropagation());
+    selectorContainer.addEventListener('mousedown', (e) => e.stopPropagation());
+    selectorContainer.addEventListener('click', (e) => e.stopPropagation());
 
-    return selectorBar;
+    return selectorContainer;
 }
 
-// Get icon for asset category
-function getCategoryIcon(category) {
-    const icons = {
-        'Trees': '\u{1F333}',      // Deciduous tree
-        'Autumn': '\u{1F342}',     // Fallen leaf
-        'Rocks': '\u{1FAA8}',      // Rock
-        'Plants': '\u{1F33F}',     // Herb
-        'Crops': '\u{1F33E}',      // Wheat
-        'Other': '\u{1F332}'       // Evergreen tree
-    };
-    return icons[category] || '\u{1F4E6}'; // Package as default
+// Toggle category open/closed
+function toggleCategory(categoryKey) {
+    if (openCategory === categoryKey) {
+        // Close the menu
+        openCategory = null;
+        itemsRow.style.display = 'none';
+        updateCategoryButtons();
+    } else {
+        // Open this category
+        openCategory = categoryKey;
+        selectedItemIndex = 0;
+        itemsRow.style.display = 'flex';
+        renderItems();
+        updateCategoryButtons();
+    }
+}
+
+// Update category button active states
+function updateCategoryButtons() {
+    categoryBar.querySelectorAll('.category-btn').forEach(btn => {
+        const isActive = btn.dataset.category === openCategory;
+        btn.classList.toggle('active', isActive);
+    });
 }
 
 // Render visible items around the selected index
 function renderItems() {
-    if (!itemsContainer) return;
+    if (!itemsContainer || !openCategory) return;
+
+    const category = CATEGORIES[openCategory];
+    if (!category) return;
 
     itemsContainer.innerHTML = '';
 
     // Show 7 items centered on selection
     const visibleCount = 7;
     const halfVisible = Math.floor(visibleCount / 2);
-    const startIdx = editorState.selectedIndex - halfVisible;
+    const items = category.items;
+    const startIdx = selectedItemIndex - halfVisible;
 
     for (let i = 0; i < visibleCount; i++) {
         let idx = startIdx + i;
         // Wrap around
-        if (idx < 0) idx = CATALOG.length + idx;
-        if (idx >= CATALOG.length) idx = idx - CATALOG.length;
+        if (idx < 0) idx = items.length + idx;
+        if (idx >= items.length) idx = idx % items.length;
 
-        const item = CATALOG[idx];
+        const item = items[idx];
         const div = document.createElement('div');
         div.className = 'selector-item';
-        if (idx === editorState.selectedIndex) {
+        if (idx === selectedItemIndex) {
             div.classList.add('selected');
         }
 
@@ -83,19 +121,19 @@ function renderItems() {
                 <div class="item-name">${item.name}</div>
             `;
         } else {
-            // Asset with category icon
-            const icon = getCategoryIcon(item.category);
-            // Shorten name: remove underscores, show variant number
+            // Asset with icon image
             const shortName = item.id.replace(/_/g, ' ').replace(/([A-Za-z]+)(\d+)$/, '$1 $2');
             div.innerHTML = `
-                <div class="item-icon">${icon}</div>
+                <img class="item-icon-img" src="${item.icon}" alt="${item.name}" onerror="this.style.display='none'">
                 <div class="item-name">${shortName}</div>
             `;
         }
 
         div.addEventListener('click', (e) => {
             e.stopPropagation();
-            editorState.selectedIndex = idx;
+            selectedItemIndex = idx;
+            // Update editorState to reference this item
+            updateEditorSelection();
             renderItems();
         });
 
@@ -103,28 +141,53 @@ function renderItems() {
     }
 }
 
+// Update the editorState with current selection
+function updateEditorSelection() {
+    if (!openCategory) return;
+    const category = CATEGORIES[openCategory];
+    if (!category) return;
+
+    // Store the selected item info in editorState
+    const item = category.items[selectedItemIndex];
+    editorState.selectedCategory = openCategory;
+    editorState.selectedItem = item;
+}
+
 // Select next item
 export function selectNext() {
-    editorState.selectedIndex = (editorState.selectedIndex + 1) % CATALOG.length;
+    if (!openCategory) return;
+    const items = CATEGORIES[openCategory]?.items;
+    if (!items) return;
+
+    selectedItemIndex = (selectedItemIndex + 1) % items.length;
+    updateEditorSelection();
     renderItems();
 }
 
 // Select previous item
 export function selectPrevious() {
-    editorState.selectedIndex = (editorState.selectedIndex - 1 + CATALOG.length) % CATALOG.length;
+    if (!openCategory) return;
+    const items = CATEGORIES[openCategory]?.items;
+    if (!items) return;
+
+    selectedItemIndex = (selectedItemIndex - 1 + items.length) % items.length;
+    updateEditorSelection();
     renderItems();
 }
 
 // Show/hide selector
 export function showSelector(show) {
-    if (selectorBar) {
-        selectorBar.style.display = show ? 'flex' : 'none';
+    if (selectorContainer) {
+        selectorContainer.style.display = show ? 'flex' : 'none';
     }
 }
 
 // Get currently selected item
 export function getSelectedItem() {
-    return CATALOG[editorState.selectedIndex];
+    if (!openCategory) return null;
+    const category = CATEGORIES[openCategory];
+    if (!category) return null;
+    return category.items[selectedItemIndex];
 }
 
 // Update display (call after selection changes)

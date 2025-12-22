@@ -27,7 +27,7 @@ A first-person 3D simulation of a Stanford Torus space habitat built with Three.
 - Central sun ring providing lighting
 - Ground with grass texture
 - River band circling the cylinder
-- Two small towns with houses
+- Two small towns with houses (using Texture_Red.png from ultimate-buildings)
 - Forest concentrated near the endcaps
 - Starfield visible outside
 

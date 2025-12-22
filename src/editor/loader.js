@@ -1,10 +1,20 @@
 // Asset loading with caching
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
+import { BUILDINGS, PLANTS } from './catalog.js';
 
-const ASSET_PATH = '/assets/ultimate-nature/';
+const NATURE_PATH = '/assets/ultimate-nature/';
+const BUILDINGS_PATH = '/assets/ultimate-buildings/';
 const assetCache = new Map();
 const loadingPromises = new Map();
+
+// Determine asset path based on asset name
+function getAssetPath(assetName) {
+    if (BUILDINGS.includes(assetName)) {
+        return BUILDINGS_PATH;
+    }
+    return NATURE_PATH;
+}
 
 // Load a single asset (with caching)
 export function loadAsset(assetName) {
@@ -18,17 +28,19 @@ export function loadAsset(assetName) {
         return loadingPromises.get(assetName).then(obj => obj.clone());
     }
 
+    const assetPath = getAssetPath(assetName);
+
     // Start new load
     const promise = new Promise((resolve, reject) => {
         const mtlLoader = new MTLLoader();
-        mtlLoader.setPath(ASSET_PATH);
+        mtlLoader.setPath(assetPath);
         mtlLoader.load(
             `${assetName}.mtl`,
             (materials) => {
                 materials.preload();
                 const objLoader = new OBJLoader();
                 objLoader.setMaterials(materials);
-                objLoader.setPath(ASSET_PATH);
+                objLoader.setPath(assetPath);
                 objLoader.load(
                     `${assetName}.obj`,
                     (obj) => {

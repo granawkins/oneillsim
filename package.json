@@ -1,0 +1,8 @@
+{
+  "name": "oneillsim",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "playwright": "^1.57.0"
+  }
+}

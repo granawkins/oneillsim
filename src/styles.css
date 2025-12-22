@@ -75,13 +75,50 @@ canvas {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 100;
+    pointer-events: auto;
+}
+
+/* Items row (above category buttons) */
+.items-row {
+    display: flex;
     align-items: center;
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     padding: 8px;
-    z-index: 100;
-    pointer-events: auto;
+}
+
+/* Category buttons row (bottom) */
+.category-bar {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.category-btn {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: #aaa;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.category-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.category-btn.active {
+    background: rgba(74, 158, 255, 0.3);
+    border-color: #4a9eff;
+    color: #fff;
 }
 
 .selector-arrow {
@@ -138,6 +175,12 @@ canvas {
 
 .item-icon {
     font-size: 1.5rem;
+}
+
+.item-icon-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
 }
 
 .item-name {

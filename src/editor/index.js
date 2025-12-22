@@ -85,8 +85,8 @@ export async function onClick(event) {
     if (selected.type === 'texture') {
         // Paint texture
         paintTexture(surfacePos.theta, surfacePos.z, selected.id);
-    } else {
-        // Place asset
+    } else if (selected.type === 'building' || selected.type === 'plant') {
+        // Place building or plant asset
         await placeAsset(
             selected.id,
             surfacePos.theta,

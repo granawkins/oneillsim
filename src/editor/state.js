@@ -2,7 +2,9 @@
 
 export const editorState = {
     enabled: false,  // Toggle with 'E' key
-    selectedIndex: 0,        // Index in the catalog
+    selectedIndex: 0,        // Index in the catalog (legacy)
+    selectedCategory: null,  // Currently selected category key
+    selectedItem: null,      // Currently selected item object
     placedAssets: [],        // Array of { id, type, theta, z, scale, rotation }
     textureGrid: {},         // Map of "theta,z" -> textureId
     previewAsset: null,      // Current ghost preview mesh
