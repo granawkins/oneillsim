@@ -105,12 +105,28 @@ export function getTextureId(row, col) {
 
 // Export world state for saving
 export function exportWorldState() {
+    // Build asset type index for compact storage
+    const assetTypeSet = new Set(editorState.placedAssets.map(a => a.type));
+    const assetTypes = Array.from(assetTypeSet);
+    const typeToIndex = new Map(assetTypes.map((t, i) => [t, i]));
+
+    // Convert assets to compact array format: [id, typeIndex, theta, z, scale, rotation]
+    const assets = editorState.placedAssets.map(a => [
+        a.id,
+        typeToIndex.get(a.type),
+        a.theta,
+        a.z,
+        a.scale,
+        a.rotation
+    ]);
+
     return {
-        version: 2,
+        version: 3,
         gridSize: { rows: GRID_ROWS, cols: GRID_COLS, tileSize: GRID_TILE_SIZE },
         textureNames: TEXTURE_NAMES,
         grid: editorState.textureGrid,  // 2D array of texture IDs
-        assets: editorState.placedAssets  // Sparse array of placed assets
+        assetTypes,                      // Array of unique asset type names
+        assets                           // Compact arrays: [id, typeIndex, theta, z, scale, rotation]
     };
 }
 
@@ -121,10 +137,24 @@ export function importWorldState(data) {
         editorState.textureGrid = data.grid;
     }
 
-    // Load assets (sparse)
-    if (data.assets) {
-        editorState.placedAssets = data.assets;
-        editorState.nextAssetId = Math.max(...data.assets.map(a => {
+    // Load assets - handle both v2 (object format) and v3 (compact array format)
+    if (data.assets && data.assets.length > 0) {
+        if (data.version >= 3 && data.assetTypes) {
+            // v3 compact format: [id, typeIndex, theta, z, scale, rotation]
+            editorState.placedAssets = data.assets.map(a => ({
+                id: a[0],
+                type: data.assetTypes[a[1]],
+                theta: a[2],
+                z: a[3],
+                scale: a[4],
+                rotation: a[5]
+            }));
+        } else {
+            // v2 object format: { id, type, theta, z, scale, rotation }
+            editorState.placedAssets = data.assets;
+        }
+
+        editorState.nextAssetId = Math.max(...editorState.placedAssets.map(a => {
             const num = parseInt(a.id.split('_')[1]) || 0;
             return num;
         }), 0) + 1;
