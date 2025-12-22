@@ -24,6 +24,7 @@ export function createSelectorUI() {
             <div class="selector-arrow selector-right">&gt;</div>
         </div>
         <div class="category-bar">
+            <button class="category-btn bulldozer-btn" data-category="bulldozer">🚜 Bulldozer</button>
             <button class="category-btn" data-category="textures">Ground Texture</button>
             <button class="category-btn" data-category="buildings">Buildings</button>
             <button class="category-btn" data-category="plants">Plants</button>
@@ -63,6 +64,23 @@ export function createSelectorUI() {
 
 // Toggle category open/closed
 function toggleCategory(categoryKey) {
+    // Handle bulldozer specially - it's a mode toggle, not a category with items
+    if (categoryKey === 'bulldozer') {
+        editorState.bulldozerMode = !editorState.bulldozerMode;
+        if (editorState.bulldozerMode) {
+            // Close any open category when bulldozer is active
+            openCategory = null;
+            itemsRow.style.display = 'none';
+            editorState.selectedCategory = null;
+            editorState.selectedItem = null;
+        }
+        updateCategoryButtons();
+        return;
+    }
+
+    // Disable bulldozer mode when selecting a category
+    editorState.bulldozerMode = false;
+
     if (openCategory === categoryKey) {
         // Close the menu
         openCategory = null;
@@ -81,7 +99,13 @@ function toggleCategory(categoryKey) {
 // Update category button active states
 function updateCategoryButtons() {
     categoryBar.querySelectorAll('.category-btn').forEach(btn => {
-        const isActive = btn.dataset.category === openCategory;
+        const category = btn.dataset.category;
+        let isActive;
+        if (category === 'bulldozer') {
+            isActive = editorState.bulldozerMode;
+        } else {
+            isActive = category === openCategory;
+        }
         btn.classList.toggle('active', isActive);
     });
 }

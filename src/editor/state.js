@@ -2,6 +2,7 @@
 
 export const editorState = {
     enabled: false,  // Toggle with 'E' key
+    bulldozerMode: false,    // When true, clicking deletes items
     selectedIndex: 0,        // Index in the catalog (legacy)
     selectedCategory: null,  // Currently selected category key
     selectedItem: null,      // Currently selected item object

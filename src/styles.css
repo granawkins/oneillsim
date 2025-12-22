@@ -121,6 +121,12 @@ canvas {
     color: #fff;
 }
 
+.category-btn.bulldozer-btn.active {
+    background: rgba(255, 80, 80, 0.3);
+    border-color: #ff5050;
+    color: #fff;
+}
+
 .selector-arrow {
     width: 30px;
     height: 60px;

@@ -83,6 +83,15 @@ export async function onClick(event) {
     const surfacePos = getSurfacePosition();
     if (!surfacePos) return;
 
+    // Handle bulldozer mode - delete items on click
+    if (editorState.bulldozerMode) {
+        const assetId = findAssetAtPosition(surfacePos.theta, surfacePos.z);
+        if (assetId) {
+            removeAsset(assetId);
+        }
+        return;
+    }
+
     const selected = getSelectedItem();
     if (!selected) return;
 
