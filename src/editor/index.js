@@ -14,6 +14,7 @@ let cellHighlight = null;
 let ghostPreview = null;
 let ghostAssetName = null;
 let ghostRequestId = 0;
+let lastGhostPosition = null;  // Store ghost's theta/z to avoid rotation drift on click
 
 // Initialize the editor
 export async function initEditor(cam, habitat, ground) {
@@ -78,11 +79,10 @@ export function updateEditor() {
 export async function onClick(event) {
     if (!editorState.enabled) return;
 
-    const surfacePos = getSurfacePosition();
-    if (!surfacePos) return;
-
-    // Handle bulldozer mode - delete items on click
+    // Handle bulldozer mode first - doesn't need a selected item
     if (editorState.bulldozerMode) {
+        const surfacePos = getSurfacePosition();
+        if (!surfacePos) return;
         const assetId = findAssetAtPosition(surfacePos.theta, surfacePos.z);
         if (assetId) {
             removeAsset(assetId);
@@ -93,11 +93,17 @@ export async function onClick(event) {
     const selected = getSelectedItem();
     if (!selected) return;
 
+    // For assets, use the stored ghost position to avoid rotation drift
+    // For textures, recalculate since there's no ghost
+    const isAsset = selected.type === 'building' || selected.type === 'plant';
+    const surfacePos = (isAsset && lastGhostPosition) ? lastGhostPosition : getSurfacePosition();
+    if (!surfacePos) return;
+
     if (selected.type === 'texture') {
         // Paint texture
         paintTexture(surfacePos.theta, surfacePos.z, selected.id);
-    } else if (selected.type === 'building' || selected.type === 'plant') {
-        // Place building or plant asset
+    } else if (isAsset) {
+        // Place building or plant asset using stored ghost position
         await placeAsset(
             selected.id,
             surfacePos.theta,
@@ -253,12 +259,14 @@ async function updateGhostPreview(forceRecreate = false) {
     if (ghostPreview) {
         const surfacePos = getSurfacePosition();
         if (surfacePos) {
+            lastGhostPosition = surfacePos;  // Store for placement
             orientToSurface(ghostPreview, surfacePos.theta, surfacePos.z);
             ghostPreview.rotateY(editorState.assetRotation);
             ghostPreview.scale.setScalar(editorState.assetScale);
             ghostPreview.visible = true;
         } else {
             ghostPreview.visible = false;
+            lastGhostPosition = null;
         }
     }
 }
