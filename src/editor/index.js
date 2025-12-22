@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { editorState, exportWorldState, importWorldState } from './state.js';
 import { CATALOG } from './catalog.js';
 import { preloadAssets, loadAsset, getAsset } from './loader.js';
-import { initRaycaster, updateMousePosition, getSurfacePosition, setHabitatGroup, setPointerLockMode } from './raycaster.js';
+import { initRaycaster, updateMousePosition, getSurfacePosition, setHabitatGroup, setPointerLockMode, invalidateRaycastCache } from './raycaster.js';
 import { initPlacement, placeAsset, removeAsset, findAssetAtPosition, loadPlacedAssets, orientToSurface } from './placement.js';
 import { applyCropsFromConfig } from './initCrops.js';
 import { createSelectorUI, showSelector, selectNext, selectPrevious, getSelectedItem } from './ui.js';
@@ -64,6 +64,7 @@ function createCellHighlight(habitat) {
 
 // Handle mouse move (called on camera movement)
 export function onMouseMove(event) {
+    invalidateRaycastCache();  // New mouse position = new raycast needed
     updateMousePosition(event);
     updateCellHighlight();
 }
@@ -71,6 +72,7 @@ export function onMouseMove(event) {
 // Update editor each frame
 export function updateEditor() {
     if (editorState.enabled) {
+        invalidateRaycastCache();  // Camera may have moved since last frame
         updateCellHighlight();
         updateGhostPreview();
     }
@@ -104,14 +106,40 @@ export async function onClick(event) {
         // Paint texture
         paintTexture(surfacePos.theta, surfacePos.z, selected.id);
     } else if (isAsset) {
-        // Place building or plant asset using stored ghost position
-        await placeAsset(
-            selected.id,
-            surfacePos.theta,
-            surfacePos.z,
-            editorState.assetScale,
-            editorState.assetRotation
-        );
+        // Brush mode: place 6 trees with random position, rotation, scale
+        if (editorState.brushMode && selected.type === 'plant') {
+            const BRUSH_COUNT = 6;
+            const SPREAD_THETA = 0.015; // ~10m spread at radius 650
+            const SPREAD_Z = 8; // meters
+            const SCALE_MIN = 0.7;
+            const SCALE_MAX = 1.3;
+
+            const placements = [];
+            for (let i = 0; i < BRUSH_COUNT; i++) {
+                const offsetTheta = (Math.random() - 0.5) * 2 * SPREAD_THETA;
+                const offsetZ = (Math.random() - 0.5) * 2 * SPREAD_Z;
+                const randomRotation = Math.random() * Math.PI * 2;
+                const randomScale = editorState.assetScale * (SCALE_MIN + Math.random() * (SCALE_MAX - SCALE_MIN));
+
+                placements.push(placeAsset(
+                    selected.id,
+                    surfacePos.theta + offsetTheta,
+                    Math.max(-60, Math.min(60, surfacePos.z + offsetZ)),
+                    randomScale,
+                    randomRotation
+                ));
+            }
+            await Promise.all(placements);
+        } else {
+            // Place single building or plant asset using stored ghost position
+            await placeAsset(
+                selected.id,
+                surfacePos.theta,
+                surfacePos.z,
+                editorState.assetScale,
+                editorState.assetRotation
+            );
+        }
     }
 }
 

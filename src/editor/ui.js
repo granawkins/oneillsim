@@ -25,6 +25,7 @@ export function createSelectorUI() {
         </div>
         <div class="category-bar">
             <button class="category-btn bulldozer-btn" data-category="bulldozer">🚜 Bulldozer</button>
+            <button class="category-btn brush-btn" data-category="brush">🖌️ Brush</button>
             <button class="category-btn" data-category="textures">Ground Texture</button>
             <button class="category-btn" data-category="buildings">Buildings</button>
             <button class="category-btn" data-category="plants">Plants</button>
@@ -67,6 +68,7 @@ function toggleCategory(categoryKey) {
     // Handle bulldozer specially - it's a mode toggle, not a category with items
     if (categoryKey === 'bulldozer') {
         editorState.bulldozerMode = !editorState.bulldozerMode;
+        editorState.brushMode = false; // Disable brush when bulldozer is active
         if (editorState.bulldozerMode) {
             // Close any open category when bulldozer is active
             openCategory = null;
@@ -74,6 +76,14 @@ function toggleCategory(categoryKey) {
             editorState.selectedCategory = null;
             editorState.selectedItem = null;
         }
+        updateCategoryButtons();
+        return;
+    }
+
+    // Handle brush mode toggle
+    if (categoryKey === 'brush') {
+        editorState.brushMode = !editorState.brushMode;
+        editorState.bulldozerMode = false; // Disable bulldozer when brush is active
         updateCategoryButtons();
         return;
     }
@@ -103,6 +113,8 @@ function updateCategoryButtons() {
         let isActive;
         if (category === 'bulldozer') {
             isActive = editorState.bulldozerMode;
+        } else if (category === 'brush') {
+            isActive = editorState.brushMode;
         } else {
             isActive = category === openCategory;
         }

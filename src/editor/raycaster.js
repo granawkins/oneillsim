@@ -8,10 +8,18 @@ let groundMesh = null;
 let camera = null;
 let usePointerLock = true;  // If true, raycast from center; if false, from mouse position
 
+// Per-frame cache to avoid multiple raycasts
+let cachedIntersection = null;
+
 // Initialize with ground mesh reference
 export function initRaycaster(ground, cam) {
     groundMesh = ground;
     camera = cam;
+}
+
+// Invalidate cache (call at start of each frame or on mouse move)
+export function invalidateRaycastCache() {
+    cachedIntersection = null;
 }
 
 // Set whether to use pointer lock mode (center) or free cursor mode
@@ -34,8 +42,12 @@ export function getGroundIntersection() {
         return null;
     }
 
-    // Update matrices before raycasting
-    camera.updateMatrixWorld(true);
+    // Return cached result if available (same frame)
+    if (cachedIntersection !== null) {
+        return cachedIntersection ? cachedIntersection.clone() : null;
+    }
+
+    // Update matrices before raycasting (required for rotating habitat)
     groundMesh.updateMatrixWorld(true);
 
     if (usePointerLock) {
@@ -53,9 +65,11 @@ export function getGroundIntersection() {
     const intersects = raycaster.intersectObject(groundMesh, false);
 
     if (intersects.length > 0) {
-        return intersects[0].point.clone();
+        cachedIntersection = intersects[0].point.clone();
+        return cachedIntersection.clone();
     }
 
+    cachedIntersection = false;  // Mark as "checked but no hit"
     return null;
 }
 

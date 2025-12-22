@@ -22,6 +22,7 @@ export const TEXTURE_NAMES = ['grass', 'farm', 'path', 'dirt', 'sand', 'water'];
 export const editorState = {
     enabled: false,  // Toggle with 'E' key
     bulldozerMode: false,    // When true, clicking deletes items
+    brushMode: false,        // When true, places 6 random trees per click
     selectedIndex: 0,        // Index in the catalog (legacy)
     selectedCategory: null,  // Currently selected category key
     selectedItem: null,      // Currently selected item object
