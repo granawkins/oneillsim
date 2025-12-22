@@ -25,7 +25,7 @@ function generateSectionCrops(section, config, random, startId) {
     const assets = [];
     let assetId = startId;
 
-    const { pathWidth, edgeMargin, zMin, zMax, crops } = config;
+    const { pathWidth, edgeMargin, zMin, zMax, gapZMin, gapZMax, crops } = config;
 
     // Calculate section width in meters
     const sectionCols = section.end - section.start + 1;
@@ -48,14 +48,14 @@ function generateSectionCrops(section, config, random, startId) {
         const blockStart = currentPos;
         const blockEnd = currentPos + blockWidth;
 
-        // Fixed margin from block edges
-        const innerMargin = 2;
-        const maxPos = blockEnd - innerMargin;
-        const maxZ = zMax - innerMargin;
-
         // Place crops in a grid pattern
-        for (let posInSection = blockStart + innerMargin; posInSection <= maxPos; posInSection += crop.spacing) {
-            for (let z = zMin + innerMargin; z <= maxZ; z += crop.spacing) {
+        for (let posInSection = blockStart; posInSection <= blockEnd; posInSection += crop.spacing) {
+            for (let z = zMin; z <= zMax; z += crop.spacing) {
+                // Skip the middle gap (path area)
+                if (gapZMin !== undefined && gapZMax !== undefined && z >= gapZMin && z <= gapZMax) {
+                    continue;
+                }
+
                 const colOffset = posInSection / metersPerCol;
                 const col = section.start + colOffset;
                 const theta = colToTheta(col);
@@ -87,6 +87,11 @@ function generateSectionCrops(section, config, random, startId) {
 function generatePathTextures(section, config) {
     const updates = [];
     const { pathWidth, edgeMargin, crops } = config;
+
+    // Skip path generation if pathWidth is 0 (crops are flush)
+    if (pathWidth === 0) {
+        return updates;
+    }
 
     const sectionCols = section.end - section.start + 1;
     const metersPerCol = (2 * Math.PI * 650) / GRID_COLS;

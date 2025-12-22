@@ -1,27 +1,30 @@
 import * as THREE from 'three';
 
-let stars = null;
+let skybox = null;
 
 export function createStars(scene) {
-    const starGeo = new THREE.BufferGeometry();
-    const starCount = 10000;
-    const posArray = new Float32Array(starCount * 3);
-    for (let i = 0; i < starCount * 3; i++) {
-        posArray[i] = (Math.random() - 0.5) * 5000;
-    }
-    starGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-    const starMat = new THREE.PointsMaterial({ color: 0xffffff, size: 1.2 });
-    stars = new THREE.Points(starGeo, starMat);
-    scene.add(stars);
-    return stars;
+    const loader = new THREE.CubeTextureLoader();
+    loader.setPath('/assets/skybox/');
+
+    // Order: +X (right), -X (left), +Y (up), -Y (down), +Z (front), -Z (back)
+    // Swapped left/right and front/back for 180° rotation
+    skybox = loader.load([
+        'skybox_left.png',
+        'skybox_right.png',
+        'skybox_up.png',
+        'skybox_down.png',
+        'skybox_front.png',
+        'skybox_back.png'
+    ]);
+
+    scene.background = skybox;
+    return skybox;
 }
 
 export function updateStars() {
-    if (stars) {
-        stars.rotation.y += 0.00005;
-    }
+    // Skybox is static, no update needed
 }
 
 export function getStars() {
-    return stars;
+    return skybox;
 }
