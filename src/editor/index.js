@@ -5,6 +5,7 @@ import { CATALOG } from './catalog.js';
 import { preloadAssets, loadAsset, getAsset } from './loader.js';
 import { initRaycaster, updateMousePosition, getSurfacePosition, setHabitatGroup, setPointerLockMode } from './raycaster.js';
 import { initPlacement, placeAsset, removeAsset, findAssetAtPosition, loadPlacedAssets, orientToSurface } from './placement.js';
+import { applyCropsFromConfig } from './initCrops.js';
 import { createSelectorUI, showSelector, selectNext, selectPrevious, getSelectedItem } from './ui.js';
 import { initTextures, createGridOverlay, toggleGrid, setGridVisible, paintTexture, loadTextureGrid } from './textures.js';
 import { worldToGrid, gridToWorld, GROUND_RADIUS } from './state.js';
@@ -144,7 +145,7 @@ export function onRotateScroll(direction) {
 
 // Handle scale keys (+/-)
 export function onScaleUp() {
-    editorState.assetScale = Math.min(10, editorState.assetScale + 0.5);
+    editorState.assetScale = Math.min(20, editorState.assetScale + 0.5);
     updateGhostPreview();
 }
 
@@ -360,9 +361,18 @@ export async function saveWorld() {
 // Load world state
 export async function loadWorld(data) {
     importWorldState(data);
-    if (data.assets) {
+
+    // Load explicit assets (non-procedural)
+    if (data.assets && data.assets.length > 0) {
         await loadPlacedAssets(data.assets);
     }
+
+    // Generate crops procedurally from config
+    if (data.cropConfig) {
+        editorState.cropConfig = data.cropConfig;
+        await applyCropsFromConfig(data.cropConfig);
+    }
+
     // Render textures (importWorldState already loaded them into state)
     loadTextureGrid();
 }

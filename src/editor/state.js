@@ -27,6 +27,7 @@ export const editorState = {
     selectedItem: null,      // Currently selected item object
     placedAssets: [],        // Array of { id, type, theta, z, scale, rotation } - SPARSE
     textureGrid: null,       // 2D array [row][col] of texture IDs - loaded from world.json
+    cropConfig: null,        // Procedural crop config from world.json
     previewAsset: null,      // Current ghost preview mesh
     previewVisible: false,
     assetScale: 4.0,         // Default scale for new assets
@@ -105,13 +106,21 @@ export function getTextureId(row, col) {
 
 // Export world state for saving
 export function exportWorldState() {
+    // Filter out procedural crop assets if cropConfig exists
+    let assetsToSave = editorState.placedAssets;
+    const cropConfig = editorState.cropConfig;
+    if (cropConfig) {
+        const cropTypes = new Set(cropConfig.crops.map(c => c.type));
+        assetsToSave = editorState.placedAssets.filter(a => !cropTypes.has(a.type));
+    }
+
     // Build asset type index for compact storage
-    const assetTypeSet = new Set(editorState.placedAssets.map(a => a.type));
+    const assetTypeSet = new Set(assetsToSave.map(a => a.type));
     const assetTypes = Array.from(assetTypeSet);
     const typeToIndex = new Map(assetTypes.map((t, i) => [t, i]));
 
     // Convert assets to compact array format: [id, typeIndex, theta, z, scale, rotation]
-    const assets = editorState.placedAssets.map(a => [
+    const assets = assetsToSave.map(a => [
         a.id,
         typeToIndex.get(a.type),
         a.theta,
@@ -120,14 +129,21 @@ export function exportWorldState() {
         a.rotation
     ]);
 
-    return {
-        version: 3,
+    const result = {
+        version: 4,
         gridSize: { rows: GRID_ROWS, cols: GRID_COLS, tileSize: GRID_TILE_SIZE },
         textureNames: TEXTURE_NAMES,
         grid: editorState.textureGrid,  // 2D array of texture IDs
         assetTypes,                      // Array of unique asset type names
         assets                           // Compact arrays: [id, typeIndex, theta, z, scale, rotation]
     };
+
+    // Include crop config for procedural generation
+    if (cropConfig) {
+        result.cropConfig = cropConfig;
+    }
+
+    return result;
 }
 
 // Import world state from world.json

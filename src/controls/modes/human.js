@@ -7,10 +7,6 @@ import {
 } from '../constants.js';
 import {
     yaw,
-    pitch,
-    setYaw,
-    setPitch,
-    camera,
     cameraAnchor,
     moveState,
     humanState
@@ -32,10 +28,8 @@ export function setupHumanMode() {
     // Orient feet toward center
     cameraAnchor.rotation.set(0, 0, angle - Math.PI / 2 + Math.PI);
 
-    // Reset camera to look forward
-    setYaw(-Math.PI / 2);
-    setPitch(0);
-    camera.quaternion.setFromEuler(new THREE.Euler(0, -Math.PI / 2, 0, 'YXZ'));
+    // Keep current yaw/pitch - don't reset camera orientation
+    // This preserves facing direction when transitioning from planner mode
 }
 
 export function updateHumanMode() {

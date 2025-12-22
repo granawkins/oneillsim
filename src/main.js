@@ -4,7 +4,7 @@ import { createCylinder, getGroundMesh } from './cylinder.js';
 import { createStars, updateStars } from './stars.js';
 import { setupControls, updateMovement, isPointerLocked } from './controls/index.js';
 import { createTorus, setInnerTorusVisible } from './torus.js';
-import { initEditor, updateEditor, isEditorEnabled, loadWorld } from './editor/index.js';
+import { initEditor, updateEditor, isEditorEnabled, loadWorld, saveWorld } from './editor/index.js';
 import { CameraMode, getCurrentMode } from './controls/state.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps
@@ -29,10 +29,9 @@ async function init() {
         if (response.ok) {
             const worldData = await response.json();
             await loadWorld(worldData);
-            console.log('Loaded world.json');
         }
     } catch (e) {
-        console.warn('Could not load world.json, using defaults');
+        // Use defaults if world.json fails to load
     }
 
     // Prevent info panel from triggering three.js pointer lock
@@ -79,3 +78,6 @@ function animate() {
 }
 
 window.onload = init;
+
+// Expose save function to console
+window.saveWorld = saveWorld;

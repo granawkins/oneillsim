@@ -44,6 +44,9 @@ import {
 // Track if R key is held for rotation mode
 let rKeyHeld = false;
 
+// Track if Q key is held for scale mode
+let qKeyHeld = false;
+
 // Track if pointer was locked before entering editor mode
 let hadPointerLockBeforeEditor = false;
 
@@ -78,10 +81,11 @@ export function setupInput() {
         }
     });
 
-    // WASD movement - works regardless of pointer lock
+    // WASD movement
     const onKey = (val) => (e) => {
-        // In editor mode, check if we should handle WASD
-        if (isEditorInputMode() || document.pointerLockElement === document.body) {
+        // Allow WASD when pointer locked or in planner mode (with or without editor)
+        const inPlannerMode = getCurrentMode() === CameraMode.PLANNER;
+        if (inPlannerMode || document.pointerLockElement === document.body) {
             switch (e.code) {
                 case 'KeyW': moveState.forward = val; break;
                 case 'KeyS': if (!e.ctrlKey) moveState.backward = val; break;
@@ -144,6 +148,9 @@ export function setupInput() {
                 case 'KeyR':
                     rKeyHeld = true;
                     break;
+                case 'KeyQ':
+                    qKeyHeld = true;
+                    break;
                 case 'KeyG':
                     onToggleGrid();
                     break;
@@ -163,17 +170,22 @@ export function setupInput() {
             }
         }
 
-        // Save world (Ctrl+S in planner mode with editor enabled)
-        if (e.code === 'KeyS' && e.ctrlKey && isEditorInputMode()) {
-            e.preventDefault();
-            saveWorld();
+        // Save world with Ctrl+S (when pointer locked or in editor mode)
+        if (e.code === 'KeyS' && e.ctrlKey) {
+            if (document.pointerLockElement === document.body || isEditorInputMode()) {
+                e.preventDefault();
+                saveWorld();
+            }
         }
     });
 
-    // Track R key release
+    // Track R and Q key release
     document.addEventListener('keyup', (e) => {
         if (e.code === 'KeyR') {
             rKeyHeld = false;
+        }
+        if (e.code === 'KeyQ') {
+            qKeyHeld = false;
         }
     });
 
@@ -259,6 +271,16 @@ export function setupInput() {
         // R + scroll adjusts rotation in editor mode
         if (isEditorInputMode() && rKeyHeld) {
             onRotateScroll(e.deltaY > 0 ? 1 : -1);
+            return;
+        }
+
+        // Q + scroll adjusts scale in editor mode
+        if (isEditorInputMode() && qKeyHeld) {
+            if (e.deltaY > 0) {
+                onScaleDown();
+            } else {
+                onScaleUp();
+            }
             return;
         }
 
