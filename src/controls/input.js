@@ -23,7 +23,7 @@ import {
     godState,
     transitionState
 } from './state.js';
-import { cycleMode, switchToMode, startGodTransition, startPlannerTransition } from './transitions.js';
+import { switchToMode, startGodTransition, startPlannerTransition } from './transitions.js';
 import {
     onMouseMove as editorMouseMove,
     onClick as editorClick,
@@ -43,6 +43,9 @@ import {
 
 // Track if R key is held for rotation mode
 let rKeyHeld = false;
+
+// Track if pointer was locked before entering editor mode
+let hadPointerLockBeforeEditor = false;
 
 // Check if we're in editor input mode (free cursor, no pointer lock)
 function isEditorInputMode() {
@@ -92,12 +95,6 @@ export function setupInput() {
 
     // Mode switching and jump
     document.addEventListener('keydown', (e) => {
-        if (e.code === 'Tab') {
-            e.preventDefault();
-            cycleMode();
-            // Update editor visibility based on new mode
-            setEditorVisible(getCurrentMode() === CameraMode.PLANNER);
-        }
         if (e.code === 'Space' && getCurrentMode() === CameraMode.HUMAN && humanState.isGrounded) {
             e.preventDefault();
             humanState.radialVelocity = -JUMP_VELOCITY;
@@ -107,16 +104,29 @@ export function setupInput() {
         // Toggle editor mode with E
         if (e.code === 'KeyE') {
             const wasEnabled = isEditorEnabled();
+            const isInPlanner = getCurrentMode() === CameraMode.PLANNER;
+
+            // When entering editor mode, save pointer lock state
+            if (!wasEnabled && isInPlanner) {
+                hadPointerLockBeforeEditor = document.pointerLockElement === document.body;
+            }
+
             toggleEditorEnabled();
-            setEditorVisible(getCurrentMode() === CameraMode.PLANNER);
+            setEditorVisible(isInPlanner);
 
             // When entering editor mode in planner view, exit pointer lock for free cursor
-            if (!wasEnabled && isEditorEnabled() && getCurrentMode() === CameraMode.PLANNER) {
+            if (!wasEnabled && isEditorEnabled() && isInPlanner) {
                 if (document.pointerLockElement === document.body) {
                     document.exitPointerLock();
                 }
                 // Update overlay text
                 overlay.querySelector('span').textContent = 'Editor Mode - ESC to exit';
+            }
+
+            // When exiting editor mode, restore pointer lock if we had it before
+            if (wasEnabled && !isEditorEnabled() && hadPointerLockBeforeEditor) {
+                document.body.requestPointerLock();
+                hadPointerLockBeforeEditor = false;
             }
         }
 
@@ -295,7 +305,13 @@ export function setupInput() {
             // Zoom in past min → human
             if (plannerState.height < PLANNER_MIN_HEIGHT) {
                 plannerState.height = PLANNER_MIN_HEIGHT;
+                const wasInEditorMode = isEditorInputMode();
                 switchToMode(CameraMode.HUMAN);
+                // Restore pointer lock when leaving editor mode via scroll
+                if (wasInEditorMode && hadPointerLockBeforeEditor) {
+                    document.body.requestPointerLock();
+                    hadPointerLockBeforeEditor = false;
+                }
             }
             // Zoom out past max → god (with ease-in)
             else if (plannerState.height > PLANNER_MAX_HEIGHT) {
@@ -305,7 +321,13 @@ export function setupInput() {
                 cameraAnchor.position.x = clampedRadius * Math.cos(plannerState.theta);
                 cameraAnchor.position.y = clampedRadius * Math.sin(plannerState.theta);
                 godState.entryDirection = -thetaSign;  // continuing backward
+                const wasInEditorMode = isEditorInputMode();
                 startGodTransition();
+                // Restore pointer lock when leaving editor mode via scroll
+                if (wasInEditorMode && hadPointerLockBeforeEditor) {
+                    document.body.requestPointerLock();
+                    hadPointerLockBeforeEditor = false;
+                }
             }
         } else if (currentMode === CameraMode.GOD) {
             // Zoom in from god → planner (animated transition)

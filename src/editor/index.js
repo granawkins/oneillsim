@@ -4,25 +4,20 @@ import { editorState, exportWorldState, importWorldState } from './state.js';
 import { CATALOG } from './catalog.js';
 import { preloadAssets, loadAsset, getAsset } from './loader.js';
 import { initRaycaster, updateMousePosition, getSurfacePosition, setHabitatGroup, setPointerLockMode } from './raycaster.js';
-import { initPlacement, placeAsset, removeAsset, findAssetAtPosition, loadPlacedAssets } from './placement.js';
+import { initPlacement, placeAsset, removeAsset, findAssetAtPosition, loadPlacedAssets, orientToSurface } from './placement.js';
 import { createSelectorUI, showSelector, selectNext, selectPrevious, getSelectedItem } from './ui.js';
 import { initTextures, createGridOverlay, toggleGrid, setGridVisible, paintTexture, loadTextureGrid } from './textures.js';
 import { worldToGrid, gridToWorld, GROUND_RADIUS } from './state.js';
 
-let camera = null;
 let habitatGroup = null;
-let groundMesh = null;
 let cellHighlight = null;
 let ghostPreview = null;
 let ghostAssetName = null;
-const SURFACE_RADIUS = 649.5;
+let ghostRequestId = 0;
 
 // Initialize the editor
 export async function initEditor(cam, habitat, ground) {
-    camera = cam;
     habitatGroup = habitat;
-    groundMesh = ground;
-
 
     // Initialize subsystems
     initRaycaster(ground, cam);
@@ -194,18 +189,6 @@ function updateCellHighlight() {
     cellHighlight.visible = true;
 }
 
-// Orient an object to stand on the cylinder surface
-function orientToSurface(object, theta, z) {
-    const radius = SURFACE_RADIUS + 0.1; // Slightly above ground
-    object.position.set(
-        radius * Math.cos(theta),
-        radius * Math.sin(theta),
-        z
-    );
-    object.lookAt(0, 0, z);
-    object.rotateX(Math.PI / 2);
-}
-
 // Update ghost preview for buildings/plants
 async function updateGhostPreview(forceRecreate = false) {
     const selected = getSelectedItem();
@@ -229,6 +212,9 @@ async function updateGhostPreview(forceRecreate = false) {
             ghostPreview = null;
         }
 
+        // Increment request ID to invalidate any in-flight loads
+        const currentRequestId = ++ghostRequestId;
+
         // Try to get from cache first, otherwise load
         let asset = getAsset(selected.id);
         if (!asset) {
@@ -238,6 +224,11 @@ async function updateGhostPreview(forceRecreate = false) {
                 console.warn(`Failed to load ghost preview for ${selected.id}`);
                 return;
             }
+        }
+
+        // If another request started while we were loading, discard this result
+        if (currentRequestId !== ghostRequestId) {
+            return;
         }
 
         // Make semi-transparent
@@ -288,6 +279,11 @@ export function setEditorVisible(visible) {
     // Update pointer lock mode when visibility changes
     // When editor is visible, use free cursor mode
     setPointerLockMode(!showEditor);
+
+    // Exit pointer lock when showing editor (for free cursor mode)
+    if (showEditor && document.pointerLockElement === document.body) {
+        document.exitPointerLock();
+    }
 
     // Update overlay text based on editor state
     const overlay = document.getElementById('overlay');

@@ -11,8 +11,7 @@ A first-person 3D simulation of a Stanford Torus space habitat built with Three.
 - WASD: Walk forward/back/strafe left/right (always on ground)
 - Mouse: Look around (up/down and turn left/right)
 - Space: Jump (human mode only)
-- Scroll: Zoom in/out, transitions between view modes
-- Tab: Cycle through view modes (human → planner → god)
+- Scroll: Zoom in/out, transitions between view modes (human ↔ planner ↔ god)
 - E: Toggle editor mode (shows editor overlay in planner mode)
 - L: Toggle sun ring visibility
 - ESC: Release mouse
@@ -20,7 +19,7 @@ A first-person 3D simulation of a Stanford Torus space habitat built with Three.
 **View Modes:**
 - *Human view* (default): Walk on the ring surface, camera 2m above ground, movement constrained to surface. Looking up/down doesn't affect movement direction. Space to jump.
 - *Planner view* (scroll out): Birds-eye view 10-200m above ground, move along the ring with WASD. Scroll to zoom in/out.
-- *God view* (Tab or scroll out from planner): Free flying in world space, 5x speed, camera detached from rotating habitat so you can watch it spin. No movement constraints.
+- *God view* (scroll out from planner): Free flying in world space, 5x speed, camera detached from rotating habitat so you can watch it spin. No movement constraints.
 
 **Environment:**
 - Rotating cylindrical habitat (1 RPM)

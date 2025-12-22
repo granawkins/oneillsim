@@ -8,8 +8,6 @@ export const CameraMode = {
     GOD: 'god'
 };
 
-export const MODE_ORDER = [CameraMode.HUMAN, CameraMode.PLANNER, CameraMode.GOD];
-
 // Current mode
 let currentMode = CameraMode.HUMAN;
 

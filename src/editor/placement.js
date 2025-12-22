@@ -16,11 +16,26 @@ export function initPlacement(habitat) {
     habitatGroup = habitat;
 }
 
+// Reusable vectors for orientation calculation
+const _up = new THREE.Vector3();
+const _forward = new THREE.Vector3(0, 0, 1);
+const _right = new THREE.Vector3();
+const _matrix = new THREE.Matrix4();
+
 // Orient an object to stand on the cylinder surface
-function orientToSurface(object, theta, z) {
+export function orientToSurface(object, theta, z) {
     object.position.copy(surfaceToWorld(theta, z, SURFACE_RADIUS));
-    object.lookAt(0, 0, z);
-    object.rotateX(Math.PI / 2);
+
+    // Compute orientation directly (avoids lookAt singularities)
+    // Up = radially inward toward cylinder axis
+    _up.set(-Math.cos(theta), -Math.sin(theta), 0);
+    // Forward = along cylinder axis
+    // Right = up × forward
+    _right.crossVectors(_up, _forward).normalize();
+
+    // Build rotation matrix from basis vectors
+    _matrix.makeBasis(_right, _up, _forward);
+    object.quaternion.setFromRotationMatrix(_matrix);
 }
 
 // Place an asset at surface coordinates

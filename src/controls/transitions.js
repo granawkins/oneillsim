@@ -6,7 +6,6 @@ import {
 } from './constants.js';
 import {
     CameraMode,
-    MODE_ORDER,
     getCurrentMode,
     setCurrentMode,
     transitionState,
@@ -29,16 +28,6 @@ import { setEditorVisible } from '../editor/index.js';
 // Easing function: ease-in-out cubic
 function easeInOutCubic(t) {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-}
-
-export function cycleMode() {
-    if (transitionState.active) return;
-
-    const currentIndex = MODE_ORDER.indexOf(getCurrentMode());
-    const nextIndex = (currentIndex + 1) % MODE_ORDER.length;
-    const nextMode = MODE_ORDER[nextIndex];
-
-    switchToMode(nextMode);
 }
 
 export function switchToMode(newMode) {
