@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import { editorState, exportWorldState, importWorldState } from './state.js';
 import { CATALOG } from './catalog.js';
-import { preloadAssets } from './loader.js';
+import { preloadAssets, loadAsset, getAsset } from './loader.js';
 import { initRaycaster, updateMousePosition, getSurfacePosition, setHabitatGroup, setPointerLockMode } from './raycaster.js';
 import { initPlacement, placeAsset, removeAsset, findAssetAtPosition, loadPlacedAssets } from './placement.js';
 import { createSelectorUI, showSelector, selectNext, selectPrevious, getSelectedItem } from './ui.js';
@@ -12,6 +12,9 @@ let camera = null;
 let habitatGroup = null;
 let groundMesh = null;
 let cellHighlight = null;
+let ghostPreview = null;
+let ghostAssetName = null;
+const SURFACE_RADIUS = 649.5;
 
 // Initialize the editor
 export async function initEditor(cam, habitat, ground) {
@@ -69,6 +72,7 @@ export function onMouseMove(event) {
 export function updateEditor() {
     if (editorState.enabled) {
         updateCellHighlight();
+        updateGhostPreview();
     }
 }
 
@@ -94,8 +98,6 @@ export async function onClick(event) {
             editorState.assetScale,
             editorState.assetRotation
         );
-        // Randomize rotation for next placement
-        editorState.assetRotation = Math.random() * Math.PI * 2;
     }
 }
 
@@ -121,9 +123,9 @@ export function onArrowRight() {
     updateGhostPreview(true);
 }
 
-// Handle rotation key (R)
-export function onRotate() {
-    editorState.assetRotation += Math.PI / 4; // 45 degree increments
+// Handle rotation via R + scroll
+export function onRotateScroll(direction) {
+    editorState.assetRotation += direction * Math.PI / 8; // 22.5 degree increments
     updateGhostPreview();
 }
 
@@ -143,9 +145,18 @@ export function onToggleGrid() {
     toggleGrid();
 }
 
-// Update cell highlight at cursor
+// Update cell highlight at cursor (only for textures)
 function updateCellHighlight() {
     if (!cellHighlight) return;
+
+    const selected = getSelectedItem();
+    const isTexture = selected && selected.type === 'texture';
+
+    // Only show cell highlight for textures
+    if (!isTexture) {
+        cellHighlight.visible = false;
+        return;
+    }
 
     const surfacePos = getSurfacePosition();
     if (!surfacePos) {
@@ -173,12 +184,94 @@ function updateCellHighlight() {
     cellHighlight.visible = true;
 }
 
+// Orient an object to stand on the cylinder surface
+function orientToSurface(object, theta, z) {
+    const radius = SURFACE_RADIUS + 0.1; // Slightly above ground
+    object.position.set(
+        radius * Math.cos(theta),
+        radius * Math.sin(theta),
+        z
+    );
+    object.lookAt(0, 0, z);
+    object.rotateX(Math.PI / 2);
+}
+
+// Update ghost preview for buildings/plants
+async function updateGhostPreview(forceRecreate = false) {
+    const selected = getSelectedItem();
+    const isAsset = selected && (selected.type === 'building' || selected.type === 'plant');
+
+    // Remove ghost if not placing an asset
+    if (!isAsset) {
+        if (ghostPreview && habitatGroup) {
+            habitatGroup.remove(ghostPreview);
+            ghostPreview = null;
+            ghostAssetName = null;
+        }
+        return;
+    }
+
+    // Check if we need to create/recreate the ghost
+    if (forceRecreate || ghostAssetName !== selected.id) {
+        // Remove old ghost
+        if (ghostPreview && habitatGroup) {
+            habitatGroup.remove(ghostPreview);
+            ghostPreview = null;
+        }
+
+        // Try to get from cache first, otherwise load
+        let asset = getAsset(selected.id);
+        if (!asset) {
+            try {
+                asset = await loadAsset(selected.id);
+            } catch (e) {
+                console.warn(`Failed to load ghost preview for ${selected.id}`);
+                return;
+            }
+        }
+
+        // Make semi-transparent
+        asset.traverse((child) => {
+            if (child.isMesh && child.material) {
+                child.material = child.material.clone();
+                child.material.transparent = true;
+                child.material.opacity = 0.5;
+                child.material.depthWrite = false;
+            }
+        });
+
+        ghostPreview = asset;
+        ghostAssetName = selected.id;
+
+        if (habitatGroup) {
+            habitatGroup.add(ghostPreview);
+        }
+    }
+
+    // Update position
+    if (ghostPreview) {
+        const surfacePos = getSurfacePosition();
+        if (surfacePos) {
+            orientToSurface(ghostPreview, surfacePos.theta, surfacePos.z);
+            ghostPreview.rotateY(editorState.assetRotation);
+            ghostPreview.scale.setScalar(editorState.assetScale);
+            ghostPreview.visible = true;
+        } else {
+            ghostPreview.visible = false;
+        }
+    }
+}
+
 // Show/hide editor based on mode
 export function setEditorVisible(visible) {
     const showEditor = visible && editorState.enabled;
     showSelector(showEditor);
     if (cellHighlight) {
         cellHighlight.visible = showEditor;
+    }
+    // Hide ghost preview when editor is hidden
+    if (!showEditor && ghostPreview) {
+        ghostPreview.visible = false;
     }
     setGridVisible(showEditor && editorState.gridVisible);
 

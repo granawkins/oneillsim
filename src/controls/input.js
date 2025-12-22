@@ -30,7 +30,7 @@ import {
     onDelete as editorDelete,
     onArrowLeft,
     onArrowRight,
-    onRotate,
+    onRotateScroll,
     onScaleUp,
     onScaleDown,
     onToggleGrid,
@@ -40,6 +40,9 @@ import {
     saveWorld,
     editorState
 } from '../editor/index.js';
+
+// Track if R key is held for rotation mode
+let rKeyHeld = false;
 
 // Check if we're in editor input mode (free cursor, no pointer lock)
 function isEditorInputMode() {
@@ -129,7 +132,7 @@ export function setupInput() {
                     onArrowRight();
                     break;
                 case 'KeyR':
-                    onRotate();
+                    rKeyHeld = true;
                     break;
                 case 'KeyG':
                     onToggleGrid();
@@ -154,6 +157,13 @@ export function setupInput() {
         if (e.code === 'KeyS' && e.ctrlKey && isEditorInputMode()) {
             e.preventDefault();
             saveWorld();
+        }
+    });
+
+    // Track R key release
+    document.addEventListener('keyup', (e) => {
+        if (e.code === 'KeyR') {
+            rKeyHeld = false;
         }
     });
 
@@ -235,6 +245,12 @@ export function setupInput() {
         e.preventDefault();
 
         const currentMode = getCurrentMode();
+
+        // R + scroll adjusts rotation in editor mode
+        if (isEditorInputMode() && rKeyHeld) {
+            onRotateScroll(e.deltaY > 0 ? 1 : -1);
+            return;
+        }
 
         // Horizontal scroll changes asset selection in planner mode when editor is enabled
         if (currentMode === CameraMode.PLANNER && isEditorEnabled() && Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
