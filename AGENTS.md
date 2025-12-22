@@ -25,10 +25,9 @@ A first-person 3D simulation of a Stanford Torus space habitat built with Three.
 **Environment:**
 - Rotating cylindrical habitat (1 RPM)
 - Central sun ring providing lighting
-- Ground with grass texture
+- Ground with texture grid (grass, farm, path, etc.)
 - River band circling the cylinder
-- Two small towns with houses (using Texture_Red.png from ultimate-buildings)
-- Forest concentrated near the endcaps
+- Placed assets (buildings, trees, rocks) loaded from world.json
 - Starfield visible outside
 
 ## Geometry & Coordinate System
@@ -65,13 +64,34 @@ Where θ = angle around the ring, φ = angle around the tube cross-section.
 - Everything inside habitatGroup (cylinder, torus, features) rotates together
 - Stars are in the scene (not habitatGroup) so they appear fixed in space
 
+## World Data (world.json)
+
+The world state is stored in `world.json` and loaded on startup. The dev server supports PUT to save changes.
+
+**Texture Grid:**
+- 2D array of texture IDs: `grid[row][col]`
+- **13 rows** (z axis: -60m to +60m in 10m tiles)
+- **408 columns** (around the ring: ~10m tiles at radius 650m)
+- Texture IDs: `0=grass, 1=farm, 2=path, 3=dirt, 4=sand, 5=water`
+- Grass (0) is the default ground color; other textures render as colored patches
+
+**Coordinate mapping:**
+- Row 0 = z=-60m (one edge), Row 12 = z=+60m (other edge)
+- Column 0 = θ=0, Column 408 = θ=2π (wraps around)
+- Functions `worldToGrid(theta, z)` and `gridToWorld(row, col)` convert between systems
+
+**Assets (sparse):**
+- Array of placed objects: `{ id, type, theta, z, scale, rotation }`
+- Loaded from OBJ/MTL files in `/assets/ultimate-buildings/` and `/assets/ultimate-nature/`
+- Not tied to the texture grid
+
 ## Codebase Structure
 
 ES modules with no build step. Three.js loaded via import map from CDN.
 
 ```
 src/
-├── main.js       # Entry point, init and animation loop
+├── main.js       # Entry point, loads world.json, animation loop
 ├── scene.js      # Three.js scene, camera, renderer setup
 ├── controls/     # Camera and input handling
 │   ├── index.js      # Main exports, setupControls
@@ -83,10 +103,19 @@ src/
 │       ├── human.js   # First-person walking on surface
 │       ├── planner.js # Birds-eye view above ground
 │       └── god.js     # Free-flying detached camera
+├── editor/       # World editing system
+│   ├── index.js      # Editor orchestration, save/load
+│   ├── state.js      # Grid constants, texture IDs, import/export
+│   ├── textures.js   # Ground texture painting and rendering
+│   ├── placement.js  # Asset placement on surface
+│   ├── catalog.js    # Available textures and assets
+│   ├── loader.js     # OBJ/MTL asset loading with cache
+│   ├── raycaster.js  # Mouse-to-surface intersection
+│   └── ui.js         # Editor UI components
 ├── lighting.js   # Sun ring and ambient light
 ├── cylinder.js   # The habitat hull and ground
 ├── torus.js      # Steel torus structure (outer ring visible in space)
-├── features.js   # River, towns, forests
+├── features.js   # River band (procedural)
 ├── stars.js      # Background starfield
 └── styles.css    # UI styling
 ```
@@ -95,21 +124,20 @@ src/
 
 | File | Description |
 |------|-------------|
-| `serve.ts` | Bun dev server with no-cache headers |
+| `serve.ts` | Bun dev server with PUT endpoint for saving world.json |
+| `world.json` | World state: texture grid (13×408) + placed assets |
 | `index.html` | HTML shell, import map, UI elements |
-| `src/main.js` | Entry point, calls init functions, runs animation loop |
+| `src/main.js` | Entry point, loads world.json, runs animation loop |
 | `src/scene.js` | Creates scene, camera, renderer, habitatGroup, cameraAnchor |
-| `src/controls/index.js` | Main controls exports, setupControls orchestration |
-| `src/controls/constants.js` | Movement speeds, physics constants, dimensions |
-| `src/controls/state.js` | Shared state: mode, camera refs, input state |
-| `src/controls/input.js` | Keyboard, mouse, wheel, pointer lock handlers |
-| `src/controls/transitions.js` | Mode cycling and switching logic |
-| `src/controls/modes/human.js` | First-person walking with jump physics |
-| `src/controls/modes/planner.js` | Birds-eye view, scroll zoom, ring movement |
-| `src/controls/modes/god.js` | Free-flying camera detached from habitat |
+| `src/controls/` | Camera and input handling (see Codebase Structure) |
+| `src/editor/index.js` | Editor orchestration, save/load world |
+| `src/editor/state.js` | Editor state, grid constants, import/export |
+| `src/editor/textures.js` | Ground texture painting and rendering |
+| `src/editor/placement.js` | Asset placement on surface |
+| `src/editor/catalog.js` | Available textures and assets |
 | `src/lighting.js` | Sun ring torus with 12 point lights, ambient light |
 | `src/cylinder.js` | Cylinder geometry for hull and ground layer |
 | `src/torus.js` | Steel torus structure with toggleable inner/outer halves |
-| `src/features.js` | River band, procedural towns and forests |
+| `src/features.js` | River band (procedural) |
 | `src/stars.js` | Random starfield particles |
 | `src/styles.css` | Overlay, UI panel, crosshair styles |

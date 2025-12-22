@@ -7,6 +7,7 @@ import { initRaycaster, updateMousePosition, getSurfacePosition, setHabitatGroup
 import { initPlacement, placeAsset, removeAsset, findAssetAtPosition, loadPlacedAssets } from './placement.js';
 import { createSelectorUI, showSelector, selectNext, selectPrevious, getSelectedItem } from './ui.js';
 import { initTextures, createGridOverlay, toggleGrid, setGridVisible, paintTexture, loadTextureGrid } from './textures.js';
+import { worldToGrid, gridToWorld, GROUND_RADIUS } from './state.js';
 
 let camera = null;
 let habitatGroup = null;
@@ -35,6 +36,8 @@ export async function initEditor(cam, habitat, ground) {
 
     // Create grid overlay
     createGridOverlay(habitat);
+
+    // Note: texture grid is loaded from world.json in main.js
 
     // Create cell highlight (a square on the ground)
     createCellHighlight(habitat);
@@ -173,22 +176,20 @@ function updateCellHighlight() {
         return;
     }
 
-    // Snap to grid
-    const TILE_SIZE = 10;
-    const snappedZ = Math.round(surfacePos.z / TILE_SIZE) * TILE_SIZE;
-    const thetaStep = TILE_SIZE / 649.5;
-    const snappedTheta = Math.round(surfacePos.theta / thetaStep) * thetaStep;
+    // Convert to grid indices and back to get cell center
+    const { row, col } = worldToGrid(surfacePos.theta, surfacePos.z);
+    const { theta, z } = gridToWorld(row, col);
 
-    // Position highlight on surface
-    const radius = 649.6; // Slightly above ground
+    // Position highlight above textures (textures are at GROUND_RADIUS - 0.1)
+    const radius = GROUND_RADIUS - 0.15;
     cellHighlight.position.set(
-        radius * Math.cos(snappedTheta),
-        radius * Math.sin(snappedTheta),
-        snappedZ
+        radius * Math.cos(theta),
+        radius * Math.sin(theta),
+        z
     );
 
     // Orient to surface (face inward toward center)
-    cellHighlight.lookAt(0, 0, snappedZ);
+    cellHighlight.lookAt(0, 0, z);
 
     cellHighlight.visible = true;
 }
@@ -313,17 +314,33 @@ export function isEditorEnabled() {
     return editorState.enabled;
 }
 
-// Save world state
-export function saveWorld() {
+// Save world state to server
+export async function saveWorld() {
     const state = exportWorldState();
-    const json = JSON.stringify(state, null, 2);
-    const blob = new Blob([json], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'world.json';
-    a.click();
-    URL.revokeObjectURL(url);
+    const json = JSON.stringify(state);
+
+    try {
+        const response = await fetch('/world.json', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: json
+        });
+        if (response.ok) {
+            console.log('World saved to world.json');
+        } else {
+            console.error('Failed to save world:', response.status);
+        }
+    } catch (e) {
+        console.error('Failed to save world:', e);
+        // Fallback: download file
+        const blob = new Blob([json], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'world.json';
+        a.click();
+        URL.revokeObjectURL(url);
+    }
 }
 
 // Load world state
@@ -332,9 +349,8 @@ export async function loadWorld(data) {
     if (data.assets) {
         await loadPlacedAssets(data.assets);
     }
-    if (data.textures) {
-        loadTextureGrid(data.textures);
-    }
+    // Render textures (importWorldState already loaded them into state)
+    loadTextureGrid();
 }
 
 // Export for external use
