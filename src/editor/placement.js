@@ -114,7 +114,11 @@ export function findAssetAtPosition(theta, z, tolerance = 0.05) {
         if (!data) continue;
 
         // Check if within tolerance
-        const dTheta = Math.abs(data.theta - theta);
+        // Handle theta wrap-around at 2*PI boundary
+        let dTheta = Math.abs(data.theta - theta);
+        if (dTheta > Math.PI) {
+            dTheta = 2 * Math.PI - dTheta;
+        }
         const dZ = Math.abs(data.z - z);
         if (dTheta < tolerance && dZ < 5) {
             return id;

@@ -82,13 +82,22 @@ export function updateEditor() {
 export async function onClick(event) {
     if (!editorState.enabled) return;
 
+    // Ensure mouse position is current and cache is fresh for the click
+    invalidateRaycastCache();
+    updateMousePosition(event);
+
     // Handle bulldozer mode first - doesn't need a selected item
     if (editorState.bulldozerMode) {
         const surfacePos = getSurfacePosition();
-        if (!surfacePos) return;
+        if (!surfacePos) {
+            console.log('Bulldozer: no surface position');
+            return;
+        }
         const assetId = findAssetAtPosition(surfacePos.theta, surfacePos.z);
+        console.log('Bulldozer:', { theta: surfacePos.theta, z: surfacePos.z, assetId });
         if (assetId) {
-            removeAsset(assetId);
+            const removed = removeAsset(assetId);
+            console.log('Removed:', removed);
         }
         return;
     }
@@ -391,8 +400,9 @@ export async function loadWorld(data) {
     importWorldState(data);
 
     // Load explicit assets (non-procedural)
-    if (data.assets && data.assets.length > 0) {
-        await loadPlacedAssets(data.assets);
+    // Use editorState.placedAssets since importWorldState converts v3+ compact arrays to objects
+    if (editorState.placedAssets.length > 0) {
+        await loadPlacedAssets(editorState.placedAssets);
     }
 
     // Generate crops procedurally from config
