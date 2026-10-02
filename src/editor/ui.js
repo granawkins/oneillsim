@@ -28,7 +28,6 @@ export function createSelectorUI() {
             <button class="category-btn brush-btn" data-category="brush">🖌️ Brush</button>
             <button class="category-btn" data-category="textures">Ground Texture</button>
             <button class="category-btn" data-category="buildings">Buildings</button>
-            <button class="category-btn" data-category="plants">Plants</button>
         </div>
     `;
     document.body.appendChild(selectorContainer);

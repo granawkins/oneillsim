@@ -1,13 +1,50 @@
 import { initScene, scene, camera, renderer, habitatGroup, cameraAnchor } from './scene.js';
 import { createSunRing, createAmbientLight, setLightIntensity } from './lighting.js';
-import { createCylinder, getGroundMesh } from './cylinder.js';
+import { GROUND_RADIUS, createCylinder, getGroundMesh } from './cylinder.js';
+import { parseCameraPreset, cameraPoseFromPreset } from './camera-presets.js';
 import { createStars, updateStars } from './stars.js';
 import { setupControls, updateMovement, isPointerLocked } from './controls/index.js';
 import { createTorus, setInnerTorusVisible } from './torus.js';
 import { initEditor, updateEditor, isEditorEnabled, loadWorld, saveWorld } from './editor/index.js';
-import { CameraMode, getCurrentMode } from './controls/state.js';
+import { CameraMode, getCurrentMode, setCurrentMode, plannerState, humanState, setYaw, setPitch } from './controls/state.js';
+import { PLAYER_RADIUS } from './controls/constants.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps
+let captureMode = false;
+let captureRingRotation = 0;
+
+function applyUrlView() {
+    const params = new URLSearchParams(window.location.search);
+    captureMode = params.get('capture') === '1';
+    document.documentElement.classList.toggle('capture-mode', captureMode);
+    try {
+        const preset = parseCameraPreset(params, GROUND_RADIUS);
+        const pose = cameraPoseFromPreset(preset, GROUND_RADIUS, PLAYER_RADIUS);
+        const mode = preset.mode === 'planner' ? CameraMode.PLANNER : CameraMode.HUMAN;
+        setCurrentMode(mode);
+        plannerState.theta = preset.theta;
+        plannerState.z = preset.z;
+        plannerState.height = preset.height;
+        humanState.currentRadius = PLAYER_RADIUS;
+        humanState.radialVelocity = 0;
+        humanState.isGrounded = true;
+        cameraAnchor.position.set(...pose.position);
+        cameraAnchor.rotation.set(0, 0, pose.anchorRotationZ);
+        setYaw(preset.yaw);
+        setPitch(preset.pitch);
+        camera.rotation.set(pose.cameraRotation.pitch, pose.cameraRotation.yaw, pose.cameraRotation.roll, pose.cameraRotation.order);
+        captureRingRotation = pose.ringRotation;
+        habitatGroup.rotation.z = captureRingRotation;
+        window.__oneillSimView = { ...preset, position: pose.position, anchorRotationZ: pose.anchorRotationZ };
+        return preset;
+    } catch (error) {
+        window.__oneillSimPresetError = String(error);
+        console.warn('Ignoring invalid URL camera preset:', error);
+        return null;
+    }
+}
+
+window.__oneillSimReady = false;
 
 async function init() {
     const sceneObjects = initScene();
@@ -19,6 +56,7 @@ async function init() {
     createTorus(sceneObjects.habitatGroup);
 
     setupControls(sceneObjects.camera, sceneObjects.cameraAnchor, sceneObjects.scene, sceneObjects.habitatGroup);
+    applyUrlView();
 
     // Initialize editor
     await initEditor(sceneObjects.camera, sceneObjects.habitatGroup, getGroundMesh());
@@ -54,13 +92,19 @@ async function init() {
     // Initialize torus toggle as false
     setInnerTorusVisible(false);
 
+    window.__oneillSimReady = true;
+    window.dispatchEvent(new Event('oneill-sim-ready'));
     animate();
 }
 
 function animate() {
     requestAnimationFrame(animate);
 
-    habitatGroup.rotation.z += ROTATION_SPEED;
+    if (captureMode) {
+        habitatGroup.rotation.z = captureRingRotation;
+    } else {
+        habitatGroup.rotation.z += ROTATION_SPEED;
+    }
     updateStars();
 
     // Update movement when pointer locked OR in editor mode (planner + editor enabled)
@@ -77,7 +121,12 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-window.onload = init;
+window.onload = () => {
+    init().catch((error) => {
+        window.__oneillSimError = String(error);
+        console.error('Oneill Sim initialization failed:', error);
+    });
+};
 
 // Expose save function to console
 window.saveWorld = saveWorld;

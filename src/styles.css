@@ -199,3 +199,20 @@ canvas {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+.asset-library-link {
+    color: #9fd5ff;
+    text-decoration: none;
+}
+
+.asset-library-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+html.capture-mode #overlay,
+html.capture-mode #ui,
+html.capture-mode #crosshair,
+html.capture-mode #editor-selector {
+    display: none !important;
+}

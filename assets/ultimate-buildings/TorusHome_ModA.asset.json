@@ -1,0 +1,36 @@
+{
+  "id": "TorusHome_ModA",
+  "displayName": "Modular Terrace Home A-01",
+  "description": "One two-level, set-back residence using a 4 x 6 m structural bay.",
+  "source": "NASA SP-413, Figures 4-8 and 5-5 to 5-7; Appendix B, Structural System for Housing.",
+  "sourceFacts": [
+    "Figure 4-8 shows a light modular frame with non-load-bearing wall panels, floor/roof panels, shades and packaged service modules.",
+    "Appendix B describes a typical 4 x 6 m aluminum-tube structural bay, beams at 2 m centers, and 5 cm honeycomb floor panels.",
+    "Figures 5-5 to 5-7 show varied one- and two-level homes and terraced housing; the illustrations are conceptual rather than dimensioned construction drawings."
+  ],
+  "interpretations": [
+    "Two-storey set-back arrangement, glazing layout, stair, rail dimensions and 2.7 m nominal storey heights are this asset's authored choices.",
+    "OBJ coordinates are normalized for the editor's default scale 4.0; placement at that scale gives an approximate 4 x 6 m footprint and 5.5 m total height."
+  ],
+  "editorDefaultScale": 4.0,
+  "actualModelBoundsMeters": [
+    [
+      -2.01,
+      2.01
+    ],
+    [
+      0.0,
+      5.52
+    ],
+    [
+      -3.01,
+      4.44
+    ]
+  ],
+  "vertices": 656,
+  "quads": 492,
+  "trianglesAfterQuadTriangulation": 984,
+  "materials": 1,
+  "textureAtlas": "TorusHome_ModA_Atlas.png",
+  "worldJsonChanged": false
+}

@@ -1,0 +1,9 @@
+# TorusHome_ModA — one shared habitat atlas material
+newmtl HabitatAtlas
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.080000 0.080000 0.080000
+Ns 24.000000
+d 1.000000
+illum 2
+map_Kd TorusHome_ModA_Atlas.png

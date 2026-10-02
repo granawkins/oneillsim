@@ -13,7 +13,10 @@ function getAssetPath(assetName) {
     if (BUILDINGS.includes(assetName)) {
         return BUILDINGS_PATH;
     }
-    return NATURE_PATH;
+    if (PLANTS.includes(assetName)) {
+        return NATURE_PATH;
+    }
+    throw new Error(`Asset is not in the active client catalog: ${assetName}`);
 }
 
 // Load a single asset (with caching)

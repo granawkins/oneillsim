@@ -1,10 +1,12 @@
+import { GROUND_RADIUS } from '../cylinder.js';
+export { GROUND_RADIUS };
+
 // Movement constants
 export const MOVE_SPEED = 1.2;
 export const HUMAN_MOVE_SPEED = 0.5;
 export const MOUSE_SENSITIVITY = 0.002;
 
 // Ground/player constants
-export const GROUND_RADIUS = 649.8;
 export const CAMERA_HEIGHT = 2;
 export const PLAYER_RADIUS = GROUND_RADIUS - CAMERA_HEIGHT;
 

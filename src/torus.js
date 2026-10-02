@@ -1,9 +1,8 @@
 import * as THREE from 'three';
-import { CYLINDER_RADIUS, CYLINDER_LENGTH } from './cylinder.js';
+import { TORUS_MAJOR_RADIUS, TUBE_RADIUS } from './cylinder.js';
 
 // Torus dimensions
-const RING_RADIUS = CYLINDER_RADIUS;  // 650 - distance from origin to tube center
-const TUBE_RADIUS = CYLINDER_LENGTH / 2;  // 65 - radius of the tube cross-section
+const RING_RADIUS = TORUS_MAJOR_RADIUS;  // 830 m - distance to tube centerline
 
 let innerTorusMesh = null;
 let outerTorusMesh = null;
@@ -19,16 +18,16 @@ let outerTorusMesh = null;
  *   y = (R + r*cos(φ))*sin(θ)
  *   z = r*sin(φ)
  *
- * Where R = ring radius (650), r = tube radius (65)
+ * Where R = ring radius (830), r = tube radius (65)
  * θ = angle around the ring (0 to 2π)
  * φ = angle around the tube cross-section
  *
  * Distance from Z axis = R + r*cos(φ)
- *   - At φ=0: R+r = 715 (outer surface, farthest from Z axis)
- *   - At φ=π: R-r = 585 (inner surface, closest to Z axis)
+ *   - At φ=0: R+r = 895 (outer surface, farthest from Z axis)
+ *   - At φ=π: R-r = 765 (inner surface, closest to Z axis)
  *
- * Player at radius 647.8 from Z axis is inside the tube.
- * "Down" for player = away from Z axis = larger radius = toward outer surface
+ * The modeled ground surface is centered on the torus tube at R=830 m.
+ * "Down" for player = radially outward from Z axis = toward outer surface
  *
  * φ ranges:
  *   -π/2 to π/2: outer half (φ where cos(φ)>0, farther from Z axis), below ground
@@ -115,7 +114,7 @@ export function createTorus(habitatGroup) {
 
     // Inner half (above ground) - toggleable, hidden by default
     // φ from π/2 to 3π/2: the half where cos(φ) < 0 (facing toward Z axis)
-    // This part ranges from radius 587 to 652, so it's "above" ground level
+    // This part ranges from radius 765 to 830, inward from the habitable floor
     const innerGeo = createHalfTorusGeometry(RING_RADIUS, TUBE_RADIUS, 96, 24, Math.PI / 2, 3 * Math.PI / 2);
     innerTorusMesh = new THREE.Mesh(innerGeo, steelMaterial.clone());
     innerTorusMesh.visible = false;  // Hidden by default

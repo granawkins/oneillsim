@@ -1,0 +1,154 @@
+import * as THREE from 'three';
+import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
+import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const ASSET_ID = new URLSearchParams(location.search).get('asset') || 'TorusHome_ModA';
+const ROOT = 'ultimate-buildings/';
+const params = new URLSearchParams(location.search);
+const captureMode = params.get('capture') === '1';
+window.__assetReady = false;
+document.documentElement.classList.toggle('capture-mode', captureMode);
+
+const canvas = document.getElementById('asset-canvas');
+const status = document.getElementById('viewer-status');
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#152128');
+scene.fog = new THREE.Fog('#152128', 28, 70);
+const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 120);
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.15;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+scene.add(new THREE.HemisphereLight(0xddebf0, 0x29383b, 1.7));
+const key = new THREE.DirectionalLight(0xffe5c8, 3.4);
+key.position.set(7, 11, 9);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+key.shadow.camera.left = -8;
+key.shadow.camera.right = 8;
+key.shadow.camera.top = 10;
+key.shadow.camera.bottom = -7;
+scene.add(key);
+const fill = new THREE.DirectionalLight(0x9bc9dc, 1.8);
+fill.position.set(-8, 6, -5);
+scene.add(fill);
+const rim = new THREE.DirectionalLight(0xe7f5ee, 1.2);
+rim.position.set(-2, 8, 9);
+scene.add(rim);
+
+const ground = new THREE.Mesh(
+    new THREE.PlaneGeometry(22, 22),
+    new THREE.MeshStandardMaterial({ color: 0x25343a, roughness: 0.92, metalness: 0.04 })
+);
+ground.rotation.x = -Math.PI / 2;
+ground.position.y = -0.035;
+ground.receiveShadow = true;
+scene.add(ground);
+const grid = new THREE.GridHelper(16, 16, 0x718d91, 0x3b5157);
+grid.position.y = -0.02;
+scene.add(grid);
+
+function queryNumber(name, fallback, min, max) {
+    if (!params.has(name)) return fallback;
+    const value = Number(params.get(name));
+    return Number.isFinite(value) ? Math.min(max, Math.max(min, value)) : fallback;
+}
+
+const target = new THREE.Vector3(0, 2.55, 0);
+const azimuth = queryNumber('azimuth', 38, -180, 180) * Math.PI / 180;
+const elevation = queryNumber('elevation', 22, -10, 75) * Math.PI / 180;
+const distance = queryNumber('distance', 17, 7, 45);
+camera.position.set(
+    distance * Math.cos(elevation) * Math.sin(azimuth),
+    target.y + distance * Math.sin(elevation),
+    distance * Math.cos(elevation) * Math.cos(azimuth)
+);
+camera.lookAt(target);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.copy(target);
+controls.enableDamping = true;
+controls.dampingFactor = 0.065;
+controls.minDistance = 7;
+controls.maxDistance = 45;
+controls.minPolarAngle = 0.18;
+controls.maxPolarAngle = 1.48;
+controls.autoRotate = !captureMode && params.get('autoRotate') !== '0';
+controls.autoRotateSpeed = 0.34;
+controls.update();
+
+function resize() {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width < 1 || rect.height < 1) return;
+    camera.aspect = rect.width / rect.height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(rect.width, rect.height, false);
+}
+new ResizeObserver(resize).observe(canvas.parentElement);
+resize();
+
+async function loadAsset() {
+    try {
+        const response = await fetch(`${ROOT}${ASSET_ID}.asset.json`, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`Manifest request returned HTTP ${response.status}`);
+        const manifest = await response.json();
+
+        const materialsLoader = new MTLLoader();
+        materialsLoader.setPath(ROOT);
+        const materials = await materialsLoader.loadAsync(`${ASSET_ID}.mtl`);
+        materials.preload();
+        const objectLoader = new OBJLoader();
+        objectLoader.setMaterials(materials);
+        objectLoader.setPath(ROOT);
+        const model = await objectLoader.loadAsync(`${ASSET_ID}.obj`);
+        model.scale.setScalar(Number(manifest.editorDefaultScale) || 4);
+        model.rotation.y = queryNumber('modelRotation', 0, -3600, 3600) * Math.PI / 180;
+        model.traverse((child) => {
+            if (child.isMesh) {
+                child.castShadow = true;
+                child.receiveShadow = true;
+            }
+        });
+        scene.add(model);
+
+        const bounds = manifest.actualModelBoundsMeters || [];
+        const dimensions = bounds.map(([min, max]) => (Number(max) - Number(min)).toFixed(2));
+        document.getElementById('asset-name').textContent = manifest.displayName || ASSET_ID;
+        document.getElementById('asset-description').textContent = manifest.description || '';
+        document.getElementById('spec-geometry').textContent = `${manifest.trianglesAfterQuadTriangulation} tris · ${manifest.vertices} verts`;
+        document.getElementById('spec-materials').textContent = `${manifest.materials} atlas material`;
+        document.getElementById('spec-bounds').textContent = dimensions.length === 3 ? `${dimensions[0]} × ${dimensions[1]} × ${dimensions[2]} m` : '—';
+        document.getElementById('spec-scale').textContent = `${manifest.editorDefaultScale}× in the simulator`;
+        document.getElementById('asset-source').textContent = manifest.source || '';
+        document.getElementById('asset-interpretation').textContent = (manifest.interpretations || []).join(' ');
+        const list = document.getElementById('source-facts');
+        for (const fact of manifest.sourceFacts || []) {
+            const item = document.createElement('li');
+            item.textContent = fact;
+            list.append(item);
+        }
+
+        status.hidden = true;
+        renderer.render(scene, camera);
+        window.__assetManifest = manifest;
+        window.__assetReady = true;
+        window.dispatchEvent(new Event('asset-viewer-ready'));
+    } catch (error) {
+        window.__assetError = String(error);
+        status.textContent = `Could not load asset: ${error.message}`;
+        status.classList.add('error');
+        console.error('Asset viewer failed:', error);
+    }
+}
+
+function render() {
+    requestAnimationFrame(render);
+    controls.update();
+    renderer.render(scene, camera);
+}
+loadAsset();
+render();

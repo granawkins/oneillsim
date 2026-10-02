@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { GROUND_RADIUS } from './cylinder.js';
 
 export let scene;
 export let camera;
@@ -21,8 +22,8 @@ export function initScene() {
     cameraAnchor = new THREE.Group();
     habitatGroup.add(cameraAnchor);
     cameraAnchor.add(camera);
-    // Position at ground level (649.8) minus 2m camera height = 647.8
-    cameraAnchor.position.set(0, 647.8, 0);
+    // Stand 2 m inward from the modeled ground surface at the tube centerline.
+    cameraAnchor.position.set(0, GROUND_RADIUS - 2, 0);
     // Set initial rotation to match surface orientation (feet toward center)
     cameraAnchor.rotation.z = Math.PI;
     // Set initial camera look direction (90 degrees right)
