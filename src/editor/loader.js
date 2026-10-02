@@ -3,8 +3,8 @@ import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 import { BUILDINGS, PLANTS } from './catalog.js';
 
-const NATURE_PATH = '/assets/ultimate-nature/';
-const BUILDINGS_PATH = '/assets/ultimate-buildings/';
+const NATURE_PATH = 'assets/ultimate-nature/';
+const BUILDINGS_PATH = 'assets/ultimate-buildings/';
 const assetCache = new Map();
 const loadingPromises = new Map();
 

@@ -4,7 +4,7 @@ let skybox = null;
 
 export function createStars(scene) {
     const loader = new THREE.CubeTextureLoader();
-    loader.setPath('/assets/skybox/');
+    loader.setPath('assets/skybox/');
 
     // Order: +X (right), -X (left), +Y (up), -Y (down), +Z (front), -Z (back)
     // Swapped left/right and front/back for 180° rotation

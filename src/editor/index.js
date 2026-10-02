@@ -372,7 +372,7 @@ export async function saveWorld() {
     const json = JSON.stringify(state);
 
     try {
-        const response = await fetch('/world.json', {
+        const response = await fetch('world.json', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: json

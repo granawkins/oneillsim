@@ -25,7 +25,7 @@ async function init() {
 
     // Load world state from world.json
     try {
-        const response = await fetch('/world.json');
+        const response = await fetch('world.json');
         if (response.ok) {
             const worldData = await response.json();
             await loadWorld(worldData);

@@ -66,24 +66,24 @@ export const CATEGORIES = {
     },
     buildings: {
         name: 'Buildings',
-        icon: '/assets/icons/ultimate-buildings/',
+        icon: 'assets/icons/ultimate-buildings/',
         items: BUILDINGS.map(name => ({
             type: 'building',
             id: name,
             name: name.replace(/_/g, ' '),
-            icon: `/assets/icons/ultimate-buildings/${name}.png`,
-            assetPath: '/assets/ultimate-buildings/'
+            icon: `assets/icons/ultimate-buildings/${name}.png`,
+            assetPath: 'assets/ultimate-buildings/'
         }))
     },
     plants: {
         name: 'Plants',
-        icon: '/assets/icons/ultimate-nature/',
+        icon: 'assets/icons/ultimate-nature/',
         items: PLANTS.map(name => ({
             type: 'plant',
             id: name,
             name: name.replace(/_/g, ' '),
-            icon: `/assets/icons/ultimate-nature/${name}.png`,
-            assetPath: '/assets/ultimate-nature/'
+            icon: `assets/icons/ultimate-nature/${name}.png`,
+            assetPath: 'assets/ultimate-nature/'
         }))
     }
 };

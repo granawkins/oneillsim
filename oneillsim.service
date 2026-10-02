@@ -1,0 +1,28 @@
+[Unit]
+Description=Oneill Sim web application
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=granawkins
+Group=granawkins
+WorkingDirectory=/home/granawkins/oneillsim
+Environment=NODE_ENV=production
+Environment=HOST=127.0.0.1
+Environment=PORT=3200
+Environment=PATH=/home/granawkins/.hermes/tools/node-26.7.0-linux-x64/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+ExecStart=/home/granawkins/.hermes/tools/node-26.7.0-linux-x64/bin/npm start
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target
