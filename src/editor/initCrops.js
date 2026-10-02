@@ -29,7 +29,7 @@ function generateSectionCrops(section, config, random, startId) {
 
     // Calculate section width in meters
     const sectionCols = section.end - section.start + 1;
-    const metersPerCol = (2 * Math.PI * 650) / GRID_COLS;
+    const metersPerCol = (2 * Math.PI * GROUND_RADIUS) / GRID_COLS;
     const sectionWidth = sectionCols * metersPerCol;
 
     // Calculate block widths (one block per crop type)
@@ -94,7 +94,7 @@ function generatePathTextures(section, config) {
     }
 
     const sectionCols = section.end - section.start + 1;
-    const metersPerCol = (2 * Math.PI * 650) / GRID_COLS;
+    const metersPerCol = (2 * Math.PI * GROUND_RADIUS) / GRID_COLS;
     const sectionWidth = sectionCols * metersPerCol;
 
     const numCrops = crops.length;

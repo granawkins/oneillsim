@@ -40,7 +40,7 @@ export async function initEditor(cam, habitat, ground) {
     createCellHighlight(habitat);
 
     // Preload first few common assets for responsiveness
-    const commonAssets = ['CommonTree_1', 'CommonTree_2', 'Rock_1', 'Bush_1', 'Plant_1'];
+    const commonAssets = ['TorusHome_ModA'];
     await preloadAssets(commonAssets);
 
     console.log('Editor initialized');
@@ -118,7 +118,7 @@ export async function onClick(event) {
         // Brush mode: place 6 trees with random position, rotation, scale
         if (editorState.brushMode && selected.type === 'plant') {
             const BRUSH_COUNT = 6;
-            const SPREAD_THETA = 0.015; // ~10m spread at radius 650
+            const SPREAD_THETA = 10 / GROUND_RADIUS; // ~10 m spread at the habitable floor
             const SPREAD_Z = 8; // meters
             const SCALE_MIN = 0.7;
             const SCALE_MAX = 1.3;

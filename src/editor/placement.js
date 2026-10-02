@@ -1,10 +1,10 @@
 // Asset placement on the cylinder surface
 import * as THREE from 'three';
-import { editorState, generateAssetId, addPlacedAsset, removePlacedAsset } from './state.js';
+import { editorState, generateAssetId, addPlacedAsset, removePlacedAsset, GROUND_RADIUS } from './state.js';
 import { loadAsset, getAsset } from './loader.js';
 import { surfaceToWorld } from './raycaster.js';
 
-const SURFACE_RADIUS = 649.5;
+const SURFACE_RADIUS = GROUND_RADIUS - 0.3;
 
 // Map of asset ID -> Three.js object for cleanup
 const assetObjects = new Map();

@@ -1,10 +1,11 @@
 // Editor state management
+import { CYLINDER_LENGTH, GROUND_RADIUS, TUBE_RADIUS } from '../cylinder.js';
+export { GROUND_RADIUS };
 
 // Grid constants
-export const GRID_TILE_SIZE = 10;  // meters per tile
-export const GRID_ROWS = 13;       // tiles along Z axis (130m / 10m)
-export const GRID_COLS = 408;      // tiles around ring (2 * PI * 650 / 10)
-export const GROUND_RADIUS = 649.8;
+export const GRID_TILE_SIZE = 10;  // meters along the tube axis (Z) per row
+export const GRID_ROWS = CYLINDER_LENGTH / GRID_TILE_SIZE; // 13 axial rows across 130 m
+export const GRID_COLS = 408; // Preserve existing saved-world angular sectors
 
 // Texture IDs (numeric for compact storage)
 export const TEXTURE_IDS = {
@@ -71,9 +72,8 @@ export function worldToGrid(theta, z) {
     if (normTheta < 0) normTheta += 2 * Math.PI;
     const col = Math.floor(normTheta / (2 * Math.PI) * GRID_COLS) % GRID_COLS;
 
-    // z is in [-65, 65], row is [0, GRID_ROWS)
-    // z = -65 -> row 0, z = +65 -> row 12
-    const row = Math.floor((z + 65) / GRID_TILE_SIZE);
+    // z spans the 130 m tube width, from -65 m to +65 m.
+    const row = Math.floor((z + TUBE_RADIUS) / GRID_TILE_SIZE);
     const clampedRow = Math.max(0, Math.min(GRID_ROWS - 1, row));
 
     return { row: clampedRow, col };
@@ -82,7 +82,7 @@ export function worldToGrid(theta, z) {
 // Convert grid indices to world coordinates (center of tile)
 export function gridToWorld(row, col) {
     const theta = (col + 0.5) / GRID_COLS * 2 * Math.PI;
-    const z = (row + 0.5) * GRID_TILE_SIZE - 65;
+    const z = (row + 0.5) * GRID_TILE_SIZE - TUBE_RADIUS;
     return { theta, z };
 }
 

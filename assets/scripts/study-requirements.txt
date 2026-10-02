@@ -1,0 +1,4 @@
+pymupdf4llm==1.28.2
+Markdown==3.11
+bleach==6.4.0
+Pillow==12.3.0

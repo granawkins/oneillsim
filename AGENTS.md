@@ -66,7 +66,7 @@ Where θ = angle around the ring, φ = angle around the tube cross-section.
 
 ## World Data (world.json)
 
-The world state is stored in `world.json` and loaded on startup. The dev server supports PUT to save changes.
+The world state is stored in `world.json` and loaded on startup. The production Node server supports `PUT /oneillsim/world.json` for editor saves; that endpoint is intentionally unauthenticated during the current hobby-project test phase.
 
 **Texture Grid:**
 - 2D array of texture IDs: `grid[row][col]`

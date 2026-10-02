@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stanford Torus — Asset Library</title>
+    <link rel="stylesheet" href="gallery.css">
+    <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+    </script>
+    <script type="module" src="gallery.js"></script>
+</head>
+<body>
+    <header class="topbar"><a href="../" class="back">← SIMULATION</a><div>STANFORD TORUS <span>/</span> ASSET LIBRARY</div><small>01 / 01</small></header>
+    <main class="layout">
+        <section class="viewer-column">
+            <div class="title-row"><div><p class="eyebrow">RESIDENTIAL MODULE · MOD-A</p><h1 id="asset-name">Modular Terrace Home A-01</h1><p class="subtitle">Two-level, set-back prefab study model</p></div><span class="status">● ACTIVE MODEL</span></div>
+            <div class="viewer-shell"><canvas id="asset-canvas" aria-label="Interactive 3D view of modular terrace house"></canvas><div id="viewer-status">Loading mesh and atlas…</div><div class="viewer-help">DRAG TO ORBIT · SCROLL TO ZOOM · SLOW AUTO-ROTATION</div><div class="axis-label">Y ↑ <small>LOCAL +Z FACES FRONT</small></div></div>
+            <div class="caption"><span>ISOMETRIC INSPECTION VIEW</span><span>GENERATED FROM EDITABLE SOURCE</span></div>
+        </section>
+        <aside class="details">
+            <section class="card"><p class="eyebrow">TECHNICAL RECORD</p><h2>Asset details</h2><p id="asset-description" class="body-copy">Loading manifest…</p>
+                <div class="specs"><div><label>FORMAT</label><strong>Wavefront OBJ + MTL</strong></div><div><label>GEOMETRY</label><strong id="spec-geometry">—</strong></div><div><label>MATERIALS</label><strong id="spec-materials">—</strong></div><div><label>UV SKIN</label><strong>512 × 512 atlas</strong></div><div><label>MODEL SIZE</label><strong id="spec-bounds">—</strong></div><div><label>EDITOR SCALE</label><strong id="spec-scale">—</strong></div></div>
+            </section>
+            <section class="card"><p class="eyebrow">SOURCE & INTERPRETATION</p><h2>Design basis</h2><p id="asset-source" class="source-line">—</p><ul id="source-facts" class="facts"></ul><div class="interpretation"><strong>MODEL CHOICE</strong><p id="asset-interpretation">—</p></div></section>
+            <section class="card study-reference-card"><p class="eyebrow">HISTORICAL REFERENCE</p><h2>NASA SP-413 · housing</h2><p class="body-copy">The terrace-house form and modular structure are grounded in these report references.</p><div class="study-figure-links"><a href="../study/#figure-5-5"><img src="../study/images/sp413-p0108-01.jpg" alt="Figure 5-5: terrace housing exterior view" loading="lazy"><span><strong>Figure 5-5</strong> · terrace-house exteriors</span></a><a href="../study/#figure-5-6"><img src="../study/images/sp413-p0109-02.jpg" alt="Figure 5-6: possible apartment plan" loading="lazy"><span><strong>Figure 5-6</strong> · possible apartment plan</span></a><a href="../study/#figure-5-7"><img src="../study/images/sp413-p0109-04.jpg" alt="Figure 5-7: view of housing" loading="lazy"><span><strong>Figure 5-7</strong> · housing-area view</span></a></div><div class="files"><a href="../study/#figure-4-8">Figure 4-8 · modular construction components <span>↗</span></a><a href="../study/#appendix-b">Appendix B · structural system for housing <span>↗</span></a><a href="../study/">Search the full reading edition <span>↗</span></a></div><p class="note">Figure 4-8 has an explicit outside-source credit; its image is not copied here. The study page links to the original scan.</p></section>
+            <section class="card"><p class="eyebrow">FILES & CAPTURE</p><h2>Inspect the asset</h2><div class="files"><a href="ultimate-buildings/TorusHome_ModA.obj">OBJ mesh <span>↗</span></a><a href="ultimate-buildings/TorusHome_ModA.mtl">MTL material <span>↗</span></a><a href="ultimate-buildings/TorusHome_ModA_Atlas.png">Texture atlas <span>↗</span></a><a id="snapshot-link" href="../api/snapshot?scene=asset&amp;asset=TorusHome_ModA&amp;azimuth=38&amp;elevation=22&amp;distance=17&amp;imageWidth=1440&amp;imageHeight=1000" target="_blank" rel="noopener">Render PNG snapshot <span>↗</span></a><a href="../api/snapshot?scene=game&amp;x=778.9737&amp;y=286.5310&amp;z=8&amp;yaw=0&amp;pitch=10&amp;mode=human&amp;imageWidth=1440&amp;imageHeight=1000" target="_blank" rel="noopener">First saved home · +10° view <span>↗</span></a></div><p class="note">The API returns a PNG. Adjust the camera coordinates or the asset azimuth, elevation, and distance in each link's query string.</p></section>
+        </aside>
+    </main>
+    <footer><span>AUTHORITATIVE EDITOR: <code>assets/scripts/build_torus_home_a01.py</code></span><span>PROJECT STUDY MODEL · NOT A CONSTRUCTION DRAWING</span></footer>
+</body>
+</html>

@@ -1,3 +1,5 @@
 assets/*
 !assets/info.txt
 node_modules/*
+/docs/reference/nasa-sp-413-space-settlements-a-design-study.pdf
+/study/images/

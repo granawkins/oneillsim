@@ -1,8 +1,13 @@
 import * as THREE from 'three';
 
-export const CYLINDER_RADIUS = 650;
-export const CYLINDER_LENGTH = 130;
-export const GROUND_RADIUS = 649.8;
+// SP-413 single-torus baseline: major radius 830 m, minor radius 65 m.
+export const TORUS_MAJOR_RADIUS = 830;
+export const TUBE_RADIUS = 65;
+// Legacy name retained for the torus module; this is the tube-centerline radius.
+export const CYLINDER_RADIUS = TORUS_MAJOR_RADIUS;
+export const CYLINDER_LENGTH = 2 * TUBE_RADIUS;
+// Model the ground sheet at the torus tube centerline so it sits centered in the curved body.
+export const GROUND_RADIUS = TORUS_MAJOR_RADIUS;
 
 // Store reference to ground for raycasting
 let groundMesh = null;

@@ -1,5 +1,6 @@
 // Ground picking via raycasting
 import * as THREE from 'three';
+import { GROUND_RADIUS } from '../cylinder.js';
 
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
@@ -97,7 +98,7 @@ export function worldToSurface(point) {
 }
 
 // Convert surface coordinates to world point
-export function surfaceToWorld(theta, z, radius = 649.5) {
+export function surfaceToWorld(theta, z, radius = GROUND_RADIUS - 0.3) {
     return new THREE.Vector3(
         radius * Math.cos(theta),
         radius * Math.sin(theta),

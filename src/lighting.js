@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { TORUS_MAJOR_RADIUS, TUBE_RADIUS } from './cylinder.js';
 
 let pointLights = [];
 let ambientLight = null;
@@ -6,7 +7,7 @@ const BASE_POINT_INTENSITY = 20;
 const BASE_AMBIENT_INTENSITY = 25;
 
 export function createSunRing(habitatGroup) {
-    const ringRadius = 650 - 65; // 65m above ground surface (toward center)
+    const ringRadius = TORUS_MAJOR_RADIUS - TUBE_RADIUS; // retain the prototype's inward offset from the centerline
     const ringZ = 20; // above the river
 
     // Add point lights around the ring (no visible geometry)
