@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import { createBlockout } from './blockout.js';
 import { editorState, generateAssetId, addPlacedAsset, removePlacedAsset, GROUND_RADIUS } from './state.js';
-import { loadAsset, getAsset } from './loader.js';
+import { loadAsset, getAsset, preloadAssets } from './loader.js';
 import { surfaceToWorld } from './raycaster.js';
 
 const SURFACE_RADIUS = GROUND_RADIUS - 0.3;
@@ -163,6 +163,8 @@ export function updatePreview(preview, theta, z, rotation = 0) {
 
 // Load all placed assets from state (for restoring saved worlds)
 export async function loadPlacedAssets(assets) {
+    // Download each distinct model concurrently; preserve saved placement order.
+    await preloadAssets(assets.filter(data => !data.blockout).map(data => data.type));
     for (const data of assets) {
         try {
             const asset = data.blockout ? createBlockout(data.blockout) : await loadAsset(data.type);

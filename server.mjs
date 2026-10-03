@@ -6,6 +6,7 @@ import { extname, isAbsolute, join, relative, resolve, sep } from 'node:path';
 import { homedir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
+import { prepareStaticResponse } from './src/static-response.js';
 import { parseSnapshotOptions } from './src/snapshot-options.js';
 import { createStudyEmbeddingQueryService } from './src/study-embedding-cache.js';
 import { requestOpenRouterEmbeddings } from './src/study-embeddings.js';
@@ -37,6 +38,7 @@ const CONTENT_TYPES = {
   '.mtl': 'text/plain; charset=utf-8',
   '.obj': 'text/plain; charset=utf-8',
   '.png': 'image/png',
+  '.webp': 'image/webp',
 };
 
 let studySearchDatabase = null;
@@ -261,12 +263,15 @@ const server = createServer(async (req, res) => {
     const realFilePath = await realpath(filePath);
     if (!isPathInside(ROOT_REAL, realFilePath)) return send(res, 403, 'Forbidden');
     const contents = await readFile(realFilePath);
-    res.writeHead(200, {
-      'Cache-Control': 'no-store',
-      'Content-Type': CONTENT_TYPES[extname(filePath).toLowerCase()] || 'application/octet-stream',
-      'X-Content-Type-Options': 'nosniff',
+    const response = await prepareStaticResponse({
+      path: decodedPath,
+      extension: extname(filePath).toLowerCase(),
+      contents,
+      contentType: CONTENT_TYPES[extname(filePath).toLowerCase()] || 'application/octet-stream',
+      requestHeaders: req.headers,
     });
-    return res.end(req.method === 'HEAD' ? undefined : contents);
+    res.writeHead(response.status, response.headers);
+    return res.end(req.method === 'HEAD' ? undefined : response.body);
   } catch (error) {
     if (error.code === 'ENOENT' || error.code === 'EISDIR') return handleNext(req, res);
     return send(res, 500, 'Not found');

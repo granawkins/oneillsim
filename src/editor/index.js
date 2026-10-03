@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import { editorState, exportWorldState, importWorldState } from './state.js';
 import { CATALOG } from './catalog.js';
-import { preloadAssets, loadAsset, getAsset } from './loader.js';
+import { loadAsset, getAsset } from './loader.js';
 import { initRaycaster, updateMousePosition, getSurfacePosition, setHabitatGroup, setPointerLockMode, invalidateRaycastCache } from './raycaster.js';
 import { initPlacement, placeAsset, removeAsset, findAssetAtPosition, loadPlacedAssets, orientToSurface } from './placement.js';
 import { applyCropsFromConfig } from './initCrops.js';
@@ -39,9 +39,8 @@ export async function initEditor(cam, habitat, ground) {
     // Create cell highlight (a square on the ground)
     createCellHighlight(habitat);
 
-    // Preload first few common assets for responsiveness
-    const commonAssets = ['TorusHome_ModA'];
-    await preloadAssets(commonAssets);
+    // World loading preloads its distinct models together. Editor-only assets
+    // load on demand instead of delaying startup with an extra serial request.
 
     console.log('Editor initialized');
 }

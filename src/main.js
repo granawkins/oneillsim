@@ -48,8 +48,10 @@ function applyUrlView() {
 }
 
 window.__oneillSimReady = false;
+window.__oneillSimFirstFrame = false;
 
 async function init() {
+    document.querySelector('#overlay span').textContent = 'Loading settlement…';
     const worldResponse=await fetch('world.json');
     const worldData=worldResponse.ok ? await worldResponse.json() : {};
     configureTerraces(worldData.terraces);
@@ -62,14 +64,19 @@ async function init() {
     createStars(sceneObjects.scene);
     createTorus(sceneObjects.habitatGroup);
 
-    setupControls(sceneObjects.camera, sceneObjects.cameraAnchor, sceneObjects.scene, sceneObjects.habitatGroup);
     applyUrlView();
+    setLightIntensity(3);
+    setInnerTorusVisible(false);
+    // Render the habitat while models download. Input and editing remain
+    // disabled until the complete world is loaded; capture readiness is unchanged.
+    animate();
 
     // Initialize editor
     await initEditor(sceneObjects.camera, sceneObjects.habitatGroup, getGroundMesh());
 
     await loadWorld(worldData);
     initTerraceControls(sceneObjects.habitatGroup);
+    setupControls(sceneObjects.camera, sceneObjects.cameraAnchor, sceneObjects.scene, sceneObjects.habitatGroup);
 
     // Prevent info panel from triggering three.js pointer lock
     const ui = document.getElementById('ui');
@@ -92,8 +99,8 @@ async function init() {
     setInnerTorusVisible(false);
 
     window.__oneillSimReady = true;
+    document.querySelector('#overlay span').textContent = 'Click to Enter';
     window.dispatchEvent(new Event('oneill-sim-ready'));
-    animate();
 }
 
 function animate() {
@@ -101,14 +108,14 @@ function animate() {
 
     if (captureMode) {
         habitatGroup.rotation.z = captureRingRotation;
-    } else {
+    } else if (window.__oneillSimReady) {
         habitatGroup.rotation.z += ROTATION_SPEED;
     }
     updateStars();
 
     // Update movement when pointer locked OR in editor mode (planner + editor enabled)
     const inEditorMode = getCurrentMode() === CameraMode.PLANNER && isEditorEnabled();
-    if (isPointerLocked() || inEditorMode) {
+    if (window.__oneillSimReady && (isPointerLocked() || inEditorMode)) {
         updateMovement();
 
         // Update editor preview in planner mode
@@ -118,6 +125,7 @@ function animate() {
     }
 
     renderer.render(scene, camera);
+    window.__oneillSimFirstFrame = true;
 }
 
 window.onload = () => {
@@ -128,4 +136,7 @@ window.onload = () => {
 };
 
 // Expose save function to console
-window.saveWorld = saveWorld;
+window.saveWorld = () => {
+    if (!window.__oneillSimReady) throw new Error('Settlement is still loading; saving is disabled');
+    return saveWorld();
+};

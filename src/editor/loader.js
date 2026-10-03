@@ -2,6 +2,7 @@
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 import { BUILDINGS, PLANTS } from './catalog.js';
+import { runLoadQueue } from '../load-queue.js';
 
 const NATURE_PATH = 'assets/ultimate-nature/';
 const BUILDINGS_PATH = 'assets/ultimate-buildings/';
@@ -79,10 +80,11 @@ export function loadAsset(assetName) {
 
 // Preload common assets
 export async function preloadAssets(assetNames, onProgress) {
-    const total = assetNames.length;
+    const uniqueNames = [...new Set(assetNames)];
+    const total = uniqueNames.length;
     let loaded = 0;
 
-    const promises = assetNames.map(async (name) => {
+    await runLoadQueue(uniqueNames, async (name) => {
         try {
             await loadAsset(name);
             loaded++;
@@ -93,8 +95,6 @@ export async function preloadAssets(assetNames, onProgress) {
             if (onProgress) onProgress(loaded, total);
         }
     });
-
-    await Promise.all(promises);
 }
 
 // Get cached asset (returns clone)
