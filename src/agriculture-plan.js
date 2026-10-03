@@ -1,16 +1,17 @@
+import {districts} from './settlement-plan.js';
 // SP-413 Tables 5-4/5-5 (PDF 115) and 3-2 (PDF 43).
 export const farmPopulation=10000/3;
-export const farmStart=Math.PI/3, farmEnd=2*Math.PI/3;
+export const farmStart=districts[1].start, farmEnd=districts[1].end;
 export const farmAllocations=[
  ['sorghum','Sorghum',3.8,'#cfac61'],['soybeans','Soybeans',23.5,'#81a855'],['wheat','Wheat',7.2,'#d5c084'],['rice','Rice',3.6,'#9dbf87'],['corn','Corn',.9,'#b2c74a'],['vegetables','Vegetables',5.2,'#569969'],
  ['fish','Fish ponds',2.6,'#679eae'],['chickens','Chickens',.8,'#e0b08a'],['rabbits','Rabbits',1.1,'#bdb0a5'],['cattle','Cattle',.6,'#b7967b'],
  ['processing','Processing, collection & storage',4,'#b6a1c1'],['drying','Drying',8,'#d3b47d'],['water','Waste & water treatment',4,'#8eacb9'],
 ].map(([id,name,perPerson,color])=>({id,name,perPerson,color,area:perPerson*farmPopulation}));
 const definition=[
- ['ponds','Ponds & rice',5,[[-63,-48],[48,63]]],
- ['grain','Grain terraces',-10,[[-62,-32],[32,62]]],
- ['gardens','Vegetable & soybean terraces',-25,[[-58,-14],[14,58]]],
- ['livestock','Lower growing & animal deck',-40,[[-48,48]]],
+ ['ponds','Ponds & rice',5,[[-63,-42],[42,63]]],
+ ['grain','Grain terraces',-10,[[-62,-26],[26,62]]],
+ ['gardens','Vegetable & soybean terraces',-25,[[-58,-8],[8,58]]],
+ ['livestock','Lower growing & animal deck',-40,[[-49,49]]],
  ['drying','Drying deck',-50,[[-39,39]]],
  ['processing','Processing & storage',-56,[[-30,30]]],
  ['water','Water treatment & pumps',-61,[[-20,20]]],
@@ -22,8 +23,8 @@ export const farmBlocks=[];
 const program=[
  [['fish',2.6*farmPopulation],['rice',3.6*farmPopulation]],
  [['wheat',7.2*farmPopulation],['sorghum',3.8*farmPopulation]],
- [['vegetables',5.2*farmPopulation],['corn',.9*farmPopulation],['soybeans',45000]],
- [['soybeans',23.5*farmPopulation-45000],['chickens',.8*farmPopulation],['rabbits',1.1*farmPopulation],['cattle',.6*farmPopulation]],
+ [['vegetables',5.2*farmPopulation],['corn',.9*farmPopulation],['soybeans',30000]],
+ [['soybeans',23.5*farmPopulation-30000],['chickens',.8*farmPopulation],['rabbits',1.1*farmPopulation],['cattle',.6*farmPopulation]],
  [['drying',8*farmPopulation]],[['processing',4*farmPopulation]],[['water',4*farmPopulation]],
 ];
 for(let i=0;i<farmDecks.length;i++) {

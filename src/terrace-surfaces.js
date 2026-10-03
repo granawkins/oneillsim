@@ -5,7 +5,7 @@ export function configureTerraces(value){terraces=value || {decks:[],stairs:[]};
 export function getTerraces(){return terraces;}
 export function selectDeck(id){selectedDeckId=id || null;}
 export function normalizedTheta(theta){return (theta%(2*Math.PI)+2*Math.PI)%(2*Math.PI);}
-export function inTerraceSector(theta){theta=normalizedTheta(theta);return terraces.decks.some(d=>theta>=d.start&&theta<d.end);}
+export function inTerraceSector(theta){theta=normalizedTheta(theta);return terraces.decks.some(d=>d.cutGround!==false&&theta>=d.start&&theta<d.end);}
 export function stairContains(s,theta,z){return theta>=s.start&&theta<=s.end&&Math.abs(z-s.z)<=s.width/2;}
 export function deckContains(d,theta,z){return theta>=d.start&&theta<=d.end&&d.bands.some(([a,b])=>z>=a&&z<=b)&&!terraces.stairs.some(s=>s.upper===d.id&&stairContains(s,theta,z));}
 export function supportAt(theta,z,maxHeight=Infinity){

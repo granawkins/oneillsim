@@ -29,6 +29,7 @@ export const editorState = {
     selectedItem: null,      // Currently selected item object
     placedAssets: [],        // Array of { id, type, theta, z, scale, rotation } - SPARSE
     textureGrid: null,       // 2D array [row][col] of texture IDs - loaded from world.json
+    masterPlan: null,
     terraces: null,
     cropConfig: null,        // Procedural crop config from world.json
     previewAsset: null,      // Current ghost preview mesh
@@ -147,12 +148,14 @@ export function exportWorldState() {
     }
 
     if(editorState.terraces) result.terraces=editorState.terraces;
+    if(editorState.masterPlan) result.masterPlan=editorState.masterPlan;
     return result;
 }
 
 // Import world state from world.json
 export function importWorldState(data) {
     editorState.terraces=data.terraces || null;
+    editorState.masterPlan=data.masterPlan || null;
     // Load texture grid
     if (data.grid) {
         editorState.textureGrid = data.grid;

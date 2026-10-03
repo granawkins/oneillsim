@@ -11,7 +11,7 @@ test('farm page, deck picking, asset placement and walking work together', {time
  await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.setViewportSize({width:1440,height:1000});
  await page.goto(`${base}/?theta=90&z=0&mode=planner&height=180&pitch=-89&yaw=0&capture=1`);await page.waitForFunction(()=>window.__oneillSimReady);
  // Drive the same deck selector event in capture mode, where the UI is intentionally hidden.
- await page.locator('select[aria-label="Farm deck"]').selectOption('farm-a-grain',{force:true});
+ await page.locator('select[aria-label="Terrace / landing"]').selectOption('farm-a-grain',{force:true});
  const placement=await page.evaluate(async()=>{
   const THREE=await import('three');const {camera,habitatGroup}=await import('/oneillsim/src/scene.js');
   const pick=await import('/oneillsim/src/editor/raycaster.js');

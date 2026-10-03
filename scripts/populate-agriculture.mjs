@@ -1,10 +1,2 @@
-import {readFileSync,writeFileSync,copyFileSync} from 'node:fs';
-import {farmStart,farmEnd,farmBlocks,farmTerraces} from '../src/agriculture-plan.js';
-const world=JSON.parse(readFileSync('world.json','utf8'));
-copyFileSync('world.json',`/tmp/oneillsim-before-agriculture-${Date.now()}.json`);
-world.assets=world.assets.filter(a=>a[2]<farmStart||a[2]>=farmEnd);
-let type=world.assetTypes.indexOf('AgriculturalBlockout');if(type<0)type=world.assetTypes.push('AgriculturalBlockout')-1;
-for(const b of farmBlocks)world.assets.push([b.id,type,b.theta,b.z,1,0,b,{height:b.elevation,deckId:b.deckId}]);
-world.terraces=farmTerraces;
-writeFileSync('world.json',JSON.stringify(world));
-console.log(`Placed ${farmBlocks.length} farm plots on ${farmTerraces.decks.length} decks.`);
+// Sector resizing must regenerate the two designed districts together.
+import './populate-layout.mjs';

@@ -73,16 +73,24 @@ This roadmap does not add placeholder models to `src/editor/catalog.js`; only re
 
 ## Residential blockout
 
-`/residential/` documents district A and its source allocations, with a selectable ground/lower-deck plan. `src/residential-plan.js` contains the dimensions and planning assumptions. `scripts/populate-residential.mjs [base-world.json]` replaces only the first 60° sector and backs up the previous local world to `/tmp` before writing. Use a current saved world as the base; regeneration replaces manual changes within that sector.
+`/residential/` documents district A, its central garden basin, and sidewall housing shelves at −48, −32 and −12 m. `src/residential-plan.js` contains the dimensions and separate indoor, exterior/access, park and circulation budgets. The −61.5 m service shelf sits below the basin. These levels are design choices, not dimensions read from the study.
 
 Placeholder shapes are ordinary saved asset records with an optional seventh tuple field, `blockout`, holding dimensions, color, category and deck elevation. The placement system renders them procedurally and preserves them through editor saves; they do not require OBJ files. The wiki describes the generated baseline, not subsequent manual world edits. Tests: `node --test tests/residential-plan.test.js tests/residential.browser.test.js` with the local preview running.
 
 ## Agricultural terraces
 
-`/agriculture/` documents the adjacent 60–120° farm. `src/agriculture-plan.js` defines its seven levels, six stair runs, source area targets and 94 plots. `node scripts/populate-agriculture.mjs` replaces only that farm sector, backs up the current world under `/tmp`, and records `world.terraces`. The other sectors are retained.
+`/agriculture/` documents the adjacent approximately 77–120° farm. `src/agriculture-plan.js` defines its seven levels, six stair runs and source area targets. Its narrower sector uses wider shelves and reallocates soybeans between levels while preserving all source-area totals.
 
 `terrace-surfaces.js` provides shared analytic support queries; `terraces.js` builds curved deck slabs, stair openings and visible stair treads. The agricultural sector is cut out of the original ground and terrain patches. Selecting a deck isolates its geometry and assets and limits editor picking to that level. Asset tuple field 8 (`surface`, index 7) stores `{deckId,height}`; field 7 remains optional blockout geometry. World export preserves both attachments and terrace topology. The blockout generator uses each deck's own circumference when converting areas to dimensions.
 
 Human walking follows connected surfaces with a 0.4 m step limit; stairs use a continuous slope for movement and stepped visual geometry. Unsupported edges are blocked. This is not a general collision engine: crop blocks/buildings and overhead slabs are not collision obstacles, and the farm entry shelf is not yet connected to residential ground. Use **Walk this deck** to enter. The wiki describes the initial generated layout rather than subsequent manual edits.
 
 Validation: `node --test tests/agriculture-plan.test.js tests/agriculture.browser.test.js`. Browser tests check actual ray picking, placement/export on a lower deck, and traversing the stair runs. Use `ONEILLSIM_TEST_URL` to choose the local server.
+
+## Master sector plan
+
+`/layout/` shows all six districts and centered spoke landings. `src/settlement-plan.js` is authoritative for angular bounds: each 120° pair is split 430:240, yielding approximately 77.015° residential / 42.985° agricultural. Source requirements and the chosen allocation rule are recorded separately in `world.masterPlan`, which survives editor saves. Each generated parcel stores its district ID, normalized longitudinal `u`, `z`, dimensions, category and deck attachment. Lower decks use their actual radius when converting angular spans to metres.
+
+Run `node scripts/populate-layout.mjs` to regenerate both designed A districts, all six landing placeholders, and land-use ground colors. A `/tmp` world backup is made first. Non-generated assets are remapped by their fraction within their old district; generated parcels and manual ground painting are replaced. The former `populate-residential.mjs` and `populate-agriculture.mjs` entry points now invoke this coordinated generator too. Four B/C districts have land-use allocation and landing markers only; detailed layouts have not been cloned into them.
+
+Residential circulation and exterior/access are currently area reservations, not a connected walking network. There are no residential stairs/lifts yet. Six 24 m landing platforms and 20 m axis markers are placeholders rather than engineered spokes. Tests: `node --test tests/settlement-plan.test.js tests/residential-plan.test.js tests/agriculture-plan.test.js` plus the two corresponding browser tests.

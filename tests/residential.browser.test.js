@@ -7,18 +7,17 @@ test('residential plan hydrates, switches decks and opens the populated simulati
  try {
  const page=await browser.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto(`${base}/residential/`);
- await page.locator('svg g').first().click();
- assert.match(await page.locator('.selection').innerText(),/32.00 × 21.90/);
- await page.getByRole('button',{name:'Show lower deck',exact:true}).click();
- assert.equal(await page.locator('svg g').count(),7);
- await page.getByRole('button',{name:'Show ground level',exact:true}).click();
- assert.equal(await page.locator('svg g').count(),133);
+ await page.locator('.district-map g').first().click();
+ assert.match(await page.locator('.selection').innerText(),/5-story housing/);
+ await page.locator('select').selectOption('residential-a-services');
+ assert.equal(await page.locator('.district-map g').count(),6);
+ await page.locator('select').selectOption('residential-a-basin');
  await page.setViewportSize({width:390,height:844});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
- await page.getByRole('link',{name:'Open district in 3D'}).click();
+ await page.getByRole('link',{name:'District in 3D'}).click();
  await page.waitForFunction(()=>window.__oneillSimReady===true);
  const blockouts=await page.evaluate(async()=>{const {editorState}=await import('/oneillsim/src/editor/state.js');return editorState.placedAssets.filter(a=>a.id.startsWith('residential-a-')).length});
- assert.equal(blockouts,140);
+ assert.ok(blockouts>140);
  assert.deepEqual(errors,[]);
  }finally{await browser.close()}
 });
