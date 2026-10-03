@@ -67,9 +67,9 @@ def _reader_shell(pdf_pages: int) -> str:
   <meta name="description" content="Space Settlements: A Design Study, NASA SP-413 (1977).">
   <title>Space Settlements: A Design Study · NASA SP-413</title>
   <link rel="stylesheet" href="study.css">
-  <script src="study.js" defer></script>
+  <script type="module" src="bootstrap.js"></script>
 </head>
-<body id="top">
+<body id="top" class="study-page">
   <header class="study-header">
     <h1>Space Settlements: A Design Study</h1>
 

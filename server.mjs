@@ -1,4 +1,5 @@
 import { createServer } from 'node:http';
+import next from 'next';
 import { existsSync, realpathSync } from 'node:fs';
 import { readFile, realpath, rename, writeFile } from 'node:fs/promises';
 import { extname, isAbsolute, join, relative, resolve, sep } from 'node:path';
@@ -13,6 +14,7 @@ import { openStudySearchDatabase } from './src/study-search-runtime.js';
 
 const ROOT = resolve(fileURLToPath(new URL('.', import.meta.url)));
 const ROOT_REAL = realpathSync(ROOT);
+const dev = process.env.NODE_ENV !== 'production';
 const BASE_PATH = '/oneillsim';
 const PORT = Number(process.env.PORT || 3200);
 const HOST = process.env.HOST || '127.0.0.1';
@@ -167,6 +169,10 @@ async function handleSnapshot(req, res, url) {
   }
 }
 
+const nextApp = next({ dev, dir: ROOT, hostname: HOST, port: PORT });
+await nextApp.prepare();
+const handleNext = nextApp.getRequestHandler();
+
 const server = createServer(async (req, res) => {
   let pathname;
   try {
@@ -183,7 +189,7 @@ const server = createServer(async (req, res) => {
 
   const relativePath = pathname.slice(BASE_PATH.length + 1);
   if (['assets', 'study'].includes(relativePath) && (req.method === 'GET' || req.method === 'HEAD')) {
-    res.writeHead(308, { Location: `${BASE_PATH}/${relativePath}/`, 'Cache-Control': 'no-store' });
+    res.writeHead(308, { Location: `${BASE_PATH}/${relativePath}/${new URL(req.url, 'http://localhost').search}`, 'Cache-Control': 'no-store' });
     return res.end();
   }
   if (relativePath === 'api/snapshot') {
@@ -224,6 +230,16 @@ const server = createServer(async (req, res) => {
     }
   }
 
+  if (['study/index.html', 'assets/index.html'].includes(relativePath)) {
+    res.writeHead(308, { Location: `${BASE_PATH}/${relativePath.replace('index.html', '')}${new URL(req.url, 'http://localhost').search}` });
+    return res.end();
+  }
+  const legacyStatic = relativePath === '' || relativePath === 'index.html' || relativePath === 'world.json'
+    || relativePath.startsWith('src/')
+    || (relativePath.startsWith('assets/') && relativePath !== 'assets/' && !relativePath.startsWith('assets/scripts/'))
+    || ['study/segments.json', 'study/reader-layout.json', 'study/study.js', 'study/bootstrap.js', 'study/study.css'].includes(relativePath)
+    || relativePath.startsWith('study/images/');
+  if (!legacyStatic || relativePath.startsWith('_next/')) return handleNext(req, res);
   if (req.method !== 'GET' && req.method !== 'HEAD') return send(res, 405, 'Method not allowed');
 
   const decodedPath = relativePath.endsWith('/') ? `${relativePath}index.html` : (relativePath || 'index.html');
@@ -252,10 +268,21 @@ const server = createServer(async (req, res) => {
     });
     return res.end(req.method === 'HEAD' ? undefined : contents);
   } catch (error) {
-    return send(res, error.code === 'ENOENT' || error.code === 'EISDIR' ? 404 : 500, 'Not found');
+    if (error.code === 'ENOENT' || error.code === 'EISDIR') return handleNext(req, res);
+    return send(res, 500, 'Not found');
   }
 });
 
 server.listen(PORT, HOST, () => {
   console.log(`Oneill Sim listening on http://${HOST}:${PORT}${BASE_PATH}/`);
 });
+
+async function shutdown() {
+  server.close();
+  await snapshotBrowser?.close();
+  studySearchDatabase?.close();
+  await nextApp.close();
+  process.exit(0);
+}
+process.once('SIGTERM', shutdown);
+process.once('SIGINT', shutdown);

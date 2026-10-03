@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, rm, writeFile } from 'node:fs/promises';
-import { homedir } from 'node:os';
+import { tmpdir } from 'node:os';
 import path from 'node:path';
 import {
   embedTextCollection,
@@ -85,7 +85,7 @@ test('embedding collection reports batch completion without leaking input or vec
 });
 
 test('API key loader reads only the named variable from the shared environment file', async () => {
-  const scratchDirectory = process.env.TMPDIR || path.join(homedir(), '.hermes', 'cache', 'scratch');
+  const scratchDirectory = tmpdir();
   const directory = await mkdtemp(path.join(scratchDirectory, 'study-env-'));
   const envFile = path.join(directory, 'shared.env');
   try {

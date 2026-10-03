@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, rm, writeFile } from 'node:fs/promises';
-import { homedir } from 'node:os';
+import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { createStudySearchDatabase, indexStudySegments, searchStudyBm25 } from '../src/study-search.js';
 import { openStudySearchDatabase } from '../src/study-search-runtime.js';
 
 async function makeScratchDirectory() {
-  const base = process.env.TMPDIR || path.join(homedir(), '.hermes', 'cache', 'scratch');
+  const base = tmpdir();
   return mkdtemp(path.join(base, 'study-search-runtime-'));
 }
 

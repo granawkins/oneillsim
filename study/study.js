@@ -1,6 +1,18 @@
-(() => {
-  const article = document.getElementById('study-article');
-  const readerStatus = document.getElementById('reader-status');
+export function mountStudyReader(root = document) {
+  const lifetime = new AbortController();
+  const frames = new Set();
+  let disposed = false;
+  const previousRestoration = history.scrollRestoration;
+  const get = id => id ? root.querySelector(`#${CSS.escape(id)}`) : null;
+  const listen = (target, type, handler, options = {}) => target.addEventListener(type, handler,
+    { ...(typeof options === 'boolean' ? { capture: options } : options), signal: lifetime.signal });
+  const frame = callback => {
+    const id = requestAnimationFrame(() => { frames.delete(id); if (!disposed) callback(); });
+    frames.add(id);
+    return id;
+  };
+  const article = get('study-article');
+  const readerStatus = get('reader-status');
   if (!article) return;
 
   let layout;
@@ -254,7 +266,7 @@
   }
 
   function renderOutline() {
-    const nav = document.getElementById('chapter-navigation');
+    const nav = get('chapter-navigation');
     nav.replaceChildren();
     for (const chapter of layout.chapters) {
       const disclosure = document.createElement('details');
@@ -377,12 +389,12 @@
     renderOutline();
   }
 
-  const readingView = document.getElementById('reading-view');
-  const searchForm = document.getElementById('study-search-form');
-  const searchInput = document.getElementById('study-search');
-  const searchStatus = document.getElementById('search-status');
-  const searchResults = document.getElementById('search-results');
-  const resultList = document.getElementById('result-list');
+  const readingView = get('reading-view');
+  const searchForm = get('study-search-form');
+  const searchInput = get('study-search');
+  const searchStatus = get('search-status');
+  const searchResults = get('search-results');
+  const resultList = get('result-list');
   const cachedResults = new Map();
   let debounce;
   let pendingInput = false;
@@ -390,7 +402,7 @@
   let revision = 0;
   let readerPosition = 0;
   let restoring = true;
-  const outlineScroll = document.getElementById('outline-scroll');
+  const outlineScroll = get('outline-scroll');
   history.scrollRestoration = 'manual';
 
   function setSearchView(query) {
@@ -401,8 +413,8 @@
 
   function savePosition() {
     history.replaceState({ ...history.state, scrollY: window.scrollY, outlineY: outlineScroll.scrollTop,
-      openOutline: [...document.querySelectorAll('.outline-chapter[open]')].map(el => el.dataset.chapter),
-      openReferences: [...document.querySelectorAll('.chapter-references[open]')].map(el => el.id),
+      openOutline: [...root.querySelectorAll('.outline-chapter[open]')].map(el => el.dataset.chapter),
+      openReferences: [...root.querySelectorAll('.chapter-references[open]')].map(el => el.id),
     }, '', location.href);
   }
 
@@ -414,19 +426,19 @@
 
   function scrollToLocation(position) {
     restoring = true;
-    requestAnimationFrame(() => {
+    frame(() => {
       if (Number.isFinite(position)) {
         window.scrollTo(0, position);
       } else {
         let id;
         try { id = decodeURIComponent(location.hash.slice(1)); } catch { restoring = false; return; }
-        const target = document.getElementById(id);
+        const target = get(id);
         if (target) {
           let ancestor = target.parentElement;
           while (ancestor) { if (ancestor.tagName === 'DETAILS') ancestor.open = true; ancestor = ancestor.parentElement; }
           const segment = segmentById.get(id);
           const chapter = segment ? chapterOf(segment) : Number(id.match(/^ref-(\d+)-/)?.[1]);
-          const outline = document.querySelector(`.outline-chapter[data-chapter="${chapter}"]`);
+          const outline = root.querySelector(`.outline-chapter[data-chapter="${chapter}"]`);
           if (outline) outline.open = true;
           target.scrollIntoView({ block: 'start' });
           target.tabIndex = -1;
@@ -439,7 +451,7 @@
           }
         }
       }
-      requestAnimationFrame(() => { restoring = false; savePosition(); });
+      frame(() => { restoring = false; savePosition(); });
     });
   }
 
@@ -555,7 +567,7 @@
         hint.textContent = 'Open full table';
         link.append(hint);
       }
-      link.addEventListener('click', (event) => {
+      listen(link, 'click', (event) => {
         if (event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
         clearTimeout(debounce);
@@ -582,7 +594,7 @@
     searchStatus.textContent = 'Searching…';
     try {
       await studyReady;
-      if (currentRevision !== revision) return;
+      if (disposed || currentRevision !== revision) return;
       let cached = cachedResults.get(query);
       if (!cached) {
         const response = await fetch(new URL('../api/study/search', document.baseURI), {
@@ -602,7 +614,7 @@
         cached = { results, semanticAvailable: payload.semantic_available === true };
         cachedResults.set(query, cached);
       }
-      if (currentRevision !== revision) return;
+      if (disposed || currentRevision !== revision) return;
       showResults(cached.results, query, cached.semanticAvailable);
       if (Number.isFinite(position)) scrollToLocation(position);
     } catch (error) {
@@ -625,10 +637,10 @@
     } else {
       try { await studyReady; } catch { return; }
       // A later input or history action can supersede the pending document load.
-      if (searchInput.value.trim()) return;
+      if (disposed || searchInput.value.trim()) return;
       if (savedState) {
-        document.querySelectorAll('.outline-chapter').forEach(el => { el.open = (savedState.openOutline || []).includes(el.dataset.chapter); });
-        document.querySelectorAll('.chapter-references').forEach(el => { el.open = (savedState.openReferences || []).includes(el.id); });
+        root.querySelectorAll('.outline-chapter').forEach(el => { el.open = (savedState.openOutline || []).includes(el.dataset.chapter); });
+        root.querySelectorAll('.chapter-references').forEach(el => { el.open = (savedState.openReferences || []).includes(el.id); });
         outlineScroll.scrollTop = savedState.outlineY || 0;
       }
       scrollToLocation(position);
@@ -645,7 +657,7 @@
     applyLocation(query ? 0 : readerPosition);
   }
 
-  searchInput.addEventListener('input', () => {
+  listen(searchInput, 'input', () => {
     const query = searchInput.value.trim();
     if (!pendingInput) savePosition();
     pendingInput = true;
@@ -662,28 +674,29 @@
     searchStatus.textContent = query ? 'Searching…' : '';
     debounce = setTimeout(commitSearch, 350);
   });
-  searchForm.addEventListener('submit', (event) => {
+  listen(searchForm, 'submit', (event) => {
     event.preventDefault();
     commitSearch();
   });
-  window.addEventListener('popstate', (event) => applyLocation(event.state?.scrollY, event.state));
+  listen(window, 'popstate', (event) => applyLocation(event.state?.scrollY, event.state));
   let scrollFrame;
   function trackPosition() {
     cancelAnimationFrame(scrollFrame);
-    scrollFrame = requestAnimationFrame(() => { if (!restoring && !pendingInput) savePosition(); });
+    frames.delete(scrollFrame);
+    scrollFrame = frame(() => { if (!restoring && !pendingInput) savePosition(); });
   }
-  window.addEventListener('scroll', trackPosition, { passive: true });
-  outlineScroll.addEventListener('scroll', trackPosition, { passive: true });
-  article.addEventListener('toggle', trackPosition, true);
-  document.getElementById('chapter-navigation').addEventListener('toggle', trackPosition, true);
-  article.addEventListener('click', (event) => {
+  listen(window, 'scroll', trackPosition, { passive: true });
+  listen(outlineScroll, 'scroll', trackPosition, { passive: true });
+  listen(article, 'toggle', trackPosition, true);
+  listen(get('chapter-navigation'), 'toggle', trackPosition, true);
+  listen(article, 'click', (event) => {
     const link = event.target.closest('a.reference-link');
     if (!link || event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     pushLocation(new URL(link.href));
     applyLocation();
   });
-  document.getElementById('chapter-navigation').addEventListener('click', (event) => {
+  listen(get('chapter-navigation'), 'click', (event) => {
     const link = event.target.closest('a');
     if (!link || event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
@@ -693,15 +706,17 @@
 
   async function loadStudy() {
     try {
-      const [response, layoutResponse] = await Promise.all(['segments.json', 'reader-layout.json'].map(file => fetch(new URL(file, document.baseURI), { cache: 'no-store' })));
+      const [response, layoutResponse] = await Promise.all(['segments.json', 'reader-layout.json'].map(file => fetch(new URL(file, document.baseURI), { cache: 'no-store', signal: lifetime.signal })));
       if (!layoutResponse.ok) throw new Error('Reader layout is unavailable');
       layout = await layoutResponse.json();
       if (!response.ok) throw new Error(`Segment data returned HTTP ${response.status}`);
       const payload = await response.json();
+      if (disposed) return;
       if (!Array.isArray(payload.segments)) throw new Error('Segment data is incomplete');
       renderSegments(payload.segments);
       readerStatus.hidden = true;
     } catch (error) {
+      if (disposed || error.name === 'AbortError') return;
       readerStatus.textContent = 'The study could not be loaded. Please refresh the page.';
       console.error('Study reader failed to load:', error.message);
       throw error;
@@ -709,4 +724,16 @@
   }
   const studyReady = loadStudy();
   applyLocation(history.state?.scrollY, history.state);
-})();
+  return () => {
+    disposed = true;
+    ++revision;
+    lifetime.abort();
+    request?.abort();
+    clearTimeout(debounce);
+    for (const id of frames) cancelAnimationFrame(id);
+    history.scrollRestoration = previousRestoration;
+    article.replaceChildren();
+    get('chapter-navigation').replaceChildren();
+    resultList.replaceChildren();
+  };
+}

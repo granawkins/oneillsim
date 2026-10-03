@@ -3,3 +3,6 @@ assets/*
 node_modules/*
 /docs/reference/nasa-sp-413-space-settlements-a-design-study.pdf
 /study/images/
+/.next/
+/.env*
+/next-env.d.ts

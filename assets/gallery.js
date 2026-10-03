@@ -3,15 +3,34 @@ import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-const ASSET_ID = new URLSearchParams(location.search).get('asset') || 'TorusHome_ModA';
-const ROOT = 'ultimate-buildings/';
+export function mountAssetViewer(root = document.body, options = {}) {
+let disposed = false;
+let animationFrame;
+const lifetime = new AbortController();
+const loadedMaterials = new Set();
+const get = id => root.querySelector(`#${CSS.escape(id)}`);
+function disposeObject(object) {
+    object.traverse(child => {
+        child.geometry?.dispose();
+        for (const material of [child.material].flat().filter(Boolean)) {
+            for (const value of Object.values(material)) if (value?.isTexture) value.dispose();
+            material.dispose();
+        }
+    });
+}
+const ASSET_ID = options.assetId || new URLSearchParams(location.search).get('asset') || 'TorusHome_ModA';
+const ROOT = options.assetRoot || 'ultimate-buildings/';
 const params = new URLSearchParams(location.search);
 const captureMode = params.get('capture') === '1';
 window.__assetReady = false;
-document.documentElement.classList.toggle('capture-mode', captureMode);
+window.__assetError = null;
+root.classList.toggle('capture-mode', captureMode);
 
-const canvas = document.getElementById('asset-canvas');
-const status = document.getElementById('viewer-status');
+const canvas = get('asset-canvas');
+const status = get('viewer-status');
+status.hidden = false;
+status.classList.remove('error');
+get('source-facts')?.replaceChildren();
 const scene = new THREE.Scene();
 scene.background = new THREE.Color('#152128');
 scene.fog = new THREE.Fog('#152128', 28, 70);
@@ -88,23 +107,28 @@ function resize() {
     camera.updateProjectionMatrix();
     renderer.setSize(rect.width, rect.height, false);
 }
-new ResizeObserver(resize).observe(canvas.parentElement);
+const observer = new ResizeObserver(resize);
+observer.observe(canvas.parentElement);
 resize();
 
 async function loadAsset() {
     try {
-        const response = await fetch(`${ROOT}${ASSET_ID}.asset.json`, { cache: 'no-store' });
+        const response = await fetch(`${ROOT}${ASSET_ID}.asset.json`, { cache: 'no-store', signal: lifetime.signal });
         if (!response.ok) throw new Error(`Manifest request returned HTTP ${response.status}`);
         const manifest = await response.json();
 
+        if (disposed) return;
         const materialsLoader = new MTLLoader();
         materialsLoader.setPath(ROOT);
         const materials = await materialsLoader.loadAsync(`${ASSET_ID}.mtl`);
+        if (disposed) return;
         materials.preload();
+        for (const material of Object.values(materials.materials)) loadedMaterials.add(material);
         const objectLoader = new OBJLoader();
         objectLoader.setMaterials(materials);
         objectLoader.setPath(ROOT);
         const model = await objectLoader.loadAsync(`${ASSET_ID}.obj`);
+        if (disposed) { disposeObject(model); return; }
         model.scale.setScalar(Number(manifest.editorDefaultScale) || 4);
         model.rotation.y = queryNumber('modelRotation', 0, -3600, 3600) * Math.PI / 180;
         model.traverse((child) => {
@@ -117,19 +141,19 @@ async function loadAsset() {
 
         const bounds = manifest.actualModelBoundsMeters || [];
         const dimensions = bounds.map(([min, max]) => (Number(max) - Number(min)).toFixed(2));
-        document.getElementById('asset-name').textContent = manifest.displayName || ASSET_ID;
-        document.getElementById('asset-description').textContent = manifest.description || '';
-        document.getElementById('spec-geometry').textContent = `${manifest.trianglesAfterQuadTriangulation} tris · ${manifest.vertices} verts`;
-        document.getElementById('spec-materials').textContent = `${manifest.materials} atlas material`;
-        document.getElementById('spec-bounds').textContent = dimensions.length === 3 ? `${dimensions[0]} × ${dimensions[1]} × ${dimensions[2]} m` : '—';
-        document.getElementById('spec-scale').textContent = `${manifest.editorDefaultScale}× in the simulator`;
-        document.getElementById('asset-source').textContent = manifest.source || '';
-        document.getElementById('asset-interpretation').textContent = (manifest.interpretations || []).join(' ');
-        const list = document.getElementById('source-facts');
+        get('asset-name').textContent = manifest.displayName || ASSET_ID;
+        get('asset-description').textContent = manifest.description || '';
+        get('spec-geometry').textContent = `${manifest.trianglesAfterQuadTriangulation} tris · ${manifest.vertices} verts`;
+        get('spec-materials').textContent = `${manifest.materials} atlas material`;
+        get('spec-bounds').textContent = dimensions.length === 3 ? `${dimensions[0]} × ${dimensions[1]} × ${dimensions[2]} m` : '—';
+        get('spec-scale').textContent = `${manifest.editorDefaultScale}× in the simulator`;
+        if (get('asset-source')) get('asset-source').textContent = manifest.source || '';
+        get('asset-interpretation').textContent = (manifest.interpretations || []).join(' ');
+        const list = get('source-facts');
         for (const fact of manifest.sourceFacts || []) {
             const item = document.createElement('li');
             item.textContent = fact;
-            list.append(item);
+            list?.append(item);
         }
 
         status.hidden = true;
@@ -138,6 +162,7 @@ async function loadAsset() {
         window.__assetReady = true;
         window.dispatchEvent(new Event('asset-viewer-ready'));
     } catch (error) {
+        if (disposed || error.name === 'AbortError') return;
         window.__assetError = String(error);
         status.textContent = `Could not load asset: ${error.message}`;
         status.classList.add('error');
@@ -146,9 +171,30 @@ async function loadAsset() {
 }
 
 function render() {
-    requestAnimationFrame(render);
+    if (disposed) return;
+    animationFrame = requestAnimationFrame(render);
     controls.update();
     renderer.render(scene, camera);
 }
 loadAsset();
 render();
+
+return () => {
+    disposed = true;
+    lifetime.abort();
+    cancelAnimationFrame(animationFrame);
+    observer.disconnect();
+    controls.dispose();
+    disposeObject(scene);
+    // MTL textures may have loaded before an in-flight OBJ joined the scene.
+    for (const material of loadedMaterials) {
+        for (const value of Object.values(material)) if (value?.isTexture) value.dispose();
+        material.dispose();
+    }
+    key.shadow.map?.dispose();
+    renderer.dispose();
+    root.classList.remove('capture-mode');
+    window.__assetReady = false;
+    delete window.__assetManifest;
+};
+}

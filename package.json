@@ -3,9 +3,19 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "node server.mjs"
+    "dev": "NODE_ENV=development node server.mjs",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.mjs",
+    "test:study": "node --test tests/study-search*.test.js tests/study-embedding*.test.js tests/study-reader.browser.test.js tests/study-html.test.js"
   },
   "dependencies": {
-    "playwright": "^1.57.0"
+    "next": "^16.3.8",
+    "playwright": "^1.57.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "three": "^0.160.0"
+  },
+  "engines": {
+    "node": ">=22.13.0"
   }
 }

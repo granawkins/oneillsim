@@ -1,6 +1,7 @@
 import { parseCameraPreset } from './camera-presets.js';
 
-const SNAPSHOT_ASSETS = new Set(['TorusHome_ModA']);
+import { assetTypes, findModelType } from './asset-library.js';
+const SNAPSHOT_ASSETS = new Set(assetTypes.flatMap(type => type.variants.map(variant => variant.id)));
 
 function numberParam(params, name, fallback, min, max, integer = false) {
     if (!params.has(name)) return fallback;
@@ -64,7 +65,7 @@ export function parseSnapshotOptions(input, groundRadius = 830) {
             scene,
             asset: assetOptions.asset,
             viewport,
-            pagePath: '/assets/',
+            pagePath: `/assets/${findModelType(assetOptions.asset).slug}/`,
             pageSearch: assetOptions.pageSearch,
         };
     }

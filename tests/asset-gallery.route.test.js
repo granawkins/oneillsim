@@ -15,7 +15,7 @@ async function fetchOk(path) {
 }
 
 test('asset gallery route serves a technical viewer and its active model files', async () => {
-    const response = await fetchOk('/assets/');
+    const response = await fetchOk('/assets/houses/');
     const html = await response.text();
     assert.match(html, /Stanford Torus.*Asset Library/i);
     assert.match(html, /asset-canvas/);

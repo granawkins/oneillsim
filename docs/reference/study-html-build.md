@@ -1,6 +1,6 @@
 # NASA SP-413 HTML reading edition
 
-The public reading edition is served at `/study/`. It is a static continuous-reader shell plus ordered `study/segments.json`. The roughly 90 MB source PDF is not committed or stored under the app's public root; on the production host it is kept at `~/.local/share/oneillsim/study-source/nasa-sp-413-space-settlements-a-design-study.pdf`. Set `STUDY_SOURCE_PDF` to a private local copy before a full rebuild. Paragraphs, headings, figures, and tables retain PDF-page citations in the source data; the reader does not display those links. Generated figure images live in `study/images/`, which is intentionally ignored by Git to keep derived images out of history. The segment manifest still references those paths, so a fresh checkout needs a local rebuild from the private PDF or a separate copy of the directory before figure images appear. Keyword search uses local SQLite FTS5/BM25; semantic vectors live in a private SQLite database outside the public directory, and query embeddings are requested server-side.
+The public reading edition is served at `/study/`. Its Next.js route is `app/study/page.jsx`; the React shell mounts the shared continuous-reader controller in `study/study.js` and loads ordered `study/segments.json`. The extraction pipeline also keeps a standalone HTML shell for compatibility and testing. The roughly 90 MB source PDF is not committed or stored under the app's public root; on the production host it is kept at `~/.local/share/oneillsim/study-source/nasa-sp-413-space-settlements-a-design-study.pdf`. Set `STUDY_SOURCE_PDF` to a private local copy before a full rebuild. Paragraphs, headings, figures, and tables retain PDF-page citations in the source data; the reader does not display those links. Generated figure images live in `study/images/`, which is intentionally ignored by Git to keep derived images out of history. The segment manifest still references those paths, so a fresh checkout needs a local rebuild from the private PDF or a separate copy of the directory before figure images appear. Keyword search uses local SQLite FTS5/BM25; semantic vectors live in a private SQLite database outside the public directory, and query embeddings are requested server-side.
 
 ## Reader presentation
 
@@ -44,7 +44,7 @@ python3 -m venv .venv-study
 .venv-study/bin/python assets/scripts/build_study_html.py
 ```
 
-A full build also uses Poppler (`pdftoppm`) for the two opening scans. The PDF build can take several minutes because the source is a scanned, OCR-layer PDF. It uses `pymupdf4llm` for page/layout/table extraction, Python-Markdown for table-aware HTML, Bleach to sanitize converted markup, and Pillow to optimize extracted images. The finalization step creates the continuous `index.html` shell and cited `segments.json`, omitting blank scans and the three identified text-artifact images. The web app itself only serves generated static files; these Python packages are not runtime dependencies.
+A full build also uses Poppler (`pdftoppm`) for the two opening scans. The PDF build can take several minutes because the source is a scanned, OCR-layer PDF. It uses `pymupdf4llm` for page/layout/table extraction, Python-Markdown for table-aware HTML, Bleach to sanitize converted markup, and Pillow to optimize extracted images. The finalization step creates the continuous `index.html` shell and cited `segments.json`, omitting blank scans and the three identified text-artifact images. The Next.js reader loads the generated data and figures; these Python packages are not runtime dependencies.
 
 Build the private BM25/semantic index after generating the segments:
 
@@ -60,7 +60,7 @@ If only the chapter links need updating, run:
 .venv-study/bin/python assets/scripts/build_study_html.py --navigation-only
 ```
 
-`--navigation-only` rebuilds the responsive reader shell from the existing `segments.json` metadata; it does not re-extract the PDF or regenerate search vectors. The builder writes `study/index.html`, `study/segments.json`, and described figure images under `study/images/`. The responsive stylesheet and reader/search script live in `study/study.css` and `study/study.js`.
+`--navigation-only` rebuilds the standalone HTML shell from the existing `segments.json` metadata (the Next React shell lives in `app/study/reader.jsx`); it does not re-extract the PDF or regenerate search vectors. The builder writes `study/index.html`, `study/segments.json`, and described figure images under `study/images/`. The responsive stylesheet and reader/search script live in `study/study.css` and `study/study.js`.
 
 ## Rights and fidelity
 

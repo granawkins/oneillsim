@@ -22,7 +22,8 @@ test('clean reader, debounced URL history, search selection, deep links, and res
     const errors = [];
     const queries = [];
     page.on('pageerror', error => errors.push(error.message));
-    await page.route('https://reader.test/**', async route => {
+    const liveBase = process.env.ONEILLSIM_NEXT_TEST_URL;
+    await page.route(liveBase ? `${new URL(liveBase).origin}/**` : 'https://reader.test/**', async route => {
       const url = new URL(route.request().url());
       if (url.pathname.endsWith('/api/study/search')) {
         const { query } = route.request().postDataJSON();
@@ -38,12 +39,13 @@ test('clean reader, debounced URL history, search selection, deep links, and res
         if (query === 'slow') await new Promise(resolve => setTimeout(resolve, 800));
         return route.fulfill({ json: { bm25: [paragraph, hidden], semantic: [paragraph], semantic_available: true } });
       }
+      if (liveBase) return route.continue();
       const file = url.pathname.split('/study/')[1] || 'index.html';
       const contentType = file.endsWith('.css') ? 'text/css' : file.endsWith('.js') ? 'application/javascript'
         : file.endsWith('.json') ? 'application/json' : file.endsWith('.jpg') ? 'image/jpeg' : 'text/html';
       return route.fulfill({ body: await readFile(path.join(study, file)), contentType });
     });
-    const base = 'https://reader.test/oneillsim/study/';
+    const base = liveBase || 'https://reader.test/oneillsim/study/';
     await page.goto(base);
     await page.waitForFunction(() => document.querySelector('#reader-status').hidden);
     assert.equal(await page.locator('.page-citation,.reading-note,.study-footer,.search-modes').count(), 0);

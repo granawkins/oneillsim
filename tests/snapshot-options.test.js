@@ -20,7 +20,7 @@ test('asset snapshot accepts a registered model and explicit camera angle', () =
     const options = parseSnapshotOptions(new URLSearchParams(
         'scene=asset&asset=TorusHome_ModA&azimuth=12&elevation=16&distance=18'
     ));
-    assert.equal(options.pagePath, '/assets/');
+    assert.equal(options.pagePath, '/assets/houses/');
     const pageParams = new URLSearchParams(options.pageSearch);
     assert.equal(pageParams.get('capture'), '1');
     assert.equal(pageParams.get('asset'), 'TorusHome_ModA');

@@ -1,7 +1,8 @@
-:root{color-scheme:light;--ink:#252923;--muted:#73796e;--accent:#365c45;--line:#dce0d7}
+.study-page{
+&{color-scheme:light;--ink:#252923;--muted:#73796e;--accent:#365c45;--line:#dce0d7}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-body{margin:0;background:#fff;color:var(--ink);font:16px/1.5 system-ui,sans-serif}
+&{margin:0;background:#fff;color:var(--ink);font:16px/1.5 system-ui,sans-serif}
 a{color:var(--accent)}
 .study-header{padding:2.5rem 3.5vw 1.75rem}
 h1{margin:0 0 1.35rem;font:normal clamp(1.8rem,3.5vw,3rem)/1.12 Georgia,serif;letter-spacing:-.035em}
@@ -83,7 +84,7 @@ figcaption p{margin:0}
 .chapter-references li{margin:1rem 0;scroll-margin-top:3rem}
 .reference-link{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .reference-flash{animation:reference-flash 2.4s ease-out}
-@keyframes reference-flash{from{background:#fff0af}to{background:transparent}}
+
 @media(prefers-reduced-motion:reduce){.reference-flash{animation:none;background:#fff0af}}
 @media(max-width:950px){.study-layout{grid-template-columns:16rem minmax(0,1fr);gap:2rem}}
 @media(max-width:760px){
@@ -121,3 +122,7 @@ h3.study-heading,h4.study-heading{clear:none}
 .search-result-link:focus-visible{outline-offset:6px}
 
 .result-preview .result-table-note{font:.9rem/1.6 Georgia,serif;margin:.5rem 0}
+
+}
+
+@keyframes reference-flash{from{background:#fff0af}to{background:transparent}}
