@@ -1,3 +1,6 @@
+import {configureTerraces} from './terrace-surfaces.js';
+import {createTerraces} from './terraces.js';
+import {initTerraceControls} from './terrace-controls.js';
 import { initScene, scene, camera, renderer, habitatGroup, cameraAnchor } from './scene.js';
 import { createSunRing, createAmbientLight, setLightIntensity } from './lighting.js';
 import { GROUND_RADIUS, createCylinder, getGroundMesh } from './cylinder.js';
@@ -47,11 +50,15 @@ function applyUrlView() {
 window.__oneillSimReady = false;
 
 async function init() {
+    const worldResponse=await fetch('world.json');
+    const worldData=worldResponse.ok ? await worldResponse.json() : {};
+    configureTerraces(worldData.terraces);
     const sceneObjects = initScene();
 
     createSunRing(sceneObjects.habitatGroup);
     createAmbientLight(sceneObjects.scene);
     createCylinder(sceneObjects.habitatGroup);
+    createTerraces(sceneObjects.habitatGroup);
     createStars(sceneObjects.scene);
     createTorus(sceneObjects.habitatGroup);
 
@@ -61,16 +68,8 @@ async function init() {
     // Initialize editor
     await initEditor(sceneObjects.camera, sceneObjects.habitatGroup, getGroundMesh());
 
-    // Load world state from world.json
-    try {
-        const response = await fetch('world.json');
-        if (response.ok) {
-            const worldData = await response.json();
-            await loadWorld(worldData);
-        }
-    } catch (e) {
-        // Use defaults if world.json fails to load
-    }
+    await loadWorld(worldData);
+    initTerraceControls(sceneObjects.habitatGroup);
 
     // Prevent info panel from triggering three.js pointer lock
     const ui = document.getElementById('ui');

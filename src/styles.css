@@ -215,4 +215,7 @@ html.capture-mode #ui,
 html.capture-mode #crosshair,
 html.capture-mode #editor-selector {
     display: none !important;
-}
+}.terrace-controls { display:grid;gap:8px;max-width:300px;margin-top:12px;font-size:12px; }
+.terrace-controls select { max-width:240px; }
+.terrace-controls button { cursor:pointer;padding:6px; }
+.terrace-controls small { color:#bbc8bb; }

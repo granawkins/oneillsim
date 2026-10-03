@@ -93,7 +93,7 @@ export async function onClick(event) {
             console.log('Bulldozer: no surface position');
             return;
         }
-        const assetId = findAssetAtPosition(surfacePos.theta, surfacePos.z);
+        const assetId = findAssetAtPosition(surfacePos.theta, surfacePos.z, .05, surfacePos.deckId || null);
         console.log('Bulldozer:', { theta: surfacePos.theta, z: surfacePos.z, assetId });
         if (assetId) {
             const removed = removeAsset(assetId);
@@ -112,6 +112,7 @@ export async function onClick(event) {
     if (!surfacePos) return;
 
     if (selected.type === 'texture') {
+        if(surfacePos.deckId) return; // Base terrain brushes do not repaint terrace slabs.
         // Paint texture
         paintTexture(surfacePos.theta, surfacePos.z, selected.id);
     } else if (isAsset) {
@@ -135,7 +136,8 @@ export async function onClick(event) {
                     surfacePos.theta + offsetTheta,
                     Math.max(-60, Math.min(60, surfacePos.z + offsetZ)),
                     randomScale,
-                    randomRotation
+                    randomRotation,
+                    surfacePos
                 ));
             }
             await Promise.all(placements);
@@ -146,7 +148,8 @@ export async function onClick(event) {
                 surfacePos.theta,
                 surfacePos.z,
                 editorState.assetScale,
-                editorState.assetRotation
+                editorState.assetRotation,
+                surfacePos
             );
         }
     }
@@ -157,7 +160,7 @@ export function onDelete() {
     const surfacePos = getSurfacePosition();
     if (!surfacePos) return;
 
-    const assetId = findAssetAtPosition(surfacePos.theta, surfacePos.z);
+    const assetId = findAssetAtPosition(surfacePos.theta, surfacePos.z, .05, surfacePos.deckId || null);
     if (assetId) {
         removeAsset(assetId);
     }
@@ -308,7 +311,7 @@ async function updateGhostPreview(forceRecreate = false) {
         const surfacePos = getSurfacePosition();
         if (surfacePos) {
             lastGhostPosition = surfacePos;  // Store for placement
-            orientToSurface(ghostPreview, surfacePos.theta, surfacePos.z);
+            orientToSurface(ghostPreview, surfacePos.theta, surfacePos.z, surfacePos.height || 0);
             ghostPreview.rotateY(editorState.assetRotation);
             ghostPreview.scale.setScalar(editorState.assetScale);
             ghostPreview.visible = true;

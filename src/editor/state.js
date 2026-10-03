@@ -29,6 +29,7 @@ export const editorState = {
     selectedItem: null,      // Currently selected item object
     placedAssets: [],        // Array of { id, type, theta, z, scale, rotation } - SPARSE
     textureGrid: null,       // 2D array [row][col] of texture IDs - loaded from world.json
+    terraces: null,
     cropConfig: null,        // Procedural crop config from world.json
     previewAsset: null,      // Current ghost preview mesh
     previewVisible: false,
@@ -127,7 +128,8 @@ export function exportWorldState() {
         a.theta,
         a.z,
         a.scale,
-        a.rotation
+        a.rotation,
+        ...(a.surface ? [a.blockout || null, a.surface] : a.blockout ? [a.blockout] : [])
     ]);
 
     const result = {
@@ -144,11 +146,13 @@ export function exportWorldState() {
         result.cropConfig = cropConfig;
     }
 
+    if(editorState.terraces) result.terraces=editorState.terraces;
     return result;
 }
 
 // Import world state from world.json
 export function importWorldState(data) {
+    editorState.terraces=data.terraces || null;
     // Load texture grid
     if (data.grid) {
         editorState.textureGrid = data.grid;
@@ -164,7 +168,9 @@ export function importWorldState(data) {
                 theta: a[2],
                 z: a[3],
                 scale: a[4],
-                rotation: a[5]
+                rotation: a[5],
+                ...(a[6] ? { blockout: a[6] } : {}),
+                ...(a[7] ? {surface:a[7]} : {})
             }));
         } else {
             // v2 object format: { id, type, theta, z, scale, rotation }

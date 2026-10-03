@@ -1,5 +1,7 @@
 // Ground picking via raycasting
 import * as THREE from 'three';
+import {terracePickMeshes} from '../terraces.js';
+import {selectedDeckId} from '../terrace-surfaces.js';
 import { GROUND_RADIUS } from '../cylinder.js';
 
 const raycaster = new THREE.Raycaster();
@@ -11,6 +13,7 @@ let usePointerLock = true;  // If true, raycast from center; if false, from mous
 
 // Per-frame cache to avoid multiple raycasts
 let cachedIntersection = null;
+let pickedDeckId=null;
 
 // Initialize with ground mesh reference
 export function initRaycaster(ground, cam) {
@@ -63,9 +66,12 @@ export function getGroundIntersection() {
         raycaster.setFromCamera(mouse, camera);
     }
 
-    const intersects = raycaster.intersectObject(groundMesh, false);
+    const targets=[...terracePickMeshes(),...(!selectedDeckId?[groundMesh]:[])];
+    targets.forEach(m=>m.updateMatrixWorld(true));
+    const intersects=raycaster.intersectObjects(targets,false);
 
     if (intersects.length > 0) {
+        pickedDeckId=intersects[0].object.userData.deckId || null;
         cachedIntersection = intersects[0].point.clone();
         return cachedIntersection.clone();
     }
@@ -94,7 +100,7 @@ export function worldToSurface(point) {
     // Now calculate theta and z in local space
     const theta = Math.atan2(localPoint.y, localPoint.x);
     const z = localPoint.z;
-    return { theta, z };
+    return { theta, z, height: pickedDeckId ? GROUND_RADIUS-Math.hypot(localPoint.x,localPoint.y) : 0, deckId:pickedDeckId };
 }
 
 // Convert surface coordinates to world point

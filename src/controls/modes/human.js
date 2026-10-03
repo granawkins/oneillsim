@@ -1,9 +1,9 @@
+import {supportAt,walkStep} from '../../terrace-surfaces.js';
 import * as THREE from 'three';
 import {
     HUMAN_MOVE_SPEED,
     PLAYER_RADIUS,
-    GRAVITY,
-    Z_LIMIT
+    GRAVITY
 } from '../constants.js';
 import {
     yaw,
@@ -17,13 +17,16 @@ export function setupHumanMode() {
     const pos = cameraAnchor.position;
     const angle = Math.atan2(pos.y, pos.x);
 
-    humanState.currentRadius = PLAYER_RADIUS;
+    const support=supportAt(angle,pos.z,830-Math.hypot(pos.x,pos.y));
+    humanState.floorHeight=support?.height || 0;
+    const floorRadius=PLAYER_RADIUS-humanState.floorHeight;
+    humanState.currentRadius = floorRadius;
     humanState.isGrounded = true;
     humanState.radialVelocity = 0;
 
     // Position on ground
-    cameraAnchor.position.x = PLAYER_RADIUS * Math.cos(angle);
-    cameraAnchor.position.y = PLAYER_RADIUS * Math.sin(angle);
+    cameraAnchor.position.x = floorRadius * Math.cos(angle);
+    cameraAnchor.position.y = floorRadius * Math.sin(angle);
 
     // Orient feet toward center
     cameraAnchor.rotation.set(0, 0, angle - Math.PI / 2 + Math.PI);
@@ -48,19 +51,29 @@ export function updateHumanMode() {
     if (moveState.right) direction.add(right);
     if (moveState.left) direction.sub(right);
 
+    const previous=cameraAnchor.position.clone();
     if (direction.length() > 0) {
         direction.normalize().multiplyScalar(HUMAN_MOVE_SPEED);
         direction.applyQuaternion(cameraAnchor.quaternion);
         cameraAnchor.position.add(direction);
     }
 
+    const nextAngle=Math.atan2(cameraAnchor.position.y,cameraAnchor.position.x);
+    const previousHeight=humanState.floorHeight || 0;
+    const support=walkStep(nextAngle,cameraAnchor.position.z,previousHeight);
+    if(!support){cameraAnchor.position.copy(previous);} else {
+        humanState.floorHeight=support.height;
+        if(humanState.isGrounded)humanState.currentRadius=PLAYER_RADIUS-support.height;
+    }
+    const floorRadius=PLAYER_RADIUS-(humanState.floorHeight || 0);
+
     // Apply jump physics
     if (!humanState.isGrounded) {
         humanState.radialVelocity += GRAVITY;
         humanState.currentRadius += humanState.radialVelocity;
 
-        if (humanState.currentRadius >= PLAYER_RADIUS) {
-            humanState.currentRadius = PLAYER_RADIUS;
+        if (humanState.currentRadius >= floorRadius) {
+            humanState.currentRadius = floorRadius;
             humanState.radialVelocity = 0;
             humanState.isGrounded = true;
         }
@@ -73,7 +86,7 @@ export function updateHumanMode() {
     cameraAnchor.position.y *= ratio;
 
     // Constrain Z position
-    if (Math.abs(cameraAnchor.position.z) > Z_LIMIT) {
-        cameraAnchor.position.z = Math.sign(cameraAnchor.position.z) * Z_LIMIT;
+    if (Math.abs(cameraAnchor.position.z) > 64) {
+        cameraAnchor.position.z = Math.sign(cameraAnchor.position.z) * 64;
     }
 }

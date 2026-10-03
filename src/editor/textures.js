@@ -1,5 +1,6 @@
 // Ground texture painting system
 import * as THREE from 'three';
+import {inTerraceSector} from '../terrace-surfaces.js';
 import {
     editorState,
     setTextureAt,
@@ -43,6 +44,7 @@ export function paintTexture(theta, z, textureId) {
 function updateTexturePatchAt(row, col) {
     if (!texturePatchGroup) return;
 
+    if(inTerraceSector(gridToWorld(row,col).theta)) return;
     const key = `patch_${row}_${col}`;
     const textureId = getTextureId(row, col);
     const textureName = TEXTURE_NAMES[textureId];

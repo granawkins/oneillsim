@@ -1,5 +1,6 @@
 // Asset placement on the cylinder surface
 import * as THREE from 'three';
+import { createBlockout } from './blockout.js';
 import { editorState, generateAssetId, addPlacedAsset, removePlacedAsset, GROUND_RADIUS } from './state.js';
 import { loadAsset, getAsset } from './loader.js';
 import { surfaceToWorld } from './raycaster.js';
@@ -23,8 +24,8 @@ const _right = new THREE.Vector3();
 const _matrix = new THREE.Matrix4();
 
 // Orient an object to stand on the cylinder surface
-export function orientToSurface(object, theta, z) {
-    object.position.copy(surfaceToWorld(theta, z, SURFACE_RADIUS));
+export function orientToSurface(object, theta, z, elevation = 0) {
+    object.position.copy(surfaceToWorld(theta, z, elevation ? GROUND_RADIUS-elevation-.05 : SURFACE_RADIUS));
 
     // Compute orientation directly (avoids lookAt singularities)
     // Up = radially inward toward cylinder axis
@@ -39,7 +40,7 @@ export function orientToSurface(object, theta, z) {
 }
 
 // Place an asset at surface coordinates
-export async function placeAsset(assetName, theta, z, scale = 4.0, rotation = 0) {
+export async function placeAsset(assetName, theta, z, scale = 4.0, rotation = 0, surface = null) {
     if (!habitatGroup) {
         console.warn('Placement not initialized');
         return null;
@@ -58,12 +59,13 @@ export async function placeAsset(assetName, theta, z, scale = 4.0, rotation = 0)
     const id = generateAssetId();
 
     // Position and orient
-    orientToSurface(asset, theta, z);
+    orientToSurface(asset, theta, z, surface?.height || 0);
     asset.rotateY(rotation);
     asset.scale.setScalar(scale);
 
     // Store reference
     asset.userData.assetId = id;
+    if(surface?.deckId) asset.userData.deckId=surface.deckId;
     assetObjects.set(id, asset);
 
     // Add to scene
@@ -76,7 +78,8 @@ export async function placeAsset(assetName, theta, z, scale = 4.0, rotation = 0)
         theta,
         z,
         scale,
-        rotation
+        rotation,
+        ...(surface?.deckId ? {surface} : {})
     });
 
     return id;
@@ -108,10 +111,11 @@ export function removeAsset(id) {
 }
 
 // Find asset at surface position (for deletion)
-export function findAssetAtPosition(theta, z, tolerance = 0.05) {
+export function findAssetAtPosition(theta, z, tolerance = 0.05, deckId = null) {
     for (const [id, asset] of assetObjects) {
         const data = editorState.placedAssets.find(a => a.id === id);
         if (!data) continue;
+        if ((data.surface?.deckId || data.blockout?.deckId || null)!==deckId) continue;
 
         // Check if within tolerance
         // Handle theta wrap-around at 2*PI boundary
@@ -120,7 +124,10 @@ export function findAssetAtPosition(theta, z, tolerance = 0.05) {
             dTheta = 2 * Math.PI - dTheta;
         }
         const dZ = Math.abs(data.z - z);
-        if (dTheta < tolerance && dZ < 5) {
+        const within = data.blockout
+            ? dTheta * (GROUND_RADIUS - (data.surface?.height ?? data.blockout.elevation ?? 0)) < data.blockout.width / 2 && dZ < data.blockout.depth / 2
+            : dTheta < tolerance && dZ < 5;
+        if (within) {
             return id;
         }
     }
@@ -158,8 +165,10 @@ export function updatePreview(preview, theta, z, rotation = 0) {
 export async function loadPlacedAssets(assets) {
     for (const data of assets) {
         try {
-            const asset = await loadAsset(data.type);
-            orientToSurface(asset, data.theta, data.z);
+            const asset = data.blockout ? createBlockout(data.blockout) : await loadAsset(data.type);
+            orientToSurface(asset, data.theta, data.z, data.surface?.height ?? data.blockout?.elevation ?? 0);
+            const deckId=data.surface?.deckId || data.blockout?.deckId;
+            if(deckId) asset.userData.deckId=deckId;
             asset.rotateY(data.rotation || 0);
             asset.scale.setScalar(data.scale || 4.0);
             asset.userData.assetId = data.id;

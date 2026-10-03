@@ -70,3 +70,19 @@ The browser/snapshot checks use Chromium. Set `SNAPSHOT_CHROMIUM_PATH` to your l
 To add a design, put its OBJ, MTL, atlas and `.asset.json` manifest in its ignored asset directory, then register its `id`, `name`, and `directory` under the appropriate type. The type page lists all designs and their individual triangle/vertex counts from those manifests; selecting a design replaces the single active viewer. Put source-document links on the type, and model-specific interpretation notes in its manifest. Add an optional type thumbnail when available. The snapshot allowlist derives from the same registry. Legacy asset capture URLs redirect to the matching type page.
 
 This roadmap does not add placeholder models to `src/editor/catalog.js`; only real, placeable models belong in the simulation catalog. Planned names are a starting inventory, not verified requirements from the study.
+
+## Residential blockout
+
+`/residential/` documents district A and its source allocations, with a selectable ground/lower-deck plan. `src/residential-plan.js` contains the dimensions and planning assumptions. `scripts/populate-residential.mjs [base-world.json]` replaces only the first 60° sector and backs up the previous local world to `/tmp` before writing. Use a current saved world as the base; regeneration replaces manual changes within that sector.
+
+Placeholder shapes are ordinary saved asset records with an optional seventh tuple field, `blockout`, holding dimensions, color, category and deck elevation. The placement system renders them procedurally and preserves them through editor saves; they do not require OBJ files. The wiki describes the generated baseline, not subsequent manual world edits. Tests: `node --test tests/residential-plan.test.js tests/residential.browser.test.js` with the local preview running.
+
+## Agricultural terraces
+
+`/agriculture/` documents the adjacent 60–120° farm. `src/agriculture-plan.js` defines its seven levels, six stair runs, source area targets and 94 plots. `node scripts/populate-agriculture.mjs` replaces only that farm sector, backs up the current world under `/tmp`, and records `world.terraces`. The other sectors are retained.
+
+`terrace-surfaces.js` provides shared analytic support queries; `terraces.js` builds curved deck slabs, stair openings and visible stair treads. The agricultural sector is cut out of the original ground and terrain patches. Selecting a deck isolates its geometry and assets and limits editor picking to that level. Asset tuple field 8 (`surface`, index 7) stores `{deckId,height}`; field 7 remains optional blockout geometry. World export preserves both attachments and terrace topology. The blockout generator uses each deck's own circumference when converting areas to dimensions.
+
+Human walking follows connected surfaces with a 0.4 m step limit; stairs use a continuous slope for movement and stepped visual geometry. Unsupported edges are blocked. This is not a general collision engine: crop blocks/buildings and overhead slabs are not collision obstacles, and the farm entry shelf is not yet connected to residential ground. Use **Walk this deck** to enter. The wiki describes the initial generated layout rather than subsequent manual edits.
+
+Validation: `node --test tests/agriculture-plan.test.js tests/agriculture.browser.test.js`. Browser tests check actual ray picking, placement/export on a lower deck, and traversing the stair runs. Use `ONEILLSIM_TEST_URL` to choose the local server.

@@ -12,7 +12,7 @@ export default async function AssetsPage({ searchParams }) {
   }
   const ready = assetTypes.filter(type => type.variants.length).length;
   return <main className="asset-library">
-    <nav><a href="/oneillsim/">← Simulation</a><Link href="/study/">Study ↗</Link></nav>
+    <nav><a href="/oneillsim/">← Simulation</a><Link href="/residential/">Residential plan ↗</Link><Link href="/agriculture/">Agriculture ↗</Link><Link href="/study/">Study ↗</Link></nav>
     <header><h1>Asset library</h1><p>{ready} modeled · {assetTypes.length - ready} planned</p></header>
     <p className="library-intro">The building blocks of the settlement. Designs and shared references live together under each type.</p>
     <div className="library-groups">{assetGroups.map(group => <section key={group.name}>
