@@ -52,7 +52,7 @@ def load_image_descriptions(path: Path = DEFAULT_IMAGE_DESCRIPTIONS) -> dict[str
 
 def build_navigation() -> str:
     return "\n".join(
-        f'<a href="#pdf-{page:03d}"><span>{page:03d}</span>{html.escape(label)}</a>'
+        f'<a href="#pdf-{page:03d}">{html.escape(label)}</a>'
         for page, label in REPORT_NAV
     )
 
@@ -64,78 +64,48 @@ def _reader_shell(pdf_pages: int) -> str:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A searchable, continuous HTML reading edition of NASA SP-413, Space Settlements: A Design Study (1977).">
+  <meta name="description" content="Space Settlements: A Design Study, NASA SP-413 (1977).">
   <title>Space Settlements: A Design Study · NASA SP-413</title>
   <link rel="stylesheet" href="study.css">
   <script src="study.js" defer></script>
 </head>
-<body id="top" class="study-linear">
+<body id="top">
   <header class="study-header">
-    <div class="header-topline">
-      <a class="back-link" href="../assets/">← Asset gallery</a>
-      <span class="library-label">REFERENCE LIBRARY · NASA SP-413</span>
-      <button id="chapter-menu-toggle" class="chapter-menu-toggle" type="button" aria-expanded="false" aria-controls="chapter-navigation" aria-label="Open chapter menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
     <h1>Space Settlements: A Design Study</h1>
-    <p class="subtitle">NASA SP-413 · published 1977</p>
-    <form id="study-search-form" class="search-panel" role="search">
-      <label for="study-search">Search the report</label>
-      <div class="search-input-row">
-        <input id="study-search" type="search" placeholder="Try “terraced housing” or “radiation shielding”" autocomplete="off" maxlength="400">
-        <button id="study-search-button" type="submit">Search</button>
-      </div>
-      <fieldset class="search-modes">
-        <legend>Search using</legend>
-        <label><input id="search-bm25" type="checkbox" checked> Keyword (BM25)</label>
-        <label><input id="search-semantic" type="checkbox" checked> Meaning (semantic)</label>
-        <span id="search-status" aria-live="polite"></span>
-      </fieldset>
-    </form>
-    <section id="search-results" class="search-results" aria-label="Search results" aria-live="polite" hidden>
-      <div class="search-results-heading"><h2>Search results</h2><button id="search-results-close" type="button" aria-label="Close search results">×</button></div>
-      <div class="search-result-columns">
-        <section class="search-result-group" aria-labelledby="bm25-results-title">
-          <h3 id="bm25-results-title">Keyword matches · BM25</h3>
-          <ol id="bm25-results"></ol>
-        </section>
-        <section class="search-result-group" aria-labelledby="semantic-results-title">
-          <h3 id="semantic-results-title">Meaning matches · semantic</h3>
-          <ol id="semantic-results"></ol>
-        </section>
-      </div>
-    </section>
+
   </header>
-  <button id="chapter-menu-backdrop" class="chapter-menu-backdrop" type="button" aria-label="Close chapter menu" hidden></button>
-  <div class="study-layout">
-    <aside class="study-sidebar" aria-label="Report navigation">
-      <nav id="chapter-navigation" class="chapter-navigation" aria-label="Chapters">
-        <h2>Chapters</h2>
-        {nav}
-      </nav>
-      <section class="source-card">
-        <h2>Source & notes</h2>
-        <p>This is a searchable reading edition, not a page facsimile. Text, OCR, and reconstructed tables can contain errors; check important details against the original scan.</p>
-        <p>NASA NTRS cautions that portions may include third-party copyrighted material. Explicitly credited figures are omitted here and linked to the source. Figures shown here have not been individually rights-cleared; their inclusion is not permission to reuse them.</p>
-        <a href="{NTRS_RECORD}" target="_blank" rel="noopener">NASA NTRS record ↗</a>
-      </section>
-    </aside>
-    <main id="study-content" class="study-content">
-      <div class="reading-note">
-        <strong>One continuous reading flow</strong>
-        <p>Segments follow the report’s original order. Each paragraph, image, and table links back to its PDF page. Use the chapter menu to jump to a section.</p>
+  <main>
+
+    <div class="study-layout">
+      <aside class="study-sidebar" aria-label="Report navigation">
+    <form id="study-search-form" role="search">
+      <input id="study-search" name="q" type="search" aria-label="Search the study" placeholder="Search the study" autocomplete="off" maxlength="400">
+      <button type="submit">Search</button>
+    </form>
+        <div id="outline-scroll" class="outline-scroll">
+        <nav id="chapter-navigation" aria-label="Chapters">
+          {nav}
+        </nav>
+        <a class="source-link" href="https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf" target="_blank" rel="noopener">Original document at NASA ↗</a>
+        </div>
+      </aside>
+      <div class="study-content">
+    <section id="search-results" class="search-results" aria-label="Search results" hidden>
+      <p id="search-status" role="status"></p>
+      <ol id="result-list"></ol>
+    </section>
+        <div id="reading-view">
+        <p id="reader-status" role="status">Loading…</p>
+        <article id="study-article" aria-label="Space Settlements: A Design Study"></article>
+        <noscript>This reader needs JavaScript to display the study.</noscript>
+        </div>
       </div>
-      <p id="reader-status" class="reader-status" role="status">Loading report segments…</p>
-      <article id="study-article" class="study-article" aria-label="Space Settlements: A Design Study"></article>
-      <noscript><p>This reader needs JavaScript enabled to load the report segments.</p></noscript>
-      <a class="top-link" href="#top">Back to top ↑</a>
-    </main>
-  </div>
-  <footer class="study-footer"><span>Unofficial searchable reading edition · {pdf_pages} PDF pages</span><a href="{NTRS_RECORD}" target="_blank" rel="noopener">Open NASA NTRS record ↗</a></footer>
+    </div>
+  </main>
 </body>
 </html>
 '''
+
 
 
 def build_reading_edition(

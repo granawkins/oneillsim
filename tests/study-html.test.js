@@ -26,10 +26,10 @@ async function loadSegments() {
 test('study reader is a continuous article with an accessible chapter menu and visible search-results region', async () => {
   const html = await loadStudy();
   assert.match(html, /id="study-search"/);
-  assert.match(html, /id="chapter-menu-toggle"/);
+  assert.doesNotMatch(html, /chapter-menu-toggle|search-modes|reading-note|study-footer/);
   assert.match(html, /id="chapter-navigation"/);
   assert.match(html, /id="search-results"/);
-  assert.match(html, /aria-live="polite"/);
+  assert.match(html, /role="status"/);
   assert.match(html, /id="study-article"/);
   assert.match(html, /Chapter 1/i);
   assert.doesNotMatch(html, /class="report-page"/);
@@ -40,14 +40,14 @@ test('ordered segments retain original PDF citations and keep each table as one 
   const data = await loadSegments();
   const segments = data.segments;
   assert.equal(data.metadata.pdf_pages, 204);
-  assert.equal(data.metadata.table_count, 84);
+  assert.equal(data.metadata.table_count, 86);
   assert.equal(data.metadata.image_count, 106);
   assert.equal(segments.length, data.metadata.segment_count);
   assert.deepEqual(segments.map((segment) => segment.index), segments.map((_, index) => index + 1));
   assert.ok(segments.every((segment) => segment.id && segment.pdf_page >= 1 && segment.source_url.includes(`#page=${segment.pdf_page}`)));
 
   const tables = segments.filter((segment) => segment.type === 'table');
-  assert.equal(tables.length, 84);
+  assert.equal(tables.length, 86);
   assert.ok(tables.every((segment) => segment.description && segment.table_markdown.startsWith('|')));
   const images = segments.filter((segment) => segment.type === 'image');
   assert.equal(images.length, 106);
@@ -72,8 +72,7 @@ test('housing figure anchors and chapter navigation targets exist in the continu
 test('credited Figure 4-8 remains described in text and links to the NASA source, not a copied image', async () => {
   const html = await loadStudy();
   const data = await loadSegments();
-  assert.match(html, /ntrs\.nasa\.gov\/citations\/19770014162/);
-  assert.match(html, /not been individually rights-cleared/i);
+  assert.match(html, /ntrs\.nasa\.gov\/api\/citations\/19770014162\/downloads/);
   assert.ok(data.segments.some((segment) => segment.text.includes('Figure 4-8')));
   assert.ok(!data.segments.some((segment) => segment.image_path?.includes('p0067')));
 });

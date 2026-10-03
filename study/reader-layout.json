@@ -1,0 +1,3122 @@
+{
+  "chapters": [
+    {
+      "number": 1,
+      "id": "sp413-s00110",
+      "page": 18,
+      "title": "The Colonization of Space"
+    },
+    {
+      "number": 2,
+      "id": "sp413-s00256",
+      "page": 26,
+      "title": "Physical Properties of Space"
+    },
+    {
+      "number": 3,
+      "id": "sp413-s00532",
+      "page": 38,
+      "title": "Human Needs in Space"
+    },
+    {
+      "number": 4,
+      "id": "sp413-s01023",
+      "page": 56,
+      "title": "Choosing Among Alternatives"
+    },
+    {
+      "number": 5,
+      "id": "sp413-s02144",
+      "page": 104,
+      "title": "A Tour of the Colony"
+    },
+    {
+      "number": 6,
+      "id": "sp413-s03196",
+      "page": 156,
+      "title": "Building the Colony and Making It Prosper"
+    },
+    {
+      "number": 7,
+      "id": "sp413-s03906",
+      "page": 188,
+      "title": "View to the Future"
+    },
+    {
+      "number": 8,
+      "id": "sp413-s04110",
+      "page": 196,
+      "title": "Recommendations and Conclusions"
+    }
+  ],
+  "headings": {
+    "sp413-s00110": {
+      "title": "1. The Colonization of Space",
+      "level": 2,
+      "chapter": 1
+    },
+    "sp413-s00121": {
+      "title": "The Overall System",
+      "level": 3,
+      "chapter": 1
+    },
+    "sp413-s00142": {
+      "title": "Design Goals",
+      "level": 3,
+      "chapter": 1
+    },
+    "sp413-s00173": {
+      "title": "The History Of An Idea",
+      "level": 3,
+      "chapter": 1
+    },
+    "sp413-s00254": {
+      "title": "Page intentionally left blank",
+      "level": 4,
+      "chapter": 1
+    },
+    "sp413-s00256": {
+      "title": "2. Physical Properties of Space",
+      "level": 2,
+      "chapter": 2
+    },
+    "sp413-s00265": {
+      "title": "The Topography Of Space",
+      "level": 3,
+      "chapter": 2
+    },
+    "sp413-s00267": {
+      "title": "Planets and Moons: Deep Gravity Valleys",
+      "level": 4,
+      "chapter": 2
+    },
+    "sp413-s00292": {
+      "title": "Two Kinds of Separation in Space:",
+      "level": 4,
+      "chapter": 2
+    },
+    "sp413-s00312": {
+      "title": "Solar radiation: an abundant, essential source of energy",
+      "level": 4,
+      "chapter": 2
+    },
+    "sp413-s00326": {
+      "title": "Matter In Space: A Major Resource",
+      "level": 3,
+      "chapter": 2
+    },
+    "sp413-s00333": {
+      "title": "Sources of Matter in Space",
+      "level": 4,
+      "chapter": 2
+    },
+    "sp413-s00358": {
+      "title": "Meteoroids: An Insignificant Danger",
+      "level": 4,
+      "chapter": 2
+    },
+    "sp413-s00368": {
+      "title": "Ionizing Radiation: Major Threat",
+      "level": 4,
+      "chapter": 2
+    },
+    "sp413-s00433": {
+      "title": "Appendix A — Meteoroids and Space Habitats",
+      "level": 3,
+      "chapter": 2,
+      "appendix": true
+    },
+    "sp413-s00477": {
+      "title": "Appendix B — Ionizing Radiation in Space",
+      "level": 3,
+      "chapter": 2,
+      "appendix": true
+    },
+    "sp413-s00532": {
+      "title": "3. Human Needs in Space",
+      "level": 2,
+      "chapter": 3
+    },
+    "sp413-s00539": {
+      "title": "Weightlessness: Pseudogravity Is Needed",
+      "level": 3,
+      "chapter": 3
+    },
+    "sp413-s00597": {
+      "title": "Atmosphere: Less Is Enough",
+      "level": 3,
+      "chapter": 3
+    },
+    "sp413-s00618": {
+      "title": "Food And Water",
+      "level": 3,
+      "chapter": 3
+    },
+    "sp413-s00624": {
+      "title": "Combined Environmental Stresses: Probably Not Serious",
+      "level": 3,
+      "chapter": 3
+    },
+    "sp413-s00631": {
+      "title": "Environmental Design To Reduce Stress",
+      "level": 3,
+      "chapter": 3
+    },
+    "sp413-s00639": {
+      "title": "Diversity and Variability",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00665": {
+      "title": "Space Needs Within the Colony",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00694": {
+      "title": "Small Size And Isolation",
+      "level": 3,
+      "chapter": 3
+    },
+    "sp413-s00704": {
+      "title": "Trade is Essential",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00740": {
+      "title": "Governance and Social Order",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00750": {
+      "title": "Summary Of Design Criteria",
+      "level": 3,
+      "chapter": 3
+    },
+    "sp413-s00752": {
+      "title": "Physiological Criteria",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00755": {
+      "title": "Environmental Design Criteria",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00761": {
+      "title": "Organizational Criteria",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00771": {
+      "title": "Appendix A — Psychological and Cultural Considerations",
+      "level": 3,
+      "chapter": 3,
+      "appendix": true
+    },
+    "sp413-s00777": {
+      "title": "The Solipsism Syndrome in Artificial Environment",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00799": {
+      "title": "Types of Social Organization",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00803": {
+      "title": "Type A Community: Hierarchial and Homogenistic",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00813": {
+      "title": "Type B Community: Individualistic and Isolationistic",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00821": {
+      "title": "Type C Community: Heterogenistic, Mutualistic and Symbiotic",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00850": {
+      "title": "The Problem of Matching",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00866": {
+      "title": "Community",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00873": {
+      "title": "Turnover of Personnel",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00896": {
+      "title": "International Participants",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00902": {
+      "title": "Appendix B — Space Requirements of Various Community Activities",
+      "level": 3,
+      "chapter": 3,
+      "appendix": true
+    },
+    "sp413-s00909": {
+      "title": "Residences",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00916": {
+      "title": "Shops and Offices",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00920": {
+      "title": "Schools and Hospitals",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00933": {
+      "title": "Assembly Halls",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00937": {
+      "title": "Open Space",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00943": {
+      "title": "Light Industry",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00947": {
+      "title": "Storage",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00952": {
+      "title": "Mechanical Subsystems",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s00955": {
+      "title": "Transportation",
+      "level": 4,
+      "chapter": 3
+    },
+    "sp413-s01023": {
+      "title": "4. Choosing Among Alternatives",
+      "level": 2,
+      "chapter": 4
+    },
+    "sp413-s01044": {
+      "title": "The Shape Of The Habitat",
+      "level": 3,
+      "chapter": 4
+    },
+    "sp413-s01051": {
+      "title": "Some General Considerations",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01054": {
+      "title": "The Habitat Must Hold an Atmosphere",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01109": {
+      "title": "Shielding",
+      "level": 3,
+      "chapter": 4
+    },
+    "sp413-s01113": {
+      "title": "Active Shields",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01136": {
+      "title": "Passive Shield",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01160": {
+      "title": "What If The Criteria Change?",
+      "level": 3,
+      "chapter": 4
+    },
+    "sp413-s01166": {
+      "title": "Higher Population Density",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01190": {
+      "title": "Higher Radiation Exposures",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01198": {
+      "title": "Fabrication Techniques",
+      "level": 3,
+      "chapter": 4
+    },
+    "sp413-s01201": {
+      "title": "Initial Construction Facilities",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01206": {
+      "title": "Building the Habitat Shell",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01221": {
+      "title": "Structures Inside the Habitat",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01238": {
+      "title": "The People In The Colony",
+      "level": 3,
+      "chapter": 4
+    },
+    "sp413-s01264": {
+      "title": "Ethnic and National Composition",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01281": {
+      "title": "Export Workers",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01289": {
+      "title": "Social Organization and Governance",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01301": {
+      "title": "Life Support",
+      "level": 3,
+      "chapter": 4
+    },
+    "sp413-s01306": {
+      "title": "Food",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01326": {
+      "title": "Recycling Wastes",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01342": {
+      "title": "Composition and Control of the Atmosphere",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01362": {
+      "title": "Satellite Solar Power Stations: No Alternatives",
+      "level": 3,
+      "chapter": 4
+    },
+    "sp413-s01363": {
+      "title": "Where The Colony Should Be Located",
+      "level": 3,
+      "chapter": 4
+    },
+    "sp413-s01408": {
+      "title": "Mining, Transport, And Processing In Space",
+      "level": 3,
+      "chapter": 4
+    },
+    "sp413-s01430": {
+      "title": "Processing: Where?",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01448": {
+      "title": "Processing: What and How?",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01490": {
+      "title": "Transport of Lunar Material",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01541": {
+      "title": "The Transport System",
+      "level": 3,
+      "chapter": 4
+    },
+    "sp413-s01548": {
+      "title": "From Earth's Surface to Low Orbit",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01560": {
+      "title": "Transport Beyond Low Earth Orbit",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01576": {
+      "title": "Summary",
+      "level": 3,
+      "chapter": 4
+    },
+    "sp413-s01598": {
+      "title": "Appendix A — Material Properties for Design",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s01620": {
+      "title": "Appendix B — Parameters of Habitability",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s01628": {
+      "title": "Projected Area",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01645": {
+      "title": "Habitable Volume",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01659": {
+      "title": "Area and Volume Requirements",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01664": {
+      "title": "Appendix C — Mass as a Measure of Structural Cost",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s01733": {
+      "title": "Appendix E — Structures by Vacuum Vapor Fabrication",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s01759": {
+      "title": "Appendix F — Interior Building Materials and Components",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s01779": {
+      "title": "Appendix G — Population Distributions and Trends",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s01804": {
+      "title": "Appendix H — Satellite Solar Power Stations (SSPS)",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s01835": {
+      "title": "Appendix I — Processing of Metals",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s01852": {
+      "title": "Methods for Aluminum Extraction",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01880": {
+      "title": "Appendix J — Glass Processing",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s01914": {
+      "title": "Appendix K — The Lunar Gas Gun Mass Driver",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s01921": {
+      "title": "Launching Barrel",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01930": {
+      "title": "Projectile Mass",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01937": {
+      "title": "Gas Storage",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01940": {
+      "title": "Nuclear Compressor",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01949": {
+      "title": "Remote Controlled Interceptor Rockets",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01957": {
+      "title": "Lunar Gas Gun Summary",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s01974": {
+      "title": "Appendix L — Passive Catchers",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s01994": {
+      "title": "Appendix M — Space Transportation Systems",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s01999": {
+      "title": "Transport Beyond Low Earth Orbit",
+      "level": 4,
+      "chapter": 4
+    },
+    "sp413-s02144": {
+      "title": "5. A Tour of the Colony",
+      "level": 2,
+      "chapter": 5
+    },
+    "sp413-s02150": {
+      "title": "Earth To Low Earth Orbit",
+      "level": 3,
+      "chapter": 5
+    },
+    "sp413-s02175": {
+      "title": "The Habitat at L5",
+      "level": 3,
+      "chapter": 5
+    },
+    "sp413-s02255": {
+      "title": "A Residential Area",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02379": {
+      "title": "Life Support Systems",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02460": {
+      "title": "Production at L5",
+      "level": 3,
+      "chapter": 5
+    },
+    "sp413-s02473": {
+      "title": "Productivity in Space Construction",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02481": {
+      "title": "Manufacture of Satellite Solar Power Stations",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02492": {
+      "title": "Other Commerce",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02512": {
+      "title": "Extraction Processes for Lunar Ores",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02535": {
+      "title": "Relations to Earth",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02551": {
+      "title": "The Lunar Base",
+      "level": 3,
+      "chapter": 5
+    },
+    "sp413-s02560": {
+      "title": "The Site of the Lunar Base",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02594": {
+      "title": "The Mass Launcher",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02620": {
+      "title": "Power and Supply",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02626": {
+      "title": "The Mass Catcher At L2",
+      "level": 3,
+      "chapter": 5
+    },
+    "sp413-s02643": {
+      "title": "Station-Keeping With the Rotary Pellet Launcher",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02672": {
+      "title": "Home To Earth",
+      "level": 3,
+      "chapter": 5
+    },
+    "sp413-s02683": {
+      "title": "Appendix A — Structural Design Concept for a Shell Structure",
+      "level": 3,
+      "chapter": 5,
+      "appendix": true
+    },
+    "sp413-s02722": {
+      "title": "Appendix B — Structural System for Housing",
+      "level": 3,
+      "chapter": 5,
+      "appendix": true
+    },
+    "sp413-s02734": {
+      "title": "Appendix C — Agriculture",
+      "level": 3,
+      "chapter": 5,
+      "appendix": true
+    },
+    "sp413-s02886": {
+      "title": "Appendix E — Mass Shielding",
+      "level": 3,
+      "chapter": 5,
+      "appendix": true
+    },
+    "sp413-s02954": {
+      "title": "Launch Sequence",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02966": {
+      "title": "Payload Restraint System",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02975": {
+      "title": "Track",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s02997": {
+      "title": "Mass Driver Throughput",
+      "level": 4,
+      "chapter": 5
+    },
+    "sp413-s03009": {
+      "title": "Appendix G — The Mass Catcher",
+      "level": 3,
+      "chapter": 5,
+      "appendix": true
+    },
+    "sp413-s03034": {
+      "title": "Appendix H — Trajectories From the Moon to L2",
+      "level": 3,
+      "chapter": 5,
+      "appendix": true
+    },
+    "sp413-s03057": {
+      "title": "Appendix I — Rotary Pellet Launcher",
+      "level": 3,
+      "chapter": 5,
+      "appendix": true
+    },
+    "sp413-s03109": {
+      "title": "Appendix J — Impact Upon Lunar Atmosphere",
+      "level": 3,
+      "chapter": 5,
+      "appendix": true
+    },
+    "sp413-s03149": {
+      "title": "Appendix K — Chevron Shields",
+      "level": 3,
+      "chapter": 5,
+      "appendix": true
+    },
+    "sp413-s03196": {
+      "title": "6. Building the Colony and Making It Prosper",
+      "level": 2,
+      "chapter": 6
+    },
+    "sp413-s03208": {
+      "title": "Preparatory Work",
+      "level": 3,
+      "chapter": 6
+    },
+    "sp413-s03236": {
+      "title": "Activities at LEO",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03239": {
+      "title": "Activities on the Moon",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03245": {
+      "title": "Fabrication on Earth",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03252": {
+      "title": "Raw Materials from the Moon",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03257": {
+      "title": "Raw Materials from the Earth",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03258": {
+      "title": "Materials And Supplies",
+      "level": 3,
+      "chapter": 6
+    },
+    "sp413-s03270": {
+      "title": "Transportation And Construction",
+      "level": 3,
+      "chapter": 6
+    },
+    "sp413-s03271": {
+      "title": "Build-up at L5",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03277": {
+      "title": "Transshipment and Assembly in LEO",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03278": {
+      "title": "Estimating Costs And Time",
+      "level": 3,
+      "chapter": 6
+    },
+    "sp413-s03288": {
+      "title": "Lunar Operations",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03296": {
+      "title": "System Considerations and Constraints",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03305": {
+      "title": "Methods Used for Estimation",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03411": {
+      "title": "Cost Totals",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03418": {
+      "title": "Production Of Energy In Space As A Potential Economic Justification For Space Colonization",
+      "level": 3,
+      "chapter": 6
+    },
+    "sp413-s03422": {
+      "title": "Beyond the Initial Cost Estimate",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03490": {
+      "title": "Cash Flow and Other Results",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03504": {
+      "title": "Still Other Alternatives",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03512": {
+      "title": "Some Other Energy-Related Benefits",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03524": {
+      "title": "Appendix A — Space Colonization Cost Parametrics",
+      "level": 3,
+      "chapter": 6,
+      "appendix": true
+    },
+    "sp413-s03578": {
+      "title": "Appendix B — Lunar SSPS Power",
+      "level": 3,
+      "chapter": 6,
+      "appendix": true
+    },
+    "sp413-s03590": {
+      "title": "Appendix C — The Flyback F-1",
+      "level": 3,
+      "chapter": 6,
+      "appendix": true
+    },
+    "sp413-s03609": {
+      "title": "Appendix D — Methods for Estimating Cost and Time for SSPS and More Colonies",
+      "level": 3,
+      "chapter": 6,
+      "appendix": true
+    },
+    "sp413-s03651": {
+      "title": "Appendix E — Electricity Benefits",
+      "level": 3,
+      "chapter": 6,
+      "appendix": true
+    },
+    "sp413-s03656": {
+      "title": "Prices",
+      "level": 4,
+      "chapter": 6
+    },
+    "sp413-s03731": {
+      "title": "Appendix F — Composite Variables for SSPS and Additional Colonies",
+      "level": 3,
+      "chapter": 6,
+      "appendix": true
+    },
+    "sp413-s03826": {
+      "title": "Appendix G — Concepts for Estimating Profits for the Colony",
+      "level": 3,
+      "chapter": 6,
+      "appendix": true
+    },
+    "sp413-s03863": {
+      "title": "Appendix H — Environmental Impact of Microwave Power Transmission",
+      "level": 3,
+      "chapter": 6,
+      "appendix": true
+    },
+    "sp413-s03906": {
+      "title": "7. View to the Future",
+      "level": 2,
+      "chapter": 7
+    },
+    "sp413-s03947": {
+      "title": "Research In Deep Space",
+      "level": 3,
+      "chapter": 7
+    },
+    "sp413-s03958": {
+      "title": "Rocket Engines For Deep Space",
+      "level": 3,
+      "chapter": 7
+    },
+    "sp413-s03969": {
+      "title": "Transport",
+      "level": 3,
+      "chapter": 7
+    },
+    "sp413-s03985": {
+      "title": "The Asteroidal Resources",
+      "level": 3,
+      "chapter": 7
+    },
+    "sp413-s03992": {
+      "title": "New Methods Of Construction",
+      "level": 3,
+      "chapter": 7
+    },
+    "sp413-s04003": {
+      "title": "Habitat Design",
+      "level": 3,
+      "chapter": 7
+    },
+    "sp413-s04035": {
+      "title": "Automation And Productivity",
+      "level": 3,
+      "chapter": 7
+    },
+    "sp413-s04043": {
+      "title": "Limits To Growth",
+      "level": 3,
+      "chapter": 7
+    },
+    "sp413-s04053": {
+      "title": "Size of an IndividuaJ Habitat",
+      "level": 4,
+      "chapter": 7
+    },
+    "sp413-s04062": {
+      "title": "The Speed of Growth",
+      "level": 4,
+      "chapter": 7
+    },
+    "sp413-s04069": {
+      "title": "The Decrease of Population Density With Time",
+      "level": 4,
+      "chapter": 7
+    },
+    "sp413-s04076": {
+      "title": "Some Economic Considerations",
+      "level": 3,
+      "chapter": 7
+    },
+    "sp413-s04110": {
+      "title": "8. Recommendations and Conclusions",
+      "level": 2,
+      "chapter": 8
+    },
+    "sp413-s04114": {
+      "title": "Recommendations For Research And Development In Critical Subsystems",
+      "level": 3,
+      "chapter": 8
+    },
+    "sp413-s04270": {
+      "title": "Recommendations For Space Ventures",
+      "level": 3,
+      "chapter": 8
+    },
+    "sp413-s04278": {
+      "title": "Conclusions",
+      "level": 3,
+      "chapter": 8
+    },
+    "sp413-s04324": {
+      "title": "Metric Prefixes Used",
+      "level": 4,
+      "chapter": 8
+    },
+    "sp413-s01686": {
+      "title": "Appendix D — The Plasma Core Shield",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s02066": {
+      "title": "Appendix N — Impact of Earth Launch Vehicles on the Ozone Layer",
+      "level": 3,
+      "chapter": 4,
+      "appendix": true
+    },
+    "sp413-s02868": {
+      "title": "Appendix D — Productivity",
+      "level": 3,
+      "chapter": 5,
+      "appendix": true
+    },
+    "sp413-s02928": {
+      "title": "Appendix F — The Mass Driver",
+      "level": 3,
+      "chapter": 5,
+      "appendix": true
+    },
+    "sp413-s03918": {
+      "title": "Benefits Not Related to Energy",
+      "level": 3,
+      "chapter": 7
+    }
+  },
+  "hidden": [
+    "sp413-s00025",
+    "sp413-s00434",
+    "sp413-s00478",
+    "sp413-s00772",
+    "sp413-s00903",
+    "sp413-s01353",
+    "sp413-s01354",
+    "sp413-s01356",
+    "sp413-s01599",
+    "sp413-s01621",
+    "sp413-s01670",
+    "sp413-s01687",
+    "sp413-s01734",
+    "sp413-s01760",
+    "sp413-s01780",
+    "sp413-s01805",
+    "sp413-s01836",
+    "sp413-s01881",
+    "sp413-s01915",
+    "sp413-s01975",
+    "sp413-s01995",
+    "sp413-s02067",
+    "sp413-s02394",
+    "sp413-s02396",
+    "sp413-s02397",
+    "sp413-s02398",
+    "sp413-s02399",
+    "sp413-s02400",
+    "sp413-s02401",
+    "sp413-s02402",
+    "sp413-s02403",
+    "sp413-s02684",
+    "sp413-s02685",
+    "sp413-s02723",
+    "sp413-s02735",
+    "sp413-s02870",
+    "sp413-s02887",
+    "sp413-s02929",
+    "sp413-s03010",
+    "sp413-s03035",
+    "sp413-s03058",
+    "sp413-s03110",
+    "sp413-s03150",
+    "sp413-s03268",
+    "sp413-s03476",
+    "sp413-s03477",
+    "sp413-s03478",
+    "sp413-s03483",
+    "sp413-s03484",
+    "sp413-s03525",
+    "sp413-s03579",
+    "sp413-s03591",
+    "sp413-s03610",
+    "sp413-s03652",
+    "sp413-s03732",
+    "sp413-s03733",
+    "sp413-s03827",
+    "sp413-s03864",
+    "sp413-s03865"
+  ],
+  "references": [
+    {
+      "chapter": 1,
+      "first": "sp413-s00218",
+      "last": "sp413-s00252",
+      "entries": [
+        {
+          "number": 1,
+          "segments": [
+            "sp413-s00219"
+          ]
+        },
+        {
+          "number": 2,
+          "segments": [
+            "sp413-s00220"
+          ]
+        },
+        {
+          "number": 3,
+          "segments": [
+            "sp413-s00221"
+          ]
+        },
+        {
+          "number": 4,
+          "segments": [
+            "sp413-s00222"
+          ]
+        },
+        {
+          "number": 5,
+          "segments": [
+            "sp413-s00223"
+          ]
+        },
+        {
+          "number": 6,
+          "segments": [
+            "sp413-s00224"
+          ]
+        },
+        {
+          "number": 7,
+          "segments": [
+            "sp413-s00225"
+          ]
+        },
+        {
+          "number": 8,
+          "segments": [
+            "sp413-s00226"
+          ]
+        },
+        {
+          "number": 9,
+          "segments": [
+            "sp413-s00227"
+          ]
+        },
+        {
+          "number": 10,
+          "segments": [
+            "sp413-s00228"
+          ]
+        },
+        {
+          "number": 11,
+          "segments": [
+            "sp413-s00229"
+          ]
+        },
+        {
+          "number": 12,
+          "segments": [
+            "sp413-s00230"
+          ]
+        },
+        {
+          "number": 13,
+          "segments": [
+            "sp413-s00231"
+          ]
+        },
+        {
+          "number": 14,
+          "segments": [
+            "sp413-s00232"
+          ]
+        },
+        {
+          "number": 15,
+          "segments": [
+            "sp413-s00233"
+          ]
+        },
+        {
+          "number": 16,
+          "segments": [
+            "sp413-s00234"
+          ]
+        },
+        {
+          "number": 17,
+          "segments": [
+            "sp413-s00235"
+          ]
+        },
+        {
+          "number": 18,
+          "segments": [
+            "sp413-s00236"
+          ]
+        },
+        {
+          "number": 19,
+          "segments": [
+            "sp413-s00237"
+          ]
+        },
+        {
+          "number": 20,
+          "segments": [
+            "sp413-s00238"
+          ]
+        },
+        {
+          "number": 21,
+          "segments": [
+            "sp413-s00239"
+          ]
+        },
+        {
+          "number": 22,
+          "segments": [
+            "sp413-s00240"
+          ]
+        },
+        {
+          "number": 23,
+          "segments": [
+            "sp413-s00241"
+          ]
+        },
+        {
+          "number": 24,
+          "segments": [
+            "sp413-s00242"
+          ]
+        },
+        {
+          "number": 25,
+          "segments": [
+            "sp413-s00243"
+          ]
+        },
+        {
+          "number": 26,
+          "segments": [
+            "sp413-s00244"
+          ]
+        },
+        {
+          "number": 27,
+          "segments": [
+            "sp413-s00245"
+          ]
+        },
+        {
+          "number": 28,
+          "segments": [
+            "sp413-s00246"
+          ]
+        },
+        {
+          "number": 29,
+          "segments": [
+            "sp413-s00247"
+          ]
+        },
+        {
+          "number": 30,
+          "segments": [
+            "sp413-s00248"
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "first": "sp413-s00506",
+      "last": "sp413-s00531",
+      "entries": [
+        {
+          "number": 1,
+          "segments": [
+            "sp413-s00507"
+          ]
+        },
+        {
+          "number": 2,
+          "segments": [
+            "sp413-s00508"
+          ]
+        },
+        {
+          "number": 3,
+          "segments": [
+            "sp413-s00509"
+          ]
+        },
+        {
+          "number": 4,
+          "segments": [
+            "sp413-s00510"
+          ]
+        },
+        {
+          "number": 5,
+          "segments": [
+            "sp413-s00511"
+          ]
+        },
+        {
+          "number": 6,
+          "segments": [
+            "sp413-s00512"
+          ]
+        },
+        {
+          "number": 7,
+          "segments": [
+            "sp413-s00513",
+            "sp413-s00514"
+          ]
+        },
+        {
+          "number": 8,
+          "segments": [
+            "sp413-s00515"
+          ]
+        },
+        {
+          "number": 9,
+          "segments": [
+            "sp413-s00516"
+          ]
+        },
+        {
+          "number": 10,
+          "segments": [
+            "sp413-s00517"
+          ]
+        },
+        {
+          "number": 11,
+          "segments": [
+            "sp413-s00518"
+          ]
+        },
+        {
+          "number": 12,
+          "segments": [
+            "sp413-s00519"
+          ]
+        },
+        {
+          "number": 13,
+          "segments": [
+            "sp413-s00520"
+          ]
+        },
+        {
+          "number": 14,
+          "segments": [
+            "sp413-s00521"
+          ]
+        },
+        {
+          "number": 15,
+          "segments": [
+            "sp413-s00522"
+          ]
+        },
+        {
+          "number": 16,
+          "segments": [
+            "sp413-s00523"
+          ]
+        },
+        {
+          "number": 17,
+          "segments": [
+            "sp413-s00524"
+          ]
+        },
+        {
+          "number": 18,
+          "segments": [
+            "sp413-s00525"
+          ]
+        },
+        {
+          "number": 19,
+          "segments": [
+            "sp413-s00526"
+          ]
+        },
+        {
+          "number": 20,
+          "segments": [
+            "sp413-s00527"
+          ]
+        },
+        {
+          "number": 21,
+          "segments": [
+            "sp413-s00529"
+          ]
+        },
+        {
+          "number": 22,
+          "segments": [
+            "sp413-s00530"
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "first": "sp413-s00968",
+      "last": "sp413-s01021",
+      "entries": [
+        {
+          "number": 1,
+          "segments": [
+            "sp413-s00969"
+          ]
+        },
+        {
+          "number": 2,
+          "segments": [
+            "sp413-s00970"
+          ]
+        },
+        {
+          "number": 3,
+          "segments": [
+            "sp413-s00971"
+          ]
+        },
+        {
+          "number": 4,
+          "segments": [
+            "sp413-s00972"
+          ]
+        },
+        {
+          "number": 5,
+          "segments": [
+            "sp413-s00973"
+          ]
+        },
+        {
+          "number": 6,
+          "segments": [
+            "sp413-s00974"
+          ]
+        },
+        {
+          "number": 7,
+          "segments": [
+            "sp413-s00975"
+          ]
+        },
+        {
+          "number": 8,
+          "segments": [
+            "sp413-s00976"
+          ]
+        },
+        {
+          "number": 9,
+          "segments": [
+            "sp413-s00977"
+          ]
+        },
+        {
+          "number": 10,
+          "segments": [
+            "sp413-s00978"
+          ]
+        },
+        {
+          "number": 11,
+          "segments": [
+            "sp413-s00979"
+          ]
+        },
+        {
+          "number": 12,
+          "segments": [
+            "sp413-s00980"
+          ]
+        },
+        {
+          "number": 13,
+          "segments": [
+            "sp413-s00981",
+            "sp413-s00982"
+          ]
+        },
+        {
+          "number": 14,
+          "segments": [
+            "sp413-s00983"
+          ]
+        },
+        {
+          "number": 15,
+          "segments": [
+            "sp413-s00984"
+          ]
+        },
+        {
+          "number": 16,
+          "segments": [
+            "sp413-s00985"
+          ]
+        },
+        {
+          "number": 17,
+          "segments": [
+            "sp413-s00986",
+            "sp413-s00987"
+          ]
+        },
+        {
+          "number": 18,
+          "segments": [
+            "sp413-s00988"
+          ]
+        },
+        {
+          "number": 19,
+          "segments": [
+            "sp413-s00989"
+          ]
+        },
+        {
+          "number": 20,
+          "segments": [
+            "sp413-s00990"
+          ]
+        },
+        {
+          "number": 21,
+          "segments": [
+            "sp413-s00991"
+          ]
+        },
+        {
+          "number": 22,
+          "segments": [
+            "sp413-s00992",
+            "sp413-s00994"
+          ]
+        },
+        {
+          "number": 23,
+          "segments": [
+            "sp413-s00995"
+          ]
+        },
+        {
+          "number": 24,
+          "segments": [
+            "sp413-s00996"
+          ]
+        },
+        {
+          "number": 25,
+          "segments": [
+            "sp413-s00997"
+          ]
+        },
+        {
+          "number": 26,
+          "segments": [
+            "sp413-s00998"
+          ]
+        },
+        {
+          "number": 27,
+          "segments": [
+            "sp413-s00999"
+          ]
+        },
+        {
+          "number": 28,
+          "segments": [
+            "sp413-s01000"
+          ]
+        },
+        {
+          "number": 29,
+          "segments": [
+            "sp413-s01001"
+          ]
+        },
+        {
+          "number": 30,
+          "segments": [
+            "sp413-s01002"
+          ]
+        },
+        {
+          "number": 31,
+          "segments": [
+            "sp413-s01003"
+          ]
+        },
+        {
+          "number": 32,
+          "segments": [
+            "sp413-s01004"
+          ]
+        },
+        {
+          "number": 33,
+          "segments": [
+            "sp413-s01005"
+          ]
+        },
+        {
+          "number": 34,
+          "segments": [
+            "sp413-s01006"
+          ]
+        },
+        {
+          "number": 35,
+          "segments": [
+            "sp413-s01007"
+          ]
+        },
+        {
+          "number": 36,
+          "segments": [
+            "sp413-s01008"
+          ]
+        },
+        {
+          "number": 37,
+          "segments": [
+            "sp413-s01009"
+          ]
+        },
+        {
+          "number": 38,
+          "segments": [
+            "sp413-s01010"
+          ]
+        },
+        {
+          "number": 39,
+          "segments": [
+            "sp413-s01011"
+          ]
+        },
+        {
+          "number": 40,
+          "segments": [
+            "sp413-s01012"
+          ]
+        },
+        {
+          "number": 41,
+          "segments": [
+            "sp413-s01013"
+          ]
+        },
+        {
+          "number": 42,
+          "segments": [
+            "sp413-s01014"
+          ]
+        },
+        {
+          "number": 43,
+          "segments": [
+            "sp413-s01015"
+          ]
+        },
+        {
+          "number": 44,
+          "segments": [
+            "sp413-s01016"
+          ]
+        },
+        {
+          "number": 45,
+          "segments": [
+            "sp413-s01017"
+          ]
+        },
+        {
+          "number": 46,
+          "segments": [
+            "sp413-s01018"
+          ]
+        },
+        {
+          "number": 47,
+          "segments": [
+            "sp413-s01019"
+          ]
+        },
+        {
+          "number": 48,
+          "segments": [
+            "sp413-s01020"
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "first": "sp413-s02095",
+      "last": "sp413-s02143",
+      "entries": [
+        {
+          "number": 1,
+          "segments": [
+            "sp413-s02096"
+          ]
+        },
+        {
+          "number": 2,
+          "segments": [
+            "sp413-s02097"
+          ]
+        },
+        {
+          "number": 3,
+          "segments": [
+            "sp413-s02098"
+          ]
+        },
+        {
+          "number": 4,
+          "segments": [
+            "sp413-s02099"
+          ]
+        },
+        {
+          "number": 5,
+          "segments": [
+            "sp413-s02100"
+          ]
+        },
+        {
+          "number": 6,
+          "segments": [
+            "sp413-s02101"
+          ]
+        },
+        {
+          "number": 7,
+          "segments": [
+            "sp413-s02102"
+          ]
+        },
+        {
+          "number": 8,
+          "segments": [
+            "sp413-s02103"
+          ]
+        },
+        {
+          "number": 9,
+          "segments": [
+            "sp413-s02104"
+          ]
+        },
+        {
+          "number": 10,
+          "segments": [
+            "sp413-s02105"
+          ]
+        },
+        {
+          "number": 11,
+          "segments": [
+            "sp413-s02106"
+          ]
+        },
+        {
+          "number": 12,
+          "segments": [
+            "sp413-s02107"
+          ]
+        },
+        {
+          "number": 13,
+          "segments": [
+            "sp413-s02108"
+          ]
+        },
+        {
+          "number": 14,
+          "segments": [
+            "sp413-s02109"
+          ]
+        },
+        {
+          "number": 15,
+          "segments": [
+            "sp413-s02110"
+          ]
+        },
+        {
+          "number": 16,
+          "segments": [
+            "sp413-s02111"
+          ]
+        },
+        {
+          "number": 17,
+          "segments": [
+            "sp413-s02112"
+          ]
+        },
+        {
+          "number": 18,
+          "segments": [
+            "sp413-s02113"
+          ]
+        },
+        {
+          "number": 19,
+          "segments": [
+            "sp413-s02114"
+          ]
+        },
+        {
+          "number": 20,
+          "segments": [
+            "sp413-s02115"
+          ]
+        },
+        {
+          "number": 21,
+          "segments": [
+            "sp413-s02116"
+          ]
+        },
+        {
+          "number": 22,
+          "segments": [
+            "sp413-s02117"
+          ]
+        },
+        {
+          "number": 23,
+          "segments": [
+            "sp413-s02118"
+          ]
+        },
+        {
+          "number": 24,
+          "segments": [
+            "sp413-s02119"
+          ]
+        },
+        {
+          "number": 25,
+          "segments": [
+            "sp413-s02121"
+          ]
+        },
+        {
+          "number": 26,
+          "segments": [
+            "sp413-s02122"
+          ]
+        },
+        {
+          "number": 27,
+          "segments": [
+            "sp413-s02123"
+          ]
+        },
+        {
+          "number": 28,
+          "segments": [
+            "sp413-s02124"
+          ]
+        },
+        {
+          "number": 29,
+          "segments": [
+            "sp413-s02125"
+          ]
+        },
+        {
+          "number": 30,
+          "segments": [
+            "sp413-s02126"
+          ]
+        },
+        {
+          "number": 31,
+          "segments": [
+            "sp413-s02127"
+          ]
+        },
+        {
+          "number": 32,
+          "segments": [
+            "sp413-s02128"
+          ]
+        },
+        {
+          "number": 33,
+          "segments": [
+            "sp413-s02129"
+          ]
+        },
+        {
+          "number": 34,
+          "segments": [
+            "sp413-s02130"
+          ]
+        },
+        {
+          "number": 35,
+          "segments": [
+            "sp413-s02131"
+          ]
+        },
+        {
+          "number": 36,
+          "segments": [
+            "sp413-s02132"
+          ]
+        },
+        {
+          "number": 37,
+          "segments": [
+            "sp413-s02133"
+          ]
+        },
+        {
+          "number": 38,
+          "segments": [
+            "sp413-s02134"
+          ]
+        },
+        {
+          "number": 39,
+          "segments": [
+            "sp413-s02135"
+          ]
+        },
+        {
+          "number": 40,
+          "segments": [
+            "sp413-s02136"
+          ]
+        },
+        {
+          "number": 41,
+          "segments": [
+            "sp413-s02137"
+          ]
+        },
+        {
+          "number": 42,
+          "segments": [
+            "sp413-s02138"
+          ]
+        },
+        {
+          "number": 43,
+          "segments": [
+            "sp413-s02139"
+          ]
+        },
+        {
+          "number": 44,
+          "segments": [
+            "sp413-s02140"
+          ]
+        },
+        {
+          "number": 45,
+          "segments": [
+            "sp413-s02141"
+          ]
+        },
+        {
+          "number": 46,
+          "segments": [
+            "sp413-s02142"
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "first": "sp413-s03159",
+      "last": "sp413-s03193",
+      "entries": [
+        {
+          "number": 1,
+          "segments": [
+            "sp413-s03160"
+          ]
+        },
+        {
+          "number": 2,
+          "segments": [
+            "sp413-s03161"
+          ]
+        },
+        {
+          "number": 3,
+          "segments": [
+            "sp413-s03162"
+          ]
+        },
+        {
+          "number": 4,
+          "segments": [
+            "sp413-s03163"
+          ]
+        },
+        {
+          "number": 5,
+          "segments": [
+            "sp413-s03164"
+          ]
+        },
+        {
+          "number": 6,
+          "segments": [
+            "sp413-s03165"
+          ]
+        },
+        {
+          "number": 7,
+          "segments": [
+            "sp413-s03166"
+          ]
+        },
+        {
+          "number": 8,
+          "segments": [
+            "sp413-s03167"
+          ]
+        },
+        {
+          "number": 9,
+          "segments": [
+            "sp413-s03168"
+          ]
+        },
+        {
+          "number": 10,
+          "segments": [
+            "sp413-s03169",
+            "sp413-s03170"
+          ]
+        },
+        {
+          "number": 11,
+          "segments": [
+            "sp413-s03171"
+          ]
+        },
+        {
+          "number": 12,
+          "segments": [
+            "sp413-s03172"
+          ]
+        },
+        {
+          "number": 13,
+          "segments": [
+            "sp413-s03173"
+          ]
+        },
+        {
+          "number": 14,
+          "segments": [
+            "sp413-s03174"
+          ]
+        },
+        {
+          "number": 15,
+          "segments": [
+            "sp413-s03175"
+          ]
+        },
+        {
+          "number": 16,
+          "segments": [
+            "sp413-s03176"
+          ]
+        },
+        {
+          "number": 17,
+          "segments": [
+            "sp413-s03177"
+          ]
+        },
+        {
+          "number": 18,
+          "segments": [
+            "sp413-s03178"
+          ]
+        },
+        {
+          "number": 19,
+          "segments": [
+            "sp413-s03179"
+          ]
+        },
+        {
+          "number": 20,
+          "segments": [
+            "sp413-s03180"
+          ]
+        },
+        {
+          "number": 21,
+          "segments": [
+            "sp413-s03181"
+          ]
+        },
+        {
+          "number": 22,
+          "segments": [
+            "sp413-s03182"
+          ]
+        },
+        {
+          "number": 23,
+          "segments": [
+            "sp413-s03183",
+            "sp413-s03184"
+          ]
+        },
+        {
+          "number": 24,
+          "segments": [
+            "sp413-s03185"
+          ]
+        },
+        {
+          "number": 25,
+          "segments": [
+            "sp413-s03186"
+          ]
+        },
+        {
+          "number": 26,
+          "segments": [
+            "sp413-s03187"
+          ]
+        },
+        {
+          "number": 27,
+          "segments": [
+            "sp413-s03188"
+          ]
+        },
+        {
+          "number": 28,
+          "segments": [
+            "sp413-s03189"
+          ]
+        },
+        {
+          "number": 29,
+          "segments": [
+            "sp413-s03190"
+          ]
+        },
+        {
+          "number": 30,
+          "segments": [
+            "sp413-s03191"
+          ]
+        },
+        {
+          "number": 31,
+          "segments": [
+            "sp413-s03192"
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "first": "sp413-s03889",
+      "last": "sp413-s03905",
+      "entries": [
+        {
+          "number": 1,
+          "segments": [
+            "sp413-s03890"
+          ]
+        },
+        {
+          "number": 2,
+          "segments": [
+            "sp413-s03891"
+          ]
+        },
+        {
+          "number": 3,
+          "segments": [
+            "sp413-s03892"
+          ]
+        },
+        {
+          "number": 4,
+          "segments": [
+            "sp413-s03893"
+          ]
+        },
+        {
+          "number": 5,
+          "segments": [
+            "sp413-s03894"
+          ]
+        },
+        {
+          "number": 6,
+          "segments": [
+            "sp413-s03895"
+          ]
+        },
+        {
+          "number": 7,
+          "segments": [
+            "sp413-s03896"
+          ]
+        },
+        {
+          "number": 8,
+          "segments": [
+            "sp413-s03897"
+          ]
+        },
+        {
+          "number": 9,
+          "segments": [
+            "sp413-s03898"
+          ]
+        },
+        {
+          "number": 10,
+          "segments": [
+            "sp413-s03899"
+          ]
+        },
+        {
+          "number": 11,
+          "segments": [
+            "sp413-s03900"
+          ]
+        }
+      ]
+    }
+  ],
+  "images": {
+    "sp413-s00004": {
+      "width": 117,
+      "height": 114,
+      "float": true
+    },
+    "sp413-s00147": {
+      "width": 844,
+      "height": 1051,
+      "float": false
+    },
+    "sp413-s00149": {
+      "width": 840,
+      "height": 1046,
+      "float": false
+    },
+    "sp413-s00277": {
+      "width": 341,
+      "height": 204,
+      "float": true
+    },
+    "sp413-s00311": {
+      "width": 318,
+      "height": 546,
+      "float": true
+    },
+    "sp413-s00321": {
+      "width": 371,
+      "height": 417,
+      "float": true
+    },
+    "sp413-s00348": {
+      "width": 779,
+      "height": 581,
+      "float": false
+    },
+    "sp413-s00365": {
+      "width": 438,
+      "height": 347,
+      "float": true
+    },
+    "sp413-s00409": {
+      "width": 374,
+      "height": 507,
+      "float": true
+    },
+    "sp413-s00416": {
+      "width": 390,
+      "height": 569,
+      "float": true
+    },
+    "sp413-s00459": {
+      "width": 241,
+      "height": 39,
+      "float": false
+    },
+    "sp413-s00505": {
+      "width": 378,
+      "height": 448,
+      "float": true
+    },
+    "sp413-s00593": {
+      "width": 45,
+      "height": 96,
+      "float": true
+    },
+    "sp413-s00594": {
+      "width": 393,
+      "height": 214,
+      "float": true
+    },
+    "sp413-s00966": {
+      "width": 810,
+      "height": 487,
+      "float": false
+    },
+    "sp413-s01060": {
+      "width": 362,
+      "height": 342,
+      "float": true
+    },
+    "sp413-s01061": {
+      "width": 704,
+      "height": 480,
+      "float": false
+    },
+    "sp413-s01080": {
+      "width": 835,
+      "height": 506,
+      "float": false
+    },
+    "sp413-s01101": {
+      "width": 815,
+      "height": 479,
+      "float": false
+    },
+    "sp413-s01124": {
+      "width": 822,
+      "height": 339,
+      "float": false
+    },
+    "sp413-s01144": {
+      "width": 834,
+      "height": 1109,
+      "float": false
+    },
+    "sp413-s01189": {
+      "width": 354,
+      "height": 386,
+      "float": true
+    },
+    "sp413-s01259": {
+      "width": 754,
+      "height": 423,
+      "float": false
+    },
+    "sp413-s01423": {
+      "width": 847,
+      "height": 437,
+      "float": false
+    },
+    "sp413-s01473": {
+      "width": 786,
+      "height": 944,
+      "float": false
+    },
+    "sp413-s01475": {
+      "width": 645,
+      "height": 393,
+      "float": false
+    },
+    "sp413-s01585": {
+      "width": 595,
+      "height": 657,
+      "float": false
+    },
+    "sp413-s01588": {
+      "width": 773,
+      "height": 754,
+      "float": false
+    },
+    "sp413-s01590": {
+      "width": 42,
+      "height": 184,
+      "float": true
+    },
+    "sp413-s01591": {
+      "width": 259,
+      "height": 179,
+      "float": true
+    },
+    "sp413-s01595": {
+      "width": 380,
+      "height": 404,
+      "float": true
+    },
+    "sp413-s01618": {
+      "width": 400,
+      "height": 385,
+      "float": true
+    },
+    "sp413-s01619": {
+      "width": 399,
+      "height": 224,
+      "float": true
+    },
+    "sp413-s01669": {
+      "width": 394,
+      "height": 59,
+      "float": false
+    },
+    "sp413-s01680": {
+      "width": 793,
+      "height": 589,
+      "float": false
+    },
+    "sp413-s01684": {
+      "width": 373,
+      "height": 90,
+      "float": false
+    },
+    "sp413-s01697": {
+      "width": 777,
+      "height": 500,
+      "float": false
+    },
+    "sp413-s01772": {
+      "width": 381,
+      "height": 301,
+      "float": true
+    },
+    "sp413-s01773": {
+      "width": 839,
+      "height": 383,
+      "float": false
+    },
+    "sp413-s01812": {
+      "width": 360,
+      "height": 520,
+      "float": true
+    },
+    "sp413-s01844": {
+      "width": 770,
+      "height": 425,
+      "float": false
+    },
+    "sp413-s01888": {
+      "width": 772,
+      "height": 475,
+      "float": false
+    },
+    "sp413-s01912": {
+      "width": 741,
+      "height": 307,
+      "float": false
+    },
+    "sp413-s01969": {
+      "width": 244,
+      "height": 204,
+      "float": true
+    },
+    "sp413-s01970": {
+      "width": 371,
+      "height": 59,
+      "float": false
+    },
+    "sp413-s01983": {
+      "width": 412,
+      "height": 379,
+      "float": true
+    },
+    "sp413-s02091": {
+      "width": 834,
+      "height": 301,
+      "float": false
+    },
+    "sp413-s02183": {
+      "width": 859,
+      "height": 584,
+      "float": false
+    },
+    "sp413-s02235": {
+      "width": 389,
+      "height": 475,
+      "float": true
+    },
+    "sp413-s02237": {
+      "width": 808,
+      "height": 513,
+      "float": false
+    },
+    "sp413-s02259": {
+      "width": 408,
+      "height": 226,
+      "float": true
+    },
+    "sp413-s02260": {
+      "width": 408,
+      "height": 348,
+      "float": true
+    },
+    "sp413-s02283": {
+      "width": 812,
+      "height": 446,
+      "float": false
+    },
+    "sp413-s02284": {
+      "width": 833,
+      "height": 524,
+      "float": false
+    },
+    "sp413-s02286": {
+      "width": 834,
+      "height": 1024,
+      "float": false
+    },
+    "sp413-s02348": {
+      "width": 614,
+      "height": 635,
+      "float": false
+    },
+    "sp413-s02366": {
+      "width": 833,
+      "height": 451,
+      "float": false
+    },
+    "sp413-s02367": {
+      "width": 689,
+      "height": 541,
+      "float": false
+    },
+    "sp413-s02414": {
+      "width": 383,
+      "height": 225,
+      "float": true
+    },
+    "sp413-s02421": {
+      "width": 687,
+      "height": 429,
+      "float": false
+    },
+    "sp413-s02423": {
+      "width": 816,
+      "height": 181,
+      "float": false
+    },
+    "sp413-s02424": {
+      "width": 817,
+      "height": 820,
+      "float": false
+    },
+    "sp413-s02428": {
+      "width": 820,
+      "height": 638,
+      "float": false
+    },
+    "sp413-s02443": {
+      "width": 402,
+      "height": 340,
+      "float": true
+    },
+    "sp413-s02451": {
+      "width": 788,
+      "height": 534,
+      "float": false
+    },
+    "sp413-s02619": {
+      "width": 802,
+      "height": 438,
+      "float": false
+    },
+    "sp413-s02642": {
+      "width": 751,
+      "height": 478,
+      "float": false
+    },
+    "sp413-s02652": {
+      "width": 406,
+      "height": 475,
+      "float": true
+    },
+    "sp413-s02694": {
+      "width": 848,
+      "height": 586,
+      "float": false
+    },
+    "sp413-s02703": {
+      "width": 182,
+      "height": 39,
+      "float": false
+    },
+    "sp413-s02704": {
+      "width": 185,
+      "height": 42,
+      "float": false
+    },
+    "sp413-s02716": {
+      "width": 334,
+      "height": 46,
+      "float": false
+    },
+    "sp413-s02718": {
+      "width": 393,
+      "height": 337,
+      "float": true
+    },
+    "sp413-s02719": {
+      "width": 753,
+      "height": 521,
+      "float": false
+    },
+    "sp413-s02721": {
+      "width": 400,
+      "height": 513,
+      "float": true
+    },
+    "sp413-s02927": {
+      "width": 772,
+      "height": 741,
+      "float": false
+    },
+    "sp413-s02957": {
+      "width": 403,
+      "height": 496,
+      "float": true
+    },
+    "sp413-s02958": {
+      "width": 474,
+      "height": 346,
+      "float": true
+    },
+    "sp413-s02989": {
+      "width": 205,
+      "height": 49,
+      "float": false
+    },
+    "sp413-s03023": {
+      "width": 388,
+      "height": 216,
+      "float": true
+    },
+    "sp413-s03044": {
+      "width": 802,
+      "height": 513,
+      "float": false
+    },
+    "sp413-s03061": {
+      "width": 404,
+      "height": 96,
+      "float": true
+    },
+    "sp413-s03063": {
+      "width": 836,
+      "height": 515,
+      "float": false
+    },
+    "sp413-s03064": {
+      "width": 839,
+      "height": 510,
+      "float": false
+    },
+    "sp413-s03107": {
+      "width": 396,
+      "height": 326,
+      "float": true
+    },
+    "sp413-s03126": {
+      "width": 416,
+      "height": 309,
+      "float": true
+    },
+    "sp413-s03127": {
+      "width": 405,
+      "height": 326,
+      "float": true
+    },
+    "sp413-s03157": {
+      "width": 381,
+      "height": 298,
+      "float": true
+    },
+    "sp413-s03226": {
+      "width": 745,
+      "height": 987,
+      "float": false
+    },
+    "sp413-s03228": {
+      "width": 796,
+      "height": 987,
+      "float": false
+    },
+    "sp413-s03380": {
+      "width": 838,
+      "height": 1004,
+      "float": false
+    },
+    "sp413-s03391": {
+      "width": 832,
+      "height": 531,
+      "float": false
+    },
+    "sp413-s03400": {
+      "width": 803,
+      "height": 291,
+      "float": false
+    },
+    "sp413-s03475": {
+      "width": 372,
+      "height": 685,
+      "float": true
+    },
+    "sp413-s03482": {
+      "width": 362,
+      "height": 365,
+      "float": true
+    },
+    "sp413-s03485": {
+      "width": 364,
+      "height": 430,
+      "float": true
+    },
+    "sp413-s03507": {
+      "width": 347,
+      "height": 371,
+      "float": true
+    },
+    "sp413-s03542": {
+      "width": 371,
+      "height": 45,
+      "float": false
+    },
+    "sp413-s03548": {
+      "width": 402,
+      "height": 41,
+      "float": false
+    },
+    "sp413-s03551": {
+      "width": 383,
+      "height": 53,
+      "float": false
+    },
+    "sp413-s03554": {
+      "width": 369,
+      "height": 41,
+      "float": false
+    },
+    "sp413-s03557": {
+      "width": 411,
+      "height": 152,
+      "float": true
+    },
+    "sp413-s03562": {
+      "width": 397,
+      "height": 436,
+      "float": true
+    },
+    "sp413-s03588": {
+      "width": 802,
+      "height": 343,
+      "float": false
+    },
+    "sp413-s03842": {
+      "width": 299,
+      "height": 38,
+      "float": false
+    },
+    "sp413-s04328": {
+      "width": 1021,
+      "height": 1383,
+      "float": false
+    }
+  },
+  "order": {
+    "83": [
+      "sp413-s01650",
+      "sp413-s01651",
+      "sp413-s01652",
+      "sp413-s01653",
+      "sp413-s01654",
+      "sp413-s01655",
+      "sp413-s01656",
+      "sp413-s01657",
+      "sp413-s01658",
+      "sp413-s01659",
+      "sp413-s01660",
+      "sp413-s01661",
+      "sp413-s01662",
+      "sp413-s01663",
+      "sp413-s01664",
+      "sp413-s01670",
+      "sp413-s01671",
+      "sp413-s01672",
+      "sp413-s01673",
+      "sp413-s01665",
+      "sp413-s01666",
+      "sp413-s01667",
+      "sp413-s01668",
+      "sp413-s01669",
+      "sp413-s01674",
+      "sp413-s01675",
+      "sp413-s01676",
+      "sp413-s01677",
+      "sp413-s01678"
+    ],
+    "141": [
+      "sp413-s02864",
+      "sp413-s02865",
+      "sp413-s02866",
+      "sp413-s02867",
+      "sp413-s02868",
+      "sp413-s02870",
+      "sp413-s02872",
+      "sp413-s02873",
+      "sp413-s02874",
+      "sp413-s02877",
+      "sp413-s02878",
+      "sp413-s02879",
+      "sp413-s02880",
+      "sp413-s02869",
+      "sp413-s02871",
+      "sp413-s02875",
+      "sp413-s02876",
+      "sp413-s02881",
+      "sp413-s02882",
+      "sp413-s02883",
+      "sp413-s02884"
+    ],
+    "159": [
+      "sp413-s03230",
+      "sp413-s03231",
+      "sp413-s03232",
+      "sp413-s03233",
+      "sp413-s03234",
+      "sp413-s03235",
+      "sp413-s03236",
+      "sp413-s03237",
+      "sp413-s03238",
+      "sp413-s03239",
+      "sp413-s03240",
+      "sp413-s03241",
+      "sp413-s03258",
+      "sp413-s03259",
+      "sp413-s03260",
+      "sp413-s03261",
+      "sp413-s03262",
+      "sp413-s03242",
+      "sp413-s03243",
+      "sp413-s03244",
+      "sp413-s03245",
+      "sp413-s03246",
+      "sp413-s03247",
+      "sp413-s03248",
+      "sp413-s03249",
+      "sp413-s03250",
+      "sp413-s03251",
+      "sp413-s03252",
+      "sp413-s03253",
+      "sp413-s03254",
+      "sp413-s03255",
+      "sp413-s03256",
+      "sp413-s03257",
+      "sp413-s03263",
+      "sp413-s03264",
+      "sp413-s03265",
+      "sp413-s03266",
+      "sp413-s03267"
+    ],
+    "160": [
+      "sp413-s03268",
+      "sp413-s03270",
+      "sp413-s03272",
+      "sp413-s03273",
+      "sp413-s03277",
+      "sp413-s03279",
+      "sp413-s03280",
+      "sp413-s03281",
+      "sp413-s03282",
+      "sp413-s03283",
+      "sp413-s03284",
+      "sp413-s03285",
+      "sp413-s03286",
+      "sp413-s03287",
+      "sp413-s03288",
+      "sp413-s03289",
+      "sp413-s03290",
+      "sp413-s03291",
+      "sp413-s03292",
+      "sp413-s03293",
+      "sp413-s03269",
+      "sp413-s03271",
+      "sp413-s03274",
+      "sp413-s03275",
+      "sp413-s03276",
+      "sp413-s03278",
+      "sp413-s03294",
+      "sp413-s03295",
+      "sp413-s03296",
+      "sp413-s03297",
+      "sp413-s03298",
+      "sp413-s03299",
+      "sp413-s03300",
+      "sp413-s03301",
+      "sp413-s03302",
+      "sp413-s03303",
+      "sp413-s03304",
+      "sp413-s03305",
+      "sp413-s03306",
+      "sp413-s03307"
+    ],
+    "198": [
+      "sp413-s04230",
+      "sp413-s04231",
+      "sp413-s04232",
+      "sp413-s04233",
+      "sp413-s04234",
+      "sp413-s04235",
+      "sp413-s04236",
+      "sp413-s04237",
+      "sp413-s04238",
+      "sp413-s04239",
+      "sp413-s04240",
+      "sp413-s04241",
+      "sp413-s04242",
+      "sp413-s04243",
+      "sp413-s04244",
+      "sp413-s04245",
+      "sp413-s04246",
+      "sp413-s04247",
+      "sp413-s04248",
+      "sp413-s04249",
+      "sp413-s04250",
+      "sp413-s04251",
+      "sp413-s04252",
+      "sp413-s04253",
+      "sp413-s04254",
+      "sp413-s04255",
+      "sp413-s04256",
+      "sp413-s04257",
+      "sp413-s04258",
+      "sp413-s04259",
+      "sp413-s04260",
+      "sp413-s04279",
+      "sp413-s04280",
+      "sp413-s04281",
+      "sp413-s04282",
+      "sp413-s04283",
+      "sp413-s04284",
+      "sp413-s04285",
+      "sp413-s04286",
+      "sp413-s04287",
+      "sp413-s04288",
+      "sp413-s04289",
+      "sp413-s04290",
+      "sp413-s04291",
+      "sp413-s04292",
+      "sp413-s04293",
+      "sp413-s04294",
+      "sp413-s04295",
+      "sp413-s04296",
+      "sp413-s04297",
+      "sp413-s04298",
+      "sp413-s04299",
+      "sp413-s04261",
+      "sp413-s04262",
+      "sp413-s04263",
+      "sp413-s04264",
+      "sp413-s04265",
+      "sp413-s04266",
+      "sp413-s04267",
+      "sp413-s04268",
+      "sp413-s04269",
+      "sp413-s04270",
+      "sp413-s04271",
+      "sp413-s04272",
+      "sp413-s04273",
+      "sp413-s04274",
+      "sp413-s04275",
+      "sp413-s04276",
+      "sp413-s04277",
+      "sp413-s04278",
+      "sp413-s04300",
+      "sp413-s04301",
+      "sp413-s04302",
+      "sp413-s04303",
+      "sp413-s04304",
+      "sp413-s04305",
+      "sp413-s04306",
+      "sp413-s04307",
+      "sp413-s04308",
+      "sp413-s04309"
+    ]
+  },
+  "captions": {
+    "sp413-s03475": [
+      "sp413-s03478"
+    ],
+    "sp413-s03482": [
+      "sp413-s03484"
+    ]
+  },
+  "joins": [
+    [
+      "sp413-s00048",
+      "sp413-s00049"
+    ],
+    [
+      "sp413-s01071",
+      "sp413-s01072"
+    ],
+    [
+      "sp413-s01517",
+      "sp413-s01518"
+    ],
+    [
+      "sp413-s01706",
+      "sp413-s01707"
+    ],
+    [
+      "sp413-s01755",
+      "sp413-s01757"
+    ],
+    [
+      "sp413-s01783",
+      "sp413-s01784"
+    ],
+    [
+      "sp413-s01944",
+      "sp413-s01946"
+    ],
+    [
+      "sp413-s02222",
+      "sp413-s02223"
+    ],
+    [
+      "sp413-s02499",
+      "sp413-s02500"
+    ],
+    [
+      "sp413-s03363",
+      "sp413-s03364"
+    ],
+    [
+      "sp413-s03474",
+      "sp413-s03479"
+    ],
+    [
+      "sp413-s03627",
+      "sp413-s03628"
+    ],
+    [
+      "sp413-s04189",
+      "sp413-s04190"
+    ],
+    [
+      "sp413-s01297",
+      "sp413-s01298"
+    ],
+    [
+      "sp413-s00167",
+      "sp413-s00168"
+    ],
+    [
+      "sp413-s00927",
+      "sp413-s00929"
+    ],
+    [
+      "sp413-s03262",
+      "sp413-s03242"
+    ],
+    [
+      "sp413-s03293",
+      "sp413-s03269"
+    ],
+    [
+      "sp413-s03481",
+      "sp413-s03487"
+    ],
+    [
+      "sp413-s02883",
+      "sp413-s02885"
+    ]
+  ]
+}

@@ -13,6 +13,7 @@ import html
 import os
 import re
 import shutil
+import subprocess
 import tempfile
 from pathlib import Path
 from urllib.parse import unquote, urlparse
@@ -268,12 +269,25 @@ def render(pdf_path: Path, output: Path, dpi: int) -> tuple[int, int]:
     return page_count, omitted_count
 
 
+def extract_front_matter(pdf_path: Path, output: Path) -> None:
+    """Render the cover and inside-cover artwork without changing search segment IDs."""
+    image_dir = output / "images"
+    image_dir.mkdir(parents=True, exist_ok=True)
+    for page, name in [(1, "sp413-cover"), (2, "sp413-frontispiece")]:
+        subprocess.run([
+            "pdftoppm", "-f", str(page), "-l", str(page), "-singlefile",
+            "-scale-to-x", "1200", "-scale-to-y", "-1", "-jpeg", "-jpegopt", "quality=90",
+            str(pdf_path), str(image_dir / name),
+        ], check=True)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pdf", type=Path, default=DEFAULT_PDF)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--dpi", type=int, default=125)
     parser.add_argument("--navigation-only", action="store_true", help="Update the chapter links in an existing site without re-extracting the PDF")
+    parser.add_argument("--front-matter-only", action="store_true", help="Render the cover and inside-cover artwork (requires Poppler)")
     args = parser.parse_args()
     pdf_path = args.pdf.resolve()
     output = args.output.resolve()
@@ -285,12 +299,17 @@ def main() -> int:
         update_navigation(output)
         print(f"Updated the major-section navigation in {output / 'index.html'}.")
         return 0
+    if args.front_matter_only:
+        extract_front_matter(pdf_path, output)
+        print(f"Extracted cover artwork to {output / 'images'}")
+        return 0
     pages, omitted = render(pdf_path, output, args.dpi)
     metadata = finalize_existing_page_html(
         output,
         load_image_descriptions(),
         source_pdf_pages=pages,
     )
+    extract_front_matter(pdf_path, output)
     print(
         f"Built the continuous reading edition from {pages} PDF pages: "
         f"{metadata['segment_count']} segments, {metadata['image_count']} images, "

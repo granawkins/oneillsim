@@ -1,0 +1,1618 @@
+{
+  "version": 1,
+  "source": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf",
+  "review_method": "Direct visual transcription from rendered source PDF pages; original OCR retained below for audit. Original printed inconsistencies are preserved and annotated, not silently recalculated.",
+  "independent_spotcheck_pdf_pages": [
+    43,
+    45,
+    61,
+    63,
+    64,
+    70,
+    100,
+    111,
+    112,
+    115,
+    130,
+    140,
+    168,
+    200,
+    201,
+    202
+  ],
+  "tables": [
+    {
+      "id": "sp413-s00061",
+      "table_markdown": "| Entry | Page |\n|---|---:|\n| FOREWORD | v |\n| PREFACE | vii |\n| LIST OF PARTICIPANTS | xiii |\n| CHAPTER 1 — THE COLONIZATION OF SPACE | 1 |\n| The Overall System | 1 |\n| Design Goals | 1 |\n| The History of an Idea | 4 |\n| References | 6 |\n| CHAPTER 2 — PHYSICAL PROPERTIES OF SPACE | 9 |\n| The Topography of Space | 9 |\n| Solar Radiation: An Abundant and Essential Source of Energy | 10 |\n| Matter in Space: A Major Resource | 11 |\n| Appendix A — Meteoroids and Space Habitats | 15 |\n| Appendix B — Ionizing Radiation in Space | 16 |\n| References | 18 |\n| CHAPTER 3 — HUMAN NEEDS IN SPACE | 21 |\n| Weightlessness: Pseudogravity is Needed | 21 |\n| Atmosphere: Less is Enough | 22 |\n| Food and Water | 23 |\n| Combined Environmental Stresses: Probably Not Serious | 23 |\n| Environmental Design to Reduce Stress | 23 |\n| Small Size and Isolation | 25 |\n| Summary of Design Criteria | 28 |\n| Appendix A — Psychological and Cultural Considerations | 29 |\n| Appendix B — Space Requirements of Various Community Activities | 32 |\n| References | 35 |\n| CHAPTER 4 — CHOOSING AMONG ALTERNATIVES | 39 |\n| The Shape of the Habitat | 39 |\n| Shielding | 43 |\n| What if the Criteria Change? | 46 |\n| Fabrication Techniques | 48 |\n| The People in the Colony | 49 |\n| Life Support | 52 |\n| Satellite Solar Power Stations: No Alternatives | 54 |\n| Where the Colony Should be Located | 54 |\n| Mining, Transport, and Processing in Space | 55 |\n| The Transport System | 60 |\n| Summary | 60 |",
+      "caption": "Table of Contents",
+      "verified_pdf_pages": [
+        12
+      ],
+      "notes": [
+        "Contents entries and printed page numbers visually checked against scan."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "|  | Page |\n| --- | --- |\n| FOREWORD | v |\n| PREFACE. | vii |\n| LISTOFPARTICIPANTS. | xiii |\n| CHAPTER 1 - THECOLONIZATIONOFSPACE. |  |\n| The OverallSystem. | 1 |\n| Design Goals... | 1 |\n| TheHistoryofan Idea | 4 |\n| References.... | 6 |\n| CHAPTER 2 - PHYSICAL PROPERTIESOFSPACE | 9 |\n| The TopographyofSpace.......... | 9 |\n| Solar Radiation: AnAbundantandEssentialSourceofEnergy | 10 |\n| Matter in Space: A MajorResource.... | 11 |\n| Appendix A - Meteoroids and Space Habitats | 15 |\n| Appendix B - Ionizing Radiation in Space | 16 |\n| References...... | 18 |\n| CHAPTER 3 - HUMAN NEEDS IN SPACE | 21 |\n| Weightlessness: PseudogravityisNeeded | 21 |\n| Atmosphere: Less is Enough..... | 22 |\n| Foodand Water......... | 23 |\n| Combined Environmental Stresses: ProbablyNotSerious. | 23 |\n| Environmental Design to ReduceStress | 23 |\n| Small Sizeand Isolation........... | 25 |\n| SummaryofDesign Criteria.......... | 28 |\n| Appendix A - Psychological and Cultural Considerations | 29 |\n| Appendix B - Space RequirementsofVarious Community Activities | 32 |\n| References.................... | 35 |\n| CHAPTER 4 - CHOOSING AMONG ALTERNATIVES. | 39 |\n| The ShapeoftheHabitat | 39 |\n| Shielding...... | 43 |\n| Whatifthe Criteria Change? | 46 |\n| Fabrication Techniques. | 48 |\n| The People inthe Colony. | 49 |\n| Life Support..... | 52 |\n| Satellite Solar Power Stations: No Alternatives | 54 |\n| Where theColonyShould beLocate~.. | 54 |\n| Mining,Transport, and Processing in Space | 55 |\n| The TransportSystem | 60 |\n| Summary........... | 60 |\n|  | ix |",
+        "text": "Data from PDF page 12. The table contains 39 data rows with columns for Page."
+      }
+    },
+    {
+      "id": "sp413-s00062",
+      "table_markdown": "| Entry | Page |\n|---|---:|\n| Appendix A — Material Properties for Design | 63 |\n| Appendix B — Parameters of Habitability | 65 |\n| Appendix C — Mass as a Measure of Structural Cost | 66 |\n| Appendix D — The Plasma Core Shield | 67 |\n| Appendix E — Structures by Vacuum Vapor Fabrication | 69 |\n| Appendix F — Interior Building Materials and Components | 70 |\n| Appendix G — Population Distributions and Trends | 71 |\n| Appendix H — Satellite Solar Power Stations (SSPS) | 73 |\n| Appendix I — Processing of Metals | 74 |\n| Appendix J — Glass Processing | 76 |\n| Appendix K — The Lunar Gas Gun Mass Driver | 78 |\n| Appendix L — Passive Catchers | 80 |\n| Appendix M — Space Transportation Systems | 80 |\n| Appendix N — Impact of Earth Launch Vehicles on the Ozone Layer | 82 |\n| References | 84 |\n| CHAPTER 5 — A TOUR OF THE COLONY | 87 |\n| Earth to Low Earth Orbit | 87 |\n| The Habitat at L₅ | 87 |\n| Production at L₅ | 103 |\n| The Lunar Base | 106 |\n| The Mass Catcher at L₂ | 108 |\n| Home to Earth | 110 |\n| Appendix A — Structures Design Concept for a Shell Structure | 110 |\n| Appendix B — Structural System for Housing | 113 |\n| Appendix C — Agriculture | 113 |\n| Appendix D — Productivity | 124 |\n| Appendix E — Mass Shielding | 125 |\n| Appendix F — The Mass Driver | 126 |\n| Appendix G — The Mass Catcher | 129 |\n| Appendix H — Trajectories From the Moon to L₂ | 129 |\n| Appendix I — Rotary Pellet Launcher | 130 |\n| Appendix J — Impact Upon Lunar Atmosphere | 133 |\n| Appendix K — Chevron Shields | 134 |\n| References | 135 |\n| CHAPTER 6 — BUILDING THE COLONY AND MAKING IT PROSPER | 139 |\n| Preparatory Work | 139 |\n| Materials and Supplies | 142 |\n| Transportation and Construction | 143 |\n| Estimating Costs and Time | 143 |\n| Production of Energy in Space as a Potential Economic Justification for Space Colonization | 152 |\n| Appendix A — Space Colonization Cost Parametrics | 156 |\n| Appendix B — Lunar SSPS Power | 158 |",
+      "caption": "Table of Contents",
+      "verified_pdf_pages": [
+        13
+      ],
+      "notes": [
+        "Contents entries and printed page numbers visually checked against scan."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| Page |\n| --- |\n| Appendix A - Material Properties for Design 63 |\n| Appendix B - ParametersofHabitability 65 |\n| Appendix C - Massasa MeasureofStructural Cost 66 |\n| Appendix D - The Plasma Core Shield.... 67 |\n| Appendix E - StructuresbyVacuum Vapor Fabrication 69 |\n| Appendix F - Interior Building Materials andComponents. 70 |\n| Appendix G - Population Distributions and Trends 71 |\n| Appendix H - Satellite Solar Power Stations (SSPS) 73 |\n| Appendix [- ProcessingofMetals..... 74 |\n| Appendix J - Glass Processing...... 76 |\n| Appendix K - The Lunar GasGunMassDriver. 78 |\n| Appendix L - Passive Catchers...... 80 |\n| Appendix M - Space Transportation Systems. 80 |\n| Appendix N - ImpactofEarth Launch Vehicles on the OzoneLayer 82 |\n| References....... 84 |\n| CHAPTER5 - ATOUROFTHECOLONY 87 |\n| Earth to Low Earth Orbit 87 |\n| The Habitat at Ls 87 |\n| Production atLs 103 |\n| The Lunar Base. 106 |\n| The Mass Catcherat~ 108 |\n| Home to Earth 110 |\n| Appendix A - Structures DesignConceptfor a ShellStructure. 110 |\n| Appendix B - Structural System for Housing 113 |\n| Appendix C - Agriculture 113 |\n| Appendix D - Productivity. 124 |\n| Appendix E - Mass Shielding 125 |\n| Appendix F - The MassDriver 126 |\n| Appendix G - The Mass Catcher 129 |\n| Appendix H - TrajectoriesFrom the MoontoL2 129 |\n| Appendix I - Rotary PelletLauncher.... 130 |\n| Appendix J - Impact Upon Lunar Atmosphere 133 |\n| Appendix K - Chevron Shields 134 |\n| References 135 |\n| CHAPTER 6 - BUILDINGTHECOLONY AND MAK[G IT PROSPER 139 |\n| Preparatory Work..... 139 |\n| Materials and Supplies.... 142 |\n| Transportation and Construction 143 |\n| Estimating Costs and Time 143 |\n| ProductionofEnergyinSpaceasa PotentialEconomic Justification |\n| for Space Colonization........ 152 |\n| Appendix A - Space Colonization Cost Parametrics 156 |\n| Appendix B - Lunar SSPS Power...... 158 |",
+        "text": "Data from PDF page 13. The table contains 43 data rows with columns for Page."
+      }
+    },
+    {
+      "id": "sp413-s00064",
+      "table_markdown": "| Entry | Page |\n|---|---:|\n| Appendix C — The Flyback F-1 | 159 |\n| Appendix D — Methods for Estimating Cost and Time for SSPS and More Colonies | 160 |\n| Appendix E — Electricity Benefits | 160 |\n| Appendix F — Composite Variables for SSPS and Additional Colonies | 164 |\n| Appendix G — Concepts for Estimating Profits for the Colony | 167 |\n| Appendix H — Environmental Impact of Microwave Power Transmission | 168 |\n| References | 169 |\n| CHAPTER 7 — VIEW TO THE FUTURE | 171 |\n| Benefits Not Related to Energy | 171 |\n| Research in Deep Space | 172 |\n| Rocket Engines for Deep Space | 172 |\n| Transport | 172 |\n| The Asteroidal Resources | 173 |\n| New Methods of Construction | 173 |\n| Habitat Design | 173 |\n| Automation and Productivity | 174 |\n| Limits to Growth | 174 |\n| Some Economic Considerations | 175 |\n| CHAPTER 8 — RECOMMENDATIONS AND CONCLUSIONS | 179 |\n| Recommendations for Research and Development in Critical Subsystems | 179 |\n| Recommendations for Space Ventures | 181 |\n| Conclusions | 181 |\n| UNITS AND CONVERSION FACTORS | 183 |",
+      "caption": "Table of Contents",
+      "verified_pdf_pages": [
+        14
+      ],
+      "notes": [
+        "Contents entries and printed page numbers visually checked against scan."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| Page |\n| --- |\n| Appendix C - The Flyback F-l................. 159 |\n| Appendix D - Methods for Estimating Cost and Time for SSPS and MoreColonies 160 |\n| Appendix E - Electricity Benefits............ 160 |\n| Appendix F - Composite Variables for SSPS and Additional Colonies. 164 |\n| Appendix G - Concepts for Estimating Profits for theColony.... 167 |\n| Appendix H - f:nvironmental ImpactofMicrowave Power Transmission 168 |\n| References..................... 169 |\n| CHAPTER7 - VIEWTOTHEFUTURE 171 |\n| Benefits Not Related to Energy 171 |\n| Research in Deep Space... 172 |\n| Rocket Engines for Deep Space 172 |\n| Transport....... 172 |\n| The Asteroidal Resources.. 173 |\n| New MethodsofConstruction 173 |\n| Habitat Design 173 |\n| Automation and Productivity. 174 |\n| Limits to Growth.... 174 |\n| Some Economic Considerations 175 |\n| CHAPTER8 - RECOMMENDATIONS AND CONCLUSIONS 179 |\n| Recommendations for Research and Development in Critical Subsystems 179 |\n| Recommendations for Space Ventures 181 |\n| Conclusions 181 |\n| UNITSANDCONVERSIONFACTORS 183 |",
+        "text": "Data from PDF page 14. The table contains 23 data rows with columns for Page."
+      }
+    },
+    {
+      "id": "sp413-s00464",
+      "table_markdown": "| Mass of meteoroid (g) | Occurrence (km⁻² yr⁻¹) | Energy (J) | Diameter of crater (m) | R (2 atm) (m) | Damage (depends on habitat volume) |\n|---:|---:|---:|---:|---:|---|\n| 1 | 10 | 8.5×10⁵ | 0.02 | 2.3 | Loss of window panel; 1 percent/hr leakdown |\n| 100 | 2000 | 8.5×10⁷ | 0.09 | 11 | 10-hr leakdown to 40 percent of one atmosphere |\n| 1×10⁶ | 1×10⁸ | 8.5×10¹¹ | 2 | 230 | Major structural damage |",
+      "caption": "TABLE 2-1.— SCALE OF DAMAGE FROM COLLISIONS WITH METEOROIDS AS A FUNCTION OF METEOROID MASS",
+      "verified_pdf_pages": [
+        33
+      ],
+      "notes": [
+        "Printed occurrence unit reads “Occurrence/km², yr” (per km² per year). R is printed “R(2 atm)”."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 2-1.SCALE OF DAMAGE FROM COLLISIONS WITH METEOROIDS AS A FUNC-",
+        "table_markdown": "| Massof meteoroid, g | Occurrence/km2, yr | Energy, J | Diameter ofcrater, m | R(2atm), m | Damage (dependson habitatvolume) |\n| --- | --- | --- | --- | --- | --- |\n| 1 | 10 | 8.SXlOS | 0.02 | 2.3 | Lossofwindow panel, 1percent/hr leakdown |\n| 100 | 2000 | 8.5XI07 | .09 | 11 | 10-hrleakdownto 40percentofone atmosphere |\n| I X 106 | I X 108 | 8.5X 10 1I | 2 | 230 | Majorstructural damage |",
+        "text": "OF DAMAGE FROM COLLISIONS WITH METEOROIDS AS A FUNC. The table contains 3 data rows with columns for Massof meteoroid, g, Occurrence/km2, yr, Energy, J, Diameter ofcrater, m, R(2atm), m, Damage (dependson habitatvolume)."
+      }
+    },
+    {
+      "id": "sp413-s00490",
+      "table_markdown": "| Name / energy | Charge (Z) | RBE | Location |\n|---|---:|---:|---|\n| X-rays | 0 | 1 | Radiation belts, solar radiation and in the secondaries made by nuclear reactions, and by stopping electrons |\n| Gamma rays | 0 | 1 | Radiation belts, solar radiation and in the secondaries made by nuclear reactions, and by stopping electrons |\n| Electrons, 1.0 MeV | 1 | 1 | Radiation belts |\n| Electrons, 0.1 MeV | 1 | 1.08 | Radiation belts |\n| Protons, 100 MeV | 1 | 1–2 | Cosmic rays, inner radiation belts, solar cosmic rays |\n| Protons, 1.5 MeV | 1 | 8.5 | Cosmic rays, inner radiation belts, solar cosmic rays |\n| Protons, 0.1 MeV | 1 | 10 | Cosmic rays, inner radiation belts, solar cosmic rays |\n| Neutrons, 0.05 eV (thermal) | 0 | 2.8 | Produced by nuclear interactions; found near the planets and the Sun and other matter |\n| Neutrons, 0.0001 MeV | 0 | 2.2 | Produced by nuclear interactions; found near the planets and the Sun and other matter |\n| Neutrons, 0.005 MeV | 0 | 2.4 | Produced by nuclear interactions; found near the planets and the Sun and other matter |\n| Neutrons, 0.02 MeV | 0 | 5 | Produced by nuclear interactions; found near the planets and the Sun and other matter |\n| Neutrons, 0.5 MeV | 0 | 10.2 | Produced by nuclear interactions; found near the planets and the Sun and other matter |\n| Neutrons, 1.0 MeV | 0 | 10.5 | Produced by nuclear interactions; found near the planets and the Sun and other matter |\n| Neutrons, 10.0 MeV | 0 | 6.4 | Produced by nuclear interactions; found near the planets and the Sun and other matter |\n| Alpha particles, 5.0 MeV | 2 | 15 | Cosmic rays |\n| Alpha particles, 1.0 MeV | 2 | 20 | Cosmic rays |\n| Heavy primaries | ≥3 | (see text) | Cosmic rays |",
+      "caption": "TABLE 2-2.— IONIZING RADIATIONS IN SPACE",
+      "verified_pdf_pages": [
+        34
+      ],
+      "notes": [
+        "The printed layout uses merged group labels for particle classes and repeated/shared location cells; repeated locations here preserve the visual cell association."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 2-2.IONIZING RADIATIONS IN SPACE",
+        "table_markdown": "| Name | Charge (Z) | RBE | Location |\n| --- | --- | --- | --- |\n| X-rays | 0 | 1 | Radiation belts, solar radiation |\n| Gamma rays | 0 | 1 | and in the secondaries made by nuclear reactions, and by stopping electrons |\n| Electrons |  |  |  |\n| 1.0MeV | 1 | 1 | Radiation belts |\n| 0.1MeV | 1 | L08 |  |\n| Protons |  |  |  |\n| 100 MeV | 1 | 1 - 2 | Cosmic rays, inner radiation belts, |\n| 1.5MeV | 1 | 8.5 | solar cosmic rays |\n| 0.1MeV | I | 10 |  |\n| Neutrons |  |  |  |\n| 0.05 eV (thermal) | 0 | 2.8 | Produced by nuclear interactions; |\n| .0001MeV | 0 | 2.2 | found near the planets and the Sun |\n| .005 MeV | 0 | 2.4 | andothermatter |\n| .02 MeV | 0 | 5 |  |\n| .5 MeV | 0 | 10.2 |  |\n| 1.0 MeV | 0 | 10.5 |  |\n| 10.0 MeV | 0 | 6.4 |  |\n| Alpha particles |  |  |  |\n| 5.0 MeV | 2 | 15 | Cosmic rays |\n| 1.0 MeV | 2 | 20 |  |\n| Heavy primaries | ~3 | (see text) | Cosmic rays |",
+        "text": "RADIATIONS IN SPACE. The table contains 21 data rows with columns for Name, Charge (Z), RBE, Location."
+      }
+    },
+    {
+      "id": "sp413-s00675",
+      "table_markdown": "| Location | Per capita area (m²/person) |\n|---|---:|\n| Boston, Mass. | 185.8 |\n| Chicago, Ill. | 171.2 |\n| El Paso, Tex. | 950.5 |\n| Jersey City, N.J. | 150.1 |\n| New York, N.Y. | 98.3 |\n| Manhattan Borough, N.Y. | 38.2 |\n| San Francisco, Calif. | 164.3 |\n| St. Paul, France | 27 |\n| Vence, France | 46.2 |\n| Rome, Italy | 40.0 |\n| Columbia, Md. | 503 |\n| Soleri’s Babel IIB | 15.1 |\n| Space colony | ≥40.0 |",
+      "caption": "TABLE 3-1.— AVAILABLE LAND PER CAPITA IN SELECTED CITIES AND TOWNS",
+      "verified_pdf_pages": [
+        42
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 3-1.A V AlLABLE LAND PER CAPITA IN SELECTED CITIES AND TOWNS",
+        "table_markdown": "| Location | Per capita area, m2 /person |\n| --- | --- |\n| Boston, Mass. | 185.8 |\n| Chicago, Ill. | 171.2 |\n| El Paso, Tex. | 950.5 |\n| _Jersey_City, N.J. | 150.1 |\n| ew York, N.Y. | 98.3 |\n| Manhattan Borough, N.Y. | 38.2 |\n| San Francisco, Calif. | 164.3 |\n| St. Paul, France | 27 |\n| Vence, France | 46.2 |\n| Rome, Italy | 40.0 |\n| Columbia, Md. | 503 |\n| Soleri's Babel lIB | 15.1 |\n| Space colony | ;;;'40.0 |",
+        "text": "V AlLABLE LAND PER CAPITA IN SELECTED CITIES AND TOWNS. The table contains 13 data rows with columns for Location, Per capita area, m2 /person."
+      }
+    },
+    {
+      "id": "sp413-s00708",
+      "table_markdown": "| Space use | Surface area required (m²/person) | No. of levels | Projected area (m²/person) | Estimated height (m) | Volume (m³) |\n|---|---:|---:|---:|---:|---:|\n| Residential | 49 | 4 | 12 | 3 | 147 |\n| Business |  |  |  |  |  |\n| Shops | 2.3 | 2 | 1.0 | 4 | 9.2 |\n| Offices | 1 | 3 | .33 | 4 | 4.0 |\n| Public and semipublic |  |  |  |  |  |\n| Schools | 1 | 3 | .3 | 3.8 | 3.8 |\n| Hospital | .3 | 1 | .3 | 5 | 1.5 |\n| Assembly (churches, community halls) | 1.5 | 1 | 1.5 | 10 | 15 |\n| Recreation and entertainment | 1 | 1 | 1 | 3 | 3 |\n| Public open space | 10 | 1 | 10 | 50 | 500 |\n| Service industry | 4 | 2 | 2 | 6 | 24 |\n| Storage | 5 | 4 | 1 | 3.2 | 16 |\n| Transportation | 12 | 1 | 12 | 6 | 72 |\n| Mechanical subsystem |  |  |  |  |  |\n| Communications distribution switching equipment for 2800 families | .05 | 1 | .05 | 4 | .2 |\n| Waste and water treatment and recycling | 4 | 1 | 4 | 4 | 16 |\n| Electrical supply and distribution | .1 | 1 | .1 | 4 | .4 |\n| Miscellaneous | 2.9 | 3 | 1 | 3.8 | 11.2 |\n| Subtotals | 94.2 |  | 46.6 |  | 823.3 |\n| Agriculture space requirementsᵃ |  |  |  |  |  |\n| Plant growing areas | 44 | 3 | 14.7 | 15 | 660 |\n| Animal areas | 5 | 3 | 1.7 | 15 | 75 |\n| Food processing, collection, storage, etc. | 4 | 3 | 1.3 | 15 | 60 |\n| Agriculture drying area | 8 | 3 | 2.7 | 15 | 120 |\n| Totals | 155.2 |  | 67.0 |  | 1738.3 |",
+      "caption": "TABLE 3-2.— SUMMARY OF COMMUNITY SPACE AND AREA ALLOCATIONS",
+      "verified_pdf_pages": [
+        43
+      ],
+      "notes": [
+        "Footnote a: Agricultural space requirements are provided for completeness and convenience; details are explained in the succeeding chapters.",
+        "Printed note: Areas and volumes are approximations for use in establishing mass estimates and aiding in the structural design of the entire habitat enclosure.",
+        "In the Storage row, printed values are 5, 4, 1, 3.2, 16 across the five numeric columns."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 3-2.SUMMARY OF COMMUNITY SPACE AND AREA ALLOCATIONS",
+        "table_markdown": "| Space use | Surface area required, m 2 /person | No.of levels | Projected area, m2 /person | Estimated height, m | Volume, m3 |\n| --- | --- | --- | --- | --- | --- |\n| Residen tial | 49 | 4 | 12 | 3 | 147 |\n| Business |  |  |  |  |  |\n| Shops | 2.3 | 2 | 1.0 | 4 | 9.2 |\n| Offices | I | 3 | .33 | 4 | 4.0 |\n| Public and semipublic |  |  |  |  |  |\n| Schools | I | 3 | .3 | 3.8 | 3.8 |\n| Hospital | .3 | I | .3 | 5 | 1.5 |\n| Assembly (churches, communityhalls) | 1.5 | I | 1.5 | 10 | 15 |\n| Recreationand entertainment | 1 | I | I | 3 | 3 |\n| Publicopenspace | 10 | 1 | 10 | 50 | 500 |\n| Serviceindustry | 4 | 2 | 2 | 6 | 24 |\n| Storage | 5 | 4 | 1 | 3.2 | 16 |\n| Transportation | 12 | I | 12 | 6 | 72 |\n| Mech. subsystem |  |  |  |  |  |\n| Communicationdistr. switchingequipment for2800families | .05 | I | .05 | 4 | .2 |\n| Wasteandwater treat- mentand recycling | 4 | I | 4 | 4 | 16 |\n| Electrical supplyand distribution | .1 | 1 | .1 | 4 | .4 |\n| Miscellaneous | 2.9 | 3 | I | 3.8 | 11.2 |\n| Subtotals | 94.2 |  | 46.6 |  | 823.3 |\n| Agriculture space requirementsa |  |  |  |  |  |\n| Plantgrowing areas | 44 | 3 | 14.7 | 15 | 660 |\n| Animal areas | 5 | 3 | 1.7 | 15 | 75 |\n| Foodprocessing, collection, storage, etc. | 4 | 3 | 1.3 | 15 | 60 |\n| Agriculture drying area | 8 | 3 | 2.7 | 15 | 120 |\n| Totals | 155.2 |  | 67.0 |  | 1738.3 |",
+        "text": "OF COMMUNITY SPACE AND AREA ALLOCATIONS. The table contains 25 data rows with columns for Space use, Surface area required, m 2 /person, No.of levels, Projected area, m2 /person, Estimated height, m, Volume, m3."
+      }
+    },
+    {
+      "id": "sp413-s00754",
+      "caption": "TABLE 3-3.— A SUMMARY OF PHYSIOLOGICAL CRITERIA",
+      "table_markdown": "| Criterion | Value |\n| --- | --- |\n| Pseudogravity | 0.95 ± 0.5 g |\n| Rotation rate | ≤1 rpm |\n| Radiation exposure for the general population | ≤0.5 rem/yr |\n| Magnetic field intensity | ≤100 μT |\n| Temperature | 23° ± 8° C |\n| Atmospheric composition |  |\n| pO₂ | 22.7 ± 9 kPa (170 ± 70 mm Hg) |\n| p (inert gas; most likely N₂) | 26.7 kPa < pN₂ < 78.9 kPa (200 < pN₂ < 590 mm Hg) |\n| pCO₂ | <0.4 kPa (<3 mm Hg) |\n| pH₂O | 1.00 ± 0.33 kPa (7.5 ± 2.5 mm Hg) |",
+      "verified_pdf_pages": [
+        45
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 3-3.A SUMMARY OF PHYSIOLOGICAL CRITERIA",
+        "table_markdown": "| Pseudogravity | 0.95±0.5 g |\n| --- | --- |\n| Rotationrate | .;; I rpm |\n| Radiation exposure for |  |\n| the general population | ';;0.5 rem/yr |\n| Magnetic field intensity | .;; 100_IlT_ |\n| Temperature | 23°±8° C |\n| Atmospheric composition |  |\n| p02 | 22.7±9kPa |\n|  | (170±70mmHg) |\n| p(lnertgas; most |  |\n| likely N2) | 26.7kPa<p 2<78.9kPa |\n|  | (200<p 2<590mmHg) |\n|  | < 0.4kPa |\n|  | «3mmHg) |\n|  | 1.00±0.33 kPa |\n|  | (7.5±2.5mm Hg) |",
+        "text": "SUMMARY OF PHYSIOLOGICAL CRITERIA. The table contains 15 data rows with columns for Pseudogravity, 0.95±0.5 g."
+      }
+    },
+    {
+      "id": "sp413-s00759",
+      "caption": "TABLE 3-4.— SUMMARY OF QUANTITATIVE ENVIRONMENTAL DESIGN CRITERIA",
+      "table_markdown": "| Criterion | Value |\n| --- | ---: |\n| Population: men, women, children | 10,000 |\n| Community and residential, projected area per person, m² | 47 |\n| Agriculture, projected area per person, m² | 20 |\n| Community and residential, volume per person, m³ | 823 |\n| Agriculture, volume per person, m³ | 915 |",
+      "verified_pdf_pages": [
+        45
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 3-4.SUMMARY OF QUANTITATIVE ENVIRONMENT AL DESIGN CRITERIA",
+        "table_markdown": "| Population: men, women, children | 10,000 |\n| --- | --- |\n| Communityandresidential, projected area per person, m2 | 47 |\n| Agriculture, projected area per person, m2 | 20 |\n| Communityand residential, volume per person, m3 | 823 |\n| Agriculture, volume per person, m3 | 915 |",
+        "text": "OF QUANTITATIVE ENVIRONMENT AL DESIGN CRITERIA. The table contains 4 data rows with columns for Population: men, women, children, 10,000."
+      }
+    },
+    {
+      "id": "sp413-s00760",
+      "caption": "TABLE 3-5.— SUMMARY OF QUALITATIVE CRITERIA OF ENVIRONMENTAL DESIGN",
+      "table_markdown": "| Criterion |\n| --- |\n| Long lines of sight |\n| Large overhead clearance |\n| Noncontrollable unpredictable parts of the environment; for example, plants, animals, children, weather |\n| External views of large natural objects |\n| Parts of interior out of sight of others |\n| Natural light |\n| Contact with the external environment |\n| Availability of privacy |\n| Good internal communications |\n| Capability of physically isolating segments of the habitat from each other |\n| Modular construction of the habitat |\n| Modular construction of the structures within the habitat |\n| Flexible internal organization |\n| Details of interior design left to inhabitants |",
+      "verified_pdf_pages": [
+        45
+      ],
+      "notes": [
+        "The printed table has a shared label ‘Modular construction’ followed by two subordinate lines; I transcribed these as two complete criteria."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 3-5.- SUMMARY OF QUALITATIVE CRITERIA OF ENVIRONMENTAL DESIGN",
+        "table_markdown": "| Long linesofsight |\n| --- |\n| Large overhead clearance |\n| Noncontrollable unpredictablepartsofthe environment; for example, plants, animals, children, weather |\n| External viewsoflarge natural objects |\n| Partsofinterioroutofsightofothers |\n| Natural light |\n| Contactwith the externalenvironment |\n| Availabilityofprivacy |\n| Good internal communications |\n| Capabilityofphysically isolating segmentsofthe |\n| habitatfrom eachother |\n| Modularconstruction ofthehabitat ofthestructureswithin thehabitat |\n| Flexible internal organization |\n| Detailsofinterior design left toinhabitants |",
+        "text": "SUMMARY OF QUALITATIVE CRITERIA OF ENVIRONMENTAL DESIGN. The table contains 13 data rows with columns for Long linesofsight."
+      }
+    },
+    {
+      "id": "sp413-s01142",
+      "caption": "TABLE 4-1.— PARAMETERS OF POSSIBLE HABITATS, 1 RPM (a) Single component",
+      "table_markdown": "| Parameter | Single torus, Rₘₐⱼ = 830 m, Rₘᵢₙ = 65 m | Cylinder with spherical endcaps, R = 895 m, L = 8950 m | Sphere, R = 895 m | Dumbbell, R = 895 m, Rₛₚₕₑᵣₑ = 316 m |\n| --- | ---: | ---: | ---: | ---: |\n| Number of components | 1 | 1 | 1 | 1 |\n| Structural mass at 1/2 atm, kt | 150 | 42,300 | 3545 | 380 |\n| Projected area, m² | 6.8 × 10⁵ | 550 × 10⁵ | 50.3 × 10⁵ | 6.3 × 10⁵ |\n| Surface area, m² | 2.1 × 10⁶ | 60.3 × 10⁶ | 10.1 × 10⁶ | 2.5 × 10⁶ |\n| Shielding mass, Mt | 9.9 | 23.3 | 46.7 | 33.5 |\n| Volume, m³ | 6.9 × 10⁷ | 2265 × 10⁷ | 300 × 10⁷ | 13.2 × 10⁷ |\n| Mass of atmosphere, kt | 44 | 14,612 | 1930 | 85 |\n| Segmentation | Easy, optional | Difficult | Difficult | Difficult |\n| Vistas: longest line of sight, m | 640 | 10,740 | 1790 | 732 |\n| Vistas: solid angle of 50 percent sight line, sr | 0.5 | 0.09 | 4.2 | 4.2 |\n| Vistas: fraction of habitat hidden from view | 0.70 | 0 | 0 | 0.5 |\n| Communication: longest distance of surface travel, m | 2600 | 11,800 | 2800 | 1800 |\n| Communication: fraction viewable by internal line of sight from one place | 0.3 | 1 | 1 | 0.5 |\n| Interior: openness | Good | Good | Good | Good |\n| Population capacity at 67 m²/person | 10,000 | 820,000 | 75,000 | 10,000 |",
+      "verified_pdf_pages": [
+        61
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-1.PARAMETERS OF POSSIBLE HABITATS, 1 RPM",
+        "table_markdown": "|  | (a) Sin Single torus, Rmaj=830m, Rmin=65 m | glecomponent Cylinderwith spherical endcaps, R=895 m, L=8950m | Sphere, R=895m | Dumbbell, R=895m, Rsphere=316m |\n| --- | --- | --- | --- | --- |\n| umberofcomponents | 1 | I | 1 | 1 |\n| Structural massat1/2atm,kt | 150 | 42,300 | 3545 | 380 |\n| Projected area, m2 | 6.8XlOs | 550X 105 | 50.3XlOS | 6.3X 105 |\n| Surface area, m 2 | 2. 1X 106 | 60.3X 106 | 1O.1X 106 | 2.5X 106 |\n| Shielding mass, Mt | 9.9 | 23.3 | 46.7 | 33.5 |\n| Volume, m3 | 6.9XI07 | 2265X 107 | 300X 107 | 13.2X107 |\n| Massofatmosphere,kt | 44 | 14,612 | 1930 | 85 |\n| Segmentation | Easy, optional | Difficult | Difficult | Difficult |\n| Vistas: |  |  |  |  |\n| Longest lineofsight, m Solid angleof50percent sight line, sr | 640 0.5 | 10,740 0.09 | 1790 4.2 | 732 4.2 |\n| Fractionofhabitat hidden from view | 0.70 | 0 | 0 | 0.5 |\n| Communication: |  |  |  |  |\n| Longest distanceof surface travel, m | 2600 | 11,800 | 2800 | 1800 |\n| Fraction viewable by internal lineofsight fromone place | 0.3 | I | 1 | 0.5 |\n| Interior: |  |  |  |  |\n| Openness | Good | Good | Good | Good |\n| PopUlation capacity at 67 m2 /person | 10.000 | 820,000 | 75,000 | 10,000 |",
+        "text": "OF POSSIBLE HABITATS, 1 RPM. The table contains 17 data rows with columns for (a) Sin Single torus, Rmaj=830m, Rmin=65 m, glecomponent Cylinderwith spherical endcaps, R=895 m, L=8950m, Sphere, R=895m, Dumbbell, R=895m, Rsphere=316m."
+      }
+    },
+    {
+      "id": "sp413-s01164",
+      "caption": "TABLE 4-2.— PARAMETERS OF POSSIBLE HABITATS WITH OTHER CRITERIA (EXTERNAL AGRICULTURE) (a) Single components",
+      "table_markdown": "| Parameter | Single torus, Rₘₐⱼ = 209 m, Rₘᵢₙ = 27 m | Cylinder with spherical endcaps, R = 236 m, L = 2360 m | Sphere, R = 236 m | Dumbbell, R = 236 m, Rₛₚₕₑᵣₑ = 33.3 m |\n| --- | ---: | ---: | ---: | ---: |\n| Number of components | 1 | 1 | 1 | 1 |\n| Structural mass at 1/2 atm, kt | 4.6 | 775 | 64.6 | 0.4 |\n| Projected area, m² | 0.71 × 10⁵ | 38.5 × 10⁵ | 3.5 × 10⁵ | 0.07 × 10⁵ |\n| Surface area, m² | 2.2 × 10⁵ | 42.0 × 10⁵ | 7.0 × 10⁵ | 0.28 × 10⁵ |\n| Shielding mass, Mt | 1.0 | 19.4 | 3.3 | 1.4 |\n| Volume, m³ | 0.3 × 10⁷ | 46.8 × 10⁷ | 5.5 × 10⁷ | 0.031 × 10⁷ |\n| Mass of atmosphere, kt | 1.9 | 299 | 35.2 | 0.20 |\n| Segmentation | Unavoidable | Difficult | Difficult | Unavoidable |\n| Vistas: longest line of sight, m | 206 | 2800 | 470 | 67 |\n| Vistas: solid angle of 50 percent sight line, sr | 0.9 | 0.09 | 4.2 | 4.2 |\n| Vistas: fraction of habitat hidden from view | 0.65 | 0 | 0 | 0.5 |\n| Communication: longest distance of surface travel, m | 720 | 3100 | 740 | 540 |\n| Communication: fraction viewable by internal line of sight from one place | 0.35 | 1.0 | 1.0 | 0.5 |\n| Interior: openness | Fair | Good | Good | Fair |\n| Interior: volume/area, m | 42 | 121 | 157 | 44 |\n| Population capacity at 35 m²/person | 2000 | 110,000 | 10,000 | 200 |",
+      "verified_pdf_pages": [
+        63
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-2.PARAMETERS OF POSSIBLE HABITATS WITH OTHER CRITERIA (EXTERNAL AGRICULTURE)",
+        "table_markdown": "|  | Single torus, Rmaj =209m, Rmin = 27 m | Cylinder with sphericaJ end caps R =236m, L=2360m | Sphere, R=236m | Dumbbell, R=236m, Rsphere = 33.3 m |\n| --- | --- | --- | --- | --- |\n| Numberofcomponents | I | 1 | I | 1 |\n| Structural massat 1/2 atm,kt | 4.6 | 775 | 64.6 | 0.4 |\n| Projected area, m2 | O.71X lOS | 38.5X105 | 3.5XlOS | O.07XlOS |\n| Surface area, m2 | 2.2X105 | 42.0X105 | 7.0X 105 | 0.28XIQs |\n| Shielding mass,Mt | 1.0 | 19.4 | 3.3 | 1.4 |\n| Volume, m3 | O.3X10 7 | 46.8X 10 7 | 5.5XI0 7 | 0.031X107 |\n| Massofatmosphere, kt | 1.9 | 299 | 35.2 | 0.20 |\n| Segmentation | Unavoidable | Difficult | Difficul t | Unavoidable |\n| Vistas: |  |  |  |  |\n| Longest lineofsigh t, m | 206 | 2800 | 470 | 67 |\n| Solid angleof50percent sigh t line,sr | 0.9 | 0.09 | 4.2 | 4.2 |\n| Fractionofhabitat hiddenfrom view | 0.65 | 0 | 0 | 0.5 |\n| Communication: |  |  |  |  |\n| Longest distanceof surface travel, m | 720 | 3100 | 740 | 540 |\n| Fraction viewable by internal lineofsight from one place | 0.35 | 1.0 | 1.0 | 0.5 |\n| Interior: |  |  |  |  |\n| Openness | Fair | Good | Good | Fair |\n| Volume/area, m | 42 | 121 | 157 | 44 |\n| Populationcapacity at 35 m2 /person | 2000 | 110,000 | 10,000 | 200 |",
+        "text": "OF POSSIBLE HABITATS WITH OTHER CRITERIA (EXTERNAL AGRICULTURE). The table contains 19 data rows with columns for Single torus, Rmaj =209m, Rmin = 27 m, Cylinder with sphericaJ end caps R =236m, L=2360m, Sphere, R=236m, Dumbbell, R=236m, Rsphere = 33.3 m."
+      }
+    },
+    {
+      "id": "sp413-s01179",
+      "caption": "TABLE 4-2.— CONCLUDED (b) Multiple components",
+      "table_markdown": "| Parameter | Multiple dumbbells, R = 236 m, Rₛₚₕₑᵣₑ = 33.3 m | Multiple torus, Rₘₐⱼ = 209 m, Rₘᵢₙ = 27 m | Banded torus, Rₘₐⱼ = 209 m, Rₘᵢₙ = 27 m |\n| --- | ---: | ---: | ---: |\n| Number of components | 50 | 5 | 1 (8 bands) |\n| Structural mass at 1/2 atm, kt | 20 | 23.2 | 26 |\n| Projected area, m² | 3.5 × 10⁵ | 3.6 × 10⁵ | 3.6 × 10⁵ |\n| Surface area, m² | 13.9 × 10⁵ | 11.2 × 10⁵ | 8.2 × 10⁵ |\n| Shielding mass, Mt | 7.2 | 5.2 | 3.6 |\n| Volume, m³ | 1.5 × 10⁷ | 1.5 × 10⁷ | 1.8 × 10⁷ |\n| Mass of atmosphere, kt | 9.9 | 9.5 | 11.3 |\n| Segmentation | Unavoidable | Unavoidable | Easy |\n| Vistas: longest line of sight, m | 67 | 100 | 100 |\n| Vistas: solid angle of 50 percent sight line, sr | 4.2 | 0.9 | 0.9 |\n| Vistas: fraction of habitat hidden from view | 0.99 | 0.93 | 0.9 |\n| Communication: longest distance of surface travel, m | 540 | 720 | 720 |\n| Communication: fraction viewable by internal line of sight from one place | 0.01 | 0.07 | 0.1 |\n| Interior: openness | Good | Fair | Poor |\n| Interior: volume/area, m | 43 | 42 | 50 |\n| Population capacity at 35 m²/person | 10,000 | 10,000 | 10,000 |",
+      "verified_pdf_pages": [
+        64
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-2.- Concluded (b) Multiple components",
+        "table_markdown": "|  | Multiple dumbbells, R=236m, Rsphere=33.3m | Multiple torus, Rmaj=209m, Rmin=27 m | Banded torus, Rmaj=209m, Rmin=27m |\n| --- | --- | --- | --- |\n| umberofcomponents | 50 | 5 | I(8bands) |\n| Structural massat1/2atm,kt | 20 | 23.2 | 26 |\n| Projected area, m2 | 3.5X105 | 3.6X10S | 3.6XlOs |\n| Surface area, m2 | 13.9X105 | 11.2XlOS | 8.2XlOS |\n| Shielding mass, Mt | 7.2 | 5.2 | 3.6 |\n| Volume, m3 | 1.5X107 | 1.5X 10 7 | 1.8X10 7 |\n| Massofatmosphere,kt | 9.9 | 9.5 | 11.3 |\n| Segmentation | Unavoidable | Unavoidable | Easy |\n| Vistas: |  |  |  |\n| Longest lineofsight, m | 67 | 100 | 100 |\n| Solid angleof50percent sight line, sr | 4.2 | 0.9 | 0.9 |\n| Fraction ofhabitat hidden from view | 0.99 | 0.93 | 0.9 |\n| Communication: |  |  |  |\n| Longest distance of surface travel, m | 540 | 720 | 720 |\n| Fractionviewableby internal lineofsight |  |  |  |\n| from one place | 0.01 | 0.07 | 0\".1 |\n| Interior: |  |  |  |\n| Openness | Good | Fair | Poor |\n| Volume/area, m | 43 | 42 | 50 |\n| Population capacityat |  |  |  |\n| 35m2 /person | 10,000 | 10,000 | 10,000 |",
+        "text": "Concluded (b) Multiple components. The table contains 21 data rows with columns for Multiple dumbbells, R=236m, Rsphere=33.3m, Multiple torus, Rmaj=209m, Rmin=27 m, Banded torus, Rmaj=209m, Rmin=27m."
+      }
+    },
+    {
+      "id": "sp413-s01355",
+      "caption": "TABLE 4-3.— HABITAT ATMOSPHERE",
+      "table_markdown": "| Gas | Pressure (kPa) | Pressure (mmHg) |\n| --- | ---: | ---: |\n| O₂ | 22.7 | 170 |\n| N₂ | 26.6 | 200 |\n| CO₂ | <0.4 | <3 |\n| Total pressure | 50.8 | 380 |\n| Water vapor | 1.0 | 7.5 |",
+      "verified_pdf_pages": [
+        70
+      ],
+      "notes": [
+        "Conditions printed immediately above table: T = 20 ± 5 °C; relative humidity = 50 ± 10 percent.",
+        "Footnote below table: 1 standard atmosphere = 101 kPa."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-3.HABITAT ATMOSPHERE",
+        "table_markdown": "| Gas | (kPa) | (mmHg) |\n| --- | --- | --- |\n| O2 | 22.7 | 170 |\n| N2 | 26.6 | 200 |\n| CO2 | < 0.4 | <3 |\n| Totalpressure | 50.8 | 380 |\n| Water vapor | 1.0 | 7.5 |",
+        "text": "ATMOSPHERE. The table contains 5 data rows with columns for Gas, (kPa), (mmHg)."
+      }
+    },
+    {
+      "id": "sp413-s01607",
+      "table_markdown": "| Metals type | Ultimate σᵤ (MPa) | Yield σᵧ (MPa) | Working σw=2/3σᵧ (MPa) | Brinell hardness (500-kg load, 10-mm-diam ball) | Density G (10³ kg/m³) | Modulus E (MPa) | Poisson ratio ν | Expansion α (10⁻⁶ °C⁻¹) | Electric conductivity (10⁻⁶×ohm⁻¹ m⁻¹) | Thermal conductivity (W/m °C) |\n|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\n| Aluminum (150 °C), pure (99.5 percent) | 83 | 41 | 28 | 30 | 2.70 | 70,000 | 1/3 | 24 | 36 | 230 |\n| Aluminum, heat-treated alloy Al 12 Si 0.5 Mg | 303 | 248 | 165 | 95 | 2.65 | 76,000 | 1/3 | 19 | 21 | 157 |\n| Aluminum, cold-formed wire or plate | 455 | 352 | 234 | 140 | 2.65 | 76,000 | 1/3 | 20 | 31 | 163 |\n| Titanium, heat-treated alloy Ti 5 Al 2.5 Sn | 620 | 517 | 345 | 105 | 4.54 | 110,000 | 1/3 | 10 | --- | 22 |\n| Titanium, cold-formed wire or plate | 1030 | 931 | 620 | 110 | 4.54 | 110,000 | 1/3 | 9 | --- | 23 |\n| Magnesium, heat-treated castings Mg 8.5 Al | 138 | 83 | 55 | 48 | 1.8 | 43,000 | 0.35 | 27 | 7 | 93 |\n| Magnesium, thin plate or wire Mg 3 Al 0.5 Mn 0.1 Zn | 207 | 152 | 110 | 52 | 1.8 | 43,000 | .35 | 25 | 8 | 81 |\n| Steel, wrought iron | 352 | 207 | 138 | 70 | 7.8 | 207,000 | .3 | 12 | 9 | 93 |\n| Steel, rolled—heat treated | 538 | 352 | 234 | 120 | 7.8 | 200,000 | .3 | 12 | 8 | 81 |\n| Steel, cold drawn | 1380 | 1240 | 830 | 200 | 7.8 | 200,000 | .3 | 12 | 8 | 81 |",
+      "caption": "TABLE 4-4.— MATERIAL PROPERTIES OF SOME METAL ALLOYS",
+      "verified_pdf_pages": [
+        80
+      ],
+      "notes": [
+        "Hyphen “---” is printed for titanium electric conductivity."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-4.- MATERIAL PROPERTIES OF SOME METAL ALLOYS",
+        "table_markdown": "|  | Ultit | Tensile st Yild | rength Wki | Brinell hardness number | Di | l | i | Coefficient fi | Cond ucti | vi ty |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | mae | e | orng |  | ensty | Moduus | Posson | oexpanson |  |  |\n| Metals type | au, MPa | Or M a | Ow=2/3_0y'_ MPa | lOad) 10mm diam ball | G, 103kg/m3 | E, MPa | ratio, v | 0<, 1(J'6 °C ' | Electric, 1(J'6 X ohm·m-' | Thermal, W/moC |\n| Aluminum(l50°C) i)Pure (99.5 percent) ii)Heat treated alloy: Al12Si 0.5Mg | 83 303 | 41 248 | 28 165 | 30 95 | 2.70 2.65 | 70,000 76,000 | 1/3 1/3 | 24 19 | 36 2l | 230 157 |\n| iii) Cold formedwire orplate | 455 | 352 | 234 | 140 | 2.65 | 76,000 | 1/3 | 20 | 31 | 163 |\n| Titanium |  |  |  |  |  |  |  |  |  |  |\n| i) Heat treated alloy: Ti 5 Al 2.5 Sn | 620 | 517 | 345 | 105 | 4.54 | 110,000 | 1/3 | 10 | .., | 22 |\n| ii) Coldformed wire or plate | 1030 | 93 1 | 620 | lID | 4.54 | 110,000 | 1/3 | 9 | ... | 23 |\n| Magnesium |  |  |  |  |  |  |  |  |  |  |\n| i)Hea t treated castings: Mg 8.5Al | 138 | 83 | 55 | 48 | 1.8 | 43,000 | 0.35 | 27 | 7 | 93 |\n| ii)Thinplate or wire Mg 3Al0.5Mn0.1Zn | 207 | 152 | 110 | 52 | 1.8 | 43,000 | .35 | 25 | 8 | 8 1 |\n| Steel |  |  |  |  |  |  |  |  |  |  |\n| i)Wrought iron | 352 | 207 | 138 | 70 | 7.8 | 207,000 | .3 | 12 | 9 | 93 |\n| ii) Rolled · heat treated | 538 | 352 | 234 | 120 | 7.8 | 200,000 | .3 | 12 | 8 | 81 |\n| iii) Colddrawn | 1380 | 1240 | 830 | 200 | 7.8 | 200,000 | .3 | 12 | 8 | 8 1 |",
+        "text": "MATERIAL PROPERTIES OF SOME METAL ALLOYS. The table contains 14 data rows with columns for Ultit, Tensile st Yild, rength Wki, Brinell hardness number, Di, l, i, Coefficient fi, Cond ucti, vi ty."
+      }
+    },
+    {
+      "id": "sp413-s01613",
+      "table_markdown": "| Material | Flexural working stress σw (tension), MPa: untempered | Flexural working stress σw (tension), MPa: tempered | Brinell hardness number (500-kg load, 10-mm-diam ball) | Density G (10³ kg/m³) | Poisson ratio ν | Expansion α (10⁻⁶ °C⁻¹) | Thermal conductivity (W/m °C) |\n|---|---:|---:|---:|---:|---:|---:|---:|\n| Ceramics—silica glass | 3.4 | 6.9 | 400 | 2.2 | 0.18 | 80 | 15 |\n| Ceramics—window sheet | 8.3 | 16.5 | 500 | 2.45 | .23 | 850 | .9 |\n| Rock—fused | 3.4 (merged across both flexural columns) |  | 200 | 2.8 | .15 | --- | --- |\n| Rock—soil (dry) | --- (merged across both flexural columns) |  | --- | 1.4 | .1 | --- | --- |\n| Rock—soil (60 percent moisture) | --- (merged across both flexural columns) |  | --- | 1.68 | .5 | --- | --- |",
+      "caption": "TABLE 4-5.— MATERIAL PROPERTIES OF SOME CERAMICS AND SOILS",
+      "verified_pdf_pages": [
+        81
+      ],
+      "notes": [
+        "Footnote a: Compressive strength is about 10 times greater.",
+        "For rock rows, printed flexural entries span/merge the untempered and tempered columns."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-5.- MATERIAL PROPERTIES OF SOM E CERAMICS AND SOILS",
+        "table_markdown": "|  | Flexural work °w(tensio MPa Untempered | ing stress n),a Tempered | Brinell hardness number COO-kglo.d) 10 mm diam ball | Density G, 103kg/m3 | Poisson ratio, v | Coefficient ofexpansion Q, 10-60c- I | Thermal conductivity, W/m°c |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Ceramics i)Silica glass | 3.4 | 6.9 | 400 | 2.2 | 0.18 | 80 | IS |\n| ii) Window sheet | 8.3 | 16.5 | 500 | 2.45 | .23 | 850 | .9 |\n| Rock i)Fused | 3. | 4 | 200 | 2.8 | .15 | --- | --- |\n| ii) Soil (dry) iii) Soil(60 per- cent moisture) | --- --- |  | --- -- | 1.4 1.68 | .1.5 | --- --- | --- --- |",
+        "text": "MATERIAL PROPERTIES OF SOM E CERAMICS AND SOILS. The table contains 4 data rows with columns for Flexural work °w(tensio MPa Untempered, ing stress n),a Tempered, Brinell hardness number COO-kglo.d) 10 mm diam ball, Density G, 103kg/m3, Poisson ratio, v, Coefficient ofexpansion Q, 10-60c- I, Thermal conductivity, W/m°c."
+      }
+    },
+    {
+      "id": "sp413-s01615",
+      "table_markdown": "| Geometry | Projected area Aₚ | Habitable volume V_H |\n|---|---|---|\n| Cylinder | 2πRL | πR²L(2γ−γ²) |\n| Sphere | 4πR²(1−γ)√(2γ−γ²) | 2πR³γ(1−γ²/3) |\n| Cylinder and spherical endcaps | 2πRL + 4πR²(1−γ)√(2γ−γ²) | 2πR³γ[L(1−γ/2)+R(1−γ²/3)] |\n| Torus | 4πrR | For 0<γ<2/[1+(R/r)]: 2π²r²R{π/2−sin⁻¹[1−γ(1+R/r)]−(1/2)sin(2 sin⁻¹[1−γ(1+R/r)])); for all other γ: 2π²r²R |",
+      "caption": "TABLE 4-6.— PROJECTED AREAS AND HABITABLE VOLUMES",
+      "verified_pdf_pages": [
+        81
+      ],
+      "notes": [
+        "Definitions printed below table: γ ≡ Δg/g; R = radius of rotation; r = minor radius of torus; L = length of cylinder.",
+        "Torus volume formula transcribed as printed, including the piecewise condition."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-6.PROJECTED AREAS AND HABIT ABLE VOLUMES",
+        "table_markdown": "| Geometry | Projected area, Ap | Habitablevolume, VH |\n| --- | --- | --- |\n| Cylinde r | 21TRL | 1TR 2L(2r- 1'2) |\n| Sphere | 41TR2(1 - 1') V 2r- 1'2 | 21TR3r~-f) |\n| Cylinder and spherical endcaps Torus | 21TRL +41TR2(I- r).j2r- 1'2 41TfR | 21TR3r[L 0 -})+R0- ~2)] 21Tf2R(i - sin- JG -1'(1+~)J -}sin{2 sin- J[1 - r {1+~)J}) 2 for: 0<l'<1+(R/r); _21T2_r2R, allotherr. |",
+        "text": "AREAS AND HABIT ABLE VOLUMES. The table contains 3 data rows with columns for Geometry, Projected area, Ap, Habitablevolume, VH."
+      }
+    },
+    {
+      "id": "sp413-s01677",
+      "table_markdown": "| Geometry | Stressed skin | Ribbed |\n|---|---|---|\n| Torus | [4π²GR³η/(σ−GgR)](P_Aη/2 + Γ/π) | 4π²GR³η[(P_Aη/2 + Γ/π)/(σ−GgR) + P_Aη/σ] |\n| Cylinder with endcaps | [2πGR³/(σ−GgR)][(α+1)(P_A+Γ)] | [2πGR³/(σ−GgR)]{P_A[1+α(3/2−GgR/(2σ))]+(α+1)Γ} |",
+      "caption": "TABLE 4-7.— STRUCTURAL MASSES",
+      "verified_pdf_pages": [
+        83
+      ],
+      "notes": [
+        "Definitions printed below table: G=density of structural materials; R=radius of rotation; σ=working stress; P_A=atmospheric pressure; Γ=internal load; g=pseudogravity; α=cylinder aspect ratio; η=torus aspect ratio."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-7.STRUCTURAL MASSES",
+        "table_markdown": "| G | eometr | y | Stressed skin | Ribbed |\n| --- | --- | --- | --- | --- |\n| Torus |  |  | 41T2GR311 (PA l1+r~~)~~ | [cPAl1I2)+(rl1T) PAl1] 41T2 GR3 11 +-- |\n|  |  |  | 0 - GgR 2 1T | 0 - GgR 0 |\n| Cylinder | withen | dcaps | 21TGR 3 [(0' + l)cP A +n] 0 - GgR | 2nGR'{~ (3GgR)]} PA1+0'- - - +(0'+1) 0 - GgR 2 20 |\n|  | G | :=density | ofstructural materials | r:=internal load |\n|  | R o | :=radius:=workin | ofrotation g stress | g=pseudogravity ex=cylinder aspectratio |\n|  | P A | :=atmosp | heric pressure | 11=torusaspect ratio |",
+        "text": "MASSES. The table contains 6 data rows with columns for G, eometr, y, Stressed skin, Ribbed."
+      }
+    },
+    {
+      "id": "sp413-s01790",
+      "table_markdown": "| Age | U.S.-1970 percent | Initial colony distribution percent | Colony minus U.S.-1970 differences, percent |\n|---|---:|---:|---:|\n| 0–20 yr | 39.6 | 10.5 | −29.1 |\n| 21–44 yr | 31.0 | 74.5 | +43.5 |\n| 45 yr and over | 29.4 | 15.0 | −14.4 |",
+      "caption": "TABLE 4-9.— AGE DISTRIBUTION",
+      "verified_pdf_pages": [
+        88
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-9.- AGE DISTRIBUTION",
+        "table_markdown": "| Age | U.S.-1970, percent | Initial colony distribution, | Colony U.S.-1970 differences, |\n| --- | --- | --- | --- |\n|  |  | percent | percent |\n| 0-20 yr | 39.6 | 10.5 | -29.1 |\n| 21-44 yr | 31.0 | 74.5 | +43.5 |\n| 45 yr |  |  |  |\n| &over | 29.4 | 15.0 | - 14.4 |",
+        "text": "AGE DISTRIBUTION. The table contains 5 data rows with columns for Age, U.S.-1970, percent, Initial colony distribution,, Colony U.S.-1970 differences,."
+      }
+    },
+    {
+      "id": "sp413-s01791",
+      "table_markdown": "| Age | U.S.-1970 | Initial colony ratios |\n|---|---:|---:|\n| 15–24 | 98.1 | 107.9 |\n| 25–44 | 95.5 | 105.1 |\n| 45–64 | 91.6 | 100.8 |",
+      "caption": "TABLE 4-10.— SEX RATIOS (Males per 100 females)",
+      "verified_pdf_pages": [
+        88
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-10.- SEX RATIOS (Males per 100 females)",
+        "table_markdown": "| Age | U.S.-1970 | Initial colony ratios |\n| --- | --- | --- |\n| 15-24 | 98.1 | 107.9 |\n| 25-44 | 95.5 | 105.1 |\n| 45-64 | 91.6 | 100.8 |",
+        "text": "SEX RATIOS (Males per 100 females). The table contains 3 data rows with columns for Age, U.S.-1970, Initial colony ratios."
+      }
+    },
+    {
+      "id": "sp413-s01792",
+      "table_markdown": "| Population / sex | 18–19 | 20–24 | 25–29 | 30–34 | 35–44 | 45–54 | 55–64 | 65–74 | 75 & over |\n|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|\n| U.S.-1970 male | 8.1 | 43.1 | 80.7 | 87.6 | 91.8 | 94.5 | 94.9 | 94.2 | 95.1 |\n| U.S.-1970 female | 23.0 | 63.6 | 87.6 | 93.3 | 95.5 | 95.8 | 94.5 | 93.3 | 93.5 |\n| Initial colony male (18–20; 21–44; 45 and over) | 10.1 |  |  | 75.0 |  |  |  | 94.0 |  |\n| Initial colony female (18–20; 21–44; 45 and over) | 30.0 |  |  | 80.0 |  |  |  | 94.0 |  |",
+      "caption": "TABLE 4-11.— PERCENT EVER-MARRIED BY SEX AND AGE",
+      "verified_pdf_pages": [
+        88
+      ],
+      "notes": [
+        "Initial-colony figures are printed under brace-grouped age bands 18–20, 21–44, and 45 and over; blank cells indicate the brace spans those columns."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-11.PERCE T EVER-MARRIED BY SEX AND AGE",
+        "table_markdown": "|  |  |  |  |  | Age |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Sex | 18-19 | 20-24 | 25-29 | 30-34 | 35-44 | 45-54 | 55-64 | 65-74 | 75 & over |\n| U.S.-1970 |  |  |  |  |  |  |  |  |  |\n| Male | 8.1 | 43.1 | 80.7 | 87.6 | 91.8 | 94.5 | 94.9 | 94.2 | 95.1 |\n| Female | 23.0 | 63.6 | 87.6 | 93.3 | 95.5 | 95.8 | 94.5 | 93.3 | 93.5 |\n|  | ~~'-~~ 18 | \".... -20 | 21 | ~~v~~ -44 | .- | \" | 45a | ~~v~~ ndover | .- |\n| Initial colony |  |  |  |  |  |  |  |  |  |\n| Male | 1 | 0.1 | 7 | 5.0 |  |  | 94 | .0 |  |\n| Female | 3 | 0.0 | 8 | 0.0 |  |  | 94 | .0 |  |",
+        "text": "T EVER-MARRIED BY SEX AND AGE. The table contains 8 data rows with columns for Age."
+      }
+    },
+    {
+      "id": "sp413-s01794",
+      "table_markdown": "| Sex and age | Single U.S.-1970 | Single initial colony | Ever-married: married spouse present, U.S.-1970 | Ever-married: other ever-married, U.S.-1970 | Ever-married initial colony |\n|---|---:|---:|---:|---:|---:|\n| Male 16–19 | 54.6 | --- | 92.3 | 68.8 | --- |\n| Male 18–20 | --- | 98 | --- | --- | 92 |\n| Male 20–24 | 73.8 | 98 | 94.7 | 90.4 | 98 |\n| Male 25–44 | 87.4 | 98 | 98.0 | 92.3 | 98 |\n| Male 45–64 | 75.7 | 91 | 91.2 | 78.5 | 91 |\n| Male 65 and over | 25.2 | 91 | 29.9 | 18.3 | 91 |\n| Female 16–19 | 44.7 | --- | 37.8 | 48.6 | --- |\n| Female 18–20 | --- | 55 | --- | --- | 48 |\n| Female 20–24 | 73.0 | 87 | 47.9 | 60.3 | 56 |\n| Female 25–44 | 80.5 | 87 | 42.7 | 67.2 | 56 |\n| Female 45–64 | 73.0 | 80 | 44.0 | 61.9 | 54 |\n| Female 65 and over | 19.7 | 80 | 7.3 | 10.0 | 54 |",
+      "caption": "TABLE 4-12.— LABOR FORCE PARTICIPATION RATES BY AGE AND MARITAL STATUS—U.S.-1970 AND INITIAL COLONY ASSUMPTIONS",
+      "verified_pdf_pages": [
+        89
+      ],
+      "notes": [
+        "Values in initial-colony columns are visually aligned in merged/braced age bands; repeated group values here show their coverage. Printed --- marks retained."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-12.LABOR FORCE PARTICIPATION RATES BY AGE AND MARITAL STATUS - U.S.-1970 AND INITIAL COLONY ASSUMPTIONS",
+        "table_markdown": "|  | S | ingle |  | Ever-married |  |\n| --- | --- | --- | --- | --- | --- |\n| Sex andage |  |  |  | U.S.-1970 |  |\n|  | U.S.-1970 | Initial colony | Married spouse present | Other ever-married | Initial colony |\n| Male |  |  |  |  |  |\n| 16-19 | 54.6 | -- | 92.3 | 68.8 | --- |\n| 18-20 | -- | 98 | --- | - | 92 |\n| 20-24 25-44 | 73.8} 87.4 | 98 | {94.7 98.0 | 90.4} 92.3 | 98 |\n| 45-64 | 75.7} |  | {912 | 78.5} |  |\n| 65 and over | 25.2 | 91 | . 29.9 | 18.3 | 91 |\n| Female |  |  |  |  |  |\n| 16-19 | 44.7 | -- | 37.8 | 48.6 | --- |\n| 18-20 | -- | 55 | --- | - | 48 |\n| 20-24 | 73.0} |  | f479 | 603} |  |\n| 25-44 | 80.5 | 87 | . 42.7 | . 67.2 | 56 |\n| 45-64 | 73.0} |  | t 4 0 | 61.9} |  |\n| 65 andover | 19.7 | 80 | . 7.3 | 10.0 | 54 |",
+        "text": "FORCE PARTICIPATION RATES BY AGE AND MARITAL STATUS - U.S.-1970 AND INITIAL COLONY ASSUMPTIONS. The table contains 15 data rows with columns for S, ingle, Ever-married."
+      }
+    },
+    {
+      "id": "sp413-s01795",
+      "table_markdown": "| Age | Total, both sexes | Male total | Male single | Male ever-married | Female total | Female single | Female ever-married |\n|---|---:|---:|---:|---:|---:|---:|---:|\n| Total | 10,350 | 5305 | 1600 | 3705 | 5045 | 1283 | 3762 |\n| Under 21 yr | 1,081 | 567 | 557 | 10 | 514 | 483 | 31 |\n| Under 18 yr | 864 | 452 | 452 | --- | 412 | 412 | --- |\n| 18 to 20 yr | 217 | 115 | 105 | 10 | 102 | 71 | 31 |\n| 21 to 44 yr | 7,713 | 3960 | 995 | 2965 | 3753 | 752 | 3001 |\n| 45 yr and over | 1,556 | 778 | 48 | 730 | 778 | 48 | 730 |",
+      "caption": "TABLE 4-13.— POPULATION DISTRIBUTION BY AGE, SEX, AND MARITAL STATUS—INITIAL COLONY SETTLEMENT",
+      "verified_pdf_pages": [
+        89
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-13.POPULATION DISTRIBUTION BY AGE, SEX, AND MARITAL STATUS - I ITIAL COLONY SETTLEMENT",
+        "table_markdown": "|  | Total, both sexes | Total | Male Single | Ever-married | Total | Femal Single | e Ever-married |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Total | 10,350 | 5305 | 1600 | 3705 | 5045 | 1283 | 3762 |\n| Under21yr | 1,081 | 567 | 557 | 10 | 514 | 483 | 31 |\n| Under 18 yr | 864 | 452 | 452 | --- | 412 | 412 | --- |\n| 18to 20 yr | 217 | 115 | 105 | 10 | 102 | 71 | 31 |\n| 21 to 44 yr | 7.713 | 3960 | 995 | 2965 | 3753 | 752 | 3001 |\n| 45 yr and over | 1, 56 | 778 | 48 | 730 | 778 | 48 | 730 |",
+        "text": "DISTRIBUTION BY AGE, SEX, AND MARITAL STATUS - I ITIAL COLONY SETTLEMENT. The table contains 6 data rows with columns for Total, both sexes, Total, Male Single, Ever-married, Total, Femal Single, e Ever-married."
+      }
+    },
+    {
+      "id": "sp413-s01797",
+      "table_markdown": "| Sector | Metro areas 100,000–150,000 (1960) | Metro areas 100,000–150,000 (1950) | Cities 10,000–12,500 (1960) | Cities 10,000–12,500 (1950) |\n|---|---:|---:|---:|---:|\n| Agriculture | 0.9 | 1.1 | 0.1 | 0.4 |\n| Mining | .0 | .0 | .0 | .0 |\n| Construction | 3.5 | 3.8 | 2.7 | 2.5 |\n| Durable manufacturing | 1.5 | 2.0 | .5 | 1.2 |\n| Nondurable manufacturing | 3.4 | 4.2 | 1.0 | 1.0 |\n| Transport | 3.3 | 3.2 | 2.5 | 3.4 |\n| Wholesale | 1.7 | 1.4 | .6 | 1.1 |\n| Retail | 12.3 | 12.1 | 10.5 | 11.9 |\n| Finance | 2.2 | 1.8 | 1.4 | 1.6 |\n| Business services | 1.6 | 1.6 | .6 | 1.2 |\n| Personal services | 2.5 | 3.3 | 2.3 | 2.8 |\n| Entertaining | .4 | .6 | .2 | .3 |\n| Professional | 8.0 | 5.8 | 6.0 | 4.1 |\n| Public administration | 2.2 | 2.2 | 1.6 | 1.7 |\n| Total | 43.5 | 43.1 | 30.0 | 33.2 |",
+      "caption": "TABLE 4-14.— MINIMUM PERCENTAGES EMPLOYED IN 14 INDUSTRY CLASSIFICATIONS IN AMERICAN COMMUNITIES OF VARYING SIZE, 1960 AND 1950",
+      "verified_pdf_pages": [
+        90
+      ],
+      "notes": [
+        "Source printed: E. L. Ullman (1971), The Economic Base of Cities, Seattle: University of Washington Press."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-14.MINIMUM PERCENTAGES EMPLOYED IN 14 INDUSTRY CLASSIFICATIONS IN AMERICAN COMMUNITIES OF VARYING SIZE, 1960 AND 1950",
+        "table_markdown": "| Sector | Metropoli 100,000- | tanareas 150,000 | Citi 10,000 | esof ·12,500 |\n| --- | --- | --- | --- | --- |\n|  | 1960 | 1950 | 1960 | 1950 |\n| Agricultu re | 0.9 | 1.1 | 0.1 | 0.4 |\n| Mining | .0 | .0 | .0 | .0 |\n| Construction | 3.5 | 3.8 | 2.7 | 2.5 |\n| Dur.mfg. | 1.5 | 2.0 | .5 | 1.2 |\n| Non·dur.mfg. | 3.4 | 4.2 | 1.0 | 1.0 |\n| Transport | 3.3 | 3.2 | 2.5 | 3.4 |\n| Wholesale | 1.7 | 1.4 | .6 | 1.1 |\n| Retail | 12.3 | 12.1 | 10.5 | 11.9 |\n| Finance | 2.2 | 1.8 | 1.4 | 1.6 |\n| Bus.servo | 1.6 | 1.6 | .6 | 1.2 |\n| Pers. serv·. | 2.5 | 3.3 | 2.3 | 2.8 |\n| Entertaining | .4 | .6 | .2 | .3 |\n| Professional | 8.0 | 5.8 | 6.0 | 4.1 |\n| Pub!.admin. | 2.2 | 2.2 | 1.6 | 1.7 |\n| Total | 43.5 | 43.1 | 30.0 | 33.2 |",
+        "text": "PERCENTAGES EMPLOYED IN 14 INDUSTRY CLASSIFICATIONS IN AMERICAN COMMUNITIES OF VARYING SIZE, 1960 AND 1950. The table contains 16 data rows with columns for Sector, Metropoli 100,000-, tanareas 150,000, Citi 10,000, esof ·12,500."
+      }
+    },
+    {
+      "id": "sp413-s01800",
+      "table_markdown": "| Year from start of colonization program | Total population | Total labor forceᵃ | Labor force engaged in “export activity”ᵃ |\n|---:|---:|---:|---:|\n| −3 | 200 | 200 |  |\n| −2 | (arrow continuation from 200) | (arrow continuation from 200) |  |\n| −1 | (arrow continuation from 200) | (arrow continuation from 200) |  |\n| Xᵇ | (arrow continuation from 200) | (arrow continuation from 200) |  |\n| 1 | 600 | 600 |  |\n| 2 | 600 | 600 |  |\n| 3 | 600 | 600 |  |\n| 4 | 2270 | 2270 |  |\n| 5 | (arrow continuation from 2270) | (arrow continuation from 2270) |  |\n| 6 | (arrow continuation from 2270) | (arrow continuation from 2270) |  |\n| 7 | (arrow continuation from 2270) | (arrow continuation from 2270) |  |\n| 8 | 2620 | 2620 |  |\n| 9 | 2620 | 2620 |  |\n| 10 | 2620 | 2620 |  |\n| 11 | 4350 | 3162 | 1932 |\n| 12 | 6350 | 4616 | 2820 |\n| 13 | 8350 | 6070 | 3709 |\n| 14 | 10,350 | 7523 | 4597 |",
+      "caption": "TABLE 4-15.— POPULATION AND LABOR FORCE DEVELOPMENT—THROUGH THE 14TH YEAR FROM THE BEGINNING OF COLONY CONSTRUCTION AT L₅",
+      "verified_pdf_pages": [
+        90
+      ],
+      "notes": [
+        "Footnote a: Labor-force participation rates expected to decline to approximately U.S. levels eventually; export activity as proportion of total labor force assumed to resemble comparable-sized U.S. communities (source Ullman et al., 1971).",
+        "Footnote b: X denotes the year in which colony construction begins.",
+        "Vertical arrows indicate unchanged totals through intermediate years; arrow spans are represented in the cells."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| Year | Total population | Total labor forcea | Labor force engaged in \"export activity',a |\n| --- | --- | --- | --- |\n| -3 -2 -1 Xb | 200 1 | 200 1 |  |\n| 1 |  |  |  |\n| 2 | 600 | 600 |  |\n| 3 | 600 | 600 |  |\n| 4 | 2270 | 2270 |  |\n| 5 |  |  |  |\n| 6 7 | 1 | 1 |  |\n| 8 | 2620 | 2620 |  |\n| 9 | 2620 | 2620 |  |\n| 10 | 2620 | 2620 |  |\n| 11 | 4350 | 3162 | 1932 |\n| 12 | 6350 | 4616 | 2820 |\n| 13 | 8350 | 6070 | 3709 |\n| 14 | 10,350 | 7523 | 4597 |",
+        "text": "Data from PDF page 90. The table contains 14 data rows with columns for Year, Total population, Total labor forcea, Labor force engaged in \"export activity',a."
+      }
+    },
+    {
+      "id": "sp413-s01923",
+      "table_markdown": "| Formula |\n|---|\n| M = (ρ/σw)v²m |",
+      "caption": "Lunar gas-gun barrel mass approximate formula",
+      "verified_pdf_pages": [
+        95
+      ],
+      "notes": [
+        "Printed relation: M=(ρ/σw)v²m; variables and units are defined in the adjacent symbol table."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| a w 27TRPL= | PR =- t 1.mv2 2 |\n| --- | --- |\n|  |  |",
+        "text": "Data from PDF page 95. The table contains 1 data rows with columns for a w 27TRPL=, PR =- t 1.mv2 2."
+      }
+    },
+    {
+      "id": "sp413-s01926",
+      "table_markdown": "| Symbol | Definition |\n|---|---|\n| σw | Working stress of barrel material, Pa |\n| R | Radius of barrel, m |\n| t | Thickness of barrel, m |\n| P | Internal pressure (presumed constant), Pa |\n| L | Length of accelerating region, m |\n| m | Mass of projectile, kg |\n| v | Muzzle velocity, m/s |\n| M | Mass of barrel, kg |\n| ρ | Density of barrel material, kg/m³ |",
+      "caption": "Symbols and definitions for lunar gas-gun barrel equations",
+      "verified_pdf_pages": [
+        95
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| _aw _ | isthe working stressofthe barrel material, Pa |\n| --- | --- |\n| R | radiusofthe barrel, m |\n| t | thicknessofthe barrel, m |\n| P | internal pressure (presumedconstant), Pa |\n| L | lengthofthe accelerating region, m |\n| m | massofthe projectile, kg |\n| v | muzzle velocity, m/s |\n| M p | massofthe barrel, kg densityofthe barrel material, kg/m3 |",
+        "text": "Data from PDF page 95. The table contains 7 data rows with columns for _aw _, isthe working stressofthe barrel material, Pa."
+      }
+    },
+    {
+      "id": "sp413-s01967",
+      "table_markdown": "| Component | Lunar gas gun (LGG), tonnes | Transport linear accelerator (TLA), tonnes |\n|---|---:|---:|\n| Driver | 1400 | 4000 |\n| Power source | 2400 | 9000 |\n| Total | 3800 | 13,000 |",
+      "caption": "TABLE 4-16.— COMPARISON OF THE MASSES OF THOSE PARTS OF THE TLA AND THE LGG MASS DRIVING SYSTEMS THAT MUST BE LOCATED ON THE LUNAR SURFACE (IN TONNES)",
+      "verified_pdf_pages": [
+        96
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-16.COMPARISON OF THE MASSES OF THOSE PARTS OF THE TLA AND THE LGG MASS DRIVING SYSTEMS THAT MUST BE LOCATED ON THE LUNAR SURF ACE (IN TONNES)",
+        "table_markdown": "|  | Lunar gasgun (LGG) | Transport linear accelerator (TLA) |\n| --- | --- | --- |\n| Driver | 1400 | 4000 |\n| Power source | 2400 | 9000 |\n| Total | 3800 | 13,000 |",
+        "text": "OF THE MASSES OF THOSE PARTS OF THE TLA AND THE LGG MASS DRIVING SYSTEMS THAT MUST BE LOCATED ON THE LUNAR SURF ACE (IN TONNES). The table contains 3 data rows with columns for Lunar gasgun (LGG), Transport linear accelerator (TLA)."
+      }
+    },
+    {
+      "id": "sp413-s02070",
+      "table_markdown": "| From / destination | To Lunar parking orbit (1–4) | To Low Earth orbit (1–4) | To L₄/L₅ (1–4) | To geosynchronous orbit (1–4) | To lunar surface (1–4) |\n|---|---|---|---|---|---|\n| Lunar parking orbit | — | 4084; 2.47; 1.25; 1.20 | 686; 1.16; 1.03; 1.03 | 1737; 1.47; 1.08; 1.08 | 2195; 1.63; 1.10; --- |\n| Low Earth orbit | 4084; 2.47; ---; 1.20 | — | 4084; 2.47; ---; 1.20 | 3839; 2.34; ---; 1.19 | [blank] |\n| L₄/L₅ | 686; 1.16; 1.03; 1.03 | 4084; 2.47; 1.25; 1.20 | — | 1737; 1.47; 1.08; 1.08 | [blank] |\n| Geosynchronous orbit | 1737; 1.47; 1.08; 1.08 | 3839; 2.34; 1.23; 1.19 | 1737; 1.47; 1.08; 1.08 | — | [blank] |\n| Lunar surface | 1859; 1.51; 1.09; [blank] | [blank] | [blank] | [blank] | — |",
+      "caption": "TABLE 4-17.— ESTIMATING FACTORS FOR SPACE TRANSPORT",
+      "verified_pdf_pages": [
+        99
+      ],
+      "notes": [
+        "Each populated cell lists printed rows (1) Δv for impulsive/Hohmann transfer adjusted +30%; (2) mass ratio μ for H₂/O₂, Isp=460 s; (3) mass ratio μ assuming extraterrestrial oxygen; (4) mass ratio μ for ion propulsion. Empty cells and printed --- retained distinctly.",
+        "Units for Δv are not indicated in the table header."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 4-1 7.ESTIMATING FACTORS FOR SPACE TRANSPORT",
+        "table_markdown": "|  |  |  | Lunar parking orbit | Low Earth orbit | To L4/Ls | Geosynch. orbit | Lunar surface |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Lunar parking orbit | (1) (2) (3) (4) |  | 4084 2.47 1.25 1.20 | 686 1.16 1.03 1.03 | 1737 1.47 1.08 1.08 | 2195 1.63 1.10 --- |\n|  | Low Earth orbit | (1) (2) (3) (4) | 4084 2.47 --- 1.20 |  | 4084 2.47 --. 1.20 | 3839 2.34 -.- 1.19 |  |\n|  | L4/Ls | (1) | 686 | 4084 |  | 1737 |  |\n| F |  | (2) | 1.16 | 2.47 |  | 1.47 |  |\n| rom |  | (3) | 1.03 | 1.25 |  | 1.08 |  |\n|  |  | (4) | 1.03 | 1.20 |  | 1.08 |  |\n|  | Geo- | (1) | 1737 | 3839 | 1737 |  |  |\n|  | synch. | (2) | 1.47 | 2.34 | 1.47 |  |  |\n|  | orbit | (3) | 1.08 | 1.23 | 1.08 |  |  |\n|  |  | (4) | 1.08 | 1.19 | 1.08 |  |  |\n|  | Lunar surface | (1) (2) (3) (4) | 1859 1.51 1.09 |  |  |  |  |",
+        "text": "7.ESTIMATING FACTORS FOR SPACE TRANSPORT. The table contains 11 data rows with columns for Lunar parking orbit, Low Earth orbit, To L4/Ls, Geosynch. orbit, Lunar surface."
+      }
+    },
+    {
+      "id": "sp413-s02092",
+      "table_markdown": "| Vehicle / rate | Year 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | Max. | Total |\n|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\n| HLLV (150 t/launch) | — | — | — | — | 9 | 26 | 23 | 53 | 54 | 71 | 65 | 49 | 53 | 65 | 69 | 76 | 72 | 72 | 67 | 73 | 73 | 73 | 76 | 1043 |\n| Space Shuttle (30 people/launch) | — | — | — | — | 13 | 13 | 13 | 20 | 17 | 27 | 27 | 100 | 100 | 100 | 83 | 83 | 83 | 83 | 80 | 80 | 80 | 80 | 100 | 1082 |\n| TOTAL | — | — | — | — | 22 | 39 | 36 | 73 | 71 | 98 | 82 | 149 | 153 | 165 | 152 | 159 | 155 | 155 | 147 | 153 | 153 | 153 | 165 | 2125 |",
+      "caption": "TABLE 4-18.— ANTICIPATED LAUNCH RATES IN LAUNCHES PER YEARᵃ",
+      "verified_pdf_pages": [
+        100
+      ],
+      "notes": [
+        "Footnote a: No provision for launching propellant is included in these numbers; its inclusion will more than double the annual launch requirements.",
+        "Source arithmetic discrepancy at year 11: printed TOTAL is 82 although displayed HLLV 65 + Space Shuttle 27 = 92; transcribed the printed 82 unchanged."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| TABLE | 4-18.- | ANT | ICIPATE | D LAU | NCH | RA | TES | IN | LA | UNC | HES | PE | R_Y_ | EA | Ra |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Year from |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| startof I 2 colonization | 3 4 | 5 6 | 7 8 9 | 10II | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 2 1 | 22 | Max. | Total |\n| program |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| HLLV - - | - - | 926 | 23 53 54 | 7 1 65 | 49 | 53 | 65 | 69 | 76 | 72 | 72 | 67 | 73 | 73 | 73 | 76 | 1043 |\n| (150t/lau nch) |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| SpaceShuttle - - | - - | 1313 | 132017 | 2727 | 100 | 100 | 100 | 83 | 83 | 83 | 83 | 80 | 80 | 80 | 80 | 100 | 1082 |\n| (30people/lau nch) TOTAL - - | - - | 2239 | 3673 7 1 | 9882 | 149 | 153 | 165 | 152 | 159 | 155 | 155 | 147 | 153 | 153 | 153 | 165 | 2125 |",
+        "text": "Data from PDF page 100. The table contains 7 data rows with columns for TABLE, 4-18.-, ANT, ICIPATE, D LAU, NCH, RA, TES, IN, LA, UNC, HES, PE, R_Y_, EA, Ra."
+      }
+    },
+    {
+      "id": "sp413-s02289",
+      "table_markdown": "| Description | Surface area, m² | Projected area, m² | Volume, m³ |\n| --- | ---: | ---: | ---: |\n| Community area | 980,000 | 430,000 | 8 × 10⁶ |\n| Agriculture, processing and mechanical | 650,000 | 240,000 | 10 × 10⁶ |\n| Total required | 1,680,000 | 670,000 | 18 × 10⁶ |\n| Total available | --- | 678,000 | 69 × 10⁶ |",
+      "caption": "TABLE 5-1. — FUNCTIONAL DISTRIBUTIONS OF AREAS AND VOLUMES IN THE STANFORD TORUS",
+      "verified_pdf_pages": [
+        111
+      ],
+      "notes": [
+        "The printed Total required is 1,680,000 m², although the printed category values 980,000 + 650,000 sum to 1,630,000 m²; preserve the printed total as shown."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| Description | Surface area, m2 | Projected area, m 2 | Volume, m3 |\n| --- | --- | --- | --- |\n| Communityarea | 980,000 | 430,000 | 8X106 |\n| Agriculture, processing and mechanical | 650,000 | 240,000 | lOX106 |\n| Total requ ired | 1,680,000 | 670,000 | 18X106 |\n| Total available | ... | 678,000 | 69X 106 |",
+        "text": "Data from PDF page 111. The table contains 4 data rows with columns for Description, Surface area, m2, Projected area, m 2, Volume, m3."
+      }
+    },
+    {
+      "id": "sp413-s02323",
+      "table_markdown": "| Item | Mass from lunar ore, t | Mass from Earth, t |\n| --- | ---: | ---: |\n| Shield | 9,900,000 | --- |\n| Torus shell | 156,000 | --- |\n| Glass solars | 48,000 | --- |\n| Spokes | 2,400 | --- |\n| Central hub | 1,600 | --- |\n| Docking module | 100 | --- |\n| Fabrication sphere | --- | 500 |\n| Radiators | 2,400 | --- |\n| Habitat power station | 700 | --- |\n| Main mirror | 200 | 7 (Mylar) |\n| Secondary mirrors | 90 | 3 (Mylar) |",
+      "caption": "TABLE 5-2. — SUMMARY OF HABITAT COMPONENT MASSES",
+      "verified_pdf_pages": [
+        112
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5.2.- SUMMARY OF HABITAT COMPONENT MASSES",
+        "table_markdown": "|  | Mass, | t |\n| --- | --- | --- |\n| Item | Fromlunarore | From Earth |\n| Shield | 9,900,000 | ... |\n| Torus shell | 156,000 | ... |\n| Glasssolars | 48,000 | ... |\n| Spokes | 2,400 | .\" |\n| Central hub | 1,600 | ... |\n| Docking module | 100 | ... |\n| Fabricatio n sphere | ... | 500 |\n| Radiators | 2,400 | ... |\n| Habitat power stJtion | 700 | ... |\n| Mainmirror | 200 | 7(Mylar) |\n| Secondarymirrors | 90 | 3(Mylar) |",
+        "text": "SUMMARY OF HABITAT COMPONENT MASSES. The table contains 12 data rows with columns for Mass,, t."
+      }
+    },
+    {
+      "id": "sp413-s02334",
+      "table_markdown": "| Item | Mass, t |\n| --- | ---: |\n| Soil (dry) — 1,000,000 m², 0.3 m thick, 721 kg/m³ | 220,000 |\n| Water in soil (10% soil) | 22,000 |\n| Water, other | 20,000 |\n| Biomass — people | 600 |\n| Biomass — animals | 900 |\n| Biomass — plants | 5,000 |\n| Structures | 77,000 |\n| Substructures (20% of structures) | 15,000 |\n| Furniture, appliances | 20,000 |\n| Machinery | 40,000 |\n| Utilities | 29,500 |\n| Miscellaneous (extra) | 80,000 |\n| Total | 530,000 |",
+      "caption": "TABLE 5-3. — SUMMARY OF INTERNAL MASSES",
+      "verified_pdf_pages": [
+        112
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| Item | Mass, t |\n| --- | --- |\n| Soil (dry) - 1,000,000m2,0.3m thick, |  |\n| 721kg/m3 | 220,000 |\n| Water insoil(10%soil) | 22,000 |\n| Water, other | 20,000 |\n| Biomass - people | 600 |\n| animals | 900 |\n| plants | 5,000 |\n| Structures | 77,000 |\n| Substructures(20%ofstructures) | 15,000 |\n| Furniture,appliances | 20,000 |\n| Machinery | 40,000 |\n| Utilities | 29,500 |\n| Miscellaneous (extra) | 80,000 |\n| Total | 530,000 |",
+        "text": "Data from PDF page 112. The table contains 14 data rows with columns for Item, Mass, t."
+      }
+    },
+    {
+      "id": "sp413-s02393",
+      "table_markdown": "| Animal | Number/person | Area/animal, m² | Area/person, m² |\n| --- | ---: | ---: | ---: |\n| Fish | 26 | 0.1 | 2.6 |\n| Chickens | 6.2 | .13 | .8 |\n| Rabbits | 2.8 | .4 | 1.1 |\n| Cattle | .15 | 4.0 | .6 |\n| Total |  |  | 5.1 |",
+      "caption": "TABLE 5-5. — ANIMAL AREAS",
+      "verified_pdf_pages": [
+        115
+      ],
+      "notes": [
+        "Fish source: Bardach, J. E.; Ryther, J. H.; McLarney, W. O., Aquaculture: The Farming and Husbandry of Freshwater & Marine Organisms, © 1972 (Wiley-Interscience: New York).",
+        "Chickens source: Dugan, G. L.; Golueke, C. G.; Oswald, W. J.; and Risford, C. E., Photosynthesis Reclamation of Agricultural Solids and Liquid Wastes, SERL Report No. 70-1, University of California, Berkeley, 1970.",
+        "Rabbits source: Henson, H. K., and Henson, C. M., Closed Ecosystems of High Agricultural Yield, Princeton Conference on Space Manufacturing Facilities, May, 1975.",
+        "Cattle source: Kissner, Wm., Dept. of Civil Engineering, University of Wisconsin—Platteville: Personal Communications."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-5.ANIMAL AREAS",
+        "table_markdown": "| Animal | umber/ person | Area/ animal, m2 | Area/ person, m2 |\n| --- | --- | --- | --- |\n| Fish | 26 | 0.1 | 2.6 |\n| Chickens | 6.2 | .13 | .8 |\n| Rabbits | 2.8 | .4 | 1.1 |\n| Cattle | .15 | 4.0 | .6 |\n| Total |  |  | 5.1 |",
+        "text": "AREAS. The table contains 5 data rows with columns for Animal, umber/ person, Area/ animal, m2, Area/ person, m2."
+      }
+    },
+    {
+      "id": "sp413-s02395",
+      "table_markdown": "| Plant | Amount required, g/person/day | Yield, g/m²/day | Area, m²/person |\n| --- | ---: | ---: | ---: |\n| Sorghum | 317 | 83 | 3.8 |\n| Soybeans | 470 | 20 | 23.5 |\n| Wheat | 225 | 31 | 7.2 |\n| Rice | 125 | 35 | 3.6 |\n| Corn | 50 | 58 | .9 |\n| Vegetables | 687 | 132 | 5.2 |\n| Totals | 1874 | 359 | 44.2 |",
+      "caption": "TABLE 5-4. — PLANT AREAS",
+      "verified_pdf_pages": [
+        115
+      ],
+      "notes": [
+        "Fruit in colony provides 250 g/person/day.",
+        "Grains and soybeans—dry weights.",
+        "Sugar is obtained from sorghum, perhaps from honey.",
+        "Cattle use part of the plant roughage."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-4.PLANT AREAS",
+        "table_markdown": "|  | Amount required, g/person/day | Yield, g/m2 /day | Area, m2/person |\n| --- | --- | --- | --- |\n| Sorghum | 317 | 83 | 3. |\n| Soybeans | 470 | 20 | 23.5 |\n| Wheat | 225 | 31 | 7.2 |\n| Rice | 125 | 35 | 3.6 |\n| Corn | 50 | 58 | .9 |\n| Vegetables | 687 | 132 | 5.2 |\n| Totals | 1874 | 359 | 44.2 |",
+        "text": "AREAS. The table contains 7 data rows with columns for Amount required, g/person/day, Yield, g/m2 /day, Area, m2/person."
+      }
+    },
+    {
+      "id": "sp413-s02484",
+      "table_markdown": "| Industry or product | Productivity |\n| --- | ---: |\n| Primary aluminum (Hall process) | 97 kg/man-hr |\n| Titanium mill shapes | 8.8 kg/man-hr |\n| Household freezers | 20 kg/man-hr |\n| Light frame steel erection | 28.57 kg/man-hr |\n| Piping, heavy industrial | 0.26 m/man-hr |",
+      "caption": "TABLE 5-6. — REPRESENTATIVE PRODUCTIVITIES",
+      "verified_pdf_pages": [
+        120
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-6.- REPRESENTATIVE PRODUCTIVITIES",
+        "table_markdown": "| Industry or product | Productivity |\n| --- | --- |\n| Primary aluminum (Hall proces) | 97kg/man-hr |\n| Titaniummillshapes | 8.8kg/man·hr |\n| Householdfreezers | 20 kg/man-hr |\n| Light frame steel erection | 28.57 kg/ man-hr |\n| Piping,heavyindustrial | 0.26 m/man-hr |",
+        "text": "REPRESENTATIVE PRODUCTIVITIES. The table contains 5 data rows with columns for Industry or product, Productivity."
+      }
+    },
+    {
+      "id": "sp413-s02498",
+      "table_markdown": "| System/item | Labor, man-years |\n| --- | ---: |\n| Thermal SPSS, 10 GW |  |\n| Complete SPSS | 2,950 |\n| Generator (SPSS w/o transmission) | 1,760 |\n| Heating furnace only | 1,600 |\n| Photovoltaic SPSS, 5 GW |  |\n| Complete SPSS | 2,540 |\n| Generator (SPSS w/o transmission) | 1,800 |",
+      "caption": "TABLE 5-7. — OFF EARTH LABOR REQUIREMENTS FOR SPSS’S",
+      "verified_pdf_pages": [
+        121
+      ],
+      "notes": [
+        "Assumes use of lunar material in productive facilities already in place and high-technology equipment supplied from Earth.",
+        "Thermal data are based on Woodcock (see ref. 26, ch. 4); photovoltaic data are based on Glaser (see ref. 25, ch. 4)."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "|  | Labor, man-years |\n| --- | --- |\n| ThermalSPSS,10GW |  |\n| CompleteSPSS | 2950 |\n| Generator (SPSS_wlo_transmission) | 1760 |\n| Heating furnaceonly | 1600 |\n| PhOlovoltaicSPSS,5GW |  |\n| CompleteSPSS | 2540 |\n| Generator (SPSS_wlo_transmission) | 1800 |",
+        "text": "Data from PDF page 121. The table contains 7 data rows with columns for Labor, man-years."
+      }
+    },
+    {
+      "id": "sp413-s02519",
+      "table_markdown": "| Process | Temperature, K | Power, MW | Area, m² × 10³ | Mass, t |\n| --- | ---: | ---: | ---: | ---: |\n| Quench | 363 | 20.9 | 24 | 144 |\n| Acid leach | 363 | 7.1 | 8.1 | 49 |\n| Acid cooking | 363 | 38.3 | 44 | 262 |\n| Leach water | 283 | 7.9 | 21.8 | 131 |\n| Chlorination | 1123 | 10.1 | .6 | 4 |\n| Electrolysis | 973 | 23.1 | 2.6 | 15 |\n| Carbon reform | 1123 | 19.8 | 1.3 | 8 |\n| Total | --- | 127.2 | 102.4 | 613 |",
+      "caption": "TABLE 5-8. — RADIATORS FOR PROCESS COOLING",
+      "verified_pdf_pages": [
+        121
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-8.- RADIATORS FOR PROCESS COOLING",
+        "table_markdown": "| Process | Temperature, K | Power, MW | Area, m2X103 | Mass,t |\n| --- | --- | --- | --- | --- |\n| Quench | 363 | 20,9 | 24 | 144 |\n| Acidleach | 363 | 7,1 | 8,1 | 49 |\n| Acidcooking | 363 | 38.3 | 44 | 262 |\n| Leach water | 283 | 7.9 | 21.8 | 13 1 |\n| Chlorination | 1123 | 10.1 | .6 | 4 |\n| Electrolysis | 973 | 23.1 | 2.6 | 15 |\n| Carbon reform | 1123 | 19.8 | 1.3 | 8 |\n| Total | --- | 127,2 | 102.4 | 6 13 |",
+        "text": "RADIATORS FOR PROCESS COOLING. The table contains 8 data rows with columns for Process, Temperature, K, Power, MW, Area, m2X103, Mass,t."
+      }
+    },
+    {
+      "id": "sp413-s02530",
+      "table_markdown": "| Process | Power, MW |\n| --- | ---: |\n| Electrolysis | 70 |\n| Carbon reform | 40 |\n| Other | 5 |\n| Total | 115 |",
+      "caption": "TABLE 5-9. — ELECTRICAL POWER REQUIREMENTS FOR PRODUCING ALUMINUM",
+      "verified_pdf_pages": [
+        122
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "restoration_note": "No table segment existed in the source extraction; transcription attached to the adjacent segment ID sp413-s02530. Introductory prose remains available for the renderer to preserve as table-introduction metadata.",
+      "original_type": "text",
+      "original": {
+        "caption": "",
+        "table_markdown": "",
+        "text": "The electrical requirements of the system are summarized in table 5-9, while the solar heating requirements are given in table 5-10."
+      },
+      "table_introduction": "The electrical requirements of the system are summarized in table 5-9, while the solar heating requirements are given in table 5-10."
+    },
+    {
+      "id": "sp413-s02540",
+      "table_markdown": "| Process | Power, MW | Temperature, K | Mirror projected area, m² × 10³ |\n| --- | ---: | ---: | ---: |\n| Melt | 27 | 1973 | 19 |\n| Autoclave | 32 | 473 | 23 |\n| Decomposition | 12 | 1173 | 9 |\n| Calcination | 5 | 1073 | 5 |\n| Totals | 76 |  | 56 |",
+      "caption": "TABLE 5-10. — SOLAR HEATING REQUIREMENTS FOR ALUMINUM REFINERY",
+      "verified_pdf_pages": [
+        122
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-10.SOLAR HEATI G REQUIREME NTS FOR ALUMINUM REFINERY",
+        "table_markdown": "| Process | Power, MW | Process | ~~Power,~~ MW | ~~Temp.,~~ K | ~~Mirror projecte~~ d area, m2 X103 |\n| --- | --- | --- | --- | --- | --- |\n| Electrolysis Carbon reform Other | 70 40 5 | Melt Autoclav.e Decomposition | 27 32 12 | 1973 473 1173 | 19 23 9 |\n| Total | 115 | CalCination | 5 | 1073 | 5 |\n|  |  | Totals | 76 |  | 56 |",
+        "text": "HEATI G REQUIREME NTS FOR ALUMINUM REFINERY. The table contains 3 data rows with columns for Process, Power, MW, Process, ~~Power,~~ MW, ~~Temp.,~~ K, ~~Mirror projecte~~ d area, m2 X103."
+      }
+    },
+    {
+      "id": "sp413-s02541",
+      "table_markdown": "| Chemical | Mass, t | Mass excluding oxygen, t |\n| --- | ---: | ---: |\n| H₂O | 225 | 28 |\n| H₂SO₄ | 55 | 19 |\n| Na₂SO₄ | 30 | 17 |\n| NaCl | 235 | 235 |\n| LiCl | 70 | 70 |\n| Cl₂ | 25 | 25 |\n| Carbon | 2 | 2 |\n| Totals | 642 | 396 |",
+      "caption": "TABLE 5-11. — MASS INVENTORY FOR PROCESS CHEMICALS",
+      "verified_pdf_pages": [
+        122
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-12.- MASS REQUIRED FOR REFI I G",
+        "table_markdown": "| Chemical | Mass, t | Mass excluding oxygen,t |\n| --- | --- | --- |\n| H2O | 225 | 28 |\n| H2SO4 | 55 | 19 |\n| a2S04 | 30 | 17 |\n| NaCI | 235 | 235 |\n| LiCI | 70 | 70 |\n| CI2 | 25 | 25 |\n| Carbon | 2 | 2 |\n| Totals | 642 | 396 |",
+        "text": "MASS REQUIRED FOR REFI I G. The table contains 8 data rows with columns for Chemical, Mass, t, Mass excluding oxygen,t."
+      }
+    },
+    {
+      "id": "sp413-s02542",
+      "table_markdown": "| Item | Mass, t |\n| --- | ---: |\n| Structure | 500 |\n| Chemicals | 650 |\n| Equipment | 3000 |\n| Radiators | 600 |\n| Flare shield | 50 |\n| Solar furnace | 20 |\n| Powerplant | 2800 |\n| Total | 7620 |",
+      "caption": "TABLE 5-12. — MASS REQUIRED FOR REFINING",
+      "verified_pdf_pages": [
+        122
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| Item | Mass, t |\n| --- | --- |\n| Structure | 500 |\n| Chemicals | 650 |\n| Equipment | 3000 |\n| Radiators | 600 |\n| Flare shield | 50 |\n| Solar furnace | 20 |\n| Powerplant | 2800 |\n| Total | 7620 |",
+        "text": "Data from PDF page 122. The table contains 8 data rows with columns for Item, Mass, t."
+      }
+    },
+    {
+      "id": "sp413-s02614",
+      "table_markdown": "| Imports | Mass, t/yr |\n| --- | ---: |\n| Crew consumables | 270 |\n| Maintenance supplies | 100 |\n| Crew rotation* | 14 |\n| Atmosphere leak replacement | 18 |\n| Total | 402 |",
+      "caption": "TABLE 5-13. — ANNUAL MASS IMPORTS",
+      "verified_pdf_pages": [
+        124
+      ],
+      "notes": [
+        "* The same mass is also transported from Moon to Earth."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| TABLE 5-13.- ANNUAL MASS I | MPORTS |\n| --- | --- |\n| Imports | Mass, t/yr |\n| Crew consumables | 270 |\n| Maintenance supplies | 100 |\n| Crew rota tion* | 14 |\n| Atmosphere leak replacement | 18 |\n| Total | 402 |",
+        "text": "Data from PDF page 124. The table contains 6 data rows with columns for TABLE 5-13.- ANNUAL MASS I, MPORTS."
+      }
+    },
+    {
+      "id": "sp413-s02616",
+      "table_markdown": "| System | Mass, t |\n| --- | ---: |\n| Mining and conveyor system | 250 |\n| Housing and life support | 2,400 |\n| Technical support | 500 |\n| Launcher | 4,000 |\n| Power plant (200 MW + 10%) | 9,900 |\n| Total | 17,050 |",
+      "caption": "TABLE 5-14. — LUNAR BASE EARTH-SUPPLIED MASS",
+      "verified_pdf_pages": [
+        124
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-14.LUNAR BASE EARTH-SUPPLIED MASS",
+        "table_markdown": "| System | Mass,t |\n| --- | --- |\n| Mining and conveyorsystem | 250 |\n| Housing and life support | 2,400 |\n| Technical support | 500 |\n| Launcher | 4,000 |\n| Power plant (200MW+10%) | 9,900 |\n| Total | ] 7,050 |",
+        "text": "BASE EARTH-SUPPLIED MASS. The table contains 6 data rows with columns for System, Mass,t."
+      }
+    },
+    {
+      "id": "sp413-s02617",
+      "table_markdown": "| System | Power, MW |\n| --- | ---: |\n| Launcher | 192 |\n| Mining | 0.7 |\n| Compaction | 7.15 |\n| Living quarters | .15 |\n| Total | 200 |",
+      "caption": "TABLE 5-15. — LUNAR BASE POWER REQUIREMENTS",
+      "verified_pdf_pages": [
+        124
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-15.LUNAR BASE POWER REQUIREMENTS",
+        "table_markdown": "| System | Power, MW |\n| --- | --- |\n| Launcher | 192 |\n| Mining | 0.7 |\n| Compaction | 7.15 |\n| Living quarters | .15 |\n| Total | 200 |",
+        "text": "BASE POWER REQUIREMENTS. The table contains 5 data rows with columns for System, Power, MW."
+      }
+    },
+    {
+      "id": "sp413-s02748",
+      "caption": "TABLE 5-16.— HUMAN NUTRITIONAL REQUIREMENTS",
+      "table_markdown": "| Population | Body weight (kg) | Colony population | Calories | Protein (g) |\n| --- | ---: | ---: | ---: | ---: |\n| Adult men | 70 | 4853 | 2900 | 70* |\n| Adult women | 58 | 4633 | 2100 | 58* |\n| Children** | 32 | 864 | 2150 | 54 |\n| Weighted average | 61 |  | 2479 | 63.3 |",
+      "verified_pdf_pages": [
+        130
+      ],
+      "notes": [
+        "* Colony workers may require higher protein intake due to strenuous workloads.",
+        "** Assumes a normal age and sex distribution of children under 18 years old.",
+        "Calories and protein are DAILY REQUIREMENT PER PERSON (ref. 1); the source multiheader applies this scope to both columns."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-16.HUMAN NUTRITIONAL REQUIREMENTS",
+        "table_markdown": "|  | Body weiht | Colony | Daily req person | uirementper (ref. 1) |\n| --- | --- | --- | --- | --- |\n|  | g, kg | population | Calories | Protein, g |\n| Adult men Adult | 70 | 4 53 | 2900 | 70· |\n| women | 58 | 4633 | 2 100 | 58 · |\n| Children\" * | 32 | 864 | 2 150 | 54 |\n| Weighted average | 6 1 |  | 2479 | 63.3 |",
+        "text": "NUTRITIONAL REQUIREMENTS. The table contains 5 data rows with columns for Body weiht, Colony, Daily req person, uirementper (ref. 1)."
+      }
+    },
+    {
+      "id": "sp413-s02777",
+      "caption": "TABLE 5-17.— (a) AVERAGE DAILY SPACE COLONY DIET (g/PERSON)",
+      "table_markdown": "| Source | Amount (g) | Calories (kcal) | Carbohydrates (g) | Fats (g) | Protein (g) |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| Meat |  |  |  |  |  |\n| Trout | 40 | 78 | 0 | 4.6 | 8.6 |\n| Rabbit | 40 | 64 | 0 | 3.2 | 8.4 |\n| Beef | 40 | 142 | 0 | 12.8 | 6.3 |\n| Chicken | 40 | 49 | 0 | 1.3 | 8.8 |\n| Produce |  |  |  |  |  |\n| Eggs | 24 | 39 | 0.2 | 2.8 | 3.1 |\n| Milk | 500 | 330 | 24.5 | 19.0 | 17.5 |\n| Dry plant produce |  |  |  |  |  |\n| Wheat | 180 | 608 | 130.1 | 3.6 | 24.3 |\n| Rice | 100 | 363 | 80.4 | .4 | 6.7 |\n| Sugar | 100 | 385 | 99.5 | 0 | 0 |\n| Vegetables and fruit |  |  |  |  |  |\n| Carrots | 100 | 42 | 9.7 | 0.2 | 1.1 |\n| Lettuce | 100 | 14 | 2.5 | .2 | 1.2 |\n| Peas | 150 | 126 | 21.6 | .6 | 9.5 |\n| Apple | 100 | 56 | 14.1 | .6 | .2 |\n| Potato | 100 | 76 | 17.1 | .1 | 2.1 |\n| Tomato | 100 | 22 | 4.7 | .2 | 1.1 |\n| Orange | 100 | 51 | 12.7 | .1 | 1.3 |\n| Totals | 1814 | 2445 | 417.1 | 49.7 | 100.2 |",
+      "verified_pdf_pages": [
+        131
+      ],
+      "notes": [
+        "Note: Calculated from reference 2."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-17.- (a) AVERAGE DAlLY SPACE COLONY DIET (g/PERSON)",
+        "table_markdown": "| Source | Amt, g | Calories, kcal | Carbo· hydrates, g | Fats, g | Protein, g |\n| --- | --- | --- | --- | --- | --- |\n| Meat |  |  |  |  |  |\n| Trout | 40 | 78 | 0 | 4.6 | 8.6 |\n| Rabbit | 40 | 64 | 0 | 3.2 | 8.4 |\n| Beef | 40 | 142 | 0 | 12.8 | 6.3 |\n| Chicken | 40 | 49 | 0 | 1.3 | 8.8 |\n| Produce |  |  |  |  |  |\n| Eggs | 24 | 39 | 0.2 | 2.8 | 3.1 |\n| Milk | 500 | 330 | 24.5 | 19.0 | 17.5 |\n| Dry plant |  |  |  |  |  |\n| produce |  |  |  |  |  |\n| Wheat | 180 | 608 | 130.1 | 3.6 | 24.3 |\n| Rice | 100 | 363 | 80.4 | .4 | 6.7 |\n| Sugar | 100 | 385 | 995 | 0 | 0 |\n| Vegetables andfruit |  |  |  |  |  |\n| Carrots | 100 | 42 | 97 | 0.2 | 1.1 |\n| Lettuce | 100 | 14 | 2.5 | .2 | 1.2 |\n| Peas | 150 | 126 | 21.6 | .6 | 9.5 |\n| Apple | 100 | 56 | 14.1 | .6 | .2 |\n| Potato | 100 | 76 | 17. 1 | .1 | 2. 1 |\n| Toma to | 100 | 22 | 4.7 | .2 | 1.1 |\n| Orange | 100 | 5 I | 12.7 | .1 | 1.3 |\n| Totals | 1814 | 2445 | 417.1 | 49.7 | 100.2 |",
+        "text": "(a) AVERAGE DAlLY SPACE COLONY DIET (g/PERSON). The table contains 22 data rows with columns for Source, Amt, g, Calories, kcal, Carbo· hydrates, g, Fats, g, Protein, g."
+      }
+    },
+    {
+      "id": "sp413-s02780",
+      "caption": "TABLE 5-17.— (b) VITAMIN AND MINERAL COMPOSITION OF AVERAGE DIET",
+      "table_markdown": "| Nutrient | Space Colony average diet* | Recommended daily allowances** |\n| --- | ---: | ---: |\n| Vitamin A (iu) | 14,399 | 4915 |\n| Vitamin C (mg) | 144 | 56 |\n| Niacin (mg equiv) | 33 | 15 |\n| Riboflavin (mg) | 2.1 | 1.6 |\n| Thiamin (mg) | 2.2 | 1.2 |\n| Calcium (g) | 0.88 | 0.82 |\n| Phosphorus (g) | 1.57 | 0.82 |\n| Iron (mg) | 17.0 | 13.6 |\n| Potassium (mg) | 3,549 | Not listed |\n| Sodium (mg) | 1,680 | Not listed |\n| Linoleic acid (g) | 1 | Not listed |\n| Cholesterol (mg) | 319 | Not listed |",
+      "verified_pdf_pages": [
+        132
+      ],
+      "notes": [
+        "* Average diet evaluated in cooked form. Source: Watt, B. K., and Merrill, A. L., Composition of Food, Agriculture Handbook No. 8, USDA, Washington, D.C., revised 1963.",
+        "** Each value is weighted to reflect population composition: 8 percent children (weighing 28 kg), 47 percent adult males (70 kg), and 45 percent adult females (58 kg). Source: Recommended Dietary Allowances, 7th edition, National Academy of Sciences, 1968."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-17.(b) VITAMIN AND MINERAL COMPOSITION OF AVERAGE DIET",
+        "table_markdown": "| Nutrient | Space Colony average diet* | Recommended daily allowances** |\n| --- | --- | --- |\n| Vitamin A (iu) | 14,399 | 4915 |\n| Vitamin C (mg) | 144 | 56 |\n| Niacin (mg equiv) | 33 | 15 |\n| Riboflavin (mg) | 2.1 | 1.6 |\n| Thiamin (mg) | 2.2 | 1.2 |\n| Calcium (g) | 0.88 | 0.82 |\n| Phosphorus (g) | 1.57 | 0.82 |\n| Iron (mg) | 17.0 | 13.6 |\n| Potassium (mg) | 3,549 | Notlisted |\n| Sodium (mg) | 1,680 | Notlisted |\n| Linoleic acid (g) | I | Notlisted |\n| Cholesterol (mg) | 319 | Not listed |",
+        "text": "(b) VITAMIN AND MINERAL COMPOSITION OF AVERAGE DIET. The table contains 12 data rows with columns for Nutrient, Space Colony average diet*, Recommended daily allowances**."
+      }
+    },
+    {
+      "id": "sp413-s02783",
+      "caption": "TABLE 5-18.— TOTAL PLANT REQUIREMENTS, g/PERSON/DAY",
+      "table_markdown": "| Consumer | Sorghum* | Soybean* | Wheat* | Rice* | Corn* | Fruits and vegetables | Other | Totals |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |\n| Man |  |  | 225 | 125 |  | 937 | 125ᵃ | 1412 |\n| Cattle | 217 | 100 |  |  |  |  | 633ᵇ |  |\n| Chickens |  | 170 |  |  | 30 |  | 37ᶜ |  |\n| Rabbits | 100 | 100 |  |  | 20 |  |  |  |\n| Fish |  | 100 |  |  |  |  | 81ᵈ |  |\n| Totals | 317 | 470 | 225 | 125 | 50 | 937 | 758 | 2882 |",
+      "verified_pdf_pages": [
+        132
+      ],
+      "notes": [
+        "* Dried grain.",
+        "ᵃ Man also utilizes 125 g/person/day of sugar extracted from sorghum.",
+        "ᵇ Cattle also utilize 633 g/person/day roughage from sorghum and soybean.",
+        "ᶜ Chickens also utilize 37 g/person/day fish meal.",
+        "ᵈ Fish also utilize 81 g/person/day animal meal from meat processing byproducts.",
+        "(c and d are not included in totals.)"
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-1 8.TOTAL PLANT REQUIREMENTS, g/PERSON/DAY",
+        "table_markdown": "|  | Sorghum* | Soybean* | Wheat* | Rice* | Corn* | Fruits and vegetables | Other | Totals |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Man Cattle | 217 | 100 | 225 | 125 |  | 937 | 125a 633b | 1412 |\n| Chickens Rabbits Fish | 100 | 170 100 lao |  |  | 30 20 |  | 37c 8ld | ~470 |\n| Totals | 317 | 470 | 225 | 125 | 50 | 937 | 758 | 2882 |",
+        "text": "8.TOTAL PLANT REQUIREMENTS, g/PERSON/DAY. The table contains 3 data rows with columns for Sorghum*, Soybean*, Wheat*, Rice*, Corn*, Fruits and vegetables, Other, Totals."
+      }
+    },
+    {
+      "id": "sp413-s02791",
+      "caption": "TABLE 5-19.— FACTORS OF METABOLIC REQUIREMENTS; A. DIET REQUIREMENTS FOR MAN (from table 5-17(a)), g/day",
+      "table_markdown": "| Item | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| Meat |  |  |  |  |  |\n| Trout | 40 | 7.6 | 4.2 | 27.0 | 1.2 |\n| Rabbit | 40 | 6.4 | 4.2 | 28.2 | 1.2 |\n| Beef | 40 | 12.8 | 4.4 | 21.9 | .9 |\n| Chicken | 40 | 5.3 | 4.2 | 29.3 | 1.2 |\n| Σ | 160 | 32.1 | 17.0 | 106.4 | 4.5 |\n| Produce |  |  |  |  |  |\n| Egg | 24 | 3.7 | 2.6 | 17.3 | .4 |\n| Milk | 500 | 32.5 | 54.0 | 411.0 | 2.5 |\n| Σ | 524 | 36.2 | 56.6 | 428.3 | 2.9 |\n| Dry plant products |  |  |  |  |  |\n| Wheat | 180 | 67.5 | 13.9 | 95.2 | 3.4 |\n| Rice | 100 | 35.8 | 7.6 | 55.7 | .9 |\n| Sugar | 100 | 40.0 | 7.0 | 53.0 | --- |\n| Σ | 380 | 143.3 | 28.5 | 203.9 | 4.3 |\n| Vegetables, fruit |  |  |  |  |  |\n| Carrot | 100 | 4.6 | 10.6 | 84.6 | .2 |\n| Lettuce | 100 | 1.7 | 10.9 | 87.2 | .2 |\n| Pea | 150 | 13.6 | 15.3 | 119.7 | 1.4 |\n| Apple | 100 | 6.2 | 10.4 | 83.3 | .1 |\n| Potato | 100 | 8.0 | 10.2 | 81.4 | .3 |\n| Tomato | 100 | 2.5 | 10.8 | 86.5 | .3 |\n| Orange | 100 | 5.8 | 10.5 | 83.5 | .2 |\n| Σ | 750 | 42.4 | 78.7 | 626.2 | 2.7 |\n| Total food intake, Σ above | 1814 | 254 | 181 | 1365 | 14 |\n| H₂O | 750 |  | 83 | 667 |  |\n| Σ | 2564 | 254 | 264 | 2032 | 14 |",
+      "verified_pdf_pages": [
+        133
+      ],
+      "notes": [
+        "Table units: g/day; columns give element masses in grams. Σ denotes subtotal or total.",
+        "Note: C/H/O/N ratios for food calculated from data of reference 2."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-19.FACTORS OF METABOLIC REQUIREMENTS",
+        "table_markdown": "|  |  | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- | --- |\n| Meat |  |  |  |  |  |  |\n| Trout |  | 40 | 7.6 | 4.2 | 27.0 | 1.2 |\n| Rabbit |  | 40 | 6A | 4.2 | 28.2 | 1.2 |\n| Beef |  | 40 | 12.8 | 4A | 21.9 | .9 |\n| Chicken |  | 40 | 5.3 | 4.2 | 29.3 | 1.2 |\n|  | 1: | 160 | 32.1 | 17.0 | 106A | 4.5 |\n| Produce |  |  |  |  |  |  |\n| Egg |  | 24 | 3.7 | 2.6 | 17.3 | A |\n| Milk |  | 500 | 32.5 | 54.0 | 411.0 | 2.5 |\n|  | 1: | 524 | 36.2 | 56.6 | 428.3 | 2.9 |\n| Dry plant pro | ducts |  |  |  |  |  |\n| Wheat |  | 180 | 67.5 | 13.9 | 95.2 | 3.4 |\n| Rice |  | 100 | 35.8 | 7.6 | 55.7 | .9 |\n| Sugar |  | 100 | 40.0 | 7.0 | 53.0 | --- |\n|  | L | 380 | 143.3 | 28.5 | 203.9 | 4.3 |\n| Vegetables,fr | uit |  |  |  |  |  |\n| Carrot |  | 100 | 4.6 | 10.6 | 84.6 | .2 |\n| Lettuce |  | 100 | l.7 | 10.9 | 87.2 | .2 |\n| Pea |  | 150 | 13.6 | 15.3 | 119.7 | 1.4 |\n| Apple |  | 100 | 6.2 | IDA | 83.3 | .1 |\n| Potato |  | 100 | 8.0 | 10.2 | 8 1.4 | .3 |\n| Tomato |  | 100 | 2.5 | 10.8 | 86.5 | .3 |\n| Orange |  | 100 | 5.8 | 10.5 | 83.5 | .2 |\n|  | L | 750 | 42A | 78.7 | 626.2 | 2.7 |\n| Total food int | ake |  |  |  |  |  |\n| L above |  | 1814 | 254 | 18 1 | 1365 | 14 |\n| H2O |  | 750 |  | 83 | 667 |  |\n|  | L | 2564 | 254 | 264 | 2032 | 14 |",
+        "text": "OF METABOLIC REQUIREMENTS. The table contains 28 data rows with columns for Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02795",
+      "caption": "TABLE 5-19.— CONTINUED; B. MASS BALANCE ON PERSON",
+      "table_markdown": "| Item | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| In |  |  |  |  |  |\n| Food | 2564 | 254 | 264 | 2032 | 14 |\n| O₂ | 686 |  |  | 686 |  |\n| H₂O | 400 |  | 44 | 356 |  |\n| Out |  |  |  |  |  |\n| CO₂ | 857 | 231 |  | 626 |  |\n| H₂O | 857 |  | 94 | 763 |  |\n| Wastes | 1936 | 23 | 214 | 1685 | 14 |",
+      "verified_pdf_pages": [
+        134
+      ],
+      "notes": [
+        "Values are mass balance quantities; the table series begins with part A in g/day. Blank cells are blank in the source."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-1 9.- CONTINUED.",
+        "table_markdown": "|  | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- |\n| In |  |  |  |  |  |\n| Food O2 | 2564 686 | 254 | 264 | 2032 686 | 14 |\n| H2O | 400 |  | 44 | 356 |  |\n| Out |  |  |  |  |  |\n| CO2 | 857 | 231 |  | 626 |  |\n| H2O | 857 |  | 94 | 763 |  |\n| Wastes | 1936 | 23 | 214 | 1685 | 14 |",
+        "text": "9.- CONTINUED. The table contains 7 data rows with columns for Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02797",
+      "caption": "TABLE 5-19.— CONTINUED; C. MASS BALANCE ON FOOD PROCESSING",
+      "table_markdown": "| Item | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| In |  |  |  |  |  |\n| Meat and produce | 724 | 84 | 77 | 556 | 7 |\n| Plant | 1412 | 233 | 134 | 1037 | 8 |\n| H₂O | 750 |  | 83 | 667 |  |\n| Out |  |  |  |  |  |\n| Food | 2564 | 254 | 264 | 2032 | 14 |\n| Kitchen waste | 322 | 63 | 30 | 228 | 1 |",
+      "verified_pdf_pages": [
+        134
+      ],
+      "notes": [
+        "Based on: 20% of meat and plant materials are lost to waste.",
+        "Mass balance quantities; table series unit context: g/day."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "|  | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- |\n| In |  |  |  |  |  |\n| Meat and produce | 724 | 84 | 77 | 556 | 7 |\n| Plant | 1412 | 233 | 134 | 1037 | 8 |\n| H2O | 750 |  | 83 | 667 |  |\n| Out |  |  |  |  |  |\n| Food | 2564 | 254 | 264 | 2032 | 14 |\n| Kitchenwaste | 322 | 63 | 30 | 228 | I |",
+        "text": "Data from PDF page 134. The table contains 7 data rows with columns for Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02800",
+      "caption": "TABLE 5-19.— CONTINUED; D. MASS BALANCE ON ANIMAL HARVESTING",
+      "table_markdown": "| Item | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| In |  |  |  |  |  |\n| Meat and produce | 1168 | 138 | 126 | 890 | 14 |\n| Out |  |  |  |  |  |\n| To nonhuman | 444 | 54 | 49 | 334 | 7 |\n| To food processing | 724 | 84 | 77 | 556 | 7 |",
+      "verified_pdf_pages": [
+        134
+      ],
+      "notes": [
+        "Based on: 33% of milk to nonhuman food processing.",
+        "Efficiency of meat harvest (dressed/animal): fish 35%; steers 55%; rabbits 65%; chickens 60%.",
+        "Mass balance quantities; table series unit context: g/day."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "|  | Total | C | H | a | N |\n| --- | --- | --- | --- | --- | --- |\n| In |  |  |  |  |  |\n| Meatand produce | 1168 | 138 | 126 | 890 | 14 |\n| Out |  |  |  |  |  |\n| To nonhuman | 444 | 54 | 49 | 334 | 7 |\n| To food processing | 724 | 84 | 77 | 556 | 7 |",
+        "text": "Data from PDF page 134. The table contains 5 data rows with columns for Total, C, H, a, N."
+      }
+    },
+    {
+      "id": "sp413-s02804",
+      "caption": "TABLE 5-19.— CONTINUED; E. MASS BALANCE ON NONHUMAN FOOD PROCESSING—ANIMAL",
+      "table_markdown": "| Item | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| Item | Total | C | H | O | N |\n| In |  |  |  |  |  |\n| Fish | 93 | 18 | 10 | 62 | 3 |\n| Beef | 41 | 13 | 5 | 22 | 1 |\n| Chicken | 33 | 4 | 4 | 24 | 1 |\n| Rabbit | 27 | 3 | 3 | 20 | 1 |\n| Milk | 250 | 16 | 27 | 206 | 1 |\n| Out |  |  |  |  |  |\n| Meal | 118 | 54 | 13 | 44 | 7 |\n| H₂O | 326 |  | 36 | 290 |  |",
+      "verified_pdf_pages": [
+        135
+      ],
+      "notes": [
+        "Based on: Animal meal has 15% moisture.",
+        "Mass balance quantities; table series unit context: g/day."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-1 9.- CONTINUED.",
+        "table_markdown": "|  | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- |\n| In |  |  |  |  |  |\n| Fish | 93 | 18 | 10 | 62 | 3 |\n| Beef | 4 1 | 13 | 5 | 22 | 1 |\n| Chicken | 33 | 4 | 4 | 24 | 1 |\n| Rabbit | 27 | 3 | 3 | 20 | I |\n| Milk | 250 | 16 | 27 | 206 | I |\n| Out |  |  |  |  |  |\n| Meal | 118 | 54 | 13 | 44 | 7 |\n| H2O | 326 |  | 36 | 290 |  |",
+        "text": "9.- CONTINUED. The table contains 9 data rows with columns for Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02807",
+      "caption": "TABLE 5-19.— CONTINUED; F. MASS BALANCE ON ANIMALS",
+      "table_markdown": "| Item | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| Item | Total | C | H | O | N |\n| In |  |  |  |  |  |\n| H₂O | 3853 |  | 424 | 3429 |  |\n| Nonhuman veg | 1470 | 575 | 121 | 736 | 38 |\n| Meal | 118 | 54 | 13 | 44 | 7 |\n| O₂ | 747 |  |  | 747 |  |\n| Out |  |  |  |  |  |\n| H₂O | 1494 |  | 164 | 1330 |  |\n| CO₂ | 939 | 254 |  | 685 |  |\n| Meat, milk, eggs | 1168 | 138 | 126 | 890 | 14 |\n| Waste | 2587 | 237 | 268 | 2051 | 31 |",
+      "verified_pdf_pages": [
+        135
+      ],
+      "notes": [
+        "Mass balance quantities; table series unit context: g/day. Blank elemental cells are blank in source."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "|  | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- |\n| In |  |  |  |  |  |\n| H2O | 3853 |  | 424 | 3429 |  |\n| Nonhumanveg | 1470 | 575 | 121 | 736 | 38 |\n| Meal | 118 | 54 | 13 | 44 | 7 |\n| O2 | 747 |  |  | 747 |  |\n| Out |  |  |  |  |  |\n| H2O | 1494 |  | 164 | 1330 |  |\n| CO2 | 939 | 254 |  | 685 |  |\n| Meat, milk, eggs | 1168 | 138 | 126 | 890 | 14 |\n| Waste | 2587 | 237 | 268 | 2051 | 3J |",
+        "text": "Data from PDF page 135. The table contains 10 data rows with columns for Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02813",
+      "caption": "TABLE 5-19.— CONTINUED; F.1. ANIMAL FOOD REQUIREMENTS",
+      "table_markdown": "| Animal | Requirement |\n| --- | --- |\n| Beef steer | 1 steer for 11 persons; harvested at 400 kg after 16 months; metabolic requirements for 1/11 250 kg steer: 300 g sorghum mix/day; 200 g soybean mix/day |\n| Roasting chicken | 5.6 chickens/person; harvested at 2.6 kg after 25 weeks; metabolic requirements for 5.6 chickens at 1.1 kg each: 37 g fish meal/day; 150 g soybeans/day |\n| Rabbits | Harvested at 3.4 kg after 125 days; metabolic requirements for 2.8 rabbits at 1.8 kg each: 100 g sorghum/day; 100 g soybean/day; 20 g corn/day |\n| Dairy cattle | 400 kg cow produces 12.45 kg milk/day; metabolic requirements for 1/16.6 cow at 400 kg: 350 g sorghum mix/day; 100 g soybean mix/day |\n| Laying hens | 1.5 kg hen lays 5 eggs/week, 54 g/egg; metabolic requirements for 6/10 hen at 1.5 kg: 20 g soybeans/day; 30 g corn/day |\n| Fish | Harvested at 2 kg in 1 yr; metabolic requirements for 26 fish at 1 kg each: 100 g soybean/day; 81 g animal meal/day |",
+      "verified_pdf_pages": [
+        136
+      ],
+      "notes": [
+        "Source prints “1/11 250 kg steer” as one continuous line; retained the printed value and spacing."
+      ],
+      "uncertain_cells": [],
+      "original_type": "text",
+      "original": {
+        "caption": "",
+        "table_markdown": "",
+        "text": "Beef steer: I steer for 11 persons Harvested at 400 kg after 16 months Metabolic requirements for 1/11 250 kg steer 300 g sorghum mix/day 200 g soybean mix/day Roasting chicken: 5.6 chickens/ person Harvested at 2.6 kg after 25 weeks Metabolic requirements for 5.6 chickens at 1.1 kg each 37 g fish meal/day 150 g soybeans/day Rabbits Harvested at 3.4 kg after 125 days Metabolic requirements for 2.8 rabbits at 1.8 kg each 100 g sorghum/day 100 g soybean/day 20 g corn/day Dairy cattle 400 kg cow produces 12.45 kg milk/day Metabolic requirements for 1/16.6 cow at 400 kg 350 g sorghum mix/day 100 g soybean mix/day Laying hens 1.5 kg hen lays 5 eggs/week, 54 g/egg Metabolic requirements for 6/ 10 hen at 1.5 kg 20 g soybeans/day 30 g corn/day Fish Harvested at 2 kg in 1 yr Metabolic requirements fo r 26 fish at 1 kg each] 00 g soybean/day 81 g animal meal/day"
+      }
+    },
+    {
+      "id": "sp413-s02815",
+      "caption": "TABLE 5-19.— CONTINUED; SUMMARY",
+      "table_markdown": "| Plant matter | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| Beef steer | 500 | 187 | 40 | 263 | 10 |\n| Roasting chicken | 150 | 67 | 13 | 62 | 8 |\n| Rabbits | 220 | 89 | 19 | 105 | 7 |\n| Dairy cow | 450 | 167 | 36 | 240 | 7 |\n| Laying hen | 50 | 20 | 4 | 25 | 1 |\n| Fish | 100 | 45 | 9 | 41 | 5 |\n| Total | 1470 | 575 | 121 | 736 | 38 |\n| Animal meal |  |  |  |  |  |\n| Roasting chicken | 37 | 17 | 4 | 13 | 3 |\n| Fish | 81 | 37 | 9 | 31 | 4 |\n| Total | 118 | 54 | 13 | 44 | 7 |",
+      "verified_pdf_pages": [
+        136
+      ],
+      "notes": [
+        "These table values summarize plant matter and animal meal requirements; values are in the daily mass-balance context of Table 5-19."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| Plantmatter | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- |\n| Beefsteer | 500 | 187 | 40 | 263 | 10 |\n| Roastingchicken | 150 | 67 | 13 | 62 | 8 |\n| Rabbits | 220 | 89 | ]9 | 105 | 7 |\n| Dairycow | 450 | 167 | 36 | 240 | 7 |\n| Layinghen | 50 | 20 | 4 | 25 | 1 |\n| Fish | 100 | 45 | 9 | 41 | 5 |\n| Total | 1470 | 575 | 121 | 736 | 38 |\n| Animal meal |  |  |  |  |  |\n| Roastingchicken | 37 | 17 | 4 | 13 | 3 |\n| Fish | 81 | 37 | 9 | 31 | 4 |\n| Total | 118 | 54 | 13 | 44 | 7 |",
+        "text": "Data from PDF page 136. The table contains 11 data rows with columns for Plantmatter, Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02821",
+      "caption": "TABLE 5-19.— CONTINUED; F.2. ANIMAL METABOLIC REQUIREMENTS, g/day",
+      "table_markdown": "| Animal | Input O₂ | Input H₂O | Output CO₂ | Output H₂O | Meat produce | Waste |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: |\n| Beef steer | 180 | 910 | 230 | 450 | 91 | 819 |\n| Roasting chicken | 168 | 616 | 210 | 146 | 83 | 532 |\n| Rabbit | 88 | 302 | 110 | 189 | 77 | 235 |\n| Dairy cow | 220 | 1840 | 275 | 690 | 750 | 795 |\n| Laying hen | 23 | 85 | 29 | 19 | 24 | 86 |\n| Fish | 68 | 100 | 85 | --- | 143 | 121 |\n| Total | 747 | 3853 | 939 | 1494 | 1168 | 2588 |",
+      "verified_pdf_pages": [
+        137
+      ],
+      "notes": [
+        "Based on animal biomass of F.1 above.",
+        "Data based on food requirements (ref. 22); for caloric and nitrogen requirements, diets calculated; metabolism (ref. 22), CO₂ calculated by O₂/0.8; chicken egg production (ref. 23); fish food and metabolism: personal communication, Chris Brittelson, Wisconsin Dept. of Natural Resources, Nevin Fish Hatchery, Madison, Wisconsin.",
+        "The source’s fish output-H₂O cell is three hyphens. The name in the personal communication is slightly unclear at this rendering; see uncertain_cells."
+      ],
+      "uncertain_cells": [
+        "In the source’s personal-communication note, the surname after Chris is read as “Brittelson” but needs visual verification at higher magnification."
+      ],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "|  | In |  |  | O | ut |  |\n| --- | --- | --- | --- | --- | --- | --- |\n| Animal | O2 | H2O | CO2 | H2O | Meat produce | Waste |\n| Beefsteer | 180 | 9 10 | 230 | 450 | 91 | 819 |\n| Roasting chicken | 168 | 616 | 2 10 | 146 | 83 | 532 |\n| Rabbit | 88 | 302 | 110 | 189 | 77 | 23 5 |\n| Dairy cow | 220 | 1840 | 275 | 690 | 750 | 795 |\n| Laying hen | 23 | 85 | 29 | 19 | 24 | 86 |\n| Fish | 68 | 100 | 85 | ..-- | 143 | 12 1 |\n| Total | 747 | 3853 | 939 | 1494 | 1168 | 2588 |",
+        "text": "Data from PDF page 137. The table contains 8 data rows with columns for In, O, ut."
+      }
+    },
+    {
+      "id": "sp413-s02832",
+      "caption": "TABLE 5-19.— CONTINUED; G. MASS BALANCE ON NON-HUMAN FOOD PROCESSING—PLANT",
+      "table_markdown": "| Item | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| In |  |  |  |  |  |\n| Sorghum | 1406 | 119 | 144 | 1138 | 5 |\n| Sorghum roughage | 1829 | 152 | 188 | 1485 | 4 |\n| Soybean | 2103 | 211 | 222 | 1646 | 24 |\n| Soybean hay | 883 | 75 | 91 | 713 | 4 |\n| Corn | 220 | 18 | 23 | 178 | 1 |\n| Total | 6441 | 575 | 668 | 5160 | 38 |\n| Out |  |  |  |  |  |\n| To animals | 1470 | 575 | 121 | 736 | 38 |\n| Water | 4971 |  | 547 | 4424 |  |",
+      "verified_pdf_pages": [
+        137
+      ],
+      "notes": [
+        "Based on: sorghum roughage 14.5% moisture after drying; soybean hay 10.8% moisture after drying; two times dry roughage or hay as seed.",
+        "Mass balance quantities; table series unit context: g/day. Blank elemental cells are blank in source."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "|  | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- |\n| [n |  |  |  |  |  |\n| Sorghum | 1406 | 119 | 144 | 1138 | 5 |\n| Sorghum roughage | 1829 | 152 | 188 | 1485 | 4 |\n| Soybean | 2 103 | 211 | 222 | 1646 | 24 |\n| Soybean hay | 883 | 75 | 91 | 7 13 | 4 |\n| Corn | 220 | 18 | 23 | 178 | I |\n| Total | 6441 | 575 | 668 | 5160 | 38 |\n| Out |  |  |  |  |  |\n| To animals | 1470 | 575 | 121 | 736 | 38 |\n| Water | 4971 |  | 547 | 4424 |  |",
+        "text": "Data from PDF page 137. The table contains 10 data rows with columns for Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02837",
+      "caption": "TABLE 5-19.— CONTINUED; H. MASS BALANCE ON PLANT HARVEST",
+      "table_markdown": "| Item | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| In |  |  |  |  |  |\n| From fields | 16,273 | 1347 | 1682 | 13,172 | 72 |\n| Out |  |  |  |  |  |\n| To food processing | 1,412 | 233 | 134 | 1,037 | 8 |\n| To nonhuman food | 6,441 | 575 | 668 | 5,160 | 38 |\n| H₂O | 1,205 |  | 133 | 1,072 |  |\n| Waste | 7,215 | 539 | 747 | 5,903 | 26 |",
+      "verified_pdf_pages": [
+        138
+      ],
+      "notes": [
+        "Mass balance quantities; table series unit context: g/day. Blank elemental cells are blank in source."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-19.- CONTINUED.",
+        "table_markdown": "|  | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- |\n| In |  |  |  |  |  |\n| From fields | 16,273 | 1347 | 1682 | 13,172 | 72 |\n| Out |  |  |  |  |  |\n| To food processing | 1,412 | 233 | 134 | 1,037 | 8 |\n| Tononhuman food | 6,441 | 575 | 668 | 5,160 | 38 |\n| H2O | 1,205 |  | 133 | 1,072 |  |\n| Waste | 7,215 | 539 | 747 | 5,903 | 26 |",
+        "text": "CONTINUED. The table contains 7 data rows with columns for Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02839",
+      "caption": "TABLE 5-19.— CONTINUED; H.1. PLANTS FROM FIELD",
+      "table_markdown": "| Material | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| Sorghum | 4080 | 341 | 419 | 3309 | 11 |\n| Soybean | 4620 | 425 | 481 | 3678 | 36 |\n| Corn | 1034 | 86 | 107 | 838 | 3 |\n| Wheat | 3018 | 254 | 309 | 2442 | 13 |\n| Rice | 1647 | 135 | 168 | 1341 | 3 |\n| Fruits and vegetables | 1874 | 106 | 198 | 1564 | 6 |\n| Total | 16,273 | 1,347 | 1,682 | 13,172 | 72 |",
+      "verified_pdf_pages": [
+        138
+      ],
+      "notes": [
+        "Mass balance quantities; table series unit context: g/day."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| Material | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- |\n| Sorghum | 4080 | 341 | 419 | 3309 | II |\n| Soybean | 4620 | 425 | 481 | 3678 | 36 |\n| Corn | 1034 | 86 | 107 | 838 | 3 |\n| Wheat | 3018 | 254 | 309 | 2442 | 13 |\n| Rice | 1647 | 135 | 168 | 1341 | 3 |\n| Fruits and vegetables | 1874 | 106 | 198 | 1564 | 6 |\n| Total | 16,273 | 1,347 | 1,682 | 13,172 | 72 |",
+        "text": "Data from PDF page 138. The table contains 7 data rows with columns for Material, Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02842",
+      "caption": "TABLE 5-19.— CONTINUED; H.2. TO FOOD PROCESSING",
+      "table_markdown": "| Material | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| Wheat | 225 | 85 | 17 | 119 | 4 |\n| Rice | 125 | 45 | 9 | 70 | 1 |\n| Vegetables | 937 | 53 | 99 | 782 | 3 |\n| Sugar | 125 | 50 | 9 | 66 | --- |\n| Total | 1412 | 233 | 134 | 1037 | 8 |",
+      "verified_pdf_pages": [
+        138
+      ],
+      "notes": [
+        "Mass balance quantities; table series unit context: g/day. The source prints three hyphens for the sugar nitrogen cell."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| Material | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- |\n| Wheat | 225 | 85 | 17 | 119 | 4 |\n| Rice | 125 | 45 | 9 | 70 | I |\n| Vegetables | 937 | 53 | 99 | 782 | 3 |\n| Sugar | 125 | 50 | 9 | 66 | --- |\n| Total | 1412 | 233 | 134 | 1037 | 8 |",
+        "text": "Data from PDF page 138. The table contains 5 data rows with columns for Material, Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02846",
+      "caption": "TABLE 5-19.— CONTINUED; H.3. DRYING HUMAN FOOD—WHEAT MATERIALS BALANCE",
+      "table_markdown": "| Item | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| In |  |  |  |  |  |\n| From field | 3018 | 254 | 309 | 2442 | 13 |\n| Out |  |  |  |  |  |\n| To food processing | 225 | 85 | 17 | 119 | 4 |\n| H₂O | 781 |  | 86 | 695 |  |\n| Waste | 2012 | 169 | 206 | 1628 | 9 |",
+      "verified_pdf_pages": [
+        139
+      ],
+      "notes": [
+        "Based on: 1/3 dry weight is grain; harvested at 80% moisture.",
+        "Mass balance quantities; table series unit context: g/day."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-19.- CONTINUED",
+        "table_markdown": "| Material | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- |\n| In |  |  |  |  |  |\n| From field | 3018 | 254 | 309 | 2442 | 13 |\n| Out |  |  |  |  |  |\n| To food processing | 225 | 85 | 17 | 119 | 4 |\n| H2O | 78 1 |  | 86 | 695 |  |\n| Waste | 2012 | 169 | 206 | 1628 | 9 |",
+        "text": "CONTINUED. The table contains 6 data rows with columns for Material, Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02850",
+      "caption": "TABLE 5-19.— CONTINUED; H.4. DRYING HUMAN FOOD—RICE MATERIALS BALANCE",
+      "table_markdown": "| Item | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| In |  |  |  |  |  |\n| From field | 1647 | 135 | 168 | 1341 | 3 |\n| Out |  |  |  |  |  |\n| To food processing | 125 | 45 | 9 | 70 | 1 |\n| H₂O | 424 |  | 47 | 377 |  |\n| Waste | 1098 | 90 | 112 | 894 | 2 |",
+      "verified_pdf_pages": [
+        139
+      ],
+      "notes": [
+        "Based on: 1/3 dry weight is grain; harvested at 80% moisture.",
+        "Mass balance quantities; table series unit context: g/day."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| Material | Total | C | H | 0 |  |\n| --- | --- | --- | --- | --- | --- |\n| In |  |  |  |  |  |\n| Fromfield | 1647 | 135 | 168 | 1341 | 3 |\n| Out |  |  |  |  |  |\n| Tofood processing | 125 | 45 | 9 | 70 | I |\n| H2O | 424 |  | 47 | 377 |  |\n| Waste | 1098 | 90 | 112 | 894 | 2 |",
+        "text": "Data from PDF page 139. The table contains 6 data rows with columns for Material, Total, C, H, 0."
+      }
+    },
+    {
+      "id": "sp413-s02854",
+      "caption": "TABLE 5-19.— CONTINUED; H.5. HARVEST WASTE",
+      "table_markdown": "| Item | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| Material | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| Fruit and vegetable | 937 | 53 | 99 | 782 | 3 |\n| Sorghum roughage | 845 | 70 | 87 | 686 | 2 |\n| Soybean roughage | 1634 | 139 | 168 | 1319 | 8 |\n| Corn roughage | 814 | 68 | 84 | 660 | 2 |\n| Wheat roughage | 2012 | 169 | 206 | 1628 | 9 |\n| Rice roughage | 1098 | 90 | 112 | 894 | 2 |\n| Total | 7340 | 589 | 756 | 5969 | 26 |\n| Less sugar extracted from sorghum | 125 | 50 | 9 | 66 | --- |\n| Harvest waste | 7215 | 539 | 747 | 5903 | 26 |",
+      "verified_pdf_pages": [
+        139
+      ],
+      "notes": [
+        "Based on: soybean and grain roughage 80% moisture; fruit and vegetable waste 50% of harvest and same composition; corn is 1/5 of dry corn plant.",
+        "The source prints three hyphens for nitrogen in the “Less sugar extracted from sorghum” row.",
+        "Mass balance quantities; table series unit context: g/day."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| Material | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- |\n| Fruitand vegetable | 937 | 53 | 99 | 782 | 3 |\n| Sorghum roughage | 845 | 70 | 87 | 686 | 2 |\n| Soybean roughage | 1634 | 139 | 168 | 131 9 | 8 |\n| Corn roughage | 8 14 | 68 | 84 | 660 | 2 |\n| Wheatroughage | 2012 | 169 | 206 | 1628 | 9 |\n| Rice roughage | 1098 | 90 | 112 | 894 | 2 |\n| Total | 7340 | 589 | 756 | 5969 | 26 |\n| Less sugarextracted from sorghum | 125 | 50 | 9 | 66 | --- |\n| Harvest waste | 72 15 | 539 | 747 | 5903 | 26 |",
+        "text": "Data from PDF page 139. The table contains 9 data rows with columns for Material, Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02858",
+      "caption": "TABLE 5-19.— CONCLUDED; I. MASS BALANCE ON PLANTS",
+      "table_markdown": "| Item | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| In |  |  |  |  |  |\n| Irrigation water | 168,750 |  | 18,563 | 150,187 |  |\n| Recycle water | 61,250 |  | 6,737 | 54,513 |  |\n| Nutrients | 93 |  | 21 |  | 72 |\n| CO₂ | 235,082 | 1347 |  | 3,642 |  |\n| Out |  |  |  |  |  |\n| Plants | 16,273 | 1347 | 1,682 | 13,172 | 72 |\n| Irrigation return | 50,000 |  | 5,500 | 44,500 |  |\n| Evapotranspiration | 164,900 |  | 18,139 | 146,761 |  |\n| O₂ | 3,909 |  |  | 3,909 |  |",
+      "verified_pdf_pages": [
+        140
+      ],
+      "notes": [
+        "Based on: 30.5 cm water on 45 m² in 60-day season; 50,000 g irrigation return.",
+        "The CO₂ row is transcribed as printed: total 235,082, C 1347, O 3,642; these entries do not balance arithmetically. Preserve source values; flag for independent source review.",
+        "Mass balance quantities; table series unit context: g/day."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-19.- CONCLUDED.",
+        "table_markdown": "|  | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- |\n| In |  |  |  |  |  |\n| Irrigation water | 168,750 |  | 18,563 | 150,187 |  |\n| Recycle water | 61,250 |  | 6,737 | 54,513 |  |\n| utrients | 93 |  | 21 |  | 72 |\n| CO2 | 235,082 | 1347 |  | 3,642 |  |\n| Out |  |  |  |  |  |\n| Plants | 16,273 | 1347 | 1,682 | 13,172 | 72 |\n| Irrigation return | 50,000 |  | 5,500 | 44,500 |  |\n| Evapotra nspira tion | 164,900 |  | 18,139 | 146,761 |  |\n| O2 | 3,909 |  |  | 3,909 |  |",
+        "text": "CONCLUDED. The table contains 10 data rows with columns for Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02861",
+      "caption": "TABLE 5-19.— CONCLUDED; J. MASS BALANCE WASTE PROCESSING",
+      "table_markdown": "| Item | Total | C | H | O | N |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| In |  |  |  |  |  |\n| Wastes | 62,060 | 862 | 6759 | 54,367 | 72 |\n| O₂ | 2,476 |  |  | 2,476 |  |\n| Out |  |  |  |  |  |\n| CO₂ | 3,193 | 862 |  | 2,331 |  |\n| NH₄ | 93 |  | 21 |  | 72 |\n| H₂O | 61,250 |  | 6738 | 54,512 |  |",
+      "verified_pdf_pages": [
+        140
+      ],
+      "notes": [
+        "Mass balance quantities; table series unit context: g/day. Blank elemental cells are blank in source."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "|  | Total | C | H | 0 | N |\n| --- | --- | --- | --- | --- | --- |\n| In |  |  |  |  |  |\n| Wastes O2 | 62,060 2,476 | 862 | 6759 | 54,367 2,476 | 72 |\n| Out |  |  |  |  |  |\n| CO2 | 3,193 | 862 |  | 2,33 1 |  |\n| N~ | 93 |  | 21 |  | 72 |\n| H2O | 61,250 |  | 6738 | 54,512 |  |",
+        "text": "Data from PDF page 140. The table contains 6 data rows with columns for Total, C, H, 0, N."
+      }
+    },
+    {
+      "id": "sp413-s02862",
+      "caption": "TABLE 5-20.— CROP YIELDS",
+      "table_markdown": "| Crop | Record yield | Reference | Terrestrial yield (g/m²/season) | Terrestrial season (days) | Colony yield (g/m²/season) | Colony season (days) | Colony yield (g/m²/day) |\n| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |\n| Wheat | 14 tons/ha | 24 | 1400 | 100 | 2800 | 90 | 31 |\n| Rice | 266 bu/ha | 25 | 1596 | 100 | 3192 | 90 | 35 |\n| Soybean | 9000 kg/ha | 26 | 900 | 100 | 1800 | 90 | 20 |\n| Corn | 26,500 kg/ha | 25 | 2650 | 100 | 5300 | 90 | 58 |\n| Sorghum | 675 bu/acre | 25 | 3780 | 100 | 7560 | 90 | 83 |\n| Tomatoes | 67 tons/ha | 5 | 6700 | ~70 | 9240† | 70† | 132† |\n| Lettuce | 24 tons/ha | 5 | 2400 | ~70 |  |  |  |",
+      "verified_pdf_pages": [
+        140
+      ],
+      "notes": [
+        "The brace in the source joins tomatoes and lettuce: colony yield 9240 g/m²/season, a 70-day colony season (“as vegetables”), and 132 g/m²/day apply to the combined vegetable rows.",
+        "Unit weights: rice 60 lb/bu; sorghum 56 lb/bu; soybean 60 lb/bu; corn 56 lb/bu.",
+        "Printed conversion factors: 1 ha = 100 × 100 = 10⁴ m²; 1 kg/ha ≅ 1 lb/acre; 1 bu = 35.24 liters; 1 ton = 0.906 tonnes (t). The printed 1 kg/ha ≅ 1 lb/acre is a rough approximation, not an exact conversion (1 kg/ha ≈ 0.892 lb/acre). Preserve as source text and do not use as an exact conversion."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5.20.CROP YIELDS",
+        "table_markdown": "|  |  |  | Terrestri | al yields |  | Colony yields |  |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Crop | Record yield | Reference | g/m2/season | Season, day | g/m 2 /season | Season, day | g/m2/day |\n| Wheat | 14tons/ha | 24 | 1400 | 100 | 2800 | 90 | 31 |\n| Rice | 266bu/ha | 25 | 1596 | 100 | 3192 | 90 | 35 |\n| Soybean | 9000kg/ ha | 26 | 900 | 100 | 1800 | 90 | 20 |\n| Corn | 26,500 kg/ha | 25 | 2650 | 100 | 5300 | 90 | 58 |\n| Sorghum | 675 bu/acre | 25 | 3780 | 100 | 7560 | 90 | 83 |\n| Tomatoes | 67tons/ha | 5 | 6700 | ~70 |  |  |  |\n| Lettuce | 24tons/ha | 5 | 2400 | ~70 | } 9240 | 70 asvegetables | 132 |\n|  | Unit weights |  |  | Conversio | n factors |  |  |\n|  | Rice 60l | b/bu | I | ha=1 00X1 | 00=104m2 |  |  |\n|  | Sorghum 56I | b/bu |  | I kg/ha==l | ib/acre |  |  |\n|  | Soybean 60I | b/bu |  | 1bu=35.24 | liters |  |  |\n|  | Corn 56I | b/bu |  | 1ton=0.906 | tonnes(t) |  |  |",
+        "text": "YIELDS. The table contains 13 data rows with columns for Terrestri, al yields, Colony yields."
+      }
+    },
+    {
+      "id": "sp413-s02864",
+      "caption": "TABLE 5-21.— PHOTOSYNTHETIC PRODUCTIVITY ENHANCEMENT",
+      "table_markdown": "| Factor | Terrestrial | Space Colony |\n| --- | --- | --- |\n| Light intensity | Reduced by atmosphere and clouds | Greater by 7.5 |\n| Photo period | ~12 hr | Can be 24 hr |\n| pCO₂ | 17 Pa (0.13 mm Hg) | 400 Pa (3 mm Hg) greater in growing area |\n| Water | Sometimes dependent on rainfall | Irrigated regularly |\n| Temperature | No control | Optimized for species |\n| Season | 1 per year in many areas | 4 per year |\n| Crop damage: from weather | Hail, rain, wind | None |\n| Crop damage: from pests and insects | 5–15 percent loss of crop | None* |\n| Crop damage: from weeds | 2.5 to 5 percent loss of crop | None* |\n| Crop damage: from disease | 10 to 60 percent loss of yield | None* |",
+      "verified_pdf_pages": [
+        141
+      ],
+      "notes": [
+        "* Controlled by quarantine."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-21.- PHOTOSYNTHETIC PRODUCTIV ITY ENHANCEME T",
+        "table_markdown": "| Factor | Terrestrial | SpaceColony |\n| --- | --- | --- |\n| Lightintensity Photoperiod | Reducedbyatmosphereand clouds ~12hr | Greaterby7.5 Canbe24h r |\n| pC02 | 17Pa(0. 13mmHg) | 400Pa(3mmHg) greater ingrowing area |\n| Water | Sometimesdependenton rainfall | Irrigated regularly |\n| Temperature | o control | Optimized for species |\n| Season | 1 per year inmany areas | 4per year |\n| Cropdamage |  |  |\n| fromweather | Hail, rain, wind | None |\n| from pests and insects | 5- 15percentlossofcrop | one* |\n| from weeds | 2.5to5percen t lossofcrop | one* |\n| from disease | 10to60percentlossofyield | one* |",
+        "text": "PHOTOSYNTHETIC PRODUCTIV ITY ENHANCEME T. The table contains 10 data rows with columns for Factor, Terrestrial, SpaceColony."
+      }
+    },
+    {
+      "id": "sp413-s02866",
+      "caption": "TABLE 5-22.— INCREASED PRODUCTIVITY FACTORS* IN VEGETABLES (ref. 24)",
+      "table_markdown": "| Vegetable | Factor |\n| --- | ---: |\n| Cabbage | 2.59 |\n| Cucumber | 8.48 |\n| Eggplant | 12.63 |\n| Lettuce | 2.33 |\n| Okra | 4.73 |\n| Tomato | 2.37 |\n| Turnip | 7.14 |",
+      "verified_pdf_pages": [
+        141
+      ],
+      "notes": [
+        "* Under greenhouse conditions."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-22.I CREASED PRODUCT IVITY FACTORS* I VEGETABLES (ref. 24)",
+        "table_markdown": "| Cabbage 2. | 59 |\n| --- | --- |\n| Cucumber 8 | .48 |\n| Eggplant 12 | .63 |\n| Lettuce 2. | 33 |\n| Okra 4 | .73 |\n| Tomato 2. | 37 |\n| Turnip 7. | 14 |",
+        "text": "CREASED PRODUCT IVITY FACTORS* I VEGETABLES (ref. 24). The table contains 6 data rows with columns for Cabbage 2., 59."
+      }
+    },
+    {
+      "id": "sp413-s03095",
+      "caption": "TABLE 5-23.— MATERIALS OF INTEREST FOR A ROTARY PELLET LAUNCHER",
+      "table_markdown": "| Material | ρ (g/cm³) | Sy (10³ MPa) | Vc (m/s) |\n| --- | ---: | ---: | ---: |\n| Maraging steel | 8.0 | 2.76 | 831 |\n| E glass | 2.5 | 3.45 | 1663 |\n| Carbon fiber | 1.4 | 2.76 | 1987 |\n| S glass | 2.5 | 5.17 | 2036 |\n| Kevlar-49 | 1.45 | 3.62 | 2237 |\n| Fused silica | 2.2 | 13.8 | 3545 |",
+      "verified_pdf_pages": [
+        149
+      ],
+      "notes": [],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 5-23.- MATERIALS OF INTEREST FOR A ROTARY PELLET LAUNCHER",
+        "table_markdown": "| Material | e,g/cm3 | Sy,103MPa | Vc'mls |\n| --- | --- | --- | --- |\n| Maraging steel | 8.0 | 2.76 | 831 |\n| Eglass | 2.5 | 3.45 | 1663 |\n| Carbon fiber | 1.4 | 2.76 | 1987 |\n| S glass | 2.5 | 5.17 | 2036 |\n| Kevlar-49 | 1.45 | 3.62 | 2237 |\n| Fused silica | 2.2 | 13.8 | 3545 |",
+        "text": "MATERIALS OF INTEREST FOR A ROTARY PELLET LAUNCHER. The table contains 6 data rows with columns for Material, e,g/cm3, Sy,103MPa, Vc'mls."
+      }
+    },
+    {
+      "id": "sp413-s03322",
+      "table_markdown": "| Location/system | Number of people | Resupply, t/yr | Time period, yr | Rotation, people/yr | Tasks |\n| --- | ---: | ---: | ---: | ---: | --- |\n| LEO station | 200 | 330 | 5-14 | 400 | Physiological testing — rotation, gravity; pilot plant operations and testing; assembly systems for L₅ and Moon depot fuel |\n|  | 100 (+100 transient) | 250 | 15-25 | 200 | Way station; supply transshipment |\n| Lunar base | 300 | 500 | 10-14 | 300 | Assemble lunar systems |\n|  | 150 | 250 | 15-25 | 75 | Operate lunar systems |\n| L₅ construction station | 100 | 167 | 9-11 | 100 | Set up L₅ site |\n|  | 2270 | 3784 | 12-18 | 2270 | Build shell and 60 percent shield |\n| L₅ colony | 10000 | 4200† | 19-22 | 100 | Complete interior and shield |\n|  |  | 1000†† | 23-25 |  | Live and work |\n| Inter-librational transfer vehicle | 10 | --- | 11-25 | --- | Crew for transfer between L₂ and L₅ |",
+      "caption": "TABLE 6-1. — PERSONNEL REQUIREMENTS",
+      "verified_pdf_pages": [
+        161
+      ],
+      "notes": [
+        "* Nominal resupply: 1.7 t/person-yr of normal Earth materials costing $5/kg.",
+        "** Times are years from start of the project; e.g., if the project began in 1990 the time period 5-14 means 1995 to 2004.",
+        "† Colony resupply: Linear decrease from nominal value during 4-yr period of colony immigration.",
+        "†† Colony resupply: 100 kg/person/yr of imports."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 6-1.- PERSONNEL REQUIREMENTS",
+        "table_markdown": "|  | Number ofpeople | Resupply,* t/yr | Time period,** yr | Rotation, people/yr | Tasks |\n| --- | --- | --- | --- | --- | --- |\n| LEO station | 200 | 330 | 5-14 | 400 | Physiological testing - rotation, gravity; pilot plant operations and testing; assembly systemsforLs and Moon depot fuel |\n|  | 100 (+100 transient) | 250 | 15-25 | 200 | Waystation Supply transshipment |\n| Lunar base | 300 | 500 | 10-14 | 300 | Assemblelunar systems |\n|  | 150 | 250 | 15-25 | 75 | Operatelunar systems |\n| Lsconstruction station: | 100 2270 | 167 3784 | 9-11 12-18 | 100 2270 | SetupLssite Build shell and 60 percent shield |\n| Lscolony | 10000 | {4200t 1000tt | 19-22} 23-25 | 100 | Complete interior and shield Live and work |\n| Inter-librational transfer vehicle | 10 | --- | 11-25 | --- | Crew for transfer betweenLz andLs |",
+        "text": "PERSONNEL REQUIREMENTS. The table contains 7 data rows with columns for Number ofpeople, Resupply,* t/yr, Time period,** yr, Rotation, people/yr, Tasks."
+      }
+    },
+    {
+      "id": "sp413-s03341",
+      "table_markdown": "| Vehicles | Route | Payload, t | R&D TFU,* $10⁹ | Number of units | Cost/unit, $10⁹ | Period, yr | Payload cost, $/kg |\n| --- | --- | ---: | ---: | ---: | ---: | ---: | --- |\n| Space shuttle | Earth-LEO** | 30 | --- | 3 | 0.03 | 5-25 | 440 |\n| Heavy lift launch vehicle (HLLV) | Earth-LEO** | 150 | 0.3 | 6 | .08 | 4-25 | 200 |\n| Interorbit transport vehicle (IOTV) | LEO-LPO** | 300 | .4 | 9 | .03 | 5-25 | See trip costs below |\n| Lunar landing vehicle (LLV) | LPO-Lunar surface** | 150 | 1.7 | 4 | .03 | 9-25 | See trip costs below |\n\n| Trip costs (launch and fuel) | Without O₂ at L₅: Materials, $10³/t | Without O₂ at L₅: People, $10³/person | With O₂ at L₅ (after year 12)***: Materials, $10³/t | With O₂ at L₅ (after year 12)***: People, $10³/person |\n| --- | ---: | ---: | ---: | ---: |\n| Earth to LEO | 200 | 440† | 200 | 440† |\n| LEO to L₅ | 600 | 400†† | 200 | 140†† |\n| LEO to Lunar surface | 1400 | 930†† | 460 | 310†† |",
+      "caption": "TABLE 6-2. — TRANSPORTATION SYSTEM",
+      "verified_pdf_pages": [
+        162
+      ],
+      "notes": [
+        "* Research and development through first unit at $5000/kg.",
+        "** LEO: Low Earth orbit; LPO: Lunar parking orbit.",
+        "*** Austin, G., Marshall Spaceflight Center, Ala., personal communication, Aug. 15, 1975.",
+        "† Earth to LEO for people via space shuttle, 30 people/flight (Hamaker, J., Marshall Space Flight Center, Ala., personal communication, Aug. 8, 1975).",
+        "†† Crew transport module + people ≅ 2/3 t/person (Hamaker, J., Marshall Spaceflight Center, Ala., personal communication, Aug. 8, 1975).",
+        "All costs expressed in 1975 dollars."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 6-2.- TRANSPORTATION SYSTEM",
+        "table_markdown": "| Vehicles | Route | Payload, t | R&D TFU,* $109 | Number of units | Cost/unit, $109 | Period, yr | Payload cost, $/kg |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Space shuttle | Earth-LEO** | 30 | --- | 3 | 0.03 | 5-25 | 440 |\n| Heavy liftlaunch vehicle(HLLV) | Earth-LEO** | 150 | 0.3 | 6 | .08 | 4-25 | 200 |\n| Interorbittransport vehicle (IOTV) | LEO-LPO** | 300 | .4 | 9 | .03 | 5-25 | See trip |\n| Lunar landing vehicle (LLV) | LPO-Lunar surface** | 150 | 1.7 | 4 | .03 | 9-25 | costs below |\n| TRIPCOSTS: | WithoutO | 2atLs |  | With | O2atLs(afte | ryear12) * | ** |\n| (Launchand fuel) | Materials, $103 /t | People, $103 /person |  | M | aterials, $103 /t $ | People, 103 /person |  |\n| EarthtoLEO | 200 | 440t |  |  | 200 | 440t |  |\n| LEO to Ls | 600 | 400tt |  |  | 200 | 140tt |  |\n| LEOtoLunar surface | 1400 | 930tt |  |  | 460 | 310tt |  |",
+        "text": "TRANSPORTATION SYSTEM. The table contains 9 data rows with columns for Vehicles, Route, Payload, t, R&D TFU,* $109, Number of units, Cost/unit, $109, Period, yr, Payload cost, $/kg."
+      }
+    },
+    {
+      "id": "sp413-s03350",
+      "table_markdown": "| System/item | Output size | Specific mass | Total mass, t | Time period, yr | R&D TFU,* $10⁹ | Number of units | Unit cost, $10⁹ |\n| --- | --- | --- | ---: | --- | ---: | ---: | ---: |\n| LEO |  |  |  |  |  |  |  |\n| Nuclear power pilot plant | 10 MW | 45 t/MW** | 450 | 6-25 | 2.3 |  |  |\n| Solar power pilot plant | 20 MW | 14 t/MW** | 280 (moved to L₅ in year 9) | 6-25 | 1.4 |  |  |\n| Pilot materials plant | 2500 t/yr of Al | 8.3 output mass/yr / plant mass | 300 | 7-25 | 1.5 |  |  |\n| L₅ |  |  |  |  |  |  |  |\n| Solar power plant 1 | 20 MW | 14 t/MW** | 280 | 9-25 (from LEO) | --- |  |  |\n| Solar power plant 2 | 50 MW | 14 t/MW** | 700 | 9-25 |  | 4 | 0.4† |\n| Solar power plant 3 | 50 MW | 14 t/MW** |  | 10-25 |  |  |  |\n| Solar power plant 4 | 50 MW | 14 t/MW** |  | 11-25 |  |  |  |\n| Solar power plant 5 | 50 MW | 14 t/MW** |  | 12-25 |  |  |  |\n| Materials plant | 90,000 t/yr of Al | 8.3 output mass/yr / plant mass | 10800 | 12-25 |  | 1 | 5.4† |\n| Mass transport: lunar surface to L₂ to L₅ |  |  |  |  |  |  |  |\n| Nuclear power plant 1 | 120 MW | 45 t/MW** | 5400 | 10-25 |  | 2 | 2.7† |\n| Nuclear power plant 2 | 120 MW | 45 t/MW** | 5400 | 14-25 |  |  |  |\n| Mass launcher 1 | 5 × 10⁵ t/yr | Track 1000 t; electrical 1000 t; repair shop 750 t | 2750 | 12-25 | 5.0†† |  |  |\n| Mass launcher 2 | 5 × 10⁵ t/yr |  | 2750 | 14-25 |  | 1 | 1.4† |\n| Mass catcher 1 | 2.5 × 10⁵ t/yr |  | 340 | 11-25 | 1.7 |  |  |\n| Mass catcher 2 | 2.5 × 10⁵ t/yr | Incl. solar power, 10 MW/catcher, @ 14 t/MW | 340 | 13-25 |  | 3 | 0.2† |\n| Mass catcher 3 | 2.5 × 10⁵ t/yr |  | 340 | 13-25 |  |  |  |\n| Mass catcher 4 | 2.5 × 10⁵ t/yr |  | 340 | 13-25 |  |  |  |\n| Interlibration transfer vehicle (ILTV) 1 | 5 × 10⁵ t/yr | Includes solar power, 20 MW/ILTV @ 14 t/MW; 4-crew modules for 10 men | 400 | 11-25 | 2.0 | 1 | 0.2† |\n| Interlibration transfer vehicle (ILTV) 2 (and crew module) | 5 × 10⁵ t/yr |  | 400 | 12-25 |  |  |  |",
+      "caption": "TABLE 6-3. — MASS AND ENERGY SYSTEMS — SIZE AND COST",
+      "verified_pdf_pages": [
+        163
+      ],
+      "notes": [
+        "* Research and development through first unit at $5000/kg.",
+        "** NASA estimates for near term technology (nuclear plants are unshielded).",
+        "† Purchase at $500/kg.",
+        "†† Active portions costed at $5000/kg for R&D TFU.",
+        "All costs in 1975 dollars."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 6-3.MASS AND ENERGY SYSTEMS - SIZE AND COST",
+        "table_markdown": "|  | Outputsize | Specificmass | Total mass, t | Time period, yr | R&D TFU,* $109 | Number ofunits | Unit cost, $109 |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| LEO |  |  |  |  |  |  |  |\n| Nuclear power pilot plant | 10MW | 45t/MW** | 450 | 6-25 | 2.3 |  |  |\n| Solar power pilot plant | 20MW | 14t/MW** | 280 (mo | 6-25 ved toLs | 1.4 |  |  |\n| Pilot materials plant | 2500 t/yr | 8.3 | in | year 9) |  |  |  |\n|  | ofAl | outputmass/yr plant mass | 300 | 7-25 | 1.5 |  |  |\n| Ls |  |  |  |  |  |  |  |\n| Solar power plant 1 | 20MW | 14t/MW** | 280 | 9-25 (from LEO) |  |  |  |\n| 2 | 50MW | 14t/MW** | 700 | 925) |  |  |  |\n| 3 | 50MW | 14t/MW** |  | - 10-25 |  | 4 | O4t |\n| 4 | 50MW | 14t/MW** |  | 11-25 |  |  | . |\n| 5 | 50MW | 14t/MW** |  | 12-25 |  |  |  |\n| Materials plant | 90,000 t/yr ofAl | 8.3 output mass/yr | 10800 | 12-25 |  |  | 5.4t |\n|  |  | plantmass |  |  |  |  |  |\n| MassTransport Lunar |  |  |  |  |  |  |  |\n| Surface to L2 toLs |  |  |  |  |  |  |  |\n| Nuclear powerplant 1 | 120MW | 45 t/MW** | 5400 | 10-25} |  |  |  |\n| 2 | 120MW | 45t/MW** | 5400 | 14-25 |  | 2 | 2.7t |\n| Masslauncher 1 | 5XI0st/yr | {Track 1000t Electrical 1000t | } 2750 | 12-25 | 5.0tt |  |  |\n| 2 | 5X105t/yr | Repair shop750t | 2750 | 14-25 |  |  | l.4t |\n| Masscatcher 1 | 2.5X105t/yr |  | 340 | 11-25 | 1.7 |  |  |\n| 2 | 2.5X10 5t/yr | {InCI.solar power | } 340 | 13-25 |  |  |  |\n| 3 | 2.5X105t/yr | 10MWfcatcher, | 340 | 13-25 |  | 3 | 0.2t |\n| 4 | 2.5X105t/yr | @14t/MW | 340 | 13-25 |  |  |  |\n| Interlibration trans- |  | Includessolar |  |  |  |  |  |\n| fervehicle (ILTV)I | 5X105t/yr | power 20MW/ILTV @ | 400 | 11-25 | 2.0 |  |  |\n| (and crew module) 2 | 5X105t/yr | 14t/MW; 4-crew modules for 10men | 400 | 12-25 |  |  | 0.2t |",
+        "text": "AND ENERGY SYSTEMS - SIZE AND COST. The table contains 26 data rows with columns for Outputsize, Specificmass, Total mass, t, Time period, yr, R&D TFU,* $109, Number ofunits, Unit cost, $109."
+      }
+    },
+    {
+      "id": "sp413-s03369",
+      "table_markdown": "| Item | Crew size | Mass/person, t/person | Mass, t | Time period, yr | R&D TFU,* $10⁹ | Unit cost, $10⁹ |\n| --- | ---: | ---: | ---: | --- | ---: | ---: |\n| LEO station | 200 | 5** | 1,000 | 5-25 | 5.0 |  |\n| Lunar base | 300*** | 7** | 2,100 | 11-25 | 1.1† |  |\n| L₅ construction station | 2,270 | 5** | 11,350 | 9-19 | 5.7† |  |\n| L₅ colony | 10,000 | --- |  | 20-25 |  |  |\n| Structures |  |  | 500,000 |  |  |  |\n| Shield |  |  | 10,000,000 |  |  |  |\n| Interior |  |  |  |  |  |  |\n| Gas and H₂ from Earth |  |  | 21,100 |  | <.1†† |  |\n| Biomass |  |  | 5,900 |  | <.1†† |  |\n| Furnishings from Earth |  |  | 25,000 |  | .1†† |  |\n| Colonists |  |  | 600 |  | --- |  |\n| Soil |  |  | 220,000 |  |  |  |\n| Personnel transport modules — A (3 units) | 10 | 0.6 (+3) | 9 |  | .3††† | 0.3††† |\n| Personnel transport modules — B (4 units) | 100 | .6 (+3) | 63 |  | .2††† | .08††† |",
+      "caption": "TABLE 6-4. — HABITATS",
+      "verified_pdf_pages": [
+        164
+      ],
+      "notes": [
+        "* Research and development through first unit at $5000/kg.",
+        "** Mass per person used is between the 10 t/person of the NASA 100 person space base and the 3.5 t/person of G. W. Drigger’s design (paper presented at Princeton Conference on Space Manufacturing Facilities, May, 1975). The lunar base is expected to withstand the weight of lunar soil covering for shielding and to be more permanent.",
+        "*** Designed for construction crew of 300; permanently occupied by operational crew of 150.",
+        "† Cost for first unit makes use of R&D done for LEO station; $500/kg purchased on Earth.",
+        "†† Normal Earth materials costed at $5/kg.",
+        "††† NASA estimates.",
+        "All costs expressed in 1975 dollars."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 6-4.- HABITATS",
+        "table_markdown": "|  | Crew size | Mass/person, t/person | Mass, t | Time period, yr | R&D TFU,* $109 | Unit cost, $109 |\n| --- | --- | --- | --- | --- | --- | --- |\n| LEO station: | 200 | 5** | 1,000 | 5·25 | 5.0 |  |\n| Lunar base: | 300*** | 7** | 2,100 | 11-25 | l.lt |  |\n| Lsconstruction station: | 2,270 | 5** | 11,350 | 9-19 | 5.7t |  |\n| Lscolony: | 10,000 | --- |  | 20-25 |  |  |\n| Structures Shield |  |  | 500,000 10,000,000 |  |  |  |\n| Interior |  |  |  |  |  |  |\n| Gas andH2from Earth |  |  | 21,100 |  | <.ltt |  |\n| Biomass |  |  | 5,900 |  | <_Itt |  |\n| Furnishings from Earth Colonists Soil |  |  | 25,000 600 220,000 |  | ,Itt -_. |  |\n| Personnel transport modules: Number ofunits |  |  |  |  |  |  |\n| A: 3 | 10 | 0.6(+3) | 9 |  | .3ttt | O.3ttt |\n| B: 4 | 100 | .6(+3) | 63 |  | .2ttt | .08ttt |",
+        "text": "HABITATS. The table contains 12 data rows with columns for Crew size, Mass/person, t/person, Mass, t, Time period, yr, R&D TFU,* $109, Unit cost, $109."
+      }
+    },
+    {
+      "id": "sp413-s03406",
+      "table_markdown": "| Category | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | Totals |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| RESEARCH | 0.9 | .1 | .1 | .1 | .1 | 0 | .1 | 0 | .1 | .1 |  |  |  |  |  |  |  |  |  |  |  |  | 1.6 |\n| DEVELOPMENT TO FIRST UNIT |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|   Pilot plants | .6 | 1.0 | 1.0 | 1.1 | 1.1 | .3 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 5.1 |\n|   Transport systems | .1 | .1 | .4 | .4 | .5 | .4 | .5 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 2.4 |\n|   Mass system | .2 | .3 | .8 | .9 | 1.0 | 1.1 | 1.2 | 1.1 | 1.1 | 1.0 |  |  |  |  |  |  |  |  |  |  |  |  | 8.7 |\n|   Habitats | .5 | 1.6 | 2.5 | 2.6 | 2.1 | 1.2 | 1.2 | .3 | .3 |  |  |  |  |  |  |  |  |  |  |  |  |  | 12.3 |\n|   Subtotal | 1.4 | 3.0 | 4.7 | 5.0 | 4.7 | 3.0 | 2.9 | 1.4 | 1.4 | 1.0 |  |  |  |  |  |  |  |  |  |  |  |  | 28.5 |\n| PRODUCTION |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|   Power & materials |  |  |  | .3 | 1.0 | 1.6 | 2.3 | 2.8 | 2.1 | .8 | .8 | .5 |  |  |  |  |  |  |  |  |  |  | 12.2 |\n|   Transport |  | .1 | .3 | .3 | .1 | .1 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | .9 |\n|   Mass |  |  |  |  |  | .2 | .2 | .2 | .3 | .2 | .2 | .2 |  |  |  |  |  |  |  |  |  |  | 1.5 |\n|   Subtotal |  | .1 | .3 | .6 | 1.3 | 1.9 | 2.5 | 3.1 | 2.3 | 1.0 | 1.0 | .5 |  |  |  |  |  |  |  |  |  |  | 14.6 |\n| TRANSPORTATION |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|   Crew to LEO |  |  |  |  | .2 | .2 | .2 | .3 | .2 | .4 | .4 | 1.3 | 1.3 | 1.3 | 1.1 | 1.1 | 1.1 | 1.1 | .2 | .2 | .2 | .2 | 11.0 |\n|   LEO |  |  |  |  | .3 | .8 | .7 | 1.6 | 1.6 | 2.1 | 1.9 | 1.5 | 1.6 | 2.0 | 2.1 | 2.3 | 2.2 | 2.2 | 2.0 | 2.2 | 2.2 | 2.2 | 31.5 |\n|   Lunar base |  |  |  |  |  |  |  |  | 3.8 | 8.0 | 4.9 | 1.4 | 1.7 | 2.9 | .2 | .2 | .2 | .2 | .2 | .2 | .2 | .2 | 24.3 |\n|   L₅ |  |  |  |  |  |  |  | 3.4 | 4.2 | .8 | 7.1 | 6.8 | 1.2 | 1.6 | 2.3 | 2.5 | 2.3 | 2.3 | 1.9 | 2.1 | 2.1 | 2.1 | 42.7 |\n|   Subtotal |  |  |  |  | .5 | 1.0 | .9 | 5.2 | 9.8 | 11.3 | 14.3 | 11.0 | 5.8 | 7.8 | 5.7 | 6.1 | 5.8 | 5.8 | 4.3 | 4.7 | 4.7 | 4.7 | 109.5 |\n|   Colonists |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 1.2 | 1.2 | 1.2 | 1.2 | 4.8 |\n| TOTALS | 2.3 | 3.1 | 5.0 | 5.6 | 6.5 | 5.9 | 6.3 | 9.8 | 13.5 | 13.3 | 15.3 | 11.5 | 5.8 | 7.8 | 5.7 | 6.1 | 5.8 | 5.8 | 5.5 | 5.9 | 5.9 | 5.9 | 159.0 |\n| MISCELLANEOUS AND ADMINISTRATIVE (20% overhead) |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 31.8 |\n| TOTAL PROGRAM COST |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | $190.8B |",
+      "caption": "TABLE 6-8. — COST TOTALS (1975 $B)",
+      "verified_pdf_pages": [
+        168
+      ],
+      "notes": [
+        "Rows with no printed entry are left blank; the table shows explicit zeros as 0.",
+        "“O₂ Available” is printed across the transportation section beginning at year 12.",
+        "Printed totals: Research 1.6; development to first unit 28.5; production 14.6; transportation 109.5; colonists 4.8; totals 159.0; miscellaneous and administrative (20% overhead) 31.8; total program cost $190.8B."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 6-8.- COST TOTALS (1 975 $B)",
+        "table_markdown": "| Years from Go Ahead: |  | 2 |  | 3 |  | 4 |  | 5 | 6 |  | 7 |  | 8 |  | 9 |  | 10 | 11 |  | 12 | \\3 |  | 14 | 1 | 5 | 16 |  | 17 | 18 |  | 1 | 9 | 20 |  | 21 | 22 | Totals |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| RESEARCH | 0.9 | 0. | 1 | 0 | .1 | 0. | 1 | 0.1 | o |  | 0. | 1 | o |  | 0. | 1 | 0.1 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 1.6 |\n| DEVELOPMENT TOFIRSTUNIT |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| Pilot plants | .6 | 1. | 0 | 1 | .0 | 1. | 1 | I.t |  | .3 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 5.1 |\n| Transportsystems | .1 | . | 1 |  | .4 | . | 4 | .5 |  | .4 | . | 5 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 2.4 |\n| Mass system | .2 | . | 3 |  | .8 | . | 9 | 1.0 | 1 | .1 | 1. | 2 | 1 | .1 | 1. | 1 | 1.0 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 8.7 |\n| Habitats | .5 | 1. | 6 | 2 | .5 | 2. | 6 | 2. 1 | 1. | 2 | 1. | 2 |  | .3 | . | 3 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 12.3 |\n| Subtotal | 1.4 | 3. | 0 | 4 | .7 | 5. | 0 | 4.7 | 3. | 0 | 2. | 9 | 1 | .4 | 1. | 4 | 1.0 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 28.5 |\n| PRODUCTION |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| Power&ma terials |  |  |  |  |  | . | 3 | 1.0 | 1 | .6 | 2. | 3 | 2 | .8 | 2. | 1 | .8 | 0. | 8 | 0.5 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 12.2 |\n| Transport |  | . | 1 |  | .3 | . | 3 | .1 |  | .1 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | .9 |\n| Mass |  |  |  |  |  |  |  | .2 |  | .2 | . | 2 |  | .3 | . | 2 | .2 | . | 2 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | --1.J |\n| Subtotal |  | . | 1 |  | .3 | . | 6 | 1.3 | 1 | .9 | 2. | 5 | 3 | .1 | 2. | 3 | 1.0 | 1. | 0 | .5 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 14.6 |\n| TRANSPORTATION |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | O | 2 | Availa | ble |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| Crew to LEO |  |  |  |  |  |  |  | .2 |  | .2 | . | 2 |  | .3 | . | 2 | .4 | . | 4 | 1.3 | 1. | 3 | 1.3 | 1. | 1 | 1.1 |  | 1.1 | 1. | 1 | 0 | .2 | 0. | 2 | 0.2 | 0.2 | 11.0 |\n| LEO |  |  |  |  |  |  |  | .3 |  | .8 | . | 7 | 1 | .6 | 1. | 6 | 2.1 | 1. | 9 | 1.5 | 1. | 6 | 2.0 | 2 | .1 | 2. | 3 | 2.2 | 2. | 2 | 2 | .0 | 2. | 2 | 2.2 | 2.2 | 31.5 |\n| Lunar base |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 3. | 8 | 8.0 | 4. | 9 | 1.4 | 1. | 7 | 2.9 |  | .2 | . | 2 | .2 | . | 2 |  | .2 | . | 2 | .2 | .2 | 24.3 |\n| Ls |  |  |  |  |  |  |  |  |  |  |  |  | 3 | .4 | 4. | 2 | .8 | 7. | 1 | 6.8 | 1. | 2 | 1.6 | 2. | 3 | 2. | 5 | 2.3 | 2. | 3 | 1 | .9 | 2. | 1 | 2.1 | 2.1 | 42.7 |\n| Subtotal |  |  |  |  |  |  |  | .5 | 1 | .0 | . | 9 | 5 | .2 | 9. | 8 | 11.3 | 14. | 3 | 11.0 | 5. | 8 | 7.8 | 5. | 7 | 6. | 1 | 5.8 | 5. | 8 | 4 | .3 | 4. | 7 | 4.7 | 4.7 | 109.5 |\n| Colonists |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 1 | .2 | 1. | 2 | 1.2 | 1.2 | ~ |\n| TOTALS MISCELLANEOUS and ADMINISTRA- | 2.3 | 3. | 1 | 5 | .0 | 5. | 6 | 6.5 | 5 | .9 | 6. | 3 | 9 | .8 | I3. | 5 | 13.3 | 15. | 3 | 11.5 | 5. | 8 | 7.8 | 5. | 7 | 6. | 1 | 5.8 | 5. | 8 | 5 | .5 | 5. | 9 | 5.9 | 5.9 | 159.0 |\n| TIVE(20% overhead) |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 31.8 $190.8B |",
+        "text": "COST TOTALS (1 975 $B). The table contains 21 data rows with columns for Years from Go Ahead:, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, \\3, 14, 1, 5, 16, 17, 18, 1, 9, 20, 21, 22, Totals."
+      }
+    },
+    {
+      "id": "sp413-s03463",
+      "table_markdown": "| (1)** Year of program | (2) Figure 6-2 costs | (3) Construction shack adjustments | (4) Lunar expansion & lunar SSPS power costs | (5) Transportation adjustments |\n| ---: | ---: | ---: | ---: | ---: |\n| 1 | 2.8 | −0.9 |  |  |\n| 2 | 3.7 |  |  |  |\n| 3 | 6.0 |  |  |  |\n| 4 | 6.7 |  |  |  |\n| 5 | 7.8 |  |  |  |\n| 6 | 7.1 |  |  |  |\n| 7 | 7.6 | −2.2 |  |  |\n| 8 | 11.8 | −3.3 |  |  |\n| 9 | 16.2 | −3.3 |  |  |\n| 10 | 16.0 |  | 2.29 |  |\n| 11 | 18.4 |  | 1.47 |  |\n| 12 | 13.8 | 2.54 | 1.47 |  |\n| 13 | 9.0 | 1.14 | 8.96 |  |\n| 14 | 9.4 | 2.07 | 8.96 |  |\n| 15 | 6.8 |  |  | 1.3 |\n| 16 | 7.3 |  |  |  |\n| 17 | 7.0 |  |  |  |\n| 18 | 7.0 |  |  |  |\n| 19 | 6.6 |  |  |  |\n| 20 | 7.1 |  |  |  |\n| 21 | 7.1 |  |  |  |\n| 22 | 7.1 |  |  | −4.5 |",
+      "caption": "TABLE 6-9. — ADJUSTMENTS IN BILLIONS OF 1975 DOLLARS TO THE COSTS GIVEN IN FIGURE 6-2*",
+      "verified_pdf_pages": [
+        170
+      ],
+      "notes": [
+        "* Costs of SSPS’s built after year 14 and costs of second and later colonies are not included in this table. All costs given in this chapter include a 20 percent surcharge in miscellaneous items and administration.",
+        "** Indicates columnar numbers referred to in text."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 6-9.ADJUSTMENTS IN BILLIONS OF 1975 DOLLARS TO THE COSTS GIVE IN FIGURE 6-2*",
+        "table_markdown": "| (1)** Yearof program | (2) Figure 6-2 costs | (3) Construction shack adjustments | (4) Lunar expansion &lunar SSPS power costs | (5) Transportation adjustments |\n| --- | --- | --- | --- | --- |\n| 1 | 2.8 | -0.9 |  |  |\n| 2 | 3.7 |  |  |  |\n| 3 | 6.0 |  |  |  |\n| 4 | 6.7 |  |  |  |\n| 5 | 7.8 |  |  |  |\n| 6 | 7.1 |  |  |  |\n| 7 | 7.6 | -2.2 |  |  |\n| 8 | 11.8 | -3.3 |  |  |\n| 9 | 16.2 | -3.3 |  |  |\n| 10 | 16.0 |  | 2.29 |  |\n| 11 | 18.4 |  | 1.47 |  |\n| 12 | l3.8 | 2.54 | 1.47 |  |\n| 13 | 9.0 | 1.14 | 8.96 |  |\n| 14 | 9.4 | 2.07 | 8.96 |  |\n| 15 | 6.8 |  |  | 1.3 |\n| 16 | 7.3 |  |  |  |\n| 17 | 7.0 |  |  |  |\n| 18 | 7.0 |  |  |  |\n| 19 | 6.6 |  |  |  |\n| 20 | 7.1 |  |  |  |\n| 21 | 7.1 |  |  |  |\n| 22 | 7.1 |  |  | - 4.5 |",
+        "text": "IN BILLIONS OF 1975 DOLLARS TO THE COSTS GIVE IN FIGURE 6-2*. The table contains 22 data rows with columns for (1)** Yearof program, (2) Figure 6-2 costs, (3) Construction shack adjustments, (4) Lunar expansion &lunar SSPS power costs, (5) Transportation adjustments."
+      }
+    },
+    {
+      "id": "sp413-s03532",
+      "table_markdown": "| Symbol | Units | Definition | Baseline magnitude |\n| --- | --- | --- | ---: |\n| M₅ | kg | Mass of Al in L₅ habitat | 5 × 10⁸ |\n| O | kg/kg/yr | Ratio of L₅ plant output/yr to plant mass | 8.3 |\n| E₅ | kg/kW | Specific mass of L₅ power plant | 14 |\n| K₅ | kW/kg/yr | Power required per unit mass of Al produced at L₅ | 2.2 × 10⁻³ |\n| W₅ | kg/person-yr | Productivity of L₅ workers | 46 × 10³ |\n| F₅ | yr⁻¹ | Crew rotation rate for workers at L₅ | 1 |\n| H₅ | kg/person | Mass of L₅ construction shack/person | 5 × 10³ |\n| D₅ | $/kg | Launch costs to L₅ | 800 |\n| R | kg/person-yr | Re-supply rate for workers | 1.7 × 10³ |\n| Mₘ | kg | Mass to be launched from Moon | 1.2 × 10¹⁰ |\n| Lₘ | kg/kg/yr | Ratio of launcher mass to mass launch rate | 4.6 × 10⁻³ |\n| Eₘ | kg/kW | Specific mass of lunar power plant | 45 |\n| Kₘ | kW/kg/yr | Power required per unit mass launched from Moon | 2 × 10⁻⁴ |\n| Hₘ | kg/person | Mass of lunar crew habitat/person | 7 × 10³ |\n| Fₘ | yr⁻¹ | Crew rotation rate for workers at Moon | 0.5 |\n| Nₘ | persons | Number of crew on Moon | 150 |\n| Dₘ | $/kg | Launch costs to Moon | 1600 |\n| Y | yr | Duration of the project − 8 yr | --- |",
+      "caption": "TABLE 6-10. — PARAMETERS OF THE COST EQUATION",
+      "verified_pdf_pages": [
+        173
+      ],
+      "notes": [
+        "Note — Y is not the duration of the project, but 8 yr less."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 6-10.PARAMETERS OF THE COST EQUATIO",
+        "table_markdown": "| Symbol | Units | Definition | Baseline magnitude |\n| --- | --- | --- | --- |\n| Ms | kg | MassofAIinLshabitat | 5X108 |\n| 0 | kg/kg/yr | RatioofLsplantoutput/yrtoplantmass | 8.3 |\n| Es | kg/kW | Specific massofLspowerplant | 14 |\n| Ks | kW/kg/yr | Power required perunitmassofAlproducedatLs | 2.2Xl()3 |\n| Ws | kg/person-yr | ProductivityofLsworkers | 46XI03 |\n| Fs | yr- 1 | Crew rotation rate for workersatLs | 1 |\n| Hs | kg/person | MassofLs construction shack/person | 5XI03 |\n| Os | $/kg | Launch coststoLs | 800 |\n| R | kg/person-yr | Re-supply rate for workers | 1.7X103 |\n| Mm | kg | Mass to be launched from Moon | 1.2XI010 |\n| Lm | kg/kg/yr | Ratiooflauncher mass to mass launch rate | 4.6X1()3 |\n| Em | kg/kW | Specific massoflunarpower plant | 45 |\n| ~ | kW/kg/yr | Power required per unit mass launched from Moon | 2X1()4 |\n| ~ | kg/person | Massoflunar crewhabitat/person | 7X103 |\n| Fm | y(1 | Crew rotation rate for workersatMoon | 0.5 |\n| Nm | persons | umberofcrew on Moon | ISO |\n| Om | $/kg | Launch costs to Moon | 1600 |\n| y | yr I | Durationofthe project - 8 yr | --- |",
+        "text": "OF THE COST EQUATIO. The table contains 18 data rows with columns for Symbol, Units, Definition, Baseline magnitude."
+      }
+    },
+    {
+      "id": "sp413-s03603",
+      "table_markdown": "| Year | Freight to L₅, $/kg | Freight to Moon, $/kg | People to L₅, $/person | People to Moon, $/person |\n| --- | ---: | ---: | ---: | ---: |\n| 1 | --- | --- | --- | --- |\n| 2 | --- | --- | --- | --- |\n| 3 | --- | --- | --- | --- |\n| 4 | --- | --- | --- | --- |\n| 5¹ | 960 | 1920 | 1,008,000 | 1,644,000 |\n| 6 |  |  |  |  |\n| 7 |  |  |  |  |\n| 8 |  |  |  |  |\n| 9 |  |  |  |  |\n| 10 |  |  |  |  |\n| 11 |  |  |  |  |\n| 12 |  |  |  |  |\n| 13² | 480 | 792 | 696,000 | 900,000 |\n| 14 |  |  |  |  |\n| 15 |  |  |  |  |\n| 16 |  |  |  |  |\n| 17 |  |  |  |  |\n| 18 |  |  |  |  |\n| 19 |  |  |  |  |\n| 20 |  |  |  |  |\n| 21 |  |  |  |  |\n| 22 & later³ | 110 | 182 | 160,000 | 206,000 |",
+      "caption": "TABLE 6-11. — TRANSPORTATION COSTS",
+      "verified_pdf_pages": [
+        176
+      ],
+      "notes": [
+        "¹ Before year 5 the program involves no transportation. The Space Shuttle and HLLV became available for use in year 5.",
+        "² O₂ becomes available in space for rocket propellant.",
+        "³ The second-generation shuttle becomes available.",
+        "Vertical arrows on the printed table indicate the costs hold between the listed change years; intervening year cells are blank in print."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 6-1l. - TRANSPORTATION COSTS",
+        "table_markdown": "| Year | Freight to Ls,$/kg | Freight to Moon, $/kg | People to Ls,$/person | People to Moon, $/person |\n| --- | --- | --- | --- | --- |\n| I |  |  |  |  |\n| 2 |  |  |  |  |\n| 3 |  |  |  |  |\n| 4 |  |  |  |  |\n| Sl | 960 | 1920 | 1,008,000 | 1,644,000 |\n| 6 |  |  |  |  |\n| 7 |  |  |  |  |\n| 8 |  |  |  |  |\n| 9 |  |  |  |  |\n| 10 |  |  |  |  |\n| IJ |  |  |  |  |\n| 12 |  |  |  |  |\n| 132 | 480 | 792 | 696,000 | 900,000 |\n| 14 |  |  |  |  |\n| IS |  |  |  |  |\n| 16 |  |  |  |  |\n| 17 |  |  |  |  |\n| 18 |  |  |  |  |\n| 19 |  |  |  |  |\n| 20 |  |  |  |  |\n| 2 1 |  |  |  |  |\n| 22&later3 | 110 | 182 | 160,000 | 206,000 |",
+        "text": "TRANSPORTATION COSTS. The table contains 22 data rows with columns for Year, Freight to Ls,$/kg, Freight to Moon, $/kg, People to Ls,$/person, People to Moon, $/person."
+      }
+    },
+    {
+      "id": "sp413-s03704",
+      "table_markdown": "| (1) Year of program | (2) Adjusted figure 6-2 costs³, billions $ | (3) Number of new terrestrial SSPSs | (4) SSPS labor at L₅, hundreds | (5) Number of colonies, new, old | (6) SSPS workers in colonies, hundreds | (7) SSPS workers in construction shacks at L₅, hundreds | (8) Labor at L₅ used to build second and later colonies, hundreds | (9) Number of new chemical processing & fabricating plants being used at L₅ to build SSPSs & 2nd & later colonies |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |\n| 1 | 1.9 |  |  |  |  |  |  |  |\n| 2 | 2.8 |  |  |  |  |  |  |  |\n| 3 | 5.1 |  |  |  |  |  |  |  |\n| 4 | 5.8 |  |  |  |  |  |  |  |\n| 5 | 6.9 |  |  |  |  |  |  |  |\n| 6 | 6.2 |  |  |  |  |  |  |  |\n| 7 | 5.4 |  |  |  |  |  |  |  |\n| 8 | 8.5 |  |  |  |  |  |  |  |\n| 9 | 12.9 |  |  |  |  |  |  |  |\n| 10 | 18.3 |  |  |  |  |  |  |  |\n| 11 | 19.9 |  |  |  |  |  |  |  |\n| 12 | 17.8 |  |  |  |  |  |  |  |\n| 13 | 19.1 |  |  |  |  |  |  |  |\n| 14 | 20.4 |  |  |  |  |  |  |  |\n| 15 | 8.1 | 1 | 27 |  |  | 27 |  | 3 |\n| 16 | 8.6 | 1 | 24 |  |  | 24 |  | 0 |\n| 17 | 8.3 | 1 | 22 |  |  | 22 |  | 0 |\n| 18 | 8.3 | 1 | 21 |  |  | 21 |  | 0 |\n| 19 | 7.9 | 1 | 19 |  |  | 19 |  | 0 |\n| 20 | 8.4 | 2 | 35 |  | 7 | 28 |  | 2 |\n| 21 | 8.4 | 2 | 33 |  | 22 | 11 |  | 0 |\n| 22 | 2.6 | 3 | 46 |  | 37 | 9 | 31 | 3 |\n| 23 | 0 | 3 | 43 | (1,0) | 43 | 0 | 55 | 1 |\n| 24 | 0 | 4 | 53 |  | 44 | 9 | 45 | 2 |\n| 25 | 0 | 7 | 86 |  | 44 | 42 | 12 | 6 |\n| 26 | 0 | 8 | 90 |  | 44 | 44 | 8 | 2 |\n| 27 | 0 | 8 | 84 |  | 44 | 40 | 14 | 0 |\n| 28 | 0 | 9 | 89 |  | 44 | 45 | 3 | 2 |\n| 29 | 0 | 9 | 83 |  | 83 | 0 | 0 | 0 |\n| 30 | 0 | 9 | 80 |  | 80 | 0 | 0 | 0 |\n| 31 | 0 | 10 | 85 |  | 85 | 0 | 0 | 2 |\n| 32 | 0 | 10 | 82 |  | 82 | 0 | 0 | 0 |\n| 33 | 0 | 11 | 86 |  | 86 | 0 | 0 | 3 |\n| 34 | 0 | 11 | 82 |  | 82 | 0 | 0 | 0 |\n| 35 | 0 | 12 | 90 |  | 88 | 0 | 0 | 2 |\n| 36 | 0 | 13 | 93 |  | 88 | 5 | 0 | 2 |\n| 37 | 0 | 13 | 88 |  | 88 | 0 | 0 | 2 |\n| 38 | 0 | 14 | 95 |  | 88 | 7 | 0 | 3 |\n| 39 | 0 | 15 | 97 |  | 88 | 9 | 12 | 2 |\n| 40 | 0 | 15 | 97 |  | 88 | 9 | 41 | 2 |\n| 41 | 0 | 16 | 98 |  | 88 | 10 | 40 | 2 |\n| 42 | 0 | 17 | 104 |  | 88 | 16 | 34 | 2 |\n| 43 | 0 | 18 | 104 | (1,1) | 74 | 30 | 20 | 2 |\n| 44 | 0 | 19 | 110 | (2,1) | 110 | 0 | 0 | 1 |\n| 45 | 0 | 20 | 109 | (2,1) | 109 | 0 | 0 | 2 |",
+      "caption": "TABLE 6-12. — COSTS AND BENEFITS OF A PROGRAM OF SPACE COLONIZATION IN 1975 DOLLARS¹",
+      "verified_pdf_pages": [
+        179,
+        181
+      ],
+      "notes": [
+        "Table panel prints columns (1)–(9), years 1–45.",
+        "Column (5) shows (1,0) at year 23, a downward arrow, (2,0) at year 29, a downward arrow, then (1,1) at year 43 and (2,1) at years 44–45; intermediate cells are blank in print.",
+        "The source printed costs in column (2) are 0 for years 23–45.",
+        "Footnote 1: The analysis runs for 70 yr. The numbers for the last 25 yr corresponding to table 6-12 are not given. They may, however, be calculated by the reader if desired. All of the required data are given within this chapter.",
+        "Footnote 2: Indicates columnar numbers referred to in text.",
+        "Footnote 3: These costs are obtained by summing the costs in table 6-9.",
+        "Footnote 4: All learn curves with respect to SSPS’s, colonies, and chemical processing and fabricating plants, have the first unit given in the table as the second unit in a learning curve since one colony, one SSPS, and one plant were produced previously and have their costs accounted for as part of the adjusted costs of figure 6-2.",
+        "Footnote 5: Second and later colonies which are finished in year X are assumed to provide their full complement of labor in year X-1. The first colony is assumed to be complete except for 37.5 percent of its radiation shield by the beginning of year 20. The colony is then slowly occupied. One-sixth of its full complement of export labor being available in year 20, one-half in year 21, five-sixths in year 22, and all of it thereafter. By the beginning of year 23 the colony has been completed.",
+        "Footnote 6: The initial SSPS dollar costs can be divided into a constant cost of $2.48 billion and a variable cost of $7.26 billion. The introduction of the second-generation shuttle system reduces these numbers to 1.99 and 4.77, respectively. The variable cost falls in accordance with an 80 percent learning curve until it has decreased by a factor of six. (See footnote 4.)",
+        "Footnote 7: All numbers in this column can be calculated from information given in table 6-12 except for the entries for years 15 through 22. These use as additional inputs the amount of labor related directly or indirectly to the first colony. In chronological order these inputs are 2671, 3010, 3214, 3316, 3486, 1375, 1375, and 1375 man-years.",
+        "Footnote 8: To help maintain in a reasonably smooth pattern of expenditures, $4 billion which, according to the algorithm, should have been spent in year 20 is moved to year 19. For similar reasons $2 billion is moved from year 25 to year 24. In practice these changes could be accomplished by purchasing on Earth some of the components for SSPS’s the year before they are actually needed."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 6-1 2.- COSTS AND BENEFITS OF A PROGRAM OF SPACE COLONIZATION IN 1975 DOLLARS 1",
+        "table_markdown": "| (I)2 | (2) | (3) | (4) | (5) | (6) | (7) | (8) | (9) |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Yearof program | Adjusted figure 6-2 costs3 | Numberof new terrestrial SSPS's | SSPS labor atLS,4 hundreds | umberof colonies,s new, old | SSPS workers incolonies,s hundreds | SSPS workers inconstruction shacks at Ls, hundreds | Labor at Ls used to build second and later colonies,4 hundreds | Numberofnew chemical processing& fabricating plants being used atLs to build SSPS's& 2nd&later colonies4 |\n| 1 | 1.9 |  |  |  |  |  |  |  |\n| 2 | 2.8 |  |  |  |  |  |  |  |\n| 3 | 5.1 |  |  |  |  |  |  |  |\n| 4 | 5.8 |  |  |  |  |  |  |  |\n| 5 | 6.9 |  |  |  |  |  |  |  |\n| 6 | 6.2 |  |  |  |  |  |  |  |\n| 7 | 5A |  |  |  |  |  |  |  |\n| 8 | 8.5 |  |  |  |  |  |  |  |\n| 9 | 12.9 |  |  |  |  |  |  |  |\n| 10 | 18.3 |  |  |  |  |  |  |  |\n| 11 | 19.9 |  |  |  |  |  |  |  |\n| 12 | 17.8 |  |  |  |  |  |  |  |\n| 13 | 19. 1 |  |  |  |  |  |  |  |\n| 14 | 20A |  |  |  |  |  |  |  |\n| 15 | 8. 1 | 1 | 27 |  |  | 27 |  | 3 |\n| 16 | 8.6 | I | 24 |  |  | 24 |  | 0 |\n| 17 | 8.3 | 1 | 22 |  |  | 22 |  | 0 |\n| 18 | 8.3 | 1 | 21 |  |  | 21 |  | 0 |\n| 19 | 7.9 | 1 | 19 |  |  | 19 |  | 0 |\n| 20 | 8A | 2 | 35 |  | 7 | 28 |  | 2 |\n| 2 1 | 8A | 2 | 33 |  | 22 | 11 |  | 0 |\n| 22 | 2.6 | 3 | 46 |  | 37 | 9 | 31 | 3 |\n| 23 | 0 | 3 | 43 | (1,0) | 43 | 0 | 55 | 1 |\n| 24 | 0 | 4 | 53 |  | 44 | 9 | 45 | 2 |\n| 25 | 0 | 7 | 86 |  | 44 | 42 | 12 | 6 |\n| 26 | 0 | 8 | 90 |  | 44 | 44 | 8 | 2 |\n| 27 | 0 | 8 | 84 |  | 44 | 40 | 14 | 0 |\n| 28 | 0 | 9 | 89 |  | 44 | 45 | 3 | 2 |\n| 29 | 0 | 9 | 83 | (2,0) | 83 | 0 | 0 | 0 |\n| 30 | 0 | 9 | 80 |  | 80 | 0 | 0 | 0 |\n| 31 | 0 | 10 | 85 |  | 85 | 0 | 0 | 2 |\n| 32 | 0 | 10 | 82 |  | 82 | 0 | 0 | 0 |\n| 33 | 0 | II | 86 |  | 86 | 0 | 0 | 3 |\n| 34 | 0 | II | 82 |  | 82 | 0 | 0 | 0 |\n| 35 | 0 | 12 | 90 |  | 88 | 0 | 0 | 2 |\n| 36 | 0 | 13 | 93 |  | 88 | 5 | 0 | 2 |\n| 37 | 0 | 13 | 88 |  | 88 | 0 | 0 | 2 |\n| 38 | 0 | 14 | 95 |  | 88 | 7 | 0 | 3 |\n| 39 | 0 | 15 | 97 |  | 88 | 9 | 12 | 2 |\n| 40 | 0 | 15 | 97 |  | 88 | 9 | 41 | 2 |\n| 41 | 0 | 16 | 98 |  | 88 | 10 | 40 | 2 |\n| 42 | 0 | 17 | 104 |  | 88 | 16 | 34 | 2 |\n| 43 | 0 | 18 | 104 | (1, I) | 74 | 30 | 20 | 2 |\n| 44 | 0 | 19 | 110 | (2, 1) | 110 | 0 | 0 | I |\n| 45 | 0 | 20 | 109 | (2,1) | 109 | 0 | 0 | 2 |",
+        "text": "2.- COSTS AND BENEFITS OF A PROGRAM OF SPACE COLONIZATION IN 1975 DOLLARS 1. The table contains 46 data rows with columns for (I)2, (2), (3), (4), (5), (6), (7), (8), (9)."
+      }
+    },
+    {
+      "id": "sp413-s03706",
+      "table_markdown": "| (1) Year of program | (10) SSPS costs⁴,⁶, billion $ | (11) Costs of second and later colonies, billions $ | (12) Total space population⁷, hundreds | (13) Labor costs⁴, billions $ | (14) Total costs,⁸ billions $ | (15) Total terrestrial SSPSs in use | (16) Benefits, billions $ | (17) Cash flow (benefits-costs), billions $ | (18) Costs of space colonization electricity once commercial SSPSs are being built |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |\n| 1 |  |  |  |  | 1.9 |  |  | −1.9 |  |\n| 2 |  |  |  |  | 2.8 |  |  | −2.8 |  |\n| 3 |  |  |  |  | 5.1 |  |  | −5.1 |  |\n| 4 |  |  |  |  | 5.8 |  |  | −5.8 |  |\n| 5 |  |  |  |  | 6.9 |  |  | −6.9 |  |\n| 6 |  |  |  |  | 6.2 |  |  | −6.2 |  |\n| 7 |  |  |  |  | 5.4 |  |  | −5.4 |  |\n| 8 |  |  |  |  | 8.5 |  |  | −8.5 |  |\n| 9 |  |  |  |  | 12.9 |  |  | −12.9 |  |\n| 10 |  |  |  |  | 18.3 |  |  | −18.3 |  |\n| 11 |  |  |  |  | 19.9 |  |  | −19.9 |  |\n| 12 |  |  |  |  | 17.8 |  |  | −17.8 |  |\n| 13 |  |  |  |  | 19.1 |  |  | −19.1 |  |\n| 14 |  |  |  |  | 20.4 |  |  | −20.4 |  |\n| 15 | 8.3 |  | 64 | 6.4 | 24.7 |  |  | −24.7 |  |\n| 16 | 7.6 |  | 63 | 5.7 | 23.8 | 1 | 1.2 | −22.6 |  |\n| 17 | 7.1 |  | 62 | 5.4 | 22.7 | 2 | 2.3 | −20.4 |  |\n| 18 | 6.9 |  | 62 | 4.8 | 21.9 | 3 | 3.5 | −18.4 |  |\n| 19 | 6.6 |  | 61 | 4.5 | 24.9 | 4 | 4.7 | −20.2 |  |\n| 20 | 12.5 |  | 71 | 7.2 | 27.6 | 5 | 5.8 | −21.8 |  |\n| 21 | 11.9 |  | 87 | 4.5 | 28.3 | 7 | 8.1 | −20.2 |  |\n| 22 | 12.4 | 1.7 | 159 | 3.1 | 24.8 | 9 | 10.5 | −14.3 |  |\n| 23 | 12.0 | 3.0 | 176 | 3.9 | 24.1 | 12 | 13.9 | −10.2 | 8.5 |\n| 24 | 15.4 | 2.5 | 179 | 4.1 | 30.0 | 15 | 17.4 | −12.6 | 8.3 |\n| 25 | 26.0 | .7 | 187 | 4.5 | 36.9 | 19 | 22.0 | −14.9 | 8.1 |\n| 26 | 28.5 | .4 | 186 | 4.5 | 41.8 | 26 | 30.2 | −11.6 | 7.7 |\n| 27 | 27.7 | .8 | 187 | 4.5 | 41.5 | 34 | 39.4 | −2.1 | 7.5 |\n| 28 | 30.4 | .2 | 181 | 4.3 | 43.9 | 42 | 48.7 | 4.8 | 7.3 |\n| 29 | 29.5 | 0 | 220 | 2.0 | 40.5 | 51 | 59.1 | 18.6 | 7.1 |\n| 30 | 29.1 | 0 | 212 | 1.8 | 39.9 | 60 | 69.6 | 29.7 | 7.0 |\n| 31 | 31.8 | 0 | 224 | 2.0 | 43.5 | 69 | 80.0 | 36.5 | 6.9 |\n| 32 | 31.3 | 0 | 216 | 1.9 | 42.9 | 79 | 91.6 | 48.7 | 6.7 |\n| 33 | 34.0 | 0 | 227 | 2.0 | 46.2 | 89 | 103.2 | 57.0 | 6.6 |\n| 34 | 33.4 | 0 | 216 | 1.9 | 45.5 | 100 | 115.9 | 70.4 | 6.5 |\n| 35 | 36.5 | 0 | 233 | 2.2 | 49.5 | 111 | 128.7 | 79.2 | 6.5 |\n| 36 | 38.9 | 0 | 239 | 2.4 | 52.8 | 123 | 142.6 | 89.8 | 6.4 |\n| 37 | 38.3 | 0 | 233 | 2.0 | 51.5 | 136 | 157.7 | 106.2 | 6.3 |\n| 38 | 41.2 | 0 | 242 | 2.6 | 55.5 | 149 | 172.7 | 117.2 | 6.2 |\n| 39 | 43.4 | .8 | 258 | 3.3 | 60.0 | 163 | 188.9 | 128.9 | 6.2 |\n| 40 | 43.4 | 2.6 | 291 | 4.9 | 63.6 | 178 | 206.3 | 142.7 | 6.1 |\n| 41 | 45.6 | 2.5 | 291 | 4.9 | 66.2 | 193 | 223.7 | 157.5 | 6.0 |\n| 42 | 48.4 | 2.1 | 292 | 5.0 | 69.3 | 209 | 242.3 | 173.0 | 5.9 |\n| 43 | 50.4 | 1.3 | 291 | 4.9 | 70.7 | 226 | 262.0 | 191.3 | 5.9 |\n| 44 | 53.2 | 0 | 323 | 2.6 | 70.3 | 244 | 282.8 | 212.5 | 5.8 |\n| 45 | 55.8 | 0 | 320 | 2.6 | 73.5 | 263 | 304.8 | 231.3 | 5.8 |",
+      "caption": "TABLE 6-12. — Continued",
+      "verified_pdf_pages": [
+        180,
+        181
+      ],
+      "notes": [
+        "Continuation panel prints columns (10)–(18), aligned with years 1–45 from the previous page.",
+        "Empty cells are blank in print. The values in column (18) begin at year 23.",
+        "Page 180 directs the reader to footnotes on the next page."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "TABLE 6-12.- Continued",
+        "table_markdown": "| (10) SSPS costs,4,6 billion$ | (I1) Costs of second and later colonies, billions$ | (12) _Total_space population,7 hundreds | (13) Labor costs,4 billions$ | (14) Total costs,S billions$ | (15) Total terrestrial SSPS's in use | (16) Benefits, billions$ | (17) Cashflow (benefits-costs), billions$ | (18) Costsofspace colonization electricity once commercial SSPS's are being built |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  | 1.9 2.8 5.1 5.8 6.9 6.2 5.4 |  |  | - 1.9 -2.8 -5.1 -5.8 -6.9 - 6.2 - 5.4 |  |\n|  |  |  |  | 8.5 12.9 |  |  | -8.5 - 12.9 |  |\n|  |  |  |  | 18.3 |  |  | - 18.3 |  |\n|  |  |  |  | 19.9 17.8 19.1 |  |  | - 19.9 - 17.8 - 19. 1 |  |\n|  |  |  |  | 20.4 |  |  | - 20.4 |  |\n| 8.3 |  | 64 | 6.4 | 24.7 |  |  | - 24.7 |  |\n| 7.6 |  | 63 | 5.7 | 23.8 | I | 1.2 | - 22.6 |  |\n| 7.1 |  | 62 | 5.4 | 22.7 | 2 | ? ~ _..) | - 20.4 |  |\n| 6.9 |  | 62 | 4.8 | 21.9 | 3 | 3.5 | - 18.4 |  |\n| 6.6 |  | 61 | 4.5 | 24.9 | 4 | 4.7 | - 20.2 |  |\n| 12.5 |  | 71 | 7.2 | 27.6 | 5 | 5.8 | - 21.8 |  |\n| 11.9 |  | 87 | 4.5 | 28.3 | 7 | 8.1 | -20.2 |  |\n| 12.4 | 1.7 | 159 | 3. 1 | 24.8 | 9 | 10.5 | - 14.3 |  |\n| 12.0 | 3.0 | 176 | 3.9 | 24.1 | 12 | 13.9 | - 10.2 | 8.5 |\n| 15.4 | 2.5 | 179 | 4.1 | 30.0 | 15 | 17.4 | - 12.6 | 8.3 |\n| 26.0 | .7 | 187 | 4.5 | 36.9 | 19 | 22.0 | - 14.9 | 8.1 |\n| 28.5 | .4 | 186 | 4.5 | 41.8 | 26 | 30.2 | - 11.6 | 7.7 |\n| 27.7 | .8 | 187 | 4.5 | 41.5 | 34 | 39.4 | - 2.1 | 7.5 |\n| 30.4 | .2 | 18 1 | 4.3 | 43.9 | 42 | 48.7 | 4.8 | 7.3 |\n| 29.5 | 0 | 220 | 2.0 | 40.5 | 51 | 59.1 | 18.6 | 7.1 |\n| 29. 1 | 0 | 212 | 1.8 | 39.9 | 60 | 69.6 | 29.7 | 7.0 |\n| 31.8 | 0 | 224 | 2.0 | 43.5 | 69 | 80.0 | 36.5 | 6.9 |\n| 31.3 | 0 | 216 | 1.9 | 42.9 | 79 | 91.6 | 48.7 | 6.7 |\n| 34.0 | 0 | 227 | 2.0 | 46.2 | 89 | 103.2 | 570 | 66 |\n| 33.4 | 0 | 216 | 1.9 | 45.5 | 100 | 115.9 | . 70.4 | . 6.5 |\n| 36.5 | 0 | 233 | 2.2 | 49.5 | 111 | 128.7 | 79.2 | 6.5 |\n| 38.9 | 0 | 239 | 2.4 | 52.8 | 123 | 142.6 | 89.8 | 6.4 |\n| 38.3 | 0 | 233 | 2.0 | 51.5 | 136 | 157.7 | 106.2 | 6.3 |\n| 41.2 | 0 | 242 | 2.6 | 55.5 | 149 | 172.7 | 117.2 | 6.2 |\n| 43.4 | .8 | 258 | 3.3 | 60.0 | 163 | 188.9 | 128.9 | 6.2 |\n| 43.4 | 2.6 | 29 1 | 49 | 636 | 178 | 2063 | 1427 | 6 1 |\n| 45.6 | 2.5 | 29 1 | . 4.9 | . 662 | 193 | . 2237 | . 1575 | . 60 |\n| 48.4 | 2. 1 | 292 | 5.0 | . 69.3 | 209 | . 242.3 | . 1730 | . 59 |\n| 50.4 | 1.3 | 29 1 | 4.9 | 70.7 | 226 | 262.0 | . 19 1.3 | . 5.9 |\n| 53.2 | 0 | 323 | 2.6 | 70.3 | 244 | 282.8 | 2125 | 58 |\n| 55.8 | 0 | 320 | 2.6 | 73.5 | 263 | 304.8 | . 23 1.3 | . 5. |",
+        "text": "Continued. The table contains 36 data rows with columns for (10) SSPS costs,4,6 billion$, (I1) Costs of second and later colonies, billions$, (12) _Total_space population,7 hundreds, (13) Labor costs,4 billions$, (14) Total costs,S billions$, (15) Total terrestrial SSPS's in use, (16) Benefits, billions$, (17) Cashflow (benefits-costs), billions$, (18) Costsofspace colonization electricity once commercial SSPS's are being built."
+      }
+    },
+    {
+      "id": "sp413-s03789",
+      "table_markdown": "| (1)² Item | (2) Capacity | (3) Costs at purchase of parts bought on Earth, $10⁹ | (4) Transportation for parts bought on Earth when oxygen and the 2nd-generation shuttle system are available,³ $10⁹ | (5) Costs & location of labor for construction, man-years | (6) Number of chemical processing & fabricating plants needed⁴ | (7) Annual maintenance & operation costs |\n| --- | --- | ---: | ---: | --- | ---: | --- |\n| SSPS⁵ | 10 GW at busbar on Earth | 4.6100 | 0.6600 | 2950 at L₅ | 1.9900 | $30 million; 30 man-yr not at L₅, not on Moon |\n| 2nd & later colonies | 10,000 persons | .2595 | 7.3090 | 19,820 at L₅ | 5.0000 | 6 |\n| Interlibrational transfer vehicle | 500 kt/yr delivered to L₅⁶ | .0300 | .0055 | 100 at L₅ | .0035 | 11 man-yr at L₅ |\n| Mass catcher | Catches 313 kt/yr | .0060 | .0011 | 100 not at L₅, not on Moon | .0033 | 13 man-yr, not on L₅, not on Moon |\n| Mass driver⁷ | 625 kt/yr | .4507 | .1367 | 700 on Moon | 0 | 75 man-yr on Moon |\n| Moon base | 100 persons | .0721 | .0219 | 25 on Moon | 0 | 6 |\n| Lunar rectenna | 448 GW at busbar | 17.4312 | 5.2875 | 2777 on Moon | 0 | 6 |\n| Construction shacks | 100 persons | .0300 | .0055 | 25 at construction shack location | .0045 at L₅ | 6 |",
+      "caption": "TABLE 6-13. — COSTS OF VARIOUS ITEMS¹",
+      "verified_pdf_pages": [
+        183
+      ],
+      "notes": [
+        "¹ All costs are in 1975 dollars.",
+        "² Indicates columnar numbers referred to in text.",
+        "³ Transportation costs from Earth to those places denoted as not at L₅ and not on the Moon are assumed to be the same as transportation costs from Earth to L₅.",
+        "⁴ In order to work at full capacity, a chemical processing and fabricating plant requires an input of 1,000 kt of lunar rock annually.",
+        "⁵ All costs for these items are before the effects of learning curves have been taken into account. These effects are discussed in appendix D. Do not overlook footnote 6 of table 6-12.",
+        "⁶ An ILTV must start at the mass catchers with 625 kt of lunar rock in order to deliver 500 kt to L₅.",
+        "⁷ A mass driver requires 0.12 GW to run at full capacity.",
+        "The maintenance/operation cells for 2nd & later colonies, Moon base, Lunar rectenna, and Construction shacks each print a plain baseline 6, not a superscript footnote marker."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| (I)2 Item | (2) Capacity | (3) Costs at purchaseof partsbought onEarth, $10 9 | (4) Transportation forpartsbought on Earthwhen oxygen and the 2nd-generation shuttle system are available,3 $109 | (5) Costs& locationof labor for construction, man-years | (6) Numberof chemical processing& fabricating plants needed4 | (7) Annual maintenance &operation costs |\n| --- | --- | --- | --- | --- | --- | --- |\n| SSPS S | 10GWat busbar onEarth | 4.6100 | 0.6600 | 2950atLs | 1.9900 | $30 million 30man-yrnot atLs, notonMoon |\n| 2nd&later colonies | 10,000 persons | .2595 | 7.3090 | 19,820 at Ls | 5.0000 | 6 |\n| In terlibrational transfer vehicle | 500kt/yr delivered to Ls6 | .0300 | .0055 | 100atLs | .0035 | IIman-yr atLs |\n| Masscatcher | Catches 313kt/yr | .0060 | .0011 | 100notat Ls, noton Moon | .0033 | 13 man-yr, notonLs, noton Moon |\n| Mass driver7 | 625kt/yr | .4507 | .1367 | 700onMoon | 0 | 75 man-yron Moon |\n| Moonbase | 100persons | .0721 | .0219 | 25onMoon | 0 | 6 |\n| Lunar rectenna | 448GWat busbar | 17.431 2 | 5.2875 | 2777on Moon | 0 | 6 |\n| Construction shacks | 100persons | .0300 | .0055 | 25 atconstruc- tion shack location | .0045 atLs | 6 |",
+        "text": "Data from PDF page 183. The table contains 8 data rows with columns for (I)2 Item, (2) Capacity, (3) Costs at purchaseof partsbought onEarth, $10 9, (4) Transportation forpartsbought on Earthwhen oxygen and the 2nd-generation shuttle system are available,3 $109, (5) Costs& locationof labor for construction, man-years, (6) Numberof chemical processing& fabricating plants needed4, (7) Annual maintenance &operation costs."
+      }
+    },
+    {
+      "id": "sp413-s04319",
+      "table_markdown": "| Symbol | Name | Definition | Equivalent or example |\n| --- | ---: | ---: | ---: |\n| A | angstrom | A unit of length most often used in reference to the wavelength of light | 10⁻¹⁰ m |\n| atm | standard atmosphere | A unit of pressure equal to standard sea-level atmospheric pressure | 14.7 psi; 760 mm Hg; 1.0132 bars; 101.325 kPa |\n| AU | astronomical unit | The mean distance between the Earth and the Sun | 149,600,000 km; 92,961,000 mi |\n| C | coulomb | A unit of electric charge | The charge transferred by a current of 1 ampere in 1 second |\n| cal | calorie | A unit of energy | The amount of heat required to raise the temperature of 1 g of water 1°C; 4.1868 J |\n| Cal | large calorie | A unit of food energy | 1000 cal |\n| eV | electron volt | A unit of energy | The energy gained by an electron accelerated through a potential difference of 1 volt; 1.60219 × 10⁻¹⁹ J |\n| g | gee | A unit of acceleration | Acceleration due to gravity at the mean surface of the Earth; 980.665 cm/s²; 32.174 ft/s² |\n| g | gram | A metric unit of weight | 0.03527 oz (avoirdupois) |\n| ha | hectare | A metric unit of field area | 100 m × 100 m, i.e., 10⁴ m²; 2.471 acres |",
+      "caption": "TABLE A. — UNITS AND CONVERSION FACTORS",
+      "verified_pdf_pages": [
+        200
+      ],
+      "notes": [
+        "Visually transcribed from the original PDF page image."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| A | angstrom | UNITSANDCONVERSIONFACTORS aunitoflengthmostoftenused in referencetothe wavelengthoflight =l(flOm |\n| --- | --- | --- |\n| atm | standard atmosphere | a unitofpressure basedona standardized sea level terrestrial atmospheric pressure |\n|  |  | 14.7psi 760mmHg 1.0132bars 101.325 kPa |\n| AU | astronomical unit | aunitoflength usedinastronomyand astronautics, referencedtothemean distance betweenEarthandSun |\n|  |  | 149,600,000km 92,961,000rni |\n| C | coulomb | aunitofelectrical charge equal totheamountofelectricity transferred by acurrentof 1ampere for1second |\n| cal | calorie | aunitofenergyequaltotheamountnecessary to raiseIgofwater1 0C =4.1868 J |\n| Cal | large calorie | aunitofenergy used in referencetothe energycontentoffood =1000cal |\n| eV | electron volt | aunitofenergy used in particle physics, theamountofenergy acquired by anelectronin being acceleratedthroughapotentialdifferenceof1volt =1.60219X W\"l9J |\n| g | \" gee\" | the accelerationofgravityatthemean surfaceoftheEarth 980.665cm/s2 32.174ft/s 2 |\n| g | gram | a_unit_ofweight in themetricsystem =0.03527oz (avoirdupois) |\n| ha | hectare | ametric_unit_ofarea used in field measurements 100mX100m,i.e.,104m2 2.471acres |",
+        "text": "Data from PDF page 200. The table contains 11 data rows with columns for A, angstrom, UNITSANDCONVERSIONFACTORS aunitoflengthmostoftenused in referencetothe wavelengthoflight =l(flOm."
+      }
+    },
+    {
+      "id": "sp413-s04321",
+      "table_markdown": "| Symbol | Name | Definition | Equivalent or example |\n| --- | ---: | ---: | ---: |\n| Hz | hertz | A unit of frequency | cycle/s |\n| J | joule | A unit of energy or work | The work done when a force of 1 newton moves its point of application 1 m in the direction of the force; 10⁷ ergs; 23.02 ft-poundals |\n| m | meter | A metric unit of length | 3.2808 ft |\n| mil | mil | A unit of cost | 0.001 dollar |\n| N | newton | A unit of force in the mks system | The force that gives a 1-kg mass an acceleration of 1 m/s²; 10⁵ dynes; 7.015 poundals |\n| Pa | pascal | A unit of pressure | 1 N/m²; 10⁻⁵ bar; 0.0000098 atm; 0.0001372 psi |\n| rad | rad | A unit of absorbed radiation dosage | 10⁻² J/kg; 100 ergs/g |\n| R | roentgen | A unit of absorbed radiation based on ionization in tissue | 2.58 × 10⁻⁴ coulombs/kg; defined by gamma radiation producing ions carrying one electrostatic unit of charge in one cubic centimeter of air; loosely applied to any ionizing radiation with the same effect |\n| rem | rem (roentgen equivalent, man) | A unit of radiation dose relating to biological effects of different types of radiation | For X-rays, 1 rem results from exposure to 1 roentgen |",
+      "caption": "TABLE A. — UNITS AND CONVERSION FACTORS (CONTINUED)",
+      "verified_pdf_pages": [
+        201
+      ],
+      "notes": [
+        "Visually transcribed from the original PDF page image."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| Hz | hertz | a unitoffrequency =cyele/s |\n| --- | --- | --- |\n| J | joule | unitofenergy or work; the work done when the pointofapplicationof1 newton moves a distanceof1meter in the directionofthe force |\n|  |  | 107ergs 23.02 ft poundals |\n| m | meter | metric unitoflength |\n|  |  | =3.2808 ft |\n| mil | mil | a unitofcost |\n|  |  | =$0.001 |\n| N | newton | unitofforce in the meter-kilogram-second system;thatforce which gives to a massof 1kilogram an accelerationof1m/s2 |\n|  |  | 105dynes 7.015poundals |\n| Pa | pascal | a unitofpressure 1 N/m2 1(J5bar 0.0000098atm 0.0001372psi |\n| rad | rad | a unitofabsorbed radiation dosage |\n|  |  | _1(J2_J/kg 100 ergs/g |\n| R | roentgen | a unitofabsorbed radiation based ontheamountofionization produced in tissue |\n|  |  | =2.S8Xl<r4coulombs/kg |\n|  |  | (defined strictlyastheamountofgamma radiation sufficient to produce ions carrying one electrostatic unitofcharge in one cubic centimeterofair;butloosely used to apply to any ionizing radiation producing the same effect) |\n| rem | rem | the roentgen equivalent, man; expresses the relative biological effectofdifferent typesof radiation |\n|  |  | ForX-rays, 1 rem results from the exposureof_1_roentgen. |",
+        "text": "Data from PDF page 201. The table contains 16 data rows with columns for Hz, hertz, a unitoffrequency =cyele/s."
+      }
+    },
+    {
+      "id": "sp413-s04323",
+      "table_markdown": "| Symbol | Name | Definition | Equivalent or example |\n| --- | ---: | ---: | ---: |\n| t | tonne | A metric unit of mass for large masses | 1000 kg; 0.98 long tons; 1.10 short tons |\n| T | tesla | A unit of magnetic flux density | 1 Wb/m² |\n| W | watt | A unit of power | 1 J/s; 10⁷ ergs/s; 23.02 ft-poundals/s; 1.301 × 10⁻³ horsepower |\n| Wb | weber | A unit of magnetic flux | The magnetic flux that produces an emf of 1 volt in a one-turn circuit when reduced to zero uniformly in 1 second |",
+      "caption": "TABLE A. — UNITS AND CONVERSION FACTORS (CONTINUED)",
+      "verified_pdf_pages": [
+        202
+      ],
+      "notes": [
+        "Visually transcribed from the original PDF page image."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "|  | tonne | usedasa metricunitofmass for large masses |\n| --- | --- | --- |\n|  |  | 1000kg 0.98tons(long) 1.1 0tons(short) |\n| T | tesla | aunitofmagnetic flux density |\n| W | watt | unitofpower |\n|  |  | lI/s =107ergs/s 23.02ftpoundals/s |\n|  |  | 1.301 XHf3horsepower |\n| Wb | weber | unitofmagnetic flux;thefluxwhichproduces an electromotive forceofone volt in a circuit ofoneturnwhen thisfluxisreducedtozeroatauniformrate in onesecond |",
+        "text": "Data from PDF page 202. The table contains 6 data rows with columns for tonne, usedasa metricunitofmass for large masses."
+      }
+    },
+    {
+      "id": "sp413-s04325",
+      "table_markdown": "| Symbol | Name | Definition | Equivalent or example |\n| --- | ---: | ---: | ---: |\n| G | giga | billion (10⁹) | GW = gigawatt = 1 billion watts |\n| M | mega | million (10⁶) | MeV = million electron volts |\n| k | kilo | thousand (10³) | km = kilometer (0.6214 miles) = 1000 meters |\n| c | centi | hundredth (10⁻²) | cm = centimeter (2.54 inches) |\n| m | milli | thousandth (10⁻³) | mm = millimeter |\n| µ | micro | millionth (10⁻⁶) | µm = micrometer = one millionth of a meter |",
+      "caption": "TABLE B. — METRIC PREFIXES",
+      "verified_pdf_pages": [
+        202
+      ],
+      "notes": [
+        "Visually transcribed from the original PDF page image."
+      ],
+      "uncertain_cells": [],
+      "original_type": "table",
+      "original": {
+        "caption": "",
+        "table_markdown": "| Prefix | Name | Multiplication factor |  | Example |\n| --- | --- | --- | --- | --- |\n| G | giga | billion(109) | GW | =gigawatt =1 billionwatts |\n| M | mega | million(106) | MeV | =millionelectronvolts |\n| k | kilo | thousand(103) | km | =kilometer(0.6214miles) =1000meters |\n| c | centi | hundredth (10-2) | em | =centimeter(2.54inches) |\n| m | milli | thousandth (10-3) | rom | =millimeter |\n|  | micro | millionth (10-6) | pm | =micrometer =one millionthofameter |",
+        "text": "Data from PDF page 202. The table contains 6 data rows with columns for Prefix, Name, Multiplication factor, Example."
+      }
+    }
+  ]
+}

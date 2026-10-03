@@ -43,7 +43,7 @@ class StudyReaderBuildTests(unittest.TestCase):
         self.assertEqual(result["table_count"], 1)
         self.assertEqual(len([s for s in data["segments"] if s["type"] == "table"]), 1)
         self.assertIn("id=\"study-article\"", page)
-        self.assertIn("id=\"chapter-menu-toggle\"", page)
+        self.assertIn("id=\"chapter-navigation\"", page)
         self.assertIn("id=\"search-results\"", page)
         self.assertNotIn("class=\"report-page\"", page)
         self.assertEqual(data["segments"][0]["pdf_page"], 18)
@@ -85,7 +85,7 @@ class StudyReaderBuildTests(unittest.TestCase):
             page = index_path.read_text(encoding="utf-8")
         self.assertEqual(result, index_path)
         self.assertIn("id=\"chapter-navigation\"", page)
-        self.assertIn("204 PDF pages", page)
+        self.assertNotIn("204 PDF pages", page)
         self.assertIn("href=\"#pdf-104\"", page)
 
 
