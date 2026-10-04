@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-export const CHARACTER = Object.freeze({ radius: .35, height: 2, speed: 5, jumpSpeed: 5,
+export const CHARACTER = Object.freeze({ radius: .35, height: 2, eyeHeight: 1.65, speed: 15, jumpSpeed: 5 * Math.SQRT2,
     gravity: 9.32, stepHeight: .3, fixedDelta: 1 / 120, maxFrameDelta: .25,
     majorRadius: 830, tubeRadius: 65 });
 const SKIN = 1e-5;

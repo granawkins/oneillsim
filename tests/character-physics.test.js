@@ -16,14 +16,37 @@ function box(world, id, x,y,z, w,h,d, rotation=0, scale=1) {
     mesh.position.set(x,y,z); mesh.rotation.y=rotation; mesh.scale.setScalar(scale); root.add(mesh);
     world.setObject(id,root); return {root,mesh};
 }
+// Small authored fixtures retain their original motion timings; default tuning
+// and high-speed collision are exercised separately below.
 const controller = (world=new ColliderWorld(), options={}) => {
-    const c = new CharacterController(world,options); c.teleport(new THREE.Vector3(830,0,0)); return c;
+    const c = new CharacterController(world,{ speed: 5, jumpSpeed: 5, ...options }); c.teleport(new THREE.Vector3(830,0,0)); return c;
 };
 const run=(c,seconds,direction=new THREE.Vector3(),hz=120)=>{for(let i=0;i<Math.round(seconds*hz);i++)c.advance(1/hz,direction);};
 const height=c=>830-Math.hypot(c.position.x,c.position.y);
 const tangent=new THREE.Vector3(0,1,0);
 const close=(a,b,tol=.03)=>assert.ok(Math.abs(a-b)<tol,`${a} != ${b} ± ${tol}`);
 
+ test('default tuning moves 15m/s and jumps about twice the original height',()=>{
+    const c=new CharacterController(new ColliderWorld());
+    c.teleport(new THREE.Vector3(830,0,0));run(c,1,new THREE.Vector3(0,0,-1));
+    close(c.position.z,-15,1e-8);
+    const old=controller();let oldApex=0,newApex=0;
+    old.queueJump();c.queueJump();
+    for(let i=0;i<240;i++){old.advance(1/120);c.advance(1/120);oldApex=Math.max(oldApex,height(old));newApex=Math.max(newApex,height(c));}
+    close(newApex/oldApex,2,.02);assert.ok(c.grounded);assert.ok(newApex>2.6&&newApex<2.7);
+    console.log(JSON.stringify({tuning:{speed:c.config.speed,oldApex,newApex,eyeHeight:c.config.eyeHeight}}));
+ });
+ test('default high speed remains frame-independent and cannot cross a thin wall',()=>{
+    const positions=[];
+    for(const hz of [15,30,60,144]){
+        const c=new CharacterController(new ColliderWorld());c.teleport(new THREE.Vector3(830,0,0));
+        run(c,2,new THREE.Vector3(0,0,1),hz);positions.push(c.position.clone());
+        const w=new ColliderWorld();box(w,'thin',2,3,0,.001,6,100);
+        const blocked=new CharacterController(w);blocked.teleport(new THREE.Vector3(830,0,0));run(blocked,1,tangent,hz);
+        assert.ok(blocked.position.y<1.66);assert.ok(blocked.grounded);
+    }
+    for(const p of positions)assert.ok(p.distanceTo(positions[0])<1e-8);
+ });
  test('normal jump uses seconds, lands without input, and cannot double-jump',()=>{
     const c=controller(); c.queueJump(); let apex=0;
     for(let i=0;i<150;i++){c.advance(1/120);apex=Math.max(apex,height(c)); if(i===30)c.queueJump();}
@@ -123,7 +146,7 @@ const close=(a,b,tol=.03)=>assert.ok(Math.abs(a-b)<tol,`${a} != ${b} ± ${tol}`)
     const buildMs=performance.now()-start;
     assert.equal(saved.assets.length,387);assert.equal(JSON.stringify(saved),serialized);
     assert.equal(characterColliders.colliders.size,387+terraceMeshes.length);
-    const c=controller(characterColliders,{groundExists:theta=>!inTerraceSector(theta)});
+    const c=controller(characterColliders,{groundExists:theta=>!inTerraceSector(theta),speed:CHARACTER.speed,jumpSpeed:CHARACTER.jumpSpeed});
     const timings=[];let sum=0,max=0;const beforeQueries=characterColliders.stats.queries,beforeCandidates=characterColliders.stats.candidates;
     for(let i=0;i<1200;i++){
         const theta=i/1200*Math.PI*2, r=830+(i%3===0?48:0),z=i%2?0:24;
@@ -139,9 +162,14 @@ const close=(a,b,tol=.03)=>assert.ok(Math.abs(a-b)<tol,`${a} != ${b} ± ${tol}`)
     assert.ok(timings[1140]<10,`p95 ${timings[1140]}ms`);assert.ok(buildMs<5000);
     // Ascend the real rendered 15m / 100-riser farm staircase, not a ramp proxy.
     const stair=saved.terraces.stairs[0],theta=stair.end+.002;
-    const climber=controller(characterColliders,{groundExists:t=>!inTerraceSector(t)});
+    const climber=controller(characterColliders,{groundExists:t=>!inTerraceSector(t),speed:CHARACTER.speed});
     climber.teleport(new THREE.Vector3(840*Math.cos(theta),840*Math.sin(theta),50));
-    for(let i=0;i<850;i++){const a=Math.atan2(climber.position.y,climber.position.x);climber.advance(1/120,new THREE.Vector3(Math.sin(a),-Math.cos(a),0));}
+    for(let i=0;i<850;i++){
+        const a=Math.atan2(climber.position.y,climber.position.x);
+        if(a<stair.start-.001)break; // Stop on the upper landing, not beyond its next edge.
+        climber.advance(1/120,new THREE.Vector3(Math.sin(a),-Math.cos(a),0));
+    }
+    run(climber,2);
     close(height(climber),5,.03);assert.ok(climber.grounded);
     assert.ok(Math.atan2(climber.position.y,climber.position.x)<stair.start);
  });

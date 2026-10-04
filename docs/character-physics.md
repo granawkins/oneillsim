@@ -4,8 +4,9 @@
 
 `src/physics/character-controller.js` owns the SI-unit configuration (`CHARACTER`), fixed-step controller and capsule/triangle contacts. `src/physics/collider-world.js` owns the habitat-local spatial hash and `characterColliders` singleton. The human camera adapter is `src/controls/modes/human.js`; planner/god movement, zoom, camera presets and deck UI remain separate.
 
-- Capsule: 0.35 m radius, 2 m height; eye at the capsule's upper tip. Foot position is the physics origin.
-- Walk: 5 m/s, normalized diagonal input. Jump: 5 m/s initial upward speed, approximately 1.32 m apex at the centerline. Step clearance: 0.30 m. Higher terraces require the existing stairs, not enlarged jumps.
+- Capsule: 0.35 m radius, 2 m height; gameplay eye at 1.65 m, the upper capsule sphere's center, leaving 0.35 m clearance from solid walls/ceilings. Foot position is the physics origin. Frozen URL/capture presets retain their original 2 m camera convention.
+- Walk: 15 m/s, normalized diagonal input (3x the initial controller). Jump: `5 * Math.SQRT2` m/s initial upward speed, measured 2.657 m apex versus the original 1.322 m. Velocity is scaled by sqrt(2), not 2, to approximately double height. Step clearance remains 0.30 m.
+- Camera near plane: 0.05 m instead of 1 m. It must remain comfortably below capsule/eye clearance, including the near-plane corners, so solid surfaces are not clipped away when pressed against them. `tests/camera-clearance.browser.test.js` verifies red wall/ceiling pixels at contact and reproduces the old blue-background leak with the 1 m setting.
 - Physics: 120 Hz accumulator, incoming frame delta capped at 0.25 s. Additional travel subdivisions cap each collision increment at 0.14 m. Excess real time after a stall is intentionally discarded rather than causing a teleport or unbounded catch-up.
 - Gravity: outward radial, `9.32 * radialDistance / 830` m/s², in the rotating habitat's local coordinates. No Coriolis/inertial dynamics are claimed.
 - Invisible containment: both capsule-end spheres are constrained to the tube's circular cross-section (major radius 830 m, tube radius 65 m), including inner, outer and both Z sides. This is the project's centerline-ground presentation, not a historical floor-layout claim.

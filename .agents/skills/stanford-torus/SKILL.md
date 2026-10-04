@@ -64,6 +64,8 @@ Use `terminal(command="sudo systemctl cat oneillsim.service")` before changing r
 - Preserve fingerprinted WebP skyboxes, gzip for large text responses, ETag revalidation, immutable versioned-asset caching, and fresh `world.json`. Details/tests: `docs/loading-performance.md`.
 - Profile actual world contents, load time, collision cost, and draw calls before choosing optimizations. Do not promise game-like performance without measurements.
 - Use small browser-test viewports for state assertions on this software-WebGL host. Distinguish external CDN/startup timeouts from gameplay failures; retain behavior assertions and use a bounded readiness wait. Verify deployed physics with unrouted browser visits, not only candidate response interception.
+- Keep the gameplay eye inside the collision capsule, not at its upper tip, and keep the camera near plane smaller than eye/surface clearance; verify opaque contact with rendered pixel assertions (`tests/camera-clearance.browser.test.js`). Capture-preset eye height is a separate convention.
+- Import browser state once before polling it synchronously in `waitForFunction`; an observed async predicate resolved to a false handle instead of waiting for landing. Adapt fixture travel/landing duration to movement tuning and stop stair tests on the landing rather than sprinting past its next edge.
 - Delegate independent tasks with explicit files, acceptance criteria, source references, and forbidden side effects. On shared `main`, use disjoint file ownership or scratch outputs plus parent integration; never let agents overwrite each other's catalogs/worlds or independently restart production.
 
 ## Pitfalls and verification

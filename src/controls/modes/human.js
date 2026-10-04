@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { supportAt, inTerraceSector } from '../../terrace-surfaces.js';
 import { characterColliders } from '../../physics/collider-world.js';
 import { CharacterController } from '../../physics/character-controller.js';
-import { CAMERA_HEIGHT, PLAYER_RADIUS } from '../constants.js';
+import { GROUND_RADIUS } from '../constants.js';
 import { yaw, cameraAnchor, moveState, humanState } from '../state.js';
 
 export const humanController = new CharacterController(characterColliders, {
@@ -20,7 +20,7 @@ const hit = new THREE.Vector3();
 
 function fromCamera() {
     up.set(-cameraAnchor.position.x, -cameraAnchor.position.y, 0).normalize();
-    foot.copy(cameraAnchor.position).addScaledVector(up, -CAMERA_HEIGHT);
+    foot.copy(cameraAnchor.position).addScaledVector(up, -humanController.config.eyeHeight);
     humanController.teleport(foot);
     humanState.jumpRequested = false;
     initialized = true;
@@ -40,7 +40,7 @@ export function setupHumanMode() {
         }
     }
     if (height !== null) {
-        const radius = PLAYER_RADIUS - height;
+        const radius = GROUND_RADIUS - humanController.config.eyeHeight - height;
         pos.x = radius * Math.cos(theta); pos.y = radius * Math.sin(theta);
     }
     cameraAnchor.rotation.set(0, 0, theta + Math.PI / 2);
@@ -50,7 +50,7 @@ export function setupHumanMode() {
 
 function syncCamera() {
     up.copy(humanController.radialUp());
-    cameraAnchor.position.copy(humanController.position).addScaledVector(up, CAMERA_HEIGHT);
+    cameraAnchor.position.copy(humanController.position).addScaledVector(up, humanController.config.eyeHeight);
     const theta = Math.atan2(cameraAnchor.position.y, cameraAnchor.position.x);
     cameraAnchor.rotation.z = theta + Math.PI / 2;
     humanState.floorHeight = 830 - Math.hypot(humanController.position.x, humanController.position.y);

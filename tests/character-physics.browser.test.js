@@ -57,7 +57,10 @@ test('actual animation falls while unlocked, input clears, and planner/god/zoom 
         const page=await browser.newPage({viewport:{width:320,height:240}});const guard=await interceptCandidate(page);
         await fixture(page,{terraces:{decks:[{id:'lower',start:0,end:.3,height:-12,bands:[[-10,10]]}],stairs:[]}});
         await page.goto(base+'?theta=5&z=0',{waitUntil:'domcontentloaded'});await ready(page);
-        await page.waitForFunction(async()=>{const {humanState}=await import('./src/controls/state.js');return humanState.floorHeight< -11.9&&humanState.isGrounded;},null,{timeout:30000});
+        // Expose the imported state once; polling must be synchronous. An async
+        // predicate can return a truthy Promise before its condition is true.
+        await page.evaluate(async()=>{window.__testHumanState=(await import('./src/controls/state.js')).humanState;});
+        await page.waitForFunction(()=>window.__testHumanState.floorHeight< -11.9&&window.__testHumanState.isGrounded,null,{timeout:30000});
         const falling=await page.evaluate(async()=>{
             const {humanState,moveState}=await import('./src/controls/state.js');
             moveState.forward=true;moveState.left=true;humanState.jumpRequested=true;
@@ -114,7 +117,7 @@ test('placement/deletion updates colliders, actual authored model transforms and
             for(let i=0;i<360;i++)modelController.advance(1/120);
             const roofHeight=830-Math.hypot(modelController.position.x,modelController.position.y),roofGrounded=modelController.grounded;
             const c=new CharacterController(characterColliders);c.teleport(new THREE.Vector3(830,-3,0));
-            for(let i=0;i<240;i++)c.advance(1/120,new THREE.Vector3(0,1,0));
+            for(let i=0;i<80;i++)c.advance(1/120,new THREE.Vector3(0,1,0));
             const wallPosition=c.position.toArray();
             const removed=removeAsset(id),cleared=!characterColliders.colliders.has(id),restored=characterColliders.triangleCount===initial;
             // Exercise the camera wrapper's yaw-to-WASD and jump queue, not just
@@ -123,7 +126,7 @@ test('placement/deletion updates colliders, actual authored model transforms and
             const start=humanController.position.clone();setYaw(0);moveState.forward=true;
             for(let i=0;i<60;i++)updateHumanMode(1/60);moveState.forward=false;
             humanState.jumpRequested=true;let apex=0;
-            for(let i=0;i<180;i++){updateHumanMode(1/120);apex=Math.max(apex,humanState.floorHeight);}
+            for(let i=0;i<240;i++){updateHumanMode(1/120);apex=Math.max(apex,humanState.floorHeight);}
             return {placed,trianglesAdded,data,removed,cleared,restored,wallPosition,roofHeight,roofGrounded,zMotion:humanController.position.z-start.z,apex,grounded:humanState.isGrounded};
         });
         assert.ok(result.placed);assert.equal(result.trianglesAdded,984);assert.ok(result.removed&&result.cleared&&result.restored);
@@ -131,7 +134,7 @@ test('placement/deletion updates colliders, actual authored model transforms and
         assert.equal(result.data.scale,4);assert.equal(result.data.rotation,Math.PI/4);assert.equal(result.data.surface.height,2);
         assert.ok(result.wallPosition[1]-result.wallPosition[2]<-.45,`rotated wall must slide/stop ${result.wallPosition}`);
         assert.ok(result.wallPosition[2]>3,'diagonal plane should redirect motion, not freeze it');
-        assert.ok(result.zMotion< -4.9);assert.ok(result.apex>1.2&&result.apex<1.4);assert.ok(result.grounded);
+        assert.ok(Math.abs(result.zMotion + 15)<.02);assert.ok(result.apex>2.6&&result.apex<2.7);assert.ok(result.grounded);
         assert.equal(guard.writes.length,0);console.log(JSON.stringify({candidateEditing:result}));
     }finally{await browser.close();}
 });

@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 // Only candidate src responses are replaced. Everything else is still the real
 // existing loopback service; there is no QA server and no production write.
 export const candidateSourceFiles = [
-    'src/main.js', 'src/terraces.js', 'src/editor/placement.js',
+    'src/main.js', 'src/scene.js', 'src/terraces.js', 'src/editor/placement.js',
     'src/controls/index.js', 'src/controls/state.js', 'src/controls/input.js', 'src/controls/constants.js',
     'src/controls/modes/human.js', 'src/physics/collider-world.js',
     'src/physics/character-controller.js'
