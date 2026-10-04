@@ -1,11 +1,12 @@
 // Library roadmap, separate from the simulator's catalog of placeable models.
 import {streetKit} from './street-kit.js';
 import {residentialKit} from './residential-kit.js';
+import {districtKit} from './district-kit.js';
 // References belong to a type; each variant has its own model manifest and stats.
 export const assetGroups = [
   ['Homes & civic buildings', ['Houses', 'Apartments', 'Schools', 'Clinics', 'Community centers', 'Sports facilities']],
   ['Businesses & industry', ['Shops', 'Markets', 'Restaurants', 'Offices', 'Workshops', 'Factories', 'Warehouses']],
-  ['Plants & landscape', ['Trees', 'Shrubs', 'Grasses', 'Flowers', 'Rocks', 'Ponds', 'Streams']],
+  ['Plants & landscape', ['Gardens & parks', 'Public terraces', 'Trees', 'Shrubs', 'Grasses', 'Flowers', 'Rocks', 'Ponds', 'Streams']],
   ['Food & agriculture', ['Grain crops', 'Beans & other legumes', 'Vegetable crops', 'Fruit trees', 'Greenhouses', 'Growing beds', 'Irrigation equipment', 'Cattle', 'Chickens', 'Rabbits', 'Fish', 'Animal housing', 'Aquaculture tanks']],
   ['Transport & access', ['Footpaths', 'Roads', 'Bridges', 'Stairs & ramps', 'Rail tracks', 'Transit stations', 'Buses', 'Utility carts', 'Bicycles']],
   ['Utilities & life support', ['Water tanks', 'Pumps', 'Water treatment', 'Air handling', 'Waste processing', 'Power distribution', 'Pipes & cables', 'Lighting']],
@@ -56,6 +57,18 @@ for (const {id,slug,name} of residentialKit) {
     type.references = houses.references;
     type.source = 'NASA SP-413 · modular terrace housing';
     type.facts = houses.facts;
+  }
+}
+for (const {id,slug,name} of districtKit) {
+  const type=assetTypes.find(t=>t.slug===slug);
+  if (!type) throw new Error(`Missing district asset type: ${slug}`);
+  const thumbnail=`/oneillsim/assets/icons/ultimate-buildings/${id}.png`;
+  type.variants.push({id,name,directory:'ultimate-buildings',thumbnail});
+  type.thumbnail ||= thumbnail;
+  if (!type.source) {
+    type.source='NASA SP-413 · community allocations; architecture and landscape are authored interpretation';
+    type.references=[{label:'Table 3-2 · community space allocations',href:'/study/#sp413-s00708'},{label:'Residential architecture and pedestrian spaces',href:'/study/#sp413-s02268'}];
+    type.facts=['The study describes modular homes, groups up to four/five stories, pedestrian terraces and commerce below the central plain.','These assets fit the existing Residential A parcels and cylinder curvature; detailed plans, gardens, materials and stairs are authored interpretations, not construction specifications.'];
   }
 }
 export function findAssetType(slug) { return assetTypes.find(type => type.slug === slug); }

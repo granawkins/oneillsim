@@ -1,0 +1,208 @@
+[
+  {
+    "assetId": "TorusDistrict_Housing5A",
+    "category": "housing",
+    "width": 43.79296875,
+    "depth": 16,
+    "height": 15,
+    "levels": 5,
+    "elevation": -48,
+    "parcelIds": [
+      "residential-a-1",
+      "residential-a-2",
+      "residential-a-3",
+      "residential-a-4",
+      "residential-a-5",
+      "residential-a-6",
+      "residential-a-7",
+      "residential-a-8",
+      "residential-a-9",
+      "residential-a-10",
+      "residential-a-11",
+      "residential-a-12",
+      "residential-a-13",
+      "residential-a-14",
+      "residential-a-15",
+      "residential-a-16"
+    ],
+    "textureAtlas": "TorusDistrictBuildings_Atlas.png"
+  },
+  {
+    "assetId": "TorusDistrict_Housing4A",
+    "category": "housing",
+    "width": 50.049107142857146,
+    "depth": 14,
+    "height": 12,
+    "levels": 4,
+    "elevation": -32,
+    "parcelIds": [
+      "residential-a-17",
+      "residential-a-18",
+      "residential-a-19",
+      "residential-a-20",
+      "residential-a-21",
+      "residential-a-22",
+      "residential-a-23",
+      "residential-a-24",
+      "residential-a-25",
+      "residential-a-26",
+      "residential-a-27",
+      "residential-a-28",
+      "residential-a-29",
+      "residential-a-30",
+      "residential-a-31",
+      "residential-a-32"
+    ],
+    "textureAtlas": "TorusDistrictBuildings_Atlas.png"
+  },
+  {
+    "assetId": "TorusDistrict_Housing2A",
+    "category": "housing",
+    "width": 70.06875,
+    "depth": 10,
+    "height": 6,
+    "levels": 2,
+    "elevation": -12,
+    "parcelIds": [
+      "residential-a-33",
+      "residential-a-34",
+      "residential-a-35",
+      "residential-a-36",
+      "residential-a-37",
+      "residential-a-38",
+      "residential-a-39",
+      "residential-a-40",
+      "residential-a-41",
+      "residential-a-42",
+      "residential-a-43",
+      "residential-a-44",
+      "residential-a-45",
+      "residential-a-46",
+      "residential-a-47",
+      "residential-a-48"
+    ],
+    "textureAtlas": "TorusDistrictBuildings_Atlas.png"
+  },
+  {
+    "assetId": "TorusDistrict_SchoolA",
+    "category": "schools",
+    "width": 39.67857142857143,
+    "depth": 14,
+    "height": 11.4,
+    "levels": 3,
+    "elevation": -32,
+    "parcelIds": [
+      "residential-a-51",
+      "residential-a-55"
+    ],
+    "textureAtlas": "TorusDistrictBuildings_Atlas.png"
+  },
+  {
+    "assetId": "TorusDistrict_ClinicA",
+    "category": "hospital",
+    "width": 35.71071428571428,
+    "depth": 14,
+    "height": 5,
+    "levels": 1,
+    "elevation": -32,
+    "parcelIds": [
+      "residential-a-52",
+      "residential-a-56"
+    ],
+    "textureAtlas": "TorusDistrictBuildings_Atlas.png"
+  },
+  {
+    "assetId": "TorusDistrict_HallA",
+    "category": "assembly",
+    "width": 78.1171875,
+    "depth": 16,
+    "height": 10,
+    "levels": 1,
+    "elevation": -48,
+    "parcelIds": [
+      "residential-a-53",
+      "residential-a-54",
+      "residential-a-57",
+      "residential-a-58"
+    ],
+    "textureAtlas": "TorusDistrictBuildings_Atlas.png"
+  },
+  {
+    "assetId": "TorusDistrict_ShopsA",
+    "category": "shops",
+    "width": 127.765,
+    "depth": 30,
+    "height": 8,
+    "levels": 2,
+    "elevation": -61.5,
+    "parcelIds": [
+      "residential-a-236"
+    ],
+    "textureAtlas": "TorusDistrictBuildings_Atlas.png"
+  },
+  {
+    "assetId": "TorusDistrict_OfficesA",
+    "category": "offices",
+    "width": 37.03333333333333,
+    "depth": 30,
+    "height": 12,
+    "levels": 3,
+    "elevation": -61.5,
+    "parcelIds": [
+      "residential-a-237"
+    ],
+    "textureAtlas": "TorusDistrictBuildings_Atlas.png"
+  },
+  {
+    "assetId": "TorusDistrict_WorkshopA",
+    "category": "industry",
+    "width": 222.2,
+    "depth": 30,
+    "height": 12,
+    "levels": 2,
+    "elevation": -61.5,
+    "parcelIds": [
+      "residential-a-238"
+    ],
+    "textureAtlas": "TorusDistrictBuildings_Atlas.png"
+  },
+  {
+    "assetId": "TorusDistrict_StorageA",
+    "category": "storage",
+    "width": 138.875,
+    "depth": 30,
+    "height": 12.8,
+    "levels": 4,
+    "elevation": -61.5,
+    "parcelIds": [
+      "residential-a-239"
+    ],
+    "textureAtlas": "TorusDistrictBuildings_Atlas.png"
+  },
+  {
+    "assetId": "TorusDistrict_RecreationA",
+    "category": "recreation",
+    "width": 111.1,
+    "depth": 30,
+    "height": 3,
+    "levels": 1,
+    "elevation": -61.5,
+    "parcelIds": [
+      "residential-a-240"
+    ],
+    "textureAtlas": "TorusDistrictBuildings_Atlas.png"
+  },
+  {
+    "assetId": "TorusDistrict_CommunityA",
+    "category": "miscellaneous",
+    "width": 107.39666666666666,
+    "depth": 30,
+    "height": 11.399999999999999,
+    "levels": 3,
+    "elevation": -61.5,
+    "parcelIds": [
+      "residential-a-241"
+    ],
+    "textureAtlas": "TorusDistrictBuildings_Atlas.png"
+  }
+]

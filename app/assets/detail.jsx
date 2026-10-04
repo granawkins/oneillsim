@@ -6,7 +6,9 @@ export default function AssetDetail({ type, selected, variants }) {
  const modelRoot = `/oneillsim/assets/${selected.directory}/`;
  const manifest = variants.find(variant => variant.id === selected.id)?.stats;
  const atlas = manifest?.textureAtlas || `${selected.id}_Atlas.png`;
- const captureDistance = manifest?.family === 'Residential buildings'
+ const captureDistance = selected.id.startsWith('TorusDistrict_')
+   ? Math.min(2000, Math.max(7, ...manifest.actualModelBoundsMeters.map(([min,max]) => (max-min)*2.8)))
+   : manifest?.family === 'Residential buildings'
    ? Math.min(45, Math.max(7, ...manifest.actualModelBoundsMeters.map(([min,max]) => (max-min)*2.8)))
    : manifest?.family === 'Furniture & small props' ? 6 : 17;
  return <AssetViewer key={selected.id} assetId={selected.id} assetRoot={modelRoot}>

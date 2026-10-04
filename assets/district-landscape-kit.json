@@ -1,0 +1,681 @@
+[
+  {
+    "category": "circulation",
+    "width": 44.58058563729617,
+    "depth": 16,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Path01",
+    "parcelIds": [
+      "residential-a-93"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "circulation",
+    "width": 45.260762809593245,
+    "depth": 16,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Path02",
+    "parcelIds": [
+      "residential-a-91",
+      "residential-a-92"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "circulation",
+    "width": 65.81783146207749,
+    "depth": 14,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Path03",
+    "parcelIds": [
+      "residential-a-77",
+      "residential-a-78",
+      "residential-a-79",
+      "residential-a-80",
+      "residential-a-81",
+      "residential-a-82",
+      "residential-a-83",
+      "residential-a-84",
+      "residential-a-85",
+      "residential-a-86",
+      "residential-a-87",
+      "residential-a-88"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "circulation",
+    "width": 74.22463228843688,
+    "depth": 16,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Path04",
+    "parcelIds": [
+      "residential-a-63",
+      "residential-a-64",
+      "residential-a-65",
+      "residential-a-66",
+      "residential-a-67",
+      "residential-a-68",
+      "residential-a-69",
+      "residential-a-70",
+      "residential-a-71",
+      "residential-a-72",
+      "residential-a-73",
+      "residential-a-74"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "circulation",
+    "width": 124.51907118976555,
+    "depth": 6,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Path05",
+    "parcelIds": [
+      "residential-a-89",
+      "residential-a-90"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "circulation",
+    "width": 124.51907118976555,
+    "depth": 14,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Path06",
+    "parcelIds": [
+      "residential-a-61",
+      "residential-a-62"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "circulation",
+    "width": 269.4670816891705,
+    "depth": 4,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -12,
+    "assetId": "TorusDistrict_Path07",
+    "parcelIds": [
+      "residential-a-75",
+      "residential-a-76"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "circulation",
+    "width": 269.4670816891705,
+    "depth": 10,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -12,
+    "assetId": "TorusDistrict_Path08",
+    "parcelIds": [
+      "residential-a-59",
+      "residential-a-60"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "park",
+    "width": 578.0880051921844,
+    "depth": 28.827790665643978,
+    "height": 0.12,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_ParkA",
+    "parcelIds": [
+      "residential-a-49",
+      "residential-a-50"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 0.6801771722970216,
+    "depth": 16,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Terrace01",
+    "parcelIds": [
+      "residential-a-94"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 19.7519668730622,
+    "depth": 16,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Terrace02",
+    "parcelIds": [
+      "residential-a-134",
+      "residential-a-135",
+      "residential-a-136",
+      "residential-a-137"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 21.554930281528414,
+    "depth": 10,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -12,
+    "assetId": "TorusDistrict_Terrace03",
+    "parcelIds": [
+      "residential-a-178",
+      "residential-a-179",
+      "residential-a-180",
+      "residential-a-181"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 23.999999999999773,
+    "depth": 16,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Terrace04",
+    "parcelIds": [
+      "residential-a-132",
+      "residential-a-133"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 32.90891573103886,
+    "depth": 6,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Terrace05",
+    "parcelIds": [
+      "residential-a-184",
+      "residential-a-185",
+      "residential-a-186",
+      "residential-a-187"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 32.90891573103886,
+    "depth": 14,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Terrace06",
+    "parcelIds": [
+      "residential-a-104",
+      "residential-a-105",
+      "residential-a-106",
+      "residential-a-107"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 35.71071428571429,
+    "depth": 6,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Terrace07",
+    "parcelIds": [
+      "residential-a-182",
+      "residential-a-183"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 37.11231614421838,
+    "depth": 16,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Terrace08",
+    "parcelIds": [
+      "residential-a-100",
+      "residential-a-101",
+      "residential-a-102",
+      "residential-a-103"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 39.678571428571445,
+    "depth": 6,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Terrace09",
+    "parcelIds": [
+      "residential-a-176",
+      "residential-a-177"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 42.346537622991875,
+    "depth": 2,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Terrace10",
+    "parcelIds": [
+      "residential-a-235"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 43.10986056305683,
+    "depth": 4,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -12,
+    "assetId": "TorusDistrict_Terrace11",
+    "parcelIds": [
+      "residential-a-188",
+      "residential-a-189",
+      "residential-a-190",
+      "residential-a-191",
+      "residential-a-192",
+      "residential-a-193",
+      "residential-a-194",
+      "residential-a-195",
+      "residential-a-196",
+      "residential-a-197",
+      "residential-a-198",
+      "residential-a-199"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 43.10986056305683,
+    "depth": 10,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -12,
+    "assetId": "TorusDistrict_Terrace12",
+    "parcelIds": [
+      "residential-a-108",
+      "residential-a-109",
+      "residential-a-110",
+      "residential-a-111",
+      "residential-a-112",
+      "residential-a-113",
+      "residential-a-114",
+      "residential-a-115",
+      "residential-a-116",
+      "residential-a-117",
+      "residential-a-118",
+      "residential-a-119"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 45.260762809593245,
+    "depth": 2,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Terrace13",
+    "parcelIds": [
+      "residential-a-234"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 45.26076280959319,
+    "depth": 16,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Terrace14",
+    "parcelIds": [
+      "residential-a-95"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 47.82971159823336,
+    "depth": 6,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Terrace15",
+    "parcelIds": [
+      "residential-a-156",
+      "residential-a-157"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 47.82971159823336,
+    "depth": 14,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Terrace16",
+    "parcelIds": [
+      "residential-a-98",
+      "residential-a-99"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 49.813640169661994,
+    "depth": 6,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Terrace17",
+    "parcelIds": [
+      "residential-a-154",
+      "residential-a-155"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 49.813640169661994,
+    "depth": 14,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Terrace18",
+    "parcelIds": [
+      "residential-a-96",
+      "residential-a-97"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 50.04910714285717,
+    "depth": 6,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Terrace19",
+    "parcelIds": [
+      "residential-a-138",
+      "residential-a-139",
+      "residential-a-140",
+      "residential-a-141",
+      "residential-a-142",
+      "residential-a-143",
+      "residential-a-144",
+      "residential-a-145",
+      "residential-a-146",
+      "residential-a-147",
+      "residential-a-148",
+      "residential-a-149",
+      "residential-a-150",
+      "residential-a-151",
+      "residential-a-152",
+      "residential-a-153"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 65.81783146207749,
+    "depth": 6,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Terrace20",
+    "parcelIds": [
+      "residential-a-120",
+      "residential-a-121",
+      "residential-a-122",
+      "residential-a-123",
+      "residential-a-124",
+      "residential-a-125",
+      "residential-a-126",
+      "residential-a-127",
+      "residential-a-128",
+      "residential-a-129",
+      "residential-a-130",
+      "residential-a-131"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 70.06875000000002,
+    "depth": 4,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -12,
+    "assetId": "TorusDistrict_Terrace21",
+    "parcelIds": [
+      "residential-a-158",
+      "residential-a-159",
+      "residential-a-160",
+      "residential-a-161",
+      "residential-a-162",
+      "residential-a-163",
+      "residential-a-164",
+      "residential-a-165",
+      "residential-a-166",
+      "residential-a-167",
+      "residential-a-168",
+      "residential-a-169",
+      "residential-a-170",
+      "residential-a-171",
+      "residential-a-172",
+      "residential-a-173"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 74.22463228843688,
+    "depth": 1.5861046671780112,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Terrace22",
+    "parcelIds": [
+      "residential-a-222",
+      "residential-a-223",
+      "residential-a-224",
+      "residential-a-225",
+      "residential-a-226",
+      "residential-a-227",
+      "residential-a-228",
+      "residential-a-229",
+      "residential-a-230",
+      "residential-a-231",
+      "residential-a-232",
+      "residential-a-233"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 74.22463228843688,
+    "depth": 2,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Terrace23",
+    "parcelIds": [
+      "residential-a-204",
+      "residential-a-205",
+      "residential-a-206",
+      "residential-a-207",
+      "residential-a-208",
+      "residential-a-209",
+      "residential-a-210",
+      "residential-a-211",
+      "residential-a-212",
+      "residential-a-213",
+      "residential-a-214",
+      "residential-a-215"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 78.1171875,
+    "depth": 1.5861046671780112,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Terrace24",
+    "parcelIds": [
+      "residential-a-218",
+      "residential-a-219",
+      "residential-a-220",
+      "residential-a-221"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 78.1171875,
+    "depth": 2,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_Terrace25",
+    "parcelIds": [
+      "residential-a-200",
+      "residential-a-201",
+      "residential-a-202",
+      "residential-a-203"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 124.51907118976555,
+    "depth": 1,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -32,
+    "assetId": "TorusDistrict_Terrace26",
+    "parcelIds": [
+      "residential-a-216",
+      "residential-a-217"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "terrace",
+    "width": 269.4670816891705,
+    "depth": 1,
+    "height": 0.06,
+    "levels": 1,
+    "elevation": -12,
+    "assetId": "TorusDistrict_Terrace27",
+    "parcelIds": [
+      "residential-a-174",
+      "residential-a-175"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  },
+  {
+    "category": "trees",
+    "width": 3,
+    "depth": 3,
+    "height": 4,
+    "levels": 1,
+    "elevation": -48,
+    "assetId": "TorusDistrict_TreeA",
+    "parcelIds": [
+      "residential-a-242",
+      "residential-a-243",
+      "residential-a-244",
+      "residential-a-245",
+      "residential-a-246",
+      "residential-a-247",
+      "residential-a-248",
+      "residential-a-249",
+      "residential-a-250",
+      "residential-a-251",
+      "residential-a-252",
+      "residential-a-253",
+      "residential-a-254",
+      "residential-a-255",
+      "residential-a-256",
+      "residential-a-257",
+      "residential-a-258",
+      "residential-a-259",
+      "residential-a-260",
+      "residential-a-261",
+      "residential-a-262",
+      "residential-a-263",
+      "residential-a-264",
+      "residential-a-265",
+      "residential-a-266",
+      "residential-a-267",
+      "residential-a-268",
+      "residential-a-269",
+      "residential-a-270",
+      "residential-a-271",
+      "residential-a-272",
+      "residential-a-273",
+      "residential-a-274",
+      "residential-a-275",
+      "residential-a-276",
+      "residential-a-277",
+      "residential-a-278",
+      "residential-a-279",
+      "residential-a-280",
+      "residential-a-281",
+      "residential-a-282",
+      "residential-a-283",
+      "residential-a-284",
+      "residential-a-285",
+      "residential-a-286",
+      "residential-a-287",
+      "residential-a-288",
+      "residential-a-289",
+      "residential-a-290",
+      "residential-a-291",
+      "residential-a-292",
+      "residential-a-293",
+      "residential-a-294",
+      "residential-a-295",
+      "residential-a-296",
+      "residential-a-297"
+    ],
+    "textureAtlas": "TorusDistrictLandscape_Atlas.png"
+  }
+]

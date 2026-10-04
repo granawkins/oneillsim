@@ -1,0 +1,255 @@
+{
+  "assetId": "TorusDistrict_Terrace18",
+  "family": "Residential A landscape",
+  "generator": "assets/scripts/build_torus_district_landscape.py",
+  "obj": "TorusDistrict_Terrace18.obj",
+  "mtl": "TorusDistrict_Terrace18.mtl",
+  "textureAtlas": "TorusDistrictLandscape_Atlas.png",
+  "preview": "TorusDistrict_Terrace18_Preview.png",
+  "icon": "assets/icons/ultimate-buildings/TorusDistrict_Terrace18.png",
+  "category": "terrace",
+  "parcelIds": [
+    "residential-a-96",
+    "residential-a-97"
+  ],
+  "dimensionsMetres": {
+    "width": 49.813640169661994,
+    "depth": 14,
+    "height": 0.06
+  },
+  "levels": 1,
+  "elevation": -32,
+  "boundsOBJ": {
+    "min": [
+      -6.225838636160277,
+      0.00014393262591738676,
+      -1.75
+    ],
+    "max": [
+      6.225838636160277,
+      0.26602199961993733,
+      1.75
+    ]
+  },
+  "boundsMetres": {
+    "min": [
+      -24.903354544641108,
+      0.000575730503669547,
+      -7.0
+    ],
+    "max": [
+      24.903354544641108,
+      1.0640879984797493,
+      7.0
+    ]
+  },
+  "intrinsicRenderedBoundsMetres": {
+    "min": [
+      -24.906820084830997,
+      0,
+      -7.0
+    ],
+    "max": [
+      24.906820084830997,
+      0.96,
+      7.0
+    ]
+  },
+  "intrinsicReservedExtentsMetres": {
+    "min": [
+      -24.906820084830997,
+      0,
+      -7.0
+    ],
+    "max": [
+      24.906820084830997,
+      0.06,
+      7.0
+    ]
+  },
+  "originalParcels": [
+    {
+      "id": "residential-a-96",
+      "width": 49.813640169661994,
+      "depth": 14,
+      "height": 0.06,
+      "levels": 1,
+      "elevation": -32,
+      "theta": 0.8157815861668392,
+      "z": -43,
+      "deckId": "residential-a-middle"
+    },
+    {
+      "id": "residential-a-97",
+      "width": 49.813640169661994,
+      "depth": 14,
+      "height": 0.06,
+      "levels": 1,
+      "elevation": -32,
+      "theta": 0.8157815861668392,
+      "z": 43,
+      "deckId": "residential-a-middle"
+    }
+  ],
+  "dimensionDedupeToleranceMetres": 1e-09,
+  "coordinateSystem": "+Y up, local feet intrinsic y=0, +Z facade; curved exported local Y may be positive away from centre",
+  "objScale": 0.25,
+  "intendedPlacementScale": 4,
+  "curvature": {
+    "referenceRadius": 830,
+    "radius": 862,
+    "mapping": "X=(r-y)*sin(x/r); Y=r-(r-y)*cos(x/r); Z=z",
+    "normalRotation": "nx*cos(a)-ny*sin(a), nx*sin(a)+ny*cos(a), nz; a=x/r",
+    "floorSegmentMaximumMetres": 2,
+    "floorChordMaximumDeviationMetres": 0.0005800463386411714
+  },
+  "vertexCount": 1048,
+  "triangleCount": 500,
+  "meshCount": 1,
+  "materialCount": 1,
+  "materialName": "TorusDistrictLandscape",
+  "sources": [
+    {
+      "segmentIds": [
+        "sp413-s02259",
+        "sp413-s02260"
+      ],
+      "printedPage": 91,
+      "pdfPage": 108,
+      "figure": "5-5",
+      "fact": "Conceptual landscaped pedestrian spaces, planting and terraced housing; not an exact garden engineering drawing."
+    },
+    {
+      "segmentIds": [
+        "sp413-s02276"
+      ],
+      "printedPage": 91,
+      "pdfPage": 108,
+      "fact": "Architecture must facilitate pedestrians, fire prevention and acoustic isolation; this kit does not certify fire/noise compliance."
+    },
+    {
+      "segmentIds": [
+        "sp413-s00708"
+      ],
+      "printedPage": 26,
+      "pdfPage": 43,
+      "table": "3-2",
+      "fact": "Community public-open-space and transportation allocations are approximate planning quantities, not exact landscape geometry."
+    }
+  ],
+  "interpretation": "Authored paver seams and teal/orange guide inlays; flush lighting; seating/edge planting only on broad terrace reserves. Narrow surfaces remain completely clear.",
+  "collisionPaths": {
+    "surface": "Continuous segmented walkable top at original intrinsic floor height; curved feet y=0, no gaps between cells. Mesh triangles intended as collider source; no runtime collider registration performed.",
+    "clearRoutes": [
+      {
+        "axis": "x",
+        "zRange": [
+          -1.0,
+          1.0
+        ],
+        "clearWidth": 2
+      },
+      {
+        "axis": "z",
+        "xRange": [
+          -1.0,
+          1.0
+        ],
+        "clearWidth": 2
+      },
+      {
+        "perimeterClearance": 1.2
+      }
+    ],
+    "obstacles": [
+      {
+        "kind": "bench",
+        "boundsIntrinsic": [
+          [
+            -13.403410042415498,
+            0.06,
+            -5.3999999999999995
+          ],
+          [
+            -11.5034100424155,
+            0.96,
+            -4.75
+          ]
+        ]
+      },
+      {
+        "kind": "planted-bed",
+        "boundsIntrinsic": [
+          [
+            -16.9534100424155,
+            0.06,
+            -5.35
+          ],
+          [
+            -14.5534100424155,
+            0.7,
+            -4.25
+          ]
+        ]
+      },
+      {
+        "kind": "bench",
+        "boundsIntrinsic": [
+          [
+            11.5034100424155,
+            0.06,
+            4.2
+          ],
+          [
+            13.403410042415498,
+            0.96,
+            4.85
+          ]
+        ]
+      },
+      {
+        "kind": "planted-bed",
+        "boundsIntrinsic": [
+          [
+            14.5534100424155,
+            0.06,
+            4.25
+          ],
+          [
+            16.9534100424155,
+            0.7,
+            5.35
+          ]
+        ]
+      }
+    ],
+    "raisedDecorationIsInterpretation": true,
+    "capsuleTesting": "Geometric clear-route validation only; gameplay controller not exercised on unregistered kit."
+  },
+  "sourceWorldSHA256": "bb4da561e4b28cdd25f17ff125ac906c8e412a84ef56bb7fd31966e2a16cd209",
+  "approvedWorldSHA256": "bb4da561e4b28cdd25f17ff125ac906c8e412a84ef56bb7fd31966e2a16cd209",
+  "verification": {
+    "renderer": "Three.js OBJLoader + MTLLoader, existing Chromium WebGL, front-side opaque material",
+    "fixture": "Existing 3200 origin, GET-only browser route fixtures, no new listener or registry/world writes",
+    "actualRender": {
+      "assetId": "TorusDistrict_Terrace18",
+      "meshes": 1,
+      "tris": 500,
+      "drawCalls": 1,
+      "renderedTriangles": 500
+    },
+    "fullKitSceneRender": {
+      "placements": 235,
+      "drawCalls": 235,
+      "renderedTriangles": 92556
+    },
+    "previewDimensionsPixels": [
+      900,
+      650
+    ],
+    "iconDimensionsPixels": [
+      256,
+      185
+    ]
+  }
+}

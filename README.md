@@ -77,7 +77,11 @@ This roadmap does not add placeholder models to `src/editor/catalog.js`; only re
 
 The complete six-type **Furniture & small props** kit is registered and placed with six existing homes in Garden Court. See [asset/layout/performance details](docs/street-furniture-kit.md). The shared opaque atlas is 512px; all six models are under 300 triangles. The bounded court is a presentation interpretation, not a sourced historical floorplan.
 
-## Residential blockout
+## Residential A assets and source blockout
+
+All 297 Residential A blockouts have been replaced with 49 curated, cylinder-curved assets, preserving IDs, deck attachments and the other 138 records. Details, migration safety and measured checks: [complete district assets](docs/residential-district-assets.md). `src/residential-plan.js` and the page retain the original area-allocation ledger. Do not run old whole-layout population scripts on the live asset-populated world.
+
+### Original allocation baseline
 
 `/residential/` documents district A, its central garden basin, and sidewall housing shelves at −48, −32 and −12 m. `src/residential-plan.js` contains the dimensions and separate indoor, exterior/access, park and circulation budgets. The −61.5 m service shelf sits below the basin. These levels are design choices, not dimensions read from the study.
 

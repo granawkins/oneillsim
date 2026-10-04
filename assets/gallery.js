@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {normalizeAssetManifest} from '../src/asset-manifest.js';
 import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -115,7 +116,7 @@ async function loadAsset() {
     try {
         const response = await fetch(`${ROOT}${ASSET_ID}.asset.json`, { cache: 'no-store', signal: lifetime.signal });
         if (!response.ok) throw new Error(`Manifest request returned HTTP ${response.status}`);
-        const manifest = await response.json();
+        const manifest = normalizeAssetManifest(await response.json());
 
         if (disposed) return;
         const materialsLoader = new MTLLoader();
@@ -140,11 +141,17 @@ async function loadAsset() {
         scene.add(model);
         // Small props need a human-scale inspection frame, not the house's
         // 2.55m target/17m distance. Preserve existing house/capture conventions.
-        if (['Furniture & small props', 'Residential buildings'].includes(manifest.family)) {
+        if (ASSET_ID.startsWith('TorusDistrict_') || ['Furniture & small props', 'Residential buildings'].includes(manifest.family)) {
             const bounds = new THREE.Box3().setFromObject(model);
             bounds.getCenter(target);
             const extent = bounds.getSize(new THREE.Vector3());
-            const propDistance = queryNumber('distance', Math.max(3, Math.max(extent.x, extent.y, extent.z) * 2.8), 2, 45);
+            const district = ASSET_ID.startsWith('TorusDistrict_');
+            const maxDistance = district ? 2000 : 45;
+            const propDistance = queryNumber('distance', Math.max(3, Math.max(extent.x, extent.y, extent.z) * 2.8), 2, maxDistance);
+            if (district) {
+                scene.fog = null; camera.far = 10000; camera.updateProjectionMatrix();
+                controls.maxDistance = maxDistance; grid.visible = false; ground.visible = false;
+            }
             camera.position.set(
                 target.x + propDistance * Math.cos(elevation) * Math.sin(azimuth),
                 target.y + propDistance * Math.sin(elevation),

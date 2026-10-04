@@ -4,6 +4,7 @@ import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 import { BUILDINGS, PLANTS } from './catalog.js';
 import { runLoadQueue } from '../load-queue.js';
+import { materialKitKey } from './material-kits.js';
 
 const NATURE_PATH = 'assets/ultimate-nature/';
 const BUILDINGS_PATH = 'assets/ultimate-buildings/';
@@ -44,7 +45,7 @@ function cloneCachedAsset(obj) {
 }
 
 function loadMaterials(assetName, assetPath) {
-    const materialKey = STREET_KIT.has(assetName) ? 'street' : RESIDENTIAL_KIT.has(assetName) ? 'residential' : null;
+    const materialKey = materialKitKey(assetName, BUILDINGS);
     const shared = materialKey !== null;
     if (shared && kitMaterialsPromises.has(materialKey)) return kitMaterialsPromises.get(materialKey);
     const promise = new Promise((resolve, reject) => {

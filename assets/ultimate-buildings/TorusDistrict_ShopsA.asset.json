@@ -1,0 +1,5748 @@
+{
+  "assetId": "TorusDistrict_ShopsA",
+  "category": "shops",
+  "width": 127.765,
+  "depth": 30,
+  "height": 8,
+  "levels": 2,
+  "elevation": -61.5,
+  "parcelIds": [
+    "residential-a-236"
+  ],
+  "textureAtlas": "TorusDistrictBuildings_Atlas.png",
+  "generator": "assets/scripts/build_torus_district_buildings.py",
+  "vertices": 2075,
+  "triangles": 3540,
+  "materials": 1,
+  "objects": 1,
+  "objCoordinateScale": 0.25,
+  "intendedPlacementScale": 4,
+  "orientation": "+Y up; +Z principal facade; intrinsic arc X",
+  "origin": "ground slab lower surface at intrinsic y=0, entry floor y=.12; curved ends follow cylinder",
+  "radiusMeters": 891.5,
+  "warp": "X=(r-y)*sin(x/r); Y=r-(r-y)*cos(x/r); Z=z; r=830-elevation",
+  "actualModelBoundsMeters": [
+    [
+      -63.82784368,
+      63.82784368
+    ],
+    [
+      0.0,
+      10.26731484
+    ],
+    [
+      -15.0,
+      15.0
+    ]
+  ],
+  "intrinsicReservationMeters": [
+    [
+      -63.8825,
+      63.8825
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      -15.0,
+      15.0
+    ]
+  ],
+  "sourceReferences": [
+    {
+      "segment": "sp413-s02268",
+      "printedPage": 91,
+      "pdfPage": 108,
+      "fact": "Modular one/two level homes and four/five story groups; terraced homes along plain edges."
+    },
+    {
+      "segment": "sp413-s02265",
+      "printedPage": 91,
+      "pdfPage": 108,
+      "fact": "Much commerce and light industry below central plain."
+    },
+    {
+      "segment": "sp413-s00708",
+      "printedPage": 26,
+      "pdfPage": 43,
+      "fact": "Table 3-2 community area/level/height allocation approximations for mass and enclosure structural design, NOT architectural floorplans."
+    }
+  ],
+  "interpretations": [
+    "All architecture, rooms, stairs, colors, facade module widths and floorplans authored interpretations. Table 3-2 is allocation guidance only. Exact reservation and levels copied from current original world blockouts.",
+    "Full reserved gross footprint on every level, minus measured stair openings only; continuous gallery and rear return circulation; no lost storeys.",
+    "Opaque glazing/louver atlas; genuinely open doors. Empty hollow interiors, no moving doors or furnished clinic equipment.",
+    "Cylindrical mapping baked into geometry and analytic transformed normals; floors <=4m arc chords; walls <=8m."
+  ],
+  "floorAllocation": {
+    "grossSquareMetersPerLevel": 3832.95,
+    "grossSquareMetersTotal": 7665.9,
+    "stairHoleSquareMetersPerUpperLevel": 8.160000000000002,
+    "netFloorSquareMeters": 7657.74,
+    "levels": [
+      {
+        "level": 0,
+        "floorTopMeters": 0.12,
+        "availableSquareMeters": 3832.95
+      },
+      {
+        "level": 1,
+        "floorTopMeters": 4.0,
+        "availableSquareMeters": 3824.79
+      }
+    ]
+  },
+  "collisionIntent": {
+    "capsuleRadiusMeters": 0.35,
+    "capsuleHeightMeters": 2,
+    "targetSpeedMetersPerSecond": 15,
+    "groundEntries": [
+      {
+        "centerIntrinsicMeters": [
+          -55.806428571428576,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -55.76248206999849,
+          1.8658898213304838,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -46.68035714285715,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -46.65274867713177,
+          1.341685181299681,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -37.55428571428572,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -37.53812652697927,
+          0.9107605316329455,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -28.428214285714287,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -28.41957074387359,
+          0.5731610290697517,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -19.302142857142858,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -19.298036864354042,
+          0.32892205077598646,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -10.176071428571428,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -10.174480737035662,
+          0.1780691906365064,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -1.0499999999999998,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -1.049858422445529,
+          0.12061825657372083,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          8.076071428571428,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          8.074873907163168,
+          0.15657526889026485,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          17.202142857142857,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          17.198760068008724,
+          0.2859364596388332,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          26.328214285714292,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          26.32084396497975,
+          0.5086882730162188,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          35.45428571428571,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          35.440169691824664,
+          0.8248073667849667,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          44.58035714285713,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          44.555781631321516,
+          1.2342606147185506,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          53.70642857142857,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          53.66672455541736,
+          1.7370051100726869,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          62.8325,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          62.772043725326945,
+          2.3329881700819897,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      }
+    ],
+    "levelAccessRoutes": [
+      {
+        "level": 0,
+        "intrinsicMeters": [
+          [
+            8.076071428571428,
+            0.12,
+            14.0
+          ],
+          [
+            8.076071428571428,
+            0.12,
+            13.4
+          ],
+          [
+            8.076071428571428,
+            0.12,
+            12.75
+          ],
+          [
+            8.076071428571428,
+            0.12,
+            -12.1
+          ],
+          [
+            -3.25,
+            0.12,
+            -12.1
+          ],
+          [
+            -3.25,
+            0.12,
+            -13.7
+          ]
+        ],
+        "modelLocalMeters": [
+          [
+            8.074873907163168,
+            0.15657526889026485,
+            14.0
+          ],
+          [
+            8.074873907163168,
+            0.15657526889026485,
+            13.4
+          ],
+          [
+            8.074873907163168,
+            0.15657526889026485,
+            12.75
+          ],
+          [
+            8.074873907163168,
+            0.15657526889026485,
+            -12.1
+          ],
+          [
+            -3.24955533729286,
+            0.12592320052863215,
+            -12.1
+          ],
+          [
+            -3.24955533729286,
+            0.12592320052863215,
+            -13.7
+          ]
+        ],
+        "purpose": "Principal open facade door to clear rear return corridor and next stair start; top level terminates beside stair hole."
+      },
+      {
+        "level": 1,
+        "intrinsicMeters": [
+          [
+            8.076071428571428,
+            4.0,
+            14.0
+          ],
+          [
+            8.076071428571428,
+            4.0,
+            13.4
+          ],
+          [
+            8.076071428571428,
+            4.0,
+            12.75
+          ],
+          [
+            8.076071428571428,
+            4.0,
+            -12.1
+          ],
+          [
+            -3.25,
+            4.0,
+            -12.1
+          ],
+          [
+            -3.25,
+            4.0,
+            -13.7
+          ]
+        ],
+        "modelLocalMeters": [
+          [
+            8.03972558572922,
+            4.036416064013224,
+            14.0
+          ],
+          [
+            8.03972558572922,
+            4.036416064013224,
+            13.4
+          ],
+          [
+            8.03972558572922,
+            4.036416064013224,
+            12.75
+          ],
+          [
+            8.03972558572922,
+            4.036416064013224,
+            -12.1
+          ],
+          [
+            -3.235410668679366,
+            4.005897418013774,
+            -12.1
+          ],
+          [
+            -3.235410668679366,
+            4.005897418013774,
+            -13.7
+          ]
+        ],
+        "purpose": "Principal open facade door to clear rear return corridor and next stair start; top level terminates beside stair hole."
+      }
+    ],
+    "entries": [
+      {
+        "centerIntrinsicMeters": [
+          -55.806428571428576,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -55.76248206999849,
+          1.8658898213304838,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -46.68035714285715,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -46.65274867713177,
+          1.341685181299681,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -37.55428571428572,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -37.53812652697927,
+          0.9107605316329455,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -28.428214285714287,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -28.41957074387359,
+          0.5731610290697517,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -19.302142857142858,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -19.298036864354042,
+          0.32892205077598646,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -10.176071428571428,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -10.174480737035662,
+          0.1780691906365064,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -1.0499999999999998,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -1.049858422445529,
+          0.12061825657372083,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          8.076071428571428,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          8.074873907163168,
+          0.15657526889026485,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          17.202142857142857,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          17.198760068008724,
+          0.2859364596388332,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          26.328214285714292,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          26.32084396497975,
+          0.5086882730162188,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          35.45428571428571,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          35.440169691824664,
+          0.8248073667849667,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          44.58035714285713,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          44.555781631321516,
+          1.2342606147185506,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          53.70642857142857,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          53.66672455541736,
+          1.7370051100726869,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          62.8325,
+          0.12,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          62.772043725326945,
+          2.3329881700819897,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -55.806428571428576,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -55.51975906697891,
+          5.738290309891113,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -46.68035714285715,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -46.449678533234355,
+          5.216367428485569,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -37.55428571428572,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -37.37473052199298,
+          4.787318508183034,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -28.428214285714287,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -28.29586600012095,
+          4.451188509164808,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -19.302142857142858,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -19.21403634489692,
+          4.208012654607046,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -10.176071428571428,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -10.130193244316846,
+          4.057816426989575,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          -1.0499999999999998,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          -1.0452885973663386,
+          4.000615565425733,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          8.076071428571428,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          8.03972558572922,
+          4.036416064013224,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          17.202142857142857,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          17.12389728326611,
+          4.1652141712057755,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          26.328214285714292,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          26.206274561824955,
+          4.386996390206036,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          35.45428571428571,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          35.285905676024136,
+          4.701739480380638,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          44.58035714285713,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          44.361839168253546,
+          5.109410459694686,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          53.70642857142857,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          53.43312396837814,
+          5.609966608168747,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerIntrinsicMeters": [
+          62.8325,
+          4.0,
+          13.4
+        ],
+        "centerModelLocalMeters": [
+          62.49880949340086,
+          6.203355472354929,
+          13.4
+        ],
+        "widthMeters": 1.8,
+        "heightMeters": 2.35,
+        "frontAxis": "+Z",
+        "passable": true
+      }
+    ],
+    "stairFlights": [
+      {
+        "fromLevel": 0,
+        "toLevel": 1,
+        "steps": 14,
+        "riseMeters": 0.27714285714285714,
+        "depthMeters": 0.3642857142857143,
+        "widthMeters": 1.5999999999999996,
+        "bottomMeters": 0.12,
+        "topMeters": 4.0,
+        "xBoundsMeters": [
+          -2.5500000000000003,
+          2.5500000000000003
+        ],
+        "zBoundsMeters": [
+          -14.5,
+          -12.9
+        ],
+        "direction": "+X"
+      }
+    ],
+    "allStairRoutes": [
+      {
+        "fromLevel": 0,
+        "toLevel": 1,
+        "intrinsicMeters": [
+          [
+            -3.25,
+            0.12,
+            -13.7
+          ],
+          [
+            -2.91,
+            0.12,
+            -13.7
+          ],
+          [
+            -2.367857142857143,
+            0.39714285714285713,
+            -13.7
+          ],
+          [
+            -2.003571428571429,
+            0.6742857142857143,
+            -13.7
+          ],
+          [
+            -1.6392857142857145,
+            0.9514285714285714,
+            -13.7
+          ],
+          [
+            -1.2750000000000001,
+            1.2285714285714286,
+            -13.7
+          ],
+          [
+            -0.9107142857142858,
+            1.5057142857142858,
+            -13.7
+          ],
+          [
+            -0.5464285714285713,
+            1.782857142857143,
+            -13.7
+          ],
+          [
+            -0.18214285714285738,
+            2.06,
+            -13.7
+          ],
+          [
+            0.18214285714285738,
+            2.337142857142857,
+            -13.7
+          ],
+          [
+            0.5464285714285713,
+            2.6142857142857143,
+            -13.7
+          ],
+          [
+            0.910714285714286,
+            2.8914285714285715,
+            -13.7
+          ],
+          [
+            1.275,
+            3.1685714285714286,
+            -13.7
+          ],
+          [
+            1.6392857142857147,
+            3.4457142857142857,
+            -13.7
+          ],
+          [
+            2.0035714285714286,
+            3.722857142857143,
+            -13.7
+          ],
+          [
+            2.3678571428571433,
+            4.0,
+            -13.7
+          ],
+          [
+            3.25,
+            4.0,
+            -13.7
+          ],
+          [
+            3.25,
+            4.0,
+            -12.1
+          ],
+          [
+            -3.25,
+            4.0,
+            -12.1
+          ],
+          [
+            -3.25,
+            4.0,
+            -13.7
+          ]
+        ],
+        "modelLocalMeters": [
+          [
+            -3.24955533729286,
+            0.12592320052863215,
+            -13.7
+          ],
+          [
+            -2.9096031337612915,
+            0.12474871151823663,
+            -13.7
+          ],
+          [
+            -2.3667995338841368,
+            0.40028601276628706,
+            -13.7
+          ],
+          [
+            -2.0020543426630337,
+            0.6765354397864485,
+            -13.7
+          ],
+          [
+            -1.6375353094187541,
+            0.9529341176964863,
+            -13.7
+          ],
+          [
+            -1.2732424952045704,
+            1.2294819077962984,
+            -13.7
+          ],
+          [
+            -0.9091759609981634,
+            1.5061786713608853,
+            -13.7
+          ],
+          [
+            -0.5453357677016136,
+            1.7830242696400092,
+            -13.7
+          ],
+          [
+            -0.1817219761413928,
+            2.060018563858648,
+            -13.7
+          ],
+          [
+            0.18166535293165015,
+            2.337161415217224,
+            -13.7
+          ],
+          [
+            0.5448261588422934,
+            2.614452684890921,
+            -13.7
+          ],
+          [
+            0.9077603809909592,
+            2.891892234030365,
+            -13.7
+          ],
+          [
+            1.2704679588537175,
+            3.1694799237614006,
+            -13.7
+          ],
+          [
+            1.6329488319823022,
+            3.4472156151852005,
+            -13.7
+          ],
+          [
+            1.9952029400041145,
+            3.7250991693783817,
+            -13.7
+          ],
+          [
+            2.35723022262224,
+            4.003130447392778,
+            -13.7
+          ],
+          [
+            3.235410668679366,
+            4.005897418013774,
+            -13.7
+          ],
+          [
+            3.235410668679366,
+            4.005897418013774,
+            -12.1
+          ],
+          [
+            -3.235410668679366,
+            4.005897418013774,
+            -12.1
+          ],
+          [
+            -3.235410668679366,
+            4.005897418013774,
+            -13.7
+          ]
+        ],
+        "returnCorridor": true
+      }
+    ],
+    "floorSurfaces": [
+      {
+        "boundsXZ": [
+          -63.8825,
+          63.8825,
+          -15.0,
+          15.0
+        ],
+        "topMeters": 0.12,
+        "tag": "floor"
+      },
+      {
+        "boundsXZ": [
+          -63.8825,
+          -2.5500000000000003,
+          -15.0,
+          15.0
+        ],
+        "topMeters": 4.0,
+        "tag": "floor"
+      },
+      {
+        "boundsXZ": [
+          2.5500000000000003,
+          63.8825,
+          -15.0,
+          15.0
+        ],
+        "topMeters": 4.0,
+        "tag": "floor"
+      },
+      {
+        "boundsXZ": [
+          -2.5500000000000003,
+          2.5500000000000003,
+          -15.0,
+          -14.5
+        ],
+        "topMeters": 4.0,
+        "tag": "floor"
+      },
+      {
+        "boundsXZ": [
+          -2.5500000000000003,
+          2.5500000000000003,
+          -12.9,
+          15.0
+        ],
+        "topMeters": 4.0,
+        "tag": "floor"
+      },
+      {
+        "boundsXZ": [
+          -63.8825,
+          -54.75642857142857,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 8,
+        "tag": "roof"
+      },
+      {
+        "boundsXZ": [
+          -54.75642857142857,
+          -45.63035714285714,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 7.35,
+        "tag": "roof"
+      },
+      {
+        "boundsXZ": [
+          -45.63035714285714,
+          -36.504285714285714,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 8,
+        "tag": "roof"
+      },
+      {
+        "boundsXZ": [
+          -36.504285714285714,
+          -27.378214285714286,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 7.35,
+        "tag": "roof"
+      },
+      {
+        "boundsXZ": [
+          -27.378214285714286,
+          -18.252142857142857,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 8,
+        "tag": "roof"
+      },
+      {
+        "boundsXZ": [
+          -18.252142857142857,
+          -9.126071428571429,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 7.35,
+        "tag": "roof"
+      },
+      {
+        "boundsXZ": [
+          -9.126071428571429,
+          0.0,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 8,
+        "tag": "roof"
+      },
+      {
+        "boundsXZ": [
+          0.0,
+          9.126071428571429,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 7.35,
+        "tag": "roof"
+      },
+      {
+        "boundsXZ": [
+          9.126071428571429,
+          18.252142857142857,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 8,
+        "tag": "roof"
+      },
+      {
+        "boundsXZ": [
+          18.252142857142864,
+          27.378214285714293,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 7.35,
+        "tag": "roof"
+      },
+      {
+        "boundsXZ": [
+          27.378214285714286,
+          36.504285714285714,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 8,
+        "tag": "roof"
+      },
+      {
+        "boundsXZ": [
+          36.50428571428571,
+          45.630357142857136,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 7.35,
+        "tag": "roof"
+      },
+      {
+        "boundsXZ": [
+          45.63035714285714,
+          54.75642857142857,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 8,
+        "tag": "roof"
+      },
+      {
+        "boundsXZ": [
+          54.75642857142858,
+          63.88250000000001,
+          -15.0,
+          13.4
+        ],
+        "topMeters": 8,
+        "tag": "roof"
+      }
+    ],
+    "solids": [
+      {
+        "tag": "floor",
+        "boundsIntrinsicMeters": [
+          [
+            -63.8825,
+            63.8825
+          ],
+          [
+            0,
+            0.12
+          ],
+          [
+            -15.0,
+            15.0
+          ]
+        ]
+      },
+      {
+        "tag": "side wall",
+        "boundsIntrinsicMeters": [
+          [
+            -63.8825,
+            -63.7625
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "side wall",
+        "boundsIntrinsicMeters": [
+          [
+            63.7625,
+            63.8825
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -63.8825,
+            -54.75642857142857
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -63.8825,
+            -56.706428571428575
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -63.8825,
+            -56.706428571428575
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -63.8825,
+            -56.706428571428575
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -54.90642857142858,
+            -54.75642857142857
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -56.706428571428575,
+            -54.90642857142858
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -63.7625,
+            -54.87642857142857
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -54.75642857142857,
+            -45.63035714285714
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -54.75642857142857,
+            -47.580357142857146
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -54.75642857142857,
+            -47.580357142857146
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -54.75642857142857,
+            -47.580357142857146
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -45.78035714285715,
+            -45.63035714285714
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -47.580357142857146,
+            -45.78035714285715
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -54.636428571428574,
+            -45.75035714285714
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -45.63035714285714,
+            -36.504285714285714
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -45.63035714285714,
+            -38.45428571428572
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -45.63035714285714,
+            -38.45428571428572
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -45.63035714285714,
+            -38.45428571428572
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -36.65428571428572,
+            -36.504285714285714
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -38.45428571428572,
+            -36.65428571428572
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -45.510357142857146,
+            -36.62428571428571
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -36.504285714285714,
+            -27.378214285714286
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -36.504285714285714,
+            -29.328214285714285
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -36.504285714285714,
+            -29.328214285714285
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -36.504285714285714,
+            -29.328214285714285
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -27.528214285714284,
+            -27.378214285714286
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -29.328214285714285,
+            -27.528214285714284
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -36.38428571428572,
+            -27.498214285714287
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -27.378214285714286,
+            -18.252142857142857
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -27.378214285714286,
+            -20.202142857142857
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -27.378214285714286,
+            -20.202142857142857
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -27.378214285714286,
+            -20.202142857142857
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -18.402142857142856,
+            -18.252142857142857
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -20.202142857142857,
+            -18.402142857142856
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -27.258214285714285,
+            -18.372142857142858
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -18.252142857142857,
+            -9.126071428571429
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -18.252142857142857,
+            -11.076071428571428
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -18.252142857142857,
+            -11.076071428571428
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -18.252142857142857,
+            -11.076071428571428
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -9.276071428571427,
+            -9.126071428571429
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -11.076071428571428,
+            -9.276071428571427
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -18.132142857142856,
+            -9.246071428571428
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -9.126071428571429,
+            0.0
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -9.126071428571429,
+            -1.95
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -9.126071428571429,
+            -1.95
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -9.126071428571429,
+            -1.95
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -0.1499999999999999,
+            0.0
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -1.95,
+            -0.1499999999999999
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -9.00607142857143,
+            -0.12
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            0.0,
+            9.126071428571429
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            0.0,
+            7.176071428571428
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            0.0,
+            7.176071428571428
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            0.0,
+            7.176071428571428
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            8.976071428571428,
+            9.126071428571429
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            7.176071428571428,
+            8.976071428571428
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            0.12,
+            9.00607142857143
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            9.126071428571429,
+            18.252142857142857
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            9.126071428571429,
+            16.302142857142858
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            9.126071428571429,
+            16.302142857142858
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            9.126071428571429,
+            16.302142857142858
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            18.10214285714286,
+            18.252142857142857
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            16.302142857142858,
+            18.10214285714286
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            9.246071428571428,
+            18.132142857142856
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            18.252142857142864,
+            27.378214285714293
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            18.252142857142864,
+            25.428214285714294
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            18.252142857142864,
+            25.428214285714294
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            18.252142857142864,
+            25.428214285714294
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            27.228214285714294,
+            27.378214285714293
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            25.428214285714294,
+            27.228214285714294
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            18.372142857142865,
+            27.258214285714292
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            27.378214285714286,
+            36.504285714285714
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            27.378214285714286,
+            34.55428571428571
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            27.378214285714286,
+            34.55428571428571
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            27.378214285714286,
+            34.55428571428571
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            36.35428571428571,
+            36.504285714285714
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            34.55428571428571,
+            36.35428571428571
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            27.498214285714287,
+            36.38428571428572
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            36.50428571428571,
+            45.630357142857136
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            36.50428571428571,
+            43.68035714285713
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            36.50428571428571,
+            43.68035714285713
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            36.50428571428571,
+            43.68035714285713
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            45.48035714285713,
+            45.630357142857136
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            43.68035714285713,
+            45.48035714285713
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            36.624285714285705,
+            45.51035714285714
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            45.63035714285714,
+            54.75642857142857
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            45.63035714285714,
+            52.80642857142857
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            45.63035714285714,
+            52.80642857142857
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            45.63035714285714,
+            52.80642857142857
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            54.606428571428566,
+            54.75642857142857
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            52.80642857142857,
+            54.606428571428566
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            45.75035714285714,
+            54.636428571428574
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            54.75642857142858,
+            63.88250000000001
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            54.75642857142858,
+            61.932500000000005
+          ],
+          [
+            0.12,
+            0.77
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            54.75642857142858,
+            61.932500000000005
+          ],
+          [
+            0.77,
+            2.27
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            54.75642857142858,
+            61.932500000000005
+          ],
+          [
+            2.27,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            63.7325,
+            63.88250000000001
+          ],
+          [
+            0.12,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            61.932500000000005,
+            63.7325
+          ],
+          [
+            2.47,
+            3.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            54.876428571428576,
+            63.76250000000001
+          ],
+          [
+            3.73,
+            3.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "floor",
+        "boundsIntrinsicMeters": [
+          [
+            -63.8825,
+            -2.5500000000000003
+          ],
+          [
+            3.88,
+            4.0
+          ],
+          [
+            -15.0,
+            15.0
+          ]
+        ]
+      },
+      {
+        "tag": "floor",
+        "boundsIntrinsicMeters": [
+          [
+            2.5500000000000003,
+            63.8825
+          ],
+          [
+            3.88,
+            4.0
+          ],
+          [
+            -15.0,
+            15.0
+          ]
+        ]
+      },
+      {
+        "tag": "floor",
+        "boundsIntrinsicMeters": [
+          [
+            -2.5500000000000003,
+            2.5500000000000003
+          ],
+          [
+            3.88,
+            4.0
+          ],
+          [
+            -15.0,
+            -14.5
+          ]
+        ]
+      },
+      {
+        "tag": "floor",
+        "boundsIntrinsicMeters": [
+          [
+            -2.5500000000000003,
+            2.5500000000000003
+          ],
+          [
+            3.88,
+            4.0
+          ],
+          [
+            -12.9,
+            15.0
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            -2.5500000000000003,
+            -2.185714285714286
+          ],
+          [
+            0.29714285714285715,
+            0.39714285714285713
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            -2.5500000000000003,
+            -2.5000000000000004
+          ],
+          [
+            0.12,
+            0.39714285714285713
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            -2.185714285714286,
+            -1.8214285714285716
+          ],
+          [
+            0.5742857142857143,
+            0.6742857142857143
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            -2.185714285714286,
+            -2.135714285714286
+          ],
+          [
+            0.39714285714285713,
+            0.6742857142857143
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            -1.8214285714285716,
+            -1.4571428571428573
+          ],
+          [
+            0.8514285714285714,
+            0.9514285714285714
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            -1.8214285714285716,
+            -1.7714285714285716
+          ],
+          [
+            0.6742857142857143,
+            0.9514285714285714
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            -1.4571428571428573,
+            -1.092857142857143
+          ],
+          [
+            1.1285714285714286,
+            1.2285714285714286
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            -1.4571428571428573,
+            -1.4071428571428573
+          ],
+          [
+            0.9514285714285715,
+            1.2285714285714286
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            -1.092857142857143,
+            -0.7285714285714286
+          ],
+          [
+            1.4057142857142857,
+            1.5057142857142858
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            -1.092857142857143,
+            -1.042857142857143
+          ],
+          [
+            1.2285714285714286,
+            1.5057142857142858
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            -0.7285714285714286,
+            -0.3642857142857143
+          ],
+          [
+            1.6828571428571428,
+            1.782857142857143
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            -0.7285714285714286,
+            -0.6785714285714286
+          ],
+          [
+            1.5057142857142858,
+            1.782857142857143
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            -0.3642857142857143,
+            0.0
+          ],
+          [
+            1.96,
+            2.06
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            -0.3642857142857143,
+            -0.31428571428571433
+          ],
+          [
+            1.782857142857143,
+            2.06
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            0.0,
+            0.3642857142857143
+          ],
+          [
+            2.237142857142857,
+            2.337142857142857
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            0.0,
+            0.05
+          ],
+          [
+            2.06,
+            2.337142857142857
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            0.3642857142857143,
+            0.7285714285714286
+          ],
+          [
+            2.5142857142857142,
+            2.6142857142857143
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            0.3642857142857143,
+            0.4142857142857143
+          ],
+          [
+            2.337142857142857,
+            2.6142857142857143
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            0.7285714285714286,
+            1.092857142857143
+          ],
+          [
+            2.7914285714285714,
+            2.8914285714285715
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            0.7285714285714286,
+            0.7785714285714287
+          ],
+          [
+            2.6142857142857143,
+            2.8914285714285715
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            1.092857142857143,
+            1.4571428571428573
+          ],
+          [
+            3.0685714285714285,
+            3.1685714285714286
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            1.092857142857143,
+            1.142857142857143
+          ],
+          [
+            2.8914285714285715,
+            3.1685714285714286
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            1.4571428571428577,
+            1.821428571428572
+          ],
+          [
+            3.3457142857142856,
+            3.4457142857142857
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            1.4571428571428577,
+            1.5071428571428578
+          ],
+          [
+            3.1685714285714286,
+            3.4457142857142857
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            1.8214285714285716,
+            2.185714285714286
+          ],
+          [
+            3.6228571428571428,
+            3.722857142857143
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            1.8214285714285716,
+            1.8714285714285717
+          ],
+          [
+            3.4457142857142857,
+            3.722857142857143
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "tread",
+        "boundsIntrinsicMeters": [
+          [
+            2.1857142857142855,
+            2.55
+          ],
+          [
+            3.9,
+            4.0
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "riser",
+        "boundsIntrinsicMeters": [
+          [
+            2.1857142857142855,
+            2.2357142857142853
+          ],
+          [
+            3.722857142857143,
+            4.0
+          ],
+          [
+            -14.5,
+            -12.9
+          ]
+        ]
+      },
+      {
+        "tag": "side wall",
+        "boundsIntrinsicMeters": [
+          [
+            -63.8825,
+            -63.7625
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "side wall",
+        "boundsIntrinsicMeters": [
+          [
+            63.7625,
+            63.8825
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -63.8825,
+            -54.75642857142857
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            -63.8825,
+            -54.75642857142857
+          ],
+          [
+            7.88,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -63.8825,
+            -56.706428571428575
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -63.8825,
+            -56.706428571428575
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -63.8825,
+            -56.706428571428575
+          ],
+          [
+            6.15,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -54.90642857142858,
+            -54.75642857142857
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -56.706428571428575,
+            -54.90642857142858
+          ],
+          [
+            6.35,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -63.7625,
+            -54.87642857142857
+          ],
+          [
+            7.7299999999999995,
+            7.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -54.75642857142857,
+            -45.63035714285714
+          ],
+          [
+            4.0,
+            7.2299999999999995
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            -54.75642857142857,
+            -45.63035714285714
+          ],
+          [
+            7.2299999999999995,
+            7.35
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "roof step fascia",
+        "boundsIntrinsicMeters": [
+          [
+            -54.75642857142857,
+            -54.65642857142857
+          ],
+          [
+            7.2299999999999995,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -54.75642857142857,
+            -47.580357142857146
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -54.75642857142857,
+            -47.580357142857146
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -54.75642857142857,
+            -47.580357142857146
+          ],
+          [
+            6.15,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -45.78035714285715,
+            -45.63035714285714
+          ],
+          [
+            4.0,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -47.580357142857146,
+            -45.78035714285715
+          ],
+          [
+            6.35,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -54.636428571428574,
+            -45.75035714285714
+          ],
+          [
+            7.079999999999999,
+            7.2299999999999995
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -45.63035714285714,
+            -36.504285714285714
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            -45.63035714285714,
+            -36.504285714285714
+          ],
+          [
+            7.88,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "roof step fascia",
+        "boundsIntrinsicMeters": [
+          [
+            -45.63035714285714,
+            -45.53035714285714
+          ],
+          [
+            7.2299999999999995,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -45.63035714285714,
+            -38.45428571428572
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -45.63035714285714,
+            -38.45428571428572
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -45.63035714285714,
+            -38.45428571428572
+          ],
+          [
+            6.15,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -36.65428571428572,
+            -36.504285714285714
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -38.45428571428572,
+            -36.65428571428572
+          ],
+          [
+            6.35,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -45.510357142857146,
+            -36.62428571428571
+          ],
+          [
+            7.7299999999999995,
+            7.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -36.504285714285714,
+            -27.378214285714286
+          ],
+          [
+            4.0,
+            7.2299999999999995
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            -36.504285714285714,
+            -27.378214285714286
+          ],
+          [
+            7.2299999999999995,
+            7.35
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "roof step fascia",
+        "boundsIntrinsicMeters": [
+          [
+            -36.504285714285714,
+            -36.40428571428571
+          ],
+          [
+            7.2299999999999995,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -36.504285714285714,
+            -29.328214285714285
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -36.504285714285714,
+            -29.328214285714285
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -36.504285714285714,
+            -29.328214285714285
+          ],
+          [
+            6.15,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -27.528214285714284,
+            -27.378214285714286
+          ],
+          [
+            4.0,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -29.328214285714285,
+            -27.528214285714284
+          ],
+          [
+            6.35,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -36.38428571428572,
+            -27.498214285714287
+          ],
+          [
+            7.079999999999999,
+            7.2299999999999995
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -27.378214285714286,
+            -18.252142857142857
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            -27.378214285714286,
+            -18.252142857142857
+          ],
+          [
+            7.88,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "roof step fascia",
+        "boundsIntrinsicMeters": [
+          [
+            -27.378214285714286,
+            -27.278214285714284
+          ],
+          [
+            7.2299999999999995,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -27.378214285714286,
+            -20.202142857142857
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -27.378214285714286,
+            -20.202142857142857
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -27.378214285714286,
+            -20.202142857142857
+          ],
+          [
+            6.15,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -18.402142857142856,
+            -18.252142857142857
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -20.202142857142857,
+            -18.402142857142856
+          ],
+          [
+            6.35,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -27.258214285714285,
+            -18.372142857142858
+          ],
+          [
+            7.7299999999999995,
+            7.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -18.252142857142857,
+            -9.126071428571429
+          ],
+          [
+            4.0,
+            7.2299999999999995
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            -18.252142857142857,
+            -9.126071428571429
+          ],
+          [
+            7.2299999999999995,
+            7.35
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "roof step fascia",
+        "boundsIntrinsicMeters": [
+          [
+            -18.252142857142857,
+            -18.152142857142856
+          ],
+          [
+            7.2299999999999995,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -18.252142857142857,
+            -11.076071428571428
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -18.252142857142857,
+            -11.076071428571428
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -18.252142857142857,
+            -11.076071428571428
+          ],
+          [
+            6.15,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -9.276071428571427,
+            -9.126071428571429
+          ],
+          [
+            4.0,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -11.076071428571428,
+            -9.276071428571427
+          ],
+          [
+            6.35,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -18.132142857142856,
+            -9.246071428571428
+          ],
+          [
+            7.079999999999999,
+            7.2299999999999995
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            -9.126071428571429,
+            0.0
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            -9.126071428571429,
+            0.0
+          ],
+          [
+            7.88,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "roof step fascia",
+        "boundsIntrinsicMeters": [
+          [
+            -9.126071428571429,
+            -9.026071428571429
+          ],
+          [
+            7.2299999999999995,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            -9.126071428571429,
+            -1.95
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            -9.126071428571429,
+            -1.95
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            -9.126071428571429,
+            -1.95
+          ],
+          [
+            6.15,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            -0.1499999999999999,
+            0.0
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            -1.95,
+            -0.1499999999999999
+          ],
+          [
+            6.35,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            -9.00607142857143,
+            -0.12
+          ],
+          [
+            7.7299999999999995,
+            7.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            0.0,
+            9.126071428571429
+          ],
+          [
+            4.0,
+            7.2299999999999995
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            0.0,
+            9.126071428571429
+          ],
+          [
+            7.2299999999999995,
+            7.35
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "roof step fascia",
+        "boundsIntrinsicMeters": [
+          [
+            0.0,
+            0.1
+          ],
+          [
+            7.2299999999999995,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            0.0,
+            7.176071428571428
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            0.0,
+            7.176071428571428
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            0.0,
+            7.176071428571428
+          ],
+          [
+            6.15,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            8.976071428571428,
+            9.126071428571429
+          ],
+          [
+            4.0,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            7.176071428571428,
+            8.976071428571428
+          ],
+          [
+            6.35,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            0.12,
+            9.00607142857143
+          ],
+          [
+            7.079999999999999,
+            7.2299999999999995
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            9.126071428571429,
+            18.252142857142857
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            9.126071428571429,
+            18.252142857142857
+          ],
+          [
+            7.88,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "roof step fascia",
+        "boundsIntrinsicMeters": [
+          [
+            9.126071428571429,
+            9.226071428571428
+          ],
+          [
+            7.2299999999999995,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            9.126071428571429,
+            16.302142857142858
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            9.126071428571429,
+            16.302142857142858
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            9.126071428571429,
+            16.302142857142858
+          ],
+          [
+            6.15,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            18.10214285714286,
+            18.252142857142857
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            16.302142857142858,
+            18.10214285714286
+          ],
+          [
+            6.35,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            9.246071428571428,
+            18.132142857142856
+          ],
+          [
+            7.7299999999999995,
+            7.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            18.252142857142864,
+            27.378214285714293
+          ],
+          [
+            4.0,
+            7.2299999999999995
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            18.252142857142864,
+            27.378214285714293
+          ],
+          [
+            7.2299999999999995,
+            7.35
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "roof step fascia",
+        "boundsIntrinsicMeters": [
+          [
+            18.252142857142864,
+            18.352142857142866
+          ],
+          [
+            7.2299999999999995,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            18.252142857142864,
+            25.428214285714294
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            18.252142857142864,
+            25.428214285714294
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            18.252142857142864,
+            25.428214285714294
+          ],
+          [
+            6.15,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            27.228214285714294,
+            27.378214285714293
+          ],
+          [
+            4.0,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            25.428214285714294,
+            27.228214285714294
+          ],
+          [
+            6.35,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            18.372142857142865,
+            27.258214285714292
+          ],
+          [
+            7.079999999999999,
+            7.2299999999999995
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            27.378214285714286,
+            36.504285714285714
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            27.378214285714286,
+            36.504285714285714
+          ],
+          [
+            7.88,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "roof step fascia",
+        "boundsIntrinsicMeters": [
+          [
+            27.378214285714286,
+            27.478214285714287
+          ],
+          [
+            7.2299999999999995,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            27.378214285714286,
+            34.55428571428571
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            27.378214285714286,
+            34.55428571428571
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            27.378214285714286,
+            34.55428571428571
+          ],
+          [
+            6.15,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            36.35428571428571,
+            36.504285714285714
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            34.55428571428571,
+            36.35428571428571
+          ],
+          [
+            6.35,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            27.498214285714287,
+            36.38428571428572
+          ],
+          [
+            7.7299999999999995,
+            7.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            36.50428571428571,
+            45.630357142857136
+          ],
+          [
+            4.0,
+            7.2299999999999995
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            36.50428571428571,
+            45.630357142857136
+          ],
+          [
+            7.2299999999999995,
+            7.35
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "roof step fascia",
+        "boundsIntrinsicMeters": [
+          [
+            36.50428571428571,
+            36.60428571428571
+          ],
+          [
+            7.2299999999999995,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            36.50428571428571,
+            43.68035714285713
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            36.50428571428571,
+            43.68035714285713
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            36.50428571428571,
+            43.68035714285713
+          ],
+          [
+            6.15,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            45.48035714285713,
+            45.630357142857136
+          ],
+          [
+            4.0,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            43.68035714285713,
+            45.48035714285713
+          ],
+          [
+            6.35,
+            7.2299999999999995
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            36.624285714285705,
+            45.51035714285714
+          ],
+          [
+            7.079999999999999,
+            7.2299999999999995
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            45.63035714285714,
+            54.75642857142857
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            45.63035714285714,
+            54.75642857142857
+          ],
+          [
+            7.88,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "roof step fascia",
+        "boundsIntrinsicMeters": [
+          [
+            45.63035714285714,
+            45.730357142857144
+          ],
+          [
+            7.2299999999999995,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            45.63035714285714,
+            52.80642857142857
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            45.63035714285714,
+            52.80642857142857
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            45.63035714285714,
+            52.80642857142857
+          ],
+          [
+            6.15,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            54.606428571428566,
+            54.75642857142857
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            52.80642857142857,
+            54.606428571428566
+          ],
+          [
+            6.35,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            45.75035714285714,
+            54.636428571428574
+          ],
+          [
+            7.7299999999999995,
+            7.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      },
+      {
+        "tag": "rear wall",
+        "boundsIntrinsicMeters": [
+          [
+            54.75642857142858,
+            63.88250000000001
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            -15.0,
+            -14.88
+          ]
+        ]
+      },
+      {
+        "tag": "roof",
+        "boundsIntrinsicMeters": [
+          [
+            54.75642857142858,
+            63.88250000000001
+          ],
+          [
+            7.88,
+            8
+          ],
+          [
+            -15.0,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sill",
+        "boundsIntrinsicMeters": [
+          [
+            54.75642857142858,
+            61.932500000000005
+          ],
+          [
+            4.0,
+            4.65
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "opaque pane",
+        "boundsIntrinsicMeters": [
+          [
+            54.75642857142858,
+            61.932500000000005
+          ],
+          [
+            4.65,
+            6.15
+          ],
+          [
+            13.3,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "header",
+        "boundsIntrinsicMeters": [
+          [
+            54.75642857142858,
+            61.932500000000005
+          ],
+          [
+            6.15,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door jamb",
+        "boundsIntrinsicMeters": [
+          [
+            63.7325,
+            63.88250000000001
+          ],
+          [
+            4.0,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "door lintel",
+        "boundsIntrinsicMeters": [
+          [
+            61.932500000000005,
+            63.7325
+          ],
+          [
+            6.35,
+            7.88
+          ],
+          [
+            13.280000000000001,
+            13.4
+          ]
+        ]
+      },
+      {
+        "tag": "sunshade",
+        "boundsIntrinsicMeters": [
+          [
+            54.876428571428576,
+            63.76250000000001
+          ],
+          [
+            7.7299999999999995,
+            7.88
+          ],
+          [
+            13.4,
+            14.05
+          ]
+        ]
+      }
+    ],
+    "runtimePhysicsVerified": false
+  },
+  "preview": "TorusDistrict_ShopsA_Preview.png",
+  "icon": "assets/icons/ultimate-buildings/TorusDistrict_ShopsA.png",
+  "worldJsonChanged": false
+}

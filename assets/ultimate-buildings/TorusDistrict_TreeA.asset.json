@@ -1,0 +1,822 @@
+{
+  "assetId": "TorusDistrict_TreeA",
+  "family": "Residential A landscape",
+  "generator": "assets/scripts/build_torus_district_landscape.py",
+  "obj": "TorusDistrict_TreeA.obj",
+  "mtl": "TorusDistrict_TreeA.mtl",
+  "textureAtlas": "TorusDistrictLandscape_Atlas.png",
+  "preview": "TorusDistrict_TreeA_Preview.png",
+  "icon": "assets/icons/ultimate-buildings/TorusDistrict_TreeA.png",
+  "category": "trees",
+  "parcelIds": [
+    "residential-a-242",
+    "residential-a-243",
+    "residential-a-244",
+    "residential-a-245",
+    "residential-a-246",
+    "residential-a-247",
+    "residential-a-248",
+    "residential-a-249",
+    "residential-a-250",
+    "residential-a-251",
+    "residential-a-252",
+    "residential-a-253",
+    "residential-a-254",
+    "residential-a-255",
+    "residential-a-256",
+    "residential-a-257",
+    "residential-a-258",
+    "residential-a-259",
+    "residential-a-260",
+    "residential-a-261",
+    "residential-a-262",
+    "residential-a-263",
+    "residential-a-264",
+    "residential-a-265",
+    "residential-a-266",
+    "residential-a-267",
+    "residential-a-268",
+    "residential-a-269",
+    "residential-a-270",
+    "residential-a-271",
+    "residential-a-272",
+    "residential-a-273",
+    "residential-a-274",
+    "residential-a-275",
+    "residential-a-276",
+    "residential-a-277",
+    "residential-a-278",
+    "residential-a-279",
+    "residential-a-280",
+    "residential-a-281",
+    "residential-a-282",
+    "residential-a-283",
+    "residential-a-284",
+    "residential-a-285",
+    "residential-a-286",
+    "residential-a-287",
+    "residential-a-288",
+    "residential-a-289",
+    "residential-a-290",
+    "residential-a-291",
+    "residential-a-292",
+    "residential-a-293",
+    "residential-a-294",
+    "residential-a-295",
+    "residential-a-296",
+    "residential-a-297"
+  ],
+  "dimensionsMetres": {
+    "width": 3,
+    "depth": 3,
+    "height": 4
+  },
+  "levels": 1,
+  "elevation": -48,
+  "boundsOBJ": {
+    "min": [
+      -0.35416492542663,
+      0.0,
+      -0.26569605057932094
+    ],
+    "max": [
+      0.3541317544475607,
+      1.0,
+      0.2654732822144018
+    ]
+  },
+  "boundsMetres": {
+    "min": [
+      -1.41665970170652,
+      0.0,
+      -1.0627842023172838
+    ],
+    "max": [
+      1.4165270177902427,
+      4.0,
+      1.0618931288576072
+    ]
+  },
+  "intrinsicRenderedBoundsMetres": {
+    "min": [
+      -1.4206893820416095,
+      0.0,
+      -1.0627842023172838
+    ],
+    "max": [
+      1.4206893820416095,
+      4.0,
+      1.0618931288576072
+    ]
+  },
+  "intrinsicReservedExtentsMetres": {
+    "min": [
+      -1.5,
+      0,
+      -1.5
+    ],
+    "max": [
+      1.5,
+      4,
+      1.5
+    ]
+  },
+  "originalParcels": [
+    {
+      "id": "residential-a-242",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.02688328041877833,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-243",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.02688328041877833,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-244",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.07467577894105092,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-245",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.07467577894105092,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-246",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.1224682774633235,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-247",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.1224682774633235,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-248",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.17026077598559608,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-249",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.17026077598559608,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-250",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.21805327450786866,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-251",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.21805327450786866,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-252",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.2658457730301413,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-253",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.2658457730301413,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-254",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.3136382715524138,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-255",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.3136382715524138,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-256",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.36143077007468644,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-257",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.36143077007468644,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-258",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.40922326859695907,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-259",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.40922326859695907,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-260",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.45701576711923164,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-261",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.45701576711923164,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-262",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.5048082656415043,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-263",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.5048082656415043,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-264",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.5526007641637768,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-265",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.5526007641637768,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-266",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.6003932626860493,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-267",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.6003932626860493,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-268",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.648185761208322,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-269",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.648185761208322,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-270",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.6959782597305946,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-271",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.6959782597305946,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-272",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.7437707582528672,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-273",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.7437707582528672,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-274",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.7915632567751397,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-275",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.7915632567751397,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-276",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.8393557552974124,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-277",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.8393557552974124,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-278",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.887148253819685,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-279",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.887148253819685,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-280",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.9349407523419574,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-281",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.9349407523419574,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-282",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.9827332508642301,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-283",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 0.9827332508642301,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-284",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.0305257493865028,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-285",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.0305257493865028,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-286",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.0783182479087752,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-287",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.0783182479087752,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-288",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.1261107464310478,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-289",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.1261107464310478,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-290",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.1739032449533204,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-291",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.1739032449533204,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-292",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.221695743475593,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-293",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.221695743475593,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-294",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.2694882419978657,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-295",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.2694882419978657,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-296",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.317280740520138,
+      "z": -9,
+      "deckId": "residential-a-basin"
+    },
+    {
+      "id": "residential-a-297",
+      "width": 3,
+      "depth": 3,
+      "height": 4,
+      "levels": 1,
+      "elevation": -48,
+      "theta": 1.317280740520138,
+      "z": 9,
+      "deckId": "residential-a-basin"
+    }
+  ],
+  "dimensionDedupeToleranceMetres": 1e-09,
+  "coordinateSystem": "+Y up, local feet intrinsic y=0, +Z facade; curved exported local Y may be positive away from centre",
+  "objScale": 0.25,
+  "intendedPlacementScale": 4,
+  "curvature": {
+    "referenceRadius": 830,
+    "radius": 878,
+    "mapping": "X=(r-y)*sin(x/r); Y=r-(r-y)*cos(x/r); Z=z",
+    "normalRotation": "nx*cos(a)-ny*sin(a), nx*sin(a)+ny*cos(a), nz; a=x/r",
+    "floorSegmentMaximumMetres": 2,
+    "floorChordMaximumDeviationMetres": 0.0005694760204484339
+  },
+  "vertexCount": 920,
+  "triangleCount": 368,
+  "meshCount": 1,
+  "materialCount": 1,
+  "materialName": "TorusDistrictLandscape",
+  "sources": [
+    {
+      "segmentIds": [
+        "sp413-s02259",
+        "sp413-s02260"
+      ],
+      "printedPage": 91,
+      "pdfPage": 108,
+      "figure": "5-5",
+      "fact": "Conceptual landscaped pedestrian spaces, planting and terraced housing; not an exact garden engineering drawing."
+    },
+    {
+      "segmentIds": [
+        "sp413-s02276"
+      ],
+      "printedPage": 91,
+      "pdfPage": 108,
+      "fact": "Architecture must facilitate pedestrians, fire prevention and acoustic isolation; this kit does not certify fire/noise compliance."
+    },
+    {
+      "segmentIds": [
+        "sp413-s00708"
+      ],
+      "printedPage": 26,
+      "pdfPage": 43,
+      "table": "3-2",
+      "fact": "Community public-open-space and transportation allocations are approximate planning quantities, not exact landscape geometry."
+    }
+  ],
+  "interpretation": "Authored 3 m fruit-tree reserve: capped branching trunk, three faceted opaque foliage crowns and seven fruit clusters, not a canopy cube.",
+  "collisionPaths": {
+    "surface": "Continuous segmented walkable top at original intrinsic floor height; curved feet y=0, no gaps between cells. Mesh triangles intended as collider source; no runtime collider registration performed.",
+    "clearRoutes": [],
+    "obstacles": [],
+    "raisedDecorationIsInterpretation": true,
+    "capsuleTesting": "Geometric clear-route validation only; gameplay controller not exercised on unregistered kit."
+  },
+  "sourceWorldSHA256": "bb4da561e4b28cdd25f17ff125ac906c8e412a84ef56bb7fd31966e2a16cd209",
+  "approvedWorldSHA256": "bb4da561e4b28cdd25f17ff125ac906c8e412a84ef56bb7fd31966e2a16cd209",
+  "verification": {
+    "renderer": "Three.js OBJLoader + MTLLoader, existing Chromium WebGL, front-side opaque material",
+    "fixture": "Existing 3200 origin, GET-only browser route fixtures, no new listener or registry/world writes",
+    "actualRender": {
+      "assetId": "TorusDistrict_TreeA",
+      "meshes": 1,
+      "tris": 368,
+      "drawCalls": 1,
+      "renderedTriangles": 368
+    },
+    "fullKitSceneRender": {
+      "placements": 235,
+      "drawCalls": 235,
+      "renderedTriangles": 92556
+    },
+    "previewDimensionsPixels": [
+      900,
+      650
+    ],
+    "iconDimensionsPixels": [
+      256,
+      185
+    ]
+  }
+}

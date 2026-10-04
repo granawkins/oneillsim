@@ -1,6 +1,7 @@
 // Asset and texture catalog
 import {streetKit, streetKitIds} from '../street-kit.js';
 import {residentialKitIds} from '../residential-kit.js';
+import {districtKit, districtKitIds} from '../district-kit.js';
 
 // Ground textures (built-in, not loaded from files)
 export const TEXTURES = [
@@ -14,7 +15,7 @@ export const TEXTURES = [
 
 // Curated residential and streetscape models; no planned-only assets.
 const HOUSING = ['TorusHome_ModA', ...residentialKitIds];
-export const BUILDINGS = [...HOUSING, ...streetKitIds];
+export const BUILDINGS = [...HOUSING, ...streetKitIds, ...districtKitIds];
 export const PLANTS = [];
 
 // Only expose assets that belong to this curated client set.
@@ -41,6 +42,11 @@ export const CATEGORIES = {
             assetPath: 'assets/ultimate-buildings/'
         }))
     },
+    district: {
+        name: 'Residential A district',
+        icon: 'assets/icons/ultimate-buildings/',
+        items: districtKit.map(({id,name}) => ({type:'building',id,name,icon:`assets/icons/ultimate-buildings/${id}.png`,assetPath:'assets/ultimate-buildings/'}))
+    },
     furniture: {
         name: 'Furniture & small props',
         icon: 'assets/icons/ultimate-buildings/',
@@ -55,7 +61,8 @@ export const CATEGORIES = {
 // Flat catalog retained for keyboard navigation/backwards compatibility.
 export const ASSET_CATEGORIES = [
     { name: 'Housing', assets: HOUSING },
-    { name: 'Furniture & small props', assets: streetKitIds }
+    { name: 'Furniture & small props', assets: streetKitIds },
+    { name: 'Residential A district', assets: districtKitIds }
 ];
 
 export function buildCatalog() {
