@@ -9,7 +9,7 @@ import { normalizeAssetManifest } from '../src/asset-manifest.js';
 import { interiorModelPlacements, interiorLayout } from '../src/model-placement-interior.js';
 
 const root = path.resolve(import.meta.dirname, '..');
-const world = JSON.parse(fs.readFileSync(path.join(root, 'world.json')));
+const world = JSON.parse(fs.readFileSync(path.join(root, 'assets/settlement-source-world.json')));
 const baseline = world.assets.filter(a => !a[0].startsWith('completed-model-'));
 const placements = interiorModelPlacements(world);
 const modelById = new Map(completedModels.map(m => [m.id, m]));

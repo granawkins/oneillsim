@@ -6,6 +6,7 @@ import { editorState, generateAssetId, addPlacedAsset, removePlacedAsset, GROUND
 import { loadAsset, getAsset, preloadAssets } from './loader.js';
 import { surfaceToWorld } from './raycaster.js';
 import { applyPlacementTransform, isExteriorPlacement } from './placement-transform.js';
+import { createSettlementRendering } from '../settlement-rendering.js';
 
 const SURFACE_RADIUS = GROUND_RADIUS - 0.3;
 
@@ -13,10 +14,19 @@ const SURFACE_RADIUS = GROUND_RADIUS - 0.3;
 const assetObjects = new Map();
 
 let habitatGroup = null;
+let settlementRendering = null;
 
 // Initialize with habitat group reference
 export function initPlacement(habitat) {
+    settlementRendering?.dispose();
     habitatGroup = habitat;
+    settlementRendering = habitat ? createSettlementRendering(habitat) : null;
+}
+
+// Explicit refresh also supports future editor transform/material changes. State
+// remains authoritative; render batches never replace entries in assetObjects.
+export function refreshPlacementRendering() {
+    return settlementRendering?.refresh(assetObjects.values());
 }
 
 // Reusable vectors for orientation calculation
@@ -68,11 +78,17 @@ export async function placeAsset(assetName, theta, z, scale = 4.0, rotation = 0,
     // Store reference
     asset.userData.assetId = id;
     if(surface?.deckId) asset.userData.deckId=surface.deckId;
-    assetObjects.set(id, asset);
 
     // Add to scene and physics before returning placement readiness.
     habitatGroup.add(asset);
-    if (!isExteriorPlacement(surface)) characterColliders.setObject(id, asset, habitatGroup);
+    try {
+        if (!isExteriorPlacement(surface)) characterColliders.setObject(id, asset, habitatGroup);
+    } catch (error) {
+        habitatGroup.remove(asset);
+        console.warn(`Invalid collision metadata for ${assetName}:`, error);
+        return null;
+    }
+    assetObjects.set(id, asset);
 
     // Track in state
     addPlacedAsset({
@@ -85,6 +101,8 @@ export async function placeAsset(assetName, theta, z, scale = 4.0, rotation = 0,
         ...(surface ? {surface} : {})
     });
 
+    refreshPlacementRendering();
+
     return id;
 }
 
@@ -94,6 +112,9 @@ export function removeAsset(id) {
     if (asset && habitatGroup) {
         characterColliders.remove(id);
         habitatGroup.remove(asset);
+        assetObjects.delete(id);
+        // Restore originals and drop instance buffers before freeing owned data.
+        refreshPlacementRendering();
         // Cached OBJ clones borrow resources for the lifetime of the cache.
         // Procedural blockouts and instance-specific replacements still own theirs.
         const disposed = new Set();
@@ -112,7 +133,6 @@ export function removeAsset(id) {
                 if (!borrowed?.materials.includes(material)) disposeOwned(material);
             }
         });
-        assetObjects.delete(id);
         removePlacedAsset(id);
         return true;
     }
@@ -186,13 +206,23 @@ export async function loadPlacedAssets(assets) {
             if(deckId) asset.userData.deckId=deckId;
 
             asset.userData.assetId = data.id;
-            assetObjects.set(data.id, asset);
             if (habitatGroup) {
                 habitatGroup.add(asset);
-                if (!isExteriorPlacement(data.surface)) characterColliders.setObject(data.id, asset, habitatGroup);
+                try {
+                    if (!isExteriorPlacement(data.surface)) characterColliders.setObject(data.id, asset, habitatGroup);
+                } catch (error) {
+                    // Reject incomplete explicit contracts rather than showing
+                    // crops/equipment whose intended collider silently vanished.
+                    habitatGroup.remove(asset);
+                    throw error;
+                }
             }
+            assetObjects.set(data.id, asset);
         } catch (e) {
             console.warn(`Failed to load placed asset ${data.type}:`, e);
         }
     }
+    // Register all original collision roots first, then hide only compatible
+    // leaf meshes. ColliderWorld deliberately ignores render visibility.
+    refreshPlacementRendering();
 }

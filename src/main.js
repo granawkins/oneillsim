@@ -11,6 +11,10 @@ import { createTorus, setInnerTorusVisible } from './torus.js';
 import { initEditor, updateEditor, isEditorEnabled, loadWorld, saveWorld } from './editor/index.js';
 import { CameraMode, getCurrentMode, setCurrentMode, plannerState, humanState, setYaw, setPitch } from './controls/state.js';
 import { PLAYER_RADIUS } from './controls/constants.js';
+import {createSettlementCirculation} from './settlement-circulation.js';
+import {createSettlementPresentation} from './settlement-rendering.js';
+import {initSettlementTour} from './settlement-tour.js';
+import {createSettlementLandscapePresentation} from './settlement-lookdev.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps
 let captureMode = false;
@@ -61,6 +65,11 @@ async function init() {
     createAmbientLight(sceneObjects.scene);
     createCylinder(sceneObjects.habitatGroup);
     createTerraces(sceneObjects.habitatGroup);
+    if(worldData.settlementDesign?.version===1){
+        const circulation=createSettlementCirculation(sceneObjects.habitatGroup,worldData,worldData.settlementDesign.routes);
+        createSettlementPresentation({renderer:sceneObjects.renderer,exposure:1});
+        window.__oneillSettlement={circulation,design:worldData.settlementDesign};
+    }
     createStars(sceneObjects.scene);
     createTorus(sceneObjects.habitatGroup);
 
@@ -75,8 +84,14 @@ async function init() {
     await initEditor(sceneObjects.camera, sceneObjects.habitatGroup, getGroundMesh());
 
     await loadWorld(worldData);
+    if(worldData.settlementDesign?.version===1){
+        window.__oneillSettlement.palette=createSettlementLandscapePresentation(sceneObjects.habitatGroup);
+    }
     initTerraceControls(sceneObjects.habitatGroup);
     setupControls(sceneObjects.camera, sceneObjects.cameraAnchor, sceneObjects.scene, sceneObjects.habitatGroup);
+    if(worldData.settlementDesign?.version===1){
+        initSettlementTour(worldData.settlementDesign,{defaultVisit:window.location.search.length===0});
+    }
 
     // Prevent info panel from triggering three.js pointer lock
     const ui = document.getElementById('ui');
@@ -129,8 +144,13 @@ function animate(time = performance.now()) {
         }
     }
 
-    renderer.render(scene, camera);
-    window.__oneillSimFirstFrame = true;
+    // Render one early habitat frame. Repeatedly drawing an unbatched loading
+    // scene competes with OBJ/atlas decoding on software WebGL; input is still
+    // gated by readiness, so retain the frame until the complete world is ready.
+    if(window.__oneillSimReady || !window.__oneillSimFirstFrame){
+        renderer.render(scene, camera);
+        window.__oneillSimFirstFrame = true;
+    }
 }
 
 window.onload = () => {

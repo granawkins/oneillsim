@@ -3,6 +3,7 @@ import {streetKit} from './street-kit.js';
 import {residentialKit} from './residential-kit.js';
 import {districtKit} from './district-kit.js';
 import {completedModels} from './completed-models.js';
+import {farmAssets} from './settlement-farms.js';
 // References belong to a type; each variant has its own model manifest and stats.
 export const assetGroups = [
   ['Homes & civic buildings', ['Houses', 'Apartments', 'Schools', 'Clinics', 'Community centers', 'Sports facilities']],
@@ -79,6 +80,11 @@ for (const model of completedModels) {
  type.variants=[{id:model.id,name:model.name,directory:model.directory,thumbnail}];
  type.thumbnail=thumbnail;type.references=model.references;type.facts=model.facts.map(f=>typeof f==='string'?f:f.fact);
  type.source='NASA SP-413 · cited report context; authored static inspection model';
+}
+for(const model of farmAssets){
+ const type=assetTypes.find(t=>t.slug===model.slug);
+ if(!type)throw Error('Unknown cultivated landscape type '+model.slug);
+ type.variants.push({id:model.id,name:model.name,directory:model.directory,thumbnail:model.thumbnail});
 }
 export function findAssetType(slug) { return assetTypes.find(type => type.slug === slug); }
 export function findModelType(id) { return assetTypes.find(type => type.variants.some(variant => variant.id === id)); }

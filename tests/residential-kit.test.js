@@ -6,7 +6,8 @@ import os from 'node:os';
 import {residentialKit,residentialKitIds,residentialPilot,residentialPlacements,reservationBounds,rectanglesOverlap,fitsTube} from '../src/residential-kit.js';
 import {streetPilotPlacements} from '../src/street-kit.js';
 import {candidateWorld,validateLayout,inspectAssets,verifyPreservation,applyCandidate} from '../scripts/populate-residential-kit.mjs';
-const world=JSON.parse(await fs.readFile(new URL('../world.json',import.meta.url)));
+// Test the historical pilot against its immutable source, not the growing live scene.
+const world=JSON.parse(await fs.readFile(new URL('../assets/district-source-world.json',import.meta.url)));
 test('exact deterministic residential namespace, counts, categories and reservations',()=>{
  assert.deepEqual(residentialKit,[{id:'TorusHome_CourtyardA',slug:'houses',name:'Courtyard Home'},{id:'TorusHome_RowA',slug:'houses',name:'Row-house Block'},{id:'TorusApartment_TerraceA',slug:'apartments',name:'Terrace Apartments'}]);
  const p=residentialPlacements();assert.deepEqual(p,residentialPlacements());assert.equal(p.length,12);

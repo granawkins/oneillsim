@@ -136,7 +136,7 @@ const close=(a,b,tol=.03)=>assert.ok(Math.abs(a-b)<tol,`${a} != ${b} ± ${tol}`)
     for(let i=0;i<24;i++)fall.advance(.25);close(height(fall),-48,.1);assert.ok(fall.grounded);
  });
  test('live saved world builds a bounded hash and avoids ground scanning',async()=>{
-    const saved=JSON.parse(fs.readFileSync(new URL('../world.json',import.meta.url)));
+    const saved=JSON.parse(fs.readFileSync(process.env.ONEILLSIM_WORLD_FIXTURE || new URL('../world.json',import.meta.url)));
     const serialized=JSON.stringify(saved);configureTerraces(saved.terraces);
     const habitat=new THREE.Group();createTerraces(habitat);
     const {OBJLoader}=await import('three/addons/loaders/OBJLoader.js');
@@ -153,11 +153,12 @@ const close=(a,b,tol=.03)=>assert.ok(Math.abs(a-b)<tol,`${a} != ${b} ± ${tol}`)
             models.set(name,new OBJLoader().parse(fs.readFileSync(source,'utf8')));
         }
         const object=spec?createBlockout(spec):models.get(name).clone();orientToSurface(object,theta,z,surface?.height??spec?.elevation??0);object.rotateY(rotation||0);object.scale.setScalar(scale||4);habitat.add(object);
+        object.userData.surface=surface;
         characterColliders.setObject(id,object,habitat);
     }
     const buildMs=performance.now()-start;
     assert.ok(saved.assets.length>=387);assert.equal(JSON.stringify(saved),serialized);
-    assert.equal(characterColliders.colliders.size,saved.assets.filter(a=>!a[7]?.worldTransform).length+terraceMeshes.length);
+    assert.equal(characterColliders.colliders.size,saved.assets.filter(a=>!a[7]?.worldTransform&&a[7]?.collisionMode!=='none').length+terraceMeshes.length);
     const c=controller(characterColliders,{groundExists:theta=>!inTerraceSector(theta),speed:CHARACTER.speed,jumpSpeed:CHARACTER.jumpSpeed});
     const timings=[];let sum=0,max=0;const beforeQueries=characterColliders.stats.queries,beforeCandidates=characterColliders.stats.candidates;
     for(let i=0;i<1200;i++){

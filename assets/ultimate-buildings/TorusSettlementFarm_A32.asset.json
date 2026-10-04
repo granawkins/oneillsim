@@ -1,0 +1,72 @@
+{
+  "id": "TorusSettlementFarm_A32",
+  "name": "Sorghum cultivated parcel",
+  "family": "settlement-farms",
+  "generator": "assets/scripts/build_settlement_farm_landscape.py",
+  "model": "TorusSettlementFarm_A32.obj",
+  "materials": "TorusSettlementFarm_A32.mtl",
+  "kitDefinition": "TorusSettlementFarm_Kit.mtl",
+  "atlas": "TorusSettlementFarm_Atlas.png",
+  "materialPool": "settlement-farms-v1",
+  "triangles": 530,
+  "vertices": 1060,
+  "materialCount": 1,
+  "boundsMeters": {
+    "x": [
+      -34.98987356425603,
+      34.98987356425603
+    ],
+    "y": [
+      0.0,
+      4.1691107780919765
+    ],
+    "z": [
+      -17.0,
+      17.0
+    ]
+  },
+  "intrinsicReservation": {
+    "width": 70,
+    "depth": 34,
+    "height": 3.5,
+    "canonicalHeight": -10,
+    "radius": 840
+  },
+  "objCoordinateScale": 0.25,
+  "placementScale": 4,
+  "origin": "feet y=0; +Y inward; principal facade +Z",
+  "preview": "TorusSettlementFarm_A32_Preview.png",
+  "thumbnail": "../icons/ultimate-buildings/TorusSettlementFarm_A32.png",
+  "sourceFixtureSHA256": "98b71f7a70b06603dc080287c3025ca95242be1f64c5f4f463837b7020fb2591",
+  "source": {
+    "facts": [
+      "SP-413 p91 prose and p93 Figures 5-8/5-9: layered agriculture and artificial lighting below plain.",
+      "SP-413 p98 Tables 5-4/5-5: crop and animal areas; fruit trees in parks not crop-area ledger.",
+      "Appendix C p115 Table 5-18: crop requirements include animal feed and byproduct flows."
+    ],
+    "segments": [
+      "sp413-s00708",
+      "sp413-s02273",
+      "sp413-s02274",
+      "sp413-s02393",
+      "sp413-s02395",
+      "sp413-s02783"
+    ]
+  },
+  "interpretation": "All precise geometry, extra Farm B/C allocations, ornamental orchard parks, greenhouse precincts, equipment and animal silhouettes are authored visualization, not an operational food system. Original Farm A ledger area is retained, including internal circulation; net planted area is smaller.",
+  "collision": {
+    "supportGroup": "support",
+    "solidGroup": "solid",
+    "ignoreGroups": [
+      "ornament",
+      "water",
+      "glass",
+      "lighting"
+    ],
+    "intent": "Use existing analytic ground/deck for support. Do not triangle-collide crop canopy, pond surface or lamp strips. Solid housing/equipment masses need group-selective blockers; visitor lanes remain on existing deck. No traversable roof or swimmable water claim."
+  },
+  "verification": [
+    "OBJ indices and bounds tested",
+    "isometric preview rendered from same curved mesh; no unrelated illustration"
+  ]
+}

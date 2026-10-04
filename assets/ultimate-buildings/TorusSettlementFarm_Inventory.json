@@ -1,0 +1,832 @@
+[
+  {
+    "id": "TorusSettlementFarm_A01",
+    "plotId": "farm-a-plot-1",
+    "category": "fish",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 146
+  },
+  {
+    "id": "TorusSettlementFarm_A02",
+    "plotId": "farm-a-plot-2",
+    "category": "fish",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 146
+  },
+  {
+    "id": "TorusSettlementFarm_A03",
+    "plotId": "farm-a-plot-3",
+    "category": "fish",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 146
+  },
+  {
+    "id": "TorusSettlementFarm_A04",
+    "plotId": "farm-a-plot-4",
+    "category": "fish",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 146
+  },
+  {
+    "id": "TorusSettlementFarm_A05",
+    "plotId": "farm-a-plot-5",
+    "category": "fish",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 146
+  },
+  {
+    "id": "TorusSettlementFarm_A06",
+    "plotId": "farm-a-plot-6",
+    "category": "fish",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 146
+  },
+  {
+    "id": "TorusSettlementFarm_A07",
+    "plotId": "farm-a-plot-7",
+    "category": "fish",
+    "width": 36.14035087719304,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 80
+  },
+  {
+    "id": "TorusSettlementFarm_A08",
+    "plotId": "farm-a-plot-8",
+    "category": "rice",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 242
+  },
+  {
+    "id": "TorusSettlementFarm_A09",
+    "plotId": "farm-a-plot-9",
+    "category": "rice",
+    "width": 32.800291322586986,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 122
+  },
+  {
+    "id": "TorusSettlementFarm_A10",
+    "plotId": "farm-a-plot-10",
+    "category": "rice",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 242
+  },
+  {
+    "id": "TorusSettlementFarm_A11",
+    "plotId": "farm-a-plot-11",
+    "category": "rice",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 242
+  },
+  {
+    "id": "TorusSettlementFarm_A12",
+    "plotId": "farm-a-plot-12",
+    "category": "rice",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 242
+  },
+  {
+    "id": "TorusSettlementFarm_A13",
+    "plotId": "farm-a-plot-13",
+    "category": "rice",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 242
+  },
+  {
+    "id": "TorusSettlementFarm_A14",
+    "plotId": "farm-a-plot-14",
+    "category": "rice",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 242
+  },
+  {
+    "id": "TorusSettlementFarm_A15",
+    "plotId": "farm-a-plot-15",
+    "category": "rice",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 242
+  },
+  {
+    "id": "TorusSettlementFarm_A16",
+    "plotId": "farm-a-plot-16",
+    "category": "rice",
+    "width": 70,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 242
+  },
+  {
+    "id": "TorusSettlementFarm_A17",
+    "plotId": "farm-a-plot-17",
+    "category": "rice",
+    "width": 38.77865604583406,
+    "depth": 19,
+    "canonicalHeight": 5,
+    "triangles": 128
+  },
+  {
+    "id": "TorusSettlementFarm_A18",
+    "plotId": "farm-a-plot-18",
+    "category": "wheat",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A19",
+    "plotId": "farm-a-plot-19",
+    "category": "wheat",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A20",
+    "plotId": "farm-a-plot-20",
+    "category": "wheat",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A21",
+    "plotId": "farm-a-plot-21",
+    "category": "wheat",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A22",
+    "plotId": "farm-a-plot-22",
+    "category": "wheat",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A23",
+    "plotId": "farm-a-plot-23",
+    "category": "wheat",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A24",
+    "plotId": "farm-a-plot-24",
+    "category": "wheat",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A25",
+    "plotId": "farm-a-plot-25",
+    "category": "wheat",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A26",
+    "plotId": "farm-a-plot-26",
+    "category": "wheat",
+    "width": 10.194108421594137,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 130
+  },
+  {
+    "id": "TorusSettlementFarm_A27",
+    "plotId": "farm-a-plot-27",
+    "category": "wheat",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A28",
+    "plotId": "farm-a-plot-28",
+    "category": "wheat",
+    "width": 65.68824451958233,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 526
+  },
+  {
+    "id": "TorusSettlementFarm_A29",
+    "plotId": "farm-a-plot-29",
+    "category": "sorghum",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A30",
+    "plotId": "farm-a-plot-30",
+    "category": "sorghum",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A31",
+    "plotId": "farm-a-plot-31",
+    "category": "sorghum",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A32",
+    "plotId": "farm-a-plot-32",
+    "category": "sorghum",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A33",
+    "plotId": "farm-a-plot-33",
+    "category": "sorghum",
+    "width": 70,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A34",
+    "plotId": "farm-a-plot-34",
+    "category": "sorghum",
+    "width": 22.54901960784312,
+    "depth": 34,
+    "canonicalHeight": -10,
+    "triangles": 144
+  },
+  {
+    "id": "TorusSettlementFarm_A35",
+    "plotId": "farm-a-plot-35",
+    "category": "vegetables",
+    "width": 70,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A36",
+    "plotId": "farm-a-plot-36",
+    "category": "vegetables",
+    "width": 70,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A37",
+    "plotId": "farm-a-plot-37",
+    "category": "vegetables",
+    "width": 70,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A38",
+    "plotId": "farm-a-plot-38",
+    "category": "vegetables",
+    "width": 70,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A39",
+    "plotId": "farm-a-plot-39",
+    "category": "vegetables",
+    "width": 70,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A40",
+    "plotId": "farm-a-plot-40",
+    "category": "vegetables",
+    "width": 11.111111111111162,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 130
+  },
+  {
+    "id": "TorusSettlementFarm_A41",
+    "plotId": "farm-a-plot-41",
+    "category": "corn",
+    "width": 62.5,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 520
+  },
+  {
+    "id": "TorusSettlementFarm_A42",
+    "plotId": "farm-a-plot-42",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A43",
+    "plotId": "farm-a-plot-43",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A44",
+    "plotId": "farm-a-plot-44",
+    "category": "soybeans",
+    "width": 17.836463532297216,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 134
+  },
+  {
+    "id": "TorusSettlementFarm_A45",
+    "plotId": "farm-a-plot-45",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A46",
+    "plotId": "farm-a-plot-46",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A47",
+    "plotId": "farm-a-plot-47",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A48",
+    "plotId": "farm-a-plot-48",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A49",
+    "plotId": "farm-a-plot-49",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A50",
+    "plotId": "farm-a-plot-50",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A51",
+    "plotId": "farm-a-plot-51",
+    "category": "soybeans",
+    "width": 47.16353646770282,
+    "depth": 48,
+    "canonicalHeight": -25,
+    "triangles": 394
+  },
+  {
+    "id": "TorusSettlementFarm_A52",
+    "plotId": "farm-a-plot-52",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 96,
+    "canonicalHeight": -40,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A53",
+    "plotId": "farm-a-plot-53",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 96,
+    "canonicalHeight": -40,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A54",
+    "plotId": "farm-a-plot-54",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 96,
+    "canonicalHeight": -40,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A55",
+    "plotId": "farm-a-plot-55",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 96,
+    "canonicalHeight": -40,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A56",
+    "plotId": "farm-a-plot-56",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 96,
+    "canonicalHeight": -40,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A57",
+    "plotId": "farm-a-plot-57",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 96,
+    "canonicalHeight": -40,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A58",
+    "plotId": "farm-a-plot-58",
+    "category": "soybeans",
+    "width": 70,
+    "depth": 96,
+    "canonicalHeight": -40,
+    "triangles": 530
+  },
+  {
+    "id": "TorusSettlementFarm_A59",
+    "plotId": "farm-a-plot-59",
+    "category": "soybeans",
+    "width": 13.472222222222323,
+    "depth": 96,
+    "canonicalHeight": -40,
+    "triangles": 134
+  },
+  {
+    "id": "TorusSettlementFarm_A60",
+    "plotId": "farm-a-plot-60",
+    "category": "chickens",
+    "width": 27.777777777777782,
+    "depth": 96,
+    "canonicalHeight": -40,
+    "triangles": 258
+  },
+  {
+    "id": "TorusSettlementFarm_A61",
+    "plotId": "farm-a-plot-61",
+    "category": "rabbits",
+    "width": 38.19444444444445,
+    "depth": 96,
+    "canonicalHeight": -40,
+    "triangles": 268
+  },
+  {
+    "id": "TorusSettlementFarm_A62",
+    "plotId": "farm-a-plot-62",
+    "category": "cattle",
+    "width": 20.833333333333332,
+    "depth": 96,
+    "canonicalHeight": -40,
+    "triangles": 232
+  },
+  {
+    "id": "TorusSettlementFarm_A63",
+    "plotId": "farm-a-plot-63",
+    "category": "drying",
+    "width": 70,
+    "depth": 76,
+    "canonicalHeight": -50,
+    "triangles": 222
+  },
+  {
+    "id": "TorusSettlementFarm_A64",
+    "plotId": "farm-a-plot-64",
+    "category": "drying",
+    "width": 70,
+    "depth": 76,
+    "canonicalHeight": -50,
+    "triangles": 222
+  },
+  {
+    "id": "TorusSettlementFarm_A65",
+    "plotId": "farm-a-plot-65",
+    "category": "drying",
+    "width": 70,
+    "depth": 76,
+    "canonicalHeight": -50,
+    "triangles": 222
+  },
+  {
+    "id": "TorusSettlementFarm_A66",
+    "plotId": "farm-a-plot-66",
+    "category": "drying",
+    "width": 70,
+    "depth": 76,
+    "canonicalHeight": -50,
+    "triangles": 222
+  },
+  {
+    "id": "TorusSettlementFarm_A67",
+    "plotId": "farm-a-plot-67",
+    "category": "drying",
+    "width": 70,
+    "depth": 76,
+    "canonicalHeight": -50,
+    "triangles": 222
+  },
+  {
+    "id": "TorusSettlementFarm_A68",
+    "plotId": "farm-a-plot-68",
+    "category": "drying",
+    "width": 0.8771929824561563,
+    "depth": 76,
+    "canonicalHeight": -50,
+    "triangles": 120
+  },
+  {
+    "id": "TorusSettlementFarm_A69",
+    "plotId": "farm-a-plot-69",
+    "category": "processing",
+    "width": 70,
+    "depth": 58,
+    "canonicalHeight": -56,
+    "triangles": 182
+  },
+  {
+    "id": "TorusSettlementFarm_A70",
+    "plotId": "farm-a-plot-70",
+    "category": "processing",
+    "width": 70,
+    "depth": 58,
+    "canonicalHeight": -56,
+    "triangles": 182
+  },
+  {
+    "id": "TorusSettlementFarm_A71",
+    "plotId": "farm-a-plot-71",
+    "category": "processing",
+    "width": 70,
+    "depth": 58,
+    "canonicalHeight": -56,
+    "triangles": 182
+  },
+  {
+    "id": "TorusSettlementFarm_A72",
+    "plotId": "farm-a-plot-72",
+    "category": "processing",
+    "width": 19.88505747126438,
+    "depth": 58,
+    "canonicalHeight": -56,
+    "triangles": 116
+  },
+  {
+    "id": "TorusSettlementFarm_A73",
+    "plotId": "farm-a-plot-73",
+    "category": "water",
+    "width": 70,
+    "depth": 38,
+    "canonicalHeight": -61,
+    "triangles": 166
+  },
+  {
+    "id": "TorusSettlementFarm_A74",
+    "plotId": "farm-a-plot-74",
+    "category": "water",
+    "width": 70,
+    "depth": 38,
+    "canonicalHeight": -61,
+    "triangles": 166
+  },
+  {
+    "id": "TorusSettlementFarm_A75",
+    "plotId": "farm-a-plot-75",
+    "category": "water",
+    "width": 70,
+    "depth": 38,
+    "canonicalHeight": -61,
+    "triangles": 166
+  },
+  {
+    "id": "TorusSettlementFarm_A76",
+    "plotId": "farm-a-plot-76",
+    "category": "water",
+    "width": 70,
+    "depth": 38,
+    "canonicalHeight": -61,
+    "triangles": 166
+  },
+  {
+    "id": "TorusSettlementFarm_A77",
+    "plotId": "farm-a-plot-77",
+    "category": "water",
+    "width": 70,
+    "depth": 38,
+    "canonicalHeight": -61,
+    "triangles": 166
+  },
+  {
+    "id": "TorusSettlementFarm_A78",
+    "plotId": "farm-a-plot-78",
+    "category": "water",
+    "width": 0.8771929824561563,
+    "depth": 38,
+    "canonicalHeight": -61,
+    "triangles": 32
+  },
+  {
+    "id": "TorusSettlementFarm_Wheat",
+    "category": "wheat",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 380
+  },
+  {
+    "id": "TorusSettlementFarm_Sorghum",
+    "category": "sorghum",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 380
+  },
+  {
+    "id": "TorusSettlementFarm_Soybeans",
+    "category": "soybeans",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 380
+  },
+  {
+    "id": "TorusSettlementFarm_Vegetables",
+    "category": "vegetables",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 380
+  },
+  {
+    "id": "TorusSettlementFarm_Corn",
+    "category": "corn",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 380
+  },
+  {
+    "id": "TorusSettlementFarm_Rice",
+    "category": "rice",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 188
+  },
+  {
+    "id": "TorusSettlementFarm_Fish",
+    "category": "fish",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 116
+  },
+  {
+    "id": "TorusSettlementFarm_Greenhouse",
+    "category": "greenhouse",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 392
+  },
+  {
+    "id": "TorusSettlementFarm_Orchard",
+    "category": "orchard",
+    "width": 58,
+    "depth": 12,
+    "canonicalHeight": 0,
+    "triangles": 368
+  },
+  {
+    "id": "TorusSettlementFarm_Garden",
+    "category": "garden",
+    "width": 58,
+    "depth": 12,
+    "canonicalHeight": 0,
+    "triangles": 416
+  },
+  {
+    "id": "TorusSettlementFarm_Cattle",
+    "category": "cattle",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 284
+  },
+  {
+    "id": "TorusSettlementFarm_Chickens",
+    "category": "chickens",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 284
+  },
+  {
+    "id": "TorusSettlementFarm_Rabbits",
+    "category": "rabbits",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 284
+  },
+  {
+    "id": "TorusSettlementFarm_Processing",
+    "category": "processing",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 172
+  },
+  {
+    "id": "TorusSettlementFarm_Drying",
+    "category": "drying",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 212
+  },
+  {
+    "id": "TorusSettlementFarm_Water",
+    "category": "water",
+    "width": 58,
+    "depth": 30,
+    "canonicalHeight": 0,
+    "triangles": 136
+  }
+]

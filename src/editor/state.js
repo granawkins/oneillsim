@@ -149,6 +149,7 @@ export function exportWorldState() {
 
     if(editorState.terraces) result.terraces=editorState.terraces;
     if(editorState.masterPlan) result.masterPlan=editorState.masterPlan;
+    if(editorState.settlementDesign) result.settlementDesign=editorState.settlementDesign;
     return result;
 }
 
@@ -156,6 +157,7 @@ export function exportWorldState() {
 export function importWorldState(data) {
     editorState.terraces=data.terraces || null;
     editorState.masterPlan=data.masterPlan || null;
+    editorState.settlementDesign=data.settlementDesign || null;
     // Load texture grid
     if (data.grid) {
         editorState.textureGrid = data.grid;

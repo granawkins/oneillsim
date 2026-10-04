@@ -1,4 +1,6 @@
 import {remainingModelContract} from '../remaining-model-contract.js';
+import {farmAssets} from '../settlement-farms.js';
+const settlementFarmIds=new Set(farmAssets.map(m=>m.id));
 const remainingKits = new Map(remainingModelContract.map(a=>[a.id,a.materialKit]));
 // Only authored kits with byte-compatible MTL definitions share creators.
 // Catalog membership gates generated landscape names; a prefix alone is unsafe.
@@ -6,6 +8,7 @@ const street = new Set(['TorusBench_A','TorusTable_A','TorusPlanter_A','TorusRai
 const residential = new Set(['TorusHome_CourtyardA','TorusHome_RowA','TorusApartment_TerraceA']);
 const districtBuildings = new Set(['TorusDistrict_Housing5A','TorusDistrict_Housing4A','TorusDistrict_Housing2A','TorusDistrict_SchoolA','TorusDistrict_ClinicA','TorusDistrict_HallA','TorusDistrict_ShopsA','TorusDistrict_OfficesA','TorusDistrict_WorkshopA','TorusDistrict_StorageA','TorusDistrict_RecreationA','TorusDistrict_CommunityA']);
 export function materialKitKey(name, registeredNames = []) {
+  if (settlementFarmIds.has(name) && registeredNames.includes(name)) return 'settlement-farms-v1';
   if (remainingKits.has(name) && registeredNames.includes(name)) return remainingKits.get(name);
   if (street.has(name)) return 'street';
   if (residential.has(name)) return 'residential';
