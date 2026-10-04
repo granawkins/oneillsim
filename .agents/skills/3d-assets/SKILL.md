@@ -76,5 +76,8 @@ For another asset, first confirm its ID is registered/allowlisted; otherwise use
 
 - `assets/*` is ignored by Git; force-add only intended reviewed deliverables, not whole asset trees/private research/generated bulk data.
 - Preserve source images' reuse constraints. Reference art is not automatically approved as a published texture.
-- Reusing a model requires a draw-call/shared-geometry strategy as well as a triangle budget. Measure scene density before filling neighborhoods.
+- Reusing a model requires a draw-call/shared-geometry strategy as well as a triangle budget. Measure scene density before filling neighborhoods. `docs/street-furniture-kit.md` records a complete six-type example, measured court and clone-versus-instance experiment; cached clones are not runtime instancing.
+- Share a material creator only for an explicit kit whose MTL definitions/atlas are identical; do not pool unrelated materials merely by name. Cache readiness must include atlas failures/retries. Mark borrowed geometry/material identities outside serialized userData; deleting a clone must not dispose resources used by other clones, while unique blockouts/replacements still dispose.
+- Test library file links and thumbnail URLs after registering shared atlases; `${id}_Atlas.png` is not a valid convention for every model. Frame small props from actual bounds while preserving established house capture poses.
+- Keep additive world placement repeatable and bounded: private backup, stable new IDs, exact preservation of original records/fields, concurrent-change guard and read-back. Use `scripts/populate-street-pilot.mjs` as a reference, not a license to regenerate the live world.
 - Completion means a real decoded preview, valid OBJ/MTL/texture references, measured bounds/counts, correct orientation/scale, viewer/editor proof, and explicit source-versus-interpretation notes. World contents and other agents' files stay unchanged unless separately approved.

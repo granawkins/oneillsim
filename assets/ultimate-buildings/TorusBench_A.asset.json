@@ -1,0 +1,83 @@
+{
+  "id": "TorusBench_A",
+  "displayName": "Terrace bench",
+  "family": "Furniture & small props",
+  "variant": "A",
+  "description": "Three ivory seat slats, two back panels, open blue-grey frame and warm arm caps; nominal seat top 0.46 m.",
+  "generator": "assets/scripts/build_torus_street_kit.py",
+  "obj": "TorusBench_A.obj",
+  "mtl": "TorusBench_A.mtl",
+  "textureAtlas": "TorusStreetKit_Atlas.png",
+  "materialName": "TorusStreetKit",
+  "materials": 1,
+  "objects": 1,
+  "atlasSizePixels": [
+    512,
+    512
+  ],
+  "opaque": true,
+  "editorDefaultScale": 4.0,
+  "objCoordinateScale": 0.25,
+  "origin": "Centered horizontal placement origin; feet y=0",
+  "orientation": "+Y up; +Z front",
+  "source": "NASA SP-413 Figures 5-5 and 5-7, printed pp. 91-92, PDF pp. 108-109.",
+  "sourceReferences": [
+    {
+      "figure": "5-5",
+      "printedPage": 91,
+      "pdfPage": 108,
+      "segmentId": "sp413-s02259"
+    },
+    {
+      "figure": "5-7",
+      "printedPage": 92,
+      "pdfPage": 109,
+      "segmentId": "sp413-s02284"
+    }
+  ],
+  "sourceFacts": [
+    "The illustrations show rectilinear terraced housing, planted edges and pedestrian public spaces; they are conceptual art, not dimensioned furniture drawings."
+  ],
+  "interpretations": [
+    "Three ivory seat slats, two back panels, open blue-grey frame and warm arm caps; nominal seat top 0.46 m.",
+    "All furniture dimensions, proportions, detailed mechanisms, signage wording, vegetation shapes and colors are authored interpretation consistent with TorusHome_ModA; not report specifications."
+  ],
+  "unresolvedQuestions": [
+    "No sourced furniture dimensions or certified guardrail, accessibility or waste-system specification."
+  ],
+  "collisionIntent": {
+    "modeled": "Opaque solid furniture surfaces; planter soil and vegetation integral; railing gaps and bin deposit recess modeled.",
+    "runtime": "Parent integration must determine collider policy; no functional seating, sorting, moving parts or safety certification claimed."
+  },
+  "icon": "assets/icons/ultimate-buildings/TorusBench_A.png",
+  "preview": "assets/ultimate-buildings/TorusStreetKit_Preview.png",
+  "verification": [
+    "Indexed OBJ triangles, explicit unit normals, atlas UVs and relative paths validated by tests/street_kit_assets_test.py",
+    "Offline depth-buffer preview reads the exported indexed geometry; deterministic output validation available in the test suite"
+  ],
+  "worldJsonChanged": false,
+  "vertices": 144,
+  "normals": 105,
+  "uvs": 420,
+  "triangles": 210,
+  "trianglesAfterQuadTriangulation": 210,
+  "actualModelBoundsMeters": [
+    [
+      -0.9,
+      0.9
+    ],
+    [
+      0.0,
+      1.01
+    ],
+    [
+      -0.3,
+      0.3
+    ]
+  ],
+  "dimensionsMeters": [
+    1.8,
+    1.01,
+    0.6
+  ]
+}

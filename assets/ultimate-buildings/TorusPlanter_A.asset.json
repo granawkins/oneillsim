@@ -1,0 +1,83 @@
+{
+  "id": "TorusPlanter_A",
+  "displayName": "Planted terrace box",
+  "family": "Furniture & small props",
+  "variant": "A",
+  "description": "Hollow ivory planter shell, recessed soil and integral opaque faceted shrubs; no alpha cards.",
+  "generator": "assets/scripts/build_torus_street_kit.py",
+  "obj": "TorusPlanter_A.obj",
+  "mtl": "TorusPlanter_A.mtl",
+  "textureAtlas": "TorusStreetKit_Atlas.png",
+  "materialName": "TorusStreetKit",
+  "materials": 1,
+  "objects": 1,
+  "atlasSizePixels": [
+    512,
+    512
+  ],
+  "opaque": true,
+  "editorDefaultScale": 4.0,
+  "objCoordinateScale": 0.25,
+  "origin": "Centered horizontal placement origin; feet y=0",
+  "orientation": "+Y up; +Z front",
+  "source": "NASA SP-413 Figures 5-5 and 5-7, printed pp. 91-92, PDF pp. 108-109.",
+  "sourceReferences": [
+    {
+      "figure": "5-5",
+      "printedPage": 91,
+      "pdfPage": 108,
+      "segmentId": "sp413-s02259"
+    },
+    {
+      "figure": "5-7",
+      "printedPage": 92,
+      "pdfPage": 109,
+      "segmentId": "sp413-s02284"
+    }
+  ],
+  "sourceFacts": [
+    "The illustrations show rectilinear terraced housing, planted edges and pedestrian public spaces; they are conceptual art, not dimensioned furniture drawings."
+  ],
+  "interpretations": [
+    "Hollow ivory planter shell, recessed soil and integral opaque faceted shrubs; no alpha cards.",
+    "All furniture dimensions, proportions, detailed mechanisms, signage wording, vegetation shapes and colors are authored interpretation consistent with TorusHome_ModA; not report specifications."
+  ],
+  "unresolvedQuestions": [
+    "No sourced furniture dimensions or certified guardrail, accessibility or waste-system specification."
+  ],
+  "collisionIntent": {
+    "modeled": "Opaque solid furniture surfaces; planter soil and vegetation integral; railing gaps and bin deposit recess modeled.",
+    "runtime": "Parent integration must determine collider policy; no functional seating, sorting, moving parts or safety certification claimed."
+  },
+  "icon": "assets/icons/ultimate-buildings/TorusPlanter_A.png",
+  "preview": "assets/ultimate-buildings/TorusStreetKit_Preview.png",
+  "verification": [
+    "Indexed OBJ triangles, explicit unit normals, atlas UVs and relative paths validated by tests/street_kit_assets_test.py",
+    "Offline depth-buffer preview reads the exported indexed geometry; deterministic output validation available in the test suite"
+  ],
+  "worldJsonChanged": false,
+  "vertices": 170,
+  "normals": 177,
+  "uvs": 624,
+  "triangles": 270,
+  "trianglesAfterQuadTriangulation": 270,
+  "actualModelBoundsMeters": [
+    [
+      -0.77,
+      0.77
+    ],
+    [
+      0.0,
+      1.3
+    ],
+    [
+      -0.415,
+      0.415
+    ]
+  ],
+  "dimensionsMeters": [
+    1.54,
+    1.3,
+    0.83
+  ]
+}

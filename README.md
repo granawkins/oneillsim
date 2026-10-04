@@ -75,6 +75,8 @@ To add a design, put its OBJ, MTL, atlas and `.asset.json` manifest in its ignor
 
 This roadmap does not add placeholder models to `src/editor/catalog.js`; only real, placeable models belong in the simulation catalog. Planned names are a starting inventory, not verified requirements from the study.
 
+The complete six-type **Furniture & small props** kit is registered and placed with six existing homes in Garden Court. See [asset/layout/performance details](docs/street-furniture-kit.md). The shared opaque atlas is 512px; all six models are under 300 triangles. The bounded court is a presentation interpretation, not a sourced historical floorplan.
+
 ## Residential blockout
 
 `/residential/` documents district A, its central garden basin, and sidewall housing shelves at −48, −32 and −12 m. `src/residential-plan.js` contains the dimensions and separate indoor, exterior/access, park and circulation budgets. The −61.5 m service shelf sits below the basin. These levels are design choices, not dimensions read from the study.

@@ -1,4 +1,5 @@
 // Library roadmap, separate from the simulator's catalog of placeable models.
+import {streetKit} from './street-kit.js';
 // References belong to a type; each variant has its own model manifest and stats.
 export const assetGroups = [
   ['Homes & civic buildings', ['Houses', 'Apartments', 'Schools', 'Clinics', 'Community centers', 'Sports facilities']],
@@ -29,5 +30,21 @@ houses.facts = [
   'Figures 5-5 to 5-7 show varied one- and two-level homes and terraces. They are concepts, not dimensioned construction drawings.',
 ];
 houses.variants = [{ id: 'TorusHome_ModA', name: 'Modular Terrace Home A-01', directory: 'ultimate-buildings', thumbnail: null }];
+for (const {id,slug,name} of streetKit) {
+  const type = assetTypes.find(type => type.slug === slug);
+  if (!type) throw new Error(`Missing street kit type: ${slug}`);
+  type.thumbnail = `/oneillsim/assets/icons/ultimate-buildings/${id}.png`;
+  type.references = [
+    {label:'Figure 5-5 · terrace-house context',href:'/study/#sp413-s02259',image:'sp413-p0108-01.jpg'},
+    {label:'Figure 5-7 · pedestrian housing streetscape',href:'/study/#sp413-s02284',image:'sp413-p0109-04.jpg'},
+  ];
+  type.source = 'NASA SP-413 · streetscape context; furniture is authored interpretation';
+  type.facts = [
+    'Figures 5-5 and 5-7 show terraced housing, planted edges and pedestrian spaces, not dimensioned furniture specifications.',
+    'These props share the existing house palette. Dimensions, detailed forms and sign wording are authored interpretation, not historical specifications.',
+    'One opaque material and a shared 512px atlas for the six-type kit; no functional seating or waste sorting is implied.',
+  ];
+  type.variants = [{id,name,directory:'ultimate-buildings',thumbnail:type.thumbnail}];
+}
 export function findAssetType(slug) { return assetTypes.find(type => type.slug === slug); }
 export function findModelType(id) { return assetTypes.find(type => type.variants.some(variant => variant.id === id)); }

@@ -15,6 +15,7 @@ export default async function AssetsPage({ searchParams }) {
     <nav><a href="/oneillsim/">← Simulation</a><Link href="/residential/">Residential plan ↗</Link><Link href="/agriculture/">Agriculture ↗</Link><Link href="/study/">Study ↗</Link></nav>
     <header><h1>Asset library</h1><p>{ready} modeled · {assetTypes.length - ready} planned</p></header>
     <p className="library-intro">The building blocks of the settlement. Designs and shared references live together under each type.</p>
+    <p className="library-intro"><a href="/oneillsim/?theta=150&z=5&yaw=0&pitch=0">Walk Garden Court ↗</a> · Six homes and the complete furniture kit, placed at human scale.</p>
     <div className="library-groups">{assetGroups.map(group => <section key={group.name}>
       <h2>{group.name}<span>{group.types.length}</span></h2>
       <ul>{group.types.map(type => <li key={type.slug}>{type.variants.length ?

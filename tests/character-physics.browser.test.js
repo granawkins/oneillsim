@@ -42,8 +42,8 @@ test('candidate integrates live load, exact IDs, collider readiness, deck visibi
                 faces:getStars().images.map(i=>[i?.naturalWidth,i?.complete]),firstFrame:window.__oneillSimFirstFrame,
                 resources:performance.getEntriesByType('resource').filter(e=>e.name.includes('/src/')||e.name.endsWith('world.json')).length};
         });
-        assert.equal(state.error,null);assert.deepEqual(errors,[]);assert.deepEqual(state.ids,state.savedIds);assert.equal(state.ids.length,387);
-        assert.equal(state.colliders,387+state.terraces);assert.equal(state.physicalAfterFilter,state.triangleCount);
+        assert.equal(state.error,null);assert.deepEqual(errors,[]);assert.deepEqual(state.ids,state.savedIds);assert.ok(state.ids.length>=387);
+        assert.equal(state.colliders,state.savedIds.length+state.terraces);assert.equal(state.physicalAfterFilter,state.triangleCount);
         assert.deepEqual(state.before,state.position);assert.ok(Math.abs(state.position[1]-828)<1e-9);assert.equal(state.position[2],12);
         await page.waitForFunction(async()=>{const {getStars}=await import('./src/stars.js');return getStars().images.every(i=>i.complete&&i.naturalWidth===1024);});
         assert.equal(guard.writes.length,0);

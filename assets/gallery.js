@@ -138,6 +138,23 @@ async function loadAsset() {
             }
         });
         scene.add(model);
+        // Small props need a human-scale inspection frame, not the house's
+        // 2.55m target/17m distance. Preserve existing house/capture conventions.
+        if (manifest.family === 'Furniture & small props') {
+            const bounds = new THREE.Box3().setFromObject(model);
+            bounds.getCenter(target);
+            const extent = bounds.getSize(new THREE.Vector3());
+            const propDistance = queryNumber('distance', Math.max(3, Math.max(extent.x, extent.y, extent.z) * 2.8), 2, 45);
+            camera.position.set(
+                target.x + propDistance * Math.cos(elevation) * Math.sin(azimuth),
+                target.y + propDistance * Math.sin(elevation),
+                target.z + propDistance * Math.cos(elevation) * Math.cos(azimuth)
+            );
+            controls.target.copy(target);
+            controls.minDistance = 1.5;
+            camera.lookAt(target);
+            controls.update();
+        }
 
         const bounds = manifest.actualModelBoundsMeters || [];
         const dimensions = bounds.map(([min, max]) => (Number(max) - Number(min)).toFixed(2));

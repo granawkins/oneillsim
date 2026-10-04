@@ -93,17 +93,22 @@ export function removeAsset(id) {
     if (asset && habitatGroup) {
         characterColliders.remove(id);
         habitatGroup.remove(asset);
-        // Dispose geometry and materials
+        // Cached OBJ clones borrow resources for the lifetime of the cache.
+        // Procedural blockouts and instance-specific replacements still own theirs.
+        const disposed = new Set();
         asset.traverse((child) => {
-            if (child.isMesh) {
-                if (child.geometry) child.geometry.dispose();
-                if (child.material) {
-                    if (Array.isArray(child.material)) {
-                        child.material.forEach(m => m.dispose());
-                    } else {
-                        child.material.dispose();
-                    }
+            if (!child.isMesh) return;
+            const borrowed = child.borrowedAssetResources;
+            const disposeOwned = resource => {
+                if (resource && !disposed.has(resource)) {
+                    disposed.add(resource);
+                    resource.dispose();
                 }
+            };
+            if (child.geometry !== borrowed?.geometry) disposeOwned(child.geometry);
+            const materials = Array.isArray(child.material) ? child.material : [child.material];
+            for (const material of materials) {
+                if (!borrowed?.materials.includes(material)) disposeOwned(material);
             }
         });
         assetObjects.delete(id);

@@ -1,4 +1,5 @@
 // Asset and texture catalog
+import {streetKit, streetKitIds} from '../street-kit.js';
 
 // Ground textures (built-in, not loaded from files)
 export const TEXTURES = [
@@ -10,8 +11,9 @@ export const TEXTURES = [
     { id: 'farm', name: 'Farm', color: 0x4a3728 }
 ];
 
-// Only active 3D asset in this first residential test world.
-export const BUILDINGS = ['TorusHome_ModA'];
+// Curated residential and streetscape models; no planned-only assets.
+const HOUSING = ['TorusHome_ModA'];
+export const BUILDINGS = [...HOUSING, ...streetKitIds];
 export const PLANTS = [];
 
 // Only expose assets that belong to this curated client set.
@@ -30,11 +32,20 @@ export const CATEGORIES = {
     buildings: {
         name: 'Buildings',
         icon: 'assets/icons/ultimate-buildings/',
-        items: BUILDINGS.map(name => ({
+        items: HOUSING.map(name => ({
             type: 'building',
             id: name,
             name: name.replace(/_/g, ' '),
             icon: `assets/icons/ultimate-buildings/${name}.png`,
+            assetPath: 'assets/ultimate-buildings/'
+        }))
+    },
+    furniture: {
+        name: 'Furniture & small props',
+        icon: 'assets/icons/ultimate-buildings/',
+        items: streetKit.map(({id,name}) => ({
+            type: 'building', id, name,
+            icon: `assets/icons/ultimate-buildings/${id}.png`,
             assetPath: 'assets/ultimate-buildings/'
         }))
     }
@@ -42,7 +53,8 @@ export const CATEGORIES = {
 
 // Flat catalog retained for keyboard navigation/backwards compatibility.
 export const ASSET_CATEGORIES = [
-    { name: 'Housing', assets: BUILDINGS }
+    { name: 'Housing', assets: HOUSING },
+    { name: 'Furniture & small props', assets: streetKitIds }
 ];
 
 export function buildCatalog() {
