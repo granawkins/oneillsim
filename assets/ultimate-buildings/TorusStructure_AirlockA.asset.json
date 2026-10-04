@@ -1,0 +1,82 @@
+{
+  "id": "TorusStructure_AirlockA",
+  "displayName": "Airlock — full-scale open vestibule specimen",
+  "family": "structure",
+  "variant": "A",
+  "description": "Representative full-scale 4 x 7 m vestibule, NOT complete south-pole docking complex. Dimensions, 2.9 m clear interior height, 2.4 m clear openings and consoles authored; source gives location/function only.",
+  "representation": "representative full-scale section/specimen",
+  "obj": "TorusStructure_AirlockA.obj",
+  "mtl": "TorusStructure_AirlockA.mtl",
+  "textureAtlas": "TorusStructureKit_Atlas.png",
+  "vertices": 336,
+  "trianglesAfterQuadTriangulation": 168,
+  "triangles": 168,
+  "materials": [
+    "TorusStructureKit"
+  ],
+  "actualModelBoundsMeters": {
+    "min": [
+      -2.0,
+      0.0,
+      -3.72
+    ],
+    "max": [
+      3.3,
+      3.4,
+      3.72
+    ],
+    "size": [
+      5.3,
+      3.4,
+      7.44
+    ]
+  },
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "coordinateConvention": "+Y up, minimum model y=0. Orbital parts use display support/bounding datum, not terrain feet or operational gravity. Local Z is specimen tube/transport axis, local Y is hub spin/docking axis.",
+  "sourceFacts": [
+    {
+      "segmentId": "sp413-s02235",
+      "fact": "Fig 5-3 labels an airlock at the south transport tube below fabrication sphere; no vestibule dimensions specified."
+    }
+  ],
+  "sourceReferences": [
+    {
+      "segmentId": "sp413-s02235",
+      "printedPage": 89,
+      "pdfPage": 106,
+      "label": "Figure 5-3",
+      "scanVerified": true,
+      "source": "NASA SP-413 (1977)",
+      "sourceUrl": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf#page=106",
+      "readerAnchor": "/study/#sp413-s02235"
+    }
+  ],
+  "interpretations": [
+    "Representative full-scale 4 x 7 m vestibule, NOT complete south-pole docking complex. Dimensions, 2.9 m clear interior height, 2.4 m clear openings and consoles authored; source gives location/function only.",
+    "Static leaves are parked outside the two actual openings. Floor top is y0.3 m; no door animation, interlock or pressure seal; no fabricated operational airlock claim."
+  ],
+  "uncertainties": [
+    "Conceptual study, not production engineering drawings. Unsourced assembly dimensions are authored interpretations."
+  ],
+  "collisionIntent": "Static floor, roof and sidewalls with two open 2.4 m portals; parked solid door leaves outside portals. No interlock or seal behavior.",
+  "generator": "assets/scripts/build_torus_structure_kit.py",
+  "preview": "TorusStructure_AirlockA_Preview.png",
+  "icon": "assets/icons/ultimate-buildings/TorusStructure_AirlockA.png",
+  "physicsClaims": "Visual static museum specimen only; no orbit, pressure, de-spin, power, radiation, optics, heat-transfer or complete-engineering validation.",
+  "dimensionalRecord": {
+    "sourced": {},
+    "authored": {
+      "bodyWidthMeters": 4,
+      "bodyLengthMeters": 7,
+      "interiorWidthMeters": 3.6,
+      "clearCeilingHeightMeters": 2.9,
+      "portalWidthMeters": 2.4,
+      "portalClearHeightMeters": 2.45,
+      "floorTopMeters": 0.3,
+      "fixedParkedLeafWidthMeters": 1.2
+    },
+    "scope": "vestibule specimen, dimensions are not sourced"
+  }
+}

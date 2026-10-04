@@ -1,0 +1,93 @@
+{
+  "id": "TorusStructure_DockingA",
+  "displayName": "Docking — full-scale collar adapter specimen",
+  "family": "structure",
+  "variant": "A",
+  "description": "Representative full-scale 15 m nominal diameter, 8 m long collar adapter; NOT the 60 m docking module or complete facility.",
+  "representation": "representative full-scale section/specimen",
+  "obj": "TorusStructure_DockingA.obj",
+  "mtl": "TorusStructure_DockingA.mtl",
+  "textureAtlas": "TorusStructureKit_Atlas.png",
+  "vertices": 1824,
+  "trianglesAfterQuadTriangulation": 912,
+  "triangles": 912,
+  "materials": [
+    "TorusStructureKit"
+  ],
+  "actualModelBoundsMeters": {
+    "min": [
+      -8.0,
+      0.0,
+      -4.0
+    ],
+    "max": [
+      8.0,
+      16.0,
+      4.3
+    ],
+    "size": [
+      16.0,
+      16.0,
+      8.3
+    ]
+  },
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "coordinateConvention": "+Y up, minimum model y=0. Orbital parts use display support/bounding datum, not terrain feet or operational gravity. Local Z is specimen tube/transport axis, local Y is hub spin/docking axis.",
+  "sourceFacts": [
+    {
+      "segmentId": "sp413-s02235",
+      "fact": "Fig 5-3 labels docking module 15 m diameter and multiple lateral docking ports."
+    },
+    {
+      "segmentId": "sp413-s02241",
+      "fact": "People and equipment pass through docking ports."
+    }
+  ],
+  "sourceReferences": [
+    {
+      "segmentId": "sp413-s02235",
+      "printedPage": 89,
+      "pdfPage": 106,
+      "label": "Figure 5-3",
+      "scanVerified": true,
+      "source": "NASA SP-413 (1977)",
+      "sourceUrl": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf#page=106",
+      "readerAnchor": "/study/#sp413-s02235"
+    },
+    {
+      "segmentId": "sp413-s02241",
+      "printedPage": 90,
+      "pdfPage": 107,
+      "label": "SP-413 text",
+      "scanVerified": true,
+      "source": "NASA SP-413 (1977)",
+      "sourceUrl": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf#page=107",
+      "readerAnchor": "/study/#sp413-s02241"
+    }
+  ],
+  "interpretations": [
+    "Representative full-scale 15 m nominal diameter, 8 m long collar adapter; NOT the 60 m docking module or complete facility.",
+    "Length, 13.4 m clear bore, collar extensions and twelve fixed latch blocks authored; sourced diameter establishes scale. No docking mechanism or pressure seal."
+  ],
+  "uncertainties": [
+    "Conceptual study, not production engineering drawings. Unsourced assembly dimensions are authored interpretations."
+  ],
+  "collisionIntent": "Static annular body with clear axial bore; solid collars and latch blocks, no ship docking action.",
+  "generator": "assets/scripts/build_torus_structure_kit.py",
+  "preview": "TorusStructure_DockingA_Preview.png",
+  "icon": "assets/icons/ultimate-buildings/TorusStructure_DockingA.png",
+  "physicsClaims": "Visual static museum specimen only; no orbit, pressure, de-spin, power, radiation, optics, heat-transfer or complete-engineering validation.",
+  "dimensionalRecord": {
+    "sourced": {
+      "moduleNominalDiameterMeters": 15
+    },
+    "authored": {
+      "adapterLengthMeters": 8,
+      "boreDiameterMeters": 13.4,
+      "collarOuterDiameterMeters": 16
+    },
+    "scope": "collar adapter, not the complete 60 m docking module"
+  }
+}

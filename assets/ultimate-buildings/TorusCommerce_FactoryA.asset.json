@@ -1,0 +1,115 @@
+{
+  "id": "TorusCommerce_FactoryA",
+  "displayName": "Light-service fabrication workshop",
+  "family": "Commerce",
+  "variant": "A",
+  "description": "Internal light-service assembly/furniture workshop, not a smelter: sawtooth roof, loading portal, separate pedestrian entry, workbenches, guarded tooling and pallet storage.",
+  "obj": "TorusCommerce_FactoryA.obj",
+  "mtl": "TorusCommerce_FactoryA.mtl",
+  "textureAtlas": "TorusCommerceKit_Atlas.png",
+  "generator": "assets/scripts/build_torus_commerce_kit.py",
+  "materialName": "TorusCommerceKit",
+  "materials": 1,
+  "objects": 1,
+  "opaque": true,
+  "atlasSizePixels": [
+    512,
+    512
+  ],
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "origin": "Centered X/Z footprint, support feet at y=0; at-grade entry uses habitat floor.",
+  "orientation": "+Y up; +Z principal entry/front",
+  "sourceFacts": [
+    "Internal light-service industry includes personal goods, furniture and handicrafts.",
+    "The colony planning assumption for light service industry is 4 square metres per person; this is a colony-wide allocation, not a workshop footprint.",
+    "The heavy-industry extraction facility is outside the habitat, about 10 km south of the hub, to avoid pollution and isolate industrial accident risk.",
+    "That external extraction plant is remotely operated in vacuum, with small attached shirtsleeve maintenance spheres.",
+    "The external extraction plant has solar furnaces and a solar-powered 200 MW electrical station; this internal workshop does not represent it.",
+    "Architecture should facilitate pedestrian traffic and acoustically isolate residences from noisy commercial and service activities."
+  ],
+  "sourceReferences": [
+    {
+      "segmentId": "sp413-s00682",
+      "printedPage": 25,
+      "pdfPage": 42,
+      "readerAnchor": "#sp413-s00682"
+    },
+    {
+      "segmentId": "sp413-s00946",
+      "printedPage": 33,
+      "pdfPage": 50,
+      "readerAnchor": "#sp413-s00946"
+    },
+    {
+      "segmentId": "sp413-s02464",
+      "printedPage": 103,
+      "pdfPage": 120,
+      "readerAnchor": "#sp413-s02464"
+    },
+    {
+      "segmentId": "sp413-s02465",
+      "printedPage": 103,
+      "pdfPage": 120,
+      "readerAnchor": "#sp413-s02465"
+    },
+    {
+      "segmentId": "sp413-s02466",
+      "printedPage": 103,
+      "pdfPage": 120,
+      "readerAnchor": "#sp413-s02466"
+    },
+    {
+      "segmentId": "sp413-s02276",
+      "printedPage": 91,
+      "pdfPage": 108,
+      "readerAnchor": "#sp413-s02276"
+    }
+  ],
+  "interpretations": [
+    "Internal light-service assembly/furniture workshop, not a smelter: sawtooth roof, loading portal, separate pedestrian entry, workbenches, guarded tooling and pallet storage.",
+    "All footprints, stalls, furniture, machinery, signs, color, canopy and roof geometry are authored interpretation; SP-413 provides programmatic needs, not these detailed floorplans.",
+    "Single accessible ground-level route only; no upper floors or walkable roofs promised."
+  ],
+  "collisionIntent": {
+    "modeled": "Solid structural panels, supports and equipment; empty walkable aisles and physically open entries. No glazing/alpha cards in openings.",
+    "runtime": "Static mesh collision intended; no moving doors or operational equipment. Parent integration and gameplay traversal tests remain required.",
+    "groundEntry": "Flush to habitat ground, no base slab or threshold step.",
+    "walkableRoofs": false
+  },
+  "routeClearanceMeters": 2.4,
+  "icon": "assets/icons/ultimate-buildings/TorusCommerce_FactoryA.png",
+  "preview": "assets/ultimate-buildings/TorusCommerce_FactoryA_Preview.png",
+  "verification": [
+    "Offline OBJ index/normal/UV/bounds/budget and deterministic regeneration tests.",
+    "Preview and icon use actual Three.js OBJLoader/MTLLoader and opaque decoded atlas, GET-only local browser fixture."
+  ],
+  "unresolvedQuestions": [
+    "Detailed plans and equipment are not specified by SP-413; no safety/accessibility certification or working commercial functions."
+  ],
+  "worldJsonChanged": false,
+  "vertices": 652,
+  "normals": 528,
+  "uvs": 2064,
+  "trianglesAfterQuadTriangulation": 1008,
+  "actualModelBoundsMeters": [
+    [
+      -10.0,
+      10.0
+    ],
+    [
+      0.0,
+      6.35
+    ],
+    [
+      -6.75,
+      6.75
+    ]
+  ],
+  "dimensionsMeters": [
+    20.0,
+    6.35,
+    13.5
+  ]
+}

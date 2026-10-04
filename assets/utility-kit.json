@@ -1,0 +1,66 @@
+[
+  {
+    "id": "TorusUtility_WaterTankA",
+    "name": "Water tanks",
+    "slug": "water-tanks",
+    "directory": "ultimate-buildings",
+    "materialKit": "utility",
+    "textureAtlas": "TorusUtilityKit_Atlas.png"
+  },
+  {
+    "id": "TorusUtility_PumpA",
+    "name": "Pumps",
+    "slug": "pumps",
+    "directory": "ultimate-buildings",
+    "materialKit": "utility",
+    "textureAtlas": "TorusUtilityKit_Atlas.png"
+  },
+  {
+    "id": "TorusUtility_WaterTreatmentA",
+    "name": "Water treatment",
+    "slug": "water-treatment",
+    "directory": "ultimate-buildings",
+    "materialKit": "utility",
+    "textureAtlas": "TorusUtilityKit_Atlas.png"
+  },
+  {
+    "id": "TorusUtility_AirHandlerA",
+    "name": "Air handling",
+    "slug": "air-handling",
+    "directory": "ultimate-buildings",
+    "materialKit": "utility",
+    "textureAtlas": "TorusUtilityKit_Atlas.png"
+  },
+  {
+    "id": "TorusUtility_WasteProcessingA",
+    "name": "Waste processing",
+    "slug": "waste-processing",
+    "directory": "ultimate-buildings",
+    "materialKit": "utility",
+    "textureAtlas": "TorusUtilityKit_Atlas.png"
+  },
+  {
+    "id": "TorusUtility_PowerDistributionA",
+    "name": "Power distribution",
+    "slug": "power-distribution",
+    "directory": "ultimate-buildings",
+    "materialKit": "utility",
+    "textureAtlas": "TorusUtilityKit_Atlas.png"
+  },
+  {
+    "id": "TorusUtility_PipesCablesA",
+    "name": "Pipes and cables",
+    "slug": "pipes-cables",
+    "directory": "ultimate-buildings",
+    "materialKit": "utility",
+    "textureAtlas": "TorusUtilityKit_Atlas.png"
+  },
+  {
+    "id": "TorusUtility_LightA",
+    "name": "Lighting",
+    "slug": "lighting",
+    "directory": "ultimate-buildings",
+    "materialKit": "utility",
+    "textureAtlas": "TorusUtilityKit_Atlas.png"
+  }
+]

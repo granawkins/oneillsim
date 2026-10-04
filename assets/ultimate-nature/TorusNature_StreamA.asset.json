@@ -1,0 +1,90 @@
+{
+  "id": "TorusNature_StreamA",
+  "displayName": "Short landscaped stream module",
+  "family": "Nature",
+  "description": "Eight-metre gently bending open-ended watercourse with low banks, exposed stones and edge grasses; static opaque water.",
+  "obj": "TorusNature_StreamA.obj",
+  "mtl": "TorusNature_StreamA.mtl",
+  "textureAtlas": "TorusNatureKit_Atlas.png",
+  "materials": 1,
+  "materialName": "TorusNatureKit",
+  "objects": 1,
+  "opaque": true,
+  "atlasSizePixels": [
+    512,
+    512
+  ],
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "origin": "Horizontal landscape origin; lowest point y=0",
+  "orientation": "+Y up; +Z front (stream module length follows Z)",
+  "generator": "assets/scripts/build_torus_nature_kit.py",
+  "icon": "assets/icons/ultimate-nature/TorusNature_StreamA.png",
+  "preview": "assets/ultimate-nature/TorusNature_StreamA_Preview.png",
+  "sourceReferences": [
+    {
+      "segmentId": "sp413-s00686",
+      "printedPage": 25,
+      "pdfPage": 42,
+      "section": "3. Human Needs in Space / Space Needs Within the Colony",
+      "readerAnchor": "/study/#sp413-s00686"
+    },
+    {
+      "segmentId": "sp413-s02257",
+      "printedPage": 90,
+      "pdfPage": 107,
+      "section": "5. A Tour of the Colony / A Residential Area",
+      "readerAnchor": "/study/#sp413-s02257"
+    },
+    {
+      "segmentId": "sp413-s02373",
+      "printedPage": 98,
+      "pdfPage": 115,
+      "section": "5. A Tour of the Colony / A Residential Area",
+      "readerAnchor": "/study/#sp413-s02373"
+    }
+  ],
+  "sourceFacts": [
+    "SP-413 discusses the importance of parks and open space near dense neighborhoods (printed p.25).",
+    "The residential tour emphasizes human scale with tree clusters and parks (printed p.90).",
+    "Trees in residential areas and parks provide beauty as well as fruit (printed p.98); this non-fruiting decorative tree does not reproduce a specified fruit species."
+  ],
+  "interpretations": [
+    "Eight-metre gently bending open-ended watercourse with low banks, exposed stones and edge grasses; static opaque water.",
+    "All module dimensions, species-neutral plant silhouettes, petal colors, stone placement and texture palette are authored decorative interpretations, not study requirements.",
+    "Pond and stream shape, banks and static opaque water are decorative extensions: the cited landscape passages do not specify them. No fluid dynamics, growth, ecology or biological life-support performance is represented."
+  ],
+  "collisionIntent": {
+    "modeled": "Opaque geometry only; trunks, foliage, stones, soil and static water share one mesh.",
+    "runtime": "Parent must choose collider policy. Recommend trunk/rock solids and nonblocking foliage; water surfaces are visual, not simulated swimming, fluid or certified walkable floors."
+  },
+  "verification": [
+    "Offline OBJ indices, UVs, normals, bounds and budgets checked by tests/nature_kit_assets_test.py.",
+    "Per-model previews and icons use actual Three.js OBJLoader/MTLLoader with a decoded shared atlas; contact sheet assembled from those renders."
+  ],
+  "worldJsonChanged": false,
+  "vertices": 322,
+  "normals": 432,
+  "uvs": 1296,
+  "trianglesAfterQuadTriangulation": 432,
+  "actualModelBoundsMeters": [
+    [
+      -1.968416,
+      2.011592
+    ],
+    [
+      0.0,
+      0.68
+    ],
+    [
+      -4.0,
+      4.0
+    ]
+  ],
+  "dimensionsMeters": [
+    3.980008,
+    0.68,
+    8.0
+  ]
+}

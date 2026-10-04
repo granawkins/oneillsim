@@ -45,7 +45,7 @@ function cloneCachedAsset(obj) {
 }
 
 function loadMaterials(assetName, assetPath) {
-    const materialKey = materialKitKey(assetName, BUILDINGS);
+    const materialKey = materialKitKey(assetName, [...BUILDINGS, ...PLANTS]);
     const shared = materialKey !== null;
     if (shared && kitMaterialsPromises.has(materialKey)) return kitMaterialsPromises.get(materialKey);
     const promise = new Promise((resolve, reject) => {

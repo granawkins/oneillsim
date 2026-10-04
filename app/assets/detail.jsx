@@ -6,7 +6,7 @@ export default function AssetDetail({ type, selected, variants }) {
  const modelRoot = `/oneillsim/assets/${selected.directory}/`;
  const manifest = variants.find(variant => variant.id === selected.id)?.stats;
  const atlas = manifest?.textureAtlas || `${selected.id}_Atlas.png`;
- const captureDistance = selected.id.startsWith('TorusDistrict_')
+ const captureDistance = manifest?.inspectionFraming === 'bounds' || selected.id.startsWith('TorusDistrict_')
    ? Math.min(2000, Math.max(7, ...manifest.actualModelBoundsMeters.map(([min,max]) => (max-min)*2.8)))
    : manifest?.family === 'Residential buildings'
    ? Math.min(45, Math.max(7, ...manifest.actualModelBoundsMeters.map(([min,max]) => (max-min)*2.8)))
@@ -22,7 +22,7 @@ export default function AssetDetail({ type, selected, variants }) {
         </section>
         <aside className="details">
             <section className="card"><p className="eyebrow">TECHNICAL RECORD</p><h2>Asset details</h2><p id="asset-description" className="body-copy">Loading manifest…</p>
-                <div className="specs"><div><label>FORMAT</label><strong>Wavefront OBJ + MTL</strong></div><div><label>GEOMETRY</label><strong id="spec-geometry">—</strong></div><div><label>MATERIALS</label><strong id="spec-materials">—</strong></div><div><label>UV SKIN</label><strong>512 × 512 atlas</strong></div><div><label>MODEL SIZE</label><strong id="spec-bounds">—</strong></div><div><label>EDITOR SCALE</label><strong id="spec-scale">—</strong></div></div>
+                <div className="specs"><div><label>FORMAT</label><strong>Wavefront OBJ + MTL</strong></div><div><label>GEOMETRY</label><strong id="spec-geometry">—</strong></div><div><label>MATERIALS</label><strong id="spec-materials">—</strong></div><div><label>UV SKIN</label><strong id="spec-atlas">—</strong></div><div><label>MODEL SIZE</label><strong id="spec-bounds">—</strong></div><div><label>EDITOR SCALE</label><strong id="spec-scale">—</strong></div></div>
             </section>
             <section className="card"><p className="eyebrow">SOURCE & INTERPRETATION</p><h2>Design basis</h2><p className="source-line">{type.source}</p><ul className="facts">{(type.facts || []).map(fact => <li key={fact}>{fact}</li>)}</ul><div className="interpretation"><strong>MODEL CHOICE</strong><p id="asset-interpretation">—</p></div></section>
             <section className="card study-reference-card"><p className="eyebrow">SHARED REFERENCES</p><h2>{type.source}</h2><div className="study-figure-links">{type.references.filter(ref => ref.image).map(ref => <Link key={ref.href} href={ref.href}><img src={`/oneillsim/study/images/${ref.image}`} alt={ref.label} loading="lazy"/><span>{ref.label}</span></Link>)}</div><div className="files">{type.references.filter(ref => !ref.image).map(ref => <Link key={ref.href} href={ref.href}>{ref.label} <span>↗</span></Link>)}<Link href="/study/">Search the full reading edition <span>↗</span></Link></div></section>

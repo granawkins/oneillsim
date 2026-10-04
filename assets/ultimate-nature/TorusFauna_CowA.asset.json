@@ -1,0 +1,88 @@
+{
+  "id": "TorusFauna_CowA",
+  "displayName": "Dairy cattle",
+  "family": "Animals",
+  "variant": "A",
+  "description": "Faceted dairy cow with broad torso, four articulated legs, hooves, upright neck, muzzle, lateral ears, udder and hanging tail.",
+  "generator": "assets/scripts/build_torus_fauna_kit.py",
+  "obj": "TorusFauna_CowA.obj",
+  "mtl": "TorusFauna_CowA.mtl",
+  "textureAtlas": "TorusFaunaKit_Atlas.png",
+  "materialName": "TorusFaunaKit",
+  "materials": 1,
+  "objects": 1,
+  "atlasSizePixels": [
+    512,
+    512
+  ],
+  "opaque": true,
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "origin": "Feet at local y=0; fish lowest underside/ventral fin at y=0.",
+  "orientation": "+Y up; +Z front toward face/head; tail toward -Z.",
+  "sourceReferences": [
+    {
+      "segmentId": "sp413-s01324",
+      "printedPage": 53,
+      "pdfPage": 70,
+      "section": "Food"
+    },
+    {
+      "segmentId": "sp413-s02753",
+      "printedPage": 114,
+      "pdfPage": 131,
+      "section": "Appendix C \u2014 Agriculture"
+    },
+    {
+      "segmentId": "sp413-s02777",
+      "printedPage": 114,
+      "pdfPage": 131,
+      "table": "5-17(a)"
+    }
+  ],
+  "sourceFacts": [
+    "Appendix C identifies fish, chickens, rabbits and cows as the animal food-production herd (sp413-s02753, printed p.114).",
+    "Table 5-17(a), Appendix C, includes trout, rabbit, beef, chicken, eggs and milk in the example diet.",
+    "The Food section balances efficient area use with a varied diet; these are visual representations, not biological models."
+  ],
+  "interpretations": [
+    "Faceted dairy cow with broad torso, four articulated legs, hooves, upright neck, muzzle, lateral ears, udder and hanging tail.",
+    "Species form, coat colors, breed-neutral proportions and all metric dimensions are authored approximations, not SP-413 requirements. Trout is represented because the diet table names trout; no particular trout species is asserted.",
+    "Neutral humane static pose; no behavioral, husbandry, breeding, yield or metabolic results are implemented."
+  ],
+  "collisionIntent": {
+    "modeled": "Static visual mesh with sculpted opaque surfaces.",
+    "runtime": "No functional behavior, ambient animation or animal simulation; collider policy left to parent integration."
+  },
+  "icon": "assets/icons/ultimate-nature/TorusFauna_CowA.png",
+  "preview": "assets/ultimate-nature/TorusFauna_CowA_Preview.png",
+  "verification": [
+    "Indexed triangles, explicit normals/UVs, bounds, budgets and byte-exact regeneration checked by tests/fauna_kit_assets_test.py.",
+    "Preview and icon generated from actual Three OBJLoader/MTLLoader geometry and shared atlas."
+  ],
+  "vertices": 394,
+  "triangles": 704,
+  "trianglesAfterQuadTriangulation": 704,
+  "normals": 704,
+  "uvs": 704,
+  "actualModelBoundsMeters": [
+    [
+      -0.43,
+      0.43
+    ],
+    [
+      0.0,
+      1.86
+    ],
+    [
+      -1.114306,
+      1.45076
+    ]
+  ],
+  "dimensionsMeters": [
+    0.86,
+    1.86,
+    2.565066
+  ]
+}

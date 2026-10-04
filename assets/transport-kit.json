@@ -1,0 +1,66 @@
+[
+  {
+    "id": "TorusTransport_RoadA",
+    "name": "Pedestrian/service paved section",
+    "slug": "roads",
+    "directory": "ultimate-buildings",
+    "materialKit": "transport",
+    "textureAtlas": "TorusTransportKit_Atlas.png"
+  },
+  {
+    "id": "TorusTransport_BridgeA",
+    "name": "Pedestrian footbridge",
+    "slug": "bridges",
+    "directory": "ultimate-buildings",
+    "materialKit": "transport",
+    "textureAtlas": "TorusTransportKit_Atlas.png"
+  },
+  {
+    "id": "TorusTransport_StairsRampA",
+    "name": "Stairs and ramp access",
+    "slug": "stairs-ramps",
+    "directory": "ultimate-buildings",
+    "materialKit": "transport",
+    "textureAtlas": "TorusTransportKit_Atlas.png"
+  },
+  {
+    "id": "TorusTransport_RailA",
+    "name": "Rail interpretation module",
+    "slug": "rail-tracks",
+    "directory": "ultimate-buildings",
+    "materialKit": "transport",
+    "textureAtlas": "TorusTransportKit_Atlas.png"
+  },
+  {
+    "id": "TorusTransport_StationA",
+    "name": "Neighborhood transit shelter",
+    "slug": "transit-stations",
+    "directory": "ultimate-buildings",
+    "materialKit": "transport",
+    "textureAtlas": "TorusTransportKit_Atlas.png"
+  },
+  {
+    "id": "TorusTransport_BusA",
+    "name": "Static electric minibus specimen",
+    "slug": "buses",
+    "directory": "ultimate-buildings",
+    "materialKit": "transport",
+    "textureAtlas": "TorusTransportKit_Atlas.png"
+  },
+  {
+    "id": "TorusTransport_CartA",
+    "name": "Static electric service cart",
+    "slug": "utility-carts",
+    "directory": "ultimate-buildings",
+    "materialKit": "transport",
+    "textureAtlas": "TorusTransportKit_Atlas.png"
+  },
+  {
+    "id": "TorusTransport_BicycleA",
+    "name": "Static bicycle specimen",
+    "slug": "bicycles",
+    "directory": "ultimate-buildings",
+    "materialKit": "transport",
+    "textureAtlas": "TorusTransportKit_Atlas.png"
+  }
+]

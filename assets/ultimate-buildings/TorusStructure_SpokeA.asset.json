@@ -1,0 +1,98 @@
+{
+  "id": "TorusStructure_SpokeA",
+  "displayName": "Spoke — 30 m full-scale cutaway section",
+  "family": "structure",
+  "variant": "A",
+  "description": "Representative full-scale 30 m radial-axis section (local Z), NOT entire spoke. Tube outside diameter 15 m; ring reinforcement enlarges bounds to 15.6 m.",
+  "representation": "representative full-scale section/specimen",
+  "obj": "TorusStructure_SpokeA.obj",
+  "mtl": "TorusStructure_SpokeA.mtl",
+  "textureAtlas": "TorusStructureKit_Atlas.png",
+  "vertices": 3776,
+  "trianglesAfterQuadTriangulation": 1888,
+  "triangles": 1888,
+  "materials": [
+    "TorusStructureKit"
+  ],
+  "actualModelBoundsMeters": {
+    "min": [
+      -7.8,
+      0.0,
+      -15.0
+    ],
+    "max": [
+      7.8,
+      15.6,
+      15.0
+    ],
+    "size": [
+      15.6,
+      15.6,
+      30.0
+    ]
+  },
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "coordinateConvention": "+Y up, minimum model y=0. Orbital parts use display support/bounding datum, not terrain feet or operational gravity. Local Z is specimen tube/transport axis, local Y is hub spin/docking axis.",
+  "sourceFacts": [
+    {
+      "segmentId": "sp413-s02206",
+      "fact": "Six spokes, each 15 m diameter, carry elevators, power cables and heat exchange pipes."
+    },
+    {
+      "segmentId": "sp413-s02252",
+      "fact": "Tour describes an 830 m elevator trip; not an exact tube cut length."
+    }
+  ],
+  "sourceReferences": [
+    {
+      "segmentId": "sp413-s02206",
+      "printedPage": 89,
+      "pdfPage": 106,
+      "label": "SP-413 text",
+      "scanVerified": true,
+      "source": "NASA SP-413 (1977)",
+      "sourceUrl": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf#page=106",
+      "readerAnchor": "/study/#sp413-s02206"
+    },
+    {
+      "segmentId": "sp413-s02252",
+      "printedPage": 90,
+      "pdfPage": 107,
+      "label": "SP-413 text",
+      "scanVerified": true,
+      "source": "NASA SP-413 (1977)",
+      "sourceUrl": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf#page=107",
+      "readerAnchor": "/study/#sp413-s02252"
+    }
+  ],
+  "interpretations": [
+    "Representative full-scale 30 m radial-axis section (local Z), NOT entire spoke. Tube outside diameter 15 m; ring reinforcement enlarges bounds to 15.6 m.",
+    "Authored 0.15 m tube wall, ring spacing, 9.5 m corridor deck, static handrails and four service pipes; top/+X quadrant deliberately removed for inspection. Elevator routing, pressure closure and gravity orientation not simulated."
+  ],
+  "uncertainties": [
+    "Conceptual study, not production engineering drawings. Unsourced assembly dimensions are authored interpretations."
+  ],
+  "collisionIntent": "Static hollow cutaway shell, ring ribs, floor deck and rails; both Z ends open; floor is authored service corridor, not elevator machinery.",
+  "generator": "assets/scripts/build_torus_structure_kit.py",
+  "preview": "TorusStructure_SpokeA_Preview.png",
+  "icon": "assets/icons/ultimate-buildings/TorusStructure_SpokeA.png",
+  "physicsClaims": "Visual static museum specimen only; no orbit, pressure, de-spin, power, radiation, optics, heat-transfer or complete-engineering validation.",
+  "dimensionalRecord": {
+    "sourced": {
+      "tubeDiameterMeters": 15,
+      "spokeCount": 6,
+      "tourElevatorTripMeters": 830
+    },
+    "authored": {
+      "sectionLengthMeters": 30,
+      "wallThicknessMeters": 0.15,
+      "collarOuterDiameterMeters": 15.6,
+      "corridorWidthMeters": 9.5,
+      "floorTopMeters": 3.15,
+      "inspectionCutawayDegrees": 90
+    },
+    "scope": "30 m section; not 830 m complete spoke"
+  }
+}

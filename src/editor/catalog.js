@@ -2,6 +2,7 @@
 import {streetKit, streetKitIds} from '../street-kit.js';
 import {residentialKitIds} from '../residential-kit.js';
 import {districtKit, districtKitIds} from '../district-kit.js';
+import {completedModels} from '../completed-models.js';
 
 // Ground textures (built-in, not loaded from files)
 export const TEXTURES = [
@@ -15,8 +16,8 @@ export const TEXTURES = [
 
 // Curated residential and streetscape models; no planned-only assets.
 const HOUSING = ['TorusHome_ModA', ...residentialKitIds];
-export const BUILDINGS = [...HOUSING, ...streetKitIds, ...districtKitIds];
-export const PLANTS = [];
+export const BUILDINGS = [...HOUSING, ...streetKitIds, ...districtKitIds, ...completedModels.filter(m=>m.directory==='ultimate-buildings').map(m=>m.id)];
+export const PLANTS = completedModels.filter(m=>m.directory==='ultimate-nature').map(m=>m.id);
 
 // Only expose assets that belong to this curated client set.
 export const CATEGORIES = {
@@ -58,11 +59,17 @@ export const CATEGORIES = {
     }
 };
 
+const kitLabels={commerce:'Commerce',nature:'Plants & landscape',agriculture:'Agriculture',fauna:'Animals',transport:'Transport & access',utility:'Utilities & life support',structure:'Habitat structure'};
+for (const [key,name] of Object.entries(kitLabels)) {
+  CATEGORIES[key]={name,icon:null,items:completedModels.filter(m=>m.materialKit===key && m.placeable!==false).map(m=>({type:['trees','shrubs','grasses','flowers'].includes(m.slug)?'plant':'building',id:m.id,name:m.name,icon:`assets/icons/${m.directory}/${m.id}.png`,assetPath:`assets/${m.directory}/`}))};
+}
+
 // Flat catalog retained for keyboard navigation/backwards compatibility.
 export const ASSET_CATEGORIES = [
     { name: 'Housing', assets: HOUSING },
     { name: 'Furniture & small props', assets: streetKitIds },
-    { name: 'Residential A district', assets: districtKitIds }
+    { name: 'Residential A district', assets: districtKitIds },
+    ...Object.entries(kitLabels).map(([key,name])=>({name,assets:completedModels.filter(m=>m.materialKit===key && m.placeable!==false).map(m=>m.id)}))
 ];
 
 export function buildCatalog() {

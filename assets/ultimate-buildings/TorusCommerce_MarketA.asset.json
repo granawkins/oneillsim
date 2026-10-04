@@ -1,0 +1,94 @@
+{
+  "id": "TorusCommerce_MarketA",
+  "displayName": "Covered neighborhood market",
+  "family": "Commerce",
+  "variant": "A",
+  "description": "Four stocked stalls and individual pitched awnings flank a 4 m through arcade; overhead cross-canopies and open entries preserve pedestrian passage.",
+  "obj": "TorusCommerce_MarketA.obj",
+  "mtl": "TorusCommerce_MarketA.mtl",
+  "textureAtlas": "TorusCommerceKit_Atlas.png",
+  "generator": "assets/scripts/build_torus_commerce_kit.py",
+  "materialName": "TorusCommerceKit",
+  "materials": 1,
+  "objects": 1,
+  "opaque": true,
+  "atlasSizePixels": [
+    512,
+    512
+  ],
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "origin": "Centered X/Z footprint, support feet at y=0; at-grade entry uses habitat floor.",
+  "orientation": "+Y up; +Z principal entry/front",
+  "sourceFacts": [
+    "Commercial business includes shops and offices.",
+    "Exchange with other specialized communities and trade with Earth are essential.",
+    "Architecture should facilitate pedestrian traffic and acoustically isolate residences from noisy commercial and service activities."
+  ],
+  "sourceReferences": [
+    {
+      "segmentId": "sp413-s00679",
+      "printedPage": 25,
+      "pdfPage": 42,
+      "readerAnchor": "#sp413-s00679"
+    },
+    {
+      "segmentId": "sp413-s00697",
+      "printedPage": 25,
+      "pdfPage": 42,
+      "readerAnchor": "#sp413-s00697"
+    },
+    {
+      "segmentId": "sp413-s02276",
+      "printedPage": 91,
+      "pdfPage": 108,
+      "readerAnchor": "#sp413-s02276"
+    }
+  ],
+  "interpretations": [
+    "Four stocked stalls and individual pitched awnings flank a 4 m through arcade; overhead cross-canopies and open entries preserve pedestrian passage.",
+    "All footprints, stalls, furniture, machinery, signs, color, canopy and roof geometry are authored interpretation; SP-413 provides programmatic needs, not these detailed floorplans.",
+    "Single accessible ground-level route only; no upper floors or walkable roofs promised."
+  ],
+  "collisionIntent": {
+    "modeled": "Solid structural panels, supports and equipment; empty walkable aisles and physically open entries. No glazing/alpha cards in openings.",
+    "runtime": "Static mesh collision intended; no moving doors or operational equipment. Parent integration and gameplay traversal tests remain required.",
+    "groundEntry": "Flush to habitat ground, no base slab or threshold step.",
+    "walkableRoofs": false
+  },
+  "routeClearanceMeters": 4,
+  "icon": "assets/icons/ultimate-buildings/TorusCommerce_MarketA.png",
+  "preview": "assets/ultimate-buildings/TorusCommerce_MarketA_Preview.png",
+  "verification": [
+    "Offline OBJ index/normal/UV/bounds/budget and deterministic regeneration tests.",
+    "Preview and icon use actual Three.js OBJLoader/MTLLoader and opaque decoded atlas, GET-only local browser fixture."
+  ],
+  "unresolvedQuestions": [
+    "Detailed plans and equipment are not specified by SP-413; no safety/accessibility certification or working commercial functions."
+  ],
+  "worldJsonChanged": false,
+  "vertices": 1216,
+  "normals": 1260,
+  "uvs": 4528,
+  "trianglesAfterQuadTriangulation": 2008,
+  "actualModelBoundsMeters": [
+    [
+      -8.74,
+      8.74
+    ],
+    [
+      0.0,
+      4.45
+    ],
+    [
+      -5.95,
+      5.95
+    ]
+  ],
+  "dimensionsMeters": [
+    17.48,
+    4.45,
+    11.9
+  ]
+}

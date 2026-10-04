@@ -1,0 +1,74 @@
+[
+  {
+    "id": "TorusStructure_HullPanelA",
+    "name": "Hull panel — full-scale curved coupon",
+    "slug": "hull-panels",
+    "directory": "ultimate-buildings",
+    "materialKit": "structure",
+    "textureAtlas": "TorusStructureKit_Atlas.png"
+  },
+  {
+    "id": "TorusStructure_FrameA",
+    "name": "Structural frame — full-scale truss specimen",
+    "slug": "structural-frames",
+    "directory": "ultimate-buildings",
+    "materialKit": "structure",
+    "textureAtlas": "TorusStructureKit_Atlas.png"
+  },
+  {
+    "id": "TorusStructure_SpokeA",
+    "name": "Spoke — 30 m full-scale cutaway section",
+    "slug": "spokes",
+    "directory": "ultimate-buildings",
+    "materialKit": "structure",
+    "textureAtlas": "TorusStructureKit_Atlas.png"
+  },
+  {
+    "id": "TorusStructure_HubA",
+    "name": "Central hub — full-scale external envelope",
+    "slug": "central-hub",
+    "directory": "ultimate-buildings",
+    "materialKit": "structure",
+    "textureAtlas": "TorusStructureKit_Atlas.png"
+  },
+  {
+    "id": "TorusStructure_DockingA",
+    "name": "Docking — full-scale collar adapter specimen",
+    "slug": "docking-facilities",
+    "directory": "ultimate-buildings",
+    "materialKit": "structure",
+    "textureAtlas": "TorusStructureKit_Atlas.png"
+  },
+  {
+    "id": "TorusStructure_AirlockA",
+    "name": "Airlock — full-scale open vestibule specimen",
+    "slug": "airlocks",
+    "directory": "ultimate-buildings",
+    "materialKit": "structure",
+    "textureAtlas": "TorusStructureKit_Atlas.png"
+  },
+  {
+    "id": "TorusStructure_MirrorA",
+    "name": "Solar mirror — full-scale segmented bay",
+    "slug": "solar-mirrors",
+    "directory": "ultimate-buildings",
+    "materialKit": "structure",
+    "textureAtlas": "TorusStructureKit_Atlas.png"
+  },
+  {
+    "id": "TorusStructure_ShieldA",
+    "name": "Radiation shield — full-scale brick section",
+    "slug": "radiation-shielding",
+    "directory": "ultimate-buildings",
+    "materialKit": "structure",
+    "textureAtlas": "TorusStructureKit_Atlas.png"
+  },
+  {
+    "id": "TorusStructure_RadiatorA",
+    "name": "Radiator — full-scale panel bay",
+    "slug": "radiators",
+    "directory": "ultimate-buildings",
+    "materialKit": "structure",
+    "textureAtlas": "TorusStructureKit_Atlas.png"
+  }
+]

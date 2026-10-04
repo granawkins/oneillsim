@@ -1,0 +1,94 @@
+{
+  "id": "TorusStructure_MirrorA",
+  "displayName": "Solar mirror — full-scale segmented bay",
+  "family": "structure",
+  "variant": "A",
+  "description": "Representative full-scale 24 x 16 m secondary-mirror bay; NOT the main mirror or full secondary ring. All bay/tile dimensions, 35 degree display tilt, rails and braces authored.",
+  "representation": "representative full-scale section/specimen",
+  "obj": "TorusStructure_MirrorA.obj",
+  "mtl": "TorusStructure_MirrorA.mtl",
+  "textureAtlas": "TorusStructureKit_Atlas.png",
+  "vertices": 744,
+  "trianglesAfterQuadTriangulation": 372,
+  "triangles": 372,
+  "materials": [
+    "TorusStructureKit"
+  ],
+  "actualModelBoundsMeters": {
+    "min": [
+      -12.15,
+      0.0,
+      -6.5900527
+    ],
+    "max": [
+      12.15,
+      9.65233117,
+      6.93419856
+    ],
+    "size": [
+      24.3,
+      9.65233117,
+      13.52425125
+    ]
+  },
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "coordinateConvention": "+Y up, minimum model y=0. Orbital parts use display support/bounding datum, not terrain feet or operational gravity. Local Z is specimen tube/transport axis, local Y is hub spin/docking axis.",
+  "sourceFacts": [
+    {
+      "segmentId": "sp413-s02218",
+      "fact": "Stationary main mirror feeds rotating secondary mirror ring."
+    },
+    {
+      "segmentId": "sp413-s02219",
+      "fact": "Secondary mirrors are individually directed segments; no tile size specified."
+    }
+  ],
+  "sourceReferences": [
+    {
+      "segmentId": "sp413-s02218",
+      "printedPage": 89,
+      "pdfPage": 106,
+      "label": "SP-413 text",
+      "scanVerified": true,
+      "source": "NASA SP-413 (1977)",
+      "sourceUrl": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf#page=106",
+      "readerAnchor": "/study/#sp413-s02218"
+    },
+    {
+      "segmentId": "sp413-s02219",
+      "printedPage": 89,
+      "pdfPage": 106,
+      "label": "SP-413 text",
+      "scanVerified": true,
+      "source": "NASA SP-413 (1977)",
+      "sourceUrl": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf#page=106",
+      "readerAnchor": "/study/#sp413-s02219"
+    }
+  ],
+  "interpretations": [
+    "Representative full-scale 24 x 16 m secondary-mirror bay; NOT the main mirror or full secondary ring. All bay/tile dimensions, 35 degree display tilt, rails and braces authored.",
+    "Opaque atlas silver panels only: no actual mirror reflection, optical targeting, sunlight delivery or rotation behavior."
+  ],
+  "uncertainties": [
+    "Conceptual study, not production engineering drawings. Unsourced assembly dimensions are authored interpretations."
+  ],
+  "collisionIntent": "Static opaque panels and support frame; no reflection or optical simulation.",
+  "generator": "assets/scripts/build_torus_structure_kit.py",
+  "preview": "TorusStructure_MirrorA_Preview.png",
+  "icon": "assets/icons/ultimate-buildings/TorusStructure_MirrorA.png",
+  "physicsClaims": "Visual static museum specimen only; no orbit, pressure, de-spin, power, radiation, optics, heat-transfer or complete-engineering validation.",
+  "dimensionalRecord": {
+    "sourced": {},
+    "authored": {
+      "nominalBayWidthMeters": 24,
+      "nominalBayLengthMeters": 16,
+      "tiles": 16,
+      "tileWidthMeters": 5.7,
+      "tileLengthMeters": 3.7,
+      "displayTiltDegrees": 35
+    },
+    "scope": "one segmented bay; not main mirror or complete ring"
+  }
+}

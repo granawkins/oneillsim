@@ -1,0 +1,8 @@
+newmtl TorusUtilityKit
+Ka 0.12 0.12 0.12
+Kd 1 1 1
+Ks 0.12 0.12 0.12
+Ns 24
+d 1
+illum 2
+map_Kd TorusUtilityKit_Atlas.png

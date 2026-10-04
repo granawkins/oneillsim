@@ -1,0 +1,155 @@
+{
+  "id": "TorusAgri_GrowingBedA",
+  "displayName": "Two-tier growing bed",
+  "family": "Agriculture plants & equipment",
+  "description": "Two-tier cultivation rack with side beds and visible opaque artificial-light bar housings; central service access remains clear.",
+  "generator": "assets/scripts/build_torus_agriculture_kit.py",
+  "obj": "TorusAgri_GrowingBedA.obj",
+  "mtl": "TorusAgri_GrowingBedA.mtl",
+  "textureAtlas": "TorusAgricultureKit_Atlas.png",
+  "materialName": "TorusAgricultureKit",
+  "materials": 1,
+  "objects": 1,
+  "meshes": 1,
+  "opaque": true,
+  "atlasSizePixels": [
+    512,
+    512
+  ],
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "origin": "Horizontal placement center; lowest feet y=0",
+  "orientation": "+Y up; +Z front",
+  "sourceFacts": [
+    "SP-413 p.91 allocates 20 m\u00b2/person projected area to agriculture and food processing; Figure 5-8 p.93 labels 20 \u00d7 10^4 m\u00b2 for that program.",
+    "SP-413 p.91 describes layers above and below the central plain and artificial illumination of layers below it; Figures 5-8 and 5-9 are schematic allocation and section drawings.",
+    "Chapter 5 Appendix C p.114 derives plant growing area requirements from estimated yields; it does not dimension these small modules."
+  ],
+  "sourceReferences": [
+    {
+      "figure": "5-8 / 5-9",
+      "printedPage": 93,
+      "pdfPage": 110,
+      "segmentId": "sp413-s02286",
+      "note": "Both figures share the extracted composite image; Figure 5-8 caption is visible in the scan."
+    },
+    {
+      "printedPage": 91,
+      "pdfPage": 108,
+      "segmentId": "sp413-s02271",
+      "topic": "20 square metres per person projected agriculture and food processing allocation"
+    },
+    {
+      "printedPage": 91,
+      "pdfPage": 108,
+      "segmentId": "sp413-s02273",
+      "topic": "Multiple layers"
+    },
+    {
+      "printedPage": 91,
+      "pdfPage": 108,
+      "segmentId": "sp413-s02274",
+      "topic": "Artificial illumination below central plain"
+    },
+    {
+      "section": "Chapter 5 Appendix C \u2014 Agriculture",
+      "printedPage": 114,
+      "pdfPage": 131,
+      "segmentId": "sp413-s02760",
+      "topic": "Plant area requirements from crop yield estimates"
+    },
+    {
+      "section": "Chapter 5 Appendix C \u2014 Agriculture",
+      "printedPage": 114,
+      "pdfPage": 131,
+      "segmentId": "sp413-s02762",
+      "topic": "Estimated productivity, not a validated yield promise"
+    }
+  ],
+  "interpretations": [
+    "Two-tier cultivation rack with side beds and visible opaque artificial-light bar housings; central service access remains clear.",
+    "All module dimensions, crop silhouettes, species appearance, rack tier count, pipe layouts, equipment technology, colors and opaque panel choices are authored, not SP-413 specifications.",
+    "This is a small placeable module, not a whole-deck allocation or a change to the existing farm plan."
+  ],
+  "collisionIntent": {
+    "modeled": "Solid frame/panel geometry, actual floor and open aisle/entry where specified. Crop foliage and equipment are opaque solid meshes. Tank water is an opaque visual surface, not a fluid simulation.",
+    "access": {
+      "aisle": {
+        "x": [
+          -0.88,
+          0.88
+        ],
+        "z": [
+          -1.8,
+          1.8
+        ],
+        "clearHeightMeters": 3.04
+      },
+      "floorTopMeters": 0.07,
+      "stairs": []
+    },
+    "runtime": "Parent integration determines collider policy. No gameplay traversal, biology, flow, animal behavior, crop yields, powered lighting, moving parts or engineering performance promised."
+  },
+  "icon": "assets/icons/ultimate-buildings/TorusAgri_GrowingBedA.png",
+  "preview": "assets/ultimate-buildings/TorusAgri_GrowingBedA_Preview.png",
+  "contactSheet": "assets/ultimate-buildings/TorusAgricultureKit_Preview.png",
+  "verification": [
+    "Indexed triangle, normal, winding, UV, bound, clearance and path checks in tests/agriculture_kit_assets_test.py",
+    "Real Three.js OBJLoader/MTLLoader opaque atlas proof via GET-only browser fixture on existing loopback origin; no registration",
+    "Byte-identical regeneration including browser-rendered PNGs tested on pinned Chromium"
+  ],
+  "worldJsonChanged": false,
+  "triangleBudgetExclusive": 1200,
+  "vertices": 608,
+  "normals": 690,
+  "uvs": 2280,
+  "triangles": 900,
+  "trianglesAfterQuadTriangulation": 900,
+  "actualModelBoundsMeters": [
+    [
+      -2.5,
+      2.5
+    ],
+    [
+      0.0,
+      3.265
+    ],
+    [
+      -1.8,
+      1.8
+    ]
+  ],
+  "dimensionsMeters": [
+    5.0,
+    3.265,
+    3.6
+  ],
+  "renderProof": {
+    "loader": "Three.js OBJLoader + MTLLoader",
+    "origin": "GET-only browser fixture on existing 127.0.0.1:3200 origin",
+    "id": "TorusAgri_GrowingBedA",
+    "meshes": 1,
+    "triangles": 900,
+    "materialNames": [
+      "TorusAgricultureKit"
+    ],
+    "opaque": true,
+    "loadedAtlasSize": [
+      512,
+      512
+    ],
+    "bounds": [
+      [
+        -2.5,
+        0,
+        -1.7999999523162842
+      ],
+      [
+        2.5,
+        3.265000104904175,
+        1.7999999523162842
+      ]
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "id": "TorusCommerce_RestaurantA",
+  "displayName": "Commons cafe restaurant",
+  "family": "Commerce",
+  "variant": "A",
+  "description": "Hollow single-storey dining shell with four furnished table groups, open front entry, service counter and rear kitchen; split canopy reveals the dining space.",
+  "obj": "TorusCommerce_RestaurantA.obj",
+  "mtl": "TorusCommerce_RestaurantA.mtl",
+  "textureAtlas": "TorusCommerceKit_Atlas.png",
+  "generator": "assets/scripts/build_torus_commerce_kit.py",
+  "materialName": "TorusCommerceKit",
+  "materials": 1,
+  "objects": 1,
+  "opaque": true,
+  "atlasSizePixels": [
+    512,
+    512
+  ],
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "origin": "Centered X/Z footprint, support feet at y=0; at-grade entry uses habitat floor.",
+  "orientation": "+Y up; +Z principal entry/front",
+  "sourceFacts": [
+    "Restaurants are explicitly included among indoor recreation and entertainment space needs; no restaurant floorplan is specified.",
+    "The narrated tour includes stopping for a drink at a bar.",
+    "Architecture should facilitate pedestrian traffic and acoustically isolate residences from noisy commercial and service activities."
+  ],
+  "sourceReferences": [
+    {
+      "segmentId": "sp413-s00935",
+      "printedPage": 33,
+      "pdfPage": 50,
+      "readerAnchor": "#sp413-s00935"
+    },
+    {
+      "segmentId": "sp413-s02461",
+      "printedPage": 103,
+      "pdfPage": 120,
+      "readerAnchor": "#sp413-s02461"
+    },
+    {
+      "segmentId": "sp413-s02276",
+      "printedPage": 91,
+      "pdfPage": 108,
+      "readerAnchor": "#sp413-s02276"
+    }
+  ],
+  "interpretations": [
+    "Hollow single-storey dining shell with four furnished table groups, open front entry, service counter and rear kitchen; split canopy reveals the dining space.",
+    "All footprints, stalls, furniture, machinery, signs, color, canopy and roof geometry are authored interpretation; SP-413 provides programmatic needs, not these detailed floorplans.",
+    "Single accessible ground-level route only; no upper floors or walkable roofs promised."
+  ],
+  "collisionIntent": {
+    "modeled": "Solid structural panels, supports and equipment; empty walkable aisles and physically open entries. No glazing/alpha cards in openings.",
+    "runtime": "Static mesh collision intended; no moving doors or operational equipment. Parent integration and gameplay traversal tests remain required.",
+    "groundEntry": "Flush to habitat ground, no base slab or threshold step.",
+    "walkableRoofs": false
+  },
+  "routeClearanceMeters": 2.4,
+  "icon": "assets/icons/ultimate-buildings/TorusCommerce_RestaurantA.png",
+  "preview": "assets/ultimate-buildings/TorusCommerce_RestaurantA_Preview.png",
+  "verification": [
+    "Offline OBJ index/normal/UV/bounds/budget and deterministic regeneration tests.",
+    "Preview and icon use actual Three.js OBJLoader/MTLLoader and opaque decoded atlas, GET-only local browser fixture."
+  ],
+  "unresolvedQuestions": [
+    "Detailed plans and equipment are not specified by SP-413; no safety/accessibility certification or working commercial functions."
+  ],
+  "worldJsonChanged": false,
+  "vertices": 1024,
+  "normals": 990,
+  "uvs": 3640,
+  "trianglesAfterQuadTriangulation": 1660,
+  "actualModelBoundsMeters": [
+    [
+      -7.0,
+      7.0
+    ],
+    [
+      0.0,
+      4.2
+    ],
+    [
+      -5.7,
+      4.9
+    ]
+  ],
+  "dimensionsMeters": [
+    14.0,
+    4.2,
+    10.6
+  ]
+}

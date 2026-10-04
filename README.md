@@ -69,7 +69,7 @@ The browser/snapshot checks use Chromium. Set `SNAPSHOT_CHROMIUM_PATH` to your l
 
 ## Asset library
 
-`src/asset-library.js` is the library registry: groups contain types with stable slugs, an optional thumbnail, shared references/facts, and a `variants` array. Empty arrays mean planned entries, displayed as names without dead links or thumbnail placeholders. The current model lives at `/oneillsim/assets/houses/`.
+`src/asset-library.js` is the library registry: groups contain types with stable slugs, thumbnails, shared references/facts, and a `variants` array. The library now contains 106 real model variants across all 67 types, with no empty types. The latest 47-model completion and checks are documented in [completed asset library](docs/completed-asset-library.md). Existing housing and Residential A assets remain unchanged; the new kits were not automatically placed into the saved world.
 
 To add a design, put its OBJ, MTL, atlas and `.asset.json` manifest in its ignored asset directory, then register its `id`, `name`, and `directory` under the appropriate type. The type page lists all designs and their individual triangle/vertex counts from those manifests; selecting a design replaces the single active viewer. Put source-document links on the type, and model-specific interpretation notes in its manifest. Add an optional type thumbnail when available. The snapshot allowlist derives from the same registry. Legacy asset capture URLs redirect to the matching type page.
 

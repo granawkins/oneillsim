@@ -119,12 +119,19 @@ async function loadAsset() {
         const manifest = normalizeAssetManifest(await response.json());
 
         if (disposed) return;
-        const materialsLoader = new MTLLoader();
+        const textureManager = new THREE.LoadingManager();
+        const materialsLoader = new MTLLoader(textureManager);
         materialsLoader.setPath(ROOT);
         const materials = await materialsLoader.loadAsync(`${ASSET_ID}.mtl`);
         if (disposed) return;
-        materials.preload();
-        for (const material of Object.values(materials.materials)) loadedMaterials.add(material);
+        await new Promise((resolve,reject) => {
+            textureManager.onLoad = resolve;
+            textureManager.onError = url => reject(new Error(`Atlas failed: ${url}`));
+            materials.preload();
+            for (const material of Object.values(materials.materials)) loadedMaterials.add(material);
+            if (!Object.values(materials.materials).some(material => material.map)) resolve();
+        });
+        if (disposed) return;
         const objectLoader = new OBJLoader();
         objectLoader.setMaterials(materials);
         objectLoader.setPath(ROOT);
@@ -141,11 +148,11 @@ async function loadAsset() {
         scene.add(model);
         // Small props need a human-scale inspection frame, not the house's
         // 2.55m target/17m distance. Preserve existing house/capture conventions.
-        if (ASSET_ID.startsWith('TorusDistrict_') || ['Furniture & small props', 'Residential buildings'].includes(manifest.family)) {
+        if (manifest.inspectionFraming === 'bounds' || ASSET_ID.startsWith('TorusDistrict_') || ['Furniture & small props', 'Residential buildings'].includes(manifest.family)) {
             const bounds = new THREE.Box3().setFromObject(model);
             bounds.getCenter(target);
             const extent = bounds.getSize(new THREE.Vector3());
-            const district = ASSET_ID.startsWith('TorusDistrict_');
+            const district = manifest.inspectionFraming === 'bounds' || ASSET_ID.startsWith('TorusDistrict_');
             const maxDistance = district ? 2000 : 45;
             const propDistance = queryNumber('distance', Math.max(3, Math.max(extent.x, extent.y, extent.z) * 2.8), 2, maxDistance);
             if (district) {
@@ -169,6 +176,8 @@ async function loadAsset() {
         get('asset-description').textContent = manifest.description || '';
         get('spec-geometry').textContent = `${manifest.trianglesAfterQuadTriangulation} tris · ${manifest.vertices} verts`;
         get('spec-materials').textContent = `${manifest.materials} atlas material`;
+        const atlasImage = Object.values(materials.materials).find(material => material.map)?.map.image;
+        if (get('spec-atlas')) get('spec-atlas').textContent = atlasImage ? `${atlasImage.width} × ${atlasImage.height} atlas` : '—';
         get('spec-bounds').textContent = dimensions.length === 3 ? `${dimensions[0]} × ${dimensions[1]} × ${dimensions[2]} m` : '—';
         get('spec-scale').textContent = `${manifest.editorDefaultScale}× in the simulator`;
         if (get('asset-source')) get('asset-source').textContent = manifest.source || '';

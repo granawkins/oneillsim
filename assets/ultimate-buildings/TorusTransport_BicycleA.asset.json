@@ -1,0 +1,97 @@
+{
+  "id": "TorusTransport_BicycleA",
+  "displayName": "Static bicycle specimen",
+  "family": "Transport & access",
+  "description": "Static bicycle specimen. Human-scale, source-informed static interpretation; no operational transport behavior.",
+  "generator": "assets/scripts/build_torus_transport_kit.py",
+  "obj": "TorusTransport_BicycleA.obj",
+  "mtl": "TorusTransport_BicycleA.mtl",
+  "textureAtlas": "TorusTransportKit_Atlas.png",
+  "materialName": "TorusTransportKit",
+  "materials": 1,
+  "objects": 1,
+  "opaque": true,
+  "atlasSizePixels": [
+    512,
+    512
+  ],
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "origin": "feet y=0; local horizontal placement",
+  "orientation": "+Y up; +Z front",
+  "sourceFacts": [
+    "SP-413 printed p.33 describes predominantly pedestrian circulation, with moving sidewalk, monorail and minibus among mass-transport modes connecting residential areas.",
+    "The same page proposes elevators through spokes, plus major arteries, secondary paths, collector paths and local circulation paths. These assets are not elevators or a implemented spoke transit system.",
+    "Figure 3-2 provides conceptual alternative street sections; Figure 5-5 depicts pedestrian terrace access and stairs."
+  ],
+  "sourceReferences": [
+    {
+      "segmentId": "sp413-s00961",
+      "printedPage": 33,
+      "pdfPage": 50
+    },
+    {
+      "segmentId": "sp413-s00962",
+      "printedPage": 33,
+      "pdfPage": 50
+    },
+    {
+      "segmentId": "sp413-s00964",
+      "printedPage": 33,
+      "pdfPage": 50
+    },
+    {
+      "segmentId": "sp413-s00966",
+      "figure": "3-2",
+      "printedPage": 34,
+      "pdfPage": 51
+    },
+    {
+      "segmentId": "sp413-s02259",
+      "figure": "5-5",
+      "printedPage": 91,
+      "pdfPage": 108
+    }
+  ],
+  "interpretations": [
+    "All detailed geometry, dimensions, colors, rail gauge and station layout are authored specimen interpretations, not historical engineering specifications.",
+    "Bus is an electric minibus interpretation of the study transport option; cart is an electric/service interpretation and bicycle is a pedestrian-friendly authored addition, not a sourced vehicle blueprint. No combustion, road-car fleet, operating vehicles or rail network is implied.",
+    "Short road, rail and bridge modules remain tangent/local; maximum road and bridge length 10 m. Access ramp is 14.4 m; tube-radius sag is approximately 0.4 m if aligned around tube circumference, so placement must orient it along the torus major circle or adapt terrain; not placed."
+  ],
+  "collisionIntent": {
+    "modeled": "Static body, wheels and bars; bus has opaque window/door inserts, not operable glazing or boarding door.",
+    "entries": "No functional interior entry; static transport specimen.",
+    "routes": [],
+    "stairs": [],
+    "runtime": "Use actual triangle colliders. Static specimen only; no vehicle controls, boarding behavior, functional railway, safety/accessibility certification.",
+    "floorsMeters": []
+  },
+  "icon": "assets/icons/ultimate-buildings/TorusTransport_BicycleA.png",
+  "preview": "assets/ultimate-buildings/TorusTransport_BicycleA_Preview.png",
+  "worldJsonChanged": false,
+  "vertices": 524,
+  "normals": 730,
+  "uvs": 2552,
+  "triangles": 1092,
+  "trianglesAfterQuadTriangulation": 1092,
+  "actualModelBoundsMeters": [
+    [
+      -0.315496,
+      0.315
+    ],
+    [
+      0.0,
+      1.065
+    ],
+    [
+      -1.06,
+      1.06
+    ]
+  ],
+  "dimensionsMeters": [
+    0.630496,
+    1.065,
+    2.12
+  ]
+}

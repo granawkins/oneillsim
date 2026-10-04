@@ -1,6 +1,8 @@
 import { parseCameraPreset } from './camera-presets.js';
 
 import { assetTypes, findModelType } from './asset-library.js';
+import {remainingModelContract} from './remaining-model-contract.js';
+const BOUNDS_FRAMED_MODELS = new Set(remainingModelContract.map(a=>a.id));
 const SNAPSHOT_ASSETS = new Set(assetTypes.flatMap(type => type.variants.map(variant => variant.id)));
 
 function numberParam(params, name, fallback, min, max, integer = false) {
@@ -32,7 +34,7 @@ function pageSearchForAsset(params) {
     if (!SNAPSHOT_ASSETS.has(asset)) throw new RangeError(`asset must be one of: ${[...SNAPSHOT_ASSETS].join(', ')}`);
     const azimuth = numberParam(params, 'azimuth', 38, -180, 180);
     const elevation = numberParam(params, 'elevation', 22, -10, 75);
-    const distance = numberParam(params, 'distance', 17, 7, asset.startsWith('TorusDistrict_') ? 2000 : 45);
+    const distance = numberParam(params, 'distance', 17, 7, asset.startsWith('TorusDistrict_') || BOUNDS_FRAMED_MODELS.has(asset) ? 2000 : 45);
     const modelRotation = numberParam(params, 'modelRotation', 0, -3600, 3600);
     const pageParams = new URLSearchParams({
         capture: '1',

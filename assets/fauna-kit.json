@@ -1,0 +1,34 @@
+[
+  {
+    "id": "TorusFauna_CowA",
+    "name": "Dairy cattle",
+    "slug": "cattle",
+    "directory": "ultimate-nature",
+    "materialKit": "fauna",
+    "textureAtlas": "TorusFaunaKit_Atlas.png"
+  },
+  {
+    "id": "TorusFauna_ChickenA",
+    "name": "Chicken",
+    "slug": "chickens",
+    "directory": "ultimate-nature",
+    "materialKit": "fauna",
+    "textureAtlas": "TorusFaunaKit_Atlas.png"
+  },
+  {
+    "id": "TorusFauna_RabbitA",
+    "name": "Rabbit",
+    "slug": "rabbits",
+    "directory": "ultimate-nature",
+    "materialKit": "fauna",
+    "textureAtlas": "TorusFaunaKit_Atlas.png"
+  },
+  {
+    "id": "TorusFauna_FishA",
+    "name": "Trout",
+    "slug": "fish",
+    "directory": "ultimate-nature",
+    "materialKit": "fauna",
+    "textureAtlas": "TorusFaunaKit_Atlas.png"
+  }
+]

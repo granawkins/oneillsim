@@ -1,0 +1,88 @@
+{
+  "id": "TorusFauna_ChickenA",
+  "displayName": "Chicken",
+  "family": "Animals",
+  "variant": "A",
+  "description": "Standing hen with pear-shaped body, folded wings, raised neck, beak, comb, wattles, toes and fanned tail.",
+  "generator": "assets/scripts/build_torus_fauna_kit.py",
+  "obj": "TorusFauna_ChickenA.obj",
+  "mtl": "TorusFauna_ChickenA.mtl",
+  "textureAtlas": "TorusFaunaKit_Atlas.png",
+  "materialName": "TorusFaunaKit",
+  "materials": 1,
+  "objects": 1,
+  "atlasSizePixels": [
+    512,
+    512
+  ],
+  "opaque": true,
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "origin": "Feet at local y=0; fish lowest underside/ventral fin at y=0.",
+  "orientation": "+Y up; +Z front toward face/head; tail toward -Z.",
+  "sourceReferences": [
+    {
+      "segmentId": "sp413-s01324",
+      "printedPage": 53,
+      "pdfPage": 70,
+      "section": "Food"
+    },
+    {
+      "segmentId": "sp413-s02753",
+      "printedPage": 114,
+      "pdfPage": 131,
+      "section": "Appendix C \u2014 Agriculture"
+    },
+    {
+      "segmentId": "sp413-s02777",
+      "printedPage": 114,
+      "pdfPage": 131,
+      "table": "5-17(a)"
+    }
+  ],
+  "sourceFacts": [
+    "Appendix C identifies fish, chickens, rabbits and cows as the animal food-production herd (sp413-s02753, printed p.114).",
+    "Table 5-17(a), Appendix C, includes trout, rabbit, beef, chicken, eggs and milk in the example diet.",
+    "The Food section balances efficient area use with a varied diet; these are visual representations, not biological models."
+  ],
+  "interpretations": [
+    "Standing hen with pear-shaped body, folded wings, raised neck, beak, comb, wattles, toes and fanned tail.",
+    "Species form, coat colors, breed-neutral proportions and all metric dimensions are authored approximations, not SP-413 requirements. Trout is represented because the diet table names trout; no particular trout species is asserted.",
+    "Neutral humane static pose; no behavioral, husbandry, breeding, yield or metabolic results are implemented."
+  ],
+  "collisionIntent": {
+    "modeled": "Static visual mesh with sculpted opaque surfaces.",
+    "runtime": "No functional behavior, ambient animation or animal simulation; collider policy left to parent integration."
+  },
+  "icon": "assets/icons/ultimate-nature/TorusFauna_ChickenA.png",
+  "preview": "assets/ultimate-nature/TorusFauna_ChickenA_Preview.png",
+  "verification": [
+    "Indexed triangles, explicit normals/UVs, bounds, budgets and byte-exact regeneration checked by tests/fauna_kit_assets_test.py.",
+    "Preview and icon generated from actual Three OBJLoader/MTLLoader geometry and shared atlas."
+  ],
+  "vertices": 264,
+  "triangles": 452,
+  "trianglesAfterQuadTriangulation": 452,
+  "normals": 452,
+  "uvs": 452,
+  "actualModelBoundsMeters": [
+    [
+      -0.161,
+      0.161
+    ],
+    [
+      0.0,
+      0.6651236
+    ],
+    [
+      -0.34,
+      0.285
+    ]
+  ],
+  "dimensionsMeters": [
+    0.322,
+    0.6651236,
+    0.625
+  ]
+}

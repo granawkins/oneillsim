@@ -1,0 +1,58 @@
+[
+  {
+    "id": "TorusNature_TreeA",
+    "name": "Branched deciduous shade tree",
+    "slug": "trees",
+    "directory": "ultimate-nature",
+    "materialKit": "nature",
+    "textureAtlas": "TorusNatureKit_Atlas.png"
+  },
+  {
+    "id": "TorusNature_ShrubA",
+    "name": "Clustered garden shrubs",
+    "slug": "shrubs",
+    "directory": "ultimate-nature",
+    "materialKit": "nature",
+    "textureAtlas": "TorusNatureKit_Atlas.png"
+  },
+  {
+    "id": "TorusNature_GrassA",
+    "name": "Meadow grass clump",
+    "slug": "grasses",
+    "directory": "ultimate-nature",
+    "materialKit": "nature",
+    "textureAtlas": "TorusNatureKit_Atlas.png"
+  },
+  {
+    "id": "TorusNature_FlowersA",
+    "name": "Mixed flowering border",
+    "slug": "flowers",
+    "directory": "ultimate-nature",
+    "materialKit": "nature",
+    "textureAtlas": "TorusNatureKit_Atlas.png"
+  },
+  {
+    "id": "TorusNature_RockA",
+    "name": "Faceted garden boulder",
+    "slug": "rocks",
+    "directory": "ultimate-nature",
+    "materialKit": "nature",
+    "textureAtlas": "TorusNatureKit_Atlas.png"
+  },
+  {
+    "id": "TorusNature_PondA",
+    "name": "Planted garden pond",
+    "slug": "ponds",
+    "directory": "ultimate-nature",
+    "materialKit": "nature",
+    "textureAtlas": "TorusNatureKit_Atlas.png"
+  },
+  {
+    "id": "TorusNature_StreamA",
+    "name": "Short landscaped stream module",
+    "slug": "streams",
+    "directory": "ultimate-nature",
+    "materialKit": "nature",
+    "textureAtlas": "TorusNatureKit_Atlas.png"
+  }
+]

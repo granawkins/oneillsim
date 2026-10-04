@@ -1,0 +1,26 @@
+[
+  {
+    "id": "TorusCommerce_MarketA",
+    "name": "Covered neighborhood market",
+    "slug": "markets",
+    "directory": "ultimate-buildings",
+    "materialKit": "commerce",
+    "textureAtlas": "TorusCommerceKit_Atlas.png"
+  },
+  {
+    "id": "TorusCommerce_RestaurantA",
+    "name": "Commons cafe restaurant",
+    "slug": "restaurants",
+    "directory": "ultimate-buildings",
+    "materialKit": "commerce",
+    "textureAtlas": "TorusCommerceKit_Atlas.png"
+  },
+  {
+    "id": "TorusCommerce_FactoryA",
+    "name": "Light-service fabrication workshop",
+    "slug": "factories",
+    "directory": "ultimate-buildings",
+    "materialKit": "commerce",
+    "textureAtlas": "TorusCommerceKit_Atlas.png"
+  }
+]

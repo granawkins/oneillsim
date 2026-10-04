@@ -1,0 +1,109 @@
+{
+  "id": "TorusStructure_HullPanelA",
+  "displayName": "Hull panel — full-scale curved coupon",
+  "family": "structure",
+  "variant": "A",
+  "description": "Representative full-scale 12 m longitudinal coupon, 20 degree arc, NOT the complete 1800 m torus. Only tube cross-section curvature; toroidal longitudinal curvature omitted.",
+  "representation": "representative full-scale section/specimen",
+  "obj": "TorusStructure_HullPanelA.obj",
+  "mtl": "TorusStructure_HullPanelA.mtl",
+  "textureAtlas": "TorusStructureKit_Atlas.png",
+  "vertices": 800,
+  "trianglesAfterQuadTriangulation": 400,
+  "triangles": 400,
+  "materials": [
+    "TorusStructureKit"
+  ],
+  "actualModelBoundsMeters": {
+    "min": [
+      -11.28713155,
+      0.0,
+      -6.0
+    ],
+    "max": [
+      11.28713155,
+      1.33217877,
+      6.0
+    ],
+    "size": [
+      22.5742631,
+      1.33217877,
+      12.0
+    ]
+  },
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "coordinateConvention": "+Y up, minimum model y=0. Orbital parts use display support/bounding datum, not terrain feet or operational gravity. Local Z is specimen tube/transport axis, local Y is hub spin/docking axis.",
+  "sourceFacts": [
+    {
+      "segmentId": "sp413-s02205",
+      "fact": "Tube diameter 130 m; coupon radius uses 65 m."
+    },
+    {
+      "segmentId": "sp413-s02209",
+      "fact": "Two thirds of torus shell is aluminum plate."
+    },
+    {
+      "segmentId": "sp413-s02300",
+      "fact": "Pressure shell skin thickness 2.1 cm."
+    }
+  ],
+  "sourceReferences": [
+    {
+      "segmentId": "sp413-s02205",
+      "printedPage": 89,
+      "pdfPage": 106,
+      "label": "SP-413 text",
+      "scanVerified": true,
+      "source": "NASA SP-413 (1977)",
+      "sourceUrl": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf#page=106",
+      "readerAnchor": "/study/#sp413-s02205"
+    },
+    {
+      "segmentId": "sp413-s02209",
+      "printedPage": 89,
+      "pdfPage": 106,
+      "label": "SP-413 text",
+      "scanVerified": true,
+      "source": "NASA SP-413 (1977)",
+      "sourceUrl": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf#page=106",
+      "readerAnchor": "/study/#sp413-s02209"
+    },
+    {
+      "segmentId": "sp413-s02300",
+      "printedPage": 94,
+      "pdfPage": 111,
+      "label": "SP-413 text",
+      "scanVerified": true,
+      "source": "NASA SP-413 (1977)",
+      "sourceUrl": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf#page=111",
+      "readerAnchor": "/study/#sp413-s02300"
+    }
+  ],
+  "interpretations": [
+    "Representative full-scale 12 m longitudinal coupon, 20 degree arc, NOT the complete 1800 m torus. Only tube cross-section curvature; toroidal longitudinal curvature omitted.",
+    "0.021 m skin is sourced; 0.32 m wide ribs, 0.329 m depth and spacing are authored for readable inspection."
+  ],
+  "uncertainties": [
+    "Conceptual study, not production engineering drawings. Unsourced assembly dimensions are authored interpretations."
+  ],
+  "collisionIntent": "Static curved thin skin and reinforcing ribs; open concave underside. Not a sealed pressure vessel.",
+  "generator": "assets/scripts/build_torus_structure_kit.py",
+  "preview": "TorusStructure_HullPanelA_Preview.png",
+  "icon": "assets/icons/ultimate-buildings/TorusStructure_HullPanelA.png",
+  "physicsClaims": "Visual static museum specimen only; no orbit, pressure, de-spin, power, radiation, optics, heat-transfer or complete-engineering validation.",
+  "dimensionalRecord": {
+    "sourced": {
+      "tubeDiameterMeters": 130,
+      "skinThicknessMeters": 0.021
+    },
+    "authored": {
+      "couponLengthMeters": 12,
+      "arcDegrees": 20,
+      "ribWidthMeters": 0.32,
+      "ribDepthMeters": 0.329
+    },
+    "scope": "partial pressure skin; not enclosing hull"
+  }
+}

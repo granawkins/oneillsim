@@ -1,0 +1,90 @@
+{
+  "id": "TorusUtility_WasteProcessingA",
+  "displayName": "Waste processing",
+  "family": "Utilities & life support",
+  "description": "Sorting belt, feed hopper and paired closed recycling process vessels.",
+  "obj": "TorusUtility_WasteProcessingA.obj",
+  "mtl": "TorusUtility_WasteProcessingA.mtl",
+  "textureAtlas": "TorusUtilityKit_Atlas.png",
+  "vertices": 498,
+  "trianglesAfterQuadTriangulation": 888,
+  "triangles": 888,
+  "materials": 1,
+  "objects": 1,
+  "actualModelBoundsMeters": [
+    [
+      -3.9,
+      3.9
+    ],
+    [
+      0.0,
+      3.5
+    ],
+    [
+      -3.0,
+      2.8
+    ]
+  ],
+  "dimensionsMeters": [
+    7.8,
+    3.5,
+    5.8
+  ],
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "origin": "deck underside at y=0; floor centre",
+  "orientation": "+Y up, +Z maintenance front",
+  "sourceFacts": [
+    "Mechanical subsystems include electrical distribution, air movement, water treatment/recycling and sewage treatment.",
+    "Wet oxidation produces water and carbon-dioxide-rich gases, with trace-contaminant scrubbing."
+  ],
+  "sourceReferences": [
+    {
+      "document": "NASA SP-413",
+      "segmentId": "sp413-s00684",
+      "printedPage": 25,
+      "pdfPage": 42,
+      "sourceUrl": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf#page=42",
+      "readerAnchor": "sp413-s00684"
+    },
+    {
+      "document": "NASA SP-413",
+      "segmentId": "sp413-s02440",
+      "printedPage": 101,
+      "pdfPage": 118,
+      "sourceUrl": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf#page=118",
+      "readerAnchor": "sp413-s02440"
+    }
+  ],
+  "interpretations": [
+    "Human-scale maintenance specimen, not a complete colony installation or dimensioned SP-413 engineering design.",
+    "All housings, rounded vessels, handwheels, sorting belt, filter/manifold arrangements and cabinet/light form factors are authored visual interpretations.",
+    "A 7.8 x 5.8 m deck and one-metre front maintenance aisle are authored spatial clearances, not historical engineering requirements.",
+    "Static props only: no simulated pipe flow, pumps, waste conversion, electrical power, illumination or moving controls. No process capacities, safety certification or modern light technology are claimed."
+  ],
+  "collisionIntent": {
+    "solidEquipment": true,
+    "walkableDeckTopMeters": 0.16,
+    "maintenanceClearanceAABB": {
+      "min": [
+        -3.4,
+        0.18,
+        1.6
+      ],
+      "max": [
+        3.4,
+        2.25,
+        2.6
+      ]
+    },
+    "maintenanceWidthMeters": 1,
+    "movingParts": [],
+    "runtimeCollisionVerified": false,
+    "note": "Equipment is solid; the front deck aisle is geometrically clear. Runtime collider/editor integration remains parent-owned."
+  },
+  "generator": "assets/scripts/build_torus_utility_kit.py",
+  "preview": "TorusUtility_WasteProcessingA_Preview.png",
+  "icon": "../icons/ultimate-buildings/TorusUtility_WasteProcessingA.png",
+  "worldJsonChanged": false
+}

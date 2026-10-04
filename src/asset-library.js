@@ -2,6 +2,7 @@
 import {streetKit} from './street-kit.js';
 import {residentialKit} from './residential-kit.js';
 import {districtKit} from './district-kit.js';
+import {completedModels} from './completed-models.js';
 // References belong to a type; each variant has its own model manifest and stats.
 export const assetGroups = [
   ['Homes & civic buildings', ['Houses', 'Apartments', 'Schools', 'Clinics', 'Community centers', 'Sports facilities']],
@@ -70,6 +71,14 @@ for (const {id,slug,name} of districtKit) {
     type.references=[{label:'Table 3-2 · community space allocations',href:'/study/#sp413-s00708'},{label:'Residential architecture and pedestrian spaces',href:'/study/#sp413-s02268'}];
     type.facts=['The study describes modular homes, groups up to four/five stories, pedestrian terraces and commerce below the central plain.','These assets fit the existing Residential A parcels and cylinder curvature; detailed plans, gardens, materials and stairs are authored interpretations, not construction specifications.'];
   }
+}
+for (const model of completedModels) {
+ const type=assetTypes.find(t=>t.slug===model.slug);
+ if (!type || type.variants.length) throw new Error(`Missing or conflicting completion type: ${model.slug}`);
+ const thumbnail=`/oneillsim/assets/icons/${model.directory}/${model.id}.png`;
+ type.variants=[{id:model.id,name:model.name,directory:model.directory,thumbnail}];
+ type.thumbnail=thumbnail;type.references=model.references;type.facts=model.facts.map(f=>typeof f==='string'?f:f.fact);
+ type.source='NASA SP-413 · cited report context; authored static inspection model';
 }
 export function findAssetType(slug) { return assetTypes.find(type => type.slug === slug); }
 export function findModelType(id) { return assetTypes.find(type => type.variants.some(variant => variant.id === id)); }

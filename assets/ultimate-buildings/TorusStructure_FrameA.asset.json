@@ -1,0 +1,77 @@
+{
+  "id": "TorusStructure_FrameA",
+  "displayName": "Structural frame — full-scale truss specimen",
+  "family": "structure",
+  "variant": "A",
+  "description": "Representative full-scale 12 x 8 x 6 m open truss, NOT the habitat primary structure. Dimensions, web pattern and beam thickness are authored; source supports plate/rib construction, not this exact module.",
+  "representation": "representative full-scale section/specimen",
+  "obj": "TorusStructure_FrameA.obj",
+  "mtl": "TorusStructure_FrameA.mtl",
+  "textureAtlas": "TorusStructureKit_Atlas.png",
+  "vertices": 1008,
+  "trianglesAfterQuadTriangulation": 504,
+  "triangles": 504,
+  "materials": [
+    "TorusStructureKit"
+  ],
+  "actualModelBoundsMeters": {
+    "min": [
+      -4.15,
+      0.0,
+      -6.15
+    ],
+    "max": [
+      4.15,
+      6.3,
+      6.15
+    ],
+    "size": [
+      8.3,
+      6.3,
+      12.3
+    ]
+  },
+  "editorDefaultScale": 4,
+  "objCoordinateScale": 0.25,
+  "inspectionFraming": "bounds",
+  "coordinateConvention": "+Y up, minimum model y=0. Orbital parts use display support/bounding datum, not terrain feet or operational gravity. Local Z is specimen tube/transport axis, local Y is hub spin/docking axis.",
+  "sourceFacts": [
+    {
+      "segmentId": "sp413-s01207",
+      "fact": "Shell is assembled from aluminum plate and ribs; hub outward through spokes."
+    }
+  ],
+  "sourceReferences": [
+    {
+      "segmentId": "sp413-s01207",
+      "printedPage": 48,
+      "pdfPage": 65,
+      "label": "SP-413 text",
+      "scanVerified": false,
+      "source": "NASA SP-413 (1977)",
+      "sourceUrl": "https://ntrs.nasa.gov/api/citations/19770014162/downloads/19770014162.pdf#page=65",
+      "readerAnchor": "/study/#sp413-s01207"
+    }
+  ],
+  "interpretations": [
+    "Representative full-scale 12 x 8 x 6 m open truss, NOT the habitat primary structure. Dimensions, web pattern and beam thickness are authored; source supports plate/rib construction, not this exact module."
+  ],
+  "uncertainties": [
+    "Conceptual study, not production engineering drawings. Unsourced assembly dimensions are authored interpretations."
+  ],
+  "collisionIntent": "Static truss beams only; large voids must remain void, no whole-bounds solid collider.",
+  "generator": "assets/scripts/build_torus_structure_kit.py",
+  "preview": "TorusStructure_FrameA_Preview.png",
+  "icon": "assets/icons/ultimate-buildings/TorusStructure_FrameA.png",
+  "physicsClaims": "Visual static museum specimen only; no orbit, pressure, de-spin, power, radiation, optics, heat-transfer or complete-engineering validation.",
+  "dimensionalRecord": {
+    "sourced": {},
+    "authored": {
+      "frameCenterlineWidthMeters": 8,
+      "frameCenterlineHeightMeters": 6,
+      "frameCenterlineLengthMeters": 12,
+      "majorBeamWidthMeters": 0.3
+    },
+    "scope": "generic full-scale structural specimen; dimensions not specified by study"
+  }
+}

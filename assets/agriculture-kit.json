@@ -1,0 +1,66 @@
+[
+  {
+    "id": "TorusAgri_GrainA",
+    "name": "Grain crop rows",
+    "slug": "grain-crops",
+    "directory": "ultimate-buildings",
+    "materialKit": "agriculture",
+    "textureAtlas": "TorusAgricultureKit_Atlas.png"
+  },
+  {
+    "id": "TorusAgri_LegumeA",
+    "name": "Beans and other legumes",
+    "slug": "beans-other-legumes",
+    "directory": "ultimate-buildings",
+    "materialKit": "agriculture",
+    "textureAtlas": "TorusAgricultureKit_Atlas.png"
+  },
+  {
+    "id": "TorusAgri_VegetablesA",
+    "name": "Vegetable crop bed",
+    "slug": "vegetable-crops",
+    "directory": "ultimate-buildings",
+    "materialKit": "agriculture",
+    "textureAtlas": "TorusAgricultureKit_Atlas.png"
+  },
+  {
+    "id": "TorusAgri_GreenhouseA",
+    "name": "Open-frame greenhouse",
+    "slug": "greenhouses",
+    "directory": "ultimate-buildings",
+    "materialKit": "agriculture",
+    "textureAtlas": "TorusAgricultureKit_Atlas.png"
+  },
+  {
+    "id": "TorusAgri_GrowingBedA",
+    "name": "Two-tier growing bed",
+    "slug": "growing-beds",
+    "directory": "ultimate-buildings",
+    "materialKit": "agriculture",
+    "textureAtlas": "TorusAgricultureKit_Atlas.png"
+  },
+  {
+    "id": "TorusAgri_IrrigationA",
+    "name": "Irrigation equipment",
+    "slug": "irrigation-equipment",
+    "directory": "ultimate-buildings",
+    "materialKit": "agriculture",
+    "textureAtlas": "TorusAgricultureKit_Atlas.png"
+  },
+  {
+    "id": "TorusAgri_AnimalHousingA",
+    "name": "Animal housing and pens",
+    "slug": "animal-housing",
+    "directory": "ultimate-buildings",
+    "materialKit": "agriculture",
+    "textureAtlas": "TorusAgricultureKit_Atlas.png"
+  },
+  {
+    "id": "TorusAgri_AquacultureA",
+    "name": "Aquaculture tanks",
+    "slug": "aquaculture-tanks",
+    "directory": "ultimate-buildings",
+    "materialKit": "agriculture",
+    "textureAtlas": "TorusAgricultureKit_Atlas.png"
+  }
+]
