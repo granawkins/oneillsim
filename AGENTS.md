@@ -1,190 +1,40 @@
-# Stanford Torus Simulation
+# Stanford Torus — agent instructions
 
-Live at [oneillsim.com](https://oneillsim.com)
+## Canonical project skills
 
-## User Experience
+Read `.agents/skills/stanford-torus/SKILL.md` before project work. Its design, architecture, development, deployment and safety rules are authoritative for this application.
 
-A first-person 3D simulation of a Stanford Torus space habitat built with Three.js. The user walks on the inner surface of a rotating cylindrical space station, experiencing artificial gravity.
+- Historical lookup: `.agents/skills/space-settlements-design-study-reference/SKILL.md` and its tested study-search helper.
+- Asset authoring/review: `.agents/skills/3d-assets/SKILL.md`.
+- Keep reusable project procedures in these repo-owned skills, not duplicated Hermes profile skills or shared-server mirrors.
 
-**Controls:**
-- Click to enter (pointer lock)
-- WASD: Walk forward/back/strafe left/right (always on ground)
-- Mouse: Look around (up/down and turn left/right)
-- Space: Jump (human mode only)
-- Scroll: Zoom in/out, transitions between view modes (human ↔ planner ↔ god)
-- E: Toggle editor mode (shows editor overlay in planner mode)
-- Ctrl+S: Save world to world.json
-- L: Toggle sun ring visibility
-- ESC: Release mouse
+## Goal and design authority
 
-**View Modes:**
-- *Human view* (default): Walk on the ring surface, camera 2m above ground, movement constrained to surface. Looking up/down doesn't affect movement direction. Space to jump.
-- *Planner view* (scroll out): Birds-eye view 10-200m above ground, move along the ring with WASD. Scroll to zoom in/out.
-- *God view* (scroll out from planner): Free flying in world space, 5x speed, camera detached from rotating habitat so you can watch it spin. No movement constraints.
+Reproduce NASA SP-413's Stanford Torus as a beautiful, walkable digital museum, eventually with shared social experiences. The original study controls historical design choices; use the reviewed `/study/` edition for lookup and the private source scan to verify consequential details. Distinguish sourced facts, interpretations, current simplifications and future features.
 
-**Environment:**
-- Rotating cylindrical habitat (1 RPM)
-- Central sun ring providing lighting
-- Ground with texture grid (grass, farm, path, etc.)
-- River band circling the cylinder
-- Placed assets (buildings, trees, rocks) loaded from world.json
-- Starfield visible outside
+Do not freeze changeable dimensions in agent instructions. Geometry/coordinate parameters live in the current source modules and reference notes. The ground sheet's presentation convention is not independently specified by the historical report.
 
-## Geometry & Coordinate System
+## Development default
 
-The Stanford Torus is a donut-shaped space station. The simulation uses a specific coordinate system:
+Grant currently wants development on `main`, followed by scoped commit/push and verified redeployment. Do not create worktrees/branches/PRs or QA ports/services by default. Preserve unrelated changes; never reset unknown work or force-push. Agents working concurrently must have disjoint file ownership or use scratch outputs with parent integration.
 
-**Axes:**
-- **Z axis**: The axis of rotation (the "axle" the donut spins around)
-- **XY plane**: The plane the torus ring lies in (horizontal, like a donut on a table)
+## Architecture and deployment
 
-**Torus Dimensions:**
-- **Ring radius (R)**: 650m - distance from origin to the center of the tube
-- **Tube radius (r)**: 65m - radius of the tube's circular cross-section
-- Inner surface (toward Z axis): R - r = 585m from Z axis
-- Outer surface (away from Z axis): R + r = 715m from Z axis
-- Total tube diameter: 130m (matches CYLINDER_LENGTH)
+- Simulation: plain Three.js ES modules in `src/`, `index.html`, directly served by the custom Node `server.mjs`.
+- Reference/development pages: Next.js App Router in `app/`; build when those routes/config/dependencies change, not for legacy simulation files alone.
+- Models and previews: `assets/`; mutable saved scene: `world.json`; reviewed source reader: `study/`; checks: `tests/`.
+- Public site: `https://stanfordtorus.com/`; legacy `https://granawkins.com/oneillsim/` remains active. Preserve the internal `/oneillsim/` path prefix.
+- Production: `oneillsim.service`, bound to `127.0.0.1:3200`. Inspect the actual service and current package scripts before choosing runtime/build commands.
+- Restart only this service after verified project changes, inspect logs/status, and verify loopback plus both public entry points and affected functionality.
 
-**Player Position:**
-- Player stands on the inner surface of the tube at radius ~648m from Z axis
-- The cylinder (CYLINDER_RADIUS = 650) represents the living space cross-section
-- Player's "down" = radially outward from Z axis (toward outer surface)
-- Player's "up" = radially inward toward Z axis (toward inner surface)
+## Data and operational safety
 
-**Torus Parametric Equations** (ring in XY plane):
-```
-x = (R + r·cos(φ))·cos(θ)
-y = (R + r·cos(φ))·sin(θ)
-z = r·sin(φ)
-```
-Where θ = angle around the ring, φ = angle around the tube cross-section.
+`PUT /oneillsim/world.json` is intentionally unauthenticated and overwrites the live world. Never use it for tests, health checks or synthetic fixtures. Back up and scope any explicitly requested layout/data changes; otherwise preserve `world.json` byte-for-byte. Browser-intercepted GET fixtures are safe alternatives.
 
-**Rotation:**
-- `habitatGroup` rotates around Z axis at 1 RPM
-- Everything inside habitatGroup (cylinder, torus, features) rotates together
-- Stars are in the scene (not habitatGroup) so they appear fixed in space
+Keep the PDF, search SQLite database, credentials and backups outside public assets/Git. New `assets/*` files are ignored: stage only reviewed intended files. Preserve optimized skyboxes/compression/caching and existing camera/zoom/editor workflows unless the task concerns them.
 
-## World Data (world.json)
+For infrastructure changes, read the shared-server `AGENTS.md`, `docs/architecture.md`, and `docs/operations.md`; reference configs are not live deployment inputs. Inspect live Nginx, validate with `sudo nginx -t`, and reload only if valid. Avoid `npm --version` in the supervised gateway due to a known lifecycle-scanner false positive.
 
-The world state is stored in `world.json` and loaded on startup. The production Node server supports `PUT /oneillsim/world.json` for editor saves; that endpoint is intentionally unauthenticated during the current hobby-project test phase.
+## Verification
 
-**Texture Grid:**
-- 2D array of texture IDs: `grid[row][col]`
-- **13 rows** (z axis: -60m to +60m in 10m tiles)
-- **408 columns** (around the ring: ~10m tiles at radius 650m)
-- Texture IDs: `0=grass, 1=farm, 2=path, 3=dirt, 4=sand, 5=water`
-- Grass (0) is the default ground color; other textures render as colored patches
-
-**Coordinate mapping:**
-- Row 0 = z=-60m (one edge), Row 12 = z=+60m (other edge)
-- Column 0 = θ=0, Column 408 = θ=2π (wraps around)
-- Functions `worldToGrid(theta, z)` and `gridToWorld(row, col)` convert between systems
-
-**Assets (sparse):**
-- Array of placed objects: `{ id, type, theta, z, scale, rotation }`
-- Loaded from OBJ/MTL files in `/assets/ultimate-buildings/` and `/assets/ultimate-nature/`
-- Not tied to the texture grid
-
-**Procedural Crops (cropConfig):**
-- Farm sections are populated with crops generated procedurally at load time
-- Stored as compact config (~200 bytes) instead of explicit assets (~2MB)
-- Uses seeded random (mulberry32) for consistent generation across sessions
-- Config structure:
-  - `seed`: Random seed for reproducible placement
-  - `sections`: Array of `{ start, end }` column ranges for farm areas
-  - `crops`: Array of `{ type, spacing }` defining crop types and grid spacing
-  - `pathWidth`, `edgeMargin`, `zMin`, `zMax`: Layout parameters
-- Crops are generated by `initCrops.js` and added to placedAssets at runtime
-- Not saved back to world.json (regenerated on each load)
-
-## World Initialization Rules
-
-The initial world layout follows these rules:
-
-**Six Sections:**
-- The ring is divided into 6 equal sections (68 columns each, 408 / 6 = 68)
-- Sections alternate between grass (0) and farm (1)
-- Pattern around the ring: grass → farm → grass → farm → grass → farm
-
-**Section Boundaries:**
-| Section | Columns   | θ Range      | Texture |
-|---------|-----------|--------------|---------|
-| 1       | 0-67      | 0° - 60°     | grass   |
-| 2       | 68-135    | 60° - 120°   | farm    |
-| 3       | 136-203   | 120° - 180°  | grass   |
-| 4       | 204-271   | 180° - 240°  | farm    |
-| 5       | 272-339   | 240° - 300°  | grass   |
-| 6       | 340-407   | 300° - 360°  | farm    |
-
-**Path Along One Edge:**
-- Row 0 (z = -60m, the negative-z edge of the cylinder) is entirely path (2)
-- This creates a continuous walkway around the entire ring at one edge
-- Rows 1-12 follow the grass/farm alternating pattern
-
-**Visual Summary:**
-```
-Row 0:  [path path path path path path]  ← entire ring circumference
-Row 1:  [grass|farm|grass|farm|grass|farm]
-Row 2:  [grass|farm|grass|farm|grass|farm]
-...
-Row 12: [grass|farm|grass|farm|grass|farm]
-```
-
-## Codebase Structure
-
-ES modules with no build step. Three.js loaded via import map from CDN.
-
-```
-src/
-├── main.js       # Entry point, loads world.json, animation loop
-├── scene.js      # Three.js scene, camera, renderer setup
-├── controls/     # Camera and input handling
-│   ├── index.js      # Main exports, setupControls
-│   ├── constants.js  # Movement speeds, physics, dimensions
-│   ├── state.js      # Shared state (mode, camera refs, input)
-│   ├── input.js      # Keyboard, mouse, wheel event handlers
-│   ├── transitions.js # Mode switching logic
-│   └── modes/
-│       ├── human.js   # First-person walking on surface
-│       ├── planner.js # Birds-eye view above ground
-│       └── god.js     # Free-flying detached camera
-├── editor/       # World editing system
-│   ├── index.js      # Editor orchestration, save/load
-│   ├── state.js      # Grid constants, texture IDs, import/export
-│   ├── textures.js   # Ground texture painting and rendering
-│   ├── placement.js  # Asset placement on surface
-│   ├── catalog.js    # Available textures and assets
-│   ├── loader.js     # OBJ/MTL asset loading with cache
-│   ├── raycaster.js  # Mouse-to-surface intersection
-│   ├── initCrops.js  # Procedural crop generation from config
-│   └── ui.js         # Editor UI components
-├── lighting.js   # Sun ring and ambient light
-├── cylinder.js   # The habitat hull and ground
-├── torus.js      # Steel torus structure (outer ring visible in space)
-├── features.js   # River band (procedural)
-├── stars.js      # Background starfield
-└── styles.css    # UI styling
-```
-
-## Files
-
-| File | Description |
-|------|-------------|
-| `serve.ts` | Bun dev server with PUT endpoint for saving world.json |
-| `world.json` | World state: texture grid (13×408) + placed assets |
-| `index.html` | HTML shell, import map, UI elements |
-| `src/main.js` | Entry point, loads world.json, runs animation loop |
-| `src/scene.js` | Creates scene, camera, renderer, habitatGroup, cameraAnchor |
-| `src/controls/` | Camera and input handling (see Codebase Structure) |
-| `src/editor/index.js` | Editor orchestration, save/load world |
-| `src/editor/state.js` | Editor state, grid constants, import/export |
-| `src/editor/textures.js` | Ground texture painting and rendering |
-| `src/editor/placement.js` | Asset placement on surface |
-| `src/editor/catalog.js` | Available textures and assets |
-| `src/editor/initCrops.js` | Procedural crop generation from cropConfig |
-| `src/lighting.js` | Sun ring torus with 12 point lights, ambient light |
-| `src/cylinder.js` | Cylinder geometry for hull and ground layer |
-| `src/torus.js` | Steel torus structure with toggleable inner/outer halves |
-| `src/features.js` | River band (procedural) |
-| `src/stars.js` | Random starfield particles |
-| `src/styles.css` | Overlay, UI panel, crosshair styles |
+Run real relevant static/unit/browser checks, report their results, verify remote commit identity after pushes, and confirm the service and affected routes after deployments. Do not claim fidelity, performance, working assets or game physics from plausible code alone. Record limitations honestly.

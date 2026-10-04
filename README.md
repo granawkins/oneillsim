@@ -2,6 +2,10 @@
 
 A plain Three.js habitat simulation with a Next.js App Router application for the study reader, asset library, and future wiki pages. Both run behind the same Node server and retain the `/oneillsim` URL prefix.
 
+## Agent workflows
+
+Canonical project skills live in `.agents/skills/`: `stanford-torus` (vision, architecture, main-branch deployment), `space-settlements-design-study-reference` (reviewed source and tested search/page/segment helper), and `3d-assets` (shared modeling, preview and parallel-agent contracts). Read `AGENTS.md` first. These replace the old profile-owned `oneillsim` instructions; maintain procedures in this repository.
+
 ## Run locally
 
 Use Node.js 22.13 or newer (the search database uses `node:sqlite`).
