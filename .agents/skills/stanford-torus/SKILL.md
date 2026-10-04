@@ -33,6 +33,7 @@ Paths below are relative to the repository root (production checkout: `/home/gra
 
 - `index.html`, `src/main.js`, `src/scene.js`: plain Three.js simulation, outside React.
 - `src/controls/`: human/planner/god camera modes, input, transitions, movement.
+- `src/physics/`: fixed-step human capsule controller and spatially indexed colliders; tuning, lifecycle, limitations and checks: `docs/character-physics.md`.
 - `src/cylinder.js`, `src/torus.js`, `src/lighting.js`, `src/stars.js`: habitat and environment.
 - `src/terrace-*.js`, `src/terraces.js`, `src/*-plan.js`: walkable levels and authored layout plans.
 - `src/editor/`: placement, model loading, catalog, terrain painting, saved-world conversion.
@@ -62,6 +63,7 @@ Use `terminal(command="sudo systemctl cat oneillsim.service")` before changing r
 
 - Preserve fingerprinted WebP skyboxes, gzip for large text responses, ETag revalidation, immutable versioned-asset caching, and fresh `world.json`. Details/tests: `docs/loading-performance.md`.
 - Profile actual world contents, load time, collision cost, and draw calls before choosing optimizations. Do not promise game-like performance without measurements.
+- Use small browser-test viewports for state assertions on this software-WebGL host. Distinguish external CDN/startup timeouts from gameplay failures; retain behavior assertions and use a bounded readiness wait. Verify deployed physics with unrouted browser visits, not only candidate response interception.
 - Delegate independent tasks with explicit files, acceptance criteria, source references, and forbidden side effects. On shared `main`, use disjoint file ownership or scratch outputs plus parent integration; never let agents overwrite each other's catalogs/worlds or independently restart production.
 
 ## Pitfalls and verification
