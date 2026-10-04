@@ -140,7 +140,7 @@ async function loadAsset() {
         scene.add(model);
         // Small props need a human-scale inspection frame, not the house's
         // 2.55m target/17m distance. Preserve existing house/capture conventions.
-        if (manifest.family === 'Furniture & small props') {
+        if (['Furniture & small props', 'Residential buildings'].includes(manifest.family)) {
             const bounds = new THREE.Box3().setFromObject(model);
             bounds.getCenter(target);
             const extent = bounds.getSize(new THREE.Vector3());

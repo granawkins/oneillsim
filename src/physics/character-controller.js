@@ -71,8 +71,18 @@ export class CharacterController {
         this.box.setFromPoints([this.start, this.end]).expandByScalar(radius + SKIN);
     }
     clip(normal) {
+        const verticalBefore = this.velocity.dot(this.up);
         const into = this.velocity.dot(normal);
-        if (into < 0) this.velocity.addScaledVector(normal, -into);
+        if (into < 0) {
+            this.velocity.addScaledVector(normal, -into);
+            // Kinematic stair/slope depenetration may lift the feet, but must
+            // not convert commanded horizontal speed into a ballistic jump.
+            // Preserve real upward jump velocity; cancel only contact-created lift.
+            if (normal.dot(this.up) > 0) {
+                const extraLift = this.velocity.dot(this.up) - Math.max(0, verticalBefore);
+                if (extraLift > 0) this.velocity.addScaledVector(this.up, -extraLift);
+            }
+        }
         if (normal.dot(this.up) > .65) this.grounded = true;
     }
     resolve() {

@@ -1,5 +1,6 @@
 // Library roadmap, separate from the simulator's catalog of placeable models.
 import {streetKit} from './street-kit.js';
+import {residentialKit} from './residential-kit.js';
 // References belong to a type; each variant has its own model manifest and stats.
 export const assetGroups = [
   ['Homes & civic buildings', ['Houses', 'Apartments', 'Schools', 'Clinics', 'Community centers', 'Sports facilities']],
@@ -45,6 +46,17 @@ for (const {id,slug,name} of streetKit) {
     'One opaque material and a shared 512px atlas for the six-type kit; no functional seating or waste sorting is implied.',
   ];
   type.variants = [{id,name,directory:'ultimate-buildings',thumbnail:type.thumbnail}];
+}
+for (const {id,slug,name} of residentialKit) {
+  const type = assetTypes.find(type => type.slug === slug);
+  const thumbnail = `/oneillsim/assets/icons/ultimate-buildings/${id}.png`;
+  type.variants.push({id,name,directory:'ultimate-buildings',thumbnail});
+  if (!type.thumbnail) type.thumbnail = thumbnail;
+  if (slug === 'apartments') {
+    type.references = houses.references;
+    type.source = 'NASA SP-413 · modular terrace housing';
+    type.facts = houses.facts;
+  }
 }
 export function findAssetType(slug) { return assetTypes.find(type => type.slug === slug); }
 export function findModelType(id) { return assetTypes.find(type => type.variants.some(variant => variant.id === id)); }

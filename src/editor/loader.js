@@ -13,12 +13,16 @@ const STREET_KIT = new Set([
     'TorusBench_A', 'TorusTable_A', 'TorusPlanter_A',
     'TorusRailing_A', 'TorusSign_A', 'TorusWasteBin_A'
 ]);
+const RESIDENTIAL_KIT = new Set([
+    'TorusHome_CourtyardA', 'TorusHome_RowA', 'TorusApartment_TerraceA'
+]);
 const assetCache = new Map();
 const loadingPromises = new Map();
-let streetKitMaterialsPromise = null;
+// Pool only explicitly compatible kit definitions, never arbitrary names.
+const kitMaterialsPromises = new Map();
 
 function getAssetPath(assetName) {
-    if (STREET_KIT.has(assetName) || BUILDINGS.includes(assetName)) return BUILDINGS_PATH;
+    if (STREET_KIT.has(assetName) || RESIDENTIAL_KIT.has(assetName) || BUILDINGS.includes(assetName)) return BUILDINGS_PATH;
     if (PLANTS.includes(assetName)) return NATURE_PATH;
     throw new Error(`Asset is not in the active client catalog: ${assetName}`);
 }
@@ -40,8 +44,9 @@ function cloneCachedAsset(obj) {
 }
 
 function loadMaterials(assetName, assetPath) {
-    const shared = STREET_KIT.has(assetName);
-    if (shared && streetKitMaterialsPromise) return streetKitMaterialsPromise;
+    const materialKey = STREET_KIT.has(assetName) ? 'street' : RESIDENTIAL_KIT.has(assetName) ? 'residential' : null;
+    const shared = materialKey !== null;
+    if (shared && kitMaterialsPromises.has(materialKey)) return kitMaterialsPromises.get(materialKey);
     const promise = new Promise((resolve, reject) => {
         // For the kit, readiness includes the atlas: failed images must be retryable.
         const manager = shared ? new LoadingManager() : undefined;
@@ -61,9 +66,9 @@ function loadMaterials(assetName, assetPath) {
         }, undefined, reject);
     });
     if (shared) {
-        streetKitMaterialsPromise = promise;
+        kitMaterialsPromises.set(materialKey, promise);
         promise.catch(() => {
-            if (streetKitMaterialsPromise === promise) streetKitMaterialsPromise = null;
+            if (kitMaterialsPromises.get(materialKey) === promise) kitMaterialsPromises.delete(materialKey);
         });
     }
     return promise;

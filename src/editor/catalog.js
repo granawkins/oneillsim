@@ -1,5 +1,6 @@
 // Asset and texture catalog
 import {streetKit, streetKitIds} from '../street-kit.js';
+import {residentialKitIds} from '../residential-kit.js';
 
 // Ground textures (built-in, not loaded from files)
 export const TEXTURES = [
@@ -12,7 +13,7 @@ export const TEXTURES = [
 ];
 
 // Curated residential and streetscape models; no planned-only assets.
-const HOUSING = ['TorusHome_ModA'];
+const HOUSING = ['TorusHome_ModA', ...residentialKitIds];
 export const BUILDINGS = [...HOUSING, ...streetKitIds];
 export const PLANTS = [];
 

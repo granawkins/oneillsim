@@ -76,7 +76,10 @@ const close=(a,b,tol=.03)=>assert.ok(Math.abs(a-b)<tol,`${a} != ${b} ± ${tol}`)
  });
  test('small risers are stepped but tall walls require a jump or stair route',()=>{
     const w=new ColliderWorld();for(let i=0;i<8;i++)box(w,`step${i}`,1+i*.7,(i+1)*.15/2,0,.7,(i+1)*.15,4);
-    const c=controller(w);run(c,1.1,tangent);run(c,.2);
+    const c=controller(w);
+    for(let i=0;i<240&&c.position.y<5.2;i++)c.advance(1/120,tangent);
+    run(c,.2);
+    assert.ok(height(c)<1.3,'risers must not launch the grounded character');
     assert.ok(c.position.y>4.8,`stair progress ${c.position.y}`);assert.ok(height(c)>1,`stair height ${height(c)}`);
     const w2=new ColliderWorld();box(w2,'high',2,1,0,2,2,4);const c2=controller(w2);run(c2,2,tangent);
     assert.ok(c2.position.y<.7);close(height(c2),0,.05);
@@ -132,20 +135,23 @@ const close=(a,b,tol=.03)=>assert.ok(Math.abs(a-b)<tol,`${a} != ${b} ± ${tol}`)
     const fall=controller(w,{groundExists:()=>false});box(w,'floor',0,-48.2,0,20,.4,10);fall.teleport(new THREE.Vector3(818,0,0));
     for(let i=0;i<24;i++)fall.advance(.25);close(height(fall),-48,.1);assert.ok(fall.grounded);
  });
- test('live 387-placement world builds a bounded hash and avoids ground scanning',()=>{
+ test('live saved world builds a bounded hash and avoids ground scanning',async()=>{
     const saved=JSON.parse(fs.readFileSync(new URL('../world.json',import.meta.url)));
     const serialized=JSON.stringify(saved);configureTerraces(saved.terraces);
     const habitat=new THREE.Group();createTerraces(habitat);
+    const {OBJLoader}=await import('three/addons/loaders/OBJLoader.js');
+    const models=new Map();
     const start=performance.now();
     for(const data of saved.assets){
         const [id,type,theta,z,scale,rotation,spec,surface]=data;
-        assert.ok(spec,`fixture unexpectedly requires model ${type}`);
-        const object=createBlockout(spec);orientToSurface(object,theta,z,surface?.height??spec.elevation??0);object.rotateY(rotation||0);object.scale.setScalar(scale||4);habitat.add(object);
+        const name=saved.assetTypes[type];
+        if(!spec&&!models.has(name))models.set(name,new OBJLoader().parse(fs.readFileSync(new URL(`../assets/ultimate-buildings/${name}.obj`,import.meta.url),'utf8')));
+        const object=spec?createBlockout(spec):models.get(name).clone();orientToSurface(object,theta,z,surface?.height??spec?.elevation??0);object.rotateY(rotation||0);object.scale.setScalar(scale||4);habitat.add(object);
         characterColliders.setObject(id,object,habitat);
     }
     const buildMs=performance.now()-start;
-    assert.equal(saved.assets.length,387);assert.equal(JSON.stringify(saved),serialized);
-    assert.equal(characterColliders.colliders.size,387+terraceMeshes.length);
+    assert.ok(saved.assets.length>=387);assert.equal(JSON.stringify(saved),serialized);
+    assert.equal(characterColliders.colliders.size,saved.assets.length+terraceMeshes.length);
     const c=controller(characterColliders,{groundExists:theta=>!inTerraceSector(theta),speed:CHARACTER.speed,jumpSpeed:CHARACTER.jumpSpeed});
     const timings=[];let sum=0,max=0;const beforeQueries=characterColliders.stats.queries,beforeCandidates=characterColliders.stats.candidates;
     for(let i=0;i<1200;i++){
@@ -157,7 +163,7 @@ const close=(a,b,tol=.03)=>assert.ok(Math.abs(a-b)<tol,`${a} != ${b} ± ${tol}`)
     timings.sort((a,b)=>a-b);
     const queries=characterColliders.stats.queries-beforeQueries;
     const avgCandidates=(characterColliders.stats.candidates-beforeCandidates)/queries;
-    console.log(JSON.stringify({livePhysics:{placements:387,terraceMeshes:terraceMeshes.length,triangles:characterColliders.triangleCount,cells:characterColliders.cells.size,buildMs,queries,avgCandidates,maxCandidates:characterColliders.stats.maxCandidates,meanMs:sum/1200,p95Ms:timings[1140],maxMs:max}}));
+    console.log(JSON.stringify({livePhysics:{placements:saved.assets.length,terraceMeshes:terraceMeshes.length,triangles:characterColliders.triangleCount,cells:characterColliders.cells.size,buildMs,queries,avgCandidates,maxCandidates:characterColliders.stats.maxCandidates,meanMs:sum/1200,p95Ms:timings[1140],maxMs:max}}));
     assert.ok(avgCandidates<characterColliders.triangleCount*.02,`broadphase ${avgCandidates}`);
     assert.ok(timings[1140]<10,`p95 ${timings[1140]}ms`);assert.ok(buildMs<5000);
     // Ascend the real rendered 15m / 100-riser farm staircase, not a ramp proxy.

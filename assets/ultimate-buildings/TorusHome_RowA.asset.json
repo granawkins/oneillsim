@@ -1,0 +1,491 @@
+{
+  "id": "TorusHome_RowA",
+  "displayName": "Three-home row",
+  "family": "Residential buildings",
+  "variant": "A",
+  "description": "Three readable two-level homes, individual orange-framed open entries, front terraces and three independent external stairs.",
+  "generator": "assets/scripts/build_torus_residential_kit.py",
+  "obj": "TorusHome_RowA.obj",
+  "mtl": "TorusHome_RowA.mtl",
+  "textureAtlas": "TorusResidentialKit_Atlas.png",
+  "materialName": "TorusResidentialKit",
+  "materials": 1,
+  "objects": 1,
+  "atlasSizePixels": [
+    512,
+    512
+  ],
+  "opaque": true,
+  "editorDefaultScale": 4.0,
+  "objCoordinateScale": 0.25,
+  "origin": "Centered horizontal reservation; all foundation bottoms y=0",
+  "orientation": "+Y up; +Z entry facade",
+  "horizontalReservationMeters": [
+    12,
+    8
+  ],
+  "triangleBudgetExclusive": 2000,
+  "source": "NASA SP-413 printed pp. 91-92 (PDF 108-109), Figures 5-5/5-7; Appendix B printed p.113 (PDF130), original scan visually verified.",
+  "sourceReferences": [
+    {
+      "figure": "5-5",
+      "printedPage": 91,
+      "pdfPage": 108,
+      "segmentId": "sp413-s02259"
+    },
+    {
+      "figure": "5-7",
+      "printedPage": 92,
+      "pdfPage": 109,
+      "segmentId": "sp413-s02284"
+    },
+    {
+      "printedPage": 91,
+      "pdfPage": 108,
+      "segmentId": "sp413-s02268"
+    },
+    {
+      "printedPage": 113,
+      "pdfPage": 130,
+      "segmentId": "sp413-s02724"
+    },
+    {
+      "printedPage": 113,
+      "pdfPage": 130,
+      "segmentId": "sp413-s02725"
+    }
+  ],
+  "sourceFacts": [
+    "SP-413 describes modular clusters of one- or two-level homes, groups up to four/five stories, and terraced homes.",
+    "Figures show stepped rectilinear frames and pedestrian terraces; they are not dimensioned residential floorplans.",
+    "Appendix B gives a typical 4 x 6 m aluminum-column bay and aluminum beams at 2 m centers; original printed113/PDF130 scan checked."
+  ],
+  "interpretations": [
+    "Three readable two-level homes, individual orange-framed open entries, front terraces and three independent external stairs.",
+    "All exact extents, storey heights, room/door/window/stair geometry, palette and guardrail proportions are authored choices, not SP-413 specifications. These variants do not claim exact 4 x 6 m structural bays or enforce a 2 m beam grid.",
+    "Ground floor tops 0.12 m; upper floors 2.90 / 5.68 m; 2.60 m clear nominal shells, 1.40 x 2.25 m open door gaps. No furnishings, functional doors, sourced floorplan, engineering/accessibility certification or roof access claimed."
+  ],
+  "unresolvedQuestions": [
+    "Runtime collision/physics integration and speed15 stair traversal remain parent integration checks. Sparse rails are visual silhouettes, not certified safety barriers."
+  ],
+  "collisionIntent": {
+    "modeled": "Separate opaque wall panels and glazing, actual empty entry gaps, hollow unfurnished rooms, closed solid floor/roof slabs, walkable terrace tops and real ten-tread stairs.",
+    "glazing": "Opaque solid; NOT passable and NOT a doorway.",
+    "runtime": "Use mesh-triangle collision, not full building AABBs. No moving door is present. Ground threshold 0.12 m. Roofs are not advertised as accessible.",
+    "capsuleDesign": {
+      "radiusMeters": 0.35,
+      "heightMeters": 2,
+      "eyeMeters": 1.65,
+      "speedMetersPerSecond": 15
+    },
+    "entries": [
+      {
+        "centerMeters": [
+          -2.9000000000000004,
+          0.12,
+          -0.8
+        ],
+        "widthMeters": 1.4,
+        "heightMeters": 2.25,
+        "depthMeters": 0.1,
+        "floorMeters": 0.12,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerMeters": [
+          -2.9000000000000004,
+          2.9,
+          -0.8
+        ],
+        "widthMeters": 1.4,
+        "heightMeters": 2.25,
+        "depthMeters": 0.1,
+        "floorMeters": 2.9,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerMeters": [
+          0.95,
+          0.12,
+          -0.8
+        ],
+        "widthMeters": 1.4,
+        "heightMeters": 2.25,
+        "depthMeters": 0.1,
+        "floorMeters": 0.12,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerMeters": [
+          0.95,
+          2.9,
+          -0.8
+        ],
+        "widthMeters": 1.4,
+        "heightMeters": 2.25,
+        "depthMeters": 0.1,
+        "floorMeters": 2.9,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerMeters": [
+          4.8,
+          0.12,
+          -0.8
+        ],
+        "widthMeters": 1.4,
+        "heightMeters": 2.25,
+        "depthMeters": 0.1,
+        "floorMeters": 0.12,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerMeters": [
+          4.8,
+          2.9,
+          -0.8
+        ],
+        "widthMeters": 1.4,
+        "heightMeters": 2.25,
+        "depthMeters": 0.1,
+        "floorMeters": 2.9,
+        "frontAxis": "+Z",
+        "passable": true
+      }
+    ],
+    "stairs": [
+      {
+        "xBoundsMeters": [
+          -5.55,
+          -4.15
+        ],
+        "zStartMeters": 3.8,
+        "zEndMeters": 0.8,
+        "bottomMeters": 0.12,
+        "topMeters": 2.9,
+        "steps": 10,
+        "riseMeters": 0.27799999999999997,
+        "depthMeters": 0.3,
+        "widthMeters": 1.3999999999999995,
+        "direction": "-Z"
+      },
+      {
+        "xBoundsMeters": [
+          -1.7,
+          -0.2999999999999998
+        ],
+        "zStartMeters": 3.8,
+        "zEndMeters": 0.8,
+        "bottomMeters": 0.12,
+        "topMeters": 2.9,
+        "steps": 10,
+        "riseMeters": 0.27799999999999997,
+        "depthMeters": 0.3,
+        "widthMeters": 1.4000000000000001,
+        "direction": "-Z"
+      },
+      {
+        "xBoundsMeters": [
+          2.15,
+          3.55
+        ],
+        "zStartMeters": 3.8,
+        "zEndMeters": 0.8,
+        "bottomMeters": 0.12,
+        "topMeters": 2.9,
+        "steps": 10,
+        "riseMeters": 0.27799999999999997,
+        "depthMeters": 0.3,
+        "widthMeters": 1.4,
+        "direction": "-Z"
+      }
+    ],
+    "floorSurfaces": [
+      {
+        "tag": "floor",
+        "boundsXZ": [
+          -5.75,
+          -1.9500000000000002,
+          -3.8,
+          -0.8
+        ],
+        "topMeters": 0.12
+      },
+      {
+        "tag": "roof",
+        "boundsXZ": [
+          -5.75,
+          -1.9500000000000002,
+          -3.8,
+          -0.8
+        ],
+        "topMeters": 2.8400000000000003
+      },
+      {
+        "tag": "floor",
+        "boundsXZ": [
+          -5.75,
+          -1.9500000000000002,
+          -3.8,
+          -0.8
+        ],
+        "topMeters": 2.9
+      },
+      {
+        "tag": "roof",
+        "boundsXZ": [
+          -5.75,
+          -1.9500000000000002,
+          -3.8,
+          -0.8
+        ],
+        "topMeters": 5.62
+      },
+      {
+        "tag": "terrace",
+        "boundsXZ": [
+          -5.75,
+          -1.9500000000000002,
+          -0.8,
+          0.8
+        ],
+        "topMeters": 2.9
+      },
+      {
+        "tag": "entry approach",
+        "boundsXZ": [
+          -5.75,
+          -1.9500000000000002,
+          -0.8,
+          3.8
+        ],
+        "topMeters": 0.12
+      },
+      {
+        "tag": "floor",
+        "boundsXZ": [
+          -1.9,
+          1.9,
+          -3.8,
+          -0.8
+        ],
+        "topMeters": 0.12
+      },
+      {
+        "tag": "roof",
+        "boundsXZ": [
+          -1.9,
+          1.9,
+          -3.8,
+          -0.8
+        ],
+        "topMeters": 2.8400000000000003
+      },
+      {
+        "tag": "floor",
+        "boundsXZ": [
+          -1.9,
+          1.9,
+          -3.8,
+          -0.8
+        ],
+        "topMeters": 2.9
+      },
+      {
+        "tag": "roof",
+        "boundsXZ": [
+          -1.9,
+          1.9,
+          -3.8,
+          -0.8
+        ],
+        "topMeters": 5.62
+      },
+      {
+        "tag": "terrace",
+        "boundsXZ": [
+          -1.9,
+          1.9,
+          -0.8,
+          0.8
+        ],
+        "topMeters": 2.9
+      },
+      {
+        "tag": "entry approach",
+        "boundsXZ": [
+          -1.9,
+          1.9,
+          -0.8,
+          3.8
+        ],
+        "topMeters": 0.12
+      },
+      {
+        "tag": "floor",
+        "boundsXZ": [
+          1.95,
+          5.75,
+          -3.8,
+          -0.8
+        ],
+        "topMeters": 0.12
+      },
+      {
+        "tag": "roof",
+        "boundsXZ": [
+          1.95,
+          5.75,
+          -3.8,
+          -0.8
+        ],
+        "topMeters": 2.8400000000000003
+      },
+      {
+        "tag": "floor",
+        "boundsXZ": [
+          1.95,
+          5.75,
+          -3.8,
+          -0.8
+        ],
+        "topMeters": 2.9
+      },
+      {
+        "tag": "roof",
+        "boundsXZ": [
+          1.95,
+          5.75,
+          -3.8,
+          -0.8
+        ],
+        "topMeters": 5.62
+      },
+      {
+        "tag": "terrace",
+        "boundsXZ": [
+          1.95,
+          5.75,
+          -0.8,
+          0.8
+        ],
+        "topMeters": 2.9
+      },
+      {
+        "tag": "entry approach",
+        "boundsXZ": [
+          1.95,
+          5.75,
+          -0.8,
+          3.8
+        ],
+        "topMeters": 0.12
+      }
+    ],
+    "upperAccessWaypointsMeters": [
+      [
+        [
+          -4.85,
+          2.9,
+          0.4
+        ],
+        [
+          -4.85,
+          2.9,
+          0
+        ],
+        [
+          -2.9,
+          2.9,
+          0
+        ],
+        [
+          -2.9,
+          2.9,
+          -1.4
+        ]
+      ],
+      [
+        [
+          -0.9999999999999999,
+          2.9,
+          0.4
+        ],
+        [
+          -0.9999999999999999,
+          2.9,
+          0
+        ],
+        [
+          0.9500000000000002,
+          2.9,
+          0
+        ],
+        [
+          0.9500000000000002,
+          2.9,
+          -1.4
+        ]
+      ],
+      [
+        [
+          2.85,
+          2.9,
+          0.4
+        ],
+        [
+          2.85,
+          2.9,
+          0
+        ],
+        [
+          4.8,
+          2.9,
+          0
+        ],
+        [
+          4.8,
+          2.9,
+          -1.4
+        ]
+      ]
+    ]
+  },
+  "icon": "assets/icons/ultimate-buildings/TorusHome_RowA.png",
+  "preview": "assets/ultimate-buildings/TorusResidentialKit_Preview.png",
+  "verification": [
+    "Offline validator checks indexed geometry, winding/unit normals, UVs, MTL paths, scale/bounds/budgets and exact manifest counts.",
+    "Icons/contact sheet are textured depth-buffer rasterizations decoded from the exported OBJ; unittest checks byte-exact regeneration.",
+    "Optional unittest Three.js/OBJLoader browser fixture intercepts read-only loopback requests; no extra port or world writes."
+  ],
+  "worldJsonChanged": false,
+  "vertices": 1062,
+  "normals": 972,
+  "uvs": 3888,
+  "triangles": 1944,
+  "trianglesAfterQuadTriangulation": 1944,
+  "actualModelBoundsMeters": [
+    [
+      -5.75,
+      5.75
+    ],
+    [
+      0.0,
+      5.62
+    ],
+    [
+      -3.8,
+      3.8
+    ]
+  ],
+  "dimensionsMeters": [
+    11.5,
+    5.62,
+    7.6
+  ]
+}

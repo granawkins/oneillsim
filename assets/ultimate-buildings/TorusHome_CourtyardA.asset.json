@@ -1,0 +1,301 @@
+{
+  "id": "TorusHome_CourtyardA",
+  "displayName": "Courtyard home",
+  "family": "Residential buildings",
+  "variant": "A",
+  "description": "L-shaped ground residence with a set-back upper room, open courtyard and continuous L-shaped terrace; one external stair.",
+  "generator": "assets/scripts/build_torus_residential_kit.py",
+  "obj": "TorusHome_CourtyardA.obj",
+  "mtl": "TorusHome_CourtyardA.mtl",
+  "textureAtlas": "TorusResidentialKit_Atlas.png",
+  "materialName": "TorusResidentialKit",
+  "materials": 1,
+  "objects": 1,
+  "atlasSizePixels": [
+    512,
+    512
+  ],
+  "opaque": true,
+  "editorDefaultScale": 4.0,
+  "objCoordinateScale": 0.25,
+  "origin": "Centered horizontal reservation; all foundation bottoms y=0",
+  "orientation": "+Y up; +Z entry facade",
+  "horizontalReservationMeters": [
+    8,
+    8
+  ],
+  "triangleBudgetExclusive": 1400,
+  "source": "NASA SP-413 printed pp. 91-92 (PDF 108-109), Figures 5-5/5-7; Appendix B printed p.113 (PDF130), original scan visually verified.",
+  "sourceReferences": [
+    {
+      "figure": "5-5",
+      "printedPage": 91,
+      "pdfPage": 108,
+      "segmentId": "sp413-s02259"
+    },
+    {
+      "figure": "5-7",
+      "printedPage": 92,
+      "pdfPage": 109,
+      "segmentId": "sp413-s02284"
+    },
+    {
+      "printedPage": 91,
+      "pdfPage": 108,
+      "segmentId": "sp413-s02268"
+    },
+    {
+      "printedPage": 113,
+      "pdfPage": 130,
+      "segmentId": "sp413-s02724"
+    },
+    {
+      "printedPage": 113,
+      "pdfPage": 130,
+      "segmentId": "sp413-s02725"
+    }
+  ],
+  "sourceFacts": [
+    "SP-413 describes modular clusters of one- or two-level homes, groups up to four/five stories, and terraced homes.",
+    "Figures show stepped rectilinear frames and pedestrian terraces; they are not dimensioned residential floorplans.",
+    "Appendix B gives a typical 4 x 6 m aluminum-column bay and aluminum beams at 2 m centers; original printed113/PDF130 scan checked."
+  ],
+  "interpretations": [
+    "L-shaped ground residence with a set-back upper room, open courtyard and continuous L-shaped terrace; one external stair.",
+    "All exact extents, storey heights, room/door/window/stair geometry, palette and guardrail proportions are authored choices, not SP-413 specifications. These variants do not claim exact 4 x 6 m structural bays or enforce a 2 m beam grid.",
+    "Ground floor tops 0.12 m; upper floors 2.90 / 5.68 m; 2.60 m clear nominal shells, 1.40 x 2.25 m open door gaps. No furnishings, functional doors, sourced floorplan, engineering/accessibility certification or roof access claimed."
+  ],
+  "unresolvedQuestions": [
+    "Runtime collision/physics integration and speed15 stair traversal remain parent integration checks. Sparse rails are visual silhouettes, not certified safety barriers."
+  ],
+  "collisionIntent": {
+    "modeled": "Separate opaque wall panels and glazing, actual empty entry gaps, hollow unfurnished rooms, closed solid floor/roof slabs, walkable terrace tops and real ten-tread stairs.",
+    "glazing": "Opaque solid; NOT passable and NOT a doorway.",
+    "runtime": "Use mesh-triangle collision, not full building AABBs. No moving door is present. Ground threshold 0.12 m. Roofs are not advertised as accessible.",
+    "capsuleDesign": {
+      "radiusMeters": 0.35,
+      "heightMeters": 2,
+      "eyeMeters": 1.65,
+      "speedMetersPerSecond": 15
+    },
+    "entries": [
+      {
+        "centerMeters": [
+          2.8499999999999996,
+          0.12,
+          -0.2
+        ],
+        "widthMeters": 1.4,
+        "heightMeters": 2.25,
+        "depthMeters": 0.1,
+        "floorMeters": 0.12,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerMeters": [
+          -1.55,
+          0.12,
+          3.8
+        ],
+        "widthMeters": 1.4,
+        "heightMeters": 2.25,
+        "depthMeters": 0.1,
+        "floorMeters": 0.12,
+        "frontAxis": "+Z",
+        "passable": true
+      },
+      {
+        "centerMeters": [
+          -0.6,
+          2.9,
+          -2.0999999999999996
+        ],
+        "widthMeters": 1.4,
+        "heightMeters": 2.25,
+        "depthMeters": 0.1,
+        "floorMeters": 2.9,
+        "frontAxis": "+X",
+        "passable": true
+      },
+      {
+        "centerMeters": [
+          -1.55,
+          2.9,
+          -0.2
+        ],
+        "widthMeters": 1.4,
+        "heightMeters": 2.25,
+        "depthMeters": 0.1,
+        "floorMeters": 2.9,
+        "frontAxis": "+Z",
+        "passable": true
+      }
+    ],
+    "stairs": [
+      {
+        "xBoundsMeters": [
+          -0.35,
+          1.05
+        ],
+        "zStartMeters": 3.0,
+        "zEndMeters": -0.2,
+        "bottomMeters": 0.12,
+        "topMeters": 2.9,
+        "steps": 10,
+        "riseMeters": 0.27799999999999997,
+        "depthMeters": 0.32,
+        "widthMeters": 1.4,
+        "direction": "-Z"
+      }
+    ],
+    "floorSurfaces": [
+      {
+        "tag": "floor",
+        "boundsXZ": [
+          -3.8,
+          3.8,
+          -3.8,
+          -0.2
+        ],
+        "topMeters": 0.12
+      },
+      {
+        "tag": "roof",
+        "boundsXZ": [
+          -3.8,
+          3.8,
+          -3.8,
+          -0.2
+        ],
+        "topMeters": 2.8400000000000003
+      },
+      {
+        "tag": "floor",
+        "boundsXZ": [
+          -3.8,
+          -0.6,
+          -0.2,
+          3.8
+        ],
+        "topMeters": 0.12
+      },
+      {
+        "tag": "roof",
+        "boundsXZ": [
+          -3.8,
+          -0.6,
+          -0.2,
+          3.8
+        ],
+        "topMeters": 2.8400000000000003
+      },
+      {
+        "tag": "floor",
+        "boundsXZ": [
+          -3.8,
+          -0.6,
+          -3.8,
+          -0.2
+        ],
+        "topMeters": 2.9
+      },
+      {
+        "tag": "roof",
+        "boundsXZ": [
+          -3.8,
+          -0.6,
+          -3.8,
+          -0.2
+        ],
+        "topMeters": 5.62
+      },
+      {
+        "tag": "terrace",
+        "boundsXZ": [
+          -0.6,
+          3.8,
+          -3.8,
+          -0.2
+        ],
+        "topMeters": 2.9
+      },
+      {
+        "tag": "terrace",
+        "boundsXZ": [
+          -3.8,
+          -0.6,
+          -0.2,
+          3.8
+        ],
+        "topMeters": 2.9
+      },
+      {
+        "tag": "entry approach",
+        "boundsXZ": [
+          -0.35,
+          3.5,
+          -0.2,
+          3.8
+        ],
+        "topMeters": 0.12
+      }
+    ],
+    "upperAccessWaypointsMeters": [
+      [
+        [
+          0.35,
+          2.9,
+          -0.6
+        ],
+        [
+          0.35,
+          2.9,
+          -2.1
+        ],
+        [
+          -1.55,
+          2.9,
+          -2.1
+        ],
+        [
+          -1.55,
+          2.9,
+          0.35
+        ]
+      ]
+    ]
+  },
+  "icon": "assets/icons/ultimate-buildings/TorusHome_CourtyardA.png",
+  "preview": "assets/ultimate-buildings/TorusResidentialKit_Preview.png",
+  "verification": [
+    "Offline validator checks indexed geometry, winding/unit normals, UVs, MTL paths, scale/bounds/budgets and exact manifest counts.",
+    "Icons/contact sheet are textured depth-buffer rasterizations decoded from the exported OBJ; unittest checks byte-exact regeneration.",
+    "Optional unittest Three.js/OBJLoader browser fixture intercepts read-only loopback requests; no extra port or world writes."
+  ],
+  "worldJsonChanged": false,
+  "vertices": 583,
+  "normals": 528,
+  "uvs": 2112,
+  "triangles": 1056,
+  "trianglesAfterQuadTriangulation": 1056,
+  "actualModelBoundsMeters": [
+    [
+      -3.8,
+      3.8
+    ],
+    [
+      0.0,
+      5.62
+    ],
+    [
+      -3.8,
+      3.8
+    ]
+  ],
+  "dimensionsMeters": [
+    7.6,
+    5.62,
+    7.6
+  ]
+}
