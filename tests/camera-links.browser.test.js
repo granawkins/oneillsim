@@ -9,10 +9,11 @@ const executablePath = process.env.SNAPSHOT_CHROMIUM_PATH || '/home/granawkins/.
 test('camera URL parameters set a stable human view and capture mode', { timeout: 90000 }, async () => {
     const browser = await chromium.launch({ executablePath, headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage'] });
     try {
-        const page = await browser.newPage({ viewport: { width: 1024, height: 720 } });
+        // Camera-state assertions do not need a large software-WebGL render.
+        const page = await browser.newPage({ viewport: { width: 320, height: 240 } });
         await interceptCandidate(page, { enabled: process.env.ONEILLSIM_CANDIDATE === '1' });
         await page.goto(`${baseUrl}/?x=0&y=830&z=12&yaw=0&pitch=10&capture=1`, { waitUntil: 'domcontentloaded' });
-        await page.waitForFunction(() => window.__oneillSimReady === true || window.__oneillSimError, null, { timeout: 12000 });
+        await page.waitForFunction(() => window.__oneillSimReady === true || window.__oneillSimError, null, { timeout: 30000 });
         const state = await page.evaluate(() => ({
             view: window.__oneillSimView,
             initError: window.__oneillSimError || null,

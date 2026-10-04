@@ -5,7 +5,9 @@ import { interceptCandidate } from './candidate-interception.js';
 
 const base = 'http://127.0.0.1:3200/oneillsim/';
 const launch = () => chromium.launch({executablePath:'/opt/oneillsim-renderer/chromium-1208/chrome-linux64/chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
-const ready = page => page.waitForFunction(()=>window.__oneillSimReady||window.__oneillSimError,null,{timeout:30000});
+// Shared-host rendering and external Three.js downloads can exceed 30s;
+// readiness is a functional assertion, not a startup performance budget.
+const ready = page => page.waitForFunction(()=>window.__oneillSimReady||window.__oneillSimError,null,{timeout:60000});
 const fixture = async (page,{assets=[],terraces={decks:[],stairs:[]}}={}) => {
     await page.route('**/world.json',async route=>{
         assert.equal(route.request().method(),'GET');
