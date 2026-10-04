@@ -144,14 +144,20 @@ const close=(a,b,tol=.03)=>assert.ok(Math.abs(a-b)<tol,`${a} != ${b} ± ${tol}`)
     const start=performance.now();
     for(const data of saved.assets){
         const [id,type,theta,z,scale,rotation,spec,surface]=data;
+        // Exterior inspection models are visible, but not tube gameplay colliders.
+        if(surface?.worldTransform)continue;
         const name=saved.assetTypes[type];
-        if(!spec&&!models.has(name))models.set(name,new OBJLoader().parse(fs.readFileSync(new URL(`../assets/ultimate-buildings/${name}.obj`,import.meta.url),'utf8')));
+        if(!spec&&!models.has(name)){
+            const building=new URL(`../assets/ultimate-buildings/${name}.obj`,import.meta.url);
+            const source=fs.existsSync(building)?building:new URL(`../assets/ultimate-nature/${name}.obj`,import.meta.url);
+            models.set(name,new OBJLoader().parse(fs.readFileSync(source,'utf8')));
+        }
         const object=spec?createBlockout(spec):models.get(name).clone();orientToSurface(object,theta,z,surface?.height??spec?.elevation??0);object.rotateY(rotation||0);object.scale.setScalar(scale||4);habitat.add(object);
         characterColliders.setObject(id,object,habitat);
     }
     const buildMs=performance.now()-start;
     assert.ok(saved.assets.length>=387);assert.equal(JSON.stringify(saved),serialized);
-    assert.equal(characterColliders.colliders.size,saved.assets.length+terraceMeshes.length);
+    assert.equal(characterColliders.colliders.size,saved.assets.filter(a=>!a[7]?.worldTransform).length+terraceMeshes.length);
     const c=controller(characterColliders,{groundExists:theta=>!inTerraceSector(theta),speed:CHARACTER.speed,jumpSpeed:CHARACTER.jumpSpeed});
     const timings=[];let sum=0,max=0;const beforeQueries=characterColliders.stats.queries,beforeCandidates=characterColliders.stats.candidates;
     for(let i=0;i<1200;i++){

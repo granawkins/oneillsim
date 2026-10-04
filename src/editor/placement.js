@@ -5,6 +5,7 @@ import { createBlockout } from './blockout.js';
 import { editorState, generateAssetId, addPlacedAsset, removePlacedAsset, GROUND_RADIUS } from './state.js';
 import { loadAsset, getAsset, preloadAssets } from './loader.js';
 import { surfaceToWorld } from './raycaster.js';
+import { applyPlacementTransform, isExteriorPlacement } from './placement-transform.js';
 
 const SURFACE_RADIUS = GROUND_RADIUS - 0.3;
 
@@ -60,9 +61,9 @@ export async function placeAsset(assetName, theta, z, scale = 4.0, rotation = 0,
     const id = generateAssetId();
 
     // Position and orient
-    orientToSurface(asset, theta, z, surface?.height || 0);
-    asset.rotateY(rotation);
-    asset.scale.setScalar(scale);
+    applyPlacementTransform(asset, {
+        theta, z, elevation: surface?.height || 0, rotation, scale, surface
+    }, orientToSurface);
 
     // Store reference
     asset.userData.assetId = id;
@@ -71,7 +72,7 @@ export async function placeAsset(assetName, theta, z, scale = 4.0, rotation = 0,
 
     // Add to scene and physics before returning placement readiness.
     habitatGroup.add(asset);
-    characterColliders.setObject(id, asset, habitatGroup);
+    if (!isExteriorPlacement(surface)) characterColliders.setObject(id, asset, habitatGroup);
 
     // Track in state
     addPlacedAsset({
@@ -81,7 +82,7 @@ export async function placeAsset(assetName, theta, z, scale = 4.0, rotation = 0,
         z,
         scale,
         rotation,
-        ...(surface?.deckId ? {surface} : {})
+        ...(surface ? {surface} : {})
     });
 
     return id;
@@ -176,16 +177,19 @@ export async function loadPlacedAssets(assets) {
     for (const data of assets) {
         try {
             const asset = data.blockout ? createBlockout(data.blockout) : await loadAsset(data.type);
-            orientToSurface(asset, data.theta, data.z, data.surface?.height ?? data.blockout?.elevation ?? 0);
+            applyPlacementTransform(asset, {
+                theta: data.theta, z: data.z,
+                elevation: data.surface?.height ?? data.blockout?.elevation ?? 0,
+                rotation: data.rotation || 0, scale: data.scale || 4.0, surface: data.surface
+            }, orientToSurface);
             const deckId=data.surface?.deckId || data.blockout?.deckId;
             if(deckId) asset.userData.deckId=deckId;
-            asset.rotateY(data.rotation || 0);
-            asset.scale.setScalar(data.scale || 4.0);
+
             asset.userData.assetId = data.id;
             assetObjects.set(data.id, asset);
             if (habitatGroup) {
                 habitatGroup.add(asset);
-                characterColliders.setObject(data.id, asset, habitatGroup);
+                if (!isExteriorPlacement(data.surface)) characterColliders.setObject(data.id, asset, habitatGroup);
             }
         } catch (e) {
             console.warn(`Failed to load placed asset ${data.type}:`, e);
