@@ -24,7 +24,7 @@ export function setupControls(cam, anchor, scn, habitat) {
     setupInput();
 }
 
-export function updateMovement() {
+export function updateMovement(deltaSeconds = 1 / 60) {
     if (!cameraAnchor || !camera) return;
 
     // Handle animated transitions (god → planner)
@@ -37,7 +37,7 @@ export function updateMovement() {
     const currentMode = getCurrentMode();
     switch (currentMode) {
         case CameraMode.HUMAN:
-            updateHumanMode();
+            updateHumanMode(deltaSeconds);
             break;
         case CameraMode.PLANNER:
             updatePlannerMode();

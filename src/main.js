@@ -103,8 +103,11 @@ async function init() {
     window.dispatchEvent(new Event('oneill-sim-ready'));
 }
 
-function animate() {
+let previousFrameTime = null;
+function animate(time = performance.now()) {
     requestAnimationFrame(animate);
+    const deltaSeconds = previousFrameTime === null ? 0 : Math.max(0, (time - previousFrameTime) / 1000);
+    previousFrameTime = time;
 
     if (captureMode) {
         habitatGroup.rotation.z = captureRingRotation;
@@ -113,10 +116,12 @@ function animate() {
     }
     updateStars();
 
-    // Update movement when pointer locked OR in editor mode (planner + editor enabled)
+    // Human gravity runs even when unlocked or idle; capture-only poses remain
+    // frozen. Planner/god retain their existing input and camera workflows.
     const inEditorMode = getCurrentMode() === CameraMode.PLANNER && isEditorEnabled();
-    if (window.__oneillSimReady && (isPointerLocked() || inEditorMode)) {
-        updateMovement();
+    const humanPhysics = getCurrentMode() === CameraMode.HUMAN && !captureMode;
+    if (window.__oneillSimReady && (humanPhysics || isPointerLocked() || inEditorMode)) {
+        updateMovement(deltaSeconds);
 
         // Update editor preview in planner mode
         if (getCurrentMode() === CameraMode.PLANNER) {

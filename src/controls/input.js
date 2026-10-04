@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import {
     MOUSE_SENSITIVITY,
-    JUMP_VELOCITY,
     PLANNER_MIN_HEIGHT,
     PLANNER_MAX_HEIGHT,
     PLANNER_ZOOM_HEIGHT_SPEED,
@@ -64,9 +63,18 @@ export function setupInput() {
         }
     });
 
+    const clearHeldInput = () => {
+        for (const key of Object.keys(moveState)) moveState[key] = false;
+        humanState.jumpRequested = false;
+        rKeyHeld = qKeyHeld = false;
+        editorState.isDragging = false;
+    };
+    window.addEventListener('blur', clearHeldInput);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) clearHeldInput(); });
     const crosshair = document.getElementById('crosshair');
     document.addEventListener('pointerlockchange', () => {
         const locked = document.pointerLockElement === document.body;
+        if (!locked) clearHeldInput();
         // In editor mode, show different UI state
         if (isEditorInputMode()) {
             overlay.querySelector('span').textContent = 'Editor Mode - ESC to exit';
@@ -85,10 +93,10 @@ export function setupInput() {
     const onKey = (val) => (e) => {
         // Allow WASD when pointer locked or in planner mode (with or without editor)
         const inPlannerMode = getCurrentMode() === CameraMode.PLANNER;
-        if (inPlannerMode || document.pointerLockElement === document.body) {
+        if (!val || inPlannerMode || document.pointerLockElement === document.body) {
             switch (e.code) {
                 case 'KeyW': moveState.forward = val; break;
-                case 'KeyS': if (!e.ctrlKey) moveState.backward = val; break;
+                case 'KeyS': if (!val || !e.ctrlKey) moveState.backward = val; break;
                 case 'KeyA': moveState.left = val; break;
                 case 'KeyD': moveState.right = val; break;
             }
@@ -99,10 +107,9 @@ export function setupInput() {
 
     // Mode switching and jump
     document.addEventListener('keydown', (e) => {
-        if (e.code === 'Space' && getCurrentMode() === CameraMode.HUMAN && humanState.isGrounded) {
+        if (e.code === 'Space' && !e.repeat && document.pointerLockElement === document.body && getCurrentMode() === CameraMode.HUMAN) {
             e.preventDefault();
-            humanState.radialVelocity = -JUMP_VELOCITY;
-            humanState.isGrounded = false;
+            humanState.jumpRequested = true;
         }
 
         // Toggle editor mode with E

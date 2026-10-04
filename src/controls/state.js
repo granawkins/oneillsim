@@ -54,6 +54,7 @@ export function setRefs(cam, anchor, scn, habitat) {
 
 // Human mode state
 export const humanState = {
+    jumpRequested: false,
     floorHeight: 0,
     radialVelocity: 0,
     currentRadius: PLAYER_RADIUS,

@@ -1,18 +1,19 @@
 import { GROUND_RADIUS } from '../cylinder.js';
+import { CHARACTER } from '../physics/character-controller.js';
 export { GROUND_RADIUS };
 
 // Movement constants
 export const MOVE_SPEED = 1.2;
-export const HUMAN_MOVE_SPEED = 0.5;
+export const HUMAN_MOVE_SPEED = CHARACTER.speed; // metres / second
 export const MOUSE_SENSITIVITY = 0.002;
 
 // Ground/player constants
 export const CAMERA_HEIGHT = 2;
 export const PLAYER_RADIUS = GROUND_RADIUS - CAMERA_HEIGHT;
 
-// Jump physics
-export const JUMP_VELOCITY = 0.4;
-export const GRAVITY = 0.015;
+// Human physics uses SI units; planner/god retain their existing frame-based UX.
+export const JUMP_VELOCITY = CHARACTER.jumpSpeed;
+export const GRAVITY = CHARACTER.gravity;
 
 // Planner mode constants
 export const PLANNER_DEFAULT_HEIGHT = 50;  // meters above ground

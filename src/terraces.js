@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { characterColliders } from './physics/collider-world.js';
 import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 import {getTerraces,selectDeck,selectedDeckId,deckContains} from './terrace-surfaces.js';
 export const terraceMeshes=[];
@@ -17,7 +18,7 @@ export function terraceGeometry(start,end,zMin,zMax,height,endHeight=height,thic
 }
 export function createTerraces(habitat) {
  const {decks,stairs}=getTerraces();
- function add(geometry,deckId,color,stairId=null){const mesh=new THREE.Mesh(geometry,new THREE.MeshStandardMaterial({color,side:THREE.DoubleSide,roughness:1}));mesh.userData={deckId,stairId,terrace:true};terraceMeshes.push(mesh);habitat.add(mesh);}
+ function add(geometry,deckId,color,stairId=null){const mesh=new THREE.Mesh(geometry,new THREE.MeshStandardMaterial({color,side:THREE.DoubleSide,roughness:1}));mesh.userData={deckId,stairId,terrace:true};terraceMeshes.push(mesh);habitat.add(mesh);characterColliders.setObject(mesh,mesh,habitat);}
  for(const d of decks){
   const cuts=stairs.filter(s=>s.upper===d.id);
   const boundaries=[...new Set([d.start,d.end,...cuts.flatMap(s=>[s.start,s.end])])].sort((a,b)=>a-b);

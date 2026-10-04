@@ -1,5 +1,6 @@
 // Asset placement on the cylinder surface
 import * as THREE from 'three';
+import { characterColliders } from '../physics/collider-world.js';
 import { createBlockout } from './blockout.js';
 import { editorState, generateAssetId, addPlacedAsset, removePlacedAsset, GROUND_RADIUS } from './state.js';
 import { loadAsset, getAsset, preloadAssets } from './loader.js';
@@ -68,8 +69,9 @@ export async function placeAsset(assetName, theta, z, scale = 4.0, rotation = 0,
     if(surface?.deckId) asset.userData.deckId=surface.deckId;
     assetObjects.set(id, asset);
 
-    // Add to scene
+    // Add to scene and physics before returning placement readiness.
     habitatGroup.add(asset);
+    characterColliders.setObject(id, asset, habitatGroup);
 
     // Track in state
     addPlacedAsset({
@@ -89,6 +91,7 @@ export async function placeAsset(assetName, theta, z, scale = 4.0, rotation = 0,
 export function removeAsset(id) {
     const asset = assetObjects.get(id);
     if (asset && habitatGroup) {
+        characterColliders.remove(id);
         habitatGroup.remove(asset);
         // Dispose geometry and materials
         asset.traverse((child) => {
@@ -177,6 +180,7 @@ export async function loadPlacedAssets(assets) {
             assetObjects.set(data.id, asset);
             if (habitatGroup) {
                 habitatGroup.add(asset);
+                characterColliders.setObject(data.id, asset, habitatGroup);
             }
         } catch (e) {
             console.warn(`Failed to load placed asset ${data.type}:`, e);

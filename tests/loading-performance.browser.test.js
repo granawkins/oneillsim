@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { interceptCandidate } from './candidate-interception.js';
 
 const baseUrl = (process.env.ONEILLSIM_TEST_URL || 'http://127.0.0.1:3200/oneillsim').replace(/\/$/, '');
 const executablePath = process.env.SNAPSHOT_CHROMIUM_PATH || '/opt/oneillsim-renderer/chromium-1208/chrome-linux64/chrome';
@@ -9,7 +10,9 @@ const launch = () => chromium.launch({ executablePath, headless: true, args: ['-
 test('live scene loads six WebP faces and repeat visits reuse the skybox cache', { timeout: 90000 }, async () => {
     const browser = await launch();
     try {
-        const page = await browser.newPage({ viewport: { width: 1024, height: 720 } });
+        const page = await browser.newPage({ viewport: process.env.ONEILLSIM_CANDIDATE === '1' ? { width: 320, height: 240 } : { width: 1024, height: 720 } });
+        await interceptCandidate(page, { enabled: process.env.ONEILLSIM_CANDIDATE === '1' });
+
         const errors = [];
         page.on('pageerror', error => errors.push(error.message));
         await page.goto(`${baseUrl}/?capture=1&pitch=10`, { waitUntil: 'domcontentloaded' });
@@ -32,12 +35,24 @@ test('live scene loads six WebP faces and repeat visits reuse the skybox cache',
         assert.ok(state.skyboxes.every(entry => entry.url.endsWith('.webp')));
         assert.deepEqual(errors, []);
         if (process.env.ONEILLSIM_SCREENSHOT_PATH) await page.screenshot({ path: process.env.ONEILLSIM_SCREENSHOT_PATH });
+        if (process.env.ONEILLSIM_CANDIDATE === '1') {
+            // Playwright routing disables Chromium's HTTP cache globally. The
+            // candidate load above verifies integration; cache itself is checked
+            // on two ordinary, unrouted read-only visits to the unchanged server.
+            await page.unrouteAll();
+            await page.reload({ waitUntil: 'domcontentloaded' });
+            await page.waitForFunction(() => window.__oneillSimReady || window.__oneillSimError, null, { timeout: 30000 });
+            await page.waitForFunction(async () => {
+                const { getStars } = await import(new URL('src/stars.js', location.href));
+                return getStars()?.images.every(image => image?.complete && image?.naturalWidth === 1024);
+            }, null, { timeout: 30000 });
+        }
         await page.reload({ waitUntil: 'domcontentloaded' });
         await page.waitForFunction(() => window.__oneillSimReady || window.__oneillSimError, null, { timeout: 30000 });
         const cached = await page.evaluate(() => performance.getEntriesByType('resource').filter(entry => entry.name.includes('/skybox/')).map(entry => entry.transferSize));
         assert.equal(cached.length, 6);
         assert.ok(cached.every(bytes => bytes === 0), `expected six cached skybox faces, got ${cached}`);
-        console.log(JSON.stringify({ liveScene: state, cachedSkyboxTransfers: cached }));
+        console.log(JSON.stringify({ liveScene: state, cachedSkyboxTransfers: cached, cacheCheck: process.env.ONEILLSIM_CANDIDATE === '1' ? 'unrouted live service (routing disables HTTP cache)' : 'live service' }));
     } finally { await browser.close(); }
 });
 
@@ -46,7 +61,8 @@ test('browser-only delayed model fixture renders early and blocks saving until r
     let release;
     const gate = new Promise(resolve => { release = resolve; });
     try {
-        const page = await browser.newPage();
+        const page = await browser.newPage({ viewport: { width: 320, height: 240 } });
+        await interceptCandidate(page, { enabled: process.env.ONEILLSIM_CANDIDATE === '1' });
         let modelsRequested = 0;
         // Modify only the GET response inside this browser, never production data.
         await page.route('**/world.json', async route => {
