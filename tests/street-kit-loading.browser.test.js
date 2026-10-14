@@ -77,7 +77,7 @@ const launch = () => chromium.launch({
     headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage']
 });
 
-test('kit shares one material/GPU texture, clones borrow safely, blockouts dispose, queue stays four-wide', { timeout: 60000 }, async () => {
+test('kit shares one material/GPU texture, clones borrow safely, blockouts dispose, and all six models start together', { timeout: 60000 }, async () => {
     const browser = await launch();
     try {
         const { page, counts, stats } = await harness(browser);
@@ -140,10 +140,22 @@ test('kit shares one material/GPU texture, clones borrow safely, blockouts dispo
         kit.forEach(id => assert.equal(counts.get(`${id}.obj`), 1));
         assert.equal(kit.reduce((sum, id) => sum + (counts.get(`${id}.mtl`) || 0), 0), 1);
         assert.equal(stats.kitAtlasRequests, 1, 'all six kit models request exactly one atlas before unrelated house loads');
-        assert.equal(stats.peak, 4);
+        assert.equal(stats.peak, kit.length);
         assert.equal(stats.blocked, 1);
         console.log(JSON.stringify({ ...result, requests: Object.fromEntries(counts), peakModelLoads: stats.peak }));
     } finally { await browser.close(); }
+});
+
+test('all OBJ downloads finish while the atlas is held; readiness waits for texture completion', { timeout: 60000 }, async()=>{
+ const browser=await launch();let release;const gate=new Promise(resolve=>release=resolve);
+ try{const {page,counts}=await harness(browser);
+  await page.route('**/TorusStreetKit_Atlas.png',async route=>{await gate;await route.fallback();});
+  await page.evaluate(kit=>{window.batchReady=false;window.batchPromise=window.kitTest.loader.preloadAssets([...kit,...kit]).then(()=>window.batchReady=true);},kit);
+  await page.waitForFunction(()=>performance.getEntriesByType('resource').filter(e=>e.name.endsWith('.obj')).length===6,null,{timeout:5000});
+  kit.forEach(id=>assert.equal(counts.get(id+'.obj'),1));assert.equal(await page.evaluate(()=>window.batchReady),false);
+  release();await page.evaluate(()=>window.batchPromise);
+  assert.equal(await page.evaluate(kit=>kit.every(id=>window.kitTest.loader.isAssetLoaded(id)),kit),true);
+ }finally{release();await browser.close();}
 });
 
 for (const failure of ['.mtl', '.png', '.obj']) {

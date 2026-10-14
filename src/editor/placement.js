@@ -192,8 +192,10 @@ export function updatePreview(preview, theta, z, rotation = 0) {
 
 // Load all placed assets from state (for restoring saved worlds)
 export async function loadPlacedAssets(assets) {
+    const started=performance.now();
     // Download each distinct model concurrently; preserve saved placement order.
     await preloadAssets(assets.filter(data => !data.blockout).map(data => data.type));
+    const decoded=performance.now();
     for (const data of assets) {
         try {
             const asset = data.blockout ? createBlockout(data.blockout) : await loadAsset(data.type);
@@ -225,4 +227,5 @@ export async function loadPlacedAssets(assets) {
     // Register all original collision roots first, then hide only compatible
     // leaf meshes. ColliderWorld deliberately ignores render visibility.
     refreshPlacementRendering();
+    if(typeof window!=='undefined')window.__oneillAssetLoading={uniqueModels:new Set(assets.filter(d=>!d.blockout).map(d=>d.type)).size,downloadAndDecodeMs:decoded-started,placementAndCollisionMs:performance.now()-decoded};
 }

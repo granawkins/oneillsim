@@ -1,9 +1,8 @@
 // Asset loading with caching
-import { LoadingManager } from 'three';
+import { FileLoader, LoadingManager } from 'three';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 import { BUILDINGS, PLANTS } from './catalog.js';
-import { runLoadQueue } from '../load-queue.js';
 import { materialKitKey } from './material-kits.js';
 
 const NATURE_PATH = 'assets/ultimate-nature/';
@@ -49,20 +48,17 @@ function loadMaterials(assetName, assetPath) {
     const shared = materialKey !== null;
     if (shared && kitMaterialsPromises.has(materialKey)) return kitMaterialsPromises.get(materialKey);
     const promise = new Promise((resolve, reject) => {
-        // For the kit, readiness includes the atlas: failed images must be retryable.
-        const manager = shared ? new LoadingManager() : undefined;
+        // Every model waits for its textures, not just pooled kits.
+        const manager = new LoadingManager();
         let materials;
-        if (manager) {
-            manager.onLoad = () => { if (materials) resolve(materials); };
-            manager.onError = url => reject(new Error(`Failed to load street kit resource: ${url}`));
-        }
+        manager.onLoad = () => { if (materials) resolve(materials); };
+        manager.onError = url => reject(new Error(`Failed to load asset resource: ${url}`));
         const loader = new MTLLoader(manager);
         loader.setPath(assetPath);
         loader.load(`${assetName}.mtl`, creator => {
             try {
                 materials = creator;
                 materials.preload();
-                if (!shared) resolve(materials);
             } catch (error) { reject(error); }
         }, undefined, reject);
     });
@@ -76,16 +72,22 @@ function loadMaterials(assetName, assetPath) {
 }
 
 // The stored promise resolves the cache prototype, never an instance clone.
-export function loadAsset(assetName) {
-    if (assetCache.has(assetName)) return Promise.resolve(cloneCachedAsset(assetCache.get(assetName)));
+function loadAssetPrototype(assetName) {
+    if (assetCache.has(assetName)) return Promise.resolve(assetCache.get(assetName));
     if (!loadingPromises.has(assetName)) {
         const promise = Promise.resolve().then(async () => {
             const assetPath = getAssetPath(assetName);
-            const materials = await loadMaterials(assetName, assetPath);
+            // OBJ parsing needs materials; its download does not. Start both
+            // files immediately instead of an MTL/texture -> OBJ waterfall.
+            const sourceLoader = new FileLoader().setPath(assetPath);
+            const [materials, source] = await Promise.all([
+                loadMaterials(assetName, assetPath),
+                sourceLoader.loadAsync(`${assetName}.obj`)
+            ]);
             const loader = new OBJLoader();
             loader.setMaterials(materials);
             loader.setPath(assetPath);
-            const obj = await loader.loadAsync(`${assetName}.obj`);
+            const obj = loader.parse(source);
             obj.traverse(child => {
                 if (!child.isMesh || !child.material) return;
                 const list = Array.isArray(child.material) ? child.material : [child.material];
@@ -99,23 +101,27 @@ export function loadAsset(assetName) {
         }).finally(() => { loadingPromises.delete(assetName); });
         loadingPromises.set(assetName, promise);
     }
-    return loadingPromises.get(assetName).then(cloneCachedAsset);
+    return loadingPromises.get(assetName);
 }
 
-// Preload common assets (retain the existing four-worker queue).
+export function loadAsset(assetName) {
+    return loadAssetPrototype(assetName).then(cloneCachedAsset);
+}
+
+// Start all distinct scene assets together; browser transport handles limits.
 export async function preloadAssets(assetNames, onProgress) {
     const uniqueNames = [...new Set(assetNames)];
     const total = uniqueNames.length;
     let loaded = 0;
-    await runLoadQueue(uniqueNames, async name => {
+    await Promise.all(uniqueNames.map(async name => {
         try {
-            await loadAsset(name);
+            await loadAssetPrototype(name);
         } catch (error) {
             console.warn(`Failed to load asset: ${name}`, error);
         }
         loaded++;
         if (onProgress) onProgress(loaded, total);
-    });
+    }));
 }
 
 export function getAsset(assetName) {

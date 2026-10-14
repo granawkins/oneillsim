@@ -60,10 +60,12 @@ export function planCapacityResidentialLayers(world){
    if(end-x<180||indoor>=120000)continue;
    // Find a genuinely clear ascending core without moving any garden assets.
    let choice=null;
-   for(const reverse of [false,true])for(const center of [43,39,35,31,47,41,45,37,33,29]){
+   candidateCore: for(const reverse of [false,true])for(const center of [43,39,35,31,47,41,45,37,33,29]){
     const band=signedBand(center-2,center+2,side);let blocked=false;
     const tower=towerRuns(x,band,reverse);for(const run of tower.runs)for(let k=0;k<run.steps;k++){const a=run.rect[0]+(run.rect[1]-run.rect[0])*k/run.steps,b=run.rect[0]+(run.rect[1]-run.rect[0])*(k+1)/run.steps,h=run.height0+(run.height1-run.height0)*k/run.steps;if(conflict([a-.4,b+.4,...band],h-.4,h+2.4)||(h<2.4&&routeRects.some(r=>overlap([a-.4,b+.4,...band],r)))){blocked=true;break;}}
-    if(!blocked&&!choice)choice={reverse,center,band,...tower};
+    // The design has always selected the first clear candidate. Stop searching
+    // once it is found instead of rescanning the saved scene for unused choices.
+    if(!blocked){choice={reverse,center,band,...tower};break candidateCore;}
    }
    const shared=!choice;if(!choice)choice=cores.get(side);if(!choice)continue;
    const {reverse,center,band:z}=choice,blockId=`capacity-${districtId}-${side}-${b}`;

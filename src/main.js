@@ -25,6 +25,7 @@ import {characterColliders} from './physics/collider-world.js';
 import {humanController} from './controls/modes/human.js';
 import {createCapacityAssembly} from './capacity-assembly.js';
 import {createCapacityGround} from './capacity-ground.js';
+import {preloadAssets} from './editor/loader.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps
 let captureMode = false;
@@ -69,6 +70,13 @@ async function init() {
     document.querySelector('#overlay span').textContent = 'Loading settlement…';
     const worldResponse=await fetch('world.json');
     const worldData=worldResponse.ok ? await worldResponse.json() : {};
+    // Fetch/decode the complete scene package immediately, before expensive
+    // circulation, placement/collision and procedural-architecture construction.
+    const preloadStart=performance.now();
+    const preloadPromise=preloadAssets((worldData.assets||[]).filter(a=>!a[6]).map(a=>worldData.assetTypes?.[a[1]]).filter(name=>typeof name==='string'),(loaded,total)=>{
+        document.querySelector('#overlay span').textContent=`Loading models ${loaded}/${total}…`;
+    });
+    await Promise.resolve(); // Launch all requests before synchronous scene work.
     configureTerraces(worldData.terraces);
     const sceneObjects = initScene();
 
@@ -77,9 +85,7 @@ async function init() {
     createCylinder(sceneObjects.habitatGroup);
     createTerraces(sceneObjects.habitatGroup);
     if(worldData.settlementDesign?.version===1){
-        const circulation=createSettlementCirculation(sceneObjects.habitatGroup,worldData,worldData.settlementDesign.routes);
         createSettlementPresentation({renderer:sceneObjects.renderer,exposure:1});
-        window.__oneillSettlement={circulation,design:worldData.settlementDesign};
     }
     createStars(sceneObjects.scene);
     const legacyTorus=createTorus(sceneObjects.habitatGroup);
@@ -90,6 +96,14 @@ async function init() {
     // Render the habitat while models download. Input and editing remain
     // disabled until the complete world is loaded; capture readiness is unchanged.
     animate();
+
+    await preloadPromise;
+    window.__oneillInitialPreloadMs=performance.now()-preloadStart;
+    document.querySelector('#overlay span').textContent='Building settlement…';
+    if(worldData.settlementDesign?.version===1){
+        const circulation=createSettlementCirculation(sceneObjects.habitatGroup,worldData,worldData.settlementDesign.routes);
+        window.__oneillSettlement={circulation,design:worldData.settlementDesign};
+    }
 
     // Initialize editor
     await initEditor(sceneObjects.camera, sceneObjects.habitatGroup, getGroundMesh());
