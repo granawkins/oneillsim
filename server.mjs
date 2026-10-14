@@ -127,7 +127,9 @@ async function handleSnapshot(req, res, url) {
   try {
     const browser = await getSnapshotBrowser();
     context = await browser.newContext({
-      viewport: options.viewport,
+      // Warm dense exterior state at a small software-WebGL viewport, then
+      // render the requested image size after the complete assembly is ready.
+      viewport: options.camera?.exteriorView ? {width:320,height:240} : options.viewport,
       deviceScaleFactor: 1,
       colorScheme: 'dark',
       reducedMotion: 'reduce',
@@ -144,13 +146,14 @@ async function handleSnapshot(req, res, url) {
       return scene === 'asset'
         ? window.__assetReady === true || Boolean(window.__assetError)
         : window.__oneillSimReady === true || Boolean(window.__oneillSimError);
-    }, options.scene, { timeout: 30000 });
+    }, options.scene, { timeout: options.camera?.exteriorView ? 45000 : 30000 });
 
     const pageState = await page.evaluate((scene) => scene === 'asset'
       ? { ready: window.__assetReady === true, error: window.__assetError || null }
       : { ready: window.__oneillSimReady === true, error: window.__oneillSimError || null }, options.scene);
     if (!pageState.ready) throw new Error(pageState.error || 'Render page did not become ready');
     if (pageErrors.length) throw new Error(`Render page error: ${pageErrors[0]}`);
+    if(options.camera?.exteriorView)await page.setViewportSize(options.viewport);
     await page.evaluate(() => new Promise((resolveFrame) => requestAnimationFrame(() => requestAnimationFrame(resolveFrame))));
 
     const image = await page.screenshot({ type: 'png', fullPage: false, animations: 'disabled' });
