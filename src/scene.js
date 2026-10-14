@@ -36,6 +36,9 @@ export function initScene() {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
+        // A delayed resize clears even a preserved drawing buffer. Frozen
+        // capture visitors have no continuing RAF to repaint it afterward.
+        if (preserveDrawingBuffer && window.__oneillSimReady) renderer.render(scene, camera);
     });
 
     return { scene, camera, renderer, habitatGroup, cameraAnchor };
