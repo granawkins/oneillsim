@@ -26,6 +26,15 @@ function fromCamera() {
     initialized = true;
 }
 
+// Explicit known-floor visits must not raycast through ceilings to a higher roof.
+export function setHumanFootPosition(position) {
+    if (![position.x,position.y,position.z].every(Number.isFinite)) throw new TypeError('Human foot position must be finite');
+    humanController.teleport(position);
+    humanState.jumpRequested = false;
+    initialized = true;
+    syncCamera();
+}
+
 export function setupHumanMode() {
     // Preserve zoom's highest reachable support selection, now including roofs.
     const pos = cameraAnchor.position, theta = Math.atan2(pos.y, pos.x);

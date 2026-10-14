@@ -7,13 +7,18 @@ export function exteriorEnvelopeWanted(mode,position){
 
 // Runtime-owned engineering scene: saved editor instances/data are never replaced.
 // Builders own only their new resources; all existing torus meshes are borrowed.
-export function createExteriorAssembly({scene,habitatGroup,world,structureBuilder,energyBuilder,industryBuilder,legacyTorus,refreshRendering=()=>{}}){
+export function createExteriorAssembly({scene,habitatGroup,world,structureBuilder,energyBuilder,industryBuilder,legacyTorus,colliderWorld=null,refreshRendering=()=>{}}){
  if(typeof structureBuilder!=='function'||typeof energyBuilder!=='function')throw new TypeError('Exterior builders required');
  const stationaryGroup=new THREE.Group();stationaryGroup.name='exterior-stationary-frame';scene.add(stationaryGroup);
  const rotatingGroup=new THREE.Group();rotatingGroup.name='exterior-rotating-frame';habitatGroup.add(rotatingGroup);
  let structure,energy,industry;
  try{structure=structureBuilder({rotatingGroup,stationaryGroup,world});energy=energyBuilder({rotatingGroup,stationaryGroup,world});if(industryBuilder)industry=industryBuilder({rotatingGroup,stationaryGroup,world});}
  catch(error){structure?.dispose();energy?.dispose();industry?.dispose();rotatingGroup.removeFromParent();stationaryGroup.removeFromParent();throw error;}
+ const interiorColliders=structure.interiorColliders||[],registered=[];
+ try{
+  const ids=new Set();for(const p of interiorColliders){if(typeof p.id!=='string'||!p.id.startsWith('spoke-ground-')||!p.object?.isObject3D||ids.has(p.id)||colliderWorld?.colliders.has(p.id))throw new Error('Invalid or occupied spoke collider '+p.id);ids.add(p.id);}
+  if(colliderWorld)for(const p of interiorColliders){colliderWorld.setObject(p.id,p.object,habitatGroup);registered.push(p.id);}
+ }catch(error){for(const id of registered)colliderWorld.remove(id);structure.dispose();energy.dispose();industry?.dispose();rotatingGroup.removeFromParent();stationaryGroup.removeFromParent();throw error;}
  const sun=new THREE.DirectionalLight(0xfff4dd,2);sun.name='exterior-sunlight';sun.position.set(2500,0,0);scene.add(sun);sun.visible=false;
  const fill=new THREE.DirectionalLight(0xa9bdd7,.65);fill.name='exterior-fill';fill.position.set(-1000,-1200,1400);scene.add(fill);fill.visible=false;
  let visible=false,disposed=false,legacyVisibility=null;
@@ -22,12 +27,16 @@ export function createExteriorAssembly({scene,habitatGroup,world,structureBuilde
  const distantVisibility=new Map();let distant=false;
  function setDistant(value){
   if(value===distant)return;
-  if(value){for(const root of habitatGroup.children)if((root.userData.assetId&&!externalIds.has(root.userData.assetId))||['texturePatchGroup','settlement-circulation'].includes(root.name)){distantVisibility.set(root,root.visible);root.visible=false;}}
+  if(value){for(const root of habitatGroup.children)if((root.userData.assetId&&!externalIds.has(root.userData.assetId))||root.userData.capacityInterior===true||['texturePatchGroup','settlement-circulation'].includes(root.name)){distantVisibility.set(root,root.visible);root.visible=false;}}
   else{for(const [root,wasVisible]of distantVisibility)root.visible=wasVisible;distantVisibility.clear();}
   distant=value;refreshRendering();
  }
  function setEnvelopeVisible(value){
   value=!!value;structure.setEnvelopeVisible(value);energy.setEnvelopeVisible(value);industry?.setEnvelopeVisible(value);sun.visible=value;fill.visible=value;
+  // The interior cutaway omits pressure glazing; do not let distant collector
+  // scenery dominate neighborhood windows. All energy geometry is exterior-only.
+  if(energy.groups?.rotating)energy.groups.rotating.visible=value;
+  if(energy.groups?.stationary)energy.groups.stationary.visible=value;
   if(value!==visible){
    if(value){
     legacyVisibility=legacyTorus?{inner:legacyTorus.innerTorusMesh.visible,outer:legacyTorus.outerTorusMesh.visible}:null;
@@ -47,5 +56,5 @@ export function createExteriorAssembly({scene,habitatGroup,world,structureBuilde
   for(const root of[rotatingGroup,stationaryGroup])root.traverse(o=>{if(!o.isMesh)return;meshes++;const count=o.isInstancedMesh?o.count:1;if(o.isInstancedMesh)instances+=o.count;triangles+=((o.geometry.index?.count??o.geometry.attributes.position?.count??0)/3)*count;for(const m of Array.isArray(o.material)?o.material:[o.material])materials.add(m);});
   return {meshes,instances,triangles,materials:materials.size,structure:structure.stats,energy:energy.stats,industry:industry?.stats};
  }
- return {rotatingGroup,stationaryGroup,structure,energy,industry,stats,setEnvelopeVisible,get envelopeVisible(){return visible;},get distantInteriorHidden(){return distant;},update(mode,position){const envelope=setEnvelopeVisible(exteriorEnvelopeWanted(mode,position));const p=Array.isArray(position)?position:[position.x,position.y,position.z];setDistant(envelope&&Math.hypot(Math.hypot(p[0],p[1])-830,p[2])>250);return envelope;},dispose(){if(disposed)return;setEnvelopeVisible(false);setDistant(false);disposed=true;structure.dispose();energy.dispose();industry?.dispose();sun.removeFromParent();fill.removeFromParent();rotatingGroup.removeFromParent();stationaryGroup.removeFromParent();}};
+ return {rotatingGroup,stationaryGroup,structure,energy,industry,interiorColliders,stats,setEnvelopeVisible,get envelopeVisible(){return visible;},get distantInteriorHidden(){return distant;},update(mode,position){const envelope=setEnvelopeVisible(exteriorEnvelopeWanted(mode,position));const p=Array.isArray(position)?position:[position.x,position.y,position.z];setDistant(envelope&&Math.hypot(Math.hypot(p[0],p[1])-830,p[2])>250);return envelope;},dispose(){if(disposed)return;setEnvelopeVisible(false);setDistant(false);disposed=true;for(const id of registered)colliderWorld.remove(id);structure.dispose();energy.dispose();industry?.dispose();sun.removeFromParent();fill.removeFromParent();rotatingGroup.removeFromParent();stationaryGroup.removeFromParent();}};
 }

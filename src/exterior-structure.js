@@ -30,8 +30,8 @@ export const structuralSpec = freeze({
   },
   interpretation: {
     majorRadius: 830, tubeRadius: 65, hubCenter: [0, 0, 0], hubShape: 'sphere',
-    spokeInnerStartRadius: 65, spokeLandingRadius: 765, spokeWallThickness: 0.35,
-    spokeEnds: 'Curved annular hub contact and cylindrical radius-765 rim end. Rim contact at z=0 only; the remaining end clears the nominal torus by at most 0.44 m. Open bore, no interior shaft extension or triangulated curved-end intrusion.',
+    spokeInnerStartRadius: 65, spokeLandingRadius: 830, spokeWallThickness: 0.35,
+    spokeEnds: 'Exterior annulus ends at R765; separately collidable interior annulus continues to a four-metre-high open tangential foyer at R830. Curved threshold top height .31 matches circulation, not a mechanical elevator.',
     spokeAlignment: 'saved world.masterPlan.districts[].center (six legacy sector centers)',
     windowPhiRadians: [WINDOW_START, WINDOW_END],
     shellPhiRadians: [WINDOW_END, WINDOW_START + TAU],
@@ -43,7 +43,7 @@ export const structuralSpec = freeze({
     envelopeTessellation: '192 ring / 24 tube segments per surface; 0.5 m outward rendering allowance keeps flat triangles outside the nominal 65 m interior. Shield radii receive the same allowance, preserving nominal 1.5 m gap / 1.7 m thickness.',
     glazingFractionBasis: 'The source says one-third of surface area; Figure 5-1 shows a 120-degree aperture. This mesh reproduces the diagram angular span, not an exact one-third torus-area allocation.',
     detail: 'Panel ribs, bands, hatches, four port arrangement, collars, pipes, truss, sphere-shaped hub, and axial component offsets are authored visual interpretation, not engineering specifications.',
-    omissions: ['solar, mirrors, chevrons and radiator belong to the energy assembly', 'south transport and extraction plant belong to the industry assembly', 'no colliders, interiors, pressure simulation, bearing mechanics, or saved-world placements', 'glazing is continuous at spoke landings; engineered pressure doors / cutouts are not modeled'],
+    omissions: ['solar, mirrors, chevrons and radiator belong to the energy assembly', 'south transport and extraction plant belong to the industry assembly', 'no pressure simulation, bearing mechanics, functioning elevators, or saved-world placements', 'glazing is continuous at spoke landings; engineered pressure doors / cutouts are not modeled'],
     integration: 'Caller hides legacy torus meshes while envelope is visible. setEnvelopeVisible(false) hides only envelope/shield/detail groups, not hub or spokes.',
   },
 });
@@ -179,7 +179,57 @@ export function createExteriorStructure({ rotatingGroup, stationaryGroup, world 
     const m = mesh(name, new THREE.CylinderGeometry(radius, radius, Math.abs(z1 - z0), 32, 1, true), mat, parent, [0, 0, (z0 + z1) / 2]);
     m.quaternion.copy(axialQuaternion); return m;
   };
-  mesh('hub', new THREE.SphereGeometry(65, 48, 32), aluminum, rotating);
+  // Remove real hub faces at the six bore mouths, rather than placing an
+  // opaque sphere across the nominal pressure path. No transit is simulated.
+  const hubGeometry = new THREE.SphereGeometry(65, 96, 64);
+  const hubPositions = hubGeometry.attributes.position, hubIndices = [];
+  for (let i = 0; i < hubGeometry.index.count; i += 3) {
+    const ids = [0, 1, 2].map(j => hubGeometry.index.getX(i + j));
+    const mouth = ids.some(id => {
+      const v = new THREE.Vector3().fromBufferAttribute(hubPositions, id);
+      return angles.some(a => v.x * Math.cos(a) + v.y * Math.sin(a) > 0 && Math.hypot(-v.x * Math.sin(a) + v.y * Math.cos(a), v.z) < 8);
+    });
+    if (!mouth) hubIndices.push(...ids);
+  }
+  hubGeometry.setIndex(hubIndices);
+  mesh('hub', hubGeometry, aluminum, rotating);
+  const interiorColliders = [];
+  const groundEntries = group('groundEntries', spokes);
+  angles.forEach((angle, i) => {
+    const districtId = districts?.[i]?.id ?? ['residential-a', 'farm-a', 'residential-b', 'farm-b', 'residential-c', 'farm-c'][i];
+    const id = `spoke-ground-${districtId}`;
+    const entry = new THREE.Group(); entry.name = id; entry.rotation.z = angle;
+    entry.userData = { runtimeOnly: true, districtId, groundRadius: 830, thresholdHeight: .31, portalHeight: 4, portalZ: [-7, 7], operationalElevator: false };
+    groundEntries.add(entry);
+    const add = (name, geometry, mat) => {
+      const m = new THREE.Mesh(track(geometry), mat); m.name = `${id}:${name}`;
+      // Default solid: actual rendered triangles are the collision proxy.
+      m.userData = { runtimeOnly: true, exteriorStructure: true, interiorSpoke: true };
+      entry.add(m); return m;
+    };
+    const shaft = spokeGeometry();
+    const positions = shaft.attributes.position;
+    for (let j = 0; j < positions.count; j++) {
+      const y = positions.getY(j), x = positions.getX(j);
+      positions.setX(j, x < 100 ? Math.sqrt(765 * 765 - y * y) : Math.sqrt(826 * 826 - y * y));
+    }
+    shaft.computeVertexNormals(); shaft.computeBoundingBox(); shaft.computeBoundingSphere();
+    add('shaft', shaft, aluminum);
+    // Ground-level cylinder sides at z=+-7.325 terminate on the ground;
+    // no tangential wall or closed cap crosses the continuous promenade.
+    const curvedBox = (width, height, depth, top, z) => {
+      const g = new THREE.BoxGeometry(width, height, depth, Math.ceil(width / 2), 1, 1);
+      const p = g.attributes.position;
+      for (let j = 0; j < p.count; j++) {
+        const arc = p.getX(j), h = top - height / 2 + p.getY(j), zz = z + p.getZ(j);
+        p.setXYZ(j, (830 - h) * Math.cos(arc / 830), (830 - h) * Math.sin(arc / 830), zz);
+      }
+      g.computeVertexNormals(); return g;
+    };
+    add('threshold', curvedBox(24, .16, 14, .31, 0), seam);
+    for (const side of [-1, 1]) add(`portal-side-${side}`, curvedBox(14, 3.69, .35, 4, side * 7.325), aluminum);
+    interiorColliders.push({ id, object: entry });
+  });
   const spokeTubes = instances('spokeTubes', spokeGeometry(), aluminum, spokes, angles.map(a => matrix([0, 0, 0], new THREE.Quaternion().setFromAxisAngle(axisZ, a))));
   spokeTubes.userData.sourceFacts = { spokeCount: structuralSpec.sourceFacts.spokeCount, spokeDiameter: structuralSpec.sourceFacts.spokeDiameter, figure: '5-3', segment: 'sp413-s02206' };
   spokeTubes.userData.spokeAngles = [...angles];
@@ -230,7 +280,14 @@ export function createExteriorStructure({ rotatingGroup, stationaryGroup, world 
   instances('glazingRibs', new THREE.TubeGeometry(new THREE.CatmullRomCurve3(ribCurve), 24, 0.18, 4, false), seam, envelopeDetails, ribs);
   const hubBands = [];
   for (const [radius, z] of [[65.25, 0], [56.6, 32.5], [56.6, -32.5]]) hubBands.push(matrix([0, 0, z], undefined, [radius, radius, 0.8]));
-  instances('hubSurfaceBands', ring, seam, rotating, hubBands);
+  const hubBandGeometry = new THREE.TorusGeometry(1, .045, 4, 96);
+  const bandP = hubBandGeometry.attributes.position, bandIndices = [];
+  for (let i = 0; i < hubBandGeometry.index.count; i += 3) {
+    const ids = [0, 1, 2].map(j => hubBandGeometry.index.getX(i + j));
+    if (!ids.some(id => angles.some(a => Math.abs(Math.atan2(Math.sin(Math.atan2(bandP.getY(id), bandP.getX(id)) - a), Math.cos(Math.atan2(bandP.getY(id), bandP.getX(id)) - a))) < .14))) bandIndices.push(...ids);
+  }
+  hubBandGeometry.setIndex(bandIndices);
+  instances('hubSurfaceBands', hubBandGeometry, seam, rotating, hubBands);
   // Explicitly separate rotor and stator races; neither touches borrowed parent resources.
   for (const [pole, z] of [['north', 65], ['south', -65]]) {
     const rotor = mesh(`${pole}BearingRotor`, new THREE.TorusGeometry(8.6, 0.7, 8, 48), seam, rotating, [0, 0, z]);
@@ -266,6 +323,10 @@ export function createExteriorStructure({ rotatingGroup, stationaryGroup, world 
     stats.drawCalls += Array.isArray(m.material) ? m.geometry.groups.length : 1;
     stats.triangles += count * (m.geometry.index?.count ?? m.geometry.attributes.position.count) / 3;
   });
+  stats.interiorMeshes = 0; stats.interiorTriangles = 0;
+  groundEntries.traverse(m => { if (m.isMesh) { stats.interiorMeshes++; stats.interiorTriangles += (m.geometry.index?.count ?? m.geometry.attributes.position.count) / 3; } });
+  stats.fullTriangles = stats.triangles + stats.interiorTriangles;
+  stats.fullDrawCalls = stats.drawCalls + stats.interiorMeshes;
   let disposed = false;
   const setEnvelopeVisible = visible => {
     if (disposed) return;
@@ -278,5 +339,5 @@ export function createExteriorStructure({ rotatingGroup, stationaryGroup, world 
     geometries.forEach(g => g.dispose()); materials.forEach(m => m.dispose());
   };
   setEnvelopeVisible(false);
-  return { groups, components, stats, dispose, setEnvelopeVisible };
+  return { groups, components, interiorColliders, stats, dispose, setEnvelopeVisible };
 }

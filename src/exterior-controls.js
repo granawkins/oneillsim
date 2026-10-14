@@ -11,14 +11,27 @@ export function exteriorCameraPose(id,habitatMatrix=new THREE.Matrix4()){
 }
 
 export function initExteriorControls({camera,cameraAnchor,habitatGroup,assembly}){
+ const descriptions={
+  overview:'The habitat wheel, its sunlight optics and heat-rejection systems. The remote industrial plant is a separate destination.',
+  spokes:'Transport spokes connect the central hub to the inhabited ring; the ground-level entry is separate from the outer hull.',
+  fabrication:'Fabrication sphere beside the hub. The distant facility 10 km south is extraction/processing, not this sphere.',
+  industry:'Remote vacuum-operated extraction plant, 10 km south of the hub, linked by the transport tube.',
+  radiator:'Waste-heat radiator. This is separate from the radiation shield wrapped around the habitat.',
+  shield:'Radiation shield and reflective window chevrons around the inhabited ring—not the waste-heat radiator.',
+  mirror:'Stationary main sunlight mirror; secondary mirrors redirect its light toward the window/chevron aperture.',
+  solar:'Habitat solar-cell fields and the separate secondary-reflector banks.',
+  docking:'North Pole docking and the stationary/rotating hub interfaces.',
+ };
  const visit=id=>{
   habitatGroup.updateWorldMatrix(true,false);const pose=exteriorCameraPose(id,habitatGroup.matrixWorld);
   endTransition();setCurrentMode(CameraMode.GOD);godState.speedMultiplier=1;cameraAnchor.rotation.set(0,0,0);cameraAnchor.position.fromArray(pose.position);camera.position.set(0,0,0);camera.quaternion.fromArray(pose.quaternion);setYaw(pose.yaw);setPitch(pose.pitch);
   camera.fov=58;camera.near=.5;camera.far=20000;camera.updateProjectionMatrix();assembly.update(CameraMode.GOD,cameraAnchor.position);
-  window.__oneillExteriorVisit={id,name:pose.view.name};return pose;
+  info.textContent=descriptions[id]||'';
+  window.__oneillExteriorVisit={id,name:pose.view.name,description:info.textContent};return pose;
  };
  const panel=document.createElement('details');panel.id='exterior-tour';const summary=document.createElement('summary');summary.textContent='Inspect the station exterior';panel.append(summary);
  const select=document.createElement('select');select.setAttribute('aria-label','Exterior destination');for(const v of exteriorViews){const option=document.createElement('option');option.value=v.id;option.textContent=v.name;select.append(option);}panel.append(select);
+ const info=document.createElement('p');info.id='exterior-description';info.textContent='Choose an exterior component to inspect its role and position.';panel.append(info);
  const button=document.createElement('button');button.type='button';button.textContent='Fly here';button.addEventListener('click',()=>visit(select.value));panel.append(button);
  const back=document.createElement('button');back.type='button';back.textContent='Return to gardens';back.addEventListener('click',()=>window.__oneillSettlementTour?.visit('settlement-residential-a-residential-a-49-garden'));panel.append(back);
  const note=document.createElement('small');note.textContent='Exterior inspection · static systems · WASD fly · Escape unlocks controls';panel.append(note);

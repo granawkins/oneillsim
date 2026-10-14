@@ -1,6 +1,7 @@
 import {camera,cameraAnchor} from './scene.js';
 import {CameraMode,setCurrentMode,setYaw,setPitch,plannerState} from './controls/state.js';
-import {setupHumanMode,humanController} from './controls/modes/human.js';
+import * as THREE from 'three';
+import {setupHumanMode,humanController,setHumanFootPosition} from './controls/modes/human.js';
 
 export function initSettlementTour(design,{defaultVisit=false}={}){
  if(!Array.isArray(design?.landmarks)||!design.landmarks.length)return null;
@@ -12,7 +13,9 @@ export function initSettlementTour(design,{defaultVisit=false}={}){
   cameraAnchor.rotation.set(0,0,p.theta+Math.PI/2);setCurrentMode(CameraMode.HUMAN);
   setYaw((p.yaw??-90)*Math.PI/180);setPitch((p.pitch??0)*Math.PI/180);
   camera.rotation.set((p.pitch??0)*Math.PI/180,(p.yaw??-90)*Math.PI/180,0,'YXZ');
-  plannerState.theta=p.theta;plannerState.z=p.z;setupHumanMode();
+  plannerState.theta=p.theta;plannerState.z=p.z;
+  if(p.exactFloor){const footRadius=830-p.height;setHumanFootPosition(new THREE.Vector3(footRadius*Math.cos(p.theta),footRadius*Math.sin(p.theta),p.z));}
+  else setupHumanMode();
   window.__oneillSettlementVisit={id:p.id,name:p.name,theta:p.theta,z:p.z,height:p.height};
   return p;
  };

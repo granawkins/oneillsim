@@ -25,6 +25,7 @@ Use for generating, revising, reviewing, rendering, or registering buildings, fa
 - Housing anchors: Figure 4-8 modular frame/panels; Figures 5-5 to 5-7 terrace housing; Appendix B structural bays. Verify details rather than copying stale numbers from skills.
 - Agriculture anchors: Figures 5-8/5-9 and Appendix C. Visible artificial lighting and multiple layers should follow the study's documented allocation; unspecified rack geometry is interpretation.
 - Build related hand-authored variants from a shared modular kit. Preserve opening geometry, walkable terraces, stair/rail silhouettes, and human-scale legibility. Put seams, small vents and fine details in the texture skin, not excess polygons.
+- Art-direct settlement layouts as distinct, connected neighborhoods: varied housing courts, civic centers, planted gathering rooms, long vistas and deliberate open space. Avoid uniform building rows and decorative props scattered without context; review human-eye views as well as overview images because inventory counts alone do not establish an inviting place.
 
 ## Files and coordinate conventions
 
@@ -65,12 +66,15 @@ curl -fsS 'http://127.0.0.1:3200/oneillsim/api/snapshot?scene=asset&asset=TorusH
 
 For another asset, first confirm its ID is registered/allowlisted; otherwise use a local offline generator or browser-only viewer fixture until approved registration. Choose capture distance from actual asset bounds. Do not issue dozens of simultaneous snapshot requests: coordinate a queue, retry boundedly on HTTP 429, and never treat an error page as an image. Browser snapshots are screenshots of the existing renderer, not fabricated previews.
 
+For deployed capture changes, verify direct browser rendering, loopback API capture and the public API separately. If HTTP capture fails, compare the response body and elapsed time at those layers before changing deadlines; loopback success does not prove the public gateway works. Use a verified direct-browser PNG for visual QA when that path succeeds, and report any remaining API limitation rather than repeatedly tuning timeouts or expanding into proxy/infrastructure changes outside the task.
+
 ## Parallel-agent coordination
 
 - Parent gives each task unique output filenames/directories, source references, shared-kit/palette contract, budgets, and acceptance criteria. Batch within the runtime's actual concurrency limit; do not assume fifty agents can run at once.
 - Subagents own only their assigned assets/generator/manifest/preview. Return exact paths and measured metrics, plus limitations; do not independently modify shared registries, save world data, push or restart production.
 - Use disjoint files or scratch output directories while working on shared `main`; parent performs serialized registry integration and verified deployment. Separate branches/worktrees are not the default for this unannounced project.
 - Parent reads actual files, validates all asset counts/paths, inspects previews, and tests placeability. A child's claim of success is not verification.
+- Recover interrupted batches by inventorying surviving artifacts and recorded test/write receipts before re-dispatching. Assign fresh ownership only to missing or unverified portions; file existence does not establish completed tests, and a missing completion record does not justify replaying world writes, commits or service operations.
 
 ## Pitfalls and verification
 
@@ -81,6 +85,10 @@ For another asset, first confirm its ID is registered/allowlisted; otherwise use
 - Test library file links and thumbnail URLs after registering shared atlases; `${id}_Atlas.png` is not a valid convention for every model. Frame small props from actual bounds while preserving established house capture poses.
 - Keep additive world placement repeatable and bounded: private backup, stable new IDs, exact preservation of original records/fields, concurrent-change guard and read-back. Use `scripts/populate-street-pilot.mjs` or `scripts/populate-residential-kit.mjs` as references, not a license to regenerate the live world.
 - Validate stairs with the actual gameplay controller at current speed, not just geometric headroom/route tests. Ground entry crossings and all stair flights must settle on their floors/landings; contact projection must not turn horizontal input into a ballistic jump. Residential example/checks: `docs/residential-kit.md`, `tests/residential-stairs.test.js`.
+- Test below-plain travel outside the entrance shaft: the analytic ground half-space can snap underground feet back to the surface even after valid descent. Clip narrow visible openings exactly, provide real ground floor/ceiling collision, and scope fallback replacement to physically supported sectors. An altitude-only gate prevents snap-back but does not supply a ceiling; test surface support, descent, horizontal lower-floor travel, ascent and jumps beneath intact ground.
+- Include generated circulation geometry, not just saved route metadata, in entrance clearance checks. A spoke's raised z-offset promenade bypass can cover a new stair even when its hole avoids the nominal z=0 reservation; move the entrance and its connected aisles together, then remeasure crop masks and run the complete-scene controller.
+- Place known lower-floor inspection visits directly at their canonical supporting floor; do not use a highest-support ray that can select a ceiling or roof above the intended room. Preserve the existing highest-support behavior for ordinary zoom/ground visits.
+- Frame exterior overview cameras against the revised assembly's actual projected bounds, excluding deliberately remote industry. Changed mirror tilt/size can clip the main reflector even when the old camera preset still passes finite-coordinate tests.
 - Full-world physics tests must load authored OBJ models from both building and nature directories as well as procedural blockouts once placed. Exclude exterior worldTransform specimens from tube gameplay colliders; compare loaded IDs/counts against current saved records rather than stale fixed totals.
 - Align new interior feet through explicit saved display heights (ground −0.05, terrace canonical height−0.05) while retaining canonical anchorHeight metadata; do not change legacy height-zero transforms. Validate full geometry, circulation and actual-controller routes against the complete candidate scene before a guarded additive apply.
 - Generate JSON-compatible exterior quaternion components (avoid authored negative zero) and test exact serialization/idempotency. Do not silently normalize or repair imported explicit transforms. Keep layered farm review cameras below overhead slabs rather than using an occluded high planner view.

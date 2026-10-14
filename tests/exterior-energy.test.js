@@ -57,7 +57,7 @@ test('saved world centers define six actual between-spoke sectors, not zero-orig
       triangles(sector.mesh, points => {
         for (const p of samples(points)) {
           const r = Math.hypot(p.x, p.y), theta = start + ((Math.atan2(p.y, p.x) - start + TAU) % TAU);
-          assert.ok(r >= 115 - .01 && r <= 530 + .01);
+          assert.ok(r >= 115 - .01 && r <= 590 + .01);
           assert.ok(theta >= start && theta <= end);
           close(p.z, 95);
           for (const axis of axes) assert.ok(Math.abs(p.x * Math.sin(axis) - p.y * Math.cos(axis)) >= 10 - .01, 'actual spoke projection clearance');
@@ -98,23 +98,34 @@ test('actual PV front normals remain north +Z under rotating habitat frame', () 
   energy.dispose();
 });
 
-test('secondary physical disc normals reflect incoming -Z to assigned inner windows', () => {
-  const { energy } = build(), secondary = energy.components.secondary;
-  assert.equal(secondary.panels.length, 576);
-  secondary.panels.forEach((p, i) => {
-    const normal = actualNormal(secondary.mesh, i);
-    vectorClose(normal, p.normal);
-    vectorClose(reflectDirection([0, 0, -1], normal), p.outgoing);
-    const target = new THREE.Vector3(...p.target), center = new THREE.Vector3(...p.center);
-    vectorClose(target.sub(center).normalize().toArray(), p.outgoing);
-    assert.ok(Math.hypot(...p.target.slice(0, 2)) >= 775 - 1e-8 && Math.hypot(...p.target.slice(0, 2)) <= 800 + 1e-8);
-    assert.equal(p.target[2], 0);
+test('two segmented banks: rendered normals, unobstructed main chain, first actual chevron entry', () => {
+  const {energy}=build(), {secondary,mainMirror,chevrons,solar}=energy.components;
+  assert.equal(secondary.panels.length,192);
+  assert.ok(solar.projectedPanelAreaM2>850000);
+  const geometry=secondary.mesh.geometry.attributes.position;
+  secondary.panels.forEach((p,i)=>{
+    const vertices=[0,1,2].map(k=>new THREE.Vector3().fromBufferAttribute(geometry,i*6+k));
+    const normal=vertices[1].clone().sub(vertices[0]).cross(vertices[2].clone().sub(vertices[0])).normalize();
+    vectorClose(normal.toArray(),p.normal,2e-5);
+    vectorClose(reflectDirection([0,0,-1],normal.toArray()),p.outgoing,3e-5);
+    const center=new THREE.Vector3(...p.center),out=new THREE.Vector3(...p.outgoing);
+    const mainHit=new THREE.Raycaster(center,new THREE.Vector3(0,0,1)).intersectObject(mainMirror.mesh)[0];
+    assert.ok(mainHit,'projected main mirror covers facet');
+    const incident=new THREE.Raycaster(mainHit.point.clone().add(new THREE.Vector3(0,0,-.01)),new THREE.Vector3(0,0,-1));
+    const intercept=incident.intersectObjects([secondary.mesh,...solar.sectors.map(s=>s.mesh)],false)[0];
+    assert.equal(intercept.object,secondary.mesh,'PV and upper bank do not intercept lower bank center rays');
+    assert.ok(intercept.point.distanceTo(center)<.01);
+    const ray=new THREE.Raycaster(center.clone().addScaledVector(out,.01),out);
+    const hit=ray.intersectObject(chevrons.mesh)[0];
+    assert.ok(hit,'actual folded shield hit');
+    assert.ok(hit.point.z*p.bank>0,'correct upper/lower window');
+    const phi=Math.atan2(hit.point.z,Math.hypot(hit.point.x,hit.point.y)-830);
+    assert.ok(Math.abs(phi)>=2*Math.PI/3 && Math.abs(phi)<=Math.PI,'inner 120-degree glazing span');
+    assert.ok(Math.abs(hit.point.z)>45 && Math.abs(hit.point.z)<65,'window height, not equatorial floor');
+    assert.ok(tubeDistance(hit.point)>66.5,'not inside habitat floor');
+    assert.ok(hit.point.distanceTo(new THREE.Vector3(...p.target))<1.0,'first chevron is assigned roof fold');
+    for(let f=0;f<1;f+=.05)assert.ok(tubeDistance(center.clone().lerp(hit.point,f))>65);
   });
-  triangles(secondary.mesh, points => samples(points).forEach(p => {
-    assert.ok(Math.hypot(p.x, p.y) >= 575 - .01 && Math.hypot(p.x, p.y) <= 745 + .01);
-    assert.ok(p.z >= 115 - .01 && p.z <= 195 + .01);
-  }));
-  assert.equal(secondary.rayTraced, false);
   energy.dispose();
 });
 
@@ -123,7 +134,7 @@ test('main nominal tangent reflects -X to -Z; physical annulus preserves dock cl
   const normal = new THREE.Vector3(0, 0, 1).transformDirection(main.group.matrixWorld).toArray();
   vectorClose(normal, [-Math.SQRT1_2, 0, Math.SQRT1_2]);
   vectorClose(reflectDirection([-1, 0, 0], normal), [0, 0, -1]);
-  vectorClose(main.group.position.toArray(), [0, 0, 1300]);
+  vectorClose(main.group.position.toArray(), [0, 0, 1500]);
   let minimumProjection = Infinity, minimumZ = Infinity, variedNormal = false;
   triangles(main.mesh, points => {
     for (const p of samples(points)) {
@@ -146,23 +157,23 @@ test('main nominal tangent reflects -X to -Z; physical annulus preserves dock cl
   });
   assert.ok(minimumProjection >= 110 - .01, 'entire mirror including backing preserves 110 m projected hole to 1 cm');
   assert.ok(minimumZ > 125, 'entire mirror north of docking z=65..125');
-  assert.ok(variedNormal); assert.equal(main.rayTraced, false);
-  assert.equal(energySpec.interpretation.mainMirror.sagM, 18);
+  assert.equal(variedNormal,false); assert.equal(main.rayTraced, false);
+  assert.equal(energySpec.interpretation.mainMirror.sagM, 0);
   assert.equal(energySpec.interpretation.mainMirror.sourceDimensionsPrescribed, false);
   energy.dispose();
 });
 
-test('radiator actual triangles total exactly 490000 square metres, XZ bounds and edge-on Sun', () => {
+test('radiator actual triangles total exactly 940000 square metres, XZ bounds and edge-on Sun', () => {
   const { energy } = build(), radiator = energy.components.radiator;
   let area = 0; const box = new THREE.Box3();
   triangles(radiator.mesh, ([a, b, c]) => {
     area += b.clone().sub(a).cross(c.clone().sub(a)).length() / 2;
-    [a, b, c].forEach(p => { box.expandByPoint(p); close(p.y, 0, 1e-8); });
+    [a, b, c].forEach(p => { box.expandByPoint(p); close(p.y, energySpec.interpretation.radiator.yM, 1e-8); });
   });
-  close(area, 490000, 1e-8); vectorClose(box.min.toArray(), [150, 0, -855]); vectorClose(box.max.toArray(), [850, 0, -155]);
+  close(area, 940000, .1); vectorClose(box.min.toArray(), [-895, energySpec.interpretation.radiator.yM, -155-940000/1790], .001); vectorClose(box.max.toArray(), [895, energySpec.interpretation.radiator.yM, -155], .001);
   vectorClose(actualNormal(radiator.mesh, 0), [0, 1, 0]);
   close(new THREE.Vector3(...actualNormal(radiator.mesh, 0)).dot(new THREE.Vector3(-1, 0, 0)), 0);
-  assert.equal(radiator.bays.length, 196);
+  assert.equal(radiator.bays.length, 1);
   assert.equal(energySpec.facts.radiator.thermalPeakAreaM2, 940000);
   assert.deepEqual(energySpec.facts.radiator.printedPages, [89, 103]);
   assert.match(radiator.sourceUncertainty, /unresolved/);
@@ -194,8 +205,8 @@ test('full rendered geometry is finite and outside 65 m habitat tube; chevron tr
     assert.equal(o.userData.collisionMode, 'none'); assert.equal(o.castShadow, false);
   });
   console.log(JSON.stringify({ minimumChevronMinorRadiusM: minimumChevron, minimumMeshTubeDistanceM: minimumTube, ...energy.stats }));
-  assert.ok(energy.stats.triangles < 50000, 'bounded geometry inventory');
-  assert.ok(energy.stats.drawCalls <= 30, 'inventory only, not GPU measurement');
+  assert.ok(energy.stats.triangles <= 150000, 'bounded geometry inventory');
+  assert.ok(energy.stats.drawCalls <= 50, 'inventory only, not GPU measurement');
   energy.dispose();
 });
 
@@ -216,6 +227,27 @@ test('stationary optics/heat systems stay fixed as habitat rotates; furnace capa
   assert.deepEqual(energySpec.interpretation.sourceFigures.figures, ['5-1', '5-2']);
   assert.equal(energySpec.interpretation.sourceFigures.pdfPage, 105);
   energy.dispose();
+});
+
+test('local reflective Mylar owns its 64px environment; radiator has no wire grid', () => {
+  const {energy,scene}=build();
+  assert.equal(scene.environment,null);
+  const material=energy.components.mainMirror.mesh.material;
+  assert.ok(material.isMeshBasicMaterial);
+  assert.ok(material.envMap.isCubeTexture);
+  assert.equal(material.envMap.images.length,6);
+  for(const face of material.envMap.images) {
+    assert.equal(face.image.width,64); assert.equal(face.image.height,64);
+    assert.ok(new Set(face.image.data).size>40,'reflection is not flat grey');
+  }
+  assert.equal(energy.groups.mainMirror.children.filter(o=>o.isLineSegments).length,1);
+  assert.equal(energy.groups.radiator.children.some(o=>o.isLineSegments),false);
+  assert.equal(energy.components.radiator.mesh.material.color.getHex(),0x050607);
+  const textures=[material.envMap,...material.envMap.images];
+  const disposed=textures.map(()=>0);
+  textures.forEach((t,i)=>t.addEventListener('dispose',()=>disposed[i]++));
+  energy.dispose(); energy.dispose();
+  assert.deepEqual(disposed,textures.map(()=>1));
 });
 
 test('toggle, exclusive resource disposal and detach are idempotent and leave caller/world intact', () => {

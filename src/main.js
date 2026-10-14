@@ -21,6 +21,10 @@ import {createExteriorIndustry} from './exterior-industry.js';
 import {createExteriorAssembly} from './exterior-assembly.js';
 import {initExteriorControls} from './exterior-controls.js';
 import {refreshPlacementRendering} from './editor/placement.js';
+import {characterColliders} from './physics/collider-world.js';
+import {humanController} from './controls/modes/human.js';
+import {createCapacityAssembly} from './capacity-assembly.js';
+import {createCapacityGround} from './capacity-ground.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps
 let captureMode = false;
@@ -91,7 +95,9 @@ async function init() {
     await initEditor(sceneObjects.camera, sceneObjects.habitatGroup, getGroundMesh());
 
     await loadWorld(worldData);
-    exteriorAssembly=createExteriorAssembly({scene:sceneObjects.scene,habitatGroup:sceneObjects.habitatGroup,world:worldData,structureBuilder:createExteriorStructure,energyBuilder:createExteriorEnergy,industryBuilder:createExteriorIndustry,legacyTorus,refreshRendering:refreshPlacementRendering});
+    const capacity=createCapacityAssembly({habitatGroup:sceneObjects.habitatGroup,world:worldData,colliderWorld:characterColliders,controller:humanController,ground:getGroundMesh(),groundBuilder:createCapacityGround});
+    window.__oneillCapacity=capacity;
+    exteriorAssembly=createExteriorAssembly({scene:sceneObjects.scene,habitatGroup:sceneObjects.habitatGroup,world:worldData,structureBuilder:createExteriorStructure,energyBuilder:createExteriorEnergy,industryBuilder:createExteriorIndustry,legacyTorus,colliderWorld:characterColliders,refreshRendering:refreshPlacementRendering});
     window.__oneillExterior=exteriorAssembly;
     if(worldData.settlementDesign?.version===1){
         window.__oneillSettlement.palette=createSettlementLandscapePresentation(sceneObjects.habitatGroup);
@@ -99,7 +105,7 @@ async function init() {
     initTerraceControls(sceneObjects.habitatGroup);
     setupControls(sceneObjects.camera, sceneObjects.cameraAnchor, sceneObjects.scene, sceneObjects.habitatGroup);
     if(worldData.settlementDesign?.version===1){
-        initSettlementTour(worldData.settlementDesign,{defaultVisit:window.location.search.length===0});
+        initSettlementTour({...worldData.settlementDesign,landmarks:[...worldData.settlementDesign.landmarks,...(capacity?.landmarks||[])]},{defaultVisit:window.location.search.length===0});
     }
     initExteriorControls({camera:sceneObjects.camera,cameraAnchor:sceneObjects.cameraAnchor,habitatGroup:sceneObjects.habitatGroup,assembly:exteriorAssembly});
 

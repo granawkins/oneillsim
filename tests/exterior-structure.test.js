@@ -4,6 +4,10 @@ import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import * as THREE from 'three';
 import { createExteriorStructure, structuralSpec } from '../src/exterior-structure.js';
+import { ColliderWorld } from '../src/physics/collider-world.js';
+import { CharacterController, CHARACTER } from '../src/physics/character-controller.js';
+import { createBlockout } from '../src/editor/blockout.js';
+import { orientToSurface } from '../src/editor/placement.js';
 
 // Immutable historical/placement fixture, not generated from mutable world data.
 const deepFreeze = value => {
@@ -123,6 +127,7 @@ test('six hollow spokes align exactly with saved district centers, including non
 test('actual geometry has finite bounds, normalized normals and consistent triangle winding', () => {
   const a = make();
   const unique = new Set(Object.values(a.components).map(m => m.geometry));
+  a.groups.groundEntries.traverse(m => { if (m.isMesh) unique.add(m.geometry); });
   let trianglesChecked = 0;
   for (const g of unique) {
     g.computeBoundingBox(); g.computeBoundingSphere();
@@ -185,7 +190,7 @@ test('envelope surfaces point outward except inner shield, source aperture and g
   a.dispose();
 });
 
-test('all actual exterior triangles stay outside habitat; shaft ends only contact the boundary', t => {
+test('unapproved exterior triangles retain full tube clearance; approved interior portion is tested separately', t => {
   const a = make(); let minEnvelope = Infinity, minServices = Infinity, minShaft = Infinity, sampled = 0;
   for (const [name, mesh] of Object.entries(a.components)) for (const transform of transforms(mesh)) {
     for (const vertices of triangles(mesh, transform)) for (const p of sampleTriangle(...vertices)) {
@@ -263,7 +268,8 @@ test('owned resources dispose exactly once, with existing and second-instance re
   let borrowedDisposals = 0; for (const r of [borrowedGeometry, borrowedMaterial]) r.addEventListener('dispose', () => borrowedDisposals++);
   const a = createExteriorStructure({ rotatingGroup, stationaryGroup, world: fixture.world });
   const b = createExteriorStructure({ rotatingGroup, stationaryGroup, world: fixture.world });
-  const resources = new Set(Object.values(a.components).flatMap(m => [m.geometry, m.material, ...(m.isInstancedMesh ? [m] : [])]));
+  const interiorMeshes = []; a.groups.groundEntries.traverse(m => { if (m.isMesh) interiorMeshes.push(m); });
+  const resources = new Set([...Object.values(a.components), ...interiorMeshes].flatMap(m => [m.geometry, m.material, ...(m.isInstancedMesh ? [m] : [])]));
   const counts = new Map([...resources].map(r => [r, 0]));
   for (const r of resources) r.addEventListener('dispose', () => counts.set(r, counts.get(r) + 1));
   let otherDisposals = 0;
@@ -290,6 +296,74 @@ test('actual expanded triangle counts and standard color-pass submissions stay w
   assert.equal(a.stats.components, Object.keys(a.components).length);
   assert.equal(a.stats.meshes, calls); assert.ok(triangles < 100000); assert.ok(calls < 80);
   t.diagnostic(JSON.stringify(a.stats)); a.dispose();
+});
+
+test('approved interior shafts have real solid proxies and speed-15 tangential ground portals', t => {
+  const saved = JSON.parse(readFileSync(new URL('../world.json', import.meta.url)));
+  const a = make(saved), colliders = new ColliderWorld(), results = [];
+  assert.equal(a.interiorColliders.length, 6);
+  assert.equal(Object.keys(a.components).length, 26); // Existing baseline has 26, not 27.
+  assert.equal(CHARACTER.speed, 15);
+  let proxyTriangles = 0;
+  for (const [i, {id, object}] of a.interiorColliders.entries()) {
+    assert.equal(id, `spoke-ground-${saved.masterPlan.districts[i].id}`);
+    assert.equal(object.parent, a.groups.groundEntries);
+    object.traverse(m => { if (m.isMesh) {
+      assert.equal(m.userData.collisionMode, undefined);
+      proxyTriangles += m.geometry.index.count / 3;
+      for (const transform of transforms(m)) for (const tri of triangles(m, transform)) {
+        for (const p of sampleTriangle(...tri)) {
+          assert.ok(Math.hypot(p.x, p.y) >= 764.9 && Math.hypot(p.x, p.y) <= 830);
+          assert.ok(Math.abs(p.z) <= 7.51);
+        }
+      }
+    }});
+    colliders.setObject(id, object, a.rotatingGroup);
+  }
+  // Exercise actual retained 24 m legacy platform geometry where its real
+  // transformed top is on the central plain. Elevated/basin cases are diagnosed,
+  // not silently moved or used as imaginary ground support.
+  const platformHeights = [];
+  for (const raw of saved.assets.filter(v => Array.isArray(v) && /^spoke-.*-platform$/.test(v[0]))) {
+    const spec = raw[6], elevation = raw[7]?.height ?? spec.elevation ?? 0;
+    const platform = createBlockout(spec); orientToSurface(platform, raw[2], raw[3], elevation);
+    a.rotatingGroup.add(platform); platform.updateMatrixWorld(true);
+    const top = 830 - Math.hypot(platform.children[0].getWorldPosition(new THREE.Vector3()).x, platform.children[0].getWorldPosition(new THREE.Vector3()).y) + spec.height / 2;
+    platformHeights.push({id: raw[0], elevation, transformedTop: top});
+    colliders.setObject(raw[0], platform, a.rotatingGroup);
+  }
+  for (const [i, {object}] of a.interiorColliders.entries()) {
+    const angle = saved.masterPlan.districts[i].center;
+    a.scene.updateMatrixWorld(true);
+    const direction = new THREE.Vector3(Math.cos(angle), Math.sin(angle), 0);
+    const mouthRay = new THREE.Raycaster(direction.clone().multiplyScalar(100), direction.clone().negate(), 0, 90);
+    assert.equal(mouthRay.intersectObjects([a.components.hub, a.components.hubSurfaceBands]).length, 0, 'hub pressure mouth is physically open');
+    const legacy = platformHeights.find(p => p.id === `spoke-${saved.masterPlan.districts[i].id}-platform`);
+    const floor = legacy.elevation === 0 ? .6 : .31;
+    for (const sign of [-1, 1]) {
+      const c = new CharacterController(colliders);
+      const start = angle - sign * 10 / 830;
+      c.teleport(new THREE.Vector3((830-floor-.01)*Math.cos(start),(830-floor-.01)*Math.sin(start),0));
+      for (let n=0;n<60;n++) c.tick(new THREE.Vector3());
+      for (let n=0;n<160;n++) {
+        const theta = Math.atan2(c.position.y,c.position.x);
+        c.tick(new THREE.Vector3(-Math.sin(theta)*sign,Math.cos(theta)*sign,0));
+      }
+      for (let n=0;n<60;n++) c.tick(new THREE.Vector3());
+      const offset = Math.atan2(Math.sin(Math.atan2(c.position.y,c.position.x)-angle),Math.cos(Math.atan2(c.position.y,c.position.x)-angle))*830;
+      assert.ok(sign*offset>9, `${object.name} blocked: ${offset}`);
+      assert.ok(sign*offset<11, 'actual speed / displacement');
+      assert.ok(c.grounded && c.clear(), object.name+' floor / capsule');
+      const height = 830-Math.hypot(c.position.x,c.position.y);
+      close(height,floor,.08);
+      results.push({id:object.name,sign,offset,height});
+    }
+  }
+  assert.equal(proxyTriangles,a.stats.interiorTriangles);
+  assert.equal(results.length,12);
+  assert.ok(a.stats.fullTriangles < 100000);
+  t.diagnostic(JSON.stringify({proxyTriangles,fullTriangles:a.stats.fullTriangles,fullDrawCalls:a.stats.fullDrawCalls,platformHeights,routes:results,limitations:['Basin R878 platform and elevated farm platform are preserved, not ground-level anchors; no elevator connects these elevations.','Dense-world housing/tree apron validation remains parent integration.']}));
+  a.dispose();
 });
 
 test('invalid frames and malformed placement inputs fail before changing parent children', () => {
