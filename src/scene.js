@@ -11,7 +11,10 @@ export function initScene() {
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.05, 5000);
 
-    renderer = new THREE.WebGLRenderer({ antialias: true });
+    // Frozen capture runs must retain the frame until Chromium screenshots it;
+    // normal interactive visits keep the cheaper default swap-buffer behavior.
+    const preserveDrawingBuffer=new URLSearchParams(window.location.search).get('capture')==='1';
+    renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     document.body.appendChild(renderer.domElement);

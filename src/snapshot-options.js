@@ -1,4 +1,5 @@
 import { parseCameraPreset } from './camera-presets.js';
+import {findExteriorView} from './exterior-views.js';
 
 import { assetTypes, findModelType } from './asset-library.js';
 import {remainingModelContract} from './remaining-model-contract.js';
@@ -26,6 +27,11 @@ function pageSearchForGame(params, groundRadius) {
         height: String(preset.height),
         ringRotation: String(preset.ringRotationDegrees),
     });
+    if(params.has('exterior')){
+        const view=findExteriorView(params.get('exterior'));
+        pageParams.set('exterior',view.id);
+        return {preset:{...preset,exteriorView:{id:view.id,position:[...view.position],target:[...view.target]}},pageSearch:pageParams.toString()};
+    }
     return { preset, pageSearch: pageParams.toString() };
 }
 

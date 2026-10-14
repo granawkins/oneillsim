@@ -15,10 +15,17 @@ import {createSettlementCirculation} from './settlement-circulation.js';
 import {createSettlementPresentation} from './settlement-rendering.js';
 import {initSettlementTour} from './settlement-tour.js';
 import {createSettlementLandscapePresentation} from './settlement-lookdev.js';
+import {createExteriorStructure} from './exterior-structure.js';
+import {createExteriorEnergy} from './exterior-energy.js';
+import {createExteriorIndustry} from './exterior-industry.js';
+import {createExteriorAssembly} from './exterior-assembly.js';
+import {initExteriorControls} from './exterior-controls.js';
+import {refreshPlacementRendering} from './editor/placement.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps
 let captureMode = false;
 let captureRingRotation = 0;
+let exteriorAssembly = null;
 
 function applyUrlView() {
     const params = new URLSearchParams(window.location.search);
@@ -71,7 +78,7 @@ async function init() {
         window.__oneillSettlement={circulation,design:worldData.settlementDesign};
     }
     createStars(sceneObjects.scene);
-    createTorus(sceneObjects.habitatGroup);
+    const legacyTorus=createTorus(sceneObjects.habitatGroup);
 
     applyUrlView();
     setLightIntensity(3);
@@ -84,6 +91,8 @@ async function init() {
     await initEditor(sceneObjects.camera, sceneObjects.habitatGroup, getGroundMesh());
 
     await loadWorld(worldData);
+    exteriorAssembly=createExteriorAssembly({scene:sceneObjects.scene,habitatGroup:sceneObjects.habitatGroup,world:worldData,structureBuilder:createExteriorStructure,energyBuilder:createExteriorEnergy,industryBuilder:createExteriorIndustry,legacyTorus,refreshRendering:refreshPlacementRendering});
+    window.__oneillExterior=exteriorAssembly;
     if(worldData.settlementDesign?.version===1){
         window.__oneillSettlement.palette=createSettlementLandscapePresentation(sceneObjects.habitatGroup);
     }
@@ -92,6 +101,7 @@ async function init() {
     if(worldData.settlementDesign?.version===1){
         initSettlementTour(worldData.settlementDesign,{defaultVisit:window.location.search.length===0});
     }
+    initExteriorControls({camera:sceneObjects.camera,cameraAnchor:sceneObjects.cameraAnchor,habitatGroup:sceneObjects.habitatGroup,assembly:exteriorAssembly});
 
     // Prevent info panel from triggering three.js pointer lock
     const ui = document.getElementById('ui');
@@ -144,6 +154,12 @@ function animate(time = performance.now()) {
         }
     }
 
+    if(exteriorAssembly){
+        const envelope=exteriorAssembly.update(getCurrentMode(),cameraAnchor.position);
+        const near=envelope ? .5 : .05,far=envelope ? 20000 : 5000;
+        const fov=envelope ? 58 : 75;
+        if(camera.near!==near||camera.far!==far||camera.fov!==fov){camera.near=near;camera.far=far;camera.fov=fov;camera.updateProjectionMatrix();}
+    }
     // Render one early habitat frame. Repeatedly drawing an unbatched loading
     // scene competes with OBJ/atlas decoding on software WebGL; input is still
     // gated by readiness, so retain the frame until the complete world is ready.

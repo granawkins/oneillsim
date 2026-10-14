@@ -1,6 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { parseSnapshotOptions } from '../src/snapshot-options.js';
+import {exteriorViews} from '../src/exterior-views.js';
+test('exterior inspection uses the existing game snapshot with validated named camera overrides',()=>{
+ for(const view of exteriorViews){const options=parseSnapshotOptions('scene=game&exterior='+view.id);assert.equal(options.pagePath,'/');assert.equal(new URLSearchParams(options.pageSearch).get('exterior'),view.id);assert.deepEqual(options.camera.exteriorView,{id:view.id,position:view.position,target:view.target});}
+ assert.throws(()=>parseSnapshotOptions('scene=game&exterior=unknown'),/Unknown exterior/);
+});
 
 test('game snapshot validates coordinates and creates a deterministic capture URL', () => {
     const options = parseSnapshotOptions(new URLSearchParams(
