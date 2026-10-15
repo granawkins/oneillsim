@@ -34,7 +34,37 @@ try{
   }
   return {ride,rideH,offTravel,spokeRides};
  });
- fs.writeFileSync(out+'/verification.json',JSON.stringify({base,state,controller,errors},null,2));progress('controller '+JSON.stringify(controller));
+ const routes=await page.evaluate(async()=>{
+  const {humanController:c}=window.reviewHuman,V=window.reviewThree.Vector3;
+  const {landscapeHeight,landscapePathZ}=await import('./src/interior-landscape.js');
+  const polar=()=>({x:((Math.atan2(c.position.y,c.position.x)+Math.PI*2)%(Math.PI*2))*830,z:c.position.z,h:830-Math.hypot(c.position.x,c.position.y)});
+  const settle=(t,z,h)=>{c.teleport(new V((830-h-.03)*Math.cos(t),(830-h-.03)*Math.sin(t),z));for(let i=0;i<80;i++)c.advance(1/120);};
+  const hills=[];
+  for(const hill of window.__oneillInterior.plan.hills){
+   settle(hill.theta-(hill.width/2+2)/830,hill.z,.16);let ticks=0,crest=0,minGap=Infinity;
+   for(;ticks<1600;ticks++){
+    const q=polar(),x=q.x-hill.theta*830;if(x>hill.width/2+1)break;
+    const z=landscapePathZ(hill,x+1),t=q.x/830;
+    c.advance(1/120,new V(-Math.sin(t),Math.cos(t),(z-q.z)*1.6).normalize());
+    const a=polar();crest=Math.max(crest,a.h);minGap=Math.min(minGap,a.h-landscapeHeight(hill,a.x-hill.theta*830,a.z));
+   }
+   for(let i=0;i<80;i++)c.advance(1/120);
+   hills.push({id:hill.id,ticks,crest,minGap,grounded:c.grounded,height:polar().h});
+   if(ticks>=1600||crest<hill.height-.2||minGap<-.04||!c.grounded||polar().h>.22)throw Error('Full-world hill route '+JSON.stringify(hills.at(-1)));
+  }
+  const portals=[],velocity=c.surfaceVelocity;c.surfaceVelocity=undefined;
+  try{
+   for(const b of window.__oneillInterior.boundaries.plan)for(const p of b.portals)for(const side of [-1,1]){
+    settle(b.theta-side*2/830,(p.zMin+p.zMax)/2,p.floor);
+    for(let i=0;i<40;i++){const t=Math.atan2(c.position.y,c.position.x);c.advance(1/120,new V(-Math.sin(t)*side,Math.cos(t)*side,0));}
+    const arc=Math.atan2(Math.sin(Math.atan2(c.position.y,c.position.x)-b.theta),Math.cos(Math.atan2(c.position.y,c.position.x)-b.theta))*830;
+    const result={boundary:b.id,portal:p.id,side,travel:arc*side,grounded:c.grounded,height:polar().h};portals.push(result);
+    if(result.travel<2||!result.grounded||Math.abs(result.height-p.floor)>.04)throw Error('Full-world portal '+JSON.stringify(result));
+   }
+  }finally{c.surfaceVelocity=velocity;}
+  return {hills,portals};
+ });
+ fs.writeFileSync(out+'/verification.json',JSON.stringify({base,state,controller,routes,errors},null,2));progress('full-world routes '+routes.hills.length+' hills, '+routes.portals.length+' portal crossings');progress('controller '+JSON.stringify(controller));
  if(!(controller.ride>34&&controller.ride<38&&Math.abs(controller.offTravel)<.03))throw Error('Live controller regression');
  for(const r of controller.spokeRides)if(!(r.travel>70&&r.travel<74&&Math.abs(r.height-.36)<.06&&r.grounded))throw Error('Spoke crossing regression '+JSON.stringify(r));
  if(process.env.INTERIOR_SKIP_CAPTURES!=='1'){
@@ -50,10 +80,16 @@ try{
    },{t,z,h,targetT,targetZ,targetH});
    const shot=await page.context().newCDPSession(page);const image=await shot.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});fs.writeFileSync(out+'/'+name+'.png',Buffer.from(image.data,'base64'));await shot.detach();progress('captured '+name);
   }
-  await capture('overview',.56,0,59,.69,0,0);
-  await capture('eye-level',.38,0,1.81,.49,0,1.81);
-  await capture('gallery',.672082-90/830,35,10.89,.672082+10/830,0,8);
-  await capture('farm',1.344164+140/830,44,6.65,1.344164+230/830,25,-12);
+  await capture('overview',.49,0,59,.60,0,0);
+  const hillPose=await page.evaluate(async()=>{const h=window.__oneillInterior.plan.hills.find(h=>h.side===1),{landscapeHeight,landscapePathZ}=await import('./src/interior-landscape.js');const x=-h.width/2+6,targetX=x+30,z=landscapePathZ(h,x),tz=landscapePathZ(h,targetX);return {t:h.theta+x/830,z,h:landscapeHeight(h,x,z)+1.81,tt:h.theta+targetX/830,tz,th:landscapeHeight(h,targetX,tz)+1.1};});
+  await capture('meadow',hillPose.t,hillPose.z,hillPose.h,hillPose.tt,hillPose.tz,hillPose.th);
+  await capture('grass-face',429.91403434482515/830,12,1.81,429.91403434482515/830,38,4);
+  await capture('housing-plinth',285/830,-7,1.81,301/830,-17,5);
+  await capture('summit',429.91403434482515/830,35,7.205,590/830,25,16);
+  await capture('oblique-skyline',350/830,-9,13,590/830,25,17);
+  await capture('arrival-grove',572.8280686896503/830,11,1.81,572.8280686896503/830,29,3);
+  await capture('boundary-portal',1.344164-15/830,0,1.81,1.344164+15/830,0,1.81);
+  await capture('lower-farm-wall',1.344164+18/830,26,-23.2,1.344164,26,-23.2);
  }
  if(errors.length)throw Error(errors.join('\n'));
  progress('PASS');

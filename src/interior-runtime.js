@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 import {createCapacityGround} from './capacity-ground.js';
-import {createInteriorPlan,interiorFloorLedger} from './interior-plan.js';
+import {createInteriorPlan,interiorFloorLedger,housingLevelShape} from './interior-plan.js';
+import {landscapeGeometry} from './interior-landscape.js';
 const R=830,TAU=2*Math.PI;
 export function interiorPoint(theta,z,height){return new THREE.Vector3((R-height)*Math.cos(theta),(R-height)*Math.sin(theta),z);}
 // A curved solid has the same bottom surface in renderer and collision. Long
@@ -29,7 +30,7 @@ export function conveyorVelocity(position,grounded){
 export function createInteriorRuntime({habitatGroup,colliderWorld,controller,world,ground}){
  if(world.settlementDesign?.version!==2)return null;
  const plan=createInteriorPlan(),group=new THREE.Group();group.name='inhabited-garden';group.userData.capacityInterior=true;habitatGroup.add(group);
- const colors={ivory:0xdedbc7,cream:0xcabfa2,glass:0x31565b,rail:0x788d82,path:0xd5ceb4,green:0x789757,darkgreen:0x466e4c,water:0x598c91,belt:0x467c7c,beltReverse:0x467c7c,gold:0xc5ad70,earth:0x8e9b68};
+ const colors={ivory:0xe3dfcf,cream:0xcfc5af,glass:0x536f70,rail:0x788d82,path:0xd5ceb4,green:0x789757,darkgreen:0x466e4c,water:0x598c91,belt:0x467c7c,beltReverse:0x467c7c,gold:0xc5ad70,earth:0x8e9b68,stone:0x92927d,sage:0x8f9e84,clay:0xb0927c,meadow:0x8eaa69,grove:0x6f8b53};
  const materials=Object.fromEntries(Object.entries(colors).map(([k,color])=>[k,new THREE.MeshStandardMaterial({color,vertexColors:true,roughness:k==='glass'?.32:.86,metalness:k==='glass'?.15:0,side:THREE.DoubleSide})]));
  for(const key of ['belt','beltReverse']){const pixels=new Uint8Array(32*4);for(let i=0;i<32;i++){const v=i<2?165:240;pixels.set([v,v,v,255],i*4);}const texture=new THREE.DataTexture(pixels,32,1);texture.wrapS=THREE.RepeatWrapping;texture.wrapT=THREE.RepeatWrapping;texture.repeat.set(8,1);texture.needsUpdate=true;materials[key].map=texture;}
  const batches=new Map(),colliders=[],objects=[];
@@ -58,36 +59,49 @@ export function createInteriorRuntime({habitatGroup,colliderWorld,controller,wor
   if(d?.kind==='agricultural')for(const z of [-7,0,7])solid(`interior-viaduct-pier-${i}-${z}`,theta,z,-39.9,1,1,39.9,'cream');
  }
  for(const b of plan.buildings){
-  const pale=b.category==='housing'?(Number(b.id.split('-').at(-1))%4===0?'cream':'ivory'):'cream';
+  const pale=b.category==='housing'?(b.facadeRhythm===2?'cream':'ivory'):'cream',accent=b.palette==='water'?'sage':b.palette==='orchard'?'clay':'earth';
   if(b.base<0){
    for(let k=0;k<=Math.ceil(b.width/15);k++)for(const side of [-1,1]){const z=b.z+side*(b.depth/2-.7),bottom=-Math.sqrt(65*65-z*z)+.4;solid(b.id+'-hull-pier-'+k+'-'+side,b.theta+(-b.width/2+1+k*(b.width-2)/Math.ceil(b.width/15))/R,z,bottom,.7,.7,b.base-bottom,'cream');}
   }
   if(b.base>0){
-   solid(b.id+'-podium',b.theta,b.z,b.base-.3,b.width,b.depth,.3,pale);
-   for(let k=0;k<=Math.ceil(b.width/5);k++)for(const side of [-1,1])solid(b.id+'-foundation-'+k+'-'+side,b.theta+(-b.width/2+.5+k*(b.width-1)/Math.ceil(b.width/5))/R,b.z+side*(b.depth/2-.7),0,.55,.55,b.base-.3,'cream');
+   // A continuous masonry retaining plinth, not a forest of thin stilts.
+   solid(b.id+'-foundation-plinth',b.theta,b.z,0,b.width+.6,b.depth+.6,b.base,'stone');
+   // Broad front stair reaches the SAME .24 m finished floor as the house.
+   const side=Math.sign(b.z),front=b.z-side*b.depth/2,n=Math.ceil((b.base+.24)/.15);
+   for(let j=0;j<n;j++)solid(b.id+'-entry-step-'+j,b.theta+(-b.width/2+3+(j+.5)*.3)/R,front-side*2,0,.32,2.4,(b.base+.24)*(j+1)/n,'path');
+   // Low horizontal courses break up the earthbound retaining wall silhouette.
+   for(let h=1.2;h<b.base;h+=1.2)solid('plinth-course',b.theta,front-side*.32,h,b.width,.08,.08,'earth',false);
   }
   for(let level=0;level<b.levels;level++){
-   const h=b.base+level*b.storey,depth=b.depth-(b.setback||0)*level,z=b.z+Math.sign(b.z||1)*(b.setback||0)*level/2;
-   solid(b.id+'-floor-'+level,b.theta,z,h,b.width,depth,.24,pale);
-   solid(b.id+'-rear-'+level,b.theta,z+Math.sign(b.z||1)*(depth/2-.15),h+.24,b.width,.3,b.storey-.24,pale);
-   for(const side of [-1,1])solid(b.id+'-end-'+level,b.theta+side*(b.width/2-.15)/R,z,h+.24,.3,depth,b.storey-.24,pale);
-   const front=z-Math.sign(b.z||1)*depth/2;
-   for(let k=0;k<Math.floor(b.width/4);k++){
-    const t=b.theta+(-b.width/2+2+k*4)/R;
-    solid('window',t,front+.25*Math.sign(b.z||1),h+.85,3.35,.16,1.8,'glass',false);
+   const h=b.base+level*b.storey,{width,depth,theta,z}=housingLevelShape(b,level),residential=b.category==='housing';
+   solid(b.id+'-floor-'+level,theta,z,h,width,depth,.24,pale);
+   solid(b.id+'-rear-'+level,theta,z+Math.sign(b.z||1)*(depth/2-.15),h+.24,width,.3,b.storey-.24,pale);
+   for(const side of [-1,1])solid(b.id+'-end-'+level,theta+side*(width/2-.15)/R,z,h+.24,.3,depth,b.storey-.24,pale);
+   const front=z-Math.sign(b.z||1)*depth/2,bays=Math.floor(width/4);
+   for(let k=0;k<bays;k++){
+    const t=theta+(-width/2+2+k*4)/R,shutter=residential&&(k+b.facadeRhythm)%4===0;
+    // Recess-sized paired openings and stacked muted shutters create vertical
+    // household groups instead of black continuous office-building stripes.
+    solid(shutter?'house-shutter':'window',t,front+.25*Math.sign(b.z||1),h+.85,shutter?2.6:2.35,.16,1.65,shutter?accent:'glass',false);
     solid('mullion',t+1.8/R,front,h+.24,.18,.25,b.storey-.24,pale,false);
+    if(residential)solid('garden-side-window',t,z+Math.sign(b.z)*(depth/2+.015),h+.85,2.15,.06,1.65,(k+b.facadeRhythm)%5===0?accent:'glass',false);
    }
-   solid(b.id+'-balcony-'+level,b.theta,front-Math.sign(b.z||1)*.8,h,b.width,1.8,.22,pale);
-   solid('balcony-rail',b.theta,front-Math.sign(b.z||1)*1.6,h+.9,b.width,.12,.12,'rail',false);
+   solid(b.id+'-balcony-'+level,theta,front-Math.sign(b.z||1)*.8,h,width,1.8,.22,pale);
+   solid('balcony-rail',theta,front-Math.sign(b.z||1)*1.6,h+.9,width,.12,.12,'rail',false);
    for(const side of [-1,1]){
-    solid('terrace-planter',b.theta+side*(b.width/2-2.8)/R,front-Math.sign(b.z||1)*.8,h+.22,3.8,.7,.5,'cream',false);
-    solid('terrace-planting',b.theta+side*(b.width/2-2.8)/R,front-Math.sign(b.z||1)*.8,h+.72,3.5,.6,.3,'darkgreen',false);
-    solid('end-window',b.theta+side*(b.width/2+.015)/R,z,h+1,.06,depth*.65,1.45,'glass',false);
+    solid('terrace-planter',theta+side*(width/2-2.8)/R,front-Math.sign(b.z||1)*.8,h+.22,3.8,.7,.5,'cream',false);
+    solid('terrace-planting',theta+side*(width/2-2.8)/R,front-Math.sign(b.z||1)*.8,h+.72,3.5,.6,.3,'darkgreen',false);
+    if(residential){
+     // The previously single 10 m ribbon on every gable made all towers identical.
+     // Small vertically aligned end openings leave substantial white wall around them.
+     const count=Math.max(2,Math.floor(depth/4));
+     for(let k=0;k<count;k++)solid('end-window',theta+side*(width/2+.015)/R,z+(k-(count-1)/2)*3.3,h+.85,.06,1.4,1.8,k===0&&b.facadeRhythm===1?accent:'glass',false);
+    }else solid('end-window',theta+side*(width/2+.015)/R,z,h+1,.06,depth*.65,1.45,'glass',false);
    }
   }
-  const roof=b.base+b.levels*b.storey,depth=b.depth-(b.setback||0)*(b.levels-1),z=b.z+Math.sign(b.z||1)*(b.setback||0)*(b.levels-1)/2;
-  solid(b.id+'-roof',b.theta,z,roof,b.width,depth,.25,pale);
-  solid('roof-garden',b.theta,z,roof+.25,b.width-1.8,depth-2,.18,'green',false);
+  const roof=b.base+b.levels*b.storey,{width,depth,theta,z}=housingLevelShape(b,b.levels-1);
+  solid(b.id+'-roof',theta,z,roof,width,depth,.25,pale);
+  solid('roof-garden',theta,z,roof+.25,width-1.8,depth-2,.18,'green',false);
  }
  // Subsurface civic street: narrow stair portals, real ceiling, and floor stairs.
  const groundOpenings=[];
@@ -117,31 +131,33 @@ export function createInteriorRuntime({habitatGroup,colliderWorld,controller,wor
    for(let j=0;j<n;j++){
     const f=(j+.5)/n,t=THREE.MathUtils.lerp(a[0],b[0],f),h=THREE.MathUtils.lerp(a[2],b[2],f),w=length/n+.02;
     solid(`interior-gallery-${route.id}-${index++}`,t,a[1],h-.18,w,route.width,.18,'path');
-    for(const dz of [-1,1])solid('gallery-rail',t,a[1]+dz*1.92,h+1.05,w,.12,.13,'rail',false);
-    if(j%6===0&&h>.5)for(const dz of [-1,1])solid(`interior-pier-${route.id}-${index}-${dz}`,t,a[1]+dz*1.4,0,.5,.5,h-.18,'cream');
+    if(h>1)for(const dz of [-1,1])solid('gallery-rail',t,a[1]+dz*(route.width/2-.08),h+1.05,w,.12,.13,'rail',false);
+    if(route.supports&&j%6===0&&h>.5)for(const dz of [-1,1])solid(`interior-pier-${route.id}-${index}-${dz}`,t,a[1]+dz*1.4,0,.5,.5,h-.18,'cream');
    }
   }
  }
  // Arrival gardens frame the spoke with offset water courts and broad crossings.
- for(const d of plan.districts.filter(d=>d.kind==='residential')){
-  solid(`interior-arrival-court-${d.id}-west`,d.center-4/R,-23,0,22,18,.16,'path');
-  solid(`interior-arrival-court-${d.id}-east`,d.center+8/R,25,0,20,16,.16,'path');
-  for(const offset of [-21,21])solid(`interior-arrival-crossing-${d.id}-${offset}`,d.center+offset/R,0,0,3,64,.16,'path');
+ for(const court of plan.courts){
+  solid(`interior-arrival-court-${court.id}`,court.theta,court.z,0,court.width,court.depth,.16,'path');
+  solid(`interior-arrival-crossing-${court.id}`,court.theta,court.z/2,0,3,Math.abs(court.z),.16,'path');
+  // Planted court edges enclose the gathering room while preserving a broad aisle.
+  if(court.kind==='grove')for(const side of [-1,1])solid(`interior-court-bed-${court.id}-${side}`,court.theta+side*6/R,court.z,.16,4,16,.06,'darkgreen');
+  else for(const side of [-1,1])solid(`interior-court-bed-${court.id}-${side}`,court.theta+side*8/R,court.z-5,.16,4,5,.06,'green');
  }
- // Low bridges join the two contour galleries in the spoke neighborhood.
- for(const d of plan.districts.filter(d=>d.kind==='residential'))for(const offset of [-120,110]){
-  const t=d.center+offset/R;
-  solid(`interior-crossbridge-${d.id}-${offset}`,t,0,9,4,74,.24,'path');
-  for(const z of [-30,-12,12,30])solid(`interior-crosspier-${d.id}-${offset}-${z}`,t,z,0,.7,.7,9,'cream');
- }
- // Hills are curved planted earth volumes; never support invisible airborne homes.
+ // Park crosswalks meet both contour walks at grade, without aerial stilt bridges.
+ // Each bank has its own park rhythm; do not flatten one hill with the other
+ // bank's old mirrored full-width crossing. These link the contour walk to the toe.
+ for(const hill of plan.hills)for(const side of [-1,1])solid(`interior-park-crossing-${hill.id}-${side}`,hill.theta+side*(hill.width/2+3)/R,hill.side*32,0,4,46,.16,'path');
+ // Smooth curved landforms and their meandering 3 m summit walks share the
+ // exact rendered triangles with collision. No stair-stack green wall strips.
  for(const hill of plan.hills){
-  const n=40;
-  for(let i=0;i<n;i++){
-   const x=(i+.5)/n*hill.width-hill.width/2,h=hill.height*Math.sin(Math.PI*(i+.5)/n)**2;
-   // Only the outside verge: buildings have their own exact footings.
-   for(let band=0;band<4;band++){const z=Math.sign(hill.z)*(54.5+band*1.7),rise=h*Math.sin(Math.PI*(band+.5)/4);solid(`interior-hill-${hill.id}-${i}-${band}`,hill.theta+x/R,z,0,hill.width/n+.03,1.72,Math.max(.1,rise),'green');}
+  for(const path of [false,true]){
+   const color=path?'path':['green','meadow','grove'][hill.groveStyle],geometry=landscapeGeometry(hill,{path}),key=`${hill.id}:${color}`;
+   batches.set(key,{color,geometries:[geometry]});
+   const root=new THREE.Group();root.add(new THREE.Mesh(geometry,materials[color]));root.name=`interior-landscape-${hill.id}-${path?'walk':'earth'}`;group.add(root);colliders.push({id:root.name,object:root});
   }
+  // Flat toe apron ties the summit walk to the transverse ground crosswalk.
+  for(const side of [-1,1])solid(`interior-park-apron-${hill.id}-${side}`,hill.theta+side*(hill.width/2+3)/R,hill.z,0,6,4,.16,'path');
  }
  // Farm entry ramps join ground promenade to the retained original stair chain.
  for(const d of plan.districts.filter(d=>d.kind==='agricultural')){
@@ -154,6 +170,9 @@ export function createInteriorRuntime({habitatGroup,colliderWorld,controller,wor
  for(const c of colliders){colliderWorld.setObject(c.id,c.object,habitatGroup);c.object.removeFromParent();}
  for(const [key,{color,geometries}]of batches){const mesh=new THREE.Mesh(mergeGeometries(geometries),materials[color]);mesh.name='interior-batch-'+key;group.add(mesh);}
  const groundRuntime=ground?createCapacityGround({ground,habitatGroup,plans:[{districts:plan.districts,groundPhysicsDistrictIds:plan.districts.filter(d=>d.kind==='residential').map(d=>d.id),groundOpenings}],colliderWorld,controller}):null;
+ const previousGroundColor=ground?.material?.color?.clone();
+ // Harmonize the plain with planted slopes instead of dark-green cutout bands.
+ if(previousGroundColor)ground.material.color.setHex(0x536b3d);
  const previousVelocity=controller.surfaceVelocity;controller.surfaceVelocity=(position,grounded)=>conveyorVelocity(position,grounded);
- return {group,plan,ground:groundRuntime,update(dt){const phase=dt*18*8/(TAU*R/160);materials.belt.map.offset.x-=phase;materials.beltReverse.map.offset.x+=phase;},ledger:interiorFloorLedger(plan),stats:{buildings:plan.buildings.length,physicalSolids:colliders.length,renderBatches:batches.size},dispose(){groundRuntime?.dispose();controller.surfaceVelocity=previousVelocity;for(const c of colliders)colliderWorld.remove(c.id);group.removeFromParent();group.traverse(o=>o.geometry?.dispose());for(const m of Object.values(materials))m.dispose();}};
+ return {group,plan,ground:groundRuntime,update(dt){const phase=dt*18*8/(TAU*R/160);materials.belt.map.offset.x-=phase;materials.beltReverse.map.offset.x+=phase;},ledger:interiorFloorLedger(plan),stats:{buildings:plan.buildings.length,physicalSolids:colliders.length,renderBatches:batches.size},dispose(){groundRuntime?.dispose();if(previousGroundColor)ground.material.color.copy(previousGroundColor);controller.surfaceVelocity=previousVelocity;for(const c of colliders)colliderWorld.remove(c.id);group.removeFromParent();group.traverse(o=>o.geometry?.dispose());for(const m of Object.values(materials))m.dispose();}};
 }

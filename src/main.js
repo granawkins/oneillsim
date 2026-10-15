@@ -26,6 +26,7 @@ import {humanController} from './controls/modes/human.js';
 import {createCapacityAssembly} from './capacity-assembly.js';
 import {createCapacityGround} from './capacity-ground.js';
 import {createInteriorRuntime} from './interior-runtime.js';
+import {createInteriorBoundaries} from './interior-boundaries.js';
 import {preloadAssets} from './editor/loader.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps
@@ -112,6 +113,12 @@ async function init() {
     await loadWorld(worldData);
     const capacity=worldData.settlementDesign?.version===2 ? createInteriorRuntime({habitatGroup:sceneObjects.habitatGroup,world:worldData,colliderWorld:characterColliders,controller:humanController,ground:getGroundMesh()}) : createCapacityAssembly({habitatGroup:sceneObjects.habitatGroup,world:worldData,colliderWorld:characterColliders,controller:humanController,ground:getGroundMesh(),groundBuilder:createCapacityGround});
     window.__oneillInterior=worldData.settlementDesign?.version===2?capacity:null;
+    if(window.__oneillInterior){
+        const boundaries=createInteriorBoundaries({habitatGroup:sceneObjects.habitatGroup,colliderWorld:characterColliders,parent:capacity.group});
+        capacity.boundaries=boundaries;
+        const disposeInterior=capacity.dispose.bind(capacity);
+        capacity.dispose=()=>{boundaries.dispose();disposeInterior();};
+    }
     window.__oneillCapacity=capacity;
     exteriorAssembly=createExteriorAssembly({scene:sceneObjects.scene,habitatGroup:sceneObjects.habitatGroup,world:worldData,structureBuilder:createExteriorStructure,energyBuilder:createExteriorEnergy,industryBuilder:createExteriorIndustry,legacyTorus,colliderWorld:characterColliders,refreshRendering:refreshPlacementRendering});
     window.__oneillExterior=exteriorAssembly;
