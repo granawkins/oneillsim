@@ -148,6 +148,10 @@ export class CharacterController {
         this._input.copy(direction).addScaledVector(this.up, -direction.dot(this.up));
         if (this._input.lengthSq() > 1) this._input.normalize();
         this.velocity.copy(this._input).multiplyScalar(c.speed).addScaledVector(this.up, vertical);
+        // Moving surfaces contribute only while physically supported. Recompute
+        // each fixed tick: stepping off or jumping cannot retain belt propulsion.
+        const surface = this.surfaceVelocity?.(this.position, wasGrounded);
+        if (surface) this.velocity.add(surface);
         let jumped = false;
         if (this.jumpQueued) {
             if (wasGrounded) { this.velocity.addScaledVector(this.up, c.jumpSpeed - vertical); jumped = true; }

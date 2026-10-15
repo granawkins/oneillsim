@@ -1,0 +1,5349 @@
+{
+  "baselineSha256": "30fa3a8784133571c948aa44425db43087197c18033d095d3b706675be83b3fb",
+  "assetTypes": [
+    "TorusHome_ModA",
+    "ResidentialBlockout",
+    "AgriculturalBlockout",
+    "SpokePlaceholder",
+    "TorusBench_A",
+    "TorusTable_A",
+    "TorusPlanter_A",
+    "TorusRailing_A",
+    "TorusSign_A",
+    "TorusWasteBin_A",
+    "TorusHome_CourtyardA",
+    "TorusHome_RowA",
+    "TorusApartment_TerraceA",
+    "TorusDistrict_Housing5A",
+    "TorusDistrict_Housing4A",
+    "TorusDistrict_Housing2A",
+    "TorusDistrict_SchoolA",
+    "TorusDistrict_ClinicA",
+    "TorusDistrict_HallA",
+    "TorusDistrict_ShopsA",
+    "TorusDistrict_OfficesA",
+    "TorusDistrict_WorkshopA",
+    "TorusDistrict_StorageA",
+    "TorusDistrict_RecreationA",
+    "TorusDistrict_CommunityA",
+    "TorusDistrict_Path01",
+    "TorusDistrict_Path02",
+    "TorusDistrict_Path03",
+    "TorusDistrict_Path04",
+    "TorusDistrict_Path05",
+    "TorusDistrict_Path06",
+    "TorusDistrict_Path07",
+    "TorusDistrict_Path08",
+    "TorusDistrict_ParkA",
+    "TorusDistrict_Terrace01",
+    "TorusDistrict_Terrace02",
+    "TorusDistrict_Terrace03",
+    "TorusDistrict_Terrace04",
+    "TorusDistrict_Terrace05",
+    "TorusDistrict_Terrace06",
+    "TorusDistrict_Terrace07",
+    "TorusDistrict_Terrace08",
+    "TorusDistrict_Terrace09",
+    "TorusDistrict_Terrace10",
+    "TorusDistrict_Terrace11",
+    "TorusDistrict_Terrace12",
+    "TorusDistrict_Terrace13",
+    "TorusDistrict_Terrace14",
+    "TorusDistrict_Terrace15",
+    "TorusDistrict_Terrace16",
+    "TorusDistrict_Terrace17",
+    "TorusDistrict_Terrace18",
+    "TorusDistrict_Terrace19",
+    "TorusDistrict_Terrace20",
+    "TorusDistrict_Terrace21",
+    "TorusDistrict_Terrace22",
+    "TorusDistrict_Terrace23",
+    "TorusDistrict_Terrace24",
+    "TorusDistrict_Terrace25",
+    "TorusDistrict_Terrace26",
+    "TorusDistrict_Terrace27",
+    "TorusDistrict_TreeA",
+    "TorusCommerce_MarketA",
+    "TorusCommerce_RestaurantA",
+    "TorusCommerce_FactoryA",
+    "TorusNature_TreeA",
+    "TorusNature_ShrubA",
+    "TorusNature_GrassA",
+    "TorusNature_FlowersA",
+    "TorusNature_RockA",
+    "TorusNature_PondA",
+    "TorusNature_StreamA",
+    "TorusAgri_GrainA",
+    "TorusAgri_LegumeA",
+    "TorusAgri_VegetablesA",
+    "TorusAgri_GreenhouseA",
+    "TorusAgri_GrowingBedA",
+    "TorusAgri_IrrigationA",
+    "TorusAgri_AnimalHousingA",
+    "TorusAgri_AquacultureA",
+    "TorusFauna_CowA",
+    "TorusFauna_ChickenA",
+    "TorusFauna_RabbitA",
+    "TorusFauna_FishA",
+    "TorusTransport_RoadA",
+    "TorusTransport_BridgeA",
+    "TorusTransport_StairsRampA",
+    "TorusTransport_RailA",
+    "TorusTransport_StationA",
+    "TorusTransport_BusA",
+    "TorusTransport_CartA",
+    "TorusTransport_BicycleA",
+    "TorusUtility_WaterTankA",
+    "TorusUtility_PumpA",
+    "TorusUtility_WaterTreatmentA",
+    "TorusUtility_AirHandlerA",
+    "TorusUtility_WasteProcessingA",
+    "TorusUtility_PowerDistributionA",
+    "TorusUtility_PipesCablesA",
+    "TorusUtility_LightA",
+    "TorusStructure_HullPanelA",
+    "TorusStructure_FrameA",
+    "TorusStructure_SpokeA",
+    "TorusStructure_HubA",
+    "TorusStructure_DockingA",
+    "TorusStructure_AirlockA",
+    "TorusStructure_MirrorA",
+    "TorusStructure_ShieldA",
+    "TorusStructure_RadiatorA",
+    "TorusSettlementFarm_A01",
+    "TorusSettlementFarm_A02",
+    "TorusSettlementFarm_A03",
+    "TorusSettlementFarm_A04",
+    "TorusSettlementFarm_A05",
+    "TorusSettlementFarm_A06",
+    "TorusSettlementFarm_A07",
+    "TorusSettlementFarm_A08",
+    "TorusSettlementFarm_A09",
+    "TorusSettlementFarm_A10",
+    "TorusSettlementFarm_A11",
+    "TorusSettlementFarm_A12",
+    "TorusSettlementFarm_A13",
+    "TorusSettlementFarm_A14",
+    "TorusSettlementFarm_A15",
+    "TorusSettlementFarm_A16",
+    "TorusSettlementFarm_A17",
+    "TorusSettlementFarm_A18",
+    "TorusSettlementFarm_A19",
+    "TorusSettlementFarm_A20",
+    "TorusSettlementFarm_A21",
+    "TorusSettlementFarm_A22",
+    "TorusSettlementFarm_A23",
+    "TorusSettlementFarm_A24",
+    "TorusSettlementFarm_A25",
+    "TorusSettlementFarm_A26",
+    "TorusSettlementFarm_A27",
+    "TorusSettlementFarm_A28",
+    "TorusSettlementFarm_A29",
+    "TorusSettlementFarm_A30",
+    "TorusSettlementFarm_A31",
+    "TorusSettlementFarm_A32",
+    "TorusSettlementFarm_A33",
+    "TorusSettlementFarm_A34",
+    "TorusSettlementFarm_A35",
+    "TorusSettlementFarm_A36",
+    "TorusSettlementFarm_A37",
+    "TorusSettlementFarm_A38",
+    "TorusSettlementFarm_A39",
+    "TorusSettlementFarm_A40",
+    "TorusSettlementFarm_A41",
+    "TorusSettlementFarm_A42",
+    "TorusSettlementFarm_A43",
+    "TorusSettlementFarm_A44",
+    "TorusSettlementFarm_A45",
+    "TorusSettlementFarm_A46",
+    "TorusSettlementFarm_A47",
+    "TorusSettlementFarm_A48",
+    "TorusSettlementFarm_A49",
+    "TorusSettlementFarm_A50",
+    "TorusSettlementFarm_A51",
+    "TorusSettlementFarm_A52",
+    "TorusSettlementFarm_A53",
+    "TorusSettlementFarm_A54",
+    "TorusSettlementFarm_A55",
+    "TorusSettlementFarm_A56",
+    "TorusSettlementFarm_A57",
+    "TorusSettlementFarm_A58",
+    "TorusSettlementFarm_A59",
+    "TorusSettlementFarm_A60",
+    "TorusSettlementFarm_A61",
+    "TorusSettlementFarm_A62",
+    "TorusSettlementFarm_A63",
+    "TorusSettlementFarm_A64",
+    "TorusSettlementFarm_A65",
+    "TorusSettlementFarm_A66",
+    "TorusSettlementFarm_A67",
+    "TorusSettlementFarm_A68",
+    "TorusSettlementFarm_A69",
+    "TorusSettlementFarm_A70",
+    "TorusSettlementFarm_A71",
+    "TorusSettlementFarm_A72",
+    "TorusSettlementFarm_A73",
+    "TorusSettlementFarm_A74",
+    "TorusSettlementFarm_A75",
+    "TorusSettlementFarm_A76",
+    "TorusSettlementFarm_A77",
+    "TorusSettlementFarm_A78",
+    "TorusSettlementFarm_Wheat",
+    "TorusSettlementFarm_Garden",
+    "TorusSettlementFarm_Vegetables",
+    "TorusSettlementFarm_Soybeans",
+    "TorusSettlementFarm_Orchard",
+    "TorusSettlementFarm_Greenhouse",
+    "TorusSettlementFarm_Rice",
+    "TorusSettlementFarm_Fish",
+    "TorusSettlementFarm_Sorghum",
+    "TorusSettlementFarm_Processing",
+    "TorusSettlementFarm_Water",
+    "TorusSettlementFarm_Corn",
+    "TorusSettlementFarm_Chickens",
+    "TorusSettlementFarm_Drying",
+    "TorusSettlementFarm_Rabbits",
+    "TorusSettlementFarm_Cattle"
+  ],
+  "assets": [
+    [
+      "farm-a-plot-1",
+      109,
+      1.4471943239692195,
+      -52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-1",
+          "name": "Fish ponds",
+          "category": "fish",
+          "color": "#679eae",
+          "width": 70,
+          "depth": 19,
+          "height": 1,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.4471943239692195,
+          "z": -52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.13733142438005216
+        }
+      }
+    ],
+    [
+      "farm-a-plot-2",
+      110,
+      1.5320428088177045,
+      -52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-2",
+          "name": "Fish ponds",
+          "category": "fish",
+          "color": "#679eae",
+          "width": 70,
+          "depth": 19,
+          "height": 1,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.5320428088177045,
+          "z": -52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.2504278915165658
+        }
+      }
+    ],
+    [
+      "farm-a-plot-3",
+      111,
+      1.6168912936661892,
+      -52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-3",
+          "name": "Fish ponds",
+          "category": "fish",
+          "color": "#679eae",
+          "width": 70,
+          "depth": 19,
+          "height": 1,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.6168912936661892,
+          "z": -52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.3635243586530792
+        }
+      }
+    ],
+    [
+      "farm-a-plot-4",
+      112,
+      1.7017397785146742,
+      -52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-4",
+          "name": "Fish ponds",
+          "category": "fish",
+          "color": "#679eae",
+          "width": 70,
+          "depth": 19,
+          "height": 1,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.7017397785146742,
+          "z": -52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.47662082578959286
+        }
+      }
+    ],
+    [
+      "farm-a-plot-5",
+      113,
+      1.786588263363159,
+      -52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-5",
+          "name": "Fish ponds",
+          "category": "fish",
+          "color": "#679eae",
+          "width": 70,
+          "depth": 19,
+          "height": 1,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.786588263363159,
+          "z": -52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.5897172929261063
+        }
+      }
+    ],
+    [
+      "farm-a-plot-6",
+      114,
+      1.8714367482116439,
+      -52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-6",
+          "name": "Fish ponds",
+          "category": "fish",
+          "color": "#679eae",
+          "width": 70,
+          "depth": 19,
+          "height": 1,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.8714367482116439,
+          "z": -52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.70281376006262
+        }
+      }
+    ],
+    [
+      "farm-a-plot-7",
+      115,
+      1.9357642335917609,
+      -52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 36.14035087719304,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-7",
+          "name": "Fish ponds",
+          "category": "fish",
+          "color": "#679eae",
+          "width": 36.14035087719304,
+          "depth": 19,
+          "height": 1,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.9357642335917609,
+          "z": -52.5,
+          "elevation": 5,
+          "area": 686.6666666666679,
+          "districtId": "farm-a",
+          "u": 0.7885573222400519
+        }
+      }
+    ],
+    [
+      "farm-a-plot-8",
+      116,
+      2.000091718971878,
+      -52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-8",
+          "name": "Rice",
+          "category": "rice",
+          "color": "#9dbf87",
+          "width": 70,
+          "depth": 19,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 2.000091718971878,
+          "z": -52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.874300884417484
+        }
+      }
+    ],
+    [
+      "farm-a-plot-9",
+      117,
+      2.0623949258340515,
+      -52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 32.800291322586986,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-9",
+          "name": "Rice",
+          "category": "rice",
+          "color": "#9dbf87",
+          "width": 32.800291322586986,
+          "depth": 19,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 2.0623949258340515,
+          "z": -52.5,
+          "elevation": 5,
+          "area": 623.2055351291527,
+          "districtId": "farm-a",
+          "u": 0.9573462399116905
+        }
+      }
+    ],
+    [
+      "farm-a-plot-10",
+      118,
+      1.4471943239692195,
+      52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-10",
+          "name": "Rice",
+          "category": "rice",
+          "color": "#9dbf87",
+          "width": 70,
+          "depth": 19,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.4471943239692195,
+          "z": 52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.13733142438005216
+        }
+      }
+    ],
+    [
+      "farm-a-plot-11",
+      119,
+      1.5320428088177045,
+      52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-11",
+          "name": "Rice",
+          "category": "rice",
+          "color": "#9dbf87",
+          "width": 70,
+          "depth": 19,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.5320428088177045,
+          "z": 52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.2504278915165658
+        }
+      }
+    ],
+    [
+      "farm-a-plot-12",
+      120,
+      1.6168912936661892,
+      52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-12",
+          "name": "Rice",
+          "category": "rice",
+          "color": "#9dbf87",
+          "width": 70,
+          "depth": 19,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.6168912936661892,
+          "z": 52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.3635243586530792
+        }
+      }
+    ],
+    [
+      "farm-a-plot-13",
+      121,
+      1.7017397785146742,
+      52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-13",
+          "name": "Rice",
+          "category": "rice",
+          "color": "#9dbf87",
+          "width": 70,
+          "depth": 19,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.7017397785146742,
+          "z": 52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.47662082578959286
+        }
+      }
+    ],
+    [
+      "farm-a-plot-14",
+      122,
+      1.786588263363159,
+      52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-14",
+          "name": "Rice",
+          "category": "rice",
+          "color": "#9dbf87",
+          "width": 70,
+          "depth": 19,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.786588263363159,
+          "z": 52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.5897172929261063
+        }
+      }
+    ],
+    [
+      "farm-a-plot-15",
+      123,
+      1.8714367482116439,
+      52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-15",
+          "name": "Rice",
+          "category": "rice",
+          "color": "#9dbf87",
+          "width": 70,
+          "depth": 19,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.8714367482116439,
+          "z": 52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.70281376006262
+        }
+      }
+    ],
+    [
+      "farm-a-plot-16",
+      124,
+      1.9562852330601286,
+      52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-16",
+          "name": "Rice",
+          "category": "rice",
+          "color": "#9dbf87",
+          "width": 70,
+          "depth": 19,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 1.9562852330601286,
+          "z": 52.5,
+          "elevation": 5,
+          "area": 1330,
+          "districtId": "farm-a",
+          "u": 0.8159102271991333
+        }
+      }
+    ],
+    [
+      "farm-a-plot-17",
+      125,
+      2.022211691269725,
+      52.5,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-ponds",
+        "height": 4.95,
+        "anchorHeight": 5,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 38.77865604583406,
+          "depth": 19,
+          "curveRadiusMeters": 825,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-17",
+          "name": "Rice",
+          "category": "rice",
+          "color": "#9dbf87",
+          "width": 38.77865604583406,
+          "depth": 19,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-ponds",
+          "theta": 2.022211691269725,
+          "z": 52.5,
+          "elevation": 5,
+          "area": 736.7944648708472,
+          "districtId": "farm-a",
+          "u": 0.903785096475146
+        }
+      }
+    ],
+    [
+      "farm-a-plot-18",
+      126,
+      1.4453544971293928,
+      -44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-18",
+          "name": "Wheat",
+          "category": "wheat",
+          "color": "#d5c084",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.4453544971293928,
+          "z": -44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.13487907751612277
+        }
+      }
+    ],
+    [
+      "farm-a-plot-19",
+      127,
+      1.528687830462726,
+      -44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-19",
+          "name": "Wheat",
+          "category": "wheat",
+          "color": "#d5c084",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.528687830462726,
+          "z": -44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.2459559648823413
+        }
+      }
+    ],
+    [
+      "farm-a-plot-20",
+      128,
+      1.6120211637960593,
+      -44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-20",
+          "name": "Wheat",
+          "category": "wheat",
+          "color": "#d5c084",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.6120211637960593,
+          "z": -44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.35703285224855985
+        }
+      }
+    ],
+    [
+      "farm-a-plot-21",
+      129,
+      1.6953544971293928,
+      -44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-21",
+          "name": "Wheat",
+          "category": "wheat",
+          "color": "#d5c084",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.6953544971293928,
+          "z": -44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.46810973961477875
+        }
+      }
+    ],
+    [
+      "farm-a-plot-22",
+      130,
+      1.778687830462726,
+      -44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-22",
+          "name": "Wheat",
+          "category": "wheat",
+          "color": "#d5c084",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.778687830462726,
+          "z": -44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.5791866269809973
+        }
+      }
+    ],
+    [
+      "farm-a-plot-23",
+      131,
+      1.8620211637960593,
+      -44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-23",
+          "name": "Wheat",
+          "category": "wheat",
+          "color": "#d5c084",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.8620211637960593,
+          "z": -44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.6902635143472159
+        }
+      }
+    ],
+    [
+      "farm-a-plot-24",
+      132,
+      1.9453544971293928,
+      -44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-24",
+          "name": "Wheat",
+          "category": "wheat",
+          "color": "#d5c084",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.9453544971293928,
+          "z": -44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.8013404017134347
+        }
+      }
+    ],
+    [
+      "farm-a-plot-25",
+      133,
+      2.028687830462726,
+      -44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-25",
+          "name": "Wheat",
+          "category": "wheat",
+          "color": "#d5c084",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 2.028687830462726,
+          "z": -44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.9124172890796529
+        }
+      }
+    ],
+    [
+      "farm-a-plot-26",
+      134,
+      2.076422418808913,
+      -44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 10.194108421594137,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-26",
+          "name": "Wheat",
+          "category": "wheat",
+          "color": "#d5c084",
+          "width": 10.194108421594137,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 2.076422418808913,
+          "z": -44,
+          "elevation": -10,
+          "area": 346.59968633420067,
+          "districtId": "farm-a",
+          "u": 0.9760438029980797
+        }
+      }
+    ],
+    [
+      "farm-a-plot-27",
+      135,
+      1.4453544971293928,
+      44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-27",
+          "name": "Wheat",
+          "category": "wheat",
+          "color": "#d5c084",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.4453544971293928,
+          "z": 44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.13487907751612277
+        }
+      }
+    ],
+    [
+      "farm-a-plot-28",
+      136,
+      1.5261213093434298,
+      44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 65.68824451958233,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-28",
+          "name": "Wheat",
+          "category": "wheat",
+          "color": "#d5c084",
+          "width": 65.68824451958233,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.5261213093434298,
+          "z": 44,
+          "elevation": -10,
+          "area": 2233.4003136657993,
+          "districtId": "farm-a",
+          "u": 0.24253499075484825
+        }
+      }
+    ],
+    [
+      "farm-a-plot-29",
+      137,
+      1.6068881215574669,
+      44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-29",
+          "name": "Sorghum",
+          "category": "sorghum",
+          "color": "#cfac61",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.6068881215574669,
+          "z": 44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.3501909039935738
+        }
+      }
+    ],
+    [
+      "farm-a-plot-30",
+      138,
+      1.6902214548908003,
+      44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-30",
+          "name": "Sorghum",
+          "category": "sorghum",
+          "color": "#cfac61",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.6902214548908003,
+          "z": 44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.4612677913597926
+        }
+      }
+    ],
+    [
+      "farm-a-plot-31",
+      139,
+      1.7735547882241336,
+      44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-31",
+          "name": "Sorghum",
+          "category": "sorghum",
+          "color": "#cfac61",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.7735547882241336,
+          "z": 44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.5723446787260111
+        }
+      }
+    ],
+    [
+      "farm-a-plot-32",
+      140,
+      1.8568881215574669,
+      44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-32",
+          "name": "Sorghum",
+          "category": "sorghum",
+          "color": "#cfac61",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.8568881215574669,
+          "z": 44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.6834215660922297
+        }
+      }
+    ],
+    [
+      "farm-a-plot-33",
+      141,
+      1.9402214548908003,
+      44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-33",
+          "name": "Sorghum",
+          "category": "sorghum",
+          "color": "#cfac61",
+          "width": 70,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.9402214548908003,
+          "z": 44,
+          "elevation": -10,
+          "area": 2380,
+          "districtId": "farm-a",
+          "u": 0.7944984534584486
+        }
+      }
+    ],
+    [
+      "farm-a-plot-34",
+      142,
+      1.9953101570383258,
+      44,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-grain",
+        "height": -10.05,
+        "anchorHeight": -10,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 22.54901960784312,
+          "depth": 34,
+          "curveRadiusMeters": 840,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-34",
+          "name": "Sorghum",
+          "category": "sorghum",
+          "color": "#cfac61",
+          "width": 22.54901960784312,
+          "depth": 34,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-grain",
+          "theta": 1.9953101570383258,
+          "z": 44,
+          "elevation": -10,
+          "area": 766.6666666666661,
+          "districtId": "farm-a",
+          "u": 0.8679274322215509
+        }
+      }
+    ],
+    [
+      "farm-a-plot-35",
+      143,
+      1.443579225617279,
+      -33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-35",
+          "name": "Vegetables",
+          "category": "vegetables",
+          "color": "#569969",
+          "width": 70,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.443579225617279,
+          "z": -33,
+          "elevation": -25,
+          "area": 3360,
+          "districtId": "farm-a",
+          "u": 0.13251277791057656
+        }
+      }
+    ],
+    [
+      "farm-a-plot-36",
+      144,
+      1.525450570646519,
+      -33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-36",
+          "name": "Vegetables",
+          "category": "vegetables",
+          "color": "#569969",
+          "width": 70,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.525450570646519,
+          "z": -33,
+          "elevation": -25,
+          "area": 3360,
+          "districtId": "farm-a",
+          "u": 0.241640947954581
+        }
+      }
+    ],
+    [
+      "farm-a-plot-37",
+      145,
+      1.6073219156757586,
+      -33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-37",
+          "name": "Vegetables",
+          "category": "vegetables",
+          "color": "#569969",
+          "width": 70,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.6073219156757586,
+          "z": -33,
+          "elevation": -25,
+          "area": 3360,
+          "districtId": "farm-a",
+          "u": 0.3507691179985851
+        }
+      }
+    ],
+    [
+      "farm-a-plot-38",
+      146,
+      1.6891932607049984,
+      -33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-38",
+          "name": "Vegetables",
+          "category": "vegetables",
+          "color": "#569969",
+          "width": 70,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.6891932607049984,
+          "z": -33,
+          "elevation": -25,
+          "area": 3360,
+          "districtId": "farm-a",
+          "u": 0.45989728804258956
+        }
+      }
+    ],
+    [
+      "farm-a-plot-39",
+      147,
+      1.771064605734238,
+      -33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-39",
+          "name": "Vegetables",
+          "category": "vegetables",
+          "color": "#569969",
+          "width": 70,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.771064605734238,
+          "z": -33,
+          "elevation": -25,
+          "area": 3360,
+          "districtId": "farm-a",
+          "u": 0.5690254580865937
+        }
+      }
+    ],
+    [
+      "farm-a-plot-40",
+      148,
+      1.8184980040448295,
+      -33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 11.111111111111162,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-40",
+          "name": "Vegetables",
+          "category": "vegetables",
+          "color": "#569969",
+          "width": 11.111111111111162,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.8184980040448295,
+          "z": -33,
+          "elevation": -25,
+          "area": 533.3333333333358,
+          "districtId": "farm-a",
+          "u": 0.6322505089851044
+        }
+      }
+    ],
+    [
+      "farm-a-plot-41",
+      149,
+      1.86154543744314,
+      -33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 62.5,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-41",
+          "name": "Corn",
+          "category": "corn",
+          "color": "#b2c74a",
+          "width": 62.5,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.86154543744314,
+          "z": -33,
+          "elevation": -25,
+          "area": 3000,
+          "districtId": "farm-a",
+          "u": 0.6896294079169715
+        }
+      }
+    ],
+    [
+      "farm-a-plot-42",
+      150,
+      1.939030817560099,
+      -33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-42",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.939030817560099,
+          "z": -33,
+          "elevation": -25,
+          "area": 3360,
+          "districtId": "farm-a",
+          "u": 0.7929114259943326
+        }
+      }
+    ],
+    [
+      "farm-a-plot-43",
+      151,
+      2.020902162589339,
+      -33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-43",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 2.020902162589339,
+          "z": -33,
+          "elevation": -25,
+          "area": 3360,
+          "districtId": "farm-a",
+          "u": 0.902039596038337
+        }
+      }
+    ],
+    [
+      "farm-a-plot-44",
+      152,
+      2.072268515532203,
+      -33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 17.836463532297216,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-44",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 17.836463532297216,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 2.072268515532203,
+          "z": -33,
+          "elevation": -25,
+          "area": 856.1502495502664,
+          "districtId": "farm-a",
+          "u": 0.9705069712413124
+        }
+      }
+    ],
+    [
+      "farm-a-plot-45",
+      153,
+      1.443579225617279,
+      33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-45",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.443579225617279,
+          "z": 33,
+          "elevation": -25,
+          "area": 3360,
+          "districtId": "farm-a",
+          "u": 0.13251277791057656
+        }
+      }
+    ],
+    [
+      "farm-a-plot-46",
+      154,
+      1.525450570646519,
+      33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-46",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.525450570646519,
+          "z": 33,
+          "elevation": -25,
+          "area": 3360,
+          "districtId": "farm-a",
+          "u": 0.241640947954581
+        }
+      }
+    ],
+    [
+      "farm-a-plot-47",
+      155,
+      1.6073219156757586,
+      33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-47",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.6073219156757586,
+          "z": 33,
+          "elevation": -25,
+          "area": 3360,
+          "districtId": "farm-a",
+          "u": 0.3507691179985851
+        }
+      }
+    ],
+    [
+      "farm-a-plot-48",
+      156,
+      1.6891932607049984,
+      33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-48",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.6891932607049984,
+          "z": 33,
+          "elevation": -25,
+          "area": 3360,
+          "districtId": "farm-a",
+          "u": 0.45989728804258956
+        }
+      }
+    ],
+    [
+      "farm-a-plot-49",
+      157,
+      1.771064605734238,
+      33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-49",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.771064605734238,
+          "z": 33,
+          "elevation": -25,
+          "area": 3360,
+          "districtId": "farm-a",
+          "u": 0.5690254580865937
+        }
+      }
+    ],
+    [
+      "farm-a-plot-50",
+      158,
+      1.852935950763478,
+      33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-50",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.852935950763478,
+          "z": 33,
+          "elevation": -25,
+          "area": 3360,
+          "districtId": "farm-a",
+          "u": 0.6781536281305981
+        }
+      }
+    ],
+    [
+      "farm-a-plot-51",
+      159,
+      1.9214526387562865,
+      33,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-gardens",
+        "height": -25.05,
+        "anchorHeight": -25,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 47.16353646770282,
+          "depth": 48,
+          "curveRadiusMeters": 855,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-51",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 47.16353646770282,
+          "depth": 48,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-gardens",
+          "theta": 1.9214526387562865,
+          "z": 33,
+          "elevation": -25,
+          "area": 2263.8497504497354,
+          "districtId": "farm-a",
+          "u": 0.7694810733492006
+        }
+      }
+    ],
+    [
+      "farm-a-plot-52",
+      160,
+      1.4418651703642038,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-livestock",
+        "height": -40.05,
+        "anchorHeight": -40,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 96,
+          "curveRadiusMeters": 870,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-52",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 96,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-livestock",
+          "theta": 1.4418651703642038,
+          "z": 0,
+          "elevation": -40,
+          "area": 6720,
+          "districtId": "farm-a",
+          "u": 0.13022807484315282
+        }
+      }
+    ],
+    [
+      "farm-a-plot-53",
+      161,
+      1.5223249404791463,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-livestock",
+        "height": -40.05,
+        "anchorHeight": -40,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 96,
+          "curveRadiusMeters": 870,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-53",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 96,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-livestock",
+          "theta": 1.5223249404791463,
+          "z": 0,
+          "elevation": -40,
+          "area": 6720,
+          "districtId": "farm-a",
+          "u": 0.23747472471398465
+        }
+      }
+    ],
+    [
+      "farm-a-plot-54",
+      162,
+      1.602784710594089,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-livestock",
+        "height": -40.05,
+        "anchorHeight": -40,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 96,
+          "curveRadiusMeters": 870,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-54",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 96,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-livestock",
+          "theta": 1.602784710594089,
+          "z": 0,
+          "elevation": -40,
+          "area": 6720,
+          "districtId": "farm-a",
+          "u": 0.34472137458481644
+        }
+      }
+    ],
+    [
+      "farm-a-plot-55",
+      163,
+      1.6832444807090314,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-livestock",
+        "height": -40.05,
+        "anchorHeight": -40,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 96,
+          "curveRadiusMeters": 870,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-55",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 96,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-livestock",
+          "theta": 1.6832444807090314,
+          "z": 0,
+          "elevation": -40,
+          "area": 6720,
+          "districtId": "farm-a",
+          "u": 0.45196802445564827
+        }
+      }
+    ],
+    [
+      "farm-a-plot-56",
+      164,
+      1.763704250823974,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-livestock",
+        "height": -40.05,
+        "anchorHeight": -40,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 96,
+          "curveRadiusMeters": 870,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-56",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 96,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-livestock",
+          "theta": 1.763704250823974,
+          "z": 0,
+          "elevation": -40,
+          "area": 6720,
+          "districtId": "farm-a",
+          "u": 0.5592146743264801
+        }
+      }
+    ],
+    [
+      "farm-a-plot-57",
+      165,
+      1.8441640209389165,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-livestock",
+        "height": -40.05,
+        "anchorHeight": -40,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 96,
+          "curveRadiusMeters": 870,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-57",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 96,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-livestock",
+          "theta": 1.8441640209389165,
+          "z": 0,
+          "elevation": -40,
+          "area": 6720,
+          "districtId": "farm-a",
+          "u": 0.666461324197312
+        }
+      }
+    ],
+    [
+      "farm-a-plot-58",
+      166,
+      1.924623791053859,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-livestock",
+        "height": -40.05,
+        "anchorHeight": -40,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 96,
+          "curveRadiusMeters": 870,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-58",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 70,
+          "depth": 96,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-livestock",
+          "theta": 1.924623791053859,
+          "z": 0,
+          "elevation": -40,
+          "area": 6720,
+          "districtId": "farm-a",
+          "u": 0.7737079740681437
+        }
+      }
+    ],
+    [
+      "farm-a-plot-59",
+      167,
+      1.9725963325608835,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-livestock",
+        "height": -40.05,
+        "anchorHeight": -40,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 13.472222222222323,
+          "depth": 96,
+          "curveRadiusMeters": 870,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-59",
+          "name": "Soybeans",
+          "category": "soybeans",
+          "color": "#81a855",
+          "width": 13.472222222222323,
+          "depth": 96,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-livestock",
+          "theta": 1.9725963325608835,
+          "z": 0,
+          "elevation": -40,
+          "area": 1293.333333333343,
+          "districtId": "farm-a",
+          "u": 0.8376516611439078
+        }
+      }
+    ],
+    [
+      "farm-a-plot-60",
+      168,
+      1.9963032291126077,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-livestock",
+        "height": -40.05,
+        "anchorHeight": -40,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 27.777777777777782,
+          "depth": 96,
+          "curveRadiusMeters": 870,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "shed",
+            "x": -7.7777777777777795,
+            "z": -22.080000000000002,
+            "width": 9.922222222222222,
+            "depth": 29.959999999999997,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          },
+          {
+            "name": "shed",
+            "x": 7.7777777777777795,
+            "z": -22.080000000000002,
+            "width": 9.922222222222222,
+            "depth": 29.959999999999997,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-60",
+          "name": "Chickens",
+          "category": "chickens",
+          "color": "#e0b08a",
+          "width": 27.777777777777782,
+          "depth": 96,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-livestock",
+          "theta": 1.9963032291126077,
+          "z": 0,
+          "elevation": -40,
+          "area": 2666.666666666667,
+          "districtId": "farm-a",
+          "u": 0.8692511204808494
+        }
+      }
+    ],
+    [
+      "farm-a-plot-61",
+      169,
+      2.034218299355264,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-livestock",
+        "height": -40.05,
+        "anchorHeight": -40,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 38.19444444444445,
+          "depth": 96,
+          "curveRadiusMeters": 870,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "shed",
+            "x": -10.694444444444446,
+            "z": -22.080000000000002,
+            "width": 13.568055555555556,
+            "depth": 29.959999999999997,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          },
+          {
+            "name": "shed",
+            "x": 10.694444444444446,
+            "z": -22.080000000000002,
+            "width": 13.568055555555556,
+            "depth": 29.959999999999997,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-61",
+          "name": "Rabbits",
+          "category": "rabbits",
+          "color": "#bdb0a5",
+          "width": 38.19444444444445,
+          "depth": 96,
+          "height": 0.45,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-livestock",
+          "theta": 2.034218299355264,
+          "z": 0,
+          "elevation": -40,
+          "area": 3666.666666666667,
+          "districtId": "farm-a",
+          "u": 0.9197889763227594
+        }
+      }
+    ],
+    [
+      "farm-a-plot-62",
+      170,
+      2.0681423095723774,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-livestock",
+        "height": -40.05,
+        "anchorHeight": -40,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 20.833333333333332,
+          "depth": 96,
+          "curveRadiusMeters": 870,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "shed",
+            "x": -5.833333333333334,
+            "z": -22.080000000000002,
+            "width": 7.491666666666666,
+            "depth": 29.959999999999997,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          },
+          {
+            "name": "shed",
+            "x": 5.833333333333334,
+            "z": -22.080000000000002,
+            "width": 7.491666666666666,
+            "depth": 29.959999999999997,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-62",
+          "name": "Cattle",
+          "category": "cattle",
+          "color": "#b7967b",
+          "width": 20.833333333333332,
+          "depth": 96,
+          "height": 2,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-livestock",
+          "theta": 2.0681423095723774,
+          "z": 0,
+          "elevation": -40,
+          "area": 2000,
+          "districtId": "farm-a",
+          "u": 0.9650070578655201
+        }
+      }
+    ],
+    [
+      "farm-a-plot-63",
+      171,
+      1.4407549300298257,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-drying",
+        "height": -50.05,
+        "anchorHeight": -50,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 76,
+          "curveRadiusMeters": 880,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "shed",
+            "x": -19.6,
+            "z": -17.48,
+            "width": 23.2,
+            "depth": 23.759999999999998,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          },
+          {
+            "name": "shed",
+            "x": 19.6,
+            "z": -17.48,
+            "width": 23.2,
+            "depth": 23.759999999999998,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 12.920000000000002,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 12.920000000000002,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 17.1,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 17.1,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 21.28,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 21.28,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 25.46,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 25.46,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 29.64,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 29.64,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-63",
+          "name": "Drying",
+          "category": "drying",
+          "color": "#d3b47d",
+          "width": 70,
+          "depth": 76,
+          "height": 3,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-drying",
+          "theta": 1.4407549300298257,
+          "z": 0,
+          "elevation": -50,
+          "area": 5320,
+          "districtId": "farm-a",
+          "u": 0.128748210356299
+        }
+      }
+    ],
+    [
+      "farm-a-plot-64",
+      172,
+      1.5203003845752803,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-drying",
+        "height": -50.05,
+        "anchorHeight": -50,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 76,
+          "curveRadiusMeters": 880,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "shed",
+            "x": -19.6,
+            "z": -17.48,
+            "width": 23.2,
+            "depth": 23.759999999999998,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          },
+          {
+            "name": "shed",
+            "x": 19.6,
+            "z": -17.48,
+            "width": 23.2,
+            "depth": 23.759999999999998,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 12.920000000000002,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 12.920000000000002,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 17.1,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 17.1,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 21.28,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 21.28,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 25.46,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 25.46,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 29.64,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 29.64,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-64",
+          "name": "Drying",
+          "category": "drying",
+          "color": "#d3b47d",
+          "width": 70,
+          "depth": 76,
+          "height": 3,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-drying",
+          "theta": 1.5203003845752803,
+          "z": 0,
+          "elevation": -50,
+          "area": 5320,
+          "districtId": "farm-a",
+          "u": 0.2347761482967805
+        }
+      }
+    ],
+    [
+      "farm-a-plot-65",
+      173,
+      1.5998458391207346,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-drying",
+        "height": -50.05,
+        "anchorHeight": -50,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 76,
+          "curveRadiusMeters": 880,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "shed",
+            "x": -19.6,
+            "z": -17.48,
+            "width": 23.2,
+            "depth": 23.759999999999998,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          },
+          {
+            "name": "shed",
+            "x": 19.6,
+            "z": -17.48,
+            "width": 23.2,
+            "depth": 23.759999999999998,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 12.920000000000002,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 12.920000000000002,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 17.1,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 17.1,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 21.28,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 21.28,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 25.46,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 25.46,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 29.64,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 29.64,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-65",
+          "name": "Drying",
+          "category": "drying",
+          "color": "#d3b47d",
+          "width": 70,
+          "depth": 76,
+          "height": 3,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-drying",
+          "theta": 1.5998458391207346,
+          "z": 0,
+          "elevation": -50,
+          "area": 5320,
+          "districtId": "farm-a",
+          "u": 0.3408040862372617
+        }
+      }
+    ],
+    [
+      "farm-a-plot-66",
+      174,
+      1.6793912936661892,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-drying",
+        "height": -50.05,
+        "anchorHeight": -50,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 76,
+          "curveRadiusMeters": 880,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "shed",
+            "x": -19.6,
+            "z": -17.48,
+            "width": 23.2,
+            "depth": 23.759999999999998,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          },
+          {
+            "name": "shed",
+            "x": 19.6,
+            "z": -17.48,
+            "width": 23.2,
+            "depth": 23.759999999999998,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 12.920000000000002,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 12.920000000000002,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 17.1,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 17.1,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 21.28,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 21.28,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 25.46,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 25.46,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 29.64,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 29.64,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-66",
+          "name": "Drying",
+          "category": "drying",
+          "color": "#d3b47d",
+          "width": 70,
+          "depth": 76,
+          "height": 3,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-drying",
+          "theta": 1.6793912936661892,
+          "z": 0,
+          "elevation": -50,
+          "area": 5320,
+          "districtId": "farm-a",
+          "u": 0.4468320241777432
+        }
+      }
+    ],
+    [
+      "farm-a-plot-67",
+      175,
+      1.7589367482116438,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-drying",
+        "height": -50.05,
+        "anchorHeight": -50,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 76,
+          "curveRadiusMeters": 880,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "shed",
+            "x": -19.6,
+            "z": -17.48,
+            "width": 23.2,
+            "depth": 23.759999999999998,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          },
+          {
+            "name": "shed",
+            "x": 19.6,
+            "z": -17.48,
+            "width": 23.2,
+            "depth": 23.759999999999998,
+            "minHeight": 0,
+            "maxHeight": 3.15
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 12.920000000000002,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 12.920000000000002,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 17.1,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 17.1,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 21.28,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 21.28,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 25.46,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 25.46,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": -19.6,
+            "z": 29.64,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          },
+          {
+            "name": "drying-tray",
+            "x": 19.6,
+            "z": 29.64,
+            "width": 20,
+            "depth": 1.9000000000000001,
+            "minHeight": 0,
+            "maxHeight": 0.4
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-67",
+          "name": "Drying",
+          "category": "drying",
+          "color": "#d3b47d",
+          "width": 70,
+          "depth": 76,
+          "height": 3,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-drying",
+          "theta": 1.7589367482116438,
+          "z": 0,
+          "elevation": -50,
+          "area": 5320,
+          "districtId": "farm-a",
+          "u": 0.5528599621182247
+        }
+      }
+    ],
+    [
+      "farm-a-plot-68",
+      176,
+      1.7992078805880394,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-drying",
+        "height": -50.05,
+        "anchorHeight": -50,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 0.8771929824561563,
+          "depth": 76,
+          "curveRadiusMeters": 880,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-68",
+          "name": "Drying",
+          "category": "drying",
+          "color": "#d3b47d",
+          "width": 0.8771929824561563,
+          "depth": 76,
+          "height": 3,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-drying",
+          "theta": 1.7992078805880394,
+          "z": 0,
+          "elevation": -50,
+          "area": 66.66666666666788,
+          "districtId": "farm-a",
+          "u": 0.6065382665392204
+        }
+      }
+    ],
+    [
+      "farm-a-plot-69",
+      177,
+      1.4401008155213093,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-processing",
+        "height": -56.05,
+        "anchorHeight": -56,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 58,
+          "curveRadiusMeters": 886,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "shed",
+            "x": -19.6,
+            "z": -13.34,
+            "width": 23.2,
+            "depth": 18.18,
+            "minHeight": 0,
+            "maxHeight": 3.85
+          },
+          {
+            "name": "shed",
+            "x": 19.6,
+            "z": -13.34,
+            "width": 23.2,
+            "depth": 18.18,
+            "minHeight": 0,
+            "maxHeight": 3.85
+          },
+          {
+            "name": "collection-crate",
+            "x": -21.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": -19.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": -17.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": 17.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": 19.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": 21.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-69",
+          "name": "Processing, collection & storage",
+          "category": "processing",
+          "color": "#b6a1c1",
+          "width": 70,
+          "depth": 58,
+          "height": 4,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-processing",
+          "theta": 1.4401008155213093,
+          "z": 0,
+          "elevation": -56,
+          "area": 4060,
+          "districtId": "farm-a",
+          "u": 0.127876326313254
+        }
+      }
+    ],
+    [
+      "farm-a-plot-70",
+      178,
+      1.5191075875303386,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-processing",
+        "height": -56.05,
+        "anchorHeight": -56,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 58,
+          "curveRadiusMeters": 886,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "shed",
+            "x": -19.6,
+            "z": -13.34,
+            "width": 23.2,
+            "depth": 18.18,
+            "minHeight": 0,
+            "maxHeight": 3.85
+          },
+          {
+            "name": "shed",
+            "x": 19.6,
+            "z": -13.34,
+            "width": 23.2,
+            "depth": 18.18,
+            "minHeight": 0,
+            "maxHeight": 3.85
+          },
+          {
+            "name": "collection-crate",
+            "x": -21.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": -19.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": -17.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": 17.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": 19.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": 21.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-70",
+          "name": "Processing, collection & storage",
+          "category": "processing",
+          "color": "#b6a1c1",
+          "width": 70,
+          "depth": 58,
+          "height": 4,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-processing",
+          "theta": 1.5191075875303386,
+          "z": 0,
+          "elevation": -56,
+          "area": 4060,
+          "districtId": "farm-a",
+          "u": 0.23318624210063954
+        }
+      }
+    ],
+    [
+      "farm-a-plot-71",
+      179,
+      1.5981143595393679,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-processing",
+        "height": -56.05,
+        "anchorHeight": -56,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 58,
+          "curveRadiusMeters": 886,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "shed",
+            "x": -19.6,
+            "z": -13.34,
+            "width": 23.2,
+            "depth": 18.18,
+            "minHeight": 0,
+            "maxHeight": 3.85
+          },
+          {
+            "name": "shed",
+            "x": 19.6,
+            "z": -13.34,
+            "width": 23.2,
+            "depth": 18.18,
+            "minHeight": 0,
+            "maxHeight": 3.85
+          },
+          {
+            "name": "collection-crate",
+            "x": -21.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": -19.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": -17.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": 17.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": 19.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": 21.6,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-71",
+          "name": "Processing, collection & storage",
+          "category": "processing",
+          "color": "#b6a1c1",
+          "width": 70,
+          "depth": 58,
+          "height": 4,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-processing",
+          "theta": 1.5981143595393679,
+          "z": 0,
+          "elevation": -56,
+          "area": 4060,
+          "districtId": "farm-a",
+          "u": 0.3384961578880251
+        }
+      }
+    ],
+    [
+      "farm-a-plot-72",
+      180,
+      1.6488395612725872,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-processing",
+        "height": -56.05,
+        "anchorHeight": -56,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 19.88505747126438,
+          "depth": 58,
+          "curveRadiusMeters": 886,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "shed",
+            "x": -5.567816091954026,
+            "z": -13.34,
+            "width": 7.159770114942532,
+            "depth": 18.18,
+            "minHeight": 0,
+            "maxHeight": 3.85
+          },
+          {
+            "name": "shed",
+            "x": 5.567816091954026,
+            "z": -13.34,
+            "width": 7.159770114942532,
+            "depth": 18.18,
+            "minHeight": 0,
+            "maxHeight": 3.85
+          },
+          {
+            "name": "collection-crate",
+            "x": -6.164367816091958,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": -5.567816091954026,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": -4.971264367816095,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": 4.971264367816095,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": 5.567816091954026,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          },
+          {
+            "name": "collection-crate",
+            "x": 6.164367816091958,
+            "z": 14.5,
+            "width": 1.5,
+            "depth": 1.5,
+            "minHeight": 0,
+            "maxHeight": 1.3
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-72",
+          "name": "Processing, collection & storage",
+          "category": "processing",
+          "color": "#b6a1c1",
+          "width": 19.88505747126438,
+          "depth": 58,
+          "height": 4,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-processing",
+          "theta": 1.6488395612725872,
+          "z": 0,
+          "elevation": -56,
+          "area": 1153.333333333334,
+          "districtId": "farm-a",
+          "u": 0.4061089281226194
+        }
+      }
+    ],
+    [
+      "farm-a-plot-73",
+      181,
+      1.4395624496706785,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-water",
+        "height": -61.05,
+        "anchorHeight": -61,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 38,
+          "curveRadiusMeters": 891,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "pump-filter",
+            "x": -19.6,
+            "z": 0,
+            "width": 7,
+            "depth": 8,
+            "minHeight": 0,
+            "maxHeight": 2.2
+          },
+          {
+            "name": "pump-filter",
+            "x": 19.6,
+            "z": 0,
+            "width": 7,
+            "depth": 8,
+            "minHeight": 0,
+            "maxHeight": 2.2
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-73",
+          "name": "Waste & water treatment",
+          "category": "water",
+          "color": "#8eacb9",
+          "width": 70,
+          "depth": 38,
+          "height": 3,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-water",
+          "theta": 1.4395624496706785,
+          "z": 0,
+          "elevation": -61,
+          "area": 2660,
+          "districtId": "farm-a",
+          "u": 0.12715872627782593
+        }
+      }
+    ],
+    [
+      "farm-a-plot-74",
+      182,
+      1.5181258615674238,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-water",
+        "height": -61.05,
+        "anchorHeight": -61,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 38,
+          "curveRadiusMeters": 891,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "pump-filter",
+            "x": -19.6,
+            "z": 0,
+            "width": 7,
+            "depth": 8,
+            "minHeight": 0,
+            "maxHeight": 2.2
+          },
+          {
+            "name": "pump-filter",
+            "x": 19.6,
+            "z": 0,
+            "width": 7,
+            "depth": 8,
+            "minHeight": 0,
+            "maxHeight": 2.2
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-74",
+          "name": "Waste & water treatment",
+          "category": "water",
+          "color": "#8eacb9",
+          "width": 70,
+          "depth": 38,
+          "height": 3,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-water",
+          "theta": 1.5181258615674238,
+          "z": 0,
+          "elevation": -61,
+          "area": 2660,
+          "districtId": "farm-a",
+          "u": 0.2318776773301534
+        }
+      }
+    ],
+    [
+      "farm-a-plot-75",
+      183,
+      1.5966892734641691,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-water",
+        "height": -61.05,
+        "anchorHeight": -61,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 38,
+          "curveRadiusMeters": 891,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "pump-filter",
+            "x": -19.6,
+            "z": 0,
+            "width": 7,
+            "depth": 8,
+            "minHeight": 0,
+            "maxHeight": 2.2
+          },
+          {
+            "name": "pump-filter",
+            "x": 19.6,
+            "z": 0,
+            "width": 7,
+            "depth": 8,
+            "minHeight": 0,
+            "maxHeight": 2.2
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-75",
+          "name": "Waste & water treatment",
+          "category": "water",
+          "color": "#8eacb9",
+          "width": 70,
+          "depth": 38,
+          "height": 3,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-water",
+          "theta": 1.5966892734641691,
+          "z": 0,
+          "elevation": -61,
+          "area": 2660,
+          "districtId": "farm-a",
+          "u": 0.3365966283824809
+        }
+      }
+    ],
+    [
+      "farm-a-plot-76",
+      184,
+      1.6752526853609142,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-water",
+        "height": -61.05,
+        "anchorHeight": -61,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 38,
+          "curveRadiusMeters": 891,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "pump-filter",
+            "x": -19.6,
+            "z": 0,
+            "width": 7,
+            "depth": 8,
+            "minHeight": 0,
+            "maxHeight": 2.2
+          },
+          {
+            "name": "pump-filter",
+            "x": 19.6,
+            "z": 0,
+            "width": 7,
+            "depth": 8,
+            "minHeight": 0,
+            "maxHeight": 2.2
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-76",
+          "name": "Waste & water treatment",
+          "category": "water",
+          "color": "#8eacb9",
+          "width": 70,
+          "depth": 38,
+          "height": 3,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-water",
+          "theta": 1.6752526853609142,
+          "z": 0,
+          "elevation": -61,
+          "area": 2660,
+          "districtId": "farm-a",
+          "u": 0.44131557943480804
+        }
+      }
+    ],
+    [
+      "farm-a-plot-77",
+      185,
+      1.7538160972576595,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-water",
+        "height": -61.05,
+        "anchorHeight": -61,
+        "districtId": "farm-a",
+        "collisionMode": "farm-zoned",
+        "collisionSupport": {
+          "width": 70,
+          "depth": 38,
+          "curveRadiusMeters": 891,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [
+          {
+            "name": "pump-filter",
+            "x": -19.6,
+            "z": 0,
+            "width": 7,
+            "depth": 8,
+            "minHeight": 0,
+            "maxHeight": 2.2
+          },
+          {
+            "name": "pump-filter",
+            "x": 19.6,
+            "z": 0,
+            "width": 7,
+            "depth": 8,
+            "minHeight": 0,
+            "maxHeight": 2.2
+          }
+        ],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-77",
+          "name": "Waste & water treatment",
+          "category": "water",
+          "color": "#8eacb9",
+          "width": 70,
+          "depth": 38,
+          "height": 3,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-water",
+          "theta": 1.7538160972576595,
+          "z": 0,
+          "elevation": -61,
+          "area": 2660,
+          "districtId": "farm-a",
+          "u": 0.5460345304871355
+        }
+      }
+    ],
+    [
+      "farm-a-plot-78",
+      186,
+      1.7935900551602724,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "farm-a-water",
+        "height": -61.05,
+        "anchorHeight": -61,
+        "districtId": "farm-a",
+        "collisionMode": "support-only",
+        "collisionSupport": {
+          "width": 0.8771929824561563,
+          "depth": 38,
+          "curveRadiusMeters": 891,
+          "heightMeters": 0.05
+        },
+        "collisionSolids": [],
+        "collisionIgnoreGroups": [
+          "ornament",
+          "water",
+          "glass",
+          "lighting"
+        ],
+        "collisionIntegration": "Consume curved intrinsic support and explicit solid blockers; never mark barns/pumps noncolliding. Native integration owned by parent/performance worker.",
+        "sourcePlot": {
+          "id": "farm-a-plot-78",
+          "name": "Waste & water treatment",
+          "category": "water",
+          "color": "#8eacb9",
+          "width": 0.8771929824561563,
+          "depth": 38,
+          "height": 3,
+          "levels": 1,
+          "deck": 0,
+          "deckId": "farm-a-water",
+          "theta": 1.7935900551602724,
+          "z": 0,
+          "elevation": -61,
+          "area": 33.33333333333394,
+          "districtId": "farm-a",
+          "u": 0.5990501397918225
+        }
+      }
+    ]
+  ],
+  "terraces": {
+    "decks": [
+      {
+        "id": "farm-a-ponds",
+        "name": "Ponds & rice",
+        "height": 5,
+        "bands": [
+          [
+            -63,
+            -42
+          ],
+          [
+            42,
+            63
+          ]
+        ],
+        "start": 1.3441640209389165,
+        "end": 2.0943951023931953,
+        "color": "#777c70"
+      },
+      {
+        "id": "farm-a-grain",
+        "name": "Grain terraces",
+        "height": -10,
+        "bands": [
+          [
+            -62,
+            -26
+          ],
+          [
+            26,
+            62
+          ]
+        ],
+        "start": 1.3441640209389165,
+        "end": 2.0943951023931953,
+        "color": "#777c70"
+      },
+      {
+        "id": "farm-a-gardens",
+        "name": "Vegetable & soybean terraces",
+        "height": -25,
+        "bands": [
+          [
+            -58,
+            -8
+          ],
+          [
+            8,
+            58
+          ]
+        ],
+        "start": 1.3441640209389165,
+        "end": 2.0943951023931953,
+        "color": "#777c70"
+      },
+      {
+        "id": "farm-a-livestock",
+        "name": "Lower growing & animal deck",
+        "height": -40,
+        "bands": [
+          [
+            -49,
+            49
+          ]
+        ],
+        "start": 1.3441640209389165,
+        "end": 2.0943951023931953,
+        "color": "#777c70"
+      },
+      {
+        "id": "farm-a-drying",
+        "name": "Drying deck",
+        "height": -50,
+        "bands": [
+          [
+            -39,
+            39
+          ]
+        ],
+        "start": 1.3441640209389165,
+        "end": 2.0943951023931953,
+        "color": "#777c70"
+      },
+      {
+        "id": "farm-a-processing",
+        "name": "Processing & storage",
+        "height": -56,
+        "bands": [
+          [
+            -30,
+            30
+          ]
+        ],
+        "start": 1.3441640209389165,
+        "end": 2.0943951023931953,
+        "color": "#777c70"
+      },
+      {
+        "id": "farm-a-water",
+        "name": "Water treatment & pumps",
+        "height": -61,
+        "bands": [
+          [
+            -20,
+            20
+          ]
+        ],
+        "start": 1.3441640209389165,
+        "end": 2.0943951023931953,
+        "color": "#777c70"
+      }
+    ],
+    "stairs": [
+      {
+        "id": "farm-stair-0",
+        "upper": "farm-a-ponds",
+        "lower": "farm-a-grain",
+        "start": 1.353802575155784,
+        "end": 1.389947153469037,
+        "z": 50,
+        "width": 4
+      },
+      {
+        "id": "farm-stair-1",
+        "upper": "farm-a-grain",
+        "lower": "farm-a-gardens",
+        "start": 1.353802575155784,
+        "end": 1.389947153469037,
+        "z": 40,
+        "width": 4
+      },
+      {
+        "id": "farm-stair-2",
+        "upper": "farm-a-gardens",
+        "lower": "farm-a-livestock",
+        "start": 1.353802575155784,
+        "end": 1.389947153469037,
+        "z": 25,
+        "width": 4
+      },
+      {
+        "id": "farm-stair-3",
+        "upper": "farm-a-livestock",
+        "lower": "farm-a-drying",
+        "start": 1.353802575155784,
+        "end": 1.3778989606979526,
+        "z": 0,
+        "width": 4
+      },
+      {
+        "id": "farm-stair-4",
+        "upper": "farm-a-drying",
+        "lower": "farm-a-processing",
+        "start": 1.353802575155784,
+        "end": 1.3682604064810853,
+        "z": 0,
+        "width": 4
+      },
+      {
+        "id": "farm-stair-5",
+        "upper": "farm-a-processing",
+        "lower": "farm-a-water",
+        "start": 1.353802575155784,
+        "end": 1.3658507679268683,
+        "z": 0,
+        "width": 4
+      }
+    ]
+  },
+  "exterior": [
+    [
+      "completed-model-hull-panels",
+      100,
+      2.7052603405912112,
+      20,
+      4,
+      0,
+      null,
+      {
+        "deckId": "exterior-structures",
+        "height": 0,
+        "worldTransform": {
+          "position": [
+            -815.677008332985,
+            380.35643556662956,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0.8433914458128856,
+            -0.537299608346824
+          ]
+        }
+      }
+    ],
+    [
+      "completed-model-structural-frames",
+      101,
+      6.257581147681367,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "exterior-structures",
+        "height": 0,
+        "worldTransform": {
+          "position": [
+            123,
+            -3.15,
+            0
+          ],
+          "quaternion": [
+            0,
+            0.7071067811865475,
+            0,
+            0.7071067811865476
+          ]
+        }
+      }
+    ],
+    [
+      "completed-model-spokes",
+      102,
+      6.205342916242264,
+      0,
+      4,
+      0,
+      null,
+      {
+        "deckId": "exterior-structures",
+        "height": 0,
+        "worldTransform": {
+          "position": [
+            100,
+            -7.8,
+            0
+          ],
+          "quaternion": [
+            0,
+            0.7071067811865475,
+            0,
+            0.7071067811865476
+          ]
+        }
+      }
+    ],
+    [
+      "completed-model-central-hub",
+      103,
+      0,
+      -65,
+      4,
+      0,
+      null,
+      {
+        "deckId": "exterior-structures",
+        "height": 0,
+        "worldTransform": {
+          "position": [
+            0,
+            0,
+            -65
+          ],
+          "quaternion": [
+            0.7071067811865475,
+            0,
+            0,
+            0.7071067811865476
+          ]
+        }
+      }
+    ],
+    [
+      "completed-model-docking-facilities",
+      104,
+      4.71238898038469,
+      128,
+      4,
+      0,
+      null,
+      {
+        "deckId": "exterior-structures",
+        "height": 0,
+        "worldTransform": {
+          "position": [
+            0,
+            -8,
+            128
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      }
+    ],
+    [
+      "completed-model-airlocks",
+      105,
+      6.177332441628414,
+      126,
+      4,
+      0,
+      null,
+      {
+        "deckId": "exterior-structures",
+        "height": 0,
+        "worldTransform": {
+          "position": [
+            16,
+            -1.7,
+            126
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      }
+    ],
+    [
+      "completed-model-solar-mirrors",
+      106,
+      3.141592653589793,
+      260,
+      4,
+      0,
+      null,
+      {
+        "deckId": "exterior-structures",
+        "height": 0,
+        "worldTransform": {
+          "position": [
+            -80,
+            0,
+            260
+          ],
+          "quaternion": [
+            0.7071067811865475,
+            0,
+            0,
+            0.7071067811865476
+          ]
+        }
+      }
+    ],
+    [
+      "completed-model-radiation-shielding",
+      107,
+      2.7402603405912114,
+      -20,
+      4,
+      0,
+      null,
+      {
+        "deckId": "exterior-structures",
+        "height": 0,
+        "worldTransform": {
+          "position": [
+            -826.646131912822,
+            350.7993337986393,
+            -20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0.5519759334153981,
+            0.8338600415718456
+          ]
+        }
+      }
+    ],
+    [
+      "completed-model-radiators",
+      108,
+      0,
+      180,
+      4,
+      0,
+      null,
+      {
+        "deckId": "exterior-structures",
+        "height": 0,
+        "worldTransform": {
+          "position": [
+            80,
+            0,
+            180
+          ],
+          "quaternion": [
+            0.7071067811865475,
+            0,
+            0,
+            0.7071067811865476
+          ]
+        }
+      }
+    ]
+  ]
+}

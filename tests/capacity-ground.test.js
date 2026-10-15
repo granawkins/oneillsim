@@ -11,7 +11,7 @@ import {createCapacityGround} from '../src/capacity-ground.js';
 import {ColliderWorld} from '../src/physics/collider-world.js';
 import {CharacterController} from '../src/physics/character-controller.js';
 
-const file=new URL('../world.json',import.meta.url),bytes=fs.readFileSync(file),world=JSON.parse(bytes);
+const file=new URL('./fixtures/pre-interior-reset-world.json',import.meta.url),bytes=fs.readFileSync(file),world=JSON.parse(bytes);
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const point=(t,z,h)=>new THREE.Vector3((830-h)*Math.cos(t),(830-h)*Math.sin(t),z);
 const height=c=>830-Math.hypot(c.position.x,c.position.y);

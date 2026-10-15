@@ -10,7 +10,7 @@ function districtRanges(plans) {
     const ranges = new Map();
     for (const plan of plans) {
         const explicit = plan.masterPlan?.districts || plan.districts || [];
-        for (const d of explicit) if (capacityDistrict(d.id) && Number.isFinite(d.start) && Number.isFinite(d.end))
+        for (const d of explicit) if ((capacityDistrict(d.id) || plan.groundPhysicsDistrictIds?.includes(d.id)) && Number.isFinite(d.start) && Number.isFinite(d.end))
             ranges.set(d.id, {id: d.id, start: d.start, end: d.end, source: 'explicit'});
         for (const d of plan.decks || []) {
             if (!capacityDistrict(d.districtId) || ranges.get(d.districtId)?.source === 'explicit') continue;

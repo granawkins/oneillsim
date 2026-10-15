@@ -25,6 +25,7 @@ import {characterColliders} from './physics/collider-world.js';
 import {humanController} from './controls/modes/human.js';
 import {createCapacityAssembly} from './capacity-assembly.js';
 import {createCapacityGround} from './capacity-ground.js';
+import {createInteriorRuntime} from './interior-runtime.js';
 import {preloadAssets} from './editor/loader.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps
@@ -84,7 +85,7 @@ async function init() {
     createAmbientLight(sceneObjects.scene);
     createCylinder(sceneObjects.habitatGroup);
     createTerraces(sceneObjects.habitatGroup);
-    if(worldData.settlementDesign?.version===1){
+    if(worldData.settlementDesign?.version>=1){
         createSettlementPresentation({renderer:sceneObjects.renderer,exposure:1});
     }
     createStars(sceneObjects.scene);
@@ -109,7 +110,8 @@ async function init() {
     await initEditor(sceneObjects.camera, sceneObjects.habitatGroup, getGroundMesh());
 
     await loadWorld(worldData);
-    const capacity=createCapacityAssembly({habitatGroup:sceneObjects.habitatGroup,world:worldData,colliderWorld:characterColliders,controller:humanController,ground:getGroundMesh(),groundBuilder:createCapacityGround});
+    const capacity=worldData.settlementDesign?.version===2 ? createInteriorRuntime({habitatGroup:sceneObjects.habitatGroup,world:worldData,colliderWorld:characterColliders,controller:humanController,ground:getGroundMesh()}) : createCapacityAssembly({habitatGroup:sceneObjects.habitatGroup,world:worldData,colliderWorld:characterColliders,controller:humanController,ground:getGroundMesh(),groundBuilder:createCapacityGround});
+    window.__oneillInterior=worldData.settlementDesign?.version===2?capacity:null;
     window.__oneillCapacity=capacity;
     exteriorAssembly=createExteriorAssembly({scene:sceneObjects.scene,habitatGroup:sceneObjects.habitatGroup,world:worldData,structureBuilder:createExteriorStructure,energyBuilder:createExteriorEnergy,industryBuilder:createExteriorIndustry,legacyTorus,colliderWorld:characterColliders,refreshRendering:refreshPlacementRendering});
     window.__oneillExterior=exteriorAssembly;
@@ -118,7 +120,7 @@ async function init() {
     }
     initTerraceControls(sceneObjects.habitatGroup);
     setupControls(sceneObjects.camera, sceneObjects.cameraAnchor, sceneObjects.scene, sceneObjects.habitatGroup);
-    if(worldData.settlementDesign?.version===1){
+    if(worldData.settlementDesign?.version>=1){
         initSettlementTour({...worldData.settlementDesign,landmarks:[...worldData.settlementDesign.landmarks,...(capacity?.landmarks||[])]},{defaultVisit:window.location.search.length===0});
     }
     initExteriorControls({camera:sceneObjects.camera,cameraAnchor:sceneObjects.cameraAnchor,habitatGroup:sceneObjects.habitatGroup,assembly:exteriorAssembly});
@@ -160,6 +162,7 @@ function animate(time = performance.now()) {
         habitatGroup.rotation.z += ROTATION_SPEED;
     }
     updateStars();
+    if(window.__oneillSimReady&&!captureMode)window.__oneillInterior?.update(deltaSeconds);
 
     // Human gravity runs even when unlocked or idle; capture-only poses remain
     // frozen. Planner/god retain their existing input and camera workflows.
