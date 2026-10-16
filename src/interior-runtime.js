@@ -3,6 +3,7 @@ import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 import {createCapacityGround} from './capacity-ground.js';
 import {createInteriorPlan,interiorFloorLedger,housingLevelShape} from './interior-plan.js';
 import {landscapeGeometry} from './interior-landscape.js';
+import {createInteriorMetreUVs,INTERIOR_MATERIAL_FAMILIES} from './interior-materials.js';
 const R=830,TAU=2*Math.PI;
 export function interiorPoint(theta,z,height){return new THREE.Vector3((R-height)*Math.cos(theta),(R-height)*Math.sin(theta),z);}
 // A curved solid has the same bottom surface in renderer and collision. Long
@@ -27,11 +28,12 @@ export function conveyorVelocity(position,grounded){
  const lane=position.z>=3&&position.z<=7?1:position.z>=-7&&position.z<=-3?-1:0;
  return new THREE.Vector3(-Math.sin(theta),Math.cos(theta),0).multiplyScalar(lane*18);
 }
-export function createInteriorRuntime({habitatGroup,colliderWorld,controller,world,ground}){
+export function createInteriorRuntime({habitatGroup,colliderWorld,controller,world,ground,textureLibrary=null}){
  if(world.settlementDesign?.version!==2)return null;
  const plan=createInteriorPlan(),group=new THREE.Group();group.name='inhabited-garden';group.userData.capacityInterior=true;habitatGroup.add(group);
  const colors={ivory:0xe3dfcf,cream:0xcfc5af,glass:0x536f70,rail:0x788d82,path:0xd5ceb4,green:0x789757,darkgreen:0x466e4c,water:0x598c91,belt:0x467c7c,beltReverse:0x467c7c,gold:0xc5ad70,earth:0x8e9b68,stone:0x92927d,sage:0x8f9e84,clay:0xb0927c,meadow:0x8eaa69,grove:0x6f8b53};
  const materials=Object.fromEntries(Object.entries(colors).map(([k,color])=>[k,new THREE.MeshStandardMaterial({color,vertexColors:true,roughness:k==='glass'?.32:.86,metalness:k==='glass'?.15:0,side:THREE.DoubleSide})]));
+ textureLibrary?.applyPalette(materials);
  for(const key of ['belt','beltReverse']){const pixels=new Uint8Array(32*4);for(let i=0;i<32;i++){const v=i<2?165:240;pixels.set([v,v,v,255],i*4);}const texture=new THREE.DataTexture(pixels,32,1);texture.wrapS=THREE.RepeatWrapping;texture.wrapT=THREE.RepeatWrapping;texture.repeat.set(8,1);texture.needsUpdate=true;materials[key].map=texture;}
  const batches=new Map(),colliders=[],objects=[];
  function solid(id,theta,z,height,width,depth,thickness,color='ivory',physical=true){
@@ -168,11 +170,13 @@ export function createInteriorRuntime({habitatGroup,colliderWorld,controller,wor
  // and spatial cell. Collision does not depend on render-batch visibility.
  group.updateMatrixWorld(true);
  for(const c of colliders){colliderWorld.setObject(c.id,c.object,habitatGroup);c.object.removeFromParent();}
- for(const [key,{color,geometries}]of batches){const mesh=new THREE.Mesh(mergeGeometries(geometries),materials[color]);mesh.name='interior-batch-'+key;group.add(mesh);}
+ for(const [key,{color,geometries}]of batches){let geometry=mergeGeometries(geometries);if(textureLibrary&&INTERIOR_MATERIAL_FAMILIES[color]){const source=geometry;geometry=createInteriorMetreUVs(source,{surface:plan.hills.some(h=>key.startsWith(h.id+':'))?'top':'auto'});source.dispose();}const mesh=new THREE.Mesh(geometry,materials[color]);mesh.name='interior-batch-'+key;group.add(mesh);}
+ const originalGroundGeometry=ground?.geometry;let metreGroundGeometry=null;
+ if(textureLibrary&&ground){ground.updateMatrix();metreGroundGeometry=createInteriorMetreUVs(originalGroundGeometry,{matrix:ground.matrix,surface:'top'});ground.geometry=metreGroundGeometry;textureLibrary.apply(ground.material,'grass');}
  const groundRuntime=ground?createCapacityGround({ground,habitatGroup,plans:[{districts:plan.districts,groundPhysicsDistrictIds:plan.districts.filter(d=>d.kind==='residential').map(d=>d.id),groundOpenings}],colliderWorld,controller}):null;
  const previousGroundColor=ground?.material?.color?.clone();
  // Harmonize the plain with planted slopes instead of dark-green cutout bands.
  if(previousGroundColor)ground.material.color.setHex(0x536b3d);
  const previousVelocity=controller.surfaceVelocity;controller.surfaceVelocity=(position,grounded)=>conveyorVelocity(position,grounded);
- return {group,plan,ground:groundRuntime,update(dt){const phase=dt*18*8/(TAU*R/160);materials.belt.map.offset.x-=phase;materials.beltReverse.map.offset.x+=phase;},ledger:interiorFloorLedger(plan),stats:{buildings:plan.buildings.length,physicalSolids:colliders.length,renderBatches:batches.size},dispose(){groundRuntime?.dispose();if(previousGroundColor)ground.material.color.copy(previousGroundColor);controller.surfaceVelocity=previousVelocity;for(const c of colliders)colliderWorld.remove(c.id);group.removeFromParent();group.traverse(o=>o.geometry?.dispose());for(const m of Object.values(materials))m.dispose();}};
+ return {group,plan,ready:textureLibrary?.ready??Promise.resolve(),ground:groundRuntime,update(dt){const phase=dt*18*8/(TAU*R/160);materials.belt.map.offset.x-=phase;materials.beltReverse.map.offset.x+=phase;},ledger:interiorFloorLedger(plan),stats:{buildings:plan.buildings.length,physicalSolids:colliders.length,renderBatches:batches.size},dispose(){groundRuntime?.dispose();if(metreGroundGeometry){if(ground.geometry===metreGroundGeometry)ground.geometry=originalGroundGeometry;metreGroundGeometry.dispose();}textureLibrary?.dispose();if(previousGroundColor)ground.material.color.copy(previousGroundColor);controller.surfaceVelocity=previousVelocity;for(const c of colliders)colliderWorld.remove(c.id);group.removeFromParent();group.traverse(o=>o.geometry?.dispose());for(const m of Object.values(materials))m.dispose();}};
 }

@@ -1,0 +1,21 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import * as THREE from 'three';
+import {createInteriorMaterialLibrary} from '../src/interior-materials.js';
+import {createInteriorRuntime} from '../src/interior-runtime.js';
+import {createCylinder} from '../src/cylinder.js';
+import {configureTerraces} from '../src/terrace-surfaces.js';
+import {ColliderWorld} from '../src/physics/collider-world.js';
+import {CharacterController} from '../src/physics/character-controller.js';
+test('textured runtime preserves physical ground and restores borrowed geometry/materials on dispose',async()=>{
+ const world=JSON.parse(fs.readFileSync('world.json')),habitatGroup=new THREE.Group(),colliderWorld=new ColliderWorld(),controller=new CharacterController(colliderWorld);
+ configureTerraces(world.terraces);const {ground}=createCylinder(habitatGroup),original=ground.geometry,material=ground.material,color=material.color.getHex();
+ const loader={load(url,onLoad){const t=new THREE.Texture();t.image={width:512,height:512};queueMicrotask(()=>onLoad(t));return t;}};
+ const library=createInteriorMaterialLibrary({loader}),runtime=createInteriorRuntime({habitatGroup,colliderWorld,controller,world,ground,textureLibrary:library});await runtime.ready;
+ assert.notEqual(ground.geometry,original);assert.equal(ground.material,material);assert.equal(material.map.name,'interior-lookdev/grass-color.png');
+ assert.ok(ground.geometry.attributes.uv);const batches=runtime.group.children.filter(o=>o.isMesh);assert.ok(batches.some(o=>o.material.map?.name==='interior-lookdev/concrete-color.png'));
+ assert.ok(batches.some(o=>o.material.map?.name==='interior-lookdev/paving-color.png'));
+ assert.ok(Math.abs(runtime.ledger.measuredGrossShellFloors.housing-370000)<1e-6);
+ runtime.dispose();assert.equal(ground.geometry,original);assert.equal(ground.material,material);assert.equal(material.map,null);assert.equal(material.color.getHex(),color);assert.equal(colliderWorld.colliders.size,0);
+});

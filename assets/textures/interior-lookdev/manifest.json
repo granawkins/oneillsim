@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "seed": 4132026,
+  "size": 512,
+  "tileMetres": 4,
+  "provenance": "Original procedural authoring; no external images or licenses.",
+  "channels": {
+    "color": "sRGB neutral multiplier",
+    "surface": "R: linear bump height, G: linear roughness, B: reserved (255)"
+  },
+  "surfaces": {
+    "grass": {
+      "bumpScale": 0.018,
+      "files": {
+        "color": {
+          "name": "grass-color.png",
+          "bytes": 235250,
+          "sha256": "f20de505151826ac1ec9f356f51d753d83ca583897357d9f2799d0b309f06772"
+        },
+        "surface": {
+          "name": "grass-surface.png",
+          "bytes": 239347,
+          "sha256": "d71f69424f8517b94979e899983ea2b17bd35b14ee5c0acdf97ebd3413b38d3c"
+        }
+      }
+    },
+    "concrete": {
+      "bumpScale": 0.006,
+      "files": {
+        "color": {
+          "name": "concrete-color.png",
+          "bytes": 259725,
+          "sha256": "ee141170d34017701c1027206bff8d3bc0fa079e9e9d8236be2df7c081be6e0a"
+        },
+        "surface": {
+          "name": "concrete-surface.png",
+          "bytes": 249048,
+          "sha256": "8ed98ec66fef01535112be351401447dce6900670abc9c35070b32ed0b8b7336"
+        }
+      }
+    },
+    "paving": {
+      "bumpScale": 0.012,
+      "files": {
+        "color": {
+          "name": "paving-color.png",
+          "bytes": 164023,
+          "sha256": "a8bcf0aebd868369d8ff4b0536b0aed23fc2920b408413f9487a47bc5ae53953"
+        },
+        "surface": {
+          "name": "paving-surface.png",
+          "bytes": 152323,
+          "sha256": "eff71448aff4dea4f4e1488c3de0d5ea6f7fcd8d20e62e2228812ce50aa49589"
+        }
+      }
+    }
+  }
+}

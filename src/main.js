@@ -28,11 +28,15 @@ import {createCapacityGround} from './capacity-ground.js';
 import {createInteriorRuntime} from './interior-runtime.js';
 import {createInteriorBoundaries} from './interior-boundaries.js';
 import {preloadAssets} from './editor/loader.js';
+import {createInteriorMaterialLibrary} from './interior-materials.js';
+import {createInteriorVegetation} from './interior-vegetation.js';
+import {createInteriorLighting} from './interior-lighting.js';
 
 const ROTATION_SPEED = Math.PI / 1800; // 1 RPM at 60fps
 let captureMode = false;
 let captureRingRotation = 0;
 let exteriorAssembly = null;
+let interiorLighting = null;
 
 function applyUrlView() {
     const params = new URLSearchParams(window.location.search);
@@ -81,6 +85,13 @@ async function init() {
     await Promise.resolve(); // Launch all requests before synchronous scene work.
     configureTerraces(worldData.terraces);
     const sceneObjects = initScene();
+    const gl=sceneObjects.renderer.getContext(),debugRenderer=gl.getExtension('WEBGL_debug_renderer_info');
+    const gpuName=debugRenderer?gl.getParameter(debugRenderer.UNMASKED_RENDERER_WEBGL):'';
+    const softwareGL=/swiftshader|llvmpipe|software/i.test(gpuName);
+    window.__oneillRenderQuality={softwareGL,bump:!softwareGL,gpuName};
+    const interiorMaterials=worldData.settlementDesign?.version===2?createInteriorMaterialLibrary({renderer:sceneObjects.renderer,bump:!softwareGL}):null;
+    // Attach rejection handling immediately, then await the same readiness below.
+    interiorMaterials?.ready.catch(()=>{});
 
     createSunRing(sceneObjects.habitatGroup);
     createAmbientLight(sceneObjects.scene);
@@ -111,17 +122,22 @@ async function init() {
     await initEditor(sceneObjects.camera, sceneObjects.habitatGroup, getGroundMesh());
 
     await loadWorld(worldData);
-    const capacity=worldData.settlementDesign?.version===2 ? createInteriorRuntime({habitatGroup:sceneObjects.habitatGroup,world:worldData,colliderWorld:characterColliders,controller:humanController,ground:getGroundMesh()}) : createCapacityAssembly({habitatGroup:sceneObjects.habitatGroup,world:worldData,colliderWorld:characterColliders,controller:humanController,ground:getGroundMesh(),groundBuilder:createCapacityGround});
+    const capacity=worldData.settlementDesign?.version===2 ? createInteriorRuntime({habitatGroup:sceneObjects.habitatGroup,world:worldData,colliderWorld:characterColliders,controller:humanController,ground:getGroundMesh(),textureLibrary:interiorMaterials}) : createCapacityAssembly({habitatGroup:sceneObjects.habitatGroup,world:worldData,colliderWorld:characterColliders,controller:humanController,ground:getGroundMesh(),groundBuilder:createCapacityGround});
     window.__oneillInterior=worldData.settlementDesign?.version===2?capacity:null;
     if(window.__oneillInterior){
         const boundaries=createInteriorBoundaries({habitatGroup:sceneObjects.habitatGroup,colliderWorld:characterColliders,parent:capacity.group});
         capacity.boundaries=boundaries;
+        const vegetation=createInteriorVegetation({habitatGroup:sceneObjects.habitatGroup,colliderWorld:characterColliders,plan:capacity.plan,world:worldData});
+        capacity.vegetation=vegetation;
         const disposeInterior=capacity.dispose.bind(capacity);
-        capacity.dispose=()=>{boundaries.dispose();disposeInterior();};
+        capacity.dispose=()=>{interiorLighting?.dispose();vegetation.dispose();boundaries.dispose();disposeInterior();};
+        await capacity.ready;
     }
     window.__oneillCapacity=capacity;
     exteriorAssembly=createExteriorAssembly({scene:sceneObjects.scene,habitatGroup:sceneObjects.habitatGroup,world:worldData,structureBuilder:createExteriorStructure,energyBuilder:createExteriorEnergy,industryBuilder:createExteriorIndustry,legacyTorus,colliderWorld:characterColliders,refreshRendering:refreshPlacementRendering});
     window.__oneillExterior=exteriorAssembly;
+    interiorLighting=createInteriorLighting({world:worldData,scene:sceneObjects.scene,habitatGroup:sceneObjects.habitatGroup,renderer:sceneObjects.renderer,exteriorEnergy:exteriorAssembly.energy,ambientIntensity:7});
+    window.__oneillInteriorLighting=interiorLighting;
     if(worldData.settlementDesign?.version===1){
         window.__oneillSettlement.palette=createSettlementLandscapePresentation(sceneObjects.habitatGroup);
     }
@@ -140,9 +156,9 @@ async function init() {
 
     const lightSlider = document.getElementById('light-slider');
     lightSlider.addEventListener('input', (e) => {
-        setLightIntensity(parseFloat(e.target.value));
+        if(interiorLighting)interiorLighting.setIntensity(parseFloat(e.target.value));else setLightIntensity(parseFloat(e.target.value));
     });
-    setLightIntensity(3); // Initialize at 3x brightness
+    if(interiorLighting)interiorLighting.setIntensity(3);else setLightIntensity(3); // v2 owns its balanced baseline
 
     const torusToggle = document.getElementById('torus-toggle');
     torusToggle.addEventListener('change', (e) => {
@@ -194,6 +210,7 @@ function animate(time = performance.now()) {
     // scene competes with OBJ/atlas decoding on software WebGL; input is still
     // gated by readiness, so retain the frame until the complete world is ready.
     if(window.__oneillSimReady || !window.__oneillSimFirstFrame){
+        interiorLighting?.update({camera,time:time/1000,exteriorVisible:exteriorAssembly?.envelopeVisible});
         renderer.render(scene, camera);
         window.__oneillSimFirstFrame = true;
     }
@@ -202,6 +219,7 @@ function animate(time = performance.now()) {
 window.onload = () => {
     init().catch((error) => {
         window.__oneillSimError = String(error);
+        window.__oneillInterior?.dispose();
         console.error('Oneill Sim initialization failed:', error);
     });
 };
